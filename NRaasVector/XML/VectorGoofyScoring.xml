@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scoring>
+  <Methods>
+    <Name></Name>
+    <FullClassName></FullClassName>
+    <Divisor>1</Divisor>
+    <LowerBound></LowerBound>
+    <UpperBound></UpperBound>
+  </Methods>
+  <Methods>
+    <Name>NRaasAccidentitisInfection</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasLaughRiotInfection</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorGoofyResistance</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasAccidentitisConvertToBot</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasLaughRiotDepression</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasAccidentitisResistance</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasLaughRiotResistance</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+
+  <NRaasLaughRiotDepression>
+    <FullClassName></FullClassName>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Teen,Elder</AgeGender>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>YoungAdult,Adult</AgeGender>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Perfectionist</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Unlucky</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Shy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Lucky</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Carefree</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotDepression>
+  <NRaasLaughRiotDepression>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>-25</Minimum>
+    <Maximum>25</Maximum>
+  </NRaasLaughRiotDepression>
+
+  <NRaasAccidentitisConvertToBot>
+    <FullClassName></FullClassName>
+  </NRaasAccidentitisConvertToBot>
+  <NRaasAccidentitisConvertToBot>
+    <!-- Don't convert children into simbots -->
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Baby,Toddler,Child,Teen</AgeGender>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasAccidentitisConvertToBot>
+  <NRaasAccidentitisConvertToBot>
+    <!-- Based off Strength Resistance -->
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Scoring>NRaasAccidentitisResistance</Scoring>
+  </NRaasAccidentitisConvertToBot>
+  <NRaasAccidentitisConvertToBot>
+    <!-- Increase general resistance to stop everyone from being converted -->
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>20</Minimum>
+    <Maximum>40</Maximum>
+  </NRaasAccidentitisConvertToBot>
+
+  <NRaasLaughRiotInfection>
+    <FullClassName></FullClassName>
+  </NRaasLaughRiotInfection>
+  <NRaasLaughRiotInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>AgeMask,GenderMask</AgeGender>
+    <Species>Human</Species>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </NRaasLaughRiotInfection>
+  <NRaasLaughRiotInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Baby,Toddler,Child</AgeGender>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotInfection>
+
+  <NRaasAccidentitisInfection>
+    <FullClassName></FullClassName>
+  </NRaasAccidentitisInfection>
+  <NRaasAccidentitisInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>AgeMask,GenderMask</AgeGender>
+    <Species>Human</Species>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </NRaasAccidentitisInfection>
+  <NRaasAccidentitisInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Baby,Toddler,Child</AgeGender>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasAccidentitisInfection>
+  <NRaasAccidentitisInfection>
+    <!-- Simbots are immune -->
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>SimBot</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasAccidentitisInfection>
+
+  <NRaasLaughRiotResistance>
+    <FullClassName></FullClassName>
+  </NRaasLaughRiotResistance>
+  <NRaasLaughRiotResistance>
+    <!-- Based off Strength Resistance -->
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Scoring>NRaasVectorGoofyResistance</Scoring>
+  </NRaasLaughRiotResistance>
+  <NRaasLaughRiotResistance>
+    <!-- Teen are less likely to fight off the infection -->
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Teen</AgeGender>
+    <Hit>-15</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotResistance>
+
+  <NRaasAccidentitisResistance>
+    <FullClassName></FullClassName>
+  </NRaasAccidentitisResistance>
+  <NRaasAccidentitisResistance>
+    <!-- Based off Strength Resistance -->
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Scoring>NRaasVectorGoofyResistance</Scoring>
+  </NRaasAccidentitisResistance>
+  <NRaasAccidentitisResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasAccidentitisResistance>
+
+  <NRaasVectorGoofyResistance>
+    <FullClassName></FullClassName>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Elder</AgeGender>
+    <Hit>-15</Hit>
+    <Miss>10</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.FitnessScaledScoring, NRaasVector</FullClassName>
+    <Scale>10</Scale>
+    <Score>1</Score>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Lucky</Trait>
+    <Hit>2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Unlucky</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rocker</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Pyromaniac</Trait>
+    <Hit>-100</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.WeightScaledScoring, NRaasVector</FullClassName>
+    <Scale>10</Scale>
+    <UnderScore>-1</UnderScore>
+    <OverScore>1</OverScore>
+  </NRaasVectorGoofyResistance>
+  <NRaasVectorGoofyResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>-5</Minimum>
+    <Maximum>10</Maximum>
+  </NRaasVectorGoofyResistance>
+
+</Scoring>

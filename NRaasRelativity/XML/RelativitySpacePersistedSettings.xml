@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kSpeedOverride value="0">
+      <!--Overriding speed-->
+    </kSpeedOverride>
+    <kShowNotice value="True">
+      <!--Whether to display the change of speed notice-->
+    </kShowNotice>
+    <kApplyLifeSpanSkillFactor value="False">
+      <!--Whether to apply a skill gain multiple based on life-span-->
+    </kApplyLifeSpanSkillFactor>
+    <kSkillGainFactors value="All:1">
+      <!--Skill Gain Factors.  Format <Skill>:<Factor>,<Skill>:<Factor>-->
+    </kSkillGainFactors>
+    <kAbsoluteSkills value="">
+      <!--Comma separated list of skills that are absolute, and not subject to relativity-->
+    </kAbsoluteSkills>
+    <kMotiveDeltaFactors value="Fun:1,Social:1,Hunger:1,VampireThirst:1,Hygiene:1,Bladder:1,Energy:1,HorseExercise:1,HorseThirst:1,CatScratch:1,DogDestruction:1">
+      <!--Motive Factors.  OccultType and/or AgeSpecies are optional.  Format <OccultType>:<AgeSpecies>:<Motive>:<Factor>,<OccultType>:<AgeSpecies>:<Motive>:<Factor>-->
+    </kMotiveDeltaFactors>
+    <kRelativeMotives value="Fun,Social,Hunger,VampireThirst,Hygiene,Bladder">
+      <!--Comma separated list of motives that are relative-->
+    </kRelativeMotives>
+
+    <kMotiveDecayDeltaFactors value="Fun:1,Social:1,Hunger:1,VampireThirst:1,Hygiene:1,Bladder:1,HorseExercise:1,HorseThirst:1,CatScratch:1,DogDestruction:1">
+      <!--Motive Decay Factors.  OccultType and/or AgeSpecies are optional.  Format <OccultType>:<AgeSpecies>:<Motive>:<Factor>,<OccultType>:<AgeSpecies>:<Motive>:<Factor>-->
+    </kMotiveDecayDeltaFactors>
+    <kPauseOnCompletion value="False">
+      <!--Whether to pause the game when the active sim runs out of interactions-->
+    </kPauseOnCompletion>
+    <kSwitchSpeedOnFast value="0">
+      <!--The speed to set the mod when running in non-Normal game-speed-->
+    </kSwitchSpeedOnFast>
+    <kActiveSimFactorMinimum value="5">
+      <!--The minimum number of sims allowed in the active household before the ActiveSimFactorReduction kicks in-->
+    </kActiveSimFactorMinimum>
+    <kActiveSimFactorReduction value="0">
+      <!--The percent reduction in speed for each active sim over the ActiveSimFactorMinimum-->
+    </kActiveSimFactorReduction>
+    <kSkipOnHumanSleep value="False">
+      <!--Whether to only count humans when checking whether to fast forward while sleeping-->
+    </kSkipOnHumanSleep>
+  </Current_Tuning>
+</base>

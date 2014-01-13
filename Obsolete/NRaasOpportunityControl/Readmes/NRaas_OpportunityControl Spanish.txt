@@ -1,0 +1,31 @@
+NRaas_Gestordeoportunidades
+
+EL MOD:
+
+Este mod permite seleccionar las oportunidades de los sims activos, acabando con la espera de las oportunidades automáticas que puede recibir.
+
+Además, se añade el menú "Gestor de oportunidades" a todas las computadoras.
+
+En este menú encontraremos las siguientes acciones:
+
+"Seleccionar" : Permite elegir una aportunidad. Todas las oportunidades disponibles para un sims se muestran en una lista.
+
+"Aleatorio" : De forma aleatoria se elige una de las oportunidades disponibles de un sim.  Nota, es probable que no funcione si se tiene una oportunidad ya elegida.
+
+"Versión" : Muestra la versión del mod.
+
+NOTAS
+
+Este mod es compatible con todos los mods conocidos.
+
+INSTALACIÓN:
+
+Para que el mod funcione, debes tener el archivo Framework instalado en tu equipo.
+
+Google: Delphy's Framework Install Monkey
+
+PRECAUSIONES:
+
+Como siempre, asegúrate de hacer copias de seguridad de la carpeta "save" antes de instalar el mod. Este mod es horriblemente simple, pero si algo puede ir mal, ira mal.
+
+¡Diviértete! :)

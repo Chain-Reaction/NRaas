@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kLikingGatingForAutonomousWoohoo value="40">
+      <!--Minimum liking gate for performing autonomous woohoo actions-->
+    </kLikingGatingForAutonomousWoohoo>
+    <kLikingGatingForAutonomousRomance value="0">
+      <!--Minimum liking gate for performing autonomous romance actions-->
+    </kLikingGatingForAutonomousRomance>
+    <kRiskyBabyMadeChance value="10">
+      <!--Range: 0-100. Chance of Sim getting Pregnant on RiskyWoohoo.-->
+    </kRiskyBabyMadeChance>
+    <kWoohooAutonomous value="False">
+      <!--Whether regular woohoo is autonomous-->
+    </kWoohooAutonomous>
+    <kRiskyAutonomous value="False">
+      <!--Whether risky woohoo is autonomous-->
+    </kRiskyAutonomous>
+    <kTryForBabyAutonomous value="False">
+      <!--Whether Try For Baby is autonomous-->
+    </kTryForBabyAutonomous>
+    <kTeenTryForBabyAutonomous value="False">
+      <!--Whether Try For Baby is autonomous for teens-->
+    </kTeenTryForBabyAutonomous>
+    <kMustBeRomanticForAutonomous value="True">
+      <!--Whether a couple must be flagged as romantic before considering woohoo-->
+    </kMustBeRomanticForAutonomous>
+    <kAllowNearRelationWoohoo value="False">
+      <!--Whether to allow near relations to woohoo-->
+    </kAllowNearRelationWoohoo>
+    <kAllowNearRelationWoohooAutonomous value="False">
+      <!--Whether to allow near relations to autonomously woohoo-->
+    </kAllowNearRelationWoohooAutonomous>
+    <kAutonomousMaleMaleTryForBaby value="False">
+      <!--Whether to allow try for baby between male couples-->
+    </kAutonomousMaleMaleTryForBaby>
+    <kAutonomousFemaleFemaleTryForBaby value="True">
+      <!--Whether to allow try for baby between female couples-->
+    </kAutonomousFemaleFemaleTryForBaby>
+    <kAllowSameSexTryForBaby value="True">
+      <!--Whether to display try for baby for same-sex couples-->
+    </kAllowSameSexTryForBaby>
+    <kMaximumHouseholdSizeForAutonomous value="8">
+      <!--Maximum number of sims per household for autonomous pregnancy-->
+    </kMaximumHouseholdSizeForAutonomous>
+    <kWoohooBaseChanceScoring value="25">
+      <!--Range: -200 to 200. The base chance of a sim considering a Woohoo interaction-->
+    </kWoohooBaseChanceScoring>
+    <kRiskyBaseChanceScoring value="25">
+      <!--Range: -200 to 200. The base chance of a sim considering a Risky Woohoo interaction-->
+    </kRiskyBaseChanceScoring>
+    <kTryForBabyBaseChanceScoring value="10">
+      <!--Range: -200 to 200. The base chance of a sim considering a Try For Baby interaction-->
+    </kTryForBabyBaseChanceScoring>
+    <kAllowNearRelationRomance value="False">
+      <!--Whether to allow near-relation romantic socials-->
+    </kAllowNearRelationRomance>
+    <kAllowNearRelationRomanceAutonomous value="False">
+      <!--Whether to allow autonomous near-relation romantic socials-->
+    </kAllowNearRelationRomanceAutonomous>
+    <kWoohooRechargeRate value="5">
+      <!--How many woohoo events are wiped from a sim's count each night-->
+    </kWoohooRechargeRate>
+    <kRomanceBaseChanceScoring value="25">
+      <!--Range: -200 to 200. The base chance of a sim being interested in a romantic interaction-->
+    </kRomanceBaseChanceScoring>
+    <kAttractionBaseChanceScoring value="0">
+      <!--Range: -200 to 200. The base attraction of a sim to another-->
+    </kAttractionBaseChanceScoring>
+    <kTryForBabyMadeChance value="75">
+      <!--Range: 0-100. Chance of Sim getting Pregnant on Try For Baby.-->
+    </kTryForBabyMadeChance>
+    <kWoohooInteractionLevel value="Default">
+      <!--Defines when the Woohoo Interactions are available for romantic sims.  Choices: Default, Partner, Spouse, AnyRomantic-->
+    </kWoohooInteractionLevel>
+    <kPregnancyChoice value="Either">
+      <!--Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, Both-->
+    </kPregnancyChoice>
+    <kRiskyFertility value="True">
+      <!--Whether to use fertility treatment in the chance of pregnancy during Risky Woohoo-->
+    </kRiskyFertility>
+    <kTryForBabyFertility value="True">
+      <!--Whether to use fertility treatment in the chance of pregnancy during Try For Baby-->
+    </kTryForBabyFertility>
+    <kLikingGatingForAutonomousRomance value="0">
+      <!--Range: 0-100. Minimum liking gate for performing autonomous romance actions-->
+    </kLikingGatingForAutonomousRomance>
+    <kTestAllConditionsForUserDirected value="False">
+      <!--Whether to test all the standard conditions that normally restrict Try For Baby-->
+    </kTestAllConditionsForUserDirected>
+    <kForcePetMate value="True">
+      <!--Whether to set a new mate after woohoo-->
+    </kForcePetMate>
+    <kWoohooCountScoreFactor value="-2">
+      <!--Scoring factor applied for each woohoo performed during the day-->
+    </kWoohooCountScoreFactor>
+    <kAllowOffLotRiskyAutonomous value="True">
+      <!--Whether to allow sims to engage in autonomous Risky while not on the active lot-->
+    </kAllowOffLotRiskyAutonomous>
+    <kAllowOffLotTryForBabyAutonomous value="True">
+      <!--Whether to allow sims to engage in autonomous Try For Baby while not on the active lot-->
+    </kAllowOffLotTryForBabyAutonomous>
+
+    <kWoohooCooldown value="60">
+      <!--The minimum number of minutes between autonomous woohoos-->
+    </kWoohooCooldown>
+    <kTryForBabyUserMaximum value="0">
+      <!--The maximum number of sims allowed in a home before the 'Try For Baby' is disabled-->
+    </kTryForBabyUserMaximum>
+  </Current_Tuning>
+</base>

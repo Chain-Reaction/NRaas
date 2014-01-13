@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symptoms>
+  <Symptom>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofySimbot</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.OccultSymptom, NRaasVector</FullClassName>
+    <Occult>Frankenstein</Occult>
+    <DropOthers>True</DropOthers>
+    <Remove>False</Remove>
+    <AllowIfOthers>True</AllowIfOthers>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyBreak</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.BreakSymptom, NRaasVector</FullClassName>
+    <Minimum>1</Minimum>
+    <Maximum>1</Maximum>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyDirty</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Hygiene</Motive>
+    <DeltaValue>-25</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyClean</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Hygiene</Motive>
+    <DeltaValue>25</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyHurtHand</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>HurtHand</BuffName>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyWhyMe</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>WhyMe</Type>
+    <Speed>Immediate</Speed>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyWeightEqualize</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.WeightEqualizationSymptom, NRaasVector</FullClassName>
+    <Minimum>0.03</Minimum>
+    <Maximum>0.07</Maximum>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyFitnessIncrease</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.FitnessSymptom, NRaasVector</FullClassName>
+    <Minimum>0.05</Minimum>
+    <Maximum>0.1</Maximum>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyPumped</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Pumped</BuffName>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyStuffed</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Stuffed</BuffName>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorGoofySpooked</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Spooked</BuffName>
+    <MoodValue>-50</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofySad</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Fear</BuffName>
+    <MoodValue>-50</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyExcitedMood</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Bananah</BuffName>
+    <MoodValue>25</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyHappy</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Delighted</BuffName>
+    <MoodValue>25</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyAmused</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Amused</BuffName>
+    <MoodValue>25</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofySocial</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Social</Motive>
+    <DeltaValue>-25</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorGoofyExcited</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>Excited</Type>
+    <Speed>Immediate</Speed>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyGiggle</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>Giggle</Type>
+    <Speed>Immediate</Speed>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyThrowConfetti</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>ThrowConfetti</Type>
+    <Speed>Immediate</Speed>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyShiver</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>Shiver</Type>
+    <Speed>Immediate</Speed>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorGoofyGloomy</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>Gloomy</Type>
+    <Speed>Immediate</Speed>
+  </Symptom>
+
+</Symptoms>

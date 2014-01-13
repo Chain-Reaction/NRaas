@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<CareerFiles>
+  <SocializingFile>
+    <SocialData></SocialData>
+    <SocializingActionAvailability></SocializingActionAvailability>
+  </SocializingFile>
+  <SocializingFile>
+    <SocialData>NRaas.SelfEmployed.SocialData</SocialData>
+    <SocializingActionAvailability>NRaas.SelfEmployed.SocializingActionAvailability</SocializingActionAvailability>
+  </SocializingFile>
+  <SkillBasedCareerFile>
+    <SkillBasedCareers></SkillBasedCareers>
+  </SkillBasedCareerFile>
+  <SkillBasedCareerFile>
+    <SkillBasedCareers>NRaas.SelfEmployed</SkillBasedCareers>
+  </SkillBasedCareerFile>
+</CareerFiles>

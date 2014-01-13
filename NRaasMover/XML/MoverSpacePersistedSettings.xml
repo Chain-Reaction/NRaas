@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kAllowGreaterThanEight value="True">
+      <!-- Whether to allow the user to create households with more than eight sims -->
+    </kAllowGreaterThanEight>
+    <kAllowNoAdult value="True">
+      <!-- Whether to allow the user to create households with no adult in them -->
+    </kAllowNoAdult>
+    <kMovePerPersonPercentage value="30">
+      <!-- Percentage of household funds to transfer per person -->
+    </kMovePerPersonPercentage>
+    <kMinMoneyTransferred value="0">
+      <!-- Minimum funds to transfer -->
+    </kMinMoneyTransferred>
+    <kMaxMoneyTransferred value="20000">
+      <!-- Maximum funds to transfer when splitting a non-rich family -->
+    </kMaxMoneyTransferred>
+    <kMaxMoneyTransferredRich value="50000">
+      <!-- Maximum funds to transfer when splitting a rich family -->
+    </kMaxMoneyTransferredRich>
+    <kHomeInspection value="True">
+      <!-- Whether to test home inspection requirements -->
+    </kHomeInspection>
+    <kFreeRealEstate value="False">
+      <!-- Whether to require the purchasing of lots -->
+    </kFreeRealEstate>
+    <kPromptTransferRealEstate value="True">
+      <!-- Whether to prompt to transfer realestate -->
+    </kPromptTransferRealEstate>
+    <kDreamCatcher value="False">
+      <!-- Whether to retain dreams and opportunities during the switch -->
+    </kDreamCatcher>
+  </Current_Tuning>
+</base>

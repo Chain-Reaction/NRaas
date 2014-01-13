@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resistances>
+  <Resistance>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+    <Delta></Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofySalvage</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kSalvageBrokenObject,kSalvageBurnedObject</Event>
+    <Delta>-2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyScrap</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kCollectedSomeScrap</Event>
+    <Delta>-2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyHygiene</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Smelly</BuffName>
+    <Delta>-2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofySore</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Sore</BuffName>
+    <Delta>-2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyHacked</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kHacked</Event>
+    <Delta>-1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyBathing</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>SqueakyClean,OooBubbles</BuffName>
+    <Delta>2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyBuzzed</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Buzzed</BuffName>
+    <Delta>2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyBrainFreeze</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>BrainFreeze</BuffName>
+    <Delta>2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyPregnancy</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Pregnant</BuffName>
+    <Delta>5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyNewBaby</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>ItsABoy,ItsAGirl,ItsTwins,ItsTriplets</BuffName>
+    <Delta>1</Delta>
+  </Resistance>
+
+  <Resistance>
+    <GUID>NRaasVectorGoofyMeditate</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kMeditated</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofySerenity</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>DuckTimeFun,OooBubbles,Tranquil,CozyFire,Comfy</BuffName>
+    <Delta>2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyCheerUp</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>CheeredUp</BuffName>
+    <Delta>5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyDecoration</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Decorated,BeautifullyDecorated</BuffName>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyDetention</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Detention,Grounded,GotPutInTimeOut,GotInTrouble</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyStress</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Stressed,Overworked,MissedWedding,TiredFromMoving,GotInAFight</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyGrumpy</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>OutOfSorts,Lonely,Desolate</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyFire</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Singed,SingedElectricity,Torched,OnFire</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorGoofyAroundFire</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kHadFireAtHome,kWasInvolvedInAFire</Event>
+    <Delta>-5</Delta>
+  </Resistance>
+</Resistances>

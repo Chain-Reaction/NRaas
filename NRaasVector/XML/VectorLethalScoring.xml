@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scoring>
+  <Methods>
+    <Name></Name>
+    <FullClassName></FullClassName>
+    <Divisor>1</Divisor>
+    <LowerBound></LowerBound>
+    <UpperBound></UpperBound>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorLethalInfection</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorLethalResistance</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorLethalSymptom</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+
+  <NRaasVectorLethalSymptom>
+    <FullClassName></FullClassName>
+  </NRaasVectorLethalSymptom>
+  <NRaasVectorLethalSymptom>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Mummy</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalSymptom>
+  <NRaasVectorLethalSymptom>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Genie</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalSymptom>
+  <NRaasVectorLethalSymptom>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>PlayableGhost</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalSymptom>
+  
+  <NRaasVectorLethalInfection>
+    <FullClassName></FullClassName>
+  </NRaasVectorLethalInfection>
+  <NRaasVectorLethalInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>AgeMask,GenderMask</AgeGender>
+    <Species>Human</Species>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </NRaasVectorLethalInfection>
+  <NRaasVectorLethalInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Baby,Toddler,Child,Teen</AgeGender>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalInfection>
+  
+  <NRaasVectorLethalResistance>
+    <FullClassName></FullClassName>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Elder</AgeGender>
+    <Hit>-15</Hit>
+    <Miss>10</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.FitnessScaledScoring, NRaasVector</FullClassName>
+    <Scale>10</Scale>
+    <Score>1</Score>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Lucky</Trait>
+    <Hit>2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Unlucky</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rocker</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Pyromaniac</Trait>
+    <Hit>-100</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.WeightScaledScoring, NRaasVector</FullClassName>
+    <Scale>10</Scale>
+    <UnderScore>-1</UnderScore>
+    <OverScore>1</OverScore>
+  </NRaasVectorLethalResistance>
+  <NRaasVectorLethalResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>-5</Minimum>
+    <Maximum>10</Maximum>
+  </NRaasVectorLethalResistance>
+
+</Scoring>

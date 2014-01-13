@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scoring>
+  <Methods>
+    <Name></Name>
+    <FullClassName></FullClassName>
+    <Divisor>1</Divisor>
+    <LowerBound></LowerBound>
+    <UpperBound></UpperBound>
+  </Methods>
+  <Methods>
+    <Name>Trainer</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>AdditionalPhoto</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>WantsMartialTraining</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>PetHunting</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>ProfessionalWriter</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+
+  <ProfessionalWriter>
+    <FullClassName></FullClassName>
+  </ProfessionalWriter>
+  <ProfessionalWriter>
+    <FullClassName>NRaas.CommonSpace.Scoring.LifetimeWantScoring, NRaasStoryProgression</FullClassName>
+    <LTW>IllustriousAuthor</LTW>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </ProfessionalWriter>
+  <ProfessionalWriter>
+    <FullClassName>NRaas.CommonSpace.Scoring.LifetimeWantScoring, NRaasStoryProgression</FullClassName>
+    <LTW>ProfessionalAuthor</LTW>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </ProfessionalWriter>
+  <ProfessionalWriter>
+    <FullClassName>NRaas.CommonSpace.Scoring.LifetimeWantScoring, NRaasStoryProgression</FullClassName>
+    <LTW>RenaissanceSim</LTW>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </ProfessionalWriter>
+  <ProfessionalWriter>
+    <FullClassName>NRaas.CommonSpace.Scoring.SkillCareerScoring, NRaasStoryProgression</FullClassName>
+    <Skill>Writing</Skill>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </ProfessionalWriter>
+  <ProfessionalWriter>
+    <FullClassName>NRaas.CommonSpace.Scoring.SkillMetricScoring, NRaasStoryProgression</FullClassName>
+    <Skill>Writing</Skill>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </ProfessionalWriter>
+  
+  <PetHunting>
+    <FullClassName></FullClassName>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>IndependentPet</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>AdventurousPet</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>AgilePet</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>BravePet</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CluelessPet</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>NervousPet</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>LazyPet</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </PetHunting>
+  <PetHunting>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>-15</Minimum>
+    <Maximum>15</Maximum>
+  </PetHunting>
+
+  <Trainer>
+    <FullClassName></FullClassName>
+  </Trainer>
+  <Trainer>
+    <FullClassName>NRaas.CommonSpace.Scoring.SkillCareerScoring, NRaasStoryProgression</FullClassName>
+    <Skill>Athletic</Skill>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </Trainer>
+  <Trainer>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </Trainer>
+  <Trainer>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </Trainer>
+  <Trainer>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </Trainer>
+  <Trainer>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>BroodingTrait</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </Trainer>
+  <Trainer>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>-20</Minimum>
+    <Maximum>0</Maximum>
+  </Trainer>
+
+  <AdditionalPhoto>
+    <FullClassName></FullClassName>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>PhotographersEye</Trait>
+    <Hit>2</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>GathererTrait</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Artistic</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>ExtraCreative</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MultiTasker</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Frugal</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>BroodingTrait</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+  <AdditionalPhoto>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Perfectionist</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </AdditionalPhoto>
+
+  <WantsMartialTraining>
+    <FullClassName></FullClassName>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.LifetimeWantScoring, NRaasStoryProgression</FullClassName>
+    <LTW>MartialArtsMaster</LTW>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.LifetimeWantScoring, NRaasStoryProgression</FullClassName>
+    <LTW>PhysicalPerfection</LTW>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.LifetimeWantScoring, NRaasStoryProgression</FullClassName>
+    <LTW>RenaissanceSim</LTW>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.SkillCareerScoring, NRaasStoryProgression</FullClassName>
+    <Skill>MartialArts</Skill>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.SkillMetricScoring, NRaasStoryProgression</FullClassName>
+    <Skill>MartialArts</Skill>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </WantsMartialTraining>
+  <WantsMartialTraining>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>-20</Minimum>
+    <Maximum>0</Maximum>
+  </WantsMartialTraining>
+
+</Scoring>

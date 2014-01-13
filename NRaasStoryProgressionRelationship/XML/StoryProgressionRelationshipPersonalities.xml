@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Personalities>
+  <Personality>
+    <Name></Name>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.SimPersonality, NRaasStoryProgression</FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+    <IncreasedChancePerCycle>15</IncreasedChancePerCycle>
+    <Speed>250</Speed>
+  </Personality>
+  <Personality>
+    <Name>ExpandedRelationship</Name>
+    <Leaderless>True</Leaderless>
+    <Speed>1000</Speed>
+  </Personality>
+
+  <ExpandedRelationship>
+    <FullClassName></FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+  </ExpandedRelationship>
+  <ExpandedRelationship>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>PartyAnimal</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.ShindigScenario, NRaasStoryProgression</Scenario>
+    <Attire>Everyday</Attire>
+    <ChanceOfHome>100</ChanceOfHome>
+
+    <!-- Party Animals -->
+    <ActorScoring>RelationshipPartyAnimal</ActorScoring>
+    <ActorScoringMinimum>0</ActorScoringMinimum>
+
+    <!-- Friends and other partiers -->
+    <TargetStandardFilter>ExistingFriend</TargetStandardFilter>
+    <TargetStandardIgnoreBusy>False</TargetStandardIgnoreBusy>
+    <TargetStandardGate>0</TargetStandardGate>
+    <TargetScoring>RelationshipPartyAnimal</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+
+  </ExpandedRelationship>
+  <ExpandedRelationship>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>HunterHate</Name>
+    <Weight>2</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.DerisionScenario, NRaasStoryProgression</Scenario>
+    <Delta>-50</Delta>
+
+    <!-- Ghost -->
+    <ActorAgeGender>Teen,YoungAdult,Adult,Elder</ActorAgeGender>
+    <ActorScoring>RelationshipGhosts</ActorScoring>
+    <ActorScoringMinimum>0</ActorScoringMinimum>
+
+    <!-- Ghost Hunters -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetScoring>RelationshipGhostHunter</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+  </ExpandedRelationship>
+</Personalities>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scoring>
+  <Methods>
+    <Name></Name>
+    <FullClassName></FullClassName>
+    <Divisor>1</Divisor>
+    <LowerBound></LowerBound>
+    <UpperBound></UpperBound>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorMinorInfection</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorMinorResistance</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorMinorSymptom</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+
+  <NRaasVectorMinorSymptom>
+    <FullClassName></FullClassName>
+  </NRaasVectorMinorSymptom>
+  <NRaasVectorMinorSymptom>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Mummy</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorSymptom>
+  <NRaasVectorMinorSymptom>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Genie</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorSymptom>
+  <NRaasVectorMinorSymptom>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>PlayableGhost</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorSymptom>
+
+  <NRaasVectorMinorInfection>
+    <FullClassName></FullClassName>
+  </NRaasVectorMinorInfection>
+  <NRaasVectorMinorInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>AgeMask,GenderMask</AgeGender>
+    <Species>Human</Species>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </NRaasVectorMinorInfection>
+  <NRaasVectorMinorInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorInfection>
+  <NRaasVectorMinorInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Genie</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorInfection>
+  <NRaasVectorMinorInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>SimBot</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorInfection>
+
+  <NRaasVectorMinorResistance>
+    <FullClassName></FullClassName>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Baby,Toddler,Child,Elder</AgeGender>
+    <Hit>-10</Hit>
+    <Miss>5</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.FitnessScaledScoring, NRaasVector</FullClassName>
+    <Scale>10</Scale>
+    <Score>1</Score>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Neat</Trait>
+    <Hit>2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Lucky</Trait>
+    <Hit>2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Unlucky</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.WeightScaledScoring, NRaasVector</FullClassName>
+    <Scale>10</Scale>
+    <UnderScore>-1</UnderScore>
+    <OverScore>-1</OverScore>
+  </NRaasVectorMinorResistance>
+  <NRaasVectorMinorResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>-5</Minimum>
+    <Maximum>10</Maximum>
+  </NRaasVectorMinorResistance>
+</Scoring>

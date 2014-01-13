@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StoryProgression>
+  <MethodFile>
+    <File></File>
+  </MethodFile>
+  <MethodFile>
+    <File>NRaas.StoryProgression.Others.Scoring</File>
+  </MethodFile>
+
+  <PersonalityFile>
+    <File></File>
+  </PersonalityFile>
+  <PersonalityFile>
+    <File>NRaas.StoryProgression.Others.Personalities</File>
+  </PersonalityFile>
+</StoryProgression>

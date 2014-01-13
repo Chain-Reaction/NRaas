@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<base>
+	<Interaction name="NRaas.CareerSpace.Interactions.AttendGame+Definition" />
+	<Object name="Sims3.Gameplay.Objects.RabbitHoles.Stadium" />
+	<CodeVersion name="Base Game" />
+	<Current_Tuning>
+		<Disallow DisallowAutonomous="False" DisallowUserDirected="False" DisallowPlayerSim="False" />
+		<BaseAvailability>
+			<Age Children="True" Adults="True" Toddlers="False" Teens="True" Elders="True" />
+			<MotiveThreshold MotiveThresholdType="None" MotiveThresholdValue="0" MotiveBelowCheck="False" />
+			<MoodThreshold MoodThresholdType="None" MoodThresholdValue="0" />
+			<SkillThreshold SkillThresholdType="None" SkillThresholdValue="0" />
+			<CareerThreshold CareerThresholdType="Undefined" CareerThresholdValue="0" IncludePastCareers="False" />
+			<Lot AllowNonGreetedSimsIfObjectOutside="False" AllowNonGreetedSimsIfObjectOutsideUserDirected="True" AllowGreetedSims="True" AllowOnCommunityLots="True" AllowOnAllLots="False" />
+			<Misc DisallowedIfPregnant="False" DisallowedFromInventory="False" />
+		</BaseAvailability>
+		<PosturePrecondition name="Standing" value="1">
+		</PosturePrecondition>
+		<PosturePrecondition name="CarryingChild" value="0">
+		</PosturePrecondition>
+		<Check type="All" value="0" />
+		<Tradeoff name="AttendGame">
+			<Localization autoGenerate="True" />
+			<Time value="1" addRoute="True" />
+			<Exit funExit="False" stressExit="False" interruptible="False" />
+			<RouteLeadIn allowed="True" />
+			<AskJoinInteraction joinable="False" />
+			<ScoringFunction alwaysChooseBest="False" name="" specificCommodity="None" />
+			<ActionTopic name="" ActionTopicUnavailableAfterActionFinishes="False" />
+			<Output>
+				<Change type="Fun" advertised="50" locked="False" actual="100" updateType="ContinuousFlow" timeDependsOn="False" updateEvenOnFailure="False" updateAboveAndBelowZero="Either" />
+			</Output>
+		</Tradeoff>
+	<Notes Notes="" />
+	</Current_Tuning>
+</base>

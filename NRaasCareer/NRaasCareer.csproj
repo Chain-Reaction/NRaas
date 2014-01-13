@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05892564-06C9-4668-9CE2-3556B848D9EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasCareer</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterHelper.cs">
+      <Link>CommonSpace\Booters\BooterHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\SkillBooter.cs">
+      <Link>CommonSpace\Booters\SkillBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\SocializingBooter.cs">
+      <Link>CommonSpace\Booters\SocializingBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Dialogs\EnrollmentDialogEx.cs">
+      <Link>CommonSpace\Dialogs\EnrollmentDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\AcademicCareerEx.cs">
+      <Link>CommonSpace\Helpers\AcademicCareerEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\AnnexEx.cs">
+      <Link>CommonSpace\Helpers\AnnexEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Annihilation.cs">
+      <Link>CommonSpace\Helpers\Annihilation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
+      <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CollegeGraduationEx.cs">
+      <Link>CommonSpace\Helpers\CollegeGraduationEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Corrections.cs">
+      <Link>CommonSpace\Helpers\Corrections.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CustomAcademicDegrees.cs">
+      <Link>CommonSpace\Helpers\CustomAcademicDegrees.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\DreamCatcher.cs">
+      <Link>CommonSpace\Helpers\DreamCatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\GoToSchoolInRabbitHoleHelper.cs">
+      <Link>CommonSpace\Helpers\GoToSchoolInRabbitHoleHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\InsectTerrariums.cs">
+      <Link>CommonSpace\Helpers\InsectTerrariums.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\MiniSims.cs">
+      <Link>CommonSpace\Helpers\MiniSims.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ObjectCreation.cs">
+      <Link>CommonSpace\Helpers\ObjectCreation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SavedOutfit.cs">
+      <Link>CommonSpace\Helpers\SavedOutfit.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
+      <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SwitchOutfits.cs">
+      <Link>CommonSpace\Helpers\SwitchOutfits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\TravelUtilEx.cs">
+      <Link>CommonSpace\Helpers\TravelUtilEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Tunings.cs">
+      <Link>CommonSpace\Helpers\Tunings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Urnstones.cs">
+      <Link>CommonSpace\Helpers\Urnstones.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\FloatSettingOption.cs">
+      <Link>CommonSpace\Options\FloatSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
+      <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Skills\CommonSkill.cs">
+      <Link>CommonSpace\Skills\CommonSkill.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\CareerStore.cs">
+      <Link>CommonSpace\Stores\CareerStore.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\OpportunityStore.cs">
+      <Link>CommonSpace\Stores\OpportunityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\FixInvisibleTask.cs">
+      <Link>CommonSpace\Tasks\FixInvisibleTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\RecoverMissingSimTask.cs">
+      <Link>CommonSpace\Tasks\RecoverMissingSimTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\RepeatingTask.cs">
+      <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\ResetSimTask.cs">
+      <Link>CommonSpace\Tasks\ResetSimTask.cs</Link>
+    </Compile>
+    <Compile Include="CareerSpace\Booters\CareersBooter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CareerSpace\Booters\BookBooter.cs" />
+    <Compile Include="CareerSpace\Booters\AcademicDegreeBooter.cs" />
+    <Compile Include="CareerSpace\Booters\JobsBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerGoodLotMoodletBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerBadLotMoodletBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerGoodParentMoodletBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerGoodChildMoodletBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerBadMoodletBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerDiscountObjectsBooter.cs" />
+    <Compile Include="CareerSpace\Booters\IHomemakerBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerTaughtSkillBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerParentSkillBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerChildSkillBooter.cs" />
+    <Compile Include="CareerSpace\Booters\HomemakerBooter.cs" />
+    <Compile Include="CareerSpace\Booters\ToneBooter.cs" />
+    <Compile Include="CareerSpace\Careers\SchoolElementaryEx.cs" />
+    <Compile Include="CareerSpace\Booters\AfterschoolActivityBooter.cs" />
+    <Compile Include="CareerSpace\Helpers\AfterschoolActivityEx.cs" />
+    <Compile Include="CareerSpace\Helpers\AfterschoolActivityData.cs" />
+    <Compile Include="CareerSpace\Helpers\AcademicHelper.cs" />
+    <Compile Include="CareerSpace\Helpers\OrientationHelper.cs" />
+    <Compile Include="CareerSpace\Helpers\LearnToDriveHelper.cs" />
+    <Compile Include="CareerSpace\Interactions\Bribe.cs" />
+    <Compile Include="CareerSpace\Interactions\BreakIntoHouse.cs" />
+    <Compile Include="CareerSpace\Interactions\AttendBudgetClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\AttendResumeWritingAndInterviewTechniquesClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\GoToOrientationEx.cs" />
+    <Compile Include="CareerSpace\Interactions\UseLaptopHereEx.cs" />
+    <Compile Include="CareerSpace\Interactions\UseBusinessPlannerEx.cs" />
+    <Compile Include="CareerSpace\Interactions\EnrollInUniversityEx.cs" />
+    <Compile Include="CareerSpace\Interactions\HomemakerReport.cs" />
+    <Compile Include="CareerSpace\Interactions\GreetKill.cs" />
+    <Compile Include="CareerSpace\Interactions\Shakedown.cs" />
+    <Compile Include="CareerSpace\Interactions\RabbitholeTakeChildOutOfAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\RabbitholeQuitAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\RabbitholeSignChildUpForAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\ComputerQuitAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\RabbitholeSignUpForAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\ComputerTakeChildOutOfAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\ComputerSignChildUpForAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\ComputerSignUpForAfterschoolClassEx.cs" />
+    <Compile Include="CareerSpace\Interactions\WorkInRabbitHoleEx.cs" />
+    <Compile Include="CareerSpace\Interactions\GoToSchoolInRabbitHoleEx.cs" />
+    <Compile Include="CareerSpace\Interactions\SimInteraction.cs" />
+    <Compile Include="CareerSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="CareerSpace\Interactions\WitnessedMurderCall.cs" />
+    <Compile Include="CareerSpace\Interactions\Swipe.cs" />
+    <Compile Include="CareerSpace\Interactions\Teleport.cs" />
+    <Compile Include="CareerSpace\Interactions\Meteor.cs" />
+    <Compile Include="CareerSpace\Interactions\Thirst.cs" />
+    <Compile Include="CareerSpace\Interactions\YouShouldEx.cs" />
+    <Compile Include="CareerSpace\Interfaces\ILotDesignator.cs" />
+    <Compile Include="CareerSpace\Interfaces\ICoworkerPool.cs" />
+    <Compile Include="CareerSpace\Interactions\CallToQuitWorkEx.cs" />
+    <Compile Include="CareerSpace\Interactions\Enroll.cs" />
+    <Compile Include="CareerSpace\Interactions\Test.cs" />
+    <Compile Include="CareerSpace\Interactions\GiveLectureInAtRabbitHole.cs" />
+    <Compile Include="CareerSpace\Metrics\MetricMusicSkill.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AggressionPerUnconfirmedSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AggressionPerWitnessedSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AggressionPerCopSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AggressionPerPoliticoSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AllowRepoSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\ChancePerAggressionSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\BribeInflationSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AggressionMultiplePerGoalSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AllowAggressionSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\RabbitHoleCorruptionSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\ReducedAggressionPerVigilanteSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\ReducedAggressionPerDaySetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\ReducedAggressionPerArrestSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\IAggressionOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\ListingOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Aggression\AggressionPerConfirmedSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\AutonomousSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\AllowAutonomousBloodSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\AllowAutonomousCloseSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\AllowActiveSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\ShowNoticeSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\IAutonomyOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\ListingOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\AllowTeenSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\CelebrityGainPerKillSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\AllowArrestSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\Autonomy\LikingGateSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\AllowLastGuardianSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\UserDirectedProgressionAllowSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\HiringCostSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\IGeneralOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\ListingOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\General\DailyRelationshipChangeSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\ListingOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\CopMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\BodyguardMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\FanaticMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\FanaticMinLevelSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\InfamousMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\NinjaMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\VigilanteMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\OccultMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\GhostMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\ReaperMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\HitmanMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\PsychopathMinKillsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\IMinKillsOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\MinKills\ListingOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\IAssassinationOption.cs" />
+    <Compile Include="CareerSpace\Options\Assassination\ResetSettings.cs" />
+    <Compile Include="CareerSpace\Options\DebuggingSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\BuskerLevelToGetPaidForConcertsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Sims\HomemakerDumpSetting.cs" />
+    <Compile Include="CareerSpace\Options\Homemaker\HomemakerDiscountRateSetting.cs" />
+    <Compile Include="CareerSpace\Options\Homemaker\HomemakerDiscountLevelSetting.cs" />
+    <Compile Include="CareerSpace\Options\Homemaker\HomemakerLifetimeRewardsSetting.cs" />
+    <Compile Include="CareerSpace\Options\Homemaker\HomemakeStirCrazySetting.cs" />
+    <Compile Include="CareerSpace\Options\Homemaker\HomemakerPayPerMarkSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\HomeSchoolingPerformancePerHomeworkSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\RepairAllowToBreakSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\ShakedownRelationChangeSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\MaxShakedownSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\IGeneralOption.cs" />
+    <Compile Include="CareerSpace\Options\General\ListingOption.cs" />
+    <Compile Include="CareerSpace\Options\Homemaker\IHomemakerOption.cs" />
+    <Compile Include="CareerSpace\Options\Homemaker\ListingOption.cs" />
+    <Compile Include="CareerSpace\Options\IOptionItem.cs" />
+    <Compile Include="CareerSpace\Options\Sims\ChangeStipend.cs" />
+    <Compile Include="CareerSpace\Options\Sims\HomeSchoolingMaxPerformance.cs" />
+    <Compile Include="CareerSpace\Options\Sims\ISimOption.cs" />
+    <Compile Include="CareerSpace\Options\Sims\ChangeUnemployedTitle.cs" />
+    <Compile Include="CareerSpace\PersistedSettings.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\HomemakerControl.cs" />
+    <Compile Include="CareerSpace\Situations\SimArrestSituationEx.cs" />
+    <Compile Include="CareerSpace\Careers\SchoolHighEx.cs" />
+    <Compile Include="CareerSpace\Tasks\CareerPanelTask.cs" />
+    <Compile Include="CareerSpace\Careers\Homemaker.cs" />
+    <Compile Include="Gameplay\Careers\PartTimeJob.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricShakedown.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricLecturesGiven.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\GiveLecturesTone.cs" />
+    <Compile Include="CareerSpace\Interactions\AskAboutFunds.cs" />
+    <Compile Include="CareerSpace\Interactions\CallInviteOverSparTournamentChallengerEx.cs" />
+    <Compile Include="CareerSpace\Interactions\PlayForTips.cs" />
+    <Compile Include="CareerSpace\Interactions\SparChallenge.cs" />
+    <Compile Include="CareerSpace\Interactions\MartialArtsTrain.cs" />
+    <Compile Include="CareerSpace\Interactions\QueueUpTrainSim.cs" />
+    <Compile Include="CareerSpace\Interactions\PushTrain.cs" />
+    <Compile Include="CareerSpace\Interactions\RollNewSparOpponent.cs" />
+    <Compile Include="CareerSpace\Interactions\FindBroken.cs" />
+    <Compile Include="CareerSpace\Interactions\TrainSim.cs" />
+    <Compile Include="CareerSpace\Interactions\RegisterAsSelfEmployed.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\Busker.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\Collector.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\ChessPlayer.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\Trainer.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\MartialArtist.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\Hacker.cs" />
+    <Compile Include="CareerSpace\SelfEmployment\Repairman.cs" />
+    <Compile Include="CareerSpace\Booters\SkillBasedCareerBooter.cs" />
+    <Compile Include="Gameplay\OmniSpace\Events\EventChoice.cs" />
+    <Compile Include="Gameplay\OmniSpace\Events\EventReward.cs" />
+    <Compile Include="CareerSpace\Interactions\Erase.cs" />
+    <Compile Include="CareerSpace\Interactions\Revive.cs" />
+    <Compile Include="CareerSpace\Interactions\Disguise.cs" />
+    <Compile Include="CareerSpace\Interactions\Curse.cs" />
+    <Compile Include="CareerSpace\Interactions\Drown.cs" />
+    <Compile Include="CareerSpace\Interactions\Starve.cs" />
+    <Compile Include="CareerSpace\Interactions\Electrocute.cs" />
+    <Compile Include="CareerSpace\Interactions\Kill.cs" />
+    <Compile Include="CareerSpace\Interactions\Burn.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricRecruitment.cs" />
+    <Compile Include="Gameplay\Rewards\BurnDeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\ArrestReward.cs" />
+    <Compile Include="Gameplay\Rewards\ThirstDeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\MeteorDeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\StarveDeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\DrownDeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\CurseDeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\ElectrocutionDeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\DeathReward.cs" />
+    <Compile Include="Gameplay\Rewards\RewardInfoEx.cs" />
+    <Compile Include="Gameplay\Rewards\PregnancyReward.cs" />
+    <Compile Include="Gameplay\Careers\OmniCareer.cs" />
+    <Compile Include="Gameplay\OmniSpace\Events\CareerTransfer.cs" />
+    <Compile Include="CareerSpace\Interactions\PlayGame.cs" />
+    <Compile Include="CareerSpace\Interactions\PerformConcert.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricSkillX.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricWinLossRecord.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricConcertsPerformed.cs" />
+    <Compile Include="CareerSpace\OmniSpace\OmniJournalData.cs" />
+    <Compile Include="Gameplay\OmniSpace\Events\PlayPrankOnCoworker.cs" />
+    <Compile Include="Gameplay\OmniSpace\Events\ImpromptuMeeting.cs" />
+    <Compile Include="CareerSpace\OmniSpace\OmniJournal.cs" />
+    <Compile Include="CareerSpace\Interactions\AttendShowEx.cs" />
+    <Compile Include="CareerSpace\Interactions\AttendGame.cs" />
+    <Compile Include="CareerSpace\Interactions\RaidCriminalsDefinition.cs" />
+    <Compile Include="CareerSpace\Interactions\RunForensicAnalysis.cs" />
+    <Compile Include="CareerSpace\Interactions\WriteRabbitHoleReviewEx.cs" />
+    <Compile Include="CareerSpace\Interactions\WriteReport.cs" />
+    <Compile Include="CareerSpace\Interactions\RummageEx.cs" />
+    <Compile Include="CareerSpace\Interactions\EatHereEx.cs" />
+    <Compile Include="CareerSpace\Interactions\HoldMeetingInAtRabbitHole.cs" />
+    <Compile Include="CareerSpace\Interactions\PrankCoworker.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricJournals.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricReportsWritten.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricRelPartner.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricStoriesAndReviews.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricMeetingsHeld.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\ChatWithPartnerTone.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\PrepareForGame.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\DoIndependentExperiment.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\PerformTone.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\DoASideJob.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\WorkOnLateHomeworkTone.cs" />
+    <Compile Include="Gameplay\OmniSpace\Tones\HoldMeetingsTone.cs" />
+    <Compile Include="Gameplay\Opportunities\RecruitOpportunity.cs" />
+    <Compile Include="Gameplay\Opportunities\KillOpportunity.cs" />
+    <Compile Include="Gameplay\Opportunities\OpportunityEx.cs" />
+    <Compile Include="CareerSpace\Skills\Assassination.cs" />
+    <Compile Include="CareerSpace\Interactions\Recruit.cs" />
+    <Compile Include="CareerSpace\Booters\SchoolBooter.cs" />
+    <Compile Include="Gameplay\Careers\Unemployed.cs" />
+    <Compile Include="CareerSpace\Interactions\GetJobInRabbitHoleEx.cs" />
+    <Compile Include="Gameplay\Careers\HomeSchooling.cs" />
+    <Compile Include="Gameplay\Tones\CareerToneEx.cs" />
+    <Compile Include="CareerSpace\Booters\OpportunityBooter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Careers.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="String Tables\StringTableAcademics_Italian.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_Italian.txt" />
+    <Content Include="String Tables\StringTableHomemaker_Italian.txt" />
+    <Content Include="String Tables\StringTablePartTime_Italian.txt" />
+    <Content Include="String Tables\StringTableTones_PortugueseBrazilian.txt" />
+    <Content Include="String Tables\StringTableAcademics_German.txt" />
+    <Content Include="String Tables\StringTableAcademics_French.txt" />
+    <Content Include="String Tables\StringTableAcademics_PortugueseBrazilian.txt" />
+    <Content Include="String Tables\StringTableAcademics_Russian.txt" />
+    <Content Include="String Tables\StringTableAcademics_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableAcademics_English.txt" />
+    <Content Include="String Tables\StringTableAssassination_Polish.txt" />
+    <Content Include="String Tables\StringTableGeneral_Polish.txt" />
+    <Content Include="String Tables\StringTableAssassination_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableHomemaker_PortugueseBrazilian.txt" />
+    <Content Include="String Tables\StringTableHomemaker_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableHomemaker_French.txt" />
+    <Content Include="String Tables\StringTableHomemaker_Taiwanese.txt" />
+    <Content Include="String Tables\StringTableHomemaker_German.txt" />
+    <Content Include="String Tables\StringTableHomemaker_Russian.txt" />
+    <Content Include="String Tables\StringTableMobster_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableHomemaker_English.txt" />
+    <Content Include="String Tables\StringTableSchool_PortugueseBrazilian.txt" />
+    <Content Include="String Tables\StringTableGeneral_PortugueseBrazilian.txt" />
+    <Content Include="String Tables\StringTableSchool_Finnish.txt" />
+    <Content Include="String Tables\StringTableGeneral_Finnish.txt" />
+    <Content Include="String Tables\StringTableAssassination_Russian.txt" />
+    <Content Include="String Tables\StringTableMobster_Russian.txt" />
+    <Content Include="String Tables\StringTableGeneral_Korean.txt" />
+    <Content Include="String Tables\StringTableGeneral_Danish.txt" />
+    <Content Include="String Tables\StringTableAssassination_Japanese.txt" />
+    <Content Include="String Tables\StringTableGeneral_Italian.txt" />
+    <Content Include="String Tables\StringTableGeneral_Russian.txt" />
+    <Content Include="String Tables\StringTableGeneral_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableMobster_Japanese.txt" />
+    <Content Include="String Tables\StringTablePartTime_Russian.txt" />
+    <Content Include="String Tables\StringTablePartTime_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableSchool_Italian.txt" />
+    <Content Include="String Tables\StringTableSchool_Russian.txt" />
+    <Content Include="String Tables\StringTableSchool_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_French.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_Japanese.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_Russian.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableTones_Italian.txt" />
+    <Content Include="String Tables\StringTableTones_Russian.txt" />
+    <Content Include="String Tables\StringTableTones_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Chinese.txt" />
+    <Content Include="String Tables\StringTableAssassination_Chinese.txt" />
+    <Content Include="String Tables\StringTableMobster_Chinese.txt" />
+    <Content Include="String Tables\StringTableAssassination_Dutch.txt" />
+    <Content Include="String Tables\StringTableMobster_Dutch.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_Dutch.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Dutch.txt" />
+    <Content Include="String Tables\StringTableGeneral_Dutch.txt" />
+    <Content Include="String Tables\StringTablePartTime_Dutch.txt" />
+    <Content Include="String Tables\StringTableSchool_Dutch.txt" />
+    <Content Include="String Tables\StringTableTones_Dutch.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_English.txt" />
+    <Content Include="String Tables\StringTableUnemployed_English.txt" />
+    <Content Include="String Tables\StringTableAssassination_English.txt" />
+    <Content Include="String Tables\StringTableUnemployed_French.txt" />
+    <Content Include="String Tables\StringTableAssassination_French.txt" />
+    <Content Include="String Tables\StringTableMobster_French.txt" />
+    <Content Include="String Tables\StringTableSelfEmployed_German.txt" />
+    <Content Include="String Tables\StringTableUnemployed_German.txt" />
+    <Content Include="String Tables\StringTableAssassination_German.txt" />
+    <Content Include="String Tables\StringTableMobster_German.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Italian.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Japanese.txt" />
+    <Content Include="String Tables\StringTableGeneral_Japanese.txt" />
+    <Content Include="String Tables\StringTablePartTime_Polish.txt" />
+    <Content Include="String Tables\StringTableSchool_Polish.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Polish.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Portuguese.txt" />
+    <Content Include="String Tables\StringTableAssassination_Portuguese.txt" />
+    <Content Include="String Tables\StringTableGeneral_PortugueseStandard.txt" />
+    <Content Include="String Tables\StringTableMobster_PortugueseStandard.txt" />
+    <Content Include="String Tables\StringTablePartTime_Portuguese.txt" />
+    <Content Include="String Tables\StringTableSchool_PortugueseStandard.txt" />
+    <Content Include="String Tables\StringTableTones_PortugueseStandard.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Russian.txt" />
+    <Content Include="String Tables\StringTableUnemployed_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Swedish.txt" />
+    <Content Include="String Tables\StringTableGeneral_Swedish.txt" />
+    <Content Include="String Tables\StringTableUnemployed_Taiwanese.txt" />
+    <Content Include="String Tables\StringTableAssassination_Taiwanese.txt" />
+    <Content Include="String Tables\StringTableGeneral_Taiwanese.txt" />
+    <Content Include="String Tables\StringTableMobster_English.txt" />
+    <Content Include="String Tables\StringTablePartTime_Chinese.txt" />
+    <Content Include="String Tables\StringTablePartTime_Japanese.txt" />
+    <Content Include="String Tables\StringTablePartTime_Swedish.txt" />
+    <Content Include="String Tables\StringTableMobster_Taiwanese.txt" />
+    <Content Include="String Tables\StringTablePartTime_Taiwanese.txt" />
+    <Content Include="String Tables\StringTableSchool_Chinese.txt" />
+    <Content Include="String Tables\StringTableSchool_Japanese.txt" />
+    <Content Include="String Tables\StringTableSchool_Swedish.txt" />
+    <Content Include="String Tables\StringTableSchool_Taiwanese.txt" />
+    <Content Include="String Tables\StringTableTones_Chinese.txt" />
+    <Content Include="String Tables\StringTableTones_German.txt" />
+    <Content Include="String Tables\StringTableTones_French.txt" />
+    <Content Include="String Tables\StringTablePartTime_French.txt" />
+    <Content Include="String Tables\StringTablePartTime_German.txt" />
+    <Content Include="String Tables\StringTableSchool_German.txt" />
+    <Content Include="String Tables\StringTableSchool_French.txt" />
+    <Content Include="String Tables\StringTableGeneral_German.txt" />
+    <Content Include="String Tables\StringTableGeneral_French.txt" />
+    <Content Include="String Tables\StringTableTones_English.txt" />
+    <Content Include="String Tables\StringTableSchool_English.txt" />
+    <Content Include="String Tables\StringTablePartTime_English.txt" />
+    <Content Include="String Tables\StringTableTones_Japanese.txt" />
+    <Content Include="String Tables\StringTableTones_Swedish.txt" />
+    <Content Include="String Tables\StringTableTones_Taiwanese.txt" />
+    <Content Include="XML\CareerDataAssassination.xml" />
+    <Content Include="XML\AssassinationSocialData.xml" />
+    <Content Include="XML\CareerDataHomemaker.xml" />
+    <Content Include="XML\Careers.xml" />
+    <Content Include="XML\CareerSpaceInteractionsHomemakerReportDefinition.xml" />
+    <Content Include="XML\CareerSpaceInteractionsRabbitholeHomework+Definition.xml" />
+    <Content Include="XML\CareerSpaceInteractionsSwipe.xml" />
+    <Content Include="XML\CareerSpacePersistedSettings.xml" />
+    <Content Include="XML\CareerDataAcademics.xml" />
+    <Content Include="XML\AcademicsAcademicDegree.xml" />
+    <Content Include="XML\AcademicsJobs.xml" />
+    <Content Include="XML\GameplayCareersHomeSchoolingDownloadHomeworkDefinition.xml" />
+    <Content Include="XML\GameplayCareersHomeSchoolingRabbitholeHomeworkDefinition.xml" />
+    <Content Include="XML\Homemaker.xml" />
+    <Content Include="XML\SchoolAfterschoolActivities.xml" />
+    <Content Include="XML\CareerSpaceSkillsAssassination.xml" />
+    <Content Include="XML\AssassinationSocializingActionAvailability.xml" />
+    <Content Include="XML\CareersSocializingActionAvailability.xml" />
+    <Content Include="XML\SelfEmployedSocializingActionAvailability.xml" />
+    <Content Include="XML\SchoolTones.xml" />
+    <Content Include="XML\PartTimeTones.xml" />
+    <Content Include="XML\SelfEmployedSocialData.xml" />
+    <Content Include="XML\CareerDataSelfEmployed.xml" />
+    <Content Include="XML\SelfEmployed.xml" />
+    <Content Include="XML\PartTimeUnemployed.xml" />
+    <Content Include="XML\PartTimeUnemployedFile.xml" />
+    <Content Include="XML\CareersSocialData.xml" />
+    <Content Include="XML\PartTimeCareers.xml" />
+    <Content Include="XML\PartTimeCareerFile.xml" />
+    <Content Include="XML\SchoolCareerEvents.xml" />
+    <Content Include="XML\SchoolCareers.xml" />
+    <Content Include="XML\CareerDataSchool.xml" />
+    <Content Include="XML\CareerDataTones.xml" />
+    <Content Include="XML\MobsterBooks.xml" />
+    <Content Include="XML\CareerDataMobster.xml" />
+    <Content Include="XML\MobsterCareers.xml" />
+    <Content Include="XML\MobsterCareerEvents.xml" />
+    <Content Include="XML\MobsterOpportunities.xml" />
+    <Content Include="XML\MobsterTones.xml" />
+    <Content Include="XML\Opportunities.xml" />
+    <Content Include="String Tables\StringTableGeneral_English.txt" />
+    <Content Include="XML\AssassinationSkills.xml" />
+    <Content Include="XML\Tones.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

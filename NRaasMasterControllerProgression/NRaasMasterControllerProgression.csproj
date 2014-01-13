@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6C0184A-4227-4C29-A364-1DC910EFB88F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasMasterControllerProgression</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MasterControllerModule.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\PersonalitiesExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\DebtExport.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\Personalities.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\Debt.cs" />
+    <Compile Include="MasterControllerSpace\Households\HouseholdOptions.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ProgressionCaste.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ProgressionPersonalityMember.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ProgressionPersonalityLeader.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ProgressionDebt.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ProgressionNetWorth.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\AddMember.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\ResetToDefault.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\SimOptions.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\RemoveMember.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\RemoveLeader.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\SetLeader.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\IProgressionOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\PersonalityListing.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Progression\PersonalityBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\PersonalityStatus.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\ProgressionStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NRaasMasterController\NRaasMasterController.csproj">
+      <Project>{05F375F2-3C0D-4DCC-972A-79BDABA88C47}</Project>
+      <Name>NRaasMasterController</Name>
+      <Aliases>global</Aliases>
+    </ProjectReference>
+    <ProjectReference Include="..\NRaasStoryProgression\NRaasStoryProgression.csproj">
+      <Project>{4AAAE3A6-D66F-47F9-A55C-68CF03A8E54F}</Project>
+      <Name>NRaasStoryProgression</Name>
+      <Aliases>SP</Aliases>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="String Tables\StringTableCzech.txt" />
+    <Content Include="String Tables\StringTablePortugueseStandard.txt" />
+    <Content Include="String Tables\StringTableTaiwanese.txt" />
+    <Content Include="String Tables\StringTableGerman.txt" />
+    <Content Include="String Tables\StringTableFrench.txt" />
+    <Content Include="String Tables\StringTablePolish.txt" />
+    <Content Include="String Tables\StringTableDutch.txt" />
+    <Content Include="String Tables\StringTableFinnish.txt" />
+    <Content Include="String Tables\StringTableItalian.txt" />
+    <Content Include="String Tables\StringTableRussian.txt" />
+    <Content Include="String Tables\StringTableSpanishStandard.txt" />
+    <Content Include="String Tables\StringTableEnglish.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

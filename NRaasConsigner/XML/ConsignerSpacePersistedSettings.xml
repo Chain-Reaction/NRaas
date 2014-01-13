@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kAllowSellAll value="True">
+      <!--Whether to simply make everything sellable-->
+    </kAllowSellAll>
+    <kSellPrice value="100, 200, 0">
+      <!--Base price for a cat or dog { Child, Adult, Elder }-->
+    </kSellPrice>
+    <kGoodTraitBonus value="100">
+      <!--Bonus price for good traits-->
+    </kGoodTraitBonus>
+    <kBadTraitPenalty value="100">
+      <!--Penalty price for negative traits-->
+    </kBadTraitPenalty>
+    <kSkillLevelBonus value="25">
+      <!--Bonus price per skill level-->
+    </kSkillLevelBonus>
+    <kPerPreyBonus value="25">
+      <!--Bonus price per prey caught-->
+    </kPerPreyBonus>
+    <kOccultBonus value="250">
+      <!--Bonus price for being a ghost-->
+    </kOccultBonus>
+    <kPedigreeBonus value="250">
+      <!--Bonus for each level of unbroken ancestry-->
+    </kPedigreeBonus>
+    <kInbredPenalty value="100">
+      <!--Penalty for each ancestor that appears multiple times in the family tree-->
+    </kInbredPenalty>
+  </Current_Tuning>
+</base>

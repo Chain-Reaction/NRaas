@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7F4BDC7-95AB-46DF-8D7F-106F2AFBE540}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasSelector</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
+      <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Corrections.cs">
+      <Link>CommonSpace\Helpers\Corrections.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\DreamCatcher.cs">
+      <Link>CommonSpace\Helpers\DreamCatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
+      <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Urnstones.cs">
+      <Link>CommonSpace\Helpers\Urnstones.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\PrimaryInteraction.cs">
+      <Link>CommonSpace\Interactions\PrimaryInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOption.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
+      <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\OpportunityStore.cs">
+      <Link>CommonSpace\Stores\OpportunityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\tasks\RepeatingTask.cs">
+      <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
+    </Compile>
+    <Compile Include="CommonSpace\Helpers\Households.cs" />
+    <Compile Include="Selector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectorSpace\Helpers\GameObjectEx.cs" />
+    <Compile Include="SelectorSpace\Interactions\RabbitholeInteraction.cs" />
+    <Compile Include="SelectorSpace\Options\DreamCatcherSetting.cs" />
+    <Compile Include="SelectorSpace\Options\DebuggingSetting.cs" />
+    <Compile Include="SelectorSpace\Options\MoveInteractionsToShiftSetting.cs" />
+    <Compile Include="SelectorSpace\Options\ShowNoInteractionsSetting.cs" />
+    <Compile Include="SelectorSpace\PersistedSettings.cs" />
+    <Compile Include="SelectorSpace\Tasks\PickTask.cs" />
+    <Compile Include="SelectorSpace\Tasks\SelectTask.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTablePolish.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTableDutch.txt" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="XML\SelectorSpacePersistedSettings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

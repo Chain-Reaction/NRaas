@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XML>
+  <XML>
+    <!-- This is the default set, do not alter or remove -->
+    <FullClassName></FullClassName>
+    <FieldName></FieldName>
+    <Value></Value>
+  </XML>
+  <XML>
+    <!-- Decrease the aptitude to go to sleep before you really need to do so -->
+    <FullClassName>Sims3.Gameplay.Autonomy.Autonomy, Sims3GameplaySystems</FullClassName>
+    <FieldName>kEnergyThresholdBelowWhichTheyWantToSleepWhenSleepyDuringTheirBedTime</FieldName>
+    <Value>-50</Value>
+  </XML>
+  <XML>
+    <!-- Increase the bills to 5% of worth -->
+    <FullClassName>Sims3.Gameplay.Core.Mailbox, Sims3GameplaySystems</FullClassName>
+    <FieldName>kPercentageOfWealthBilled</FieldName>
+    <Value>0.05</Value>
+  </XML>
+  <XML>
+    <!-- Genetic Inheritance -->
+    <FullClassName>Sims3.Gameplay.CAS.Genetics, Sims3GameplaySystems</FullClassName>
+    <FieldName>kInheritParentTrait</FieldName>
+    <Value>80</Value>
+  </XML>
+  <XML>
+    <!-- Genetic Inheritance -->
+    <FullClassName>Sims3.Gameplay.CAS.Genetics, Sims3GameplaySystems</FullClassName>
+    <FieldName>kMutateHairColorChance</FieldName>
+    <Value>1</Value>
+  </XML>
+  <XML>
+    <!-- Genetic Inheritance -->
+    <FullClassName>Sims3.Gameplay.CAS.Genetics, Sims3GameplaySystems</FullClassName>
+    <FieldName>kMutateEyeColorChance</FieldName>
+    <Value>1</Value>
+  </XML>
+  <XML>
+    <!-- No Free Seeds -->
+    <FullClassName>Sims3.Gameplay.Skills.Gardening, Sims3GameplaySystems</FullClassName>
+    <FieldName>kNumSeedsOnAcquireGardeningSkill</FieldName>
+    <Value>0</Value>
+  </XML>
+  <XML>
+    <!-- Nectar Appreciation with depth -->
+    <FullClassName>Sims3.Gameplay.Objects.Decorations.NectarRack, Sims3GameplayObjects</FullClassName>
+    <FieldName>kBasementAppreciationPerLevel</FieldName>
+    <Value>0.0025</Value>
+  </XML>
+  <XML>
+    <!-- Faster Routing -->
+    <FullClassName>Sims3.Gameplay.Actors.SimRoutingComponent, Sims3GameplaySystems</FullClassName>
+    <FieldName>kIgnoreAllObstaclesDuration</FieldName>
+    <Value>5</Value>
+  </XML>
+  <XML>
+    <!-- Faster Routing -->
+    <FullClassName>Sims3.Gameplay.Actors.SimRoutingComponent, Sims3GameplaySystems</FullClassName>
+    <FieldName>kDefaultStandAndWaitDuration</FieldName>
+    <Value>5</Value>
+  </XML>
+  <XML>
+    <!-- Faster Routing -->
+    <FullClassName>Sims3.Gameplay.Actors.SimRoutingComponent, Sims3GameplaySystems</FullClassName>
+    <FieldName>kMaximumPostPushStandAndWaitDuration</FieldName>
+    <Value>3</Value>
+  </XML>
+  <XML>
+    <!-- Faster Routing -->
+    <FullClassName>Sims3.Gameplay.Actors.SimRoutingComponent, Sims3GameplaySystems</FullClassName>
+    <FieldName>kTotalSimMinutesToWaitForSimsToBePushed</FieldName>
+    <Value>8</Value>
+  </XML>
+  <XML>
+    <!-- No memories -->
+    <FullClassName>Sims3.Gameplay.ActorSystems.LifeEventManager, Sims3GameplaySystems</FullClassName>
+    <FieldName>kMaximumNumberOfMemories</FieldName>
+    <Value>0</Value>
+  </XML>
+  <XML>
+    <!-- No Autographs -->
+    <FullClassName>Sims3.Gameplay.Careers.Celebrity, Sims3GameplaySystems</FullClassName>
+    <FieldName>kChanceAskForAutographVsSocialAfterPositiveReaction</FieldName>
+    <Value>0</Value>
+  </XML>
+  <XML>
+    <!-- Genetic Mutation -->
+    <FullClassName>Sims3.Gameplay.CAS.GeneticsPet, Sims3GameplaySystems</FullClassName>
+    <FieldName>kMarkingLayerAddNewChance</FieldName>
+    <Value>0</Value>
+  </XML>
+  <XML>
+    <!-- Genetic Mutation -->
+    <FullClassName>Sims3.Gameplay.CAS.GeneticsPet, Sims3GameplaySystems</FullClassName>
+    <FieldName>kMarkingLayerTypeMutationChance</FieldName>
+    <Value>0</Value>
+  </XML>
+  <XML>
+    <!-- Genetic Mutation -->
+    <FullClassName>Sims3.Gameplay.CAS.GeneticsPet, Sims3GameplaySystems</FullClassName>
+    <FieldName>kSameEggMutateEachMarkingLayerChance</FieldName>
+    <Value>0</Value>
+  </XML>
+  <XML>
+    <!-- Genetic Mutation -->
+    <FullClassName>Sims3.Gameplay.CAS.GeneticsPet, Sims3GameplaySystems</FullClassName>
+    <FieldName>kSameEggMutateEyeColorToCAPPresetChance</FieldName>
+    <Value>0</Value>
+  </XML>
+  <XML>
+    <!-- Reduce hunger level to initiate cooking -->
+    <FullClassName>Sims3.Gameplay.Services.Butler, Sims3GameplaySystems</FullClassName>
+    <FieldName>kMinHungerBeforeStartCooking</FieldName>
+    <Value>-40</Value>
+  </XML>
+  <XML>
+    <!-- Increase time between successful cooking -->
+    <FullClassName>Sims3.Gameplay.Services.Butler, Sims3GameplaySystems</FullClassName>
+    <FieldName>kTimeBetweenSuccessfulCookingSessions</FieldName>
+    <Value>180</Value>
+  </XML>
+  <XML>
+    <!-- Increase time prior to a sim waking up that the Butler will cook -->
+    <FullClassName>Sims3.Gameplay.Services.Butler, Sims3GameplaySystems</FullClassName>
+    <FieldName>kTimeCanStartCookBeforeSimWakes</FieldName>
+    <Value>2.5</Value>
+  </XML>
+  <XML>
+    <!-- Chance of Jelly Bean Death -->
+    <FullClassName>Sims3.Gameplay.Objects.Decorations.JellyBeanBush, Sims3GameplayObjects</FullClassName>
+    <FieldName>kChanceToBeKilled</FieldName>
+    <Value>0</Value>
+  </XML>
+
+  <ITUN>
+    <!-- This is the default set, do not alter or remove -->
+    <ObjectName></ObjectName>
+    <InteractionName></InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>False</UserDirected>
+    <AgeSpecies>None</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Objects.Seating.IHasSeatingGroup</ObjectName>
+    <InteractionName>Sims3.Gameplay.Objects.Seating.Nap+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Objects.Beds.Bed</ObjectName>
+    <InteractionName>Sims3.Gameplay.Objects.Beds.BedNap+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Actors.Sim</ObjectName>
+    <InteractionName>Sims3.Gameplay.Actors.Sim+AskForAutograph+DefinitionIndividual</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Actors.Sim</ObjectName>
+    <InteractionName>Sims3.Gameplay.CelebritySystem.AskForAutograph+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Actors.Sim</ObjectName>
+    <InteractionName>Sims3.Gameplay.ActorSystems.OccultMummy+MummyReaction+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Objects.Environment.FirePit</ObjectName>
+    <InteractionName>Sims3.Gameplay.Objects.Environment.FirePit+PutAway+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Objects.Seating.ChairLounge</ObjectName>
+    <InteractionName>Sims3.Gameplay.Objects.Seating.ChairLounge+Nap+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Objects.Rewards.CollectionHelper</ObjectName>
+    <InteractionName>Sims3.Gameplay.Objects.Rewards.CollectionHelper+SetMode+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Actors.Sim</ObjectName>
+    <InteractionName>Sims3.Gameplay.Actors.Sim+AskForAutograph+DefinitionForAutographSession</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Actors.Sim</ObjectName>
+    <InteractionName>Sims3.Gameplay.ActorSystems.OccultFrankenstein+FrankensteinReaction+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+    <UserDirected>True</UserDirected>
+    <AgeSpecies>HumanChild, HumanTeen, HumanYoungAdult, HumanAdult, HumanElder</AgeSpecies>
+  </ITUN>
+  <ITUN>
+    <ObjectName>Sims3.Gameplay.Objects.Decorations.WeddingArch</ObjectName>
+    <InteractionName>Sims3.Gameplay.Objects.Decorations.WeddingArch+GetMarried+Definition</InteractionName>
+    <Autonomous>False</Autonomous>
+  </ITUN>
+</XML>

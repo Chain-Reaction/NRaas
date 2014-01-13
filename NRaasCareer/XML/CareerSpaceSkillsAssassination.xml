@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kStarvationInteractionLevel value="1">
+      <!--Level at which the Poison interaction becomes available-->
+    </kStarvationInteractionLevel>
+    <kDrowningInteractionLevel value="2">
+      <!--Level at which the Liquify interaction becomes available-->
+    </kDrowningInteractionLevel>
+    <kElectrocuteInteractionLevel value="3">
+      <!--Level at which the Electrocute interaction becomes available-->
+    </kElectrocuteInteractionLevel>
+    <kBurnInteractionLevel value="4">
+      <!--Level at which the Burn interaction becomes available-->
+    </kBurnInteractionLevel>
+    <kCurseInteractionLevel value="5">
+      <!--Level at which the Curse interaction becomes available-->
+    </kCurseInteractionLevel>
+    <kThirstInteractionLevel value="6">
+      <!--Level at which the Thirst interaction becomes available-->
+    </kThirstInteractionLevel>
+    <kMeteorInteractionLevel value="7">
+      <!--Level at which the Meteor interaction becomes available-->
+    </kMeteorInteractionLevel>
+    <kEraseInteractionLevel value="8">
+      <!--Level at which the Erase interaction becomes available-->
+    </kEraseInteractionLevel>
+    <kPsychopathMinKills value="25">
+      <!--Total Random Kills to be considered a Psychopath-->
+    </kPsychopathMinKills>
+    <kHitmanMinKills value="25">
+      <!--Total Contract Kills to be considered a Hitman-->
+    </kHitmanMinKills>
+    <kReaperMinKills value="25">
+      <!--Total Confirmed Kills to be considered a Reaper-->
+    </kReaperMinKills>
+    <kGhostMinKills value="25">
+      <!--Total Unconfirmed Kills to be considered a Ghost-->
+    </kGhostMinKills>
+    <kOccultMinKills value="25">
+      <!--Total Occult Kills to be considered a Helsing-->
+    </kOccultMinKills>
+    <kCopMinKills value="25">
+      <!--Total Cop Kills to be considered a Cop Killa-->
+    </kCopMinKills>
+    <kVigilanteMinKills value="25">
+      <!--Total Criminal Kills to be considered a Vigilante-->
+    </kVigilanteMinKills>
+    <kNinjaMinKills value="25">
+      <!--Total Unwitnessed Kills to be considered a Ninja-->
+    </kNinjaMinKills>
+    <kInfamousMinKills value="25">
+      <!--Total Witnessed Kills to be considered Infamous-->
+    </kInfamousMinKills>
+    <kFanaticMinLevel value="4">
+      <!--Average Celebrity Kill Level required to be considered a Fanatic-->
+    </kFanaticMinLevel>
+    <kFanaticMinKills value="10">
+      <!--Minimum number of celebrities required to be considered for Fanatic-->
+    </kFanaticMinKills>
+    <kBodyguardMinKills value="20">
+      <!--Minimum number of paparazzi kills required to be considered for Bodyguard-->
+    </kBodyguardMinKills>
+    <kAngelOfMercyMinKills value="20">
+      <!--Total Elder kills to be consiered an Angel of Mercy-->
+    </kAngelOfMercyMinKills>
+    <kCelebrityGainPerKill value="100">
+      <!--Number of celebrity points to grant on each witnessed kill-->
+    </kCelebrityGainPerKill>
+    <kAggressionPerConfirmed value="1000">
+      <!--Increase in police aggression per confirmed kill-->
+    </kAggressionPerConfirmed>
+    <kAggressionPerUnconfirmed value="100">
+      <!--Increase in police aggression per unconfirmed kill-->
+    </kAggressionPerUnconfirmed>
+    <kAggressionPerWitnessed value="9000">
+      <!--Increase in police aggression per witnessed kill-->
+    </kAggressionPerWitnessed>
+    <kAggressionPerCop value="19000">
+      <!--Increase in police aggression per cop kill-->
+    </kAggressionPerCop>
+    <kAggressionPerPolitico value="29000">
+      <!--Increase in police aggression per political kill-->
+    </kAggressionPerPolitico>
+    <kAggressionMultiplePerGoal value="1.20">
+      <!--Multiple applied to aggression based on the number of goals completed-->
+    </kAggressionMultiplePerGoal>
+    <kChancePerAggression value="1000">
+      <!--Number of aggression points for each 1% chance of intimidation-->
+    </kChancePerAggression>
+    <kReducedAggressionPerArrest value="50000">
+      <!--Aggression depreciation for each day not suspected of murder-->
+    </kReducedAggressionPerArrest>
+    <kReducedAggressionPerDay value="1000">
+      <!--Aggression depreciation for each day not suspected of murder-->
+    </kReducedAggressionPerDay>
+    <kReducedAggressionPerVigilante value="5000">
+      <!--Reduction in police aggression for each criminal kill-->
+    </kReducedAggressionPerVigilante>
+    <kBribeInflation value="0.003">
+      <!--Rabbithole Bribe Processing Factor-->
+    </kBribeInflation>
+    <kDailyRelationshipChange value="5">
+      <!--Change in relationship per day once certain goals are acheived-->
+    </kDailyRelationshipChange>
+    <kAutonomous value="False">
+      <!--Whether the kill interactions are autonomous-->
+    </kAutonomous>
+    <kAllowTeen value="False">
+      <!--Whether to enable the ability to kill and be killed by teenagers-->
+    </kAllowTeen>
+    <kAllowArrest value="True">
+      <!--Whether to allow arrests performed by assassination-->
+    </kAllowArrest>
+    <kAllowRepo value="True">
+      <!--Whether to allow aggression repossessions-->
+    </kAllowRepo>
+    <kAllowAggression value="True">
+      <!--Whether to allow any form of aggression-->
+    </kAllowAggression>
+    <kAllowArrest value="True">
+      <!--Whether to allow arrests performed by assassination-->
+    </kAllowArrest>
+
+    <kLikingGate value="0">
+      <!--The maximum long-term relationship to allow an autonomous assassination-->
+    </kLikingGate>
+    <kAllowAutonomousBlood value="False">
+      <!--Whether to allow autonomous blood relation kills-->
+    </kAllowAutonomousBlood>
+    <kAllowAutonomousClose value="False">
+      <!--Whether to allow autonomous blood or step relation kills-->
+    </kAllowAutonomousClose>
+    <kAllowAutonomousActive value="False">
+      <!--Whether to allow autonomous kills of active sims-->
+    </kAllowAutonomousActive>
+    <kShowAutonomousNotice value="True">
+      <!--Whether to allow user-directed kills of the last guardian in a family-->
+    </kShowAutonomousNotice>
+    <kUserDirectedProgressionAllow value="False">
+      <!--Whether to allow user-directed kills normally denied by StoryProgression-->
+    </kUserDirectedProgressionAllow>
+  </Current_Tuning>
+</base>

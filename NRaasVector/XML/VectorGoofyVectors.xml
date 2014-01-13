@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vectors>
+  <Vectors>
+    <GUID></GUID>
+      <!-- This value MUST be unique amongst all diseases a user has installed -->
+    <InitialStrength></InitialStrength>
+      <!-- Relative to Strength Scoring -->
+    <InfectionScoring></InfectionScoring>
+      <!-- Scoring for determining whether a sim can be infected -->
+    <InfectionMinimum></InfectionMinimum>
+      <!-- Minimum scoring for success -->
+    <CanOutbreak></CanOutbreak>
+      <!-- Whether the disease can spontaneously emerge in the population -->
+    <InoculationRating></InoculationRating>
+      <!-- How many strains an inoculation protects against -->
+    <InoculationCost></InoculationCost>
+      <!-- How much to inoculate against this disease (inoculation is disabled if 0) -->
+    <ResistanceCost></ResistanceCost>
+      <!-- How much to buy resistance against this disease (buying resistance is disabled if 0) -->
+    <HighProtectionCost></HighProtectionCost>
+      <!-- How much to buy protection from the hospital (buying protection is disabled if 0) -->
+    <LowProtectionCost></LowProtectionCost>
+      <!-- How much to buy protection from the hideout (buying protection is disabled if 0) -->
+    <MinimumStrainDifference></MinimumStrainDifference>
+      <!-- Minimum difference between strains to reinfect a sim -->
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasAccidentitis</GUID>
+    <InitialStrength>10</InitialStrength>
+    <InfectionScoring>NRaasAccidentitisInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <InoculationRating>25</InoculationRating>
+    <InoculationCost>2500</InoculationCost>
+    <ResistanceCost>100</ResistanceCost>
+    <HighProtectionCost>50</HighProtectionCost>
+    <LowProtectionCost>25</LowProtectionCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasLaughRiot</GUID>
+    <InitialStrength>10</InitialStrength>
+    <InfectionScoring>NRaasLaughRiotInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <InoculationRating>25</InoculationRating>
+    <InoculationCost>1000</InoculationCost>
+    <ResistanceCost>100</ResistanceCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+
+  <NRaasLaughRiot>
+    <!-- Global parameters over all stages -->
+    <InfectionRate>0</InfectionRate>
+    <OutdoorInfectionRate>0.25</OutdoorInfectionRate>
+
+    <!-- Sims don't much care about this nano-virus, since it is sort of beneficial -->
+    <BadRelationshipDelta>0</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <NumResistances>8</NumResistances>
+    <Resistance1>NRaasVectorGoofySerenity</Resistance1>
+    <Resistance2>NRaasVectorGoofyMeditate</Resistance2>
+    <Resistance3>NRaasVectorGoofyCheerUp</Resistance3>
+    <Resistance4>NRaasVectorGoofyDecoration</Resistance4>
+    <Resistance5>NRaasVectorGoofyDetention</Resistance5>
+    <Resistance6>NRaasVectorGoofyStress</Resistance6>
+    <Resistance7>NRaasVectorGoofyGrumpy</Resistance7>
+    <Resistance8>NRaasVectorGoofyFire</Resistance8>
+  </NRaasLaughRiot>
+  <NRaasLaughRiot>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation is 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Mutate -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>7</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>GoodMoodMin,-2,2</Mutable4>
+    <Mutable5>GoodMoodMax,-2,2</Mutable5>
+    <Mutable6>DepressedMin,-2,2</Mutable6>
+    <Mutable7>DepressedMax,-2,2</Mutable7>
+
+    <!-- Become Happy -->
+    <NextStage>GoodMood</NextStage>
+  </NRaasLaughRiot>
+  <NRaasLaughRiot>
+    <Name>GoodMood</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- Be Happy for 48 to 72 hours -->
+    <MinDuration>48</MinDuration>
+    <MinMutation>GoodMoodMin</MinMutation>
+    <MaxDuration>72</MaxDuration>
+    <MaxMutation>GoodMoodMax</MaxMutation>
+
+    <!-- Incur symptoms -->
+    <NumSymptoms>3</NumSymptoms>
+    <Symptoms1>NRaasVectorGoofyExcitedMood,NRaasVectorGoofyExcited</Symptoms1>
+    <SymptomChance1>0.25</SymptomChance1>
+    <Symptoms2>NRaasVectorGoofyHappy,NRaasVectorGoofyGiggle</Symptoms2>
+    <SymptomChance2>0.25</SymptomChance2>
+    <Symptoms3>NRaasVectorGoofyAmused,NRaasVectorGoofyThrowConfetti</Symptoms3>
+    <SymptomChance3>0.25</SymptomChance3>
+
+    <!-- Test for the end of the good mood -->
+    <Scoring>NRaasLaughRiotDepression</Scoring>
+    <Minimum>0</Minimum>
+    <SuccessStage>Depressed</SuccessStage>
+    <FailureStage>PersistGoodMood</FailureStage>
+  </NRaasLaughRiot>
+  <NRaasLaughRiot>
+    <Name>PersistGoodMood</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- Recurse into GoodMood thrice and then begin Depressed -->
+    <Counter>GoodMoodCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>GoodMood</SuccessStage>
+    <FailureStage>Depressed</FailureStage>
+  </NRaasLaughRiot>
+  <NRaasLaughRiot>
+    <Name>Depressed</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- Be Depressed for 48 to 72 hours -->
+    <MinDuration>48</MinDuration>
+    <MinMutation>DepressedMin</MinMutation>
+    <MaxDuration>72</MaxDuration>
+    <MaxMutation>DepressedMax</MaxMutation>
+
+    <!-- Incur symptoms -->
+    <NumSymptoms>3</NumSymptoms>
+    <Symptoms1>NRaasVectorGoofySad,NRaasVectorGoofyWhyMe</Symptoms1>
+    <SymptomChance1>0.2</SymptomChance1>
+    <Symptoms2>NRaasVectorGoofySocial,NRaasVectorGoofyShiver</Symptoms2>
+    <SymptomChance2>0.5</SymptomChance2>
+    <Symptoms3>NRaasVectorGoofySpooked,NRaasVectorGoofyGloomy</Symptoms3>
+    <SymptomChance3>0.2</SymptomChance3>
+
+    <!-- you are depressed, no one likes that -->
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>0</GoodRelationshipDelta>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasLaughRiotResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Resist</SuccessStage>
+    <FailureStage>PersistDepressed</FailureStage>
+  </NRaasLaughRiot>
+  <NRaasLaughRiot>
+    <Name>PersistDepressed</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- you are depressed, no one likes that -->
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>0</GoodRelationshipDelta>
+
+    <!-- Recurse into Depressed thrice and then resist -->
+    <Counter>DepressedCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>Depressed</SuccessStage>
+    <FailureStage>Resist</FailureStage>
+  </NRaasLaughRiot>
+  <NRaasLaughRiot>
+    <Name>Resist</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.EndStage, NRaasVector</FullClassName>
+    <Type>Resisted</Type>
+  </NRaasLaughRiot>
+  
+  <NRaasAccidentitis>
+    <!-- Global parameters over all stages -->
+    <InfectionRate>0</InfectionRate>
+    <OutdoorInfectionRate>0.05</OutdoorInfectionRate>
+    <RoomInfectionRate>0.20</RoomInfectionRate>
+
+    <!-- Sims don't much care about this nano-virus, since it is sort of beneficial -->
+    <BadRelationshipDelta>0</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <!-- Mutation rates for this disease are global -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>9</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>ContagiousMin,-2,2</Mutable4>
+    <Mutable5>ContagiousMax,-2,2</Mutable5>
+    <Mutable6>BreakThingsMin,-2,2</Mutable6>
+    <Mutable7>BreakThingsMax,-2,2</Mutable7>
+    <Mutable8>RemissionMin,-2,2</Mutable8>
+    <Mutable9>RemissionMax,-2,2</Mutable9>
+
+    <NumResistances>9</NumResistances>
+    <Resistance1>NRaasVectorGoofyBathing</Resistance1>
+    <Resistance2>NRaasVectorGoofyBuzzed</Resistance2>
+    <Resistance3>NRaasVectorGoofyBrainFreeze</Resistance3>
+    <Resistance4>NRaasVectorGoofySore</Resistance4>
+    <Resistance5>NRaasVectorGoofyHacked</Resistance5>
+    <Resistance6>NRaasVectorGoofyNewBaby</Resistance6>
+    <Resistance7>NRaasVectorGoofyPregnancy</Resistance7>
+    <Resistance8>NRaasVectorGoofySalvage</Resistance8>
+    <Resistance9>NRaasVectorGoofyScrap</Resistance9>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation is 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Become Accident Prone -->
+    <NextStage>BreakThings</NextStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>BreakThings</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+
+    <!-- Break Things for 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>BreakThingsMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>BreakThingsMax</MaxMutation>
+
+    <!-- Incur symptoms -->
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorGoofyBreak,NRaasVectorGoofyHurtHand,NRaasVectorGoofyWhyMe</Symptoms1>
+    <SymptomChance1>0.50</SymptomChance1>
+    <Symptoms2>NRaasVectorGoofyDirty</Symptoms2>
+    <SymptomChance2>0.50</SymptomChance2>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasAccidentitisResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>PersistBreakThings</FailureStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>PersistBreakThings</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+
+    <!-- Recurse into BreakThings thrice and then begin Contagious -->
+    <Counter>BreakThingsCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>BreakThings</SuccessStage>
+    <FailureStage>Contagious</FailureStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>Contagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+    
+    <!-- Contagious for 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>ContagiousMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>ContagiousMax</MaxMutation>
+
+    <!-- Incur mild symptoms -->
+    <NumSymptoms>1</NumSymptoms>
+    <Symptoms1>NRaasVectorGoofyDirty,NRaasVectorGoofyHurtHand,NRaasVectorGoofyWhyMe</Symptoms1>
+    <SymptomChance1>0.25</SymptomChance1>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorGoofyResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>PersistContagious</FailureStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>PersistContagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Recurse into Contagious thrice and then begin Remission -->
+    <Counter>ContagiousCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>Contagious</SuccessStage>
+    <FailureStage>TestSimbot</FailureStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>Remission</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Remission,ShowingSigns</Type>
+
+    <!-- Contagious for 5 to 10 days -->
+    <MinDuration>120</MinDuration>
+    <MinMutation>RemissionMin</MinMutation>
+    <MaxDuration>240</MaxDuration>
+    <MaxMutation>RemissionMax</MaxMutation>
+
+    <!-- Incur beneficial symptoms -->
+    <NumSymptoms>3</NumSymptoms>
+    <Symptoms1>NRaasVectorGoofyWeightEqualize,NRaasVectorGoofyStuffed</Symptoms1>
+    <SymptomChance1>0.1</SymptomChance1>
+    <Symptoms2>NRaasVectorGoofyFitnessIncrease,NRaasVectorGoofyPumped</Symptoms2>
+    <SymptomChance2>0.1</SymptomChance2>
+    <Symptoms3>NRaasVectorGoofyClean</Symptoms3>
+    <SymptomChance3>0.1</SymptomChance3>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorGoofyResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>Incubation</FailureStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>TestSimbot</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.TestSettingStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Test for ability to change into a simbot -->
+    <Setting>NRaasAccidentitisAllowSimbot</Setting>
+    <SuccessStage>TestSimbotChance</SuccessStage>
+    <FailureStage>Incubation</FailureStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>TestSimbotChance</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <MinDuration>0</MinDuration>
+    <MaxDuration>0</MaxDuration>
+
+    <!-- Test for ability to change this sim into a simbot -->
+    <Scoring>NRaasAccidentitisConvertToBot</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>ConvertToSimbot</SuccessStage>
+    <FailureStage>Incubation</FailureStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>ConvertToSimbot</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+
+    <MinDuration>1</MinDuration>
+    <MaxDuration>1</MaxDuration>
+
+    <!-- Incur mild symptoms -->
+    <NumSymptoms>1</NumSymptoms>
+    <Symptoms1>NRaasVectorGoofySimbot</Symptoms1>
+    <SymptomChance1>1</SymptomChance1>
+
+    <!-- Resist the infection -->
+    <NextStage>Resist</NextStage>
+  </NRaasAccidentitis>
+  <NRaasAccidentitis>
+    <Name>Resist</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.EndStage, NRaasVector</FullClassName>
+    <Type>Resisted</Type>
+  </NRaasAccidentitis>
+</Vectors>

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0AD9BF5E-00B6-4914-B644-BF922515EECC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasWoohooerKamaSimtra</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionStamp.cs" />
+    <Compile Include="WoohoerSpace\Interactions\ActivateWhoring.cs" />
+    <Compile Include="WoohoerSpace\Interactions\ActivateRendezvous.cs" />
+    <Compile Include="WoohoerSpace\Interactions\CyberWoohoo.cs" />
+    <Compile Include="WoohoerSpace\Interactions\Tantraport.cs" />
+    <Compile Include="WoohoerSpace\Interactions\Rendezvous.cs" />
+    <Compile Include="WoohoerSpace\Interactions\SimInteraction.cs" />
+    <Compile Include="WoohoerSpace\Interactions\TutorKamaSimtra.cs" />
+    <Compile Include="WoohoerSpace\Options\ActivateWhoring.cs" />
+    <Compile Include="WoohoerSpace\Options\ActivateRendezvous.cs" />
+    <Compile Include="WoohoerSpace\Options\CyberWoohoo\CyberWoohooBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\CyberWoohoo\CyberWoohooChanceOfMisunderstandingSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\CyberWoohoo\CyberWoohooChanceToClimaxSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\CyberWoohoo\ICyberWoohooOption.cs" />
+    <Compile Include="WoohoerSpace\Options\CyberWoohoo\ListingOption.cs" />
+    <Compile Include="WoohoerSpace\Options\CyberWoohoo\CyberWoohooChanceToClimaxEveryXMinutesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\CyberWoohoo\ShowCyberWoohooInteractionSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\AllowInactiveGainSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\BaseSatisfactionSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\BaseDisappointmentSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\BasePositiveBuffLengthSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinLevelTantraportSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\GraveRobberMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\MonsterMasherMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\ShowNoticesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\CyberJunkieMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\RegisterSkillLevelSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\ShowRegisterInteractionSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\ManEaterMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\RisqueMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\RequireDistinctSimsSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\CenturyMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\CradleRobberMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\FreshMeatMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\PrecociousMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\FidelityMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\GalaxyOfStarsMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\MilleniumMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\SatisfactionPerLevelSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\CasanovaMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\CheaterMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\BikeMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\ProlificMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\JourneymanMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\EasyRiderMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\StarryEyedAverageLevelSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\StarryEyedMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\ExperiencedMinPerLocationSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\OccultistMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\WorldlyMinPerWorldSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\ExhibitionistMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\PromiscuousMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\GigoloMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\GoldDiggerMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\CougarMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\IMinNotchesOption.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\ListingOption.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\MinNotches\WomanizerMinNotchesSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\DailyRelationshipChangeSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\RenownToPaymentMultipleSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\RenownToMoodMultipleSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\RenownPerOpportunitySetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\RenownPerLevelSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\IKamaSimtraOption.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\ListingOption.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\SkillPoints\SkillPointsSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\SkillPoints\ISkillPointsOption.cs" />
+    <Compile Include="WoohoerSpace\Options\KamaSimtra\SkillPoints\ListingOption.cs" />
+    <Compile Include="WoohoerSpace\Options\Rendezvous\RendezvousWaitPeriodSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\Rendezvous\ShowRendezvousIntereactionSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\Rendezvous\RendezvousDurationSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\Rendezvous\RandomRendezvousMoodletSetting.cs" />
+    <Compile Include="WoohoerSpace\Options\Rendezvous\IRendezvousOption.cs" />
+    <Compile Include="WoohoerSpace\Options\Rendezvous\ListingOption.cs" />
+    <Compile Include="WoohoerSpace\Options\ISimOption.cs" />
+    <Compile Include="WoohooerModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableKamaSimtra_Greek.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_Dutch.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_PortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_SpanishStandard.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_Polish.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_English.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_French.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_German.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_Italian.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_Russian.txt" />
+    <Content Include="StringTables\StringTableKamaSimtra_Taiwanese.txt" />
+    <Content Include="XML\WoohooerSpaceInteractionsActivateWhoring+Definition.xml" />
+    <Content Include="XML\WoohooerSpaceInteractionsActivateRendezvous+Definition.xml" />
+    <Content Include="XML\WoohooerKamaSimtra.xml" />
+    <Content Include="XML\KamaSimtraScoring.xml" />
+    <Content Include="XML\KamaSimtraSkills.xml" />
+    <Content Include="XML\KamaSimtraSocialData.xml" />
+    <Content Include="XML\KamaSimtraSocializingActionAvailability.xml" />
+    <Content Include="XML\KamaSimtraSocializingTuning.xml" />
+    <Content Include="XML\WoohooerSpaceInteractionsRendezvous+Definition.xml" />
+    <Content Include="XML\WoohooerSpaceSkillsKamaSimtraSettings.xml" />
+    <Content Include="XML\KamaSimtraBuffs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NRaasWoohooer\NRaasWoohooer.csproj">
+      <Project>{4A218736-F50C-4D1F-A032-33C58624B64C}</Project>
+      <Name>NRaasWoohooer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

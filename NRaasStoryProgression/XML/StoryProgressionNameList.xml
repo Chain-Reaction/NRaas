@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NameList>
+  <Names>
+    <!-- This is the default set, it must always be the first entry in the table  -->
+    <Species></Species>
+      <!-- Human, Dogs, LittleDogs, Horses, Cats, All -->
+    <Gender>GenderMask</Gender>
+      <!-- Male, Female, GenderMask (both) -->
+    <Name></Name>
+      <!-- Comma Separated list of names -->
+  </Names>
+  
+  <LastNames>
+    <!-- This is the default set, it must always be the first entry in the table  -->
+    <Species></Species>
+    <!-- Human, Dogs, LittleDogs, Horses, Cats, All -->
+    <Gender>GenderMask</Gender>
+    <!-- Male, Female, GenderMask (both) -->
+    <Name></Name>
+    <!-- Comma Separated list of names -->
+  </LastNames>
+</NameList>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"?>
+<AfterschoolActivityList>
+  <AfterschoolActivity>
+    <!-- This is the default set for the table, it must be first -->
+    <Guid></Guid>
+      <!-- Unique identifier for the activity.  It must not match any other activity names -->
+    <Skills></Skills>
+      <!-- Comma separated list of SkillNames -->
+    <DaysOfTheWeek></DaysOfTheWeek>
+      <!-- Comma separate list of Days (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday) -->
+    <Genders>Male,Female</Genders>
+      <!-- Male, Female -->
+    <Ages></Ages>
+      <!-- Child, Teen -->
+    <PreLoop></PreLoop>
+      <!-- Function name to run before the interaction loop is performed -->
+    <Loop></Loop>
+      <!-- Function name to run during the interaction loop -->
+    <PostLoop></PostLoop>
+      <!-- Function name to run after the interaction loop is complete -->
+  </AfterschoolActivity>
+  <AfterschoolActivity>
+    <Guid>NRaasChessClub</Guid>
+    <Skills>Chess,Logic</Skills>
+    <DaysOfTheWeek>Tuesday,Thursday</DaysOfTheWeek>
+    <Ages>Child,Teen</Ages>
+    <PostLoop>NRaas.CareerSpace.Helpers.AfterschoolActivityEx,NRaasCareer,PerformPostLoopChessClub</PostLoop>
+  </AfterschoolActivity>
+  <AfterschoolActivity>
+    <Guid>NRaasBugCollecting</Guid>
+    <Skills>Collecting,Painting</Skills>
+    <DaysOfTheWeek>Wednesday,Thursday</DaysOfTheWeek>
+    <Ages>Child,Teen</Ages>
+    <Loop>NRaas.CareerSpace.Helpers.AfterschoolActivityEx,NRaasCareer,PerformLoopBugClub</Loop>
+  </AfterschoolActivity>
+  <AfterschoolActivity>
+    <Guid>NRaasGeology</Guid>
+    <Skills>Collecting,Logic</Skills>
+    <DaysOfTheWeek>Tuesday,Friday</DaysOfTheWeek>
+    <Ages>Child,Teen</Ages>
+    <Loop>NRaas.CareerSpace.Helpers.AfterschoolActivityEx,NRaasCareer,PerformLoopGeologyClub</Loop>
+  </AfterschoolActivity>
+  <AfterschoolActivity>
+    <Guid>NRaasExplorer</Guid>
+    <Skills>Collecting</Skills>
+    <DaysOfTheWeek>Monday,Friday</DaysOfTheWeek>
+    <Ages>Teen</Ages>
+    <Loop>NRaas.CareerSpace.Helpers.AfterschoolActivityEx,NRaasCareer,PerformLoopExplorerClub</Loop>
+  </AfterschoolActivity>
+</AfterschoolActivityList>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resistances>
+  <Resistance>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+    <Delta></Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLongTermAteMeal</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kAteMeal</Event>
+    <Delta>2</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLongTermMeditate</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kMeditated</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLongTermRest</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>WellRested</BuffName>
+    <Delta>5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLongTermStress</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Overworked</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLongTermHunger</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>VeryHungry</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLongTermHygiene</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Smelly</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+</Resistances>

@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FE7ED76-4C78-4C5E-B899-CD9486C6A099}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasRetuner</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterHelper.cs">
+      <Link>CommonSpace\Booters\BooterHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CommoditiesEx.cs">
+      <Link>CommonSpace\Helpers\CommoditiesEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\AgeSettingOption.cs">
+      <Link>CommonSpace\Options\AgeSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\EnumSettingOption.cs">
+      <Link>CommonSpace\Options\EnumSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\FloatRangeSettingOption.cs">
+      <Link>CommonSpace\Options\FloatRangeSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\FloatSettingOption.cs">
+      <Link>CommonSpace\Options\FloatSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ListedSettingOption.cs">
+      <Link>CommonSpace\Options\ListedSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
+      <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\RangeSettingOption.cs">
+      <Link>CommonSpace\Options\RangeSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\tasks\RepeatingTask.cs">
+      <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
+    </Compile>
+    <Compile Include="Retuner.cs" />
+    <Compile Include="RetunerSpace\Booters\BySeasonBooter.cs" />
+    <Compile Include="RetunerSpace\Booters\SocialBooter.cs" />
+    <Compile Include="RetunerSpace\Booters\TuningBooter.cs" />
+    <Compile Include="RetunerSpace\Booters\InteractionBooter.cs" />
+    <Compile Include="RetunerSpace\Options\ExportAllTuning.cs" />
+    <Compile Include="RetunerSpace\Options\HoursSetting.cs" />
+    <Compile Include="RetunerSpace\Options\ITuningOption.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\Dump.cs" />
+    <Compile Include="RetunerSpace\Options\Settings\AddSetting.cs" />
+    <Compile Include="RetunerSpace\Options\Settings\RemoveSetting.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableMultiEnumOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableSingleEnumOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\MultiEnums\TunableCASAgeGenderFlagsOption.cs" />
+    <Compile Include="RetunerSpace\SeasonSettings.cs" />
+    <Compile Include="RetunerSpace\CurrentKey.cs" />
+    <Compile Include="RetunerSpace\GeneralKey.cs" />
+    <Compile Include="RetunerSpace\Options\DebuggingSetting.cs" />
+    <Compile Include="RetunerSpace\SeasonKey.cs" />
+    <Compile Include="RetunerSpace\Helpers\Stores\TunableStore.cs" />
+    <Compile Include="RetunerSpace\Options\IObjectOption.cs" />
+    <Compile Include="RetunerSpace\Options\ITUNAutonomy.cs" />
+    <Compile Include="RetunerSpace\Options\ObjectSeasonOption.cs" />
+    <Compile Include="RetunerSpace\SettingsKey.cs" />
+    <Compile Include="RetunerSpace\Helpers\FieldInfos\ArrayFieldInfo.cs" />
+    <Compile Include="RetunerSpace\Helpers\FieldInfos\TunableFieldInfo.cs" />
+    <Compile Include="RetunerSpace\Helpers\Stores\ArrayValueStore.cs" />
+    <Compile Include="RetunerSpace\Helpers\Stores\NestedStore.cs" />
+    <Compile Include="RetunerSpace\Helpers\Stores\ValueStore.cs" />
+    <Compile Include="RetunerSpace\Interactions\ObjectInteraction.cs" />
+    <Compile Include="RetunerSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="RetunerSpace\Options\AgeSpeciesBase.cs" />
+    <Compile Include="RetunerSpace\Options\ByAgeSpecies\ByAgeSpeciesOption.cs" />
+    <Compile Include="RetunerSpace\Options\ByAgeSpecies\IByAgeSpeciesOption.cs" />
+    <Compile Include="RetunerSpace\Options\ByAgeSpecies\ListingOption.cs" />
+    <Compile Include="RetunerSpace\Options\ByObject\ListingOption.cs" />
+    <Compile Include="RetunerSpace\Options\ByObject\IByObjectOption.cs" />
+    <Compile Include="RetunerSpace\Options\FunFactor.cs" />
+    <Compile Include="RetunerSpace\Options\Settings\ISettingsOption.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\Outputs\CommodityChangeOption.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\Outputs\IOutputOption.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\Outputs\ListingOption.cs" />
+    <Compile Include="RetunerSpace\Options\Settings\SettingsOption.cs" />
+    <Compile Include="RetunerSpace\Options\Settings\ListingOption.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\ActorAgeSpecies.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\AllowAutonomous.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\AllowPregnant.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\UserDirectedOnly.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\ActionDataOption.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\TargetAgeSpecies.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\ISocialOption.cs" />
+    <Compile Include="RetunerSpace\Options\Socials\ListingOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\ITunableConvertOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableArrayOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableNestedOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\TunableNamespaceOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableBooleanOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableStringOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableFloatOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableGenericOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableIntegerOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\ITunableFieldOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\Fields\TunableUnhandledOption.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\TunableTypeOption.cs" />
+    <Compile Include="RetunerSpace\Options\ShowObjectMenu.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowAutonomous.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowUserDirected.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AgeSpecies.cs" />
+    <Compile Include="RetunerSpace\Options\ExportTuning.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowPregnant.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowGreeted.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowNonGreetedOutsideAutonomous.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowNonGreetedOutsideUserDirected.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowFromInventory.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\AllowOnCommunityLots.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\IITUNOption.cs" />
+    <Compile Include="RetunerSpace\Options\ByObject\ByObjectOption.cs" />
+    <Compile Include="RetunerSpace\Options\ITUN\ListingOption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetunerSpace\Options\Tunable\ListingOption.cs" />
+    <Compile Include="RetunerSpace\PersistedSettings.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableTaiwanese.txt" />
+    <Content Include="StringTables\StringTablePortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTablePolish.txt" />
+    <Content Include="StringTables\StringTableRussian.txt" />
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="XML\Kathy\RetunerTuning.xml" />
+    <Content Include="XML\Personal\RetunerTuning.xml" />
+    <Content Include="XML\RetunerTuning.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

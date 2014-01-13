@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kDoctorsVisitLength value="60">
+      <!-- The length of time spent visiting the doctor -->
+    </kDoctorsVisitLength>
+    <kDoctorsVisitCost value="500">
+      <!-- The cost of a consultation -->
+    </kDoctorsVisitCost>
+    <kResistanceBoost value="20">
+      <!-- The increase in resistance per visit to hospital -->
+    </kResistanceBoost>
+    <kLowProtectionRating value="50">
+      <!-- The reduction in infection rate of low protection shots -->
+    </kLowProtectionRating>
+    <kHighProtectionRating value="90">
+      <!-- The reduction in infection rate of high protection shots -->
+    </kHighProtectionRating>
+    <kProtectionDuration value="48">
+      <!-- The number of sim hours protection is effective -->
+    </kProtectionDuration>
+    <kInoculationRating value="0">
+      <!-- The base number of strains an inoculation protects against -->
+    </kInoculationRating>
+    <kStrainReinfectionDifference value="5">
+      <!-- The minum difference between strains to reinfect a sim -->
+    </kStrainReinfectionDifference>
+    <kOutbreakAllowActive value="False">
+      <!-- Whether to allow active sims to be a patient zero -->
+    </kOutbreakAllowActive>
+    <kOutbreakShowNotices value="False">
+      <!-- Whether to allow active sims to be a patient zero -->
+    </kOutbreakShowNotices>
+    <kNumPatientZero value="1">
+      <!-- The number of initial infected during an outbreak -->
+    </kNumPatientZero>
+    <kStageRatio value="100">
+      <!-- A percent ratio to the length of each stage in a disease -->
+    </kStageRatio>
+    <kAllowInactivePurchases value="True">
+      <!-- Whether to allow inactive families to purchase remedies -->
+    </kAllowInactivePurchases>
+    <kAllowRelationshipDelta value="True">
+      <!-- Whether to allow the mod to alter relationship -->
+    </kAllowRelationshipDelta>
+  </Current_Tuning>
+</base>

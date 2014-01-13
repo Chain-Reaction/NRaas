@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vectors>
+  <Vectors>
+    <GUID></GUID>
+      <!-- This value MUST be unique amongst all diseases a user has installed -->
+    <InitialStrength></InitialStrength>
+      <!-- Relative to Strength Scoring -->
+    <InfectionScoring></InfectionScoring>
+      <!-- Scoring for determining whether a sim can be infected -->
+    <InfectionMinimum></InfectionMinimum>
+      <!-- Minimum scoring for success -->
+    <CanOutbreak></CanOutbreak>
+      <!-- Whether the disease can spontaneously emerge in the population -->
+    <InoculationRating></InoculationRating>
+      <!-- How many strains an inoculation protects against -->
+    <InoculationCost></InoculationCost>
+      <!-- How much to inoculate against this disease (inoculation is disabled if 0) -->
+    <ResistanceCost></ResistanceCost>
+      <!-- How much to buy resistance against this disease (buying resistance is disabled if 0) -->
+    <HighProtectionCost></HighProtectionCost>
+      <!-- How much to buy protection from the hospital (buying protection is disabled if 0) -->
+    <LowProtectionCost></LowProtectionCost>
+      <!-- How much to buy protection from the hideout (buying protection is disabled if 0) -->
+    <MinimumStrainDifference></MinimumStrainDifference>
+      <!-- Minimum difference between strains to reinfect a sim -->
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasCommonCold</GUID>
+    <InitialStrength>15</InitialStrength>
+    <InfectionScoring>NRaasVectorMinorInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <ResistanceCost>250</ResistanceCost>
+    <HighProtectionCost>100</HighProtectionCost>
+    <LowProtectionCost>5</LowProtectionCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasSimfluenza</GUID>
+    <InitialStrength>15</InitialStrength>
+    <InfectionScoring>NRaasVectorMinorInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <InoculationRating>10</InoculationRating>
+    <InoculationCost>500</InoculationCost>
+    <ResistanceCost>250</ResistanceCost>
+    <HighProtectionCost>100</HighProtectionCost>
+    <LowProtectionCost>5</LowProtectionCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+
+  <NRaasSimfluenza>
+    <!-- Global parameters over all stages -->
+    <RoomInfectionRate>0.05</RoomInfectionRate>
+    <SocialInfectionRate>0.4</SocialInfectionRate>
+
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <NumResistances>6</NumResistances>
+    <Resistance1>NRaasVectorMinorWeak</Resistance1>
+    <Resistance2>NRaasVectorMinorMeditate</Resistance2>
+    <Resistance3>NRaasVectorMinorRest</Resistance3>
+    <Resistance4>NRaasVectorMinorStress</Resistance4>
+    <Resistance5>NRaasVectorMinorBath</Resistance5>
+    <Resistance6>NRaasVectorMinorBubbleBath</Resistance6>
+
+    <SymptomScoring>NRaasVectorMinorSymptom</SymptomScoring>
+    <SymptomScoringMinimum>0</SymptomScoringMinimum>
+  </NRaasSimfluenza>
+  <NRaasSimfluenza>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation is 24 to 48 hours long -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Create a new straing while incubating -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>7</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>SufferingMin,-2,2</Mutable4>
+    <Mutable5>SufferingMax,-2,2</Mutable5>
+    <Mutable6>ContagiousMin,-2,2</Mutable6>
+    <Mutable7>ContagiousMax,-2,2</Mutable7>
+    
+    <!-- Become Contagious -->
+    <NextStage>Contagious</NextStage>
+  </NRaasSimfluenza>
+  <NRaasSimfluenza>
+    <Name>Contagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- Contagious for 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>ContagiousMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>ContagiousMax</MaxMutation>
+
+    <!-- Incur light symptoms -->
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorMinorNauseous,NRaasVectorMinorDrained</Symptoms1>
+    <SymptomChance1>0.1</SymptomChance1>
+    <Symptoms2>NRaasVectorMinorNotFun,NRaasVectorMinorMiserable</Symptoms2>
+    <SymptomChance1>0.1</SymptomChance1>
+
+    <!-- Test against strength for resistance -->
+    <Scoring>NRaasVectorMinorResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Resist</SuccessStage>
+    <FailureStage>PersistContagious</FailureStage>    
+  </NRaasSimfluenza>
+  <NRaasSimfluenza>
+    <Name>PersistContagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>Contagious</Type>
+    
+    <!-- Recurse into Contagious twice and then begin Suffering -->
+    <Counter>ContagiousCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>Contagious</SuccessStage>
+    <FailureStage>Suffering</FailureStage>
+  </NRaasSimfluenza>
+  <NRaasSimfluenza>
+    <Name>Suffering</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+    
+    <!-- Suffering lasts for 12 to 24 hours -->
+    <MinDuration>12</MinDuration>
+    <MinMutation>SufferingMin</MinMutation>
+    <MaxDuration>24</MaxDuration>
+    <MaxMutation>SufferingMax</MaxMutation>
+        
+    <!-- Incur harder symptoms -->
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorMinorNauseous,NRaasVectorMinorExhausted</Symptoms1>
+    <SymptomChance1>0.2</SymptomChance1>
+    <Symptoms2>NRaasVectorMinorVomit,NRaasVectorMinorMiserable</Symptoms2>
+    <SymptomChance1>0.2</SymptomChance1>
+
+    <!-- Test Strength for resistance -->
+    <Scoring>NRaasVectorMinorResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Resist</SuccessStage>
+    <FailureStage>PersistSuffering</FailureStage>
+  </NRaasSimfluenza>
+  <NRaasSimfluenza>
+    <Name>PersistSuffering</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    
+    <!-- Recurse into Suffering four times, and then resist -->
+    <Counter>SufferingCounter</Counter>
+    <Maximum>4</Maximum>
+    <SuccessStage>Contagious</SuccessStage>
+    <FailureStage>Resist</FailureStage>
+  </NRaasSimfluenza>
+  <NRaasSimfluenza>
+    <Name>Resist</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.EndStage, NRaasVector</FullClassName>
+    <Type>Resisted</Type>
+  </NRaasSimfluenza>
+  
+  <NRaasCommonCold>
+    <!-- Global parameters over all stages -->
+    <OutdoorInfectionRate>0.01</OutdoorInfectionRate>
+    <RoomInfectionRate>0.1</RoomInfectionRate>
+    <SocialInfectionRate>0.5</SocialInfectionRate>
+
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorMinorBackAche,NRaasVectorMinorSniffles</Symptoms1>
+    <Symptoms2>NRaasVectorMinorDrained,NRaasVectorMinorShiver</Symptoms2>
+
+    <SymptomScoring>NRaasVectorMinorSymptom</SymptomScoring>
+    <SymptomScoringMinimum>0</SymptomScoringMinimum>
+    
+    <NumResistances>5</NumResistances>
+    <Resistance1>NRaasVectorMinorAteMeal</Resistance1>
+    <Resistance2>NRaasVectorMinorMeditate</Resistance2>
+    <Resistance3>NRaasVectorMinorRest</Resistance3>
+    <Resistance4>NRaasVectorMinorStress</Resistance4>
+    <Resistance5>NRaasVectorMinorWeak</Resistance5>
+  </NRaasCommonCold>
+  <NRaasCommonCold>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation lasts 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Mutate during incubation -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>5</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>ContagiousMin,-2,2</Mutable4>
+    <Mutable5>ContagiousMax,-2,2</Mutable5>
+    
+    <!-- Begin recursion -->
+    <NextStage>Persist</NextStage>
+  </NRaasCommonCold>
+  <NRaasCommonCold>
+    <Name>Contagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+    
+    <!-- Contagious for 12 to 24 hours -->
+    <MinDuration>12</MinDuration>
+    <MinMutation>ContagiousMin</MinMutation>
+    <MaxDuration>24</MaxDuration>
+    <MaxMutation>ContagiousMax</MaxMutation>
+
+    <!-- Incur mild symptoms -->
+    <SymptomChance1>0.15</SymptomChance1>
+    <SymptomChance2>0.15</SymptomChance2>
+
+    <Scoring>NRaasVectorMinorResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Resist</SuccessStage>
+    <FailureStage>Persist</FailureStage>
+  </NRaasCommonCold>
+  <NRaasCommonCold>
+    <Name>Persist</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- Incur immediate symptoms -->
+    <SymptomChance1>1</SymptomChance1>
+    <SymptomChance2>1</SymptomChance2>
+
+    <!-- Recurse in Contagious five times and then resist -->
+    <Counter>Counter</Counter>
+    <Maximum>5</Maximum>
+    <SuccessStage>Contagious</SuccessStage>
+    <FailureStage>Resist</FailureStage>
+  </NRaasCommonCold>
+  <NRaasCommonCold>
+    <Name>Resist</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.EndStage, NRaasVector</FullClassName>
+    <Type>Resisted</Type>
+    <!-- Final stage, disease is dead -->
+  </NRaasCommonCold>
+</Vectors>

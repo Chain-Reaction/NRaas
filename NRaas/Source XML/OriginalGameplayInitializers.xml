@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" ?>
+<!--
+Gameplay initializers is a list of initialization functions that will be run before entering the main menu.
+Every initializer is represented with a row containing the following attributes:
+type:           [compulsory] This is the fully namespaced class in a given assembly. E.g. type="Sims3.Gameplay.Tuning.TuningControl,Sims3GameplaySystems"
+init:           This is a public static method of the above mentioned class. It is invoked during the initialization sequence. E.g. init="GameplayInitialize"
+shutdown:       This is a public static method of the above mentioned class. It is invoked during the shutdown sequence. E.g. shutdown="GameplayShutdown"
+                A valid initializer contains either an init method or a shutdown method or both.
+productversions:[optional] Comma separated ProductVersion enum values. The initializer is valid if any Product in this attribute is installed.
+                Default: BaseGame. E.g. productversions="EP1,EP4"
+configurations: [optional] Comma separated Configuration enum values. The initializer is valid if the game is launched in a configuration supplied in this attribute.
+                Default: Debug,DebugRelease,Release. E.g. configurations="Debug,DebugRelease"
+editingame:     [optional] This attribute validates the initializer in Edit-in game mode. Default: True. E.g. editingame="False"
+-->
+
+<GameplayInitializers>
+  <Action type="Sims3.Gameplay.Core.AudioManager,Sims3GameplaySystems" init="Init" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Core.ThumbnailHelper,Sims3GameplaySystems" init="InitGlobalHooks"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <!-- SimIFace, PersistStatic needs to occur before any other gameplay code -->
+  <Action type="Sims3.SimIFace.PersistStatic,SimIFace" init="GameplayInitialize" />
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <!-- Tuning Control needs to occur next -->
+  <Action type="Sims3.Gameplay.Tuning.TuningControl,Sims3GameplaySystems" init="GameplayInitialize" shutdown="GameplayShutdown"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Core.Commands,Sims3GameplaySystems" init="RegisterGameCommands" shutdown="UnregisterGameCommands"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+  <Action type="Sims3.Gameplay.Actors.Sim,Sims3GameplaySystems" init="DecideWhetherToEnableFacialIdles" />
+  <Action type="Sims3.Gameplay.Interactions.InteractionInstance,Sims3GameplaySystems" init="LogInteractionHeader"/>
+
+  <!-- Be cautious about the order you put these files -->
+  <!-- No inits of objects in initialize functions -->
+  <Action type="Sims3.Gameplay.ActorSystems.BuffManager,Sims3GameplaySystems" init="CreateBuffTable"/>
+  <Action type="Sims3.Gameplay.ActorSystems.TraitManager,Sims3GameplaySystems" init="CreateTraitTable"/>
+  <Action type="Sims3.Gameplay.ActorSystems.IdleManager,Sims3GameplaySystems" init="CreateIdleTable"/>
+  <Action type="Sims3.Gameplay.Objects.ScriptedReactions.ScriptedReactionManager,Sims3GameplaySystems" init="CreateScriptedReactionTable"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.ThoughtBalloons.ThoughtBalloonManager,Sims3GameplaySystems" init="CreateBalloonTable"/>
+  <Action type="Sims3.Gameplay.Skills.SkillManager,Sims3GameplaySystems" init="CreateSkillTable"/>
+  <Action type="Sims3.Gameplay.Skills.Photography,Sims3GameplaySystems" init="ParsePhotographyData"/>
+  <Action type="Sims3.Gameplay.Careers.CareerManager,Sims3GameplaySystems" init="CreateCareerTable"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.Gardening.PlantDefinition,Sims3GameplaySystems" init="CreatePlantDefinitionTable"/>
+  <Action type="Sims3.Gameplay.Objects.Electronics.Phone,Sims3GameplayObjects" init="LoadRingtones"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Actors.Sim+AnimationClipDataForCAS,Sims3GameplaySystems" init="ParseAnimationClipNames"/>
+  <Action type="Sims3.Gameplay.Socializing.SocialManager,Sims3GameplaySystems" init="CreateSocialsTable"/>
+  <Action type="Sims3.Gameplay.Socializing.GossipManager,Sims3GameplaySystems" init="CreateGossipTable"/>
+  <Action type="Sims3.Gameplay.Autonomy.MetaAutonomyManager,Sims3GameplaySystems" init="LoadMetaAutonomy"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Autonomy.Commodities,Sims3GameplaySystems" init="CreateCommodityTypes"/>
+  <Action type="Sims3.Gameplay.Autonomy.Autonomy,Sims3GameplaySystems" init="FindAllScoringFunctions"/>
+  <Action type="Sims3.Gameplay.Autonomy.AutonomyTuning,Sims3GameplaySystems" init="LoadAllInteractions"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Autonomy.MotiveTuning,Sims3GameplaySystems" init="Load"/>
+  <Action type="Sims3.Gameplay.Autonomy.OverlayComponent,Sims3GameplaySystems" init ="CreateOverlayTable"/>
+  <Action type="Sims3.Gameplay.Objects.Electronics.TVChannelData, Sims3GameplayObjects" init="CreateTVChannelDataStructure"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.Electronics.StereoStationData, Sims3GameplayObjects" init="CreateStereoStationsDataStructure"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.ActorSystems.Charity,Sims3GameplaySystems" init="ParseCharity"/>
+  <Action type="Sims3.Gameplay.ActorSystems.TraitFunctions,Sims3GameplaySystems" init="ParseLoserTrait"/>
+  <Action type="Sims3.Gameplay.Autonomy.Autonomy,Sims3GameplaySystems" init="SetAutonomyLevel"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.ObjectCategoryInfo,Sims3GameplaySystems" init="ParseObjectCategories"/>
+  <Action type="Sims3.Gameplay.Objects.RabbitHoles.Bistro, Sims3GameplayObjects" init="LoadRestaurantEvents"/>
+  <Action type="Sims3.Gameplay.Objects.RabbitHoles.EiffelTower, Sims3GameplayObjects" init="LoadRestaurantEvents"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.Rewards.CollectionHelperSingleton,Sims3GameplayObjects" init="Setup"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.ScienceComponent,Sims3GameplaySystems" init="Startup"/>
+  <Action type="Sims3.Gameplay.Tutorial.IntroTutorial,Sims3GameplaySystems" init="ParseTutorialData"/>
+  <Action type="Sims3.Gameplay.Utilities.NotificationSystem, Sims3GameplaySystems" init="ParseNotificationData"/>
+  <!-- could insert a new static startup here to keep the pattern going -->
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.ActorSystems.TraitTipsManager,Sims3GameplaySystems" init="OnVersionChangedFixup"/>
+  <!-- Sets up walk style enum to string caches -->
+  <Action type="Sims3.Gameplay.ObjectComponents.RoutingComponent,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Routing.SimWalkStyleRules,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <!-- Note: Must preserve order of the following lines-->
+  <Action type="Sims3.Gameplay.Objects.CookingObjects.Food,Sims3GameplayObjects" init="RegisterCookingTargetTypes" shutdown="UnregisterCookingTargetTypes"/>
+  <Action type="Sims3.Gameplay.Objects.FoodObjects.CookingProcessData,Sims3GameplaySystems" init="InitCookingProcesses" shutdown="ShutdownCookingProcesses"/>
+  <Action type="Sims3.Gameplay.Objects.FoodObjects.IngredientData,Sims3GameplaySystems" init="LoadIngredientData" shutdown="Shutdown"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.Fishing.Fish,Sims3GameplaySystems" init="ParseFishData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Spawners.RockGemMetalSpawner,Sims3GameplayObjects" init="ParseData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Insect.Insect,Sims3GameplayObjects" init="ParseData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Rewards.AdventureRewards,Sims3GameplaySystems" init="ParseAdventureRewards"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.FoodObjects.Recipe,Sims3GameplaySystems" init="LoadRecipeData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Alchemy.AlchemyRecipe,Sims3GameplaySystems" init="LoadAlchemyRecipeData" shutdown="Shutdown"/>
+  <!-- NOTE: Book data must load after recipe and alchemy recipe but before bookstore -->
+  <Action type="Sims3.Gameplay.Objects.BookData,Sims3GameplaySystems" init="LoadBookData"/>
+  <Action type="Sims3.Gameplay.Objects.RabbitHoles.Grocery,Sims3GameplayObjects" init="LoadData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.RabbitHoles.Bookstore,Sims3GameplayObjects" init="LoadData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Register.ShoppingRegister, Sims3GameplayObjects" init="ParseData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Opportunities.OpportunityManager,Sims3GameplaySystems" init="CreateOpportunityTable"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.DreamsAndPromises.DreamsAndPromisesManager,Sims3GameplaySystems" init="ParseDreamsAndPromises"/>
+  <Action type="Sims3.Gameplay.ActorSystems.LifeEventManager,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Skills.PaintingSkill,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.ModularBuyModeObjectRegistry,Sims3GameplaySystems" init="Init"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Metadata.Pattern,Sims3Metadata" init="BuildPatternCache"/>
+  <Action type="Sims3.Gameplay.Actors.Sim" init="InitClothingAgeRules" />
+  <Action type="Sims3.Gameplay.Core.Lot" init="ParseLotSubTypes"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Roles.RoleData" init="Parse" />
+  <Action type="Sims3.Gameplay.Objects.Spawners.Relic, Sims3GameplayObjects" init="LoadData" shutdown="Shutdown" productversions="EP1"/>
+  <Action type="Sims3.Gameplay.Visa.VisaManager, Sims3GameplaySystems" init="ParseData" productversions="EP1"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.TombObjects.Keystone,Sims3GameplayObjects" init="ParseData"/>
+  <Action type="Sims3.Gameplay.Controllers.TombRoomManager,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.TreasureComponent,Sims3GameplaySystems" init="ParseData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.TombObjects.TreasureChest,Sims3GameplayObjects" init="ParseData" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.AdventureFXComponent,Sims3GameplaySystems" init="ParseData"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.Objects.TombObjects.FragmentedObject,Sims3GameplayObjects" init="ParseData" productversions="EP1,EP5"/>
+  <Action type="Sims3.Gameplay.Services.ServiceNPCSpecifications,Sims3GameplaySystems" init="ParseServiceNpcSpecifications" shutdown="CollapseServices"/>
+  <Action type="Sims3.Gameplay.Objects.Spawners.DigSiteSpawner,Sims3GameplayObjects" init="ParseData" productversions="EP1"/>
+  <Action type="Sims3.Gameplay.Objects.Spawners.JunkyardSpawner,Sims3GameplayObjects" init="ParseData" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.Skills.Styling,Sims3GameplaySystems" init="ParseMakeoverOutfits" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.RealEstate.RealEstateData,Sims3GameplaySystems" init="ParseData"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <Action type="Sims3.Gameplay.ActorSystems.SingingInfo,Sims3GameplaySystems" init="ParseSongData" productversions="EP1" />
+  <Action type="Sims3.Gameplay.CAS.Locale.LocaleConstraints" init="LoadConstraints" shutdown="Shutdown" productversions="EP1" />
+  <Action type="Sims3.Gameplay.MapTags.MapTagManager,Sims3GameplaySystems" init="ParseMapTagSpreadSheet"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.UpgradableComponent,Sims3GameplaySystems" init="ParseUpgradeData" />
+  <Action type="Sims3.Gameplay.Objects.HobbiesSkills.Inventing.TimeMachine,Sims3GameplayObjects" init="ParseData" productversions="EP2" />
+  <Action type="Sims3.Gameplay.Objects.Spawners.Spirit,Sims3GameplayObjects" init="ParseData" productversions="EP2" />
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <!-- EP3 Initializers -->
+  <Action type="Sims3.Gameplay.Skills.Bartending,Sims3GameplaySystems" init="ParseData" productversions="EP3" editingame="False" />
+  <Action type="Sims3.Gameplay.CelebritySystem.CelebrityUtil,Sims3GameplaySystems" init="ParseCelebrityData" productversions="EP3" editingame="False" />
+  <Action type="Sims3.Gameplay.Objects.Vehicles.TrafficManager,Sims3GameplaySystems" init="ParseTrafficTuning" productversions="EP3" editingame="False" />
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupYield" />
+
+  <!-- EP4 Initializers -->
+  <Action type="Sims3.Gameplay.ChildAndTeenUpdates.Punishment,Sims3GameplaySystems" init="ParsePunishmentSpreadsheet" productversions="EP4" editingame="False" />
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="StartupComplete" />
+  <Action type="Sims3.Gameplay.Actors.Sim+GiveGift,Sims3GameplaySystems" init="LoadData" shutdown="Shutdown" productversions="EP4"/>
+  <Action type="Sims3.Gameplay.ChildAndTeenUpdates.BoardingSchool+BoardingSchoolData,Sims3GameplaySystems" init="ParseBoardingSchoolData" productversions="EP4" editingame="False" />
+  <Action type="Sims3.Gameplay.ActorSystems.OccultImaginaryFriend,Sims3GameplaySystems" init="ParseImaginaryFriendSpreadsheet" productversions="EP4" editingame="False" />
+
+  <!-- EP5 Initializers -->
+  <Action type="Sims3.Gameplay.PetSystems.PetPoolManager,Sims3GameplaySystems" init="Startup" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Objects.Spawners.MinorPetSpawner,Sims3GameplayObjects" init="ParseData" shutdown="Shutdown" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Objects.RabbitHoles.EquestrianCenter,Sims3GameplayObjects" init="ParseCompetitionData" shutdown="ClearCompetitionData" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Socializing.LongTermRelationship,Sims3GameplaySystems" init="LoadCrossSpeciesRelationshipData" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.ActorSystems.PetStartleBehavior,Sims3GameplaySystems" init="LoadAndParsePetStartleBehaviorData" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Skills.DogHuntingSkill,Sims3GameplaySystems" init="ParseData" productversions="EP5"/>
+
+  <!-- EP6 Initializers -->
+  <Action type="Sims3.Gameplay.ActiveCareer.ActiveCareers.SingerCareer,Sims3GameplaySystems" init="GetSingAGramGifts" shutdown="Shutdown" productversions="EP6"/>
+  <Action type="Sims3.Gameplay.SocialFeaturesEventSystem,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.DynamicChallenges.DynamicChallengeManager,Sims3GameplaySystems" init="Initializer" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Passport.Passport,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Roles.Proprietor,Sims3GameplaySystems" init="ParseData" productversions="EP6" editingame="False" />
+  <Action type="Sims3.Gameplay.DreamsAndPromises.JobTypeData,Sims3GameplaySystems" init="ParseJobTypeData"/>
+  <Action type="Sims3.Gameplay.DreamsAndPromises.TrickData,Sims3GameplaySystems" init="ParseTrickData"/>
+
+  <!-- EP7 Initializers-->
+  <Action type="Sims3.Gameplay.OnlineGiftingSystem.OnlineGiftingManager,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+
+  <!-- EP7 Initializers -->
+  <Action type="Sims3.Gameplay.ActorSystems.BuffTransformation,Sims3GameplaySystems" init="ParseTransformationData"/>
+  <Action type="Sims3.Gameplay.Objects.Toys.MagicFateBall,Sims3GameplayObjects" init="ParseQuestionData" productversions="EP7"/>
+
+  <!-- STORE Initializers -->
+  <Action type="Sims3.Gameplay.StoreSystems.SetObjectHelper,Sims3GameplaySystems" init="CreateSetObjectTable" productversions="BaseGame" editingame="False" />
+  <Action type="Sims3.Gameplay.StoreSystems.HotInstallCallbackHelper,Sims3GameplaySystems" init="CreateHotInstallListeners" productversions="BaseGame" editingame="False" />
+
+  <!-- NOTE: This should preferable be the second last gameplay initializer. The intent is to validate uniforms after the above methods have parsed them. -Manu Sharma -->
+  <Action type="Sims3.Gameplay.CAS.OutfitUtils,Sims3GameplaySystems" init="ValidateParsedSimUniforms"/>
+  <!-- NOTE: This should always be the last entry in this file.  We want it to clear the reflection memory used by all of these things before it.-Mike Duke -->
+  <Action type="Sims3.SimIFace.Simulator,SimIFace" init="ClearReflectionCache"/>
+</GameplayInitializers>

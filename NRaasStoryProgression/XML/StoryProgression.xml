@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StoryProgression>
+  <MethodFile>
+    <File></File>
+  </MethodFile>
+  <MethodFile>
+    <File>NRaas.StoryProgression.Scoring</File>
+  </MethodFile>
+</StoryProgression>

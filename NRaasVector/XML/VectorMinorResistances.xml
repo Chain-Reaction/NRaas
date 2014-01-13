@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resistances>
+  <Resistance>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+    <Delta></Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorMinorAteMeal</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kAteMeal</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorMinorMeditate</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kMeditated</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorMinorRest</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>WellRested</BuffName>
+    <Delta>5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorMinorStress</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Overworked</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorMinorWeak</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Weakened</BuffName>
+    <Delta>-5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorMinorBath</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>DuckTimeFun,Tranquil</BuffName>
+    <Delta>5</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorMinorBubbleBath</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kTookBubbleBath</Event>
+    <Delta>5</Delta>
+  </Resistance>
+</Resistances>

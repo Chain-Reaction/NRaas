@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vectors>
+  <Vectors>
+    <GUID></GUID>
+      <!-- This value MUST be unique amongst all diseases a user has installed -->
+    <InitialStrength></InitialStrength>
+      <!-- Relative to Strength Scoring -->
+    <InfectionScoring></InfectionScoring>
+      <!-- Scoring for determining whether a sim can be infected -->
+    <InfectionMinimum></InfectionMinimum>
+      <!-- Minimum scoring for success -->
+    <CanOutbreak></CanOutbreak>
+      <!-- Whether the disease can spontaneously emerge in the population -->
+    <InoculationRating></InoculationRating>
+      <!-- How many strains an inoculation protects against -->
+    <InoculationCost></InoculationCost>
+      <!-- How much to inoculate against this disease (inoculation is disabled if 0) -->
+    <ResistanceCost></ResistanceCost>
+      <!-- How much to buy resistance against this disease (buying resistance is disabled if 0) -->
+    <HighProtectionCost></HighProtectionCost>
+      <!-- How much to buy protection from the hospital (buying protection is disabled if 0) -->
+    <LowProtectionCost></LowProtectionCost>
+      <!-- How much to buy protection from the hideout (buying protection is disabled if 0) -->
+    <MinimumStrainDifference></MinimumStrainDifference>
+      <!-- Minimum difference between strains to reinfect a sim -->
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasBurningSim</GUID>
+    <InitialStrength>10</InitialStrength>
+    <InfectionScoring>NRaasVectorLethalInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <InoculationCost>5000</InoculationCost>
+    <ResistanceCost>500</ResistanceCost>
+    <LowProtectionCost>250</LowProtectionCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasMunchies</GUID>
+    <InitialStrength>10</InitialStrength>
+    <InfectionScoring>NRaasVectorLethalInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <InoculationCost>500</InoculationCost>
+    <ResistanceCost>100</ResistanceCost>
+    <HighProtectionCost>50</HighProtectionCost>
+    <LowProtectionCost>25</LowProtectionCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+
+  <NRaasMunchies>
+    <!-- Global parameters over all stages -->
+    <InfectionRate>0</InfectionRate>
+    <SocialInfectionRate>0.01</SocialInfectionRate>
+    <WoohooInfectionRate>0.75</WoohooInfectionRate>
+
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <SymptomScoring>NRaasVectorLethalSymptom</SymptomScoring>
+    <SymptomScoringMinimum>0</SymptomScoringMinimum>
+    
+    <NumResistances>4</NumResistances>
+    <Resistance1>NRaasVectorLethalEating</Resistance1>
+    <Resistance2>NRaasVectorLethalSanguineSnack</Resistance2>
+    <Resistance3>NRaasVectorLethalDivineMeal</Resistance3>
+    <Resistance4>NRaasVectorLethalStuffed</Resistance4>
+  </NRaasMunchies>
+  <NRaasMunchies>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation is 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Mutate while incubating -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>9</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>ContagiousMin,-2,2</Mutable4>
+    <Mutable5>ContagiousMax,-2,2</Mutable5>
+    <Mutable6>StarvationMin,-2,2</Mutable6>
+    <Mutable7>StarvationMax,-2,2</Mutable7>
+    <Mutable8>RemissionMin,-2,2</Mutable8>
+    <Mutable9>RemissionMax,-2,2</Mutable9>
+
+    <!-- Become Contagious -->
+    <NextStage>Contagious</NextStage>
+  </NRaasMunchies>
+  <NRaasMunchies>
+    <Name>Contagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Contagious for 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>ContagiousMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>ContagiousMax</MaxMutation>
+
+    <!-- Incur mild symptoms -->
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorLethalMunchies,NRaasVectorLethalMunchiesVampire,NRaasVectorLethalCuddle</Symptoms1>
+    <SymptomChance1>0.50</SymptomChance1>
+    <Symptoms2>NRaasVectorLethalWeightLoss,NRaasVectorLethalCuddle</Symptoms2>
+    <SymptomChance2>0.25</SymptomChance2>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLethalResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>PersistContagious</FailureStage>
+  </NRaasMunchies>
+  <NRaasMunchies>
+    <Name>PersistContagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Recurse into Contagious thrice and then begin Starvation -->
+    <Counter>ContagiousCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>Contagious</SuccessStage>
+    <FailureStage>PreStarvation</FailureStage>
+  </NRaasMunchies>
+  <NRaasMunchies>
+    <Name>PreStarvation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.StoryStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Custom Story -->
+    <StoryUnknown>NRaasMunchiesStarvationUnknown</StoryUnknown>
+    <StoryIdentified>NRaasMunchiesStarvationIdentified</StoryIdentified>
+
+    <!-- Start Starvation -->
+    <NextStage>Starvation</NextStage>
+  </NRaasMunchies>
+  <NRaasMunchies>
+    <Name>Starvation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Custom Story -->
+    
+    <!-- Contagious for 6 to 12 hours -->
+    <MinDuration>6</MinDuration>
+    <MinMutation>StarvationMin</MinMutation>
+    <MaxDuration>12</MaxDuration>
+    <MaxMutation>StarvationMax</MaxMutation>
+
+    <!-- Incur heavy symptoms -->
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorLethalStarving,NRaasVectorLethalStarvingVampire,NRaasVectorLethalCuddle</Symptoms1>
+    <SymptomChance1>0.50</SymptomChance1>
+    <Symptoms2>NRaasVectorLethalWeightLoss,NRaasVectorLethalCuddle</Symptoms2>
+    <SymptomChance2>0.25</SymptomChance2>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLethalResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>PersistStarvation</FailureStage>
+  </NRaasMunchies>
+  <NRaasMunchies>
+    <Name>PersistStarvation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Recurse into Starvation thrice and then begin Remission -->
+    <Counter>ContagiousCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>Starvation</SuccessStage>
+    <FailureStage>Remission</FailureStage>
+  </NRaasMunchies>
+  <NRaasMunchies>
+    <Name>Remission</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Remission,ShowingSigns</Type>
+
+    <!-- Contagious for 5 to 10 days -->
+    <MinDuration>120</MinDuration>
+    <MinMutation>RemissionMin</MinMutation>
+    <MaxDuration>240</MaxDuration>
+    <MaxMutation>RemissionMax</MaxMutation>
+
+    <!-- Incur mild symptoms -->
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorLethalMunchies,NRaasVectorLethalMunchiesVampire,NRaasVectorLethalCuddle</Symptoms1>
+    <SymptomChance1>0.25</SymptomChance1>
+    <Symptoms2>NRaasVectorLethalWeightLoss,NRaasVectorLethalCuddle</Symptoms2>
+    <SymptomChance2>0.1</SymptomChance2>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLethalResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>Contagious</FailureStage>
+  </NRaasMunchies>
+
+  <NRaasBurningSim>
+    <!-- Global parameters over all stages -->
+    <InfectionRate>0</InfectionRate>
+    <SocialInfectionRate>0.10</SocialInfectionRate>
+    <WoohooInfectionRate>0.75</WoohooInfectionRate>
+
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <NumResistances>8</NumResistances>
+    <Resistance1>NRaasVectorLethalSwimming</Resistance1>
+    <Resistance2>NRaasVectorLethalMeditate</Resistance2>
+    <Resistance3>NRaasVectorLethalHygiene</Resistance3>
+    <Resistance4>NRaasVectorLethalHeatingUp</Resistance4>
+    <Resistance5>NRaasVectorLethalBath</Resistance5>
+    <Resistance6>NRaasVectorLethalFire</Resistance6>
+    <Resistance7>NRaasVectorLethalHotTub</Resistance7>
+    <Resistance8>NRaasVectorLethalTorched</Resistance8>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation is 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Mutate while incubating -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>7</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>ContagiousMin,-2,2</Mutable4>
+    <Mutable5>ContagiousMax,-2,2</Mutable5>
+    <Mutable6>CombustibleMin,-2,2</Mutable6>
+    <Mutable7>CombustibleMax,-2,2</Mutable7>
+
+    <!-- Become Contagious -->
+    <NextStage>Contagious</NextStage>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>Contagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- Contagious for 5 to 10 days -->
+    <MinDuration>120</MinDuration>
+    <MinMutation>ContagiousMin</MinMutation>
+    <MaxDuration>240</MaxDuration>
+    <MaxMutation>ContagiousMax</MaxMutation>
+
+    <!-- Incur mild symptoms -->
+    <NumSymptoms>1</NumSymptoms>
+    <Symptoms1>NRaasVectorLethalSweats,NRaasVectorLethalSmoke</Symptoms1>
+    <SymptomChance1>0.2</SymptomChance1>
+
+    <!-- Test strength for resistance -->
+    <Scoring>NRaasVectorLethalResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Resist</SuccessStage>
+    <FailureStage>TestLethality</FailureStage>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>TestLethality</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.TestSettingStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+
+    <Setting>NRaasBurningManReducedLethality</Setting>
+    <SuccessStage>ShowSignsLow</SuccessStage>
+    <FailureStage>ShowSignsHigh</FailureStage>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>ShowSignsHigh</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInnoculate>False</CanInnoculate>
+
+    <!-- Show Signs for 6 to 12 hours -->
+    <MinDuration>6</MinDuration>
+    <MinMutation>CombustibleMin</MinMutation>
+    <MaxDuration>12</MaxDuration>
+    <MaxMutation>CombustibleMax</MaxMutation>
+
+    <!-- Custom Story -->
+    <StoryUnknown>NRaasBurningSimCombustibleUnknown</StoryUnknown>
+    <StoryIdentified>NRaasBurningSimCombustibleIdentified</StoryIdentified>
+    
+    <!-- Incur heavy symptoms -->
+    <NumSymptoms>3</NumSymptoms>
+    <Symptoms1>NRaasVectorLethalOnFire</Symptoms1>
+    <SymptomChance1>0.05</SymptomChance1>
+    <Symptoms2>NRaasVectorLethalCombust</Symptoms2>
+    <SymptomChance2>0.15</SymptomChance2>
+    <Symptoms3>NRaasVectorLethalSweats,NRaasVectorLethalSmoke</Symptoms3>
+    <SymptomChance3>0.5</SymptomChance3>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLethalResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Resist</SuccessStage>
+    <FailureStage>PersistShowSignsHigh</FailureStage>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>PersistShowSignsHigh</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInnoculate>False</CanInnoculate>
+
+    <!-- Recurse into ShowSigns twice and then begin again -->
+    <Counter>ShowSignsHighCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>ShowSignsHigh</SuccessStage>
+    <FailureStage>Resist</FailureStage>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>ShowSignsLow</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInnoculate>False</CanInnoculate>
+
+    <!-- Show Signs for 6 to 12 hours -->
+    <MinDuration>6</MinDuration>
+    <MinMutation>CombustibleMin</MinMutation>
+    <MaxDuration>12</MaxDuration>
+    <MaxMutation>CombustibleMax</MaxMutation>
+
+    <!-- Custom Story -->
+    <StoryUnknown>NRaasBurningSimCombustibleUnknown</StoryUnknown>
+    <StoryIdentified>NRaasBurningSimCombustibleIdentified</StoryIdentified>
+
+    <!-- Incur milder symptoms -->
+    <NumSymptoms>2</NumSymptoms>
+    <Symptoms1>NRaasVectorLethalCombust</Symptoms1>
+    <SymptomChance1>0.05</SymptomChance1>
+    <Symptoms2>NRaasVectorLethalSweats,NRaasVectorLethalSmoke</Symptoms2>
+    <SymptomChance2>0.8</SymptomChance2>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLethalResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Resist</SuccessStage>
+    <FailureStage>PersistShowSignsLow</FailureStage>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>PersistShowSignsLow</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInnoculate>False</CanInnoculate>
+
+    <!-- Recurse into ShowSigns twice and then begin again -->
+    <Counter>ShowSignsLowCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>ShowSignsLow</SuccessStage>
+    <FailureStage>Resist</FailureStage>
+  </NRaasBurningSim>
+  <NRaasBurningSim>
+    <Name>Resist</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.EndStage, NRaasVector</FullClassName>
+    <Type>Resisted</Type>
+  </NRaasBurningSim>
+
+</Vectors>

@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Personalities>
+  <Personality>
+    <Name></Name>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.SimPersonality, NRaasStoryProgression</FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+    <IncreasedChancePerCycle>15</IncreasedChancePerCycle>
+    <Speed>250</Speed>
+  </Personality>
+  <Personality>
+    <Name>TownRobin</Name>
+    <DefaultFemaleLocalization>False</DefaultFemaleLocalization>
+    <FriendlyLeadership>True</FriendlyLeadership>
+    <FriendlyMembership>True</FriendlyMembership>
+
+    <OpposingClans>TownThug,TownBully,TownCat,TownKingpin,TownVigilante</OpposingClans>
+    
+    <CandidateScoring>TownRobinCandidate</CandidateScoring>
+    <CandidateScoringMinimum>50</CandidateScoringMinimum>
+    <CandidateAgeGender>Teen,YoungAdult,Adult</CandidateAgeGender>
+    <CandidateUserAgeGender0>AllowTeen</CandidateUserAgeGender0>
+
+    <LeaderRetentionAgeGender>Teen,YoungAdult,Adult</LeaderRetentionAgeGender>
+    <LeaderRetentionUserAgeGender0>AllowTeen</LeaderRetentionUserAgeGender0>
+
+    <MemberRetentionAgeGender>Teen,YoungAdult,Adult,Elder</MemberRetentionAgeGender>
+  </Personality>
+  <Personality>
+    <Name>TownCat</Name>
+    <DefaultFemaleLocalization>False</DefaultFemaleLocalization>
+    <FriendlyLeadership>False</FriendlyLeadership>
+    <FriendlyMembership>True</FriendlyMembership>
+
+    <Lawfulness>Unlawful</Lawfulness>
+    <OpposingClans>TownRobin,TownKingpin,TownVigilante</OpposingClans>
+
+    <CandidateAgeGender>Teen,YoungAdult,Adult</CandidateAgeGender>
+    <CandidateUserAgeGender0>AllowTeen</CandidateUserAgeGender0>
+    <CandidateScoring>TownCatCandidate</CandidateScoring>
+    <CandidateScoringMinimum>50</CandidateScoringMinimum>
+
+    <LeaderRetentionAgeGender>Teen,YoungAdult,Adult</LeaderRetentionAgeGender>
+    <LeaderRetentionUserAgeGender0>AllowTeen</LeaderRetentionUserAgeGender0>
+
+    <MemberRetentionAgeGender>Teen,YoungAdult,Adult,Elder</MemberRetentionAgeGender>
+  </Personality>
+  <Personality>
+    <Name>TownVigilante</Name>
+    <DefaultFemaleLocalization>False</DefaultFemaleLocalization>
+    <FriendlyLeadership>True</FriendlyLeadership>
+    <FriendlyMembership>True</FriendlyMembership>
+
+    <Lawfulness>Unlawful</Lawfulness>
+    <OpposingClans>TownThug,TownBully,TownRobin,TownCat,TownKingpin,TownDracul,TownNosferatu</OpposingClans>
+
+    <CandidateAgeGender>Teen,YoungAdult,Adult,Elder</CandidateAgeGender>
+    <CandidateUserAgeGender0>AllowTeen</CandidateUserAgeGender0>
+    <CandidateScoring>TownVigilanteCandidate</CandidateScoring>
+    <CandidateScoringMinimum>50</CandidateScoringMinimum>
+
+    <LeaderRetentionAgeGender>Teen,YoungAdult,Adult,Elder</LeaderRetentionAgeGender>
+    <LeaderRetentionUserAgeGender0>AllowTeen</LeaderRetentionUserAgeGender0>
+    <LeaderRetentionScoring>TownVigilanteMember</LeaderRetentionScoring>
+    <LeaderRetentionScoringMinimum>0</LeaderRetentionScoringMinimum>
+
+    <MemberRetentionAgeGender>Teen,YoungAdult,Adult,Elder</MemberRetentionAgeGender>
+    <MemberRetentionUserAgeGender0>AllowTeen</MemberRetentionUserAgeGender0>
+    <MemberRetentionScoring>TownVigilanteMember</MemberRetentionScoring>
+    <MemberRetentionScoringMinimum>0</MemberRetentionScoringMinimum>
+  </Personality>
+  <Personality>
+    <Name>TownKingpin</Name>
+    <DefaultFemaleLocalization>False</DefaultFemaleLocalization>
+    <FriendlyLeadership>True</FriendlyLeadership>
+    <FriendlyMembership>True</FriendlyMembership>
+
+    <Lawfulness>Unlawful</Lawfulness>
+    <OpposingClans>TownVigilante,TownCat,TownRobin</OpposingClans>
+
+    <CandidateScoring>TownKingpinCandidate</CandidateScoring>
+    <CandidateScoringMinimum>50</CandidateScoringMinimum>
+    <CandidateAgeGender>Teen,YoungAdult,Adult,Elder</CandidateAgeGender>
+    <CandidateUserAgeGender0>AllowTeen</CandidateUserAgeGender0>
+    <CandidateUserAgeGender1>AllowYoungAdult</CandidateUserAgeGender1>
+
+    <LeaderRetentionAgeGender>Teen,YoungAdult,Adult,Elder</LeaderRetentionAgeGender>
+    <LeaderRetentionUserAgeGender0>AllowTeen</LeaderRetentionUserAgeGender0>
+    <LeaderRetentionUserAgeGender1>AllowYoungAdult</LeaderRetentionUserAgeGender1>
+
+    <MemberRetentionScoring>TownKingpinMember</MemberRetentionScoring>
+    <MemberRetentionScoringMinimum>1</MemberRetentionScoringMinimum>
+    <MemberRetentionUserAgeGender0>AllowTeenRecruit</MemberRetentionUserAgeGender0>
+  </Personality>
+
+  <TownKingpin>
+    <FullClassName></FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>PushDeathChance</Name>
+    <Default>50</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>Karma</Name>
+    <Default>0</Default>
+    <ResetOnLeaderChange>True</ResetOnLeaderChange>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.AgeGenderOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowTeen</Name>
+    <AgeGender>Teen</AgeGender>
+    <Default>False</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.AgeGenderOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowYoungAdult</Name>
+    <AgeGender>YoungAdult</AgeGender>
+    <Default>False</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.AgeGenderOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowTeenRecruit</Name>
+    <AgeGender>Teen</AgeGender>
+    <Default>False</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.BooleanOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowGoToJail</Name>
+    <Default>True</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxBribe</Name>
+    <Default>5000</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Bribe</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.GiveCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>25</Delta>
+    <AccountingKey>Bribes</AccountingKey>
+    <Minimum>1000</Minimum>
+    <Maximum>MaxBribe</Maximum>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Members of Bad Government -->
+    <TargetScoring>TownKingpinDirtyGov</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <AccumulateValue0>Karma, 5</AccumulateValue0>
+
+    <!-- Propagate hate to all clean government officials -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>BribeHate</PropagateStory>
+    <PropagateEnemy>Target</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>TownKingpinGoodGov</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Beatdown</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.AntagonizeScenario, NRaasStoryProgression</Scenario>
+    <Delta>25</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+    <ChanceOfDeath>PushDeathChance</ChanceOfDeath>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Members of Good Government -->
+    <TargetScoring>TownKingpinGoodGov</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <AccumulateValue0>Karma, -5</AccumulateValue0>
+
+    <!-- Propagate hate to all friends of the target -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>FightHate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Recruit</Name>
+    <Weight>60</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.RecruitScenario, NRaasStoryProgression</Scenario>
+    <Delta>50</Delta>
+    <AllowSteal>False</AllowSteal>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+
+    <!-- Teen or Adult matching scoring -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetScoring>TownKingpinMember</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetUserAgeGender0>AllowTeenRecruit</TargetUserAgeGender0>
+
+    <!-- Propagate hate to all friends of the target -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Disappointed</PropagateStory>
+    <PropagateEnemy>Target</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxMooch</Name>
+    <Default>5000</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Kickback</Name>
+    <Weight>0</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.GiveCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>25</Delta>
+    <AccountingKey>Kickbacks</AccountingKey>
+    <Minimum>750</Minimum>
+    <Maximum>MaxMooch</Maximum>
+    <ShouldPush>False</ShouldPush>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Leader of Clan -->
+    <TargetClanLeader>True</TargetClanLeader>
+    <TargetClanMembers>False</TargetClanMembers>
+
+    <TargetCelebrity>50</TargetCelebrity>
+
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Mooch</Name>
+    <Weight>30</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TakeCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-50</Delta>
+    <AccountingKey>TakeCash</AccountingKey>
+    <Minimum>1000</Minimum>
+    <Maximum>MaxMooch</Maximum>
+    <AllowDebt>True</AllowDebt>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Non related sims in a matching age range -->
+    <TargetScoring>TownKingpinVictim</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessScenario>Kickback</SuccessScenario>
+    <SuccessScenarioActor>Actor</SuccessScenarioActor>
+    <SuccessActorCelebrity>250</SuccessActorCelebrity>
+    <SuccessAccumulateValue0>Karma, -5</SuccessAccumulateValue0>
+
+    <!-- Propagate hate to all friends of the target -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>StealHate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Break</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.SmashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+    <ChanceOfDeath>PushDeathChance</ChanceOfDeath>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Non related sims in a matching age range -->
+    <TargetScoring>TownKingpinVictim</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <ActorCelebrity>250</ActorCelebrity>
+    <AccumulateValue0>Karma, -5</AccumulateValue0>
+
+    <!-- Propagate hate to all friends of the target -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Hate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Arson</Name>
+    <Weight>2</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TorchScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+    <ChanceOfDeath>PushDeathChance</ChanceOfDeath>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Non related sims in a matching age range -->
+    <TargetScoring>TownKingpinVictim</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <ActorCelebrity>250</ActorCelebrity>
+    <AccumulateValue0>Karma, -5</AccumulateValue0>
+
+    <!-- Propagate hate to all friends of the target -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Hate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Cohesion</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.CohesionScenario, NRaasStoryProgression</Scenario>
+    <Delta>20</Delta>
+
+    <!-- Member of clan, but not leader -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Member of clan, but not leader -->
+    <TargetClanLeader>False</TargetClanLeader>
+    <TargetClanMembers>True</TargetClanMembers>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxSteal</Name>
+    <Default>5000</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Steal</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.BurgleScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <Minimum>1000</Minimum>
+    <Maximum>MaxSteal</Maximum>
+    <KeepObject>False</KeepObject>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Non related sims in a matching age range -->
+    <TargetScoring>TownKingpinVictim</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessScenario>Kickback</SuccessScenario>
+    <SuccessScenarioActor>Actor</SuccessScenarioActor>
+    <ActorCelebrity>250</ActorCelebrity>
+    <AccumulateValue0>Karma, -5</AccumulateValue0>
+
+    <!-- Propagate hate to all friends of the target -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>StealHate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-50</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <WeightName>AfterRentDue</WeightName>
+    <Name>RentDue</Name>
+    <Weight>0</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TakeCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-10</Delta>
+    <AccountingKey>TakeCash</AccountingKey>
+    <Minimum>1000</Minimum>
+    <Maximum>MaxMooch</Maximum>
+    <AllowDebt>True</AllowDebt>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+    <ShouldPush>False</ShouldPush>
+
+    <!-- Passed In -->
+    <ActorStandardFilter>Me</ActorStandardFilter>
+
+    <!-- Passed In -->
+    <TargetStandardFilter>Me</TargetStandardFilter>
+
+    <SuccessScenario>Kickback</SuccessScenario>
+    <SuccessScenarioActor>Actor</SuccessScenarioActor>
+    <ActorCelebrity>250</ActorCelebrity>
+    <AccumulateValue0>Karma, -5</AccumulateValue0>
+
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>RentDue</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.SlumlordScenario, NRaasStoryProgressionMoney</Scenario>
+    <Module>NRaasStoryProgressionMoney</Module>
+    <Delta>-10</Delta>
+    <ReportChance>0</ReportChance>
+
+    <!-- Leader of Clan -->
+    <MutualClanLeader>True</MutualClanLeader>
+    <MutalClanMembers>False</MutalClanMembers>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Sim living in rental lot owned by Mutual -->
+    <TargetScoring>TownKingpinVictim</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessScenario>AfterRentDue</SuccessScenario>
+    <SuccessScenarioActor>Actor</SuccessScenarioActor>
+    <SuccessScenarioTarget>Target</SuccessScenarioTarget>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Attraction</Name>
+    <Weight>15</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.CanoodleScenario, NRaasStoryProgression</Scenario>
+    <Delta>10</Delta>
+    <TypeOfStory>Standard</TypeOfStory>
+    <AffairStory>All</AffairStory>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorAllowAffair>True</ActorAllowAffair>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-5</ActorValueTest0Maximum>
+
+    <!-- Single Flirt -->
+    <TargetStandardFilter>AnyFlirt</TargetStandardFilter>
+    <TargetAllowAffair>True</TargetAllowAffair>
+
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Disapproval</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateBuff>CreepedOut</PropagateBuff>
+    <PropagateOrigin>FromEnemy</PropagateOrigin>
+    <PropagateAgeGender>Teen,YoungAdult,Adult,Elder</PropagateAgeGender>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-10</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxGiveAway</Name>
+    <Default>10000</Default>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>GiveAway</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.GiveCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>25</Delta>
+    <AccountingKey>GiveAway</AccountingKey>
+    <Minimum>1000</Minimum>
+    <Maximum>MaxGiveAway</Maximum>
+    <ShouldPush>False</ShouldPush>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Family Member -->
+    <TargetScoring>TownKingpinFamily</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetRelationshipMinimum>Friend</TargetRelationshipMinimum>
+
+    <ActorCelebrity>250</ActorCelebrity>
+    <AccumulateValue0>Karma, 10</AccumulateValue0>
+
+    <!-- Propagate happiness to all friends and clan allies -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateLikingScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Liking</PropagateStory>
+    <PropagateFriend>Actor</PropagateFriend>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateDelta>10</PropagateDelta>
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Invest</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.InvestScenario, NRaasStoryProgressionMoney</Scenario>
+    <Module>NRaasStoryProgressionMoney</Module>
+    <MinimumWealth>1000</MinimumWealth>
+    <AllowMultiple>True</AllowMultiple>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+  </TownKingpin>
+  <TownKingpin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Rent</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.RentScenario, NRaasStoryProgressionMoney</Scenario>
+    <Module>NRaasStoryProgressionMoney</Module>
+    <MinimumWealth>1000</MinimumWealth>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+  </TownKingpin>
+
+  <TownVigilante>
+    <FullClassName></FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>Karma</Name>
+    <Default>0</Default>
+    <ResetOnLeaderChange>True</ResetOnLeaderChange>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.AgeGenderOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowTeen</Name>
+    <AgeGender>Teen</AgeGender>
+    <Default>True</Default>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.BooleanOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowGoToJail</Name>
+    <Default>True</Default>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>LoseMember</Name>
+    <Weight>0</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.DropMemberScenario, NRaasStoryProgression</Scenario>
+    <ShouldPush>False</ShouldPush>
+    <Chance>25</Chance>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+    <!-- Member of Clan -->
+    <TargetClanLeader>False</TargetClanLeader>
+    <TargetClanMembers>True</TargetClanMembers>
+
+    <AccumulateValue0>Karma, 10</AccumulateValue0>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxBribe</Name>
+    <Default>1000</Default>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Bribe</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.GiveCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>25</Delta>
+    <AccountingKey>Bribes</AccountingKey>
+    <Minimum>100</Minimum>
+    <Maximum>MaxBribe</Maximum>
+    <AcceptanceScoring>TownVigilanteDirtyCop</AcceptanceScoring>
+
+    <!-- Leader or Member of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Members of Law Enforcement -->
+    <TargetScoring>TownVigilanteLaw</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessAccumulateValue0>Karma, 5</SuccessAccumulateValue0>
+
+    <FailureScenario>LoseMember</FailureScenario>
+    <FailureScenarioDelta>25</FailureScenarioDelta>
+    <FailureAccumulateValue0>Karma, -5</FailureAccumulateValue0>
+
+    <!-- Propagate hate to all law enforcement officers -->
+    <SuccessPropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</SuccessPropagateFullClassName>
+    <SuccessPropagateStory>BribeHate</SuccessPropagateStory>
+    <SuccessPropagateReportChance>0</SuccessPropagateReportChance>
+    <SuccessPropagateEnemy>Target</SuccessPropagateEnemy>
+    <SuccessPropagateFocus>Target</SuccessPropagateFocus>
+    <SuccessPropagateActorStandardFilter>Me</SuccessPropagateActorStandardFilter>
+    <SuccessPropagateTargetScoring>TownVigilanteLaw</SuccessPropagateTargetScoring>
+    <SuccessPropagateTargetScoringMinimum>1</SuccessPropagateTargetScoringMinimum>
+    <SuccessPropagateRelationshipGate>Friend</SuccessPropagateRelationshipGate>
+    <SuccessPropagateDelta>-25</SuccessPropagateDelta>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Derision</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.DerisionScenario, NRaasStoryProgression</Scenario>
+    <Delta>-20</Delta>
+
+    <!-- Leader or Member of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Members of Law Enforcement -->
+    <TargetScoring>TownVigilanteLaw</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+
+    <AccumulateValue0>Karma, 5</AccumulateValue0>
+
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Cohesion</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.CohesionScenario, NRaasStoryProgression</Scenario>
+    <Delta>20</Delta>
+
+    <!-- Leader or Member of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Leader or Member of Clan -->
+    <TargetClanLeader>True</TargetClanLeader>
+    <TargetClanMembers>True</TargetClanMembers>
+
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Recruit</Name>
+    <Weight>40</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.RecruitScenario, NRaasStoryProgression</Scenario>
+    <Delta>50</Delta>
+    <AllowSteal>True</AllowSteal>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+
+    <!-- Candidates for the Clan leadership -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetUserAgeGender0>AllowTeen</TargetUserAgeGender0>
+    <TargetScoring>TownVigilanteCandidate</TargetScoring>
+    <TargetScoringMinimum>50</TargetScoringMinimum>
+
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Antagonize</Name>
+    <Weight>30</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.AntagonizeScenario, NRaasStoryProgression</Scenario>
+    <Delta>-50</Delta>
+    <FightScoring>Fight</FightScoring>
+    <AllowGoToJail>False</AllowGoToJail>
+
+    <!-- Leader or Member of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Member of Opposing Clan -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetScoring>TownVigilanteTarget</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+    <TargetValueTest0>Karma</TargetValueTest0>
+    <TargetValueTest0Maximum>-1</TargetValueTest0Maximum>
+
+    <SuccessScenario>Cohesion</SuccessScenario>
+    <SuccessDelta>10</SuccessDelta>
+    <SuccessActorBuff0>Delighted</SuccessActorBuff0>
+    <SuccessActorOrigin0>FromWinningFight</SuccessActorOrigin0>
+    <SuccessActorCelebrity>250</SuccessActorCelebrity>
+    <SuccessTargetBuff0>Sore</SuccessTargetBuff0>
+    <SuccessTargetOrigin0>FromLosingFight</SuccessTargetOrigin0>
+    <SuccessAccumulateValue0>Karma, -2</SuccessAccumulateValue0>
+
+    <FailureActorBuff0>Sore</FailureActorBuff0>
+    <FailureActorOrigin0>FromLosingFight</FailureActorOrigin0>
+    <FailureTargetBuff0>AdrenalineRush</FailureTargetBuff0>
+    <FailureTargetOrigin0>FromWinningFight</FailureTargetOrigin0>
+    <FailureAccumulateValue0>Karma, 2</FailureAccumulateValue0>
+
+    <ExtremeFailureScenario>LoseMember</ExtremeFailureScenario>
+    <ExtremeFailureScenarioDelta>25</ExtremeFailureScenarioDelta>
+
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Hate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Break</Name>
+    <Weight>30</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.SmashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-50</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+    <SneakinessScoring>Fight</SneakinessScoring>
+
+    <!-- Leader or Member of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Member of Opposing Clan -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetScoring>TownVigilanteTarget</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+    <TargetValueTest0>Karma</TargetValueTest0>
+    <TargetValueTest0Maximum>-1</TargetValueTest0Maximum>
+
+    <SuccessActorCelebrity>250</SuccessActorCelebrity>
+    <SuccessAccumulateValue0>Karma, -5</SuccessAccumulateValue0>
+
+    <FailureScenario>LoseMember</FailureScenario>
+    <FailureScenarioDelta>25</FailureScenarioDelta>
+    
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Hate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownVigilante>
+  <TownVigilante>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Arson</Name>
+    <Weight>5</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TorchScenario, NRaasStoryProgression</Scenario>
+    <Delta>-50</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+    <SneakinessScoring>Fight</SneakinessScoring>
+
+    <!-- Leader or Member of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Member of Opposing Clan -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetScoring>TownVigilanteTarget</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+    <TargetValueTest0>Karma</TargetValueTest0>
+    <TargetValueTest0Maximum>-1</TargetValueTest0Maximum>
+
+    <SuccessActorCelebrity>250</SuccessActorCelebrity>
+    <SuccessAccumulateValue0>Karma, -5</SuccessAccumulateValue0>
+
+    <FailureScenario>LoseMember</FailureScenario>
+    <FailureScenarioDelta>25</FailureScenarioDelta>
+
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Hate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownVigilante>
+
+  <TownCat>
+    <FullClassName></FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>Karma</Name>
+    <Default>0</Default>
+    <ResetOnLeaderChange>True</ResetOnLeaderChange>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.AgeGenderOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowTeen</Name>
+    <AgeGender>Teen</AgeGender>
+    <Default>False</Default>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.BooleanOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowGoToJailLeader</Name>
+    <Default>True</Default>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.BooleanOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowGoToJailOther</Name>
+    <Default>True</Default>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxBribe</Name>
+    <Default>1000</Default>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <ProductVersion>EP5</ProductVersion>
+    <Name>Familiar</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.FamiliarScenario, NRaasStoryProgression</Scenario>
+    <Delta>50</Delta>
+    <Species>Cat</Species>
+    <CheckExisting>True</CheckExisting>
+    
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Bribe</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.GiveCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>25</Delta>
+    <AccountingKey>Bribes</AccountingKey>
+    <Minimum>250</Minimum>
+    <Maximum>MaxBribe</Maximum>
+    <AcceptanceScoring>TownVigilanteDirtyCop</AcceptanceScoring>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Members of Law Enforcement -->
+    <TargetScoring>TownVigilanteLaw</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessAccumulateValue0>Karma, 5</SuccessAccumulateValue0>
+
+    <!-- Propagate hate to all law enforcement officers -->
+    <SuccessPropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</SuccessPropagateFullClassName>
+    <SuccessPropagateStory>BribeHate</SuccessPropagateStory>
+    <SuccessPropagateReportChance>0</SuccessPropagateReportChance>
+    <SuccessPropagateEnemy>Target</SuccessPropagateEnemy>
+    <SuccessPropagateFocus>Target</SuccessPropagateFocus>
+    <SuccessPropagateActorStandardFilter>Me</SuccessPropagateActorStandardFilter>
+    <SuccessPropagateTargetScoring>TownVigilanteLaw</SuccessPropagateTargetScoring>
+    <SuccessPropagateTargetScoringMinimum>1</SuccessPropagateTargetScoringMinimum>
+    <SuccessPropagateRelationshipGate>Friend</SuccessPropagateRelationshipGate>
+    <SuccessPropagateDelta>-25</SuccessPropagateDelta>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxMooch</Name>
+    <Default>20000</Default>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Mooch</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TakeCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <AccountingKey>TakeCash</AccountingKey>
+    <Minimum>1000</Minimum>
+    <Maximum>MaxMooch</Maximum>
+    <AllowGoToJail>AllowGoToJailLeader</AllowGoToJail>
+    <SneakinessScoring>Sneakiness</SneakinessScoring>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+    <!-- Any Sim Richer than the Actor -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetUseAgeGender0>AllowTeen</TargetUseAgeGender0>
+    <TargetScoring>TownCatRichTarget</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessRecruitTargetStandardFilter>Me</SuccessRecruitTargetStandardFilter>
+    <SuccessActorCelebrity>250</SuccessActorCelebrity>
+    <SuccessAccumulateValue0>Karma, -5</SuccessAccumulateValue0>
+
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxSteal</Name>
+    <Default>50000</Default>
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Steal</Name>
+    <Weight>40</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.BurgleScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <Minimum>250</Minimum>
+    <Maximum>MaxSteal</Maximum>
+    <KeepObject>False</KeepObject>
+    <AllowGoToJail>AllowGoToJailLeader</AllowGoToJail>
+    <SneakinessScoring>Sneakiness</SneakinessScoring>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+    <!-- Any Sim Richer than the Actor -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetUseAgeGender0>AllowTeen</TargetUseAgeGender0>
+    <TargetScoring>TownCatRichTarget</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessRecruitTargetStandardFilter>Me</SuccessRecruitTargetStandardFilter>
+    <SuccessActorCelebrity>250</SuccessActorCelebrity>
+    <SuccessAccumulateValue0>Karma, -5</SuccessAccumulateValue0>
+
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Derision</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.DerisionScenario, NRaasStoryProgression</Scenario>
+    <Delta>-20</Delta>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Member of Clan -->
+    <TargetClanLeader>False</TargetClanLeader>
+    <TargetClanMembers>True</TargetClanMembers>
+
+    <AccumulateValue0>Karma, 5</AccumulateValue0>
+    
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Cohesion</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.CohesionScenario, NRaasStoryProgression</Scenario>
+    <Delta>20</Delta>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Member of Clan -->
+    <TargetClanLeader>False</TargetClanLeader>
+    <TargetClanMembers>True</TargetClanMembers>
+
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Break</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.SmashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJailOther</AllowGoToJail>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMember>True</ActorClanMember>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Leader of Clan -->
+    <TargetClanLeader>True</TargetClanLeader>
+    <TargetClanMembers>False</TargetClanMembers>
+
+    <AccumulateValue0>Karma, 10</AccumulateValue0>
+
+  </TownCat>
+  <TownCat>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Arson</Name>
+    <Weight>2</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TorchScenario, NRaasStoryProgression</Scenario>
+    <Delta>-50</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJailOther</AllowGoToJail>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMember>True</ActorClanMember>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Leader of Clan -->
+    <TargetClanLeader>True</TargetClanLeader>
+    <TargetClanMembers>False</TargetClanMembers>
+
+    <AccumulateValue0>Karma, 10</AccumulateValue0>
+
+  </TownCat>
+
+  <TownRobin>
+    <FullClassName></FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>Karma</Name>
+    <Default>0</Default>
+    <ResetOnLeaderChange>True</ResetOnLeaderChange>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.AgeGenderOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowTeen</Name>
+    <AgeGender>Teen</AgeGender>
+    <Default>False</Default>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.BooleanOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowGoToJailLeader</Name>
+    <Default>False</Default>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.BooleanOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowGoToJailOther</Name>
+    <Default>False</Default>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxGiveAway</Name>
+    <Default>25000</Default>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>GiveAway</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.GiveCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>25</Delta>
+    <AccountingKey>GiveAway</AccountingKey>
+    <Minimum>1000</Minimum>
+    <Maximum>MaxGiveAway</Maximum>
+    <ShouldPush>False</ShouldPush>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorScoring>TownRobinGiveAway</ActorScoring>
+    <ActorScoringMinimum>0</ActorScoringMinimum>
+    
+    <!-- Poor Sim -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetUseAgeGender0>AllowTeen</TargetUseAgeGender0>
+    <TargetScoring>TownRobinPoorTarget</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+
+    <ActorCelebrity>250</ActorCelebrity>
+    <AccumulateValue0>Karma, 10</AccumulateValue0>
+
+    <RecruitTargetStandardFilter>Me</RecruitTargetStandardFilter>
+
+    <!-- Propagate happiness to all friends and clan allies -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateLikingScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>Liking</PropagateStory>
+    <PropagateFriend>Actor</PropagateFriend>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateDelta>10</PropagateDelta>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxMooch</Name>
+    <Default>20000</Default>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Mooch</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TakeCashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <AccountingKey>TakeCash</AccountingKey>
+    <Minimum>250</Minimum>
+    <Maximum>MaxMooch</Maximum>
+    <AllowGoToJail>AllowGoToJailLeader</AllowGoToJail>
+    <SneakinessScoring>Sneakiness</SneakinessScoring>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+    <!-- Rich or Meanie clan Sim -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetUseAgeGender0>AllowTeen</TargetUseAgeGender0>
+    <TargetScoring>TownRobinRichTarget</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessScenario>GiveAway</SuccessScenario>
+    <SuccessAccumulateValue0>Karma, -5</SuccessAccumulateValue0>
+
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxSteal</Name>
+    <Default>50000</Default>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Steal</Name>
+    <Weight>40</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.BurgleScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <Minimum>250</Minimum>
+    <Maximum>MaxSteal</Maximum>
+    <KeepObject>False</KeepObject>
+    <AllowGoToJail>AllowGoToJailLeader</AllowGoToJail>
+    <SneakinessScoring>Sneakiness</SneakinessScoring>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+    <!-- Rich or Meanie clan Sim -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetUseAgeGender0>AllowTeen</TargetUseAgeGender0>
+    <TargetScoring>TownRobinRichTarget</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <SuccessScenario>GiveAway</SuccessScenario>
+    <SuccessAccumulateValue0>Karma, -5</SuccessAccumulateValue0>
+
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Admiration</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.CohesionScenario, NRaasStoryProgression</Scenario>
+    <Delta>20</Delta>
+
+    <!-- Leader of Robin -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Minimum>5</ActorValueTest0Minimum>
+
+    <!-- Member of Robin -->
+    <TargetClanLeader>False</TargetClanLeader>
+    <TargetClanMembers>True</TargetClanMembers>
+
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Cohesion</Name>
+    <Weight>20</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.CohesionScenario, NRaasStoryProgression</Scenario>
+    <Delta>20</Delta>
+
+    <!-- Member of Robin -->
+    <ActorClanLeader>False</ActorClanLeader>
+    <ActorClanMembers>True</ActorClanMembers>
+
+    <!-- Member of Robin -->
+    <TargetClanLeader>False</TargetClanLeader>
+    <TargetClanMembers>True</TargetClanMembers>
+
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Attraction</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.CanoodleScenario, NRaasStoryProgression</Scenario>
+    <Delta>20</Delta>
+    <TypeOfStory>Standard</TypeOfStory>
+    <AffairStory>None</AffairStory>
+
+    <!-- Leader of Robin -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Minimum>10</ActorValueTest0Minimum>
+
+    <!-- Existing Flirt or a new one -->
+    <TargetStandardFilter>ExistingOrAnyFlirt</TargetStandardFilter>
+    <TargetStandardDisallowPartner>True</TargetStandardDisallowPartner>
+    <TargetAllowAffair>False</TargetAllowAffair>
+
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Derision</Name>
+    <Weight>15</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.DerisionScenario, NRaasStoryProgression</Scenario>
+    <Delta>-20</Delta>
+
+    <!-- Leader of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Rich or Meanie clan sims in town -->
+    <TargetAgeGender>Teen,YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetScoring>TownRobinRichTarget</TargetScoring>
+    <TargetScoringMinimum>1</TargetScoringMinimum>
+    <TargetRelationshipMaximum>Friend</TargetRelationshipMaximum>
+
+    <AccumulateValue0>Karma, 5</AccumulateValue0>
+    
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>Break</Name>
+    <Weight>15</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.SmashScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJailOther</AllowGoToJail>
+    <SneakinessScoring>Sneakiness</SneakinessScoring>
+
+    <!-- Rich or Meanie clan sims in town -->
+    <ActorAgeGender>Teen,YoungAdult,Adult,Elder</ActorAgeGender>
+    <ActorUseAgeGender0>AllowTeen</ActorUseAgeGender0>
+    <ActorScoring>TownRobinRichTarget</ActorScoring>
+    <ActorScoringMinimum>1</ActorScoringMinimum>
+    <ActorValueTest0>Karma</ActorValueTest0>
+    <ActorValueTest0Maximum>-10</ActorValueTest0Maximum>
+
+    <!-- Leader of Clan -->
+    <TargetClanLeader>True</TargetClanLeader>
+    <TargetClanMembers>False</TargetClanMembers>
+
+    <AccumulateValue0>Karma, 10</AccumulateValue0>
+
+    <!-- Propagate hate to all friends and clan allies of the Target -->
+    <PropagateFullClassName>NRaas.StoryProgressionSpace.Scenarios.Propagation.PropagateEnemyScenario, NRaasStoryProgression</PropagateFullClassName>
+    <PropagateStory>BreakHate</PropagateStory>
+    <PropagateEnemy>Actor</PropagateEnemy>
+    <PropagateFocus>Target</PropagateFocus>
+    <PropagateActorStandardFilter>Me</PropagateActorStandardFilter>
+    <PropagateTargetScoring>ClanFriendPropagation</PropagateTargetScoring>
+    <PropagateTargetScoringMinimum>1</PropagateTargetScoringMinimum>
+    <PropagateRelationshipGate>Friend</PropagateRelationshipGate>
+    <PropagateDelta>-25</PropagateDelta>
+  </TownRobin>
+  <TownRobin>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>CatHate</Name>
+    <WeightName>Attack</WeightName>
+    <Weight>15</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.DerisionScenario, NRaasStoryProgression</Scenario>
+    <Delta>-25</Delta>
+
+    <!-- Member of Clan -->
+    <ActorClanLeader>True</ActorClanLeader>
+    <ActorClanMembers>False</ActorClanMembers>
+
+    <!-- Leader of Cat -->
+    <TargetClan>TownCat</TargetClan>
+    <TargetClanLeader>True</TargetClanLeader>
+    <TargetClanMembers>False</TargetClanMembers>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+    
+  </TownRobin>
+
+</Personalities>

@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05F375F2-3C0D-4DCC-972A-79BDABA88C47}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasMasterController</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOT_NEXTPHASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;NOT_NEXTPHASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\InvalidPartBooter.cs">
+      <Link>CommonSpace\Booters\InvalidPartBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToStringList.cs">
+      <Link>CommonSpace\Converters\StringToStringList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Dialogs\EnrollmentDialogEx.cs">
+      <Link>CommonSpace\Dialogs\EnrollmentDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\AddSims.cs">
+      <Link>CommonSpace\Helpers\AddSims.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Aging.cs">
+      <Link>CommonSpace\Helpers\Aging.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Annihilation.cs">
+      <Link>CommonSpace\Helpers\Annihilation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
+      <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CleanseTheDead.cs">
+      <Link>CommonSpace\Helpers\CleanseTheDead.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Consignments.cs">
+      <Link>CommonSpace\Helpers\Consignments.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Corrections.cs">
+      <Link>CommonSpace\Helpers\Corrections.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CustomAcademicDegrees.cs">
+      <Link>CommonSpace\Helpers\CustomAcademicDegrees.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\DreamCatcher.cs">
+      <Link>CommonSpace\Helpers\DreamCatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\FacialBlends.cs">
+      <Link>CommonSpace\Helpers\FacialBlends.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\FilePersistence.cs">
+      <Link>CommonSpace\Helpers\FilePersistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\GameflowEx.cs">
+      <Link>CommonSpace\Helpers\GameflowEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Genealogies.cs">
+      <Link>CommonSpace\Helpers\Genealogies.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\GoToSchoolInRabbitHoleHelper.cs">
+      <Link>CommonSpace\Helpers\GoToSchoolInRabbitHoleHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\HomeInspection.cs">
+      <Link>CommonSpace\Helpers\HomeInspection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\InvalidPartBase.cs">
+      <Link>CommonSpace\Helpers\InvalidPartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Investments.cs">
+      <Link>CommonSpace\Helpers\Investments.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\LifetimeWant.cs">
+      <Link>CommonSpace\Helpers\LifetimeWant.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Lots.cs">
+      <Link>CommonSpace\Helpers\Lots.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\MiniSims.cs">
+      <Link>CommonSpace\Helpers\MiniSims.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\NormalMap.cs">
+      <Link>CommonSpace\Helpers\NormalMap.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ObjectComponents.cs">
+      <Link>CommonSpace\Helpers\ObjectComponents.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OpportunityEx.cs">
+      <Link>CommonSpace\Helpers\OpportunityEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Pregnancies.cs">
+      <Link>CommonSpace\Helpers\Pregnancies.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ProductVersions.cs">
+      <Link>CommonSpace\Helpers\ProductVersions.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ReferenceWrapper.cs">
+      <Link>CommonSpace\Helpers\ReferenceWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Roles.cs">
+      <Link>CommonSpace\Helpers\Roles.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SavedOutfit.cs">
+      <Link>CommonSpace\Helpers\SavedOutfit.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StackTracer.cs">
+      <Link>CommonSpace\Helpers\StackTracer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StatBin.cs">
+      <Link>CommonSpace\Helpers\StatBin.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
+      <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SwitchOutfits.cs">
+      <Link>CommonSpace\Helpers\SwitchOutfits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Traits.cs">
+      <Link>CommonSpace\Helpers\Traits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Tunings.cs">
+      <Link>CommonSpace\Helpers\Tunings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Urnstones.cs">
+      <Link>CommonSpace\Helpers\Urnstones.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\EnumSettingOption.cs">
+      <Link>CommonSpace\Options\EnumSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOption.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ListedSettingOption.cs">
+      <Link>CommonSpace\Options\ListedSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Proxies\CASModelProxy.cs">
+      <Link>CommonSpace\Proxies\CASModelProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Replacers\SocialRHSReplacer.cs">
+      <Link>CommonSpace\Replacers\SocialRHSReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Selection\ProtoSimSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\OpportunityStore.cs">
+      <Link>CommonSpace\Stores\OpportunityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\AgeTransitionTask.cs">
+      <Link>CommonSpace\Helpers\AgeTransitionTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\FixInvisibleTask.cs">
+      <Link>CommonSpace\Tasks\FixInvisibleTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\RecoverMissingSimTask.cs">
+      <Link>CommonSpace\Tasks\RecoverMissingSimTask.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\tasks\RepeatingTask.cs">
+      <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\ResetSimTask.cs">
+      <Link>CommonSpace\Tasks\ResetSimTask.cs</Link>
+    </Compile>
+    <Compile Include="MasterController.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASClothingCategoryEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASFacialBlendPanelAdjustment.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASFacialPanelEyes.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASFacialPanelHeadEars.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASFacialPanelJaw.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASFacialPanelMouth.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASFacialPanelNose.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASFacialPanelEyebrows.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASGeneticsEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASHairEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASPuckEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASClothingEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASClothingRowEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CAPFacialBlendAdvanced.cs" />
+    <Compile Include="MasterControllerSpace\CAS\AddCASPartOperationEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASControllerEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASLoadSimEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASRequiredItemsDialogEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASDresserClothingEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASMakeupEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASEyebrowsEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CAPUnicornEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\CASDresserSheetEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\SaveSimToWorldStepEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\SaveSimToWorldOperationEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\UpdateSingleThumbnailStepEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\UpdateCurrentSimStepEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\UpdateCurrentSimOperationEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\SetSimDescStepEx.cs" />
+    <Compile Include="MasterControllerSpace\CAS\SetSimDescOperationEx.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\DoorCustomReset.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\IDemographicOption.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\DemographicOption.cs" />
+    <Compile Include="MasterControllerSpace\Households\AddRoommate.cs" />
+    <Compile Include="MasterControllerSpace\Households\EndParty.cs" />
+    <Compile Include="MasterControllerSpace\Households\InviteOver.cs" />
+    <Compile Include="MasterControllerSpace\IApplyOptionItem.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\ObjectsOnTopOfPotionDisplayCaseReset.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\MetalMineralPotionDisplayCaseReset.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\IDemographicsExportOption.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\JobsByCareerSummaryExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\JobsByLevelExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\JobsByPerfExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\KinseyScaleExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\LotsExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\MoneyExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\PopulationExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\RelationshipsExport.cs" />
+    <Compile Include="MasterControllerSpace\DemographicsExport\SchoolByPerfExport.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\InvalidPart.cs" />
+    <Compile Include="MasterControllerSpace\Households\AddToExclusion.cs" />
+    <Compile Include="MasterControllerSpace\Households\RemoveFromExclusion.cs" />
+    <Compile Include="MasterControllerSpace\Object\TransferFrom.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ActiveFamily.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\AfterSchoolActivityCriteria.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ByValueCriteria.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\AlienPercentage.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\CareerBase.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ChildrenInHousehold.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\AcademicDegreeCriteria.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimTypeAnd.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimTypeBase.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\TraitMatch.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\LongTermRelationshipEx.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\FullFamily.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\DaysUntilAgeUp.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PetsInHousehold.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\NumberOfParents.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\NumberOfChildren.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Enemies.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Friendships.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RomanticInterests.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationBase.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SelectionComplexOptionList.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationListing.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PriorCareer.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\MostRecentFilter.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimTraitBase.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimNoTrait.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\HasDreamManager.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SelectionOptionBase.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SelectionOptionBaseList.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\StatusDrvierType.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\StatusPetPool.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\StatusRoleType.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimSchool.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\FamilyLevel.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PartyGuest.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\NotActiveFamily.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\IDoesNotNeedSpeciesFilter.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\CarOwnableCustomReset.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\BicycleCustomReset.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\CribCustomReset.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\GenericCustomReset.cs" />
+    <Compile Include="MasterControllerSpace\CustomResets\ICustomReset.cs" />
+    <Compile Include="MasterControllerSpace\Dialogs\PartyPickerDialogEx.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\TimeSpanLogger.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\SkillStamp.cs" />
+    <Compile Include="MasterControllerSpace\Households\FocusHomeInspection.cs" />
+    <Compile Include="MasterControllerSpace\Households\VenueOwnership.cs" />
+    <Compile Include="MasterControllerSpace\Households\RealEstate.cs" />
+    <Compile Include="MasterControllerSpace\Households\SellItem.cs" />
+    <Compile Include="MasterControllerSpace\Object\RabbitHoleOwnership.cs" />
+    <Compile Include="MasterControllerSpace\Proxies\CASModelProxy.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\CareerLevelCriteria.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\AlmaMaterCriteria.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Species.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\FamilyFunds.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\FirstName.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\LastName.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\LotAndFamily.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\NetWorth.cs" />
+    <Compile Include="MasterControllerSpace\Settings\ByMoneyIntervalsSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\BeardsForAllSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\Blacklist\TotalBlacklist.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\Blacklist\IBlacklistOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\Blacklist\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\Blacklist\RemoveBlacklistPart.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\BodyHairForTeensSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\BodySliderOffsetSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\BodySliderMultipleSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\AdultClothesForEldersSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\AdultAccessoriesForTeensSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\UniGenderAdultSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\ShowHiddenPartsSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\UniGenderChildFemaleSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\FemaleAdultClothesForTeenSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\MaleAdultClothesForTeenSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\ICategoryChangesOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CompactClothingCASSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\ClothingSortOrderSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\AllowMultipleAccessoriesSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\Blacklist\ClearBlacklist.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\Blacklist\ExportBlacklist.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\AllowMultipleMakeupSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CompactHatCASSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CompactAccessoryCASSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\BodyHairForFemalesSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\UniGenderChildMaleSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\UniGenderAccessoriesSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\HideByProductSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\DefaultAdvancedPanelSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\EyeColorByCategorySetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\ShowSliderValueSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\DisableMakeupFilterSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\CategoryChanges\UniGenderHairSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\HairColorByOutfitSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\ICASOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CheckForNoDoubleBedSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CommunityAddSimSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SubtleMapTagsSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\PartyAgeFilterSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\ExportSettings.cs" />
+    <Compile Include="MasterControllerSpace\Settings\ImportSettings.cs" />
+    <Compile Include="MasterControllerSpace\Settings\RemoveActiveTopicLimitSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\DefaultSpeciesFilterSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\TagInfoSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\SliderOverrideSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityTransferFromSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityOwnershipSetting.cs" />
+    <Compile Include="MasterControllerSpace\SimDescriptionObject.cs" />
+    <Compile Include="MasterControllerSpace\IDescriptionOptionItem.cs" />
+    <Compile Include="MasterControllerSpace\Households\CloseSesame.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\ComputerInteraction.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\SimDescriptionInteraction.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\ObjectInteraction.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\LotInteraction.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\SimInteraction.cs" />
+    <Compile Include="MasterControllerSpace\IOptionItem.cs" />
+    <Compile Include="MasterControllerSpace\Object\TransferTo.cs" />
+    <Compile Include="MasterControllerSpace\Settings\ComputerListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\LotListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityTransferToSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityAddSimSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilitySortInventorySetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityOpenSesameSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\IObjectOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\SimSelection.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\ChangeScaleColor.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\CopyCategoryClothing.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\SurgeryBody.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\SurgeryFace.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Reset.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Band\AddBandMember.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Band\RemoveBandMember.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Band\IBandOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Band\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\AdoptPet.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\TransferFrom.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\OutfitBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\FilteredSelection.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Export\CareerExport.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Export\IExportOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Export\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Export\SkillsExport.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Export\RelationshipExport.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Export\PersonalExport.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Export\HouseholdExport.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AddSim.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\AfterschoolActivities\AddAfterSchoolActivities.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\AfterschoolActivities\RemoveAfterSchoolActivities.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\AfterschoolActivities\IAfterschoolActivitiesOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\AfterschoolActivities\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\AssignAcademic.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AddRoommate.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\RemoveRole.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\SkillsStatus.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Tags\AddTag.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Tags\ReapplyTags.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Tags\RemoveAllTags.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Tags\ITagsOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Tags\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Tags\RemoveTag.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\LogNames.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Adopt.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\CopyClothing.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\RemoveMemories.cs" />
+    <Compile Include="MasterControllerSpace\TestableOption.cs" />
+    <Compile Include="MasterControllerSpace\OptionItem.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\SortInventory.cs" />
+    <Compile Include="MasterControllerSpace\Households\Status.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\HotkeyInteraction.cs" />
+    <Compile Include="MasterControllerSpace\Object\AddSim.cs" />
+    <Compile Include="MasterControllerSpace\Object\Evict.cs" />
+    <Compile Include="MasterControllerSpace\Object\IObjectOption.cs" />
+    <Compile Include="MasterControllerSpace\Object\SortInventory.cs" />
+    <Compile Include="MasterControllerSpace\OptionList.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\CelebrityLevel.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ZodiacSign.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Occult.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationNotDescendant.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationNotAncestor.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationGenealogy.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationDescendant.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationAncestor.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Moodlet.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\DifferentHousehold.cs" />
+    <Compile Include="MasterControllerSpace\Town\ClearNotices.cs" />
+    <Compile Include="MasterControllerSpace\Settings\RefreshInteractions.cs" />
+    <Compile Include="MasterControllerSpace\Settings\HotKeySetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\ResetEverythingActiveSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\NakedTattooSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\ResetSettings.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\ExportGenealogy.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\FamilyTree.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\FindGrave.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\IBasicOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\MoneyTransfer.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Mood.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\OpportunityByCategory.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Party\IPartyOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Party\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Party\ThrowDestination.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Party\ThrowHome.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\PurchaseRewards.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\RandomOpportunity.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Rename.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\SelectOpportunity.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\SellItem.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\SortInventory.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Tattoo.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\TransferTo.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Dresser.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\Baby.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Mirror.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Stylist.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\CareerOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChooseCareerOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChooseJob.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChooseSchool.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\Quit.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\Retire.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Dialogs\FamilyTreeDialog.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\Money.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\Relationships.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\Lots.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\SchoolByPerf.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\KinseyScale.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\JobsByPerf.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\JobsByCareerSummary.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\JobsByCareer.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\JobsByLevel.cs" />
+    <Compile Include="MasterControllerSpace\Demographics\Population.cs" />
+    <Compile Include="MasterControllerSpace\Households\ChangeName.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\RelationshipValue.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\HouseholdStatus.cs" />
+    <Compile Include="MasterControllerSpace\Households\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Households\SortLotInventory.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\IAdvancedOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\IVisibilityOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\ISettingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\IIntermediateOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ICareerOption.cs" />
+    <Compile Include="MasterControllerSpace\ILotOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\IStatusOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\ISimOption.cs" />
+    <Compile Include="MasterControllerSpace\Households\IHouseholdOption.cs" />
+    <Compile Include="MasterControllerSpace\Town\ITownOption.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SelectionTestableOptionList.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SelectionOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SimListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\VisibilityComputerSetting.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\CASBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\ForceKill.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\TotalAnnihilation.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Town\DumpGenealogy.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimSkill.cs" />
+    <Compile Include="MasterControllerSpace\Settings\FamilyTreeLevelsSetting.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\CareerStatus.cs" />
+    <Compile Include="MasterControllerSpace\Town\ResetAll.cs" />
+    <Compile Include="MasterControllerSpace\Town\DropAllDreams.cs" />
+    <Compile Include="MasterControllerSpace\Households\AddSim.cs" />
+    <Compile Include="MasterControllerSpace\Households\OpenSesame.cs" />
+    <Compile Include="MasterControllerSpace\Households\Focus.cs" />
+    <Compile Include="MasterControllerSpace\Households\HouseholdFromList.cs" />
+    <Compile Include="MasterControllerSpace\Households\Select.cs" />
+    <Compile Include="MasterControllerSpace\Households\StatusBase.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimCareer.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Age.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\ActiveSim.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Random.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SavedFilter.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Homeworld.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\TownFamily.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SameHousehold.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Coworkers.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\StatusServiceType.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\Mood.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\LifetimeWish.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\CurrentLot.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\InventoryEx.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PreferenceColor.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PreferenceFood.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PreferenceMusic.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\StatusNotBusy.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationBlood.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationFamily.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\RelationNone.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\GenderFemale.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\GenderMale.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PreferenceFemale.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PreferenceMale.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\PreferenceUndecided.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimTypeOr.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\StatusJobPerformance.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\StatusSchoolPerformance.cs" />
+    <Compile Include="MasterControllerSpace\SelectionCriteria\SimTrait.cs" />
+    <Compile Include="MasterControllerSpace\Settings\AllowOverStuffedSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\VisibilitySimSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\VisibilityLotSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\VisibilitySettingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\DeleteFilterSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\FilterSettingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SaveFilterSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\SliderMultipleSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\DreamCatcherSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\DisableClothingFilterSetting.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\EditInCAS.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AgeTransition.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\ChangeOutfit.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\RelationshipStatus.cs" />
+    <Compile Include="MasterControllerSpace\Sims\MoveIn.cs" />
+    <Compile Include="MasterControllerSpace\Sims\DualSimFromList.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\RelationshipOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Focus.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Status\PersonalStatus.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Pollinate.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\InviteOver.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Select.cs" />
+    <Compile Include="MasterControllerSpace\Sims\SimFromList.cs" />
+    <Compile Include="MasterControllerSpace\Town\TotalAnnihilation.cs" />
+    <Compile Include="MasterControllerSpace\Town\CleanseTheDead.cs" />
+    <Compile Include="MasterControllerSpace\Town\ReconstituteTheDead.cs" />
+    <Compile Include="MasterControllerSpace\Town\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Town\ManageTheDead.cs" />
+    <Compile Include="MasterControllerSpace\Town\MausoleumBase.cs" />
+    <Compile Include="MasterControllerSpace\Households\Reset.cs" />
+    <Compile Include="MasterControllerSpace\PersistedSettings.cs" />
+    <Compile Include="MasterControllerModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="String Tables\StringTableCzech.txt" />
+    <Content Include="String Tables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="String Tables\StringTableEnglish.txt" />
+    <Content Include="String Tables\StringTableKorean.txt" />
+    <Content Include="String Tables\StringTableDanish.txt" />
+    <Content Include="String Tables\StringTableDutch.txt" />
+    <Content Include="String Tables\StringTableFinnish.txt" />
+    <Content Include="String Tables\StringTableFrench.txt" />
+    <Content Include="String Tables\StringTableGerman.txt" />
+    <Content Include="String Tables\StringTableHungarian.txt" />
+    <Content Include="String Tables\StringTableItalian.txt" />
+    <Content Include="String Tables\StringTableJapanese.txt" />
+    <Content Include="String Tables\StringTablePolish.txt" />
+    <Content Include="String Tables\StringTableRussian.txt" />
+    <Content Include="String Tables\StringTablePortugueseStandard.txt" />
+    <Content Include="String Tables\StringTableSpanishStandard.txt" />
+    <Content Include="String Tables\StringTableSwedish.txt" />
+    <Content Include="String Tables\StringTableTaiwanese.txt" />
+    <Content Include="Source XML\CASBasic138.xml" />
+    <Content Include="XML\MasterControllerModule.xml" />
+    <Content Include="XML\MasterController.xml" />
+    <Content Include="XML\MasterControllerSpacePersistedSettings.xml" />
+    <Content Include="XML\Personal\MasterControllerSpacePersistedSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

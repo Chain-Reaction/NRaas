@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kDisplayAlways value="True">
+      <!--Whether to always have the menu active in-game-->
+    </kDisplayAlways>
+  </Current_Tuning>
+</base>

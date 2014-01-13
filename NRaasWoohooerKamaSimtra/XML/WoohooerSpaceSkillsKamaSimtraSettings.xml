@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kRenownPerLevel value="2">
+      <!--Number of Renown points received per level-->
+    </kRenownPerLevel>
+    <kSatisfactionPerLevel value="5">
+      <!--Increase in chance of a positive experience per level-->
+    </kSatisfactionPerLevel>
+    <kRenownPerOpportunity value="1">
+      <!--Number of Renown points received per completed opportunity-->
+    </kRenownPerOpportunity>
+    <kRenownToMoodMultiple value="2.5">
+      <!--Ratio of Renown to Woohoo buff mood value-->
+    </kRenownToMoodMultiple>
+    <kRenownToPaymentMultiple value="20">
+      <!--Ratio of Renown to Woohoo payment-->
+    </kRenownToPaymentMultiple>
+    <kDailyAlarmTime value="2.5">
+      <!--Time when the daily alarm for this skill fires, in fractional 24 hour time-->
+    </kDailyAlarmTime>
+    <kInactiveGain value="True">
+      <!--Whether to allow skill gain amongst the inactive population-->
+    </kInactiveGain>
+    <kDailyRelationshipChange value="1">
+      <!--Change in relationship per day once certain goals are acheived-->
+    </kDailyRelationshipChange>
+    <kWomanizerMinNotches value="25">
+      <!--Minimum number of different women that must be shagged to be considered a Womanizer-->
+    </kWomanizerMinNotches>
+    <kCougarMinNotches value="25">
+      <!--Minimum number of younger men that must be shagged to be considered a Cougar-->
+    </kCougarMinNotches>
+    <kGoldDiggerMinNotches value="25">
+      <!--Minimum number of elder sims that must be shagged to be considered a Gold Digger-->
+    </kGoldDiggerMinNotches>
+    <kGigoloMinNotches value="25">
+      <!--Minimum number of sims that must be pay-shagged to be considered a Gigolo-->
+    </kGigoloMinNotches>
+    <kPromiscuousMinNotches value="25">
+      <!--Minimum number of total different sims shagged to be considered Promiscuous-->
+    </kPromiscuousMinNotches>
+    <kExhibitionistMinNotches value="25">
+      <!--Minimum number of witnessed shags to be considered Exhibitionist-->
+    </kExhibitionistMinNotches>
+    <kWorldlyMinPerWorld value="10">
+      <!--Minimum number of woohoos per world to be considered Worldly-->
+    </kWorldlyMinPerWorld>
+    <kExperiencedMinPerLocation value="5">
+      <!--Minimum number of woohoos per location to be considered Experienced-->
+    </kExperiencedMinPerLocation>
+    <kCasanovaMinNotches value="25">
+      <!--Minimum number of satisying shags to be considered Casanovat-->
+    </kCasanovaMinNotches>
+    <kStarryEyedMinNotches value="25">
+      <!--Minimum number of celebrity shags to be considered Starry Eyed-->
+    </kStarryEyedMinNotches>
+    <kStarryEyedAvgLevel value="3">
+      <!--Average level of celebrity shags to be considered Starry Eyed-->
+    </kStarryEyedAvgLevel>
+    <kOccultistMinNotches value="25">
+      <!--Minimum number of occult shags to be considered Occultist-->
+    </kOccultistMinNotches>
+    <kCheaterMinNotches value="10">
+      <!--Minimum number of woohoos with someone other than your partner to be considered Cheater-->
+    </kCheaterMinNotches>
+    <kBikeMinNotches value="10">
+      <!--Minimum number of woohoos with another sim's partner to be considered Bike-->
+    </kBikeMinNotches>
+    <kEasyRiderMinNotches value="25">
+      <!--Minimum number of casual woohoos to be considered an Easy Rider-->
+    </kEasyRiderMinNotches>
+    <kJourneymanMinNotches value="25">
+      <!--Minimum number of service woohoos to be considered an Journeyman-->
+    </kJourneymanMinNotches>
+    <kProlificMinNotches value="50">
+      <!--Minimum number of any type of woohoos to be considered an Prolific-->
+    </kProlificMinNotches>
+
+    <kFidelityMinNotches value="25">
+      <!--Minimum number of woohoos with your partner without cheating-->
+    </kFidelityMinNotches>
+    <kPrecociousMinNotches value="25">
+      <!--Minimum number of woohoos with sims older than you-->
+    </kPrecociousMinNotches>
+    <kCradleRobberMinNotches value="25">
+      <!--Minimum number of woohoos with sims younger than you-->
+    </kCradleRobberMinNotches>
+    <kFreshMeatMinNotches value="25">
+      <!--Minimum number of woohoos with any type of non-occult shagged by an occult-->
+    </kFreshMeatMinNotches>
+    <kGalaxyOfStarsMinNotches value="500">
+      <!--Minimum number of stars required to acheive a Galaxy of Stars-->
+    </kGalaxyOfStarsMinNotches>
+
+    <kRisqueMinNotches value="50">
+      <!--Minimum number of risky woohoos engaged in to achieve Risque status-->
+    </kRisqueMinNotches>
+    <kManEaterMinNotches value="25">
+      <!--Minimum number of different women that must be shagged to be considered a Man Eater-->
+    </kManEaterMinNotches>
+    <kCyberJunkieMinNotches value="25">
+      <!--Minimum number of risky woohoos engaged in to achieve Cyber Junkie status-->
+    </kCyberJunkieMinNotches>
+    <kShowRegisterInteraction value="True">
+      <!--Whether to show the Register As Professional Interaction on the phone-->
+    </kShowRegisterInteraction>
+    <kRendezvousCostPerLevel value="200">
+      <!--How much the services of a professional cost at the Spa-->
+    </kRendezvousCostPerLevel>
+    <kRendezvousWaitPeriod value="60">
+      <!--How much time is spent waiting for the other sim to arrive for a Rendevous-->
+    </kRendezvousWaitPeriod>
+    <kRendezvousDuration value="60">
+      <!--How much time is spent during a Rendevous-->
+    </kRendezvousDuration>
+    <kRandomRendezvousMoodlet value="True">
+      <!--Whether to apply a random moodlet after a Rendezvous-->
+    </kRandomRendezvousMoodlet>
+    <kShowRendezvousInteraction value="True">
+      <!--Whether to show the Rendezvous Interactions-->
+    </kShowRendezvousInteraction>
+    <kBaseSatisfaction value="0">
+      <!--Base chance of a positive experience-->
+    </kBaseSatisfaction>
+    <kBaseDisappointment value="0">
+      <!--Base chance of a negative experience-->
+    </kBaseDisappointment>
+    <kRegisterSkillLevel value="1">
+      <!--The minimum level for registering as a Professional-->
+    </kRegisterSkillLevel>
+    <kShowCyberWoohooInteraction value="True">
+      <!--Whether to display the cyber woohoo interactions-->
+    </kShowCyberWoohooInteraction>
+    <kCyberWoohooChanceToClimaxEveryXMinutes value="20">
+      <!--The duration in sim-minutes to wait before testing for a cyber climax-->
+    </kCyberWoohooChanceToClimaxEveryXMinutes>
+    <kCyberWoohooChanceToClimax value="10">
+      <!--The chance a Cyber climax will occur-->
+    </kCyberWoohooChanceToClimax>
+    <kCyberWoohooChanceOfMisunderstanding value="10">
+      <!--The chance a Cyber woohoo may not be the proper gender-->
+    </kCyberWoohooChanceOfMisunderstanding>
+    <kSkillPoints value="">
+      <!--The number of skill points to achieve the next level in skill in a comma separated format-->
+    </kSkillPoints>
+
+    <kShowNotices value="False">
+      <!--Whether to display a notice when a sim receives a new notch -->
+    </kShowNotices>
+    <kBasePositiveBuffLength value="60">
+      <!--Base number of minutes that a positive buff lasts-->
+    </kBasePositiveBuffLength>
+    <kMonsterMashMinNotchPerOccult value="5">
+      <!--Minimum number of each occult that must be mashed to count towards Monster Masher-->
+    </kMonsterMashMinNotchPerOccult>
+    <kMinLevelTantraport value="8">
+      <!--The minimum level for Tantraport-->
+    </kMinLevelTantraport>
+    <kGraveRobberMinNotchPerDeathType value="5">
+      <!--Minimum number of each death type that must be put to rest to count towards Grave Robber-->
+    </kGraveRobberMinNotchPerDeathType>
+  </Current_Tuning>
+</base>

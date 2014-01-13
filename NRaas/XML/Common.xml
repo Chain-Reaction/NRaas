@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kDebugging value="True">
+      <!--Whether to display debug notifications-->
+    </kDebugging>
+    <kLoadLogDebugging value="False">
+      <!--Whether to display load log notifications-->
+    </kLoadLogDebugging>
+  </Current_Tuning>
+</base>

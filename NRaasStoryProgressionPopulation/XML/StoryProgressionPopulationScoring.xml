@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scoring>
+  <Methods>
+    <Name></Name>
+    <FullClassName></FullClassName>
+    <Divisor>1</Divisor>
+    <LowerBound></LowerBound>
+    <UpperBound></UpperBound>
+  </Methods>
+  <Methods>
+    <Name>MaternityLeave</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+
+  <MaternityLeave>
+    <FullClassName></FullClassName>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>FamilyOriented</Trait>
+    <Hit>2</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Proper</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>SuperNanny</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Vacationer</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Schmoozer</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Carefree</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MultiTasker</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Insane</Trait>
+    <HitMinimum>-2</HitMinimum>
+    <HitMaximum>1</HitMaximum>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>-1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>-1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CommitmentIssues</Trait>
+    <Hit>-1</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>-2</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>-3</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Workaholic</Trait>
+    <Hit>-3</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+  <MaternityLeave>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>DislikesChildren</Trait>
+    <Hit>-5</Hit>
+    <Miss>0</Miss>
+  </MaternityLeave>
+</Scoring>

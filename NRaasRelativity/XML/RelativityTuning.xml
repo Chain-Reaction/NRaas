@@ -1,0 +1,38 @@
+﻿<?xml version="1.0"?>
+<Relativity>
+  <Speeds>
+    <!-- This is the default set, leave as is, and do not use it for your values-->
+    <World>Undefined</World>
+    <Days>MTWRFSU</Days>
+    <StartHour>0</StartHour>
+    <EndHour>24</EndHour>
+
+    <!-- These are simulator ticks.  There are approximately 37 per sim-minute -->
+    <Speed>37</Speed>
+  </Speeds>
+
+  <Speeds>
+    <Days>MTWRFSU</Days>
+    <StartHour>0</StartHour>
+    <EndHour>6</EndHour>
+    <Speed>74</Speed>
+  </Speeds>
+  <Speeds>
+    <Days>MTWRFSU</Days>
+    <StartHour>6</StartHour>
+    <EndHour>10</EndHour>
+    <Speed>15</Speed>
+  </Speeds>
+  <Speeds>
+    <Days>MTWRFSU</Days>
+    <StartHour>18</StartHour>
+    <EndHour>24</EndHour>
+    <Speed>23</Speed>
+  </Speeds>
+  <Speeds>
+    <Days>SU</Days>
+    <StartHour>12</StartHour>
+    <EndHour>20</EndHour>
+    <Speed>15</Speed>
+  </Speeds>
+</Relativity>

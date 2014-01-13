@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A218736-F50C-4D1F-A032-33C58624B64C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasWoohooer</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOT_NEXTPHASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;NOT_NEXTPHASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterHelper.cs">
+      <Link>CommonSpace\Booters\BooterHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BuffBooter.cs">
+      <Link>CommonSpace\Booters\BuffBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\ScoringBooter.cs">
+      <Link>CommonSpace\Booters\ScoringBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\SkillBooter.cs">
+      <Link>CommonSpace\Booters\SkillBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\SocializingBooter.cs">
+      <Link>CommonSpace\Booters\SocializingBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToMultiList.cs">
+      <Link>CommonSpace\Converters\StringToMultiList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToSpeciesList.cs">
+      <Link>CommonSpace\Converters\StringToSpeciesList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Aging.cs">
+      <Link>CommonSpace\Helpers\Aging.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
+      <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Corrections.cs">
+      <Link>CommonSpace\Helpers\Corrections.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\DreamCatcher.cs">
+      <Link>CommonSpace\Helpers\DreamCatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\FacialBlends.cs">
+      <Link>CommonSpace\Helpers\FacialBlends.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\InteractionsEx.cs">
+      <Link>CommonSpace\Helpers\InteractionsEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\LifetimeWant.cs">
+      <Link>CommonSpace\Helpers\LifetimeWant.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\MiniSims.cs">
+      <Link>CommonSpace\Helpers\MiniSims.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultFairyEx.cs">
+      <Link>CommonSpace\Helpers\OccultFairyEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Pregnancies.cs">
+      <Link>CommonSpace\Helpers\Pregnancies.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SavedOutfit.cs">
+      <Link>CommonSpace\Helpers\SavedOutfit.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimEx.cs">
+      <Link>CommonSpace\Helpers\SimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimRoutingComponentEx.cs">
+      <Link>CommonSpace\Helpers\SimRoutingComponentEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StackTracer.cs">
+      <Link>CommonSpace\Helpers\StackTracer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StatBin.cs">
+      <Link>CommonSpace\Helpers\StatBin.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
+      <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SwitchOutfits.cs">
+      <Link>CommonSpace\Helpers\SwitchOutfits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Tunings.cs">
+      <Link>CommonSpace\Helpers\Tunings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Urnstones.cs">
+      <Link>CommonSpace\Helpers\Urnstones.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\CommonSkillTutor.cs">
+      <Link>CommonSpace\Interactions\CommonSkillTutor.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\RouteToObject.cs">
+      <Link>CommonSpace\Interactions\RouteToObject.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\EnumSettingOption.cs">
+      <Link>CommonSpace\Options\EnumSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\FloatSettingOption.cs">
+      <Link>CommonSpace\Options\FloatSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
+      <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Replacers\ActionAvailabilityReplacer.cs">
+      <Link>CommonSpace\Replacers\ActionAvailabilityReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\replacers\ActionDataReplacer.cs">
+      <Link>CommonSpace\Replacers\ActionDataReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Replacers\SocialRHSReplacer.cs">
+      <Link>CommonSpace\Replacers\SocialRHSReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\DualSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\DualSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\GenericSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\GenericSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\ListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\ListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\ScoringLookup.cs">
+      <Link>CommonSpace\ScoringMethods\ScoringLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\SimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\SimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\AgeGenderMatchScoring.cs">
+      <Link>CommonSpace\Scoring\AgeGenderMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\AgeGenderScoring.cs">
+      <Link>CommonSpace\Scoring\AgeGenderScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\BestestFlirtScoring.cs">
+      <Link>CommonSpace\Scoring\BestestFlirtScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\BuffScoring.cs">
+      <Link>CommonSpace\Scoring\BuffScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CareerLevelScoring.cs">
+      <Link>CommonSpace\Scoring\CareerLevelScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CareerRabbitholeMatchScoring.cs">
+      <Link>CommonSpace\Scoring\CareerRabbitholeMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CareerRabbitholeScoring.cs">
+      <Link>CommonSpace\Scoring\CareerRabbitholeScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedAgeGenderMatchScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedAgeGenderMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedLifetimeWantScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedLifetimeWantScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedOtherSimTraitScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedOtherSimTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedSimScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedSimScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedTraitScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\DualSimGenericScoring.cs">
+      <Link>CommonSpace\Scoring\DualSimGenericScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\DualSimMethodScoring.cs">
+      <Link>CommonSpace\Scoring\DualSimMethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FacialMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FacialMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteColorMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteColorMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteFoodMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteFoodMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteMusicMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteMusicMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FitnessMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FitnessMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FitnessScaledScoring.cs">
+      <Link>CommonSpace\Scoring\FitnessScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\HitMissScoring.cs">
+      <Link>CommonSpace\Scoring\HitMissScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsChildScoring.cs">
+      <Link>CommonSpace\Scoring\IsChildScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsCloselyRelatedScoring.cs">
+      <Link>CommonSpace\Scoring\IsCloselyRelatedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsOlderScoring.cs">
+      <Link>CommonSpace\Scoring\IsOlderScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsParentScoring.cs">
+      <Link>CommonSpace\Scoring\IsParentScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsSiblingScoring.cs">
+      <Link>CommonSpace\Scoring\IsSiblingScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsYoungerScoring.cs">
+      <Link>CommonSpace\Scoring\IsYoungerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LifetimeWantScoring.cs">
+      <Link>CommonSpace\Scoring\LifetimeWantScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermPartnerScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermPartnerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipBaseScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipBaseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipScaledScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\MarriedScoring.cs">
+      <Link>CommonSpace\Scoring\MarriedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\MethodScoring.cs">
+      <Link>CommonSpace\Scoring\MethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\OccupationScoring.cs">
+      <Link>CommonSpace\Scoring\OccupationScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\OtherSimTraitScoring.cs">
+      <Link>CommonSpace\Scoring\OtherSimTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\OtherSkillLevelScoring.cs">
+      <Link>CommonSpace\Scoring\OtherSkillLevelScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\PartnerScoring.cs">
+      <Link>CommonSpace\Scoring\PartnerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RandomScoring.cs">
+      <Link>CommonSpace\Scoring\RandomScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RelationshipBitScoring.cs">
+      <Link>CommonSpace\Scoring\RelationshipBitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RelationshipCircleScoring.cs">
+      <Link>CommonSpace\Scoring\RelationshipCircleScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SameHouseScoring.cs">
+      <Link>CommonSpace\Scoring\SameHouseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\Scoring.cs">
+      <Link>CommonSpace\Scoring\Scoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimGenericScoring.cs">
+      <Link>CommonSpace\Scoring\SimGenericScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimMethodScoring.cs">
+      <Link>CommonSpace\Scoring\SimMethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimScaledScoring.cs">
+      <Link>CommonSpace\Scoring\SimScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimTypeMatchScoring.cs">
+      <Link>CommonSpace\Scoring\SimTypeMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimTypeScoring.cs">
+      <Link>CommonSpace\Scoring\SimTypeScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SkillCareerScoring.cs">
+      <Link>CommonSpace\Scoring\SkillCareerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SkillLevelScoring.cs">
+      <Link>CommonSpace\Scoring\SkillLevelScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SkillMetricScoring.cs">
+      <Link>CommonSpace\Scoring\SkillMetricScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitBaseScoring.cs">
+      <Link>CommonSpace\Scoring\TraitBaseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitCompareScoring.cs">
+      <Link>CommonSpace\Scoring\TraitCompareScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitMatchScoring.cs">
+      <Link>CommonSpace\Scoring\TraitMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitMismatchScoring.cs">
+      <Link>CommonSpace\Scoring\TraitMismatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitScoring.cs">
+      <Link>CommonSpace\Scoring\TraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\WeightMatchScoring.cs">
+      <Link>CommonSpace\Scoring\WeightMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\WeightScaledScoring.cs">
+      <Link>CommonSpace\Scoring\WeightScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\YoungChildrenScoring.cs">
+      <Link>CommonSpace\Scoring\YoungChildrenScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\ZodiacMatchScoring.cs">
+      <Link>CommonSpace\Scoring\ZodiacMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Selection\ProtoSimSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\skills\CommonSkill.cs">
+      <Link>CommonSpace\Skills\CommonSkill.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\OpportunityStore.cs">
+      <Link>CommonSpace\Stores\OpportunityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
+    </Compile>
+    <Compile Include="WoohooerSpace\Helpers\AttractionHelper.cs" />
+    <Compile Include="WoohooerSpace\Helpers\WoohooTuningControl.cs" />
+    <Compile Include="WoohooerSpace\Helpers\PoolEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\HotTubBaseEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\SocialComponentEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\ShowerEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\WoohooLocationControl.cs" />
+    <Compile Include="WoohooerSpace\Helpers\RelationshipEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\GroupingSituationEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\BoxOfMysteryWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\AskAboutAge.cs" />
+    <Compile Include="WoohooerSpace\Interactions\AncientPortalWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\AskToJoinSkinnyDippingEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\AllInOneBathroomWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\BotMakerWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\JetpackTryForBaby.cs" />
+    <Compile Include="WoohooerSpace\Interactions\JetpackRisky.cs" />
+    <Compile Include="WoohooerSpace\Interactions\TimePortalWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HoverTrainWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HotTubGetOut.cs" />
+    <Compile Include="WoohooerSpace\Interactions\WooHooInCaveEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\WooHooInResortTowerEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SnorkelSwimHere.cs" />
+    <Compile Include="WoohooerSpace\Interactions\PourJuiceEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CuddleSeatedKissEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CuddleRelaxingVibrateEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CuddleRelaxingMakeOutEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CuddleRelaxingKissEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CuddleSeatedMakeOutEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HotTubGetIn.cs" />
+    <Compile Include="WoohooerSpace\Interactions\PlayJuicePongEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\TakeRomanticSelfPhotoWithAEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HarvestPlantSimEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\DanceTogetherAEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\MaleHaveBabyHomeEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\LeafPileBaseWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\LeafPileWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\FairyHouseGetOutEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\FairyHouseGetInEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\FairyHouseWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\WardrobeWoohooAEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\WardrobeWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\GypsyCaravanWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\PhotoBoothWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\EnterRelaxingEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HaveBabyHospitalEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HaveBabyHomeEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HaveLitterEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\MountEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\GetMarriedEx.cs" />
+    <Compile Include="WoohooerSpace\Options\General\ChangeRoomClothingsSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\BotMakerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\TimePortalSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\MassageSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\VerboseDebuggingSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\AncientPortalSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\LeafPileSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\HayStackSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\UnlockTeenActionsSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\StoryProgressionForUserDirectedSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\LinkToStoryProgressionSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\InteractionsAsRomanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\MatchmakerCostSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\ISpeciesOption.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\GypsyCaravanSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\WardrobeSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\SaunaWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\SaunaGeneralSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\SpeciesListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\ISpeciesItem.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\AutonomousOffLotRiskySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\RiskyTeenBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\RiskyTeenBabyMadeChanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\PregnancyChoiceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\ShowRiskyChanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\ISpeciesOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\SpeciesListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\AllowAutonomousRomanceCommLotSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\RemoveRomanceOnKissSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\MarriedInteractionLevelSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\SteadyInteractionLevelSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\RomanceInteractionLevelSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\JealousyLevelSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\RestrictTeenMarriageSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\ISpeciesOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\LikingGateForAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\SpeciesListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\PartneringInteractionLevelSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\EAStandardWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\OnlyResidentMatchmakerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\WoohooCooldownSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\WoohooCountScoreFactorSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\ISpeciesOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\SpeciesListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\SpeciesBooleanSettingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\SpeciesIntegerSettingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\SpeciesList.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\ChanceOfQuadsSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TryForBabyUserMaximumSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TryForBabyTeenBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TryForBabyTeenBabyMadeChanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TestAllConditionsForUserDirectedSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\ISpeciesOption.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\SpeciesListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\General\SwitchToEverydayAfterNakedWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\AutonomousOffLotTryForBabySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ChangeForBedWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\AllowPlantSimPregnancySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\AllowZombieSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\JealousyLevelSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\AncientPortalSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\AllInOneBathroomSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\CaveSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\BotMakerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\TimePortalSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\HoverTrainSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\JetPackSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\ResortSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\HotAirBalloonSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\OutdoorShowerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\LeafPileSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\IglooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\FairyHouseSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\WoohooTeenBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\BoxOfMysterySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\WardrobeSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\GypsyCaravanSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\SaunaSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\PhotoBoothSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\WoohooRechargeRateSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ForcePetMateSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ISpeciesOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\SpeciesListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\ComputerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\BoxStallHorseSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\PetHouseSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\HaystackSetting.cs" />
+    <Compile Include="WoohooerSpace\Proxies\PetPregnancyProxy.cs" />
+    <Compile Include="WoohooerSpace\Proxies\PregnancyProxy.cs" />
+    <Compile Include="WoohooerTuningHorse.cs" />
+    <Compile Include="WoohooerTuningDog.cs" />
+    <Compile Include="WoohooerTuningCat.cs" />
+    <Compile Include="WoohooerModule.cs" />
+    <Compile Include="VersionStamp.cs" />
+    <Compile Include="WoohooerSpace\Helpers\PhoneEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\TeenAdultControl.cs" />
+    <Compile Include="WoohooerSpace\Interactions\BoxStallWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\BreedMareEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\BuyHorseEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\OfferStallionAsStudEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SellHorseEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HayStackWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\PetHouseWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\YouShouldEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\AmorousCommodity.cs" />
+    <Compile Include="WoohooerSpace\Helpers\WoohooBuffs.cs" />
+    <Compile Include="WoohooerSpace\Helpers\CommonPregnancy.cs" />
+    <Compile Include="WoohooerSpace\Helpers\CommonSkinnyDip.cs" />
+    <Compile Include="WoohooerSpace\Interactions\AskToJoinHotTubEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\IWooHooProxyDefinition.cs" />
+    <Compile Include="WoohooerSpace\Interactions\TakeShowerEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\WooHooControlInteraction.cs" />
+    <Compile Include="WoohooerSpace\Interactions\WooHooSocialInteraction.cs" />
+    <Compile Include="WoohooerSpace\Interactions\GenderPreference.cs" />
+    <Compile Include="WoohooerSpace\Interactions\ScanRoom.cs" />
+    <Compile Include="WoohooerSpace\Interactions\MatchMaker.cs" />
+    <Compile Include="WoohooerSpace\Interactions\ShowerWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\TreehouseWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CuddleRelaxingEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CuddleSeatedEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\VisitRabbitholeWithEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\VisitRabbitholeEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\StartSeatedCuddleEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SkinnyDipAskToJoin.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SkinnyDipFromHotTub.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SkinnyDipGetInPool.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SkinnyDipSwimHere.cs" />
+    <Compile Include="WoohooerSpace\Interactions\IWooHooDefinition.cs" />
+    <Compile Include="WoohooerSpace\Interactions\ElevatorWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Options\General\ApplyBuffsSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\ActorTrailerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\BedSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\ElevatorSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\HotTubSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\INakedOutfitOption.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\SarcophagusSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\NakedOutfit\TimeMachineSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\RiskyFertilitySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\DisallowHomelessSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\RoleTypes\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\RoleTypes\RoleTypeSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\ServiceTypes\ServiceTypeSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\ServiceTypes\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\GenderPreferenceForUserDirectedSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TryForBabyFertilitySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\AllowForeplaySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ReplaceWithRiskySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\ClearLogging.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\PregnancyChoiceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\RabbitholeSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\WoohooInteractionLevelSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\ElevatorSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\HotTubSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\TimeMachineSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\SarcophagusSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\ActorTrailerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\TentSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\ShowerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\TreehouseSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\IValidLocationOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\BedSetting.cs" />
+    <Compile Include="WoohooerSpace\SimSelection.cs" />
+    <Compile Include="WoohooerSpace\Skills\KamaSimtraSettings.cs" />
+    <Compile Include="WoohooerSpace\Options\OptionList.cs" />
+    <Compile Include="WoohooerSpace\Options\IOptionItem.cs" />
+    <Compile Include="WoohooerSpace\Options\OptionItem.cs" />
+    <Compile Include="WoohooerSpace\Options\General\TestSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\LikingGateForUserDirectedSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\PrivacyBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\SkinnyDip\EnforcePrivacySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\SkinnyDip\ISkinnyDipOption.cs" />
+    <Compile Include="WoohooerSpace\Options\SkinnyDip\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\SkinnyDip\TeenSkinnyDipSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\StrideOfPrideSetting.cs" />
+    <Compile Include="WoohooerSpace\Scoring\MoodScaledScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\PrivacyBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Skills\KamaSimtra.cs" />
+    <Compile Include="WoohooerSpace\WoohooScoring.cs" />
+    <Compile Include="WoohooerSpace\Helpers\BroadcasterCleanup.cs" />
+    <Compile Include="WoohooerSpace\Helpers\MyLove.cs" />
+    <Compile Include="WoohooerSpace\Helpers\STCDesire.cs" />
+    <Compile Include="WoohooerSpace\Helpers\WoohooCount.cs" />
+    <Compile Include="WoohooerSpace\Helpers\OutfitChanger.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CheckAttraction.cs" />
+    <Compile Include="WoohooerSpace\Interactions\ActorTrailerWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\HotTubWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\GaugeAttraction.cs" />
+    <Compile Include="WoohooerSpace\Interactions\TimeMachineWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SarcophagusWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\WooHooInRabbitholeWithEx.cs" />
+    <Compile Include="WoohooerSpace\Helpers\CommonSocials.cs" />
+    <Compile Include="WoohooerSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="WoohooerSpace\Options\General\SimMenuVisibilitySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\AttractionBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\AutonomousNearRelationRomanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\MyLoveBuffSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\IRomanceOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\NearRelationRomanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\RomanceBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Romance\TeenAdultRomanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\DumpLogging.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\TraitScoredPrivacySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\SneakinessBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\IScoringOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\ReactToJealousyBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\UseMoodInScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\TestScoring.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\TraitScoringForUserDirectedSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Scoring\UseTraitScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\LikingGateForAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\EnforcePrivacySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\MustBeRomanticForAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\DebuggingSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\General\IGeneralOption.cs" />
+    <Compile Include="WoohooerSpace\Options\General\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\General\MaximumHouseholdSizeForAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\RiskyBabyMadeChanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\RiskyAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\RiskyBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\AutonomousMaleMaleTryForBabySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\AutonomousFemaleFemaleTryForBabySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TryForBabyMadeChanceSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\SameSexTryForBabySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TryForBabyAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\ITryForBabyOption.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TryForBabyBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\AutonomousNearRelationWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\PolyamorousWoohooJealousySetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\WoohooBaseChanceScoringSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\NearRelationWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\WoohooAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\IWoohooOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\TeenAdultWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\TeenWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\TryForBaby\TeenTryForBabyAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\IRiskyOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\ListingOption.cs" />
+    <Compile Include="WoohooerSpace\Options\Risky\TeenRiskyAutonomousSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\HideWoohooSetting.cs" />
+    <Compile Include="WoohooerSpace\Scoring\AttractionBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\RomanceBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\WoohooCountScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\SneakinessBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\ReactToJealousyBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\TryForBabyBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\RiskyBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\WoohooBaseChanceScoring.cs" />
+    <Compile Include="WoohooerSpace\Scoring\RichScoring.cs" />
+    <Compile Include="WoohooerTuning.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CommonWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\BedWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\BedCuddleEx.cs" />
+    <Compile Include="WoohooerSpace\PersistedSettings.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SimRiskyWoohoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SimTryForBaby.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SimWoohoo.cs" />
+    <Compile Include="Woohooer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableGreek.txt" />
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableDutch.txt" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="StringTables\StringTableFinnish.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableHungarian.txt" />
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="StringTables\StringTableJapanese.txt" />
+    <Content Include="StringTables\StringTableKorean.txt" />
+    <Content Include="StringTables\StringTablePolish.txt" />
+    <Content Include="StringTables\StringTableRussian.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTablePortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableSwedish.txt" />
+    <Content Include="StringTables\StringTableTaiwanese.txt" />
+    <Content Include="XML\WoohooerModule.xml" />
+    <Content Include="XML\Woohooer.xml" />
+    <Content Include="XML\WoohooerTuningHorse.xml" />
+    <Content Include="XML\WoohooerTuningDog.xml" />
+    <Content Include="XML\WoohooerTuningCat.xml" />
+    <Content Include="XML\WoohooerBuffs.xml" />
+    <Content Include="XML\WoohooerSocializingActionAvailability.xml" />
+    <Content Include="XML\WoohooerScoring.xml" />
+    <Content Include="XML\WoohooerTuning.xml" />
+    <Content Include="XML\WoohooerSocialData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

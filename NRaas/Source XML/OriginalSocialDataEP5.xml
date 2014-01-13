@@ -1,0 +1,3610 @@
+<?xml version="1.0"?>
+<Social>
+  <Action key="Hunt Collectable" com="Friendly">
+    <Text key="HuntCollectable" pvt="HuntCollectable" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CD,AD,ED,CL,AL,EL" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="huntingSkill" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="GoFindCollectableBeforeCallback" peau="GoFindCollectableAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="GoFindCollectableBeforeCallback" peau="" />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Hunt Collectable By Type" com="Friendly">
+    <Text key="HuntCollectableByType" pvt="HuntCollectableByType" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CD,AD,ED,CL,AL,EL" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="huntingSkill" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="GoFindCollectableByTypeBeforeCallback" peau="GoFindCollectableByTypeAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="GoFindCollectableByTypeBeforeCallback" peau="" />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Adopt Wild Horse" com="Friendly">
+    <Text key="WildHorseAdopt" pvt="WildHorseBeAdopted" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="CH,AH,EH" />
+      <ALTR min="30" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="AdoptWildHorseProceduralTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="wildHorse" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="" val="Insulting">
+        <EndStance x="Amorous" y="Bad" />
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="" val="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="AdoptWildHorseSuccessProcBefore" peau="AdoptWildHorseSuccessProcAfter" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting">
+        <LLTR max="49" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly">
+        <LLTR min="50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Woohoo" com="Amorous">
+    <Text />
+    <AD val="0x00000001">
+    </AD>
+    <AA>
+      <AGE x="AC,EC,AD,ED,AL,EL" y="AC,EC,AD,ED,AL,EL" />
+      <ALTR min="40" max="100" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="TestPetWooHoo" />
+    </AA>
+    <Jazz>
+      <Graph val="Sniff" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Reaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnPetWoohooAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Amorous" val="101">
+        <LLTR min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Nuzzle" com="Friendly">
+    <Text key="Nuzzle" pvt="BeNuzzled" />
+    <AD val="0x00003040">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <ATRA val="AggressivePet" />
+      <ATE val="FriendlyPet" />
+      <ALTR min="0" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestCanNuzzleWith" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="nuzzle" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="NuzzleBeforeCallback" peau="" />
+        <TUN />
+        <Reinforce key="FriendlyPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="19" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Tug Of War" com="Friendly">
+    <Text key="TugOfWar" pvt="PlayingTugOfWar" />
+    <AD val="0x00010808">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CD,AD,ED,CL,AL,EL" />
+      <ATRA val="Unknown" />
+      <ATE val="DogPerson" />
+      <ALTR min="-10" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Play" />
+    </AA>
+    <Jazz>
+      <Graph val="TugOfWar" data="EP5" x="Neutral" y="Neutral" />
+      <LS state="play" min="6" max="9" fun="200" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="TugOfWarBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="100">
+        <LLTR min="10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="101">
+        <LLTR max="10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="102">
+        <LLTR max="25" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="LazyPet" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Play Fetch" com="Friendly">
+    <Text key="PlayFetch" pvt="BePlayedFetch" />
+    <AD val="0x00010008">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AD,ED,AL,EL" />
+      <ALTR min="10" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Play" />
+    </AA>
+    <Jazz>
+      <Graph val="playFetchSocialStart" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="social">
+        <Anim x="a_idle_neutral_loop_1" y="ad_idle_sniffAround_x" />
+        <Buff />
+        <RPROC pebu="" peau="OnPlayFetchAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="101">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="TestWXYZ" com="Friendly">
+    <Text key="TestWXYZ" pvt="TestWXYZ" />
+    <AD val="0x00001000">
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="AH,EH" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestCanNuzzleWith" />
+    </AA>
+    <Jazz>
+      <Graph val="social_genericMounted" suite="nuzzle" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="social" val="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="social">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Push Dog Bath" com="Friendly">
+    <Text key="PushDogBath" pvt="BePushedBath" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="AD,ED" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Care" />
+    </AA>
+    <Jazz>
+      <Graph val="playFetchSocialStart" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="social">
+        <Anim x="a_idle_neutral_loop_1" y="ad_idle_sniffAround_x" />
+        <Buff />
+        <RPROC pebu="" peau="OnBatheLargeAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnBatheLargeFailure" />
+        <TUN petRej="True" />
+        <Reinforce key="HydrophobicPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="101">
+        <LLTR max="-50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="HydrophobicPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="PraisePet" com="Friendly">
+    <Text key="PraisePet" pvt="BePraisedPet" />
+    <AD val="0x00004040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="PraiseScoldTest" />
+      <ParMen key="Reinforcement" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="praise" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim r="a2ah_soc_neutral_praiseMounted_friendly_neutral_x" h="a2ah_soc_neutral_praiseMounted_friendly_neutral_y" />
+        <Buff />
+        <RPROC pebu="" peau="OnPraiseScold" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="ScoldPet" com="Neutral">
+    <Text key="ScoldPet" pvt="BeScoldedPet" />
+    <AD val="0x00004040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="PraiseScoldTest" />
+      <ParMen key="Reinforcement" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="scold" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="">
+        <Anim r="a2ah_soc_neutral_scoldMounted_neutral_neutral_x" h="a2ah_soc_neutral_scoldMounted_neutral_neutral_y" />
+        <Buff />
+        <RPROC pebu="ScoldPetBeforeCallback" peau="OnPraiseScold" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Stamp At" com="Insulting">
+    <Text key="StampAt" pvt="BeStampedAt" />
+    <AD val="0x000080C0">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH" y="C,T,Y,A,E,AH,EH,AC,EC,AD,ED,AL,EL" />
+      <ATRA val="FriendlyPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="StampAtProceduralTest" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="StampAt" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforeStampAt" peau="OnAfterStampAt" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" ltro="-5">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Feed Treat" com="Friendly">
+    <Text key="FeedTreat" pvt="BeFedTreat" />
+    <AD val="0x00007040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="FeedTreat" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="FeedTreatBeforeCallback" peau="FeedTreatAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="FeedTreatRejectCallback" />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="88">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="90" ProcTest="FeedTreatRejectChance">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Rub Belly" com="Friendly">
+    <Text />
+    <AD val="0x00002048">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E,AD,ED,AL,EL" y="C,T,Y,A,E,AD,ED,AL,EL" />
+      <ALTR min="20" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="RubBellyProcTest" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="RubBelly" data="EP5" x="Neutral" y="Neutral" />
+      <LS state="Loop" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="RubBellyBeforeCallback" peau="RubBellyAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk To Pet" com="Friendly">
+    <Text key="TalkToPet" pvt="BeTalkedToPet" />
+    <AD val="0x00001000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <ATE val="Friendly,Good" />
+      <ALTR min="-60" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="IsTargetNotWildHorseOrNPCUnicorn" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="TalkTo" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Talk To">
+        <Anim />
+        <Buff />
+        <TUN val="10" />
+        <Reinforce key="GentlePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="MeanPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="88">
+        <LLTR min="-40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="87">
+        <LLTR max="-41" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Beg For Harvestable" com="Neutral">
+    <Text key="BegForHarvestable" pvt="BeBeggedForHarvestable" />
+    <AD val="0x00000040">
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="C,T,Y,A,E" />
+      <ATE val="PiggyPet" />
+      <ALTR min="-40" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="BegForHarvestableProceduralTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="begHarvestable" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="BegForHarvestableProcBefore" peau="" />
+        <TUN />
+        <Reinforce key="PiggyPet" ra="10" val="False" is="False" />
+        <Trait x="PiggyPet" y="" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Held Pet" com="Friendly">
+    <Text key="Pet" pvt="BePet" />
+    <AD val="0x00000200">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CC,AC,EC,CD,CL,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Smooch Held Pet" com="Friendly">
+    <Text key="Smoochie" pvt="BeSmooched" />
+    <AD val="0x00010040">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CC,AC,EC,CD,CL,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <ALTR min="60" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" ltro="5">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Hug Held Pet" com="Friendly">
+    <Text key="Hug" pvt="BeHugged" />
+    <AD val="0x00010040">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CC,AC,EC,CD,CL,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <ALTR min="40" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" ltro="5">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Smooch Big Dog" com="Friendly">
+    <Text key="Smoochie" pvt="BeSmooched" />
+    <AD val="0x00010048">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AD,ED" />
+      <AWT val="Base,Vacation,Downtown" />
+      <ALTR min="40" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="giveSmoochie" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="SmoochBigDogSuccess" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="88">
+        <LLTR min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="87">
+        <LLTR max="59" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Hug Big Dog" com="Friendly">
+    <Text key="Hug" pvt="BeHugged" />
+    <AD val="0x00010048">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AD,ED" />
+      <AWT val="Base,Vacation,Downtown" />
+      <ALTR min="20" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="giveLoveHug" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="HugPetAfterCallback" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" ltro="10">
+        <LLTR min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" ltro="-5">
+        <LLTR max="39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Bark At" com="Friendly">
+    <Text key="BarkAt" pvt="BeBarkedAt" />
+    <AD val="0x000200C0">
+    </AD>
+    <AA>
+      <AGE x="CD,AD,ED,CL,AL,EL" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL,AB,AR" />
+      <ATRA val="LazyPet,QuietPet" />
+      <ATE val="HyperPet,NoisyPet" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="BarkAt" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson_Dog_GrowlJig" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Positive">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterPositiveBarkAt" />
+        <TUN />
+        <Reinforce key="NoisyPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="Negative">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterNegativeBarkAt" />
+        <TUN />
+        <Reinforce key="NoisyPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="101">
+        <LLTR min="-80" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="110">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="AB" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="104">
+        <LLTR min="-90" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="DogPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="102">
+        <LLTR max="-70" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="SkittishPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="103">
+        <LLTR max="-70" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Coward" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="LickSim" com="Friendly">
+    <Text key="Lick" pvt="BeLicked" />
+    <AD val="0x00000008">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="AD,ED,AL,EL" y="P,C,T,Y,A,E" />
+      <AWT val="Base,Vacation,Downtown" />
+      <ATRA val="MeanPet" />
+      <ATE val="FriendlyPet,PlayfulPet" />
+      <ALTR min="20" max="100" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="LickSim" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="LickSimBeforeCallback" peau="LickSimAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Growl At" com="Insulting">
+    <Text key="GrowlAt" pvt="BeGrowledAt" />
+    <AD val="0x00020008">
+    </AD>
+    <AA>
+      <AGE x="CD,AD,ED,CL,AL,EL" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL,AB,AR" />
+      <ATRA val="FriendlyPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="GrowlAt" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson_Dog_GrowlJig" />
+    </Jazz>
+    <Rules>
+      <RHS com="Boring" state="Positive">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterGrowlAtPositive" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="Negative">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterGrowlAtNegative" />
+        <TUN val="42" />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="SkittishPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="100" ProcTest="GrowlAtCoinFlip">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="110">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="AB" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="111" ProcTest="IsTargetAMailCarrier">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="102">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Coward" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="105">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AggressivePet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="103">
+        <LLTR min="-50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="FriendlyPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="104">
+        <LLTR min="-50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="DogPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="NervousPet" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="PlayPetToPet" com="Friendly">
+    <Text key="GoofAround" pvt="GoofAround" />
+    <AD val="0x00002000">
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC,CD,AD,ED,CL,AL,EL,AR" y="CC,AC,EC,CD,AD,ED,CL,AL,EL,AR" />
+      <ATRA val="AggressivePet" />
+      <ATE val="PlayfulPet,FriendlyPet" />
+      <ALTR min="-80" max="100" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="PlayPetToPet" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim x="a_idle_neutral_loop_1" y="ad_idle_sniffAround_x" />
+        <Buff />
+        <TUN />
+        <Reinforce key="PlayfulPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="88">
+        <LLTR min="-60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="87">
+        <LLTR max="-61" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Play With Cat Toy Wall Dancer" com="Friendly">
+    <Text key="PushPlayWithCatToyWallDancer" pvt="PushedToPlayWithCatToyWallDancer" />
+    <AD val="0x00010000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E,AC,EC" y="C,T,Y,A,E,AC,EC" />
+      <ALTR min="-10" max="100" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="PlayWithWallToy" data="EP5" x="Neutral" y="Neutral" jigM="playFetchJig" jigData="EP5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnPlayWithCatToyWallDancerAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="99">
+        <LLTR min="10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="99">
+        <LLTR max="9" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="100" ProcTest="PlayWithWallDancerFailureTest">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Horse Kick" com="Insulting">
+    <Text key="Kick" pvt="BeKicked" />
+    <AD val="0x00002001">
+      <Misc ITLA="1" />
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="T,Y,A,E" />
+      <ATRA val="GentlePet,FriendlyPet" />
+      <ATE val="AggressivePet" />
+      <ALTR min="-100" max="50" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="HorseKickProceduralTest" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" jigM="horse_kickJig" jigData="EP5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="">
+        <Anim x="a2a_kick_x" y="a2a_kick_y" />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterHorseKick" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" ltro="-20">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Sniff" com="Friendly">
+    <Text key="Sniff" pvt="BeSniffed" />
+    <AD val="0x00000048">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" y="P,C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL,AR" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="Sniff" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Reaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforePetSniff" peau="SniffAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="96">
+        <LLTR max="-81" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="98">
+        <LLTR mood="-75" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="97">
+        <LLTR min="-80" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="P" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pick Up Pet" com="Friendly">
+    <Text key="PickUpPet" pvt="BePet" />
+    <AD val="0x00000200">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="102">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="CC,CD" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Socialize" com="Friendly">
+    <Text key="Socialize" pvt="Socialize" />
+    <AD val="0x00004040">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <ATE val="FriendlyPet" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="Socialize" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+      <LS state="Socialize" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Reinforce key="FriendlyPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="FriendlyPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="102">
+        <LLTR min="-80" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="100">
+        <LLTR max="-79" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Whisper To" com="Friendly">
+    <Text key="WhisperTo" pvt="BeWhisperedTo" />
+    <AD val="0x00000040">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="CH,AH,EH" />
+      <ATE val="Equestrian" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="WhisperToHorseProceduralTest" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="WhisperToHorse" data="EP5" x="Neutral" y="Neutral" />
+      <LS state="Loop" min="3" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" ltro="15">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Brush" com="Friendly">
+    <Text key="Brush" pvt="BeBrushed" />
+    <AD val="0x00012008">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AC,EC,AD,ED,AL,EL" />
+      <ATE val="Unknown,Unknown,Unknown" />
+      <ALTR min="-30" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="BrushPetTest" />
+      <ParMen key="Care" />
+    </AA>
+    <Jazz>
+      <Graph val="BrushPet" data="EP5" x="Neutral" y="Neutral" />
+      <LS state="Loop" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="BrushPetBeforeCallback" peau="BrushPetAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="-10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="-10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Calm Down Horse" com="Friendly">
+    <Text key="CalmDown" pvt="BeCalmedDown" />
+    <AD val="0x00004240">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH" />
+      <ATE val="Equestrian" />
+      <ALTR min="10" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="CalmDownHorseProceduralTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim x="a2ah_soc_neutral_calmDown_neutral_neutral_x" y="a2ah_soc_neutral_calmDown_neutral_neutral_y" r="a2ah_calmDown_mounted_rider_x" h="a2ah_calmDown_mounted_y" />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterCalmDownHorse" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" ltro="5">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Clean Hooves" com="Friendly">
+    <Text key="CleanHooves" pvt="HaveHoovesCleaned" />
+    <AD val="0x00002000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AH,EH" />
+      <ATE val="Equestrian" />
+      <ALTR min="-10" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="CleanHoovesProceduralTest" />
+      <ParMen key="Care" />
+    </AA>
+    <Jazz>
+      <Graph val="CleanHooves" data="EP5" x="Neutral" y="Neutral" jigM="horseMountDismountJig" jigData="EP5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Clean Hooves">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforeCleanHooves" peau="OnAfterCleanHooves" />
+        <TUN val="20" />
+        <Reinforce key="NeatPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="PiggyPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="~PiggyPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="29" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="PiggyPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="51">
+        <LLTR min="-10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="NeatPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="51" ProcTest="TargetHorseIsSmellyOrStinky">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="~PiggyPet" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pounce Play" com="Friendly">
+    <Text key="PouncePlay" pvt="BePouncedOnPlay" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC" y="AC,EC" />
+      <ATE val="HunterPet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Play" />
+    </AA>
+    <Jazz>
+      <Graph val="Pounce" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+      <LS state="Loop" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforePouncePlay" peau="OnAfterPouncePlay" />
+        <TUN />
+        <Reinforce key="HunterPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="85" ltro="10">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pounce Mean" com="Insulting">
+    <Text key="PounceMean" pvt="BePouncedOnMean" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC" y="AC,EC" />
+      <ATE val="HunterPet" />
+      <ALTR min="-100" max="-20" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="Pounce" data="EP5" x="Neutral" y="Neutral" />
+      <LS state="Loop" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforePounceMean" peau="OnAfterPounceMean" />
+        <TUN />
+        <Reinforce key="HunterPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" val="85" ltro="-10">
+        <LLTR max="-20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="HorseWooHoo" com="Amorous">
+    <Text key="TryForFoal" pvt="TryForFoal" />
+    <AD val="0x00002001">
+      <Misc JL="High" ITLA="90" r="0" c="0" />
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="AH,EH" />
+      <ALTR min="40" max="100" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="TestHorseWooHoo" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="nuzzle" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnHorseWooHoo" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Amorous" val="101">
+        <LLTR min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Cat Hiss" com="Insulting">
+    <Text key="HissAt" pvt="BeHissedAt" />
+    <AD val="0x000200C0">
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL,AB,AR" />
+      <ATRA val="FriendlyPet,PlayfulPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="CatHiss" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="Hiss">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforeCatHiss" peau="OnAfterCatHiss" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" ltro="-10">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Adopt Stray" com="Friendly">
+    <Text key="AdoptStray" pvt="BeAdopted" />
+    <AD val="0x00000280">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AC,EC,AD,ED,AL,EL" />
+      <AWT val="Base,Downtown" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="AdoptStrayTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="petFloor" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnStrayPetAdopted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Bark At Stray" com="Insulting">
+    <Text key="BarkAtStray" pvt="BeBarkedAt" />
+    <AD val="0x00000280">
+    </AD>
+    <AA>
+      <AGE x="AD,ED,AL,EL" y="AC,EC,AD,ED,AL,EL" />
+      <AWT val="Base,Downtown" />
+      <ATR val="LazyPet,FriendlyPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="BarkHissAtStrayTest" />
+    </AA>
+    <Jazz>
+      <Graph val="BarkAt" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="Negative">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnStrayPetShooed" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Hiss At Stray" com="Insulting">
+    <Text key="HissAtStray" pvt="BeHissedAt" />
+    <AD val="0x00000280">
+    </AD>
+    <AA>
+      <AGE x="AC,EC" y="AC,EC,AD,ED,AL,EL" />
+      <AWT val="Base,Downtown" />
+      <ATR val="FriendlyPet,LazyPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="BarkHissAtStrayTest" />
+    </AA>
+    <Jazz>
+      <Graph val="CatHiss" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="Hiss">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnStrayPetShooed" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Groom" com="Friendly">
+    <Text key="Groom" pvt="BeGroomed" />
+    <AD val="0x00002040">
+      <Misc c="3" />
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH,AC,EC" y="CH,AH,EH,CC,AC,EC" />
+      <ATRA val="PiggyPet" />
+      <ATE val="NeatPet" />
+      <ALTR min="20" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="PetGroomProceduralTest" />
+    </AA>
+    <Jazz>
+      <Graph val="PetGroom" data="EP5" x="Neutral" y="Neutral" />
+      <LS state="Groom" min="1" max="100" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforePetGroom" peau="" />
+        <TUN val="10" />
+        <Reinforce key="NeatPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" ltro="10">
+        <LLTR min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Hug Horse" com="Friendly">
+    <Text key="HugHorseActive" pvt="HugHorsePassive" />
+    <AD val="0x00004000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH" />
+      <ALTR min="30" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="IsTargetNotWildHorseOrNPCUnicorn" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Friendly">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim x="a2ah_soc_hug_unmounted_x" y="a2ah_soc_hug_unmounted_y" r="a2ah_soc_hug_mounted_rider_x" h="a2ah_soc_hug_mounted_y" />
+        <Buff />
+        <RPROC pebu="PreHugHorse" peau="OnHugHorse" />
+        <TUN />
+        <Reinforce key="GentlePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="MeanPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="51">
+        <LLTR min="50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="51">
+        <LLTR max="49" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="50">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Beg For Food" com="Friendly">
+    <Text key="Beg" pvt="BeBegged" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC,CD,AD,ED,CL,AL,EL" y="C,T,Y,A,E" />
+      <ATE val="PiggyPet" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="BegForFood" data="BaseGame" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterPetBegForFood" />
+        <TUN />
+        <Reinforce key="PiggyPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Feed Treat Auto Accept" com="Friendly">
+    <Text key="FeedTreat" pvt="BeFedTreat" />
+    <AD val="0x00007040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="FeedTreat" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="FeedTreatBeforeCallback" peau="FeedTreatAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="88" ltro="10">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Feed Harvestable" com="Friendly">
+    <Text key="FeedHarvestable" pvt="BeFedHarvestable" />
+    <AD val="0x00000040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AH,EH" />
+      <ATE val="Equestrian,AnimalLover" />
+      <ALTR min="-40" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="FeedHarvestable" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Feed Horse">
+        <Anim />
+        <Buff />
+        <RPROC pebu="FeedHarvestableProcBefore" peau="FeedHarvestableProcAfter" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="WildHorseRunAway" />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="51" ProcTest="IsTargetNotWildHorse">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="PiggyPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="50" ProcTest="FeedHarvestableHorseIsHungry">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" ProcTest="IsTargetNotWildHorse">
+        <LLTR max="-21" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="51" ProcTest="IsTargetWildHorse">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="PiggyPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="50" ProcTest="FeedHarvestableWildHorseIsHungry">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" ProcTest="IsTargetWildHorse">
+        <LLTR max="19" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" ProcTest="IsNpcUnicornAndIsHarvestableLifeFruit">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" ProcTest="IsTargetNotWildHorse">
+        <LLTR min="-20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" ProcTest="IsTargetWildHorse">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet On Floor" com="Friendly">
+    <Text key="Pet" pvt="BePet" />
+    <AD val="0x00014048">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <ALTR min="10" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="PetOnFloorProcTest" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="petFloor" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim r="a2ah_soc_neutral_petMounted_friendly_neutral_x" h="a2ah_soc_neutral_petMounted_friendly_neutral_y" />
+        <Buff />
+        <RPROC pebu="" peau="PetOnFloorAfterCallback" />
+        <TUN charInc="0" />
+        <Reinforce key="GentlePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="WildHorseRunAway" />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="" val="Awkward">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Reinforce key="MeanPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Awkward" val="80" ProcTest="IsTargetNotWildHorse">
+        <LLTR max="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="AD,ED,AL,EL" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" ProcTest="IsTargetWildHorse">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="78">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="77">
+        <LLTR max="29" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="79" ProcTest="IsTargetInBoxstall">
+        <LLTR min="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="80" ProcTest="IsTargetInBoxstall">
+        <LLTR max="-1" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet On Floor Auto Accept" com="Friendly">
+    <Text key="Pet" pvt="BePet" />
+    <AD val="0x00004048">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,AC,EC,AD,ED,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="PetOnFloorProcTest" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="petFloor" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim r="a2ah_soc_neutral_petMounted_friendly_neutral_x" h="a2ah_soc_neutral_petMounted_friendly_neutral_y" />
+        <Buff />
+        <RPROC pebu="" peau="PetOnFloorAfterCallback" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="AD,ED,AL,EL" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Chase Mean" com="Steamed">
+    <Text key="Chase" pvt="BeChased" />
+    <AD val="0x00002000">
+      <Misc c="100" />
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC,CD,AD,ED,CL,AL,EL,AR" y="C,T,Y,A,E,CC,AC,EC,CD,AD,ED,CL,AL,EL,AR" />
+      <ATRA val="FriendlyPet,SkittishPet,ShyPet" />
+      <ATE val="AggressivePet,HunterPet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="ChaseMean" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnChaseMean" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Fight Pet" com="Steamed">
+    <Text key="Fight" pvt="Fight" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="AC,EC,AD,ED,AL,EL,AR" y="AC,EC,AD,ED,AL,EL,AR" />
+      <ATR val="FriendlyPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="FightPet" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Chase Play" com="Friendly">
+    <Text key="Chase" pvt="BeChased" />
+    <AD val="0x00003040">
+      <Misc c="100" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL,AR" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL,AR" />
+      <ATRA val="LazyHorse,LazyPet" />
+      <ATE val="HyperPet,PlayfulPet" />
+      <ALTR min="-20" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Play" />
+    </AA>
+    <Jazz>
+      <Graph val="ChasePlay" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnChasePlay" />
+        <TUN />
+        <Reinforce key="HyperPet" ra="5" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="LazyPet" ra="5" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="-1" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="51">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="LazyPet" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="51">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="LazyHorse" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Sit On Sim" com="Neutral">
+    <Text key="SitOnSim" pvt="BeSatOn" />
+    <AD val="0x00010000">
+      <Misc r="3" c="3" />
+    </AD>
+    <AA>
+      <AGE x="AC,EC,AL,EL" y="C,T,Y,A,E" />
+      <AWT val="Base,Vacation,Downtown" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="" val="Insulting">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" val="110">
+        <LLTR max="-10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="111">
+        <LLTR max="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="MeanSpirited" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="112">
+        <LLTR max="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Grumpy" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="100">
+        <LLTR min="-10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Lead Horse" com="Friendly">
+    <Text key="TugOfWar" pvt="PlayingTugOfWar" />
+    <AD val="0x00011A00">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" />
+      <LS state="play" min="0" max="0" fun="200" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="80" ProcTest="LeadHorseLHSTest">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="79">
+        <LLTR mood="-10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="78">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Go Catch Any Prey" com="Neutral">
+    <Text key="GoCatchSomething" pvt="BeAskedToCatchSomething" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" r="5" c="4" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AC,EC" />
+      <Available auto="False" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="hunting_askToCatch" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="GoCatchSomethingBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Go Catch Specific Prey" com="Neutral">
+    <Text key="GoCatch" pvt="BeAskedToCatch" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" r="5" c="4" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AC,EC" />
+      <Available auto="False" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="hunting_askToCatch" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="GoCatchSpecificBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Unicorn Curse" com="Insulting">
+    <Text key="UnicornCurse" pvt="BeCursedByUnicorn" />
+    <AD val="0x000000C0">
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="UnicornCurseTest" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="curse" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnUnicornSocialStart" peau="OnUnicornSocialStop" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Unicorn Bless" com="Friendly">
+    <Text key="UnicornBless" pvt="BeBlessedByUnicorn" />
+    <AD val="0x000000C0">
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="UnicornBlessTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="bless" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnUnicornSocialStart" peau="OnUnicornSocialStop" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Unicorn Cure" com="Friendly">
+    <Text key="UnicornCure" pvt="BeCuredByUnicorn" />
+    <AD val="0x000000C0">
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="C,T,Y,A,E,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="UnicornCureTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="bless" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnUnicornSocialStart" peau="OnUnicornSocialStop" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Unicorn Invite" com="Friendly">
+    <Text key="InviteUnicorn" pvt="UnicornBeInvited" />
+    <AD val="0x000022C0">
+      <Misc r="0" c="57" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AH,EH" />
+      <ALTR min="50" max="100" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="UnicornInviteTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="inviteUnicorn" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnUnicornInviteAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnUnicornInviteReject" />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="78" ProcTest="UnicornInviteAcceptProcTest">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="77">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Raccoon" com="Friendly">
+    <Text key="PetRaccoon" pvt="BePet" />
+    <AD val="0x00000240">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AR" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="petFloor" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="PetRaccoonSuccessfulCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="" val="Boring">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="" val="Insulting">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="PetRaccoonBiteCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <LLTR mood="-50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="105" ProcTest="IsRaccoonHungryTest">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="102">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait x="AnimalLover" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="110">
+        <SC />
+        <SK key="WildlifeFriend" val="4" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Brush Horse" com="Friendly">
+    <Text key="Brush" pvt="BeBrushed" />
+    <AD val="0x00012040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH" />
+      <ATE val="Equestrian" />
+      <ALTR min="-30" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="IsTargetNotWildHorseOrNPCUnicorn" />
+      <ParMen key="Care" />
+    </AA>
+    <Jazz>
+      <Graph val="BrushPet" data="EP5" x="Neutral" y="Neutral" jigM="horseMountDismountJig" jigData="EP5" />
+      <LS state="Loop" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="BrushPetBeforeCallback" peau="BrushPetAfterCallback" />
+        <TUN />
+        <Reinforce key="GentlePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="MeanPet" ra="20" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="-10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="-11" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Have Fun" com="Friendly">
+    <Text key="HaveFun" pvt="HaveFun" />
+    <AD val="0x00010048">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AC,EC,AD,ED,AL,EL" />
+      <ALTR min="-80" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Play" />
+    </AA>
+    <Jazz>
+      <Graph val="PlayHaveFun" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson_1Unit" />
+      <LS state="Loop" min="5" max="8" fun="10" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="PlayHaveFunBeforeCallback" peau="PlayHaveFunAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="78">
+        <LLTR min="-60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="77">
+        <LLTR max="-61" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet On Surface" com="Friendly">
+    <Text key="Pet" pvt="BePet" />
+    <AD val="0x00000000">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AC,EC,AD,ED,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <ALTR min="10" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="PetOnSurface" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="78">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="77">
+        <LLTR max="29" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Tackle" com="Insulting">
+    <Text key="Tackle" pvt="BeTackled" />
+    <AD val="0x00002000">
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC,CD,CL,AL,EL" y="P,C" />
+      <ATR val="LazyPet" />
+      <ATRA val="LazyPet" />
+      <ATE val="HyperPet,AggressivePet,PlayfulPet,HunterPet" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="CheckTackle" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="tackle" data="EP5" x="Neutral" y="Neutral" jigM="smallPetTackleJig" jigData="EP5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="" val="Friendly">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="PushTacklePostBehavior" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mark Sim" com="Friendly">
+    <Text key="Mark" pvt="BeMarked" />
+    <AD val="0x00000008">
+      <Misc c="3" />
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC" y="C,T,Y,A,E" />
+      <ALTR min="40" max="100" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Exit">
+        <Anim x="a2a_soc_neutral_markSimAccept_friendly_neutral_x" y="a2a_soc_neutral_markSimAccept_friendly_neutral_y" />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterMarkSim" />
+        <TUN val="10" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Exit">
+        <Anim x="a2c_soc_neutral_markSimReject_insulting_neutral_x" y="a2c_soc_neutral_markSimReject_insulting_neutral_y" />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="88">
+        <LLTR min="50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="87">
+        <LLTR max="49" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="90">
+        <LLTR min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Snob" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="89">
+        <LLTR max="59" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Snob" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="99">
+        <LLTR min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="98">
+        <LLTR max="39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="104">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+      <LHS com="Friendly" val="92">
+        <LLTR min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="MeanSpirited" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="90">
+        <LLTR max="59" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="MeanSpirited" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="94">
+        <LLTR min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Evil" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="93">
+        <LLTR max="59" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Evil" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <LLTR min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CatPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="101">
+        <LLTR max="39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CatPerson" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Attack Shred" com="Insulting">
+    <Text key="Attack" pvt="BeAttacked" />
+    <AD val="0x00000008">
+    </AD>
+    <AA>
+      <AGE x="CC,AC,EC" y="C,T,Y,A,E" />
+      <ATRA val="FriendlyPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="attackSim" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="Exit">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAfterAttackShred" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" ltro="-10">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pee On" com="Insulting">
+    <Text key="PeeOn" pvt="BePeedOn" />
+    <AD val="0x0000008C">
+    </AD>
+    <AA>
+      <AGE x="AD,ED,AL,EL" y="C,T,Y,A,E" />
+      <ATE val="MeanPet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="peeOn" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnPeedOn" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Bite At" com="Insulting">
+    <Text key="BiteAt" pvt="BeBitAt" />
+    <AD val="0x000240C0">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH" y="C,T,Y,A,E,CH,AH,EH" />
+      <ATRA val="FriendlyPet" />
+      <ATE val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Mean" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="BiteAt" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="Reaction">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="BiteAtProcAfter" />
+        <TUN />
+        <Reinforce key="AggressivePet" ra="10" val="False" is="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" ltro="-10">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Let Sniff Hand" com="Friendly">
+    <Text key="LetSniffHand" pvt="SniffHand" />
+    <AD val="0x000000C8">
+      <Misc r="4" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <ATE val="AnimalLover" />
+      <ALTR min="-80" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="letSniffHand" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Neutral">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LetSniffHandProcAfter" />
+        <TUN />
+        <Reinforce key="GentlePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LetSniffHandProcAfter" />
+        <TUN petRej="True" />
+        <Reinforce key="MeanPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="-60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="-59" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Rub Neck" com="Friendly">
+    <Text key="RubNeck" pvt="HaveNeckRubbed" />
+    <AD val="0x00014040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH" />
+      <ALTR min="-10" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="RubNeck" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim r="a2ah_soc_neutral_mountedRubNeck_friendly_neutral_x" h="a2ah_soc_neutral_mountedRubNeck_friendly_neutral_y" />
+        <Buff />
+        <TUN />
+        <Reinforce key="GentlePet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Reinforce key="MeanPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="9" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Ask to Bring in Newspaper" com="Friendly">
+    <Text key="AskToBringInNewspaper" pvt="BeAskedToBringInNewspaper" />
+    <AD val="0x00000008">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="AD,ED,AL,EL" />
+      <ATE val="BookWorm,HatesOutdoors" />
+      <ALTR min="10" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="AskToBringInNewspaperProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="huntingSkill" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAskedToBringInNewspaper" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="29" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Enthuse About Cats" com="Friendly">
+    <Text key="EnthuseAboutCats" pvt="Listen" />
+    <SA key="Enthuse" />
+    <AD val="0x00040100">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="CatPerson" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CatPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Enthuse About Dogs" com="Friendly">
+    <Text key="EnthuseAboutDogs" pvt="Listen" />
+    <SA key="Enthuse" />
+    <AD val="0x00040100">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="DogPerson" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="" val="Neutral">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="DogPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Enthuse About Horses" com="Friendly">
+    <Text key="EnthuseAboutHorses" pvt="Listen" />
+    <SA key="Enthuse" />
+    <AD val="0x00040100">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="Equestrian" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="" val="Neutral">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Equestrian" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Enthuse About Unicorns" com="Friendly">
+    <Text key="EnthuseAboutUnicorns" pvt="Listen" />
+    <SA key="Enthuse" />
+    <AD val="0x00040100">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="DoesActorKnowAUnicorn" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="" val="Neutral">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="102">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Equestrian" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Childish" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Enthuse About Animals" com="Friendly">
+    <Text key="EnthuseAboutAnimals" pvt="Listen" />
+    <SA key="Enthuse" />
+    <AD val="0x00040100">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="AnimalLover" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="" val="Neutral">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="DogPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="103">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="102">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CatPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Equestrian" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Dogs" com="Friendly">
+    <Text key="TalkAboutDogs" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000402">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="AnimalLover" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="DogPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Cats" com="Friendly">
+    <Text key="TalkAboutCats" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000402">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="AnimalLover" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CatPerson" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Horses" com="Friendly">
+    <Text key="TalkAboutHorses" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000402">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="AnimalLover" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Equestrian" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="AnimalLover" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Ask Pet to Leave" com="Friendly">
+    <Text key="AskPetToLeave" pvt="BeAskedToLeavePet" />
+    <AD val="0x00004000">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <AWT val="Base,Vacation,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestAskToLeavePet" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="petFloor" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="">
+        <EndStance x="Neutral" y="" />
+        <Anim x="a2cc_soc_neutral_praise_friendly_neutral_x" y="a2cc_soc_neutral_praise_friendly_neutral_y" />
+        <Buff />
+        <RPROC pebu="" peau="OnPetAskedToLeave" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="">
+        <Anim r="a2ah_soc_neutral_petMounted_friendly_neutral_x" h="a2ah_soc_neutral_petMounted_friendly_neutral_y" />
+        <Buff />
+        <RPROC pebu="" peau="OnPetAskedToLeave" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="CC,CD,CL" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Horseplay" com="Friendly">
+    <Text key="Horseplay" pvt="Horseplay" />
+    <AD val="0x00002040">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH" y="CH,AH,EH" />
+      <ATE val="PlayfulPet" />
+      <ALTR min="-20" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="Play" />
+    </AA>
+    <Jazz>
+      <Graph val="Horseplay" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim x="a_idle_neutral_loop_1" y="ad_idle_sniffAround_x" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="51">
+        <LLTR min="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="50">
+        <LLTR max="-1" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Deer" com="Friendly">
+    <Text key="PetDeer" pvt="BePet" />
+    <AD val="0x00000040">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="AB" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="petFloor" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Friendly">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Pet Invite Inside" com="Friendly">
+    <Text key="InviteIn" pvt="BeInvitedIn" />
+    <AD val="0x000002C0">
+      <Misc r="4" c="4" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <ALTR min="-80" max="100" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="TestInviteInPet" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="letSniffHand" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Neutral">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="InviteIn" />
+        <TUN />
+        <Reinforce key="MeanPet" ra="10" val="False" is="False" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Greet Let Sniff Hand" com="Friendly">
+    <Text key="LetSniffHand" pvt="SniffHand" />
+    <AD val="0x000000C0">
+      <Misc r="4" c="4" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <ATE val="AnimalLover" />
+      <ALTR min="-80" max="100" />
+      <Available auto="True" udo="False" />
+      <ParMen key="GiveLove" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="letSniffHand" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Neutral">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Greet Sniff" com="Friendly">
+    <Text key="Sniff" pvt="BeSniffed" />
+    <AD val="0x000000C0">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" y="P,C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="Sniff" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Reaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="OnBeforePetSniff" peau="SniffAfterCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="99">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Nuzzle Auto Accept" com="Friendly">
+    <Text key="Nuzzle" pvt="BeNuzzled" />
+    <AD val="0x00003040">
+    </AD>
+    <AA>
+      <AGE x="CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" y="C,T,Y,A,E,CH,AH,EH,CC,AC,EC,CD,AD,ED,CL,AL,EL" />
+      <ATRA val="AggressivePet" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestCanNuzzleWith" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="nuzzle" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="NuzzleBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+</Social>

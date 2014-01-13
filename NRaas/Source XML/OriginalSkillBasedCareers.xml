@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession></SkilledProfession>
+  <Skill_Name></Skill_Name>
+  <Minimum_Skill_Level></Minimum_Skill_Level>
+  <XP_Gain_Multiplier></XP_Gain_Multiplier>
+  <Highest_Level></Highest_Level>
+  <Speech_Balloon_Image></Speech_Balloon_Image>
+  <HUD_Icon></HUD_Icon>
+  <Wishes_Icon></Wishes_Icon>
+  <Description_Text></Description_Text>
+  <Offer_Text></Offer_Text>
+  <Career_Responsibility_1></Career_Responsibility_1>
+  <Career_Responsibility_Short_1></Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1></Career_Responsibility_Icon_1>
+  <Career_Responsibility_2></Career_Responsibility_2>
+  <Career_Responsibility_Short_2></Career_Responsibility_Short_2>
+  <Career_Responsibility_Icon_2></Career_Responsibility_Icon_2>
+  <Career_Responsibility_3></Career_Responsibility_3>
+  <Career_Responsibility_Short_3></Career_Responsibility_Short_3>
+  <Career_Responsibility_Icon_3></Career_Responsibility_Icon_3>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Skill_Name>Writing</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>w_simple_writing_skill_s</HUD_Icon>
+  <Wishes_Icon>w_writing_skill</Wishes_Icon>
+  <Description_Text>WriterCareerDescription</Description_Text>
+  <Offer_Text>WriterCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>WriterCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Skill_Name>Painting</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>w_simple_painting_skill_s</HUD_Icon>
+  <Wishes_Icon>w_painting_skill</Wishes_Icon>
+  <Description_Text>PainterCareerDescription</Description_Text>
+  <Offer_Text>PainterCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>PainterCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Skill_Name>Gardening</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>w_simple_gardening_skill_s</HUD_Icon>
+  <Wishes_Icon>w_gardening_skill</Wishes_Icon>
+  <Description_Text>GardenerCareerDescription</Description_Text>
+  <Offer_Text>GardenerCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>GardenerCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Skill_Name>Fishing</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>w_simple_fishing_skill_s</HUD_Icon>
+  <Wishes_Icon>w_fishing_skill</Wishes_Icon>
+  <Description_Text>FisherCareerDescription</Description_Text>
+  <Offer_Text>FisherCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>FisherCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Skill_Name>Inventing</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>hud_career_inventing</HUD_Icon>
+  <Wishes_Icon>w_inventing_career_large</Wishes_Icon>
+  <Description_Text>InventorCareerDescription</Description_Text>
+  <Offer_Text>InventorCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>InventorCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Skill_Name>Sculpting</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>hud_career_sculpting</HUD_Icon>
+  <Wishes_Icon>w_sculpting_career_large</Wishes_Icon>
+  <Description_Text>SculptorCareerDescription</Description_Text>
+  <Offer_Text>SculptorCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>SculptorCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Skill_Name>Photography</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>w_simple_photo_skill_s</HUD_Icon>
+  <Wishes_Icon>w_photography_skill</Wishes_Icon>
+  <Description_Text>PhotographerCareerDescription</Description_Text>
+  <Offer_Text>PhotographerCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>PhotographerCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<SkillBasedCareers>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Skill_Name>Nectar</Skill_Name>
+  <Minimum_Skill_Level>1</Minimum_Skill_Level>
+  <XP_Gain_Multiplier>1</XP_Gain_Multiplier>
+  <Highest_Level>10</Highest_Level>
+  <HUD_Icon>w_simple_nectarmaking_skill_s</HUD_Icon>
+  <Wishes_Icon>w_nectarmaking_skill</Wishes_Icon>
+  <Description_Text>NectarMakerCareerDescription</Description_Text>
+  <Offer_Text>NectarMakerCareerOfferTns</Offer_Text>
+  <Career_Responsibility_1>NectarMakerCareerResponsibility1</Career_Responsibility_1>
+  <Career_Responsibility_Short_1>SkillCareerResponsibilityShort1</Career_Responsibility_Short_1>
+  <Career_Responsibility_Icon_1>w_simoleon</Career_Responsibility_Icon_1>
+ </SkillBasedCareers>
+<CareerLevels>
+  <SkilledProfession></SkilledProfession>
+  <Level></Level>
+  <Title></Title>
+  <Stipend></Stipend>
+  <Goal_XP></Goal_XP>
+  <Reward></Reward>
+  <Reward_Text></Reward_Text>
+  <Description></Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>1</Level>
+  <Title>WriterTitleLevel1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>75</Goal_XP>
+  <Description>WriterDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>2</Level>
+  <Title>WriterTitleLevel2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>400</Goal_XP>
+  <Description>WriterDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>3</Level>
+  <Title>WriterTitleLevel3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>1000</Goal_XP>
+  <Description>WriterDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>4</Level>
+  <Title>WriterTitleLevel4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>2500</Goal_XP>
+  <Description>WriterDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>5</Level>
+  <Title>WriterTitleLevel5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>5000</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>WriterDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>6</Level>
+  <Title>WriterTitleLevel6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>8000</Goal_XP>
+  <Description>WriterDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>7</Level>
+  <Title>WriterTitleLevel7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>12000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>WriterDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>8</Level>
+  <Title>WriterTitleLevel8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>19000</Goal_XP>
+  <Description>WriterDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>9</Level>
+  <Title>WriterTitleLevel9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>30000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>WriterDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Writer</SkilledProfession>
+  <Level>10</Level>
+  <Title>WriterTitleLevel10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>50000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>WriterDescriptionLevel10</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>1</Level>
+  <Title>PainterTitle1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>50</Goal_XP>
+  <Description>PainterDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>2</Level>
+  <Title>PainterTitle2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>75</Goal_XP>
+  <Description>PainterDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>3</Level>
+  <Title>PainterTitle3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>250</Goal_XP>
+  <Description>PainterDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>4</Level>
+  <Title>PainterTitle4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>750</Goal_XP>
+  <Description>PainterDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>5</Level>
+  <Title>PainterTitle5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>1000</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>PainterDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>6</Level>
+  <Title>PainterTitle6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>2500</Goal_XP>
+  <Description>PainterDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>7</Level>
+  <Title>PainterTitle7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>5000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>PainterDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>8</Level>
+  <Title>PainterTitle8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>10000</Goal_XP>
+  <Description>PainterDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>9</Level>
+  <Title>PainterTitle9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>25000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>PainterDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Painter</SkilledProfession>
+  <Level>10</Level>
+  <Title>PainterTitle10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>50000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>PainterDescriptionLevel10</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>1</Level>
+  <Title>GardenerTitle1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>30</Goal_XP>
+  <Description>GardenerDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>2</Level>
+  <Title>GardenerTitle2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>75</Goal_XP>
+  <Description>GardenerDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>3</Level>
+  <Title>GardenerTitle3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>500</Goal_XP>
+  <Description>GardenerDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>4</Level>
+  <Title>GardenerTitle4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>1000</Goal_XP>
+  <Description>GardenerDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>5</Level>
+  <Title>GardenerTitle5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>2500</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>GardenerDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>6</Level>
+  <Title>GardenerTitle6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>7500</Goal_XP>
+  <Description>GardenerDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>7</Level>
+  <Title>GardenerTitle7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>15000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>GardenerDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>8</Level>
+  <Title>GardenerTitle8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>30000</Goal_XP>
+  <Description>GardenerDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>9</Level>
+  <Title>GardenerTitle9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>60000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>GardenerDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Gardener</SkilledProfession>
+  <Level>10</Level>
+  <Title>GardenerTitle10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>80000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>GardenerDescriptionLevel10</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>1</Level>
+  <Title>FisherTitle1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>30</Goal_XP>
+  <Description>FisherDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>2</Level>
+  <Title>FisherTitle2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>75</Goal_XP>
+  <Description>FisherDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>3</Level>
+  <Title>FisherTitle3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>500</Goal_XP>
+  <Description>FisherDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>4</Level>
+  <Title>FisherTitle4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>1000</Goal_XP>
+  <Description>FisherDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>5</Level>
+  <Title>FisherTitle5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>2500</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>FisherDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>6</Level>
+  <Title>FisherTitle6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>7500</Goal_XP>
+  <Description>FisherDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>7</Level>
+  <Title>FisherTitle7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>15000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>FisherDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>8</Level>
+  <Title>FisherTitle8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>30000</Goal_XP>
+  <Description>FisherDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>9</Level>
+  <Title>FisherTitle9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>60000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>FisherDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Fisher</SkilledProfession>
+  <Level>10</Level>
+  <Title>FisherTitle10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>80000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>FisherDescriptionLevel10</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>1</Level>
+  <Title>InventorTitle1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>30</Goal_XP>
+  <Description>InventorDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>2</Level>
+  <Title>InventorTitle2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>75</Goal_XP>
+  <Description>InventorDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>3</Level>
+  <Title>InventorTitle3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>300</Goal_XP>
+  <Description>InventorDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>4</Level>
+  <Title>InventorTitle4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>1000</Goal_XP>
+  <Description>InventorDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>5</Level>
+  <Title>InventorTitle5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>2500</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>InventorDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>6</Level>
+  <Title>InventorTitle6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>5000</Goal_XP>
+  <Description>InventorDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>7</Level>
+  <Title>InventorTitle7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>10000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>InventorDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>8</Level>
+  <Title>InventorTitle8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>25000</Goal_XP>
+  <Description>InventorDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>9</Level>
+  <Title>InventorTitle9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>45000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>InventorDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Inventor</SkilledProfession>
+  <Level>10</Level>
+  <Title>InventorTitle10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>60000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>InventorDescriptionLevel10</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>1</Level>
+  <Title>SculptorTitle1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>50</Goal_XP>
+  <Description>SculptorDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>2</Level>
+  <Title>SculptorTitle2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>150</Goal_XP>
+  <Description>SculptorDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>3</Level>
+  <Title>SculptorTitle3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>300</Goal_XP>
+  <Description>SculptorDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>4</Level>
+  <Title>SculptorTitle4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>1000</Goal_XP>
+  <Description>SculptorDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>5</Level>
+  <Title>SculptorTitle5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>2500</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>SculptorDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>6</Level>
+  <Title>SculptorTitle6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>5000</Goal_XP>
+  <Description>SculptorDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>7</Level>
+  <Title>SculptorTitle7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>10000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>SculptorDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>8</Level>
+  <Title>SculptorTitle8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>25000</Goal_XP>
+  <Description>SculptorDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>9</Level>
+  <Title>SculptorTitle9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>45000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>SculptorDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Sculptor</SkilledProfession>
+  <Level>10</Level>
+  <Title>SculptorTitle10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>60000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>SculptorDescriptionLevel10</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>1</Level>
+  <Title>PhotographerTitle1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>20</Goal_XP>
+  <Description>PhotographerDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>2</Level>
+  <Title>PhotographerTitle2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>50</Goal_XP>
+  <Description>PhotographerDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>3</Level>
+  <Title>PhotographerTitle3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>150</Goal_XP>
+  <Description>PhotographerDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>4</Level>
+  <Title>PhotographerTitle4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>750</Goal_XP>
+  <Description>PhotographerDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>5</Level>
+  <Title>PhotographerTitle5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>2500</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>PhotographerDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>6</Level>
+  <Title>PhotographerTitle6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>5000</Goal_XP>
+  <Description>PhotographerDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>7</Level>
+  <Title>PhotographerTitle7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>10000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>PhotographerDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>8</Level>
+  <Title>PhotographerTitle8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>25000</Goal_XP>
+  <Description>PhotographerDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>9</Level>
+  <Title>PhotographerTitle9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>45000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>PhotographerDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>Photographer</SkilledProfession>
+  <Level>10</Level>
+  <Title>PhotographerTitle10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>60000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>PhotographerDescriptionLevel10</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>1</Level>
+  <Title>NectarMakerTitle1</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>30</Goal_XP>
+  <Description>NectarMakerDescriptionLevel1</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>2</Level>
+  <Title>NectarMakerTitle2</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>75</Goal_XP>
+  <Description>NectarMakerDescriptionLevel2</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>3</Level>
+  <Title>NectarMakerTitle3</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>150</Goal_XP>
+  <Description>NectarMakerDescriptionLevel3</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>4</Level>
+  <Title>NectarMakerTitle4</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>250</Goal_XP>
+  <Description>NectarMakerDescriptionLevel4</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>5</Level>
+  <Title>NectarMakerTitle5</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>1000</Goal_XP>
+  <Reward>Cash:500</Reward>
+  <Description>NectarMakerDescriptionLevel5</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>6</Level>
+  <Title>NectarMakerTitle6</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>5000</Goal_XP>
+  <Description>NectarMakerDescriptionLevel6</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>7</Level>
+  <Title>NectarMakerTitle7</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>9000</Goal_XP>
+  <Reward>Cash:1500</Reward>
+  <Description>NectarMakerDescriptionLevel7</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>8</Level>
+  <Title>NectarMakerTitle8</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>14000</Goal_XP>
+  <Description>NectarMakerDescriptionLevel8</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>9</Level>
+  <Title>NectarMakerTitle9</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>25000</Goal_XP>
+  <Reward>Cash:2500</Reward>
+  <Description>NectarMakerDescriptionLevel9</Description>
+ </CareerLevels>
+<CareerLevels>
+  <SkilledProfession>NectarMaker</SkilledProfession>
+  <Level>10</Level>
+  <Title>NectarMakerTitle10</Title>
+  <Stipend>0</Stipend>
+  <Goal_XP>35000</Goal_XP>
+  <Reward>Cash:5000</Reward>
+  <Description>NectarMakerDescriptionLevel10</Description>
+ </CareerLevels>
+</SkillBasedCareers>

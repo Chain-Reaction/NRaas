@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kCensorOnToilet value="True">
+      <!--Whether to display the censor while on the toilet-->
+    </kCensorOnToilet>
+    <kCensorForShowerWoohoo value="True">
+      <!--Whether to display the censor while woohooing in the shower-->
+    </kCensorForShowerWoohoo>
+    <kCensorOnPotty value="True">
+      <!--Whether to display the censor while on the potty-->
+    </kCensorOnPotty>
+    <kCensorForHorseWoohoo value="True">
+      <!--Whether to display the censor while horse woohooing-->
+    </kCensorForHorseWoohoo>
+    <kDelay value="250">
+      <!--The delay between censor checks in real-time milliseconds-->
+    </kDelay>
+    <kShowSimMenu value="True">
+      <!--Whether to display the interactions in the Sim Menu-->
+    </kShowSimMenu>
+    <kDisable value="False">
+      <!--Whether to disable the mod-->
+    </kDisable>
+    <kCensorForMales value="False">
+      <!--Whether to disable the censors for males-->
+    </kCensorForMales>
+    <kCensorForFemales value="False">
+      <!--Whether to disable the censors for females-->
+    </kCensorForFemales>
+    <kCensorByAge value="Baby,Toddler,Child">
+      <!--Whether to disable the censors for a specific age-->
+    </kCensorByAge>
+    <kCensorBySpecies value="">
+      <!--Whether to disable the censors for a specific species-->
+    </kCensorBySpecies>
+  </Current_Tuning>
+</base>

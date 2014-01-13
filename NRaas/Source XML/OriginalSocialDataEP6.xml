@@ -1,0 +1,1382 @@
+<?xml version="1.0"?>
+<Social>
+  <Action key="Give Track Mix" com="Friendly">
+    <Text key="GiveTrackMix" pvt="GiveTrackMix" />
+    <SA key="Talk" />
+    <AD val="0x00000008">
+      <Misc ITLA="10" r="6" c="4" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <ALTR min="5" max="100" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="sellcd" data="EP6" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnGiveTrackMixAccept" />
+        <TUN val="15" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Reject">
+        <Anim />
+        <Buff />
+        <TUN val="15" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="76" ProcTest="GiveTrackMixAccept">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Boast About Bullriding Prowess" com="Friendly">
+    <Text key="BoastAboutBullridingProwess" pvt="ListenToBoasting" />
+    <SA key="Boast" />
+    <AD val="0x00000102">
+      <Misc ITLA="30" c="3" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestCanBoastAboutBullriding" />
+    </AA>
+    <Jazz>
+      <Graph val="social_boastabout" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="80">
+        <LLTR max="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="78">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Athletic" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="77">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Adventurous" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="76">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Daredevil" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Friendly" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="74">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Good" />
+        <MAYBE rep="False" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Compliment Diva" com="Friendly">
+    <Text key="Compliment" pvt="ListenToCompliment" />
+    <SA key="Flatter" />
+    <AD val="0x00000100">
+      <Misc ITLA="30" r="4" c="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATE val="Charismatic,Schmoozer,EasilyImpressed" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="FriendlyCompliment" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="FriendlyReaction">
+        <Anim />
+        <Buff y="WellDuh" />
+        <RPROC pebu="" peau="OnComplimented" />
+        <TUN />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="70">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Cancel Steady Gig" com="Neutral">
+    <Text key="CancelSteadyGig" pvt="Listen" />
+    <AD val="0x00000180">
+      <Misc ITLA="70" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="TestCancelSteadyGig" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="Goodbye" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="" val="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="CancelSteadyGig" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Accuse of Being Diva" com="Insulting">
+    <Text key="AccuseofBeingDiva" pvt="ListenToAccusation" />
+    <AD val="0x00000100">
+      <Misc ITLA="75" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATE val="MeanSpirited,Diva" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="Accuse" data="BaseGame" x="Bad" y="Bad" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="">
+        <EndStance x="Bad" y="Bad" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <TUN val="80" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="">
+        <EndStance x="Bad" y="Neutral" />
+        <Anim x="a2a_soc_Bad_Accuse_Insulting_Bad_x" y="a2a_soc_Bad_Apologize_Neutral_Neutral_y" />
+        <Buff y="Flattered" />
+        <TUN val="80" />
+        <Trait x="Diva" y="Diva" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="50">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="51" cp="-1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="~Diva" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About My Accomplishments" com="Friendly">
+    <Text key="TalkAboutMyAccomplishments" pvt="Listen" />
+    <SA key="Boast" />
+    <AD val="0x00000402">
+      <Misc ITLA="20" r="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="Diva" />
+      <ATE val="Diva" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff y="Intrigued" />
+        <TUN val="60" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN val="30" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN val="10" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Complain About Something Trivial" com="Friendly">
+    <Text key="ComplainAboutSomethingTrivial" pvt="ListenToComplaint" />
+    <SA key="Complain" />
+    <AD val="0x00000100">
+      <Misc ITLA="25" c="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="Diva" />
+      <ATE val="Grumpy,Diva,Snob" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="ComplainAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff x="LetOffSteam" />
+        <TUN val="80" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN val="30" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN val="20" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="" val="Boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_I_y" />
+        <Buff cus="BuffOnInsult" />
+        <TUN val="10" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="70" TP="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="80" TP="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="79" TP="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Snob" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Insulting" val="78" TP="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Excitable" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="77" TP="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="OverEmotional" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Request Compliment" com="Neutral">
+    <Text key="RequestCompliment" pvt="ListenToRequest" />
+    <SA key="Request" />
+    <AD val="0x00000100">
+      <Misc ITLA="40" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="Diva" />
+      <Available auto="True" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnRequestCompliment" />
+        <TUN val="20" />
+        <Trait x="Diva" y="" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Bad">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnRequestComplimentFail" />
+        <TUN val="5" />
+        <Trait x="Diva" y="" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="Bad">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff y="CreepedOut" />
+        <RPROC pebu="" peau="OnRequestComplimentFail" />
+        <TUN val="-10" />
+        <Trait x="Diva" y="" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnRequestCompliment" />
+        <TUN val="5" />
+        <Trait x="Diva" y="" />
+        <Topic />
+      </RHS>
+      <LHS com="Awkward" val="80" SA="Request">
+        <LLTR min="1" max="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="79" SA="Request">
+        <LLTR min="31" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Creepy" val="78" SA="Request">
+        <LLTR max="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="82" SA="Request">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Mock Divas" com="Insulting">
+    <Text key="MockDivas" pvt="BeMocked" />
+    <AD val="0x00000100">
+      <Misc ITLA="25" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <AKTT val="Diva" />
+      <ATR val="Diva,Good" />
+      <ATRA val="Friendly" />
+      <ATE val="Evil,MeanSpirited" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="Mock" data="BaseGame" x="Bad" y="Bad" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="">
+        <EndStance x="Bad" y="" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <TUN val="80" />
+        <Trait x="MeanSpirited" y="" />
+        <Topic />
+      </RHS>
+      <RHS com="Steamed" state="" val="Insulting">
+        <EndStance x="Bad" y="" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <TUN val="80" />
+        <Trait x="MeanSpirited" y="" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Diva Slap" com="Steamed">
+    <Text key="Slap" pvt="BeSlapped" />
+    <AD val="0x00000009">
+      <Misc ITLA="70" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="Y,A,E" />
+      <ATE val="Diva" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestDivaSlap" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="Slap" data="BaseGame" x="Bad" y="Bad" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff x="FightThePower" cus="BuffOnInsult" />
+        <RPROC pebu="" peau="AfterSlap" />
+        <TUN val="200" />
+        <Trait x="" y="Diva" />
+        <Topic />
+      </RHS>
+      <LHS com="Steamed">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <AGE x="" y="Y,A,E" />
+        <Trait x="Diva" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Vocal Skills" com="Friendly">
+    <Text key="TalkAboutVocalSkills" pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="CanTalkAboutVocalSkills" />
+    </AA>
+    <Jazz>
+      <Graph val="singerTalkAboutVocals" data="EP6" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnTalkAboutVocalSkillAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnTalkAboutVocalSkillRejected" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="76" ltro="3">
+        <SC />
+        <SK key="Charisma" val="7" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="75" ltro="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Virtuoso" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="72" ltro="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="73" ltro="-2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="MeanSpirited" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="74" ltro="-3">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="80" ltro="-2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Singer Accept" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="sellcd" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Singer Accept Carrying" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="sellcd" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Singer Reject" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="sellcd" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobRejected" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Sell Album" com="Friendly">
+    <Text key="SellAlbum" pvt="BuyAlbum" />
+    <AD val="0x00000008">
+      <Misc ITLA="50" c="1" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <ALTR min="0" max="100" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="CanSellAlbum" />
+    </AA>
+    <Jazz>
+      <Graph val="sellcd" data="EP6" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSellAlbumAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSellAlbumReject" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="76" ProcTest="SellAlbumAccept">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Awkward" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Accept Carry Coin" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigCoin" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Reject Butterfly" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigButterfly" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobRejected" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Reject Coin" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigCoin" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobRejected" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Reject Fireball" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigFireball" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobRejected" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Reject Levitate" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigLevitate" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobRejected" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Challenge To Performance Duel" com="Neutral">
+    <Text key="ChallengeToPerformanceDuel" pvt="BeingChallenged" />
+    <AD val="0x00000388">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="TestCanHavePerformanceDuel" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnPerformanceChallengeAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnPerformanceChallengeAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Bad">
+        <EndStance x="Neutral" y="Bad" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnPerformanceChallengeAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <LLTR min="10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral">
+        <LLTR min="-40" max="10" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward">
+        <LLTR max="-40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Ever Heard Of Me" com="Friendly">
+    <Text key="EverHeardOfMe" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000100">
+      <Misc ITLA="30" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="EverHeardOfMeTest" />
+    </AA>
+    <Jazz>
+      <Graph val="EverHeardOfMe" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Reject">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="71" ProcTest="CareerSocialsAccept">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Boring" val="70">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Enthuse About Upcoming Show" com="Friendly">
+    <Text key="EnthuseAboutUpcomingShow" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000102">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="EnthuseAboutUpcomingShowTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="GigAcceptTNS" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="GigRejectTNS" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="76" ProcTest="CareerSocialsAccept">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Boring" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About World Peace" com="Friendly">
+    <Text key="TalkAboutWorldPeace" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000402">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="WishedWorldPeace" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Good" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Carefree" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="FamilyOriented" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="EnvironmentallyConscious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Evil" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="MeanSpirited" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Insane" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About World Misery" com="Friendly">
+    <Text key="TalkAboutWorldMisery" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000402">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATREQ val="WishedWorldMisery" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="80">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Evil" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="79">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="MeanSpirited" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="78">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Insane" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="77">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Good" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="76">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Carefree" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="EnvironmentallyConscious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="74">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="FamilyOriented" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Tour" com="Friendly">
+    <Text key="TalkAboutTour" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00000100">
+      <Misc ITLA="30" r="3" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestTalkAboutTour" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnFinishTalkingAboutTour" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="51" ltro="20">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait x="Diva,SocialButterfly,Ambitious,NaturalPerformer,Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="50">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Have Conversation With Self" com="Funny">
+    <Text key="HaveConversationWithSelf" pvt="Watch" />
+    <AD val="0x00000000">
+      <Misc ITLA="40" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="C,T,Y,A,E" />
+      <ATR val="Good" />
+      <ATRA val="Friendly" />
+      <ATE val="MeanSpirited" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="PerformanceArtistConversationWithSelf" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Funny" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnHaveConversationWithSelfAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnHaveConversationWithSelfRejected" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Funny" val="71" ProcTest="CareerSocialsAccept">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Boring" val="70">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Accept Butterfly" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigButterfly" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Accept Coin" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigCoin" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Accept Fireball" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigFireball" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Solicit Job Magician Accept Levitate" com="Friendly">
+    <Text pvt="Listen" />
+    <AD val="0x00000000">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="MagicianSolicitGigLevitate" data="EP6" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSolicitJobAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Sell Remix Album" com="Friendly">
+    <Text key="SellRemixAlbum" pvt="SellRemixAlbum" />
+    <SA key="Talk" />
+    <AD val="0x00000008">
+      <Misc ITLA="10" r="6" c="4" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <ALTR min="20" max="100" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="sellcd" data="EP6" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnSellRemixAlbumAccept" />
+        <TUN val="8" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Reject">
+        <Anim />
+        <Buff />
+        <TUN val="8" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="76" ProcTest="SellRemixAlbumAccept">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About DJ Skill" com="Friendly">
+    <Text key="TalkAboutDJSkill" pvt="TalkAboutDJSkill" />
+    <SA key="Talk" />
+    <AD val="0x00000008">
+      <Misc ITLA="10" r="6" c="4" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <ALTR min="10" max="100" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="djtalkabout" data="EP6" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnTalkAboutDJSkillAccept" />
+        <TUN val="20" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="reject">
+        <Anim />
+        <Buff />
+        <TUN val="20" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="76" ProcTest="TalkAboutDJSkillAccept">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Ask To Join PerformanceArtist Career" com="Friendly">
+    <Text key="AskToJoinPerformanceArtistCareer" pvt="RespondtoQuestion" />
+    <AD val="0x00040310">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestAskToJoinPerformanceCareer" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnRequestToJoinPerformanceCareerFinish" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Ask To Join Magician Career" com="Friendly">
+    <Text key="AskToJoinMagicianCareer" pvt="RespondtoQuestion" />
+    <AD val="0x00040310">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="TestAskToJoinPerformanceCareer" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnRequestToJoinPerformanceCareerFinish" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Ask To Join Singer Career" com="Friendly">
+    <Text key="AskToJoinSingerCareer" pvt="RespondtoQuestion" />
+    <AD val="0x00040310">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestAskToJoinPerformanceCareer" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnRequestToJoinPerformanceCareerFinish" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+</Social>

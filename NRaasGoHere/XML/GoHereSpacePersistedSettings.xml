@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kDisallowAutoGroup value="False">
+      <!--Whether to disable auto-grouping when using Go Here With-->
+    </kDisallowAutoGroup>
+    <kDisallowActiveGoHome value="False">
+      <!--Whether to disallow the use Go Home entirely for active sims-->
+    </kDisallowActiveGoHome>
+    <kVampireTeleport value="False">
+      <!--Whether to allow vampires to teleport when moving between lots-->
+    </kVampireTeleport>
+    <kTeleportForAll value="False">
+      <!--Whether Teleport is available for all sims, not just the undead-->
+    </kTeleportForAll>
+    <kAllowGoHereStack value="True">
+      <!--Whether to allow Go Here interactions to queue-->
+    </kAllowGoHereStack>
+    <kAllowNightVisitLot value="True">
+      <!--Whether to allow Visit Community Lot pushes at night-->
+    </kAllowNightVisitLot>
+    <kAllowVampireDayPush value="True">
+      <!--Whether to allow vampires to be pushed during the day-->
+    </kAllowVampireDayPush>
+    <kRudeGuestLikingGate value="40">
+      <!--The relationship level required to disable the rude guest check-->
+    </kRudeGuestLikingGate>
+    <kInactiveChildrenAsActive value="False">
+      <!--Whether to hire babysitters to watch over inactive children-->
+    </kInactiveChildrenAsActive>
+    <kAllowActiveDayCare value="True">
+      <!--Whether to allow the system to teleport inactive children to the active household-->
+    </kAllowActiveDayCare>
+    <kUseDayCareSims value="True">
+      <!--Whether to try using day care career sims instead of babysitters-->
+    </kUseDayCareSims>
+    <kAllowChildHomeAlone value="False">
+      <!--Whether to allow babies/toddlers to be home alone-->
+    </kAllowChildHomeAlone>
+    <kDisallowInactiveLeaveActiveLot value="True">
+      <!--Whether to disable certain 'Go Home' for inactives, whenever they are on a lot containing an active-->
+    </kDisallowInactiveLeaveActiveLot>
+  </Current_Tuning>
+</base>

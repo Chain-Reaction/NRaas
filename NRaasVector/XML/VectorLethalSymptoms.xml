@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symptoms>
+  <Symptom>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorLethalOnFire</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>OnFire</BuffName>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorLethalCombust</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.FirestarterSymptom, NRaasVector</FullClassName>
+    <Maximum>1</Maximum>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorLethalSweats</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Hygiene</Motive>
+    <DeltaValue>-25</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorLethalSmolder</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>CozyFire</BuffName>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorLethalSmoke</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>SmellSmoke</Type>
+    <Speed>Immediate</Speed>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorLethalMunchies</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Hunger</Motive>
+    <DeltaValue>-15</DeltaValue>
+    <LowerBound>-90</LowerBound>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorLethalMunchiesVampire</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>VampireThirst</Motive>
+    <DeltaValue>-15</DeltaValue>
+    <LowerBound>-90</LowerBound>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorLethalStarving</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Hunger</Motive>
+    <DeltaValue>-30</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorLethalStarvingVampire</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>VampireThirst</Motive>
+    <DeltaValue>-30</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorLethalCuddle</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>CuddleTime</BuffName>
+    <MoodValue>50</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromTapeWorm</Origin>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorLethalWeightLoss</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.WeightSymptom, NRaasVector</FullClassName>
+    <Minimum>-0.01</Minimum>
+    <Maximum>-0.10</Maximum>
+  </Symptom>
+
+</Symptoms>

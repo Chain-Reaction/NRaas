@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vectors>
+  <Vectors>
+    <GUID></GUID>
+      <!-- This value MUST be unique amongst all diseases a user has installed -->
+    <InitialStrength></InitialStrength>
+      <!-- Relative to Strength Scoring -->
+    <InfectionScoring></InfectionScoring>
+      <!-- Scoring for determining whether a sim can be infected -->
+    <InfectionMinimum></InfectionMinimum>
+      <!-- Minimum scoring for success -->
+    <CanOutbreak></CanOutbreak>
+      <!-- Whether the disease can spontaneously emerge in the population -->
+    <InoculationRating></InoculationRating>
+      <!-- How many strains an inoculation protects against -->
+    <InoculationCost></InoculationCost>
+      <!-- How much to inoculate against this disease (inoculation is disabled if 0) -->
+    <ResistanceCost></ResistanceCost>
+      <!-- How much to buy resistance against this disease (buying resistance is disabled if 0) -->
+    <HighProtectionCost></HighProtectionCost>
+      <!-- How much to buy protection from the hospital (buying protection is disabled if 0) -->
+    <LowProtectionCost></LowProtectionCost>
+      <!-- How much to buy protection from the hideout (buying protection is disabled if 0) -->
+    <MinimumStrainDifference></MinimumStrainDifference>
+      <!-- Minimum difference between strains to reinfect a sim -->
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasPox</GUID>
+    <InitialStrength>10</InitialStrength>
+    <InfectionScoring>NRaasVectorLongTermInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <InoculationRating>50</InoculationRating>
+    <InoculationCost>5000</InoculationCost>
+    <ResistanceCost>250</ResistanceCost>
+    <HighProtectionCost>1000</HighProtectionCost>
+    <LowProtectionCost>100</LowProtectionCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+  <Vectors>
+    <GUID>NRaasSIV</GUID>
+    <InitialStrength>10</InitialStrength>
+    <InfectionScoring>NRaasVectorLongTermWoohooInfection</InfectionScoring>
+    <InfectionMinimum>0</InfectionMinimum>
+    <CanOutbreak>True</CanOutbreak>
+    <ResistanceCost>500</ResistanceCost>
+    <HighProtectionCost>1000</HighProtectionCost>
+    <LowProtectionCost>100</LowProtectionCost>
+    <MinimumStrainDifference>2</MinimumStrainDifference>
+  </Vectors>
+
+  <NRaasSIV>
+    <!-- Global parameters over all stages -->
+    <InfectionRate>0</InfectionRate>
+    <WoohooInfectionRate>0.75</WoohooInfectionRate>
+
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <SymptomScoring>NRaasVectorLongTermSymptom</SymptomScoring>
+    <SymptomScoringMinimum>0</SymptomScoringMinimum>
+
+    <NumResistances>3</NumResistances>
+    <Resistance1>NRaasVectorLongTermStress</Resistance1>
+    <Resistance2>NRaasVectorLongTermHunger</Resistance2>
+    <Resistance3>NRaasVectorLongTermHygiene</Resistance3>
+  </NRaasSIV>
+  <NRaasSIV>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation is 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Mutate while incubating -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>7</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>ContagiousMin,-2,2</Mutable4>
+    <Mutable5>ContagiousMax,-2,2</Mutable5>
+    <Mutable6>ShowSignsMin,-2,2</Mutable6>
+    <Mutable7>ShowSignsMax,-2,2</Mutable7>
+
+    <!-- Become Contagious -->
+    <NextStage>Contagious</NextStage>
+  </NRaasSIV>
+  <NRaasSIV>
+    <Name>Contagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious</Type>
+
+    <!-- Contagious for 10 to 15 days -->
+    <MinDuration>240</MinDuration>
+    <MinMutation>ContagiousMin</MinMutation>
+    <MaxDuration>360</MaxDuration>
+    <MaxMutation>ContagiousMax</MaxMutation>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLongTermResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>TestNewStrain</SuccessStage>
+    <FailureStage>ShowSigns</FailureStage>
+  </NRaasSIV>
+  <NRaasSIV>
+    <Name>ShowSigns</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+
+    <!-- Contagious for 12 to 24 hours -->
+    <MinDuration>12</MinDuration>
+    <MinMutation>ShowSignsMin</MinMutation>
+    <MaxDuration>24</MaxDuration>
+    <MaxMutation>ShowSignsMax</MaxMutation>
+
+    <!-- Incur heavy symptoms -->
+    <NumSymptoms>4</NumSymptoms>
+    <Symptoms1>NRaasVectorLongTermSweats,NRaasVectorLongTermMiserable</Symptoms1>
+    <SymptomChance1>0.2</SymptomChance1>
+    <Symptoms2>NRaasVectorLongTermSpooked,NRaasVectorLongTermMiserable</Symptoms2>
+    <SymptomChance2>0.2</SymptomChance2>
+    <Symptoms3>NRaasVectorLongTermExhausted,NRaasVectorLongTermMiserable</Symptoms3>
+    <SymptomChance3>0.2</SymptomChance3>
+    <Symptoms4>NRaasVectorLongTermImmnue,NRaasVectorLongTermMiserable</Symptoms4>
+    <SymptomChance4>0.2</SymptomChance4>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLongTermResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>TestNewStrain</SuccessStage>
+    <FailureStage>PersistContagious</FailureStage>
+  </NRaasSIV>
+  <NRaasSIV>
+    <Name>PersistContagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>Contagious</Type>
+
+    <!-- Recurse into ShowSigns twice and then begin again -->
+    <Counter>ContagiousCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>ShowSigns</SuccessStage>
+    <FailureStage>TestNewStrain</FailureStage>
+  </NRaasSIV>
+  <NRaasSIV>
+    <Name>TestNewStrain</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.TestNewStrainStage, NRaasVector</FullClassName>
+    <Type>Contagious</Type>
+
+    <!-- Test for a new infection and incubate -->
+    <SuccessStage>Incubation</SuccessStage>
+    <FailureStage>Contagious</FailureStage>
+  </NRaasSIV>
+
+  <NRaasPox>
+    <!-- Global parameters over all stages -->
+    <OutdoorInfectionRate>0.01</OutdoorInfectionRate>
+    <RoomInfectionRate>0.5</RoomInfectionRate>
+    <SocialInfectionRate>0.75</SocialInfectionRate>
+    <WoohooInfectionRate>1</WoohooInfectionRate>
+
+    <BadRelationshipDelta>-1</BadRelationshipDelta>
+    <GoodRelationshipDelta>1</GoodRelationshipDelta>
+
+    <SymptomScoring>NRaasVectorLongTermSymptom</SymptomScoring>
+    <SymptomScoringMinimum>0</SymptomScoringMinimum>
+
+    <NumResistances>6</NumResistances>
+    <Resistance1>NRaasVectorLongTermAteMeal</Resistance1>
+    <Resistance2>NRaasVectorLongTermMeditate</Resistance2>
+    <Resistance3>NRaasVectorLongTermRest</Resistance3>
+    <Resistance4>NRaasVectorLongTermStress</Resistance4>
+    <Resistance5>NRaasVectorLongTermHunger</Resistance5>
+    <Resistance6>NRaasVectorLongTermHygiene</Resistance6>
+  </NRaasPox>
+  <NRaasPox>
+    <Name>Incubation</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.SimpleStage, NRaasVector</FullClassName>
+    <Type>Mutate</Type>
+
+    <!-- Incubation is 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>IncubationMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>IncubationMax</MaxMutation>
+
+    <!-- Mutate while incubating -->
+    <MutationRate>0.05</MutationRate>
+    <NumMutables>9</NumMutables>
+    <Mutable1>Strength,-2,2</Mutable1>
+    <Mutable2>IncubationMin,-2,2</Mutable2>
+    <Mutable3>IncubationMax,-2,2</Mutable3>
+    <Mutable4>ContagiousMin,-2,2</Mutable4>
+    <Mutable5>ContagiousMax,-2,2</Mutable5>
+    <Mutable6>RemissionMin,-24,24</Mutable6>
+    <Mutable7>RemissionMax,-24,24</Mutable7>
+    <Mutable8>RelapseMin,-2,2</Mutable8>
+    <Mutable9>RelapseMax,-2,2</Mutable9>
+    
+    <!-- Become Contagious -->
+    <NextStage>Contagious</NextStage>
+  </NRaasPox>
+  <NRaasPox>
+    <Name>Contagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Contagious for 24 to 48 hours -->
+    <MinDuration>24</MinDuration>
+    <MinMutation>ContagiousMin</MinMutation>
+    <MaxDuration>48</MaxDuration>
+    <MaxMutation>ContagiousMax</MaxMutation>
+
+    <!-- Incur heavy symptoms -->
+    <NumSymptoms>3</NumSymptoms>
+    <Symptoms1>NRaasVectorLongTermLapse,NRaasVectorLongTermMiserable</Symptoms1>
+    <SymptomChance1>0.5</SymptomChance1>
+    <Symptoms2>NRaasVectorLongTermExhausted,NRaasVectorLongTermIrritable</Symptoms2>
+    <SymptomChance2>0.2</SymptomChance2>
+    <Symptoms3>NRaasVectorLongTermNotFun,NRaasVectorLongTermIrritable</Symptoms3>
+    <SymptomChance3>0.2</SymptomChance3>
+
+    <!-- Test strength for remission -->
+    <Scoring>NRaasVectorLongTermResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>PersistContagious</FailureStage>
+  </NRaasPox>
+  <NRaasPox>
+    <Name>PersistContagious</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>Contagious,ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Recurse into Contagious thrice and then begin Remission -->
+    <Counter>ContagiousCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>Contagious</SuccessStage>
+    <FailureStage>Remission</FailureStage>
+  </NRaasPox>
+  <NRaasPox>
+    <Name>Remission</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>Remission</Type>
+
+    <!-- Remission is 5 to 10 days long -->
+    <MinDuration>120</MinDuration>
+    <MinMutation>RemissionMin</MinMutation>
+    <MaxDuration>240</MaxDuration>
+    <MaxMutation>RemissionMax</MaxMutation>
+
+    <!-- Test Strength for relapse -->
+    <Scoring>NRaasPoxRemission</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>Relapse</FailureStage>
+  </NRaasPox>
+  <NRaasPox>
+    <Name>Relapse</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.ScoringStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Relapse lasts 48 to 72 hours -->
+    <MinDuration>48</MinDuration>
+    <MinMutation>RelapseMin</MinMutation>
+    <MaxDuration>72</MaxDuration>
+    <MaxMutation>RelapseMax</MaxMutation>
+
+    <!-- Custom Story -->
+    <StoryKeyUnknown>NRaasPoxRelapseUnknown</StoryKeyUnknown>
+    <StoryKeyIdentified>NRaasPoxRelapseIdentified</StoryKeyIdentified>
+
+    <!-- Incur light symptoms -->
+    <NumSymptoms>4</NumSymptoms>
+    <Symptoms1>NRaasVectorLongTermBackAche,NRaasVectorLongTermIrritable</Symptoms1>
+    <SymptomChance1>0.1</SymptomChance1>
+    <Symptoms2>NRaasVectorLongTermDrained,NRaasVectorLongTermIrritable</Symptoms2>
+    <SymptomChance2>0.1</SymptomChance2>
+    <Symptoms3>NRaasVectorLongTermOutOfSorts,NRaasVectorLongTermIrritable</Symptoms3>
+    <SymptomChance3>0.2</SymptomChance3>
+    <Symptoms4>NRaasVectorLongTermSleepliness,NRaasVectorLongTermIrritable</Symptoms4>
+    <SymptomChance4>0.2</SymptomChance4>
+
+    <!-- Test Strength for remission -->
+    <Scoring>NRaasVectorLongTermResistance</Scoring>
+    <Minimum>Strength</Minimum>
+    <SuccessStage>Remission</SuccessStage>
+    <FailureStage>PersistRelapse</FailureStage>
+  </NRaasPox>
+  <NRaasPox>
+    <Name>PersistRelapse</Name>
+    <FullClassName>NRaas.VectorSpace.Stages.IncrementalStage, NRaasVector</FullClassName>
+    <Type>ShowingSigns</Type>
+    <CanInoculate>False</CanInoculate>
+
+    <!-- Recurse into Relapse thrice and then begin Remission -->
+    <Counter>RelapseCounter</Counter>
+    <Maximum>3</Maximum>
+    <SuccessStage>Relapse</SuccessStage>
+    <FailureStage>Remission</FailureStage>
+  </NRaasPox>
+
+</Vectors>

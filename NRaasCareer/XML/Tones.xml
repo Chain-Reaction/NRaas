@@ -1,0 +1,188 @@
+﻿<?xml version="1.0"?>
+<ToneList>
+  <Tone>
+    <ToneName></ToneName>
+    <FullClassName></FullClassName>
+    <CareerGuid></CareerGuid>
+    <CareerBranch></CareerBranch>
+    <SkillCount>0</SkillCount>
+    <Skill1></Skill1>
+    <SkillRate1></SkillRate1>
+    <MotiveCount>0</MotiveCount>
+    <Motive1></Motive1>
+    <MotiveRate1></MotiveRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.PracticeGardening</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Science</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Gardening</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ElementaryPractice</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>SchoolElementary</CareerGuid>
+    <MustHaveVisibleSkill>False</MustHaveVisibleSkill>
+    <SkillCount>3</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>0.25</SkillRate1>
+    <Skill2>Painting</Skill2>
+    <SkillRate2>0.25</SkillRate2>
+    <Skill3>Writing</Skill3>
+    <SkillRate3>0.25</SkillRate3>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.SchoolPracticeAthletic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>SchoolHigh</CareerGuid>
+    <MustHaveVisibleSkill>False</MustHaveVisibleSkill>
+    <SkillCount>1</SkillCount>
+    <Skill1>Athletic</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.SchoolPracticePainting</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>SchoolHigh</CareerGuid>
+    <MustHaveVisibleSkill>False</MustHaveVisibleSkill>
+    <SkillCount>1</SkillCount>
+    <Skill1>Painting</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.SchoolPracticeCooking</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>SchoolHigh</CareerGuid>
+    <MustHaveVisibleSkill>False</MustHaveVisibleSkill>
+    <SkillCount>1</SkillCount>
+    <Skill1>Cooking</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.SchoolPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>SchoolHigh</CareerGuid>
+    <MustHaveVisibleSkill>False</MustHaveVisibleSkill>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.SchoolPracticeWriting</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>SchoolHigh</CareerGuid>
+    <MustHaveVisibleSkill>False</MustHaveVisibleSkill>
+    <SkillCount>1</SkillCount>
+    <Skill1>Writing</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MedicalPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Medical</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.PoliticalPracticeCharisma</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Political</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Charisma</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.PolicePracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>LawEnforcement</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.PolicePracticePainting</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>LawEnforcement</CareerGuid>
+    <CareerBranch>ForensicAnalyst</CareerBranch>
+    <SkillCount>1</SkillCount>
+    <Skill1>Painting</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.CriminalPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Criminal</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MilitaryPracticeAthletic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Military</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Athletic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MilitaryPracticeHandiness</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Military</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Handiness</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.JournalismPracticeCharisma</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Journalism</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Charisma</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.SciencePracticeHandiness</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Science</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Handiness</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.EducationPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Education</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.EducationPracticeCharisma</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Education</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Charisma</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.PoliceWriteReports</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>LawEnforcement</CareerGuid>
+    <MetricCount>1</MetricCount>
+    <MetricRate1>1</MetricRate1>
+    <MetricType1>Reports</MetricType1>
+    <MetricHoursUntilChange1>3</MetricHoursUntilChange1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.JournalismWriteStories</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>Journalism</CareerGuid>
+    <MetricCount>1</MetricCount>
+    <MetricRate1>1</MetricRate1>
+    <MetricType1>StoriesAndReviews</MetricType1>
+    <MetricHoursUntilChange1>3</MetricHoursUntilChange1>
+  </Tone>
+</ToneList>

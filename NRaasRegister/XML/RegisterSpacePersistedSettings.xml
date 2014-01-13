@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kShowLotMenu value="True">
+      <!--Whether to display the menu when clicking on a Lot-->
+    </kShowLotMenu>
+    <kShowNotices value="True">
+      <!--Whether to display the registration notifications-->
+    </kShowNotices>
+    <kPayPerHour value="100">
+      <!--How much to pay each role assigned sim per hour they are working-->
+    </kPayPerHour>
+    <kAllowTourists value="True">
+      <!--Whether to allow tourists to spawn in the town-->
+    </kAllowTourists>
+    <kAllowPaparazzi value="True">
+      <!--Whether to allow paparazzi to spawn in the town-->
+    </kAllowPaparazzi>
+    <kAllowImmigration value="True">
+      <!--Whether to allow immigrants to spawn to fill role positions-->
+    </kAllowImmigration>
+    
+    <kMaximumWildHorses value="4">
+      <!--The maximum number of wild horses that can be spawned by the Pet Manager-->
+    </kMaximumWildHorses>
+    <kMaximumUnicorns value="1">
+      <!--The maximum number of unicorns that can be spawned by the Pet Manager-->
+    </kMaximumUnicorns>
+    <kMaximumStrayDogs value="6">
+      <!--The maximum number of stray dogs that can be spawned by the Pet Manager-->
+    </kMaximumStrayDogs>
+    <kMaximumStrayCats value="6">
+      <!--The maximum number of stray cats that can be spawned by the Pet Manager-->
+    </kMaximumStrayCats>
+    <kMaximumDeer value="3">
+      <!--The maximum number of deer that can be spawned by the Pet Manager-->
+    </kMaximumDeer>
+    <kMaximumRaccoon value="2">
+      <!--The maximum number of raccoon that can be spawned by the Pet Manager-->
+    </kMaximumRaccoon>
+    <kDebugging value="False">
+      <!--Whether to display debugging notices-->
+    </kDebugging>
+    <kShowImmigrationNotice value="True">
+      <!--Whether to display a notice when immigration is required for a role-->
+    </kShowImmigrationNotice>
+    <kAllowResidentAssignment value="False">
+      <!--Whether to allow residents to be automatically assigned to role positions-->
+    </kAllowResidentAssignment>
+    <kPayPerGenericMerchant value="100">
+      <!--How much to pay generic cashiers per hour they are working-->
+    </kPayPerGenericMerchant>
+    <kPayPerLocationMerchant value="100">
+      <!--How much to pay location cashiers per hour they are working-->
+    </kPayPerLocationMerchant>
+    <kPayPerPetRegister value="100">
+      <!--How much to pay pet store cashiers per hour they are working-->
+    </kPayPerPetRegister>
+    <kPayPerBartender value="100">
+      <!--How much to pay bartenders per hour they are working-->
+    </kPayPerBartender>
+    <kPayPerBouncer value="100">
+      <!--How much to pay bouncers per hour they are working-->
+    </kPayPerBouncer>
+    <kPayPerPaparazzi value="100">
+      <!--How much to pay paparazzi per hour they are working-->
+    </kPayPerPaparazzi>
+    <kPayPerSpecialMerchant value="100">
+      <!--How much to pay special merchant per hour they are working-->
+    </kPayPerSpecialMerchant>
+    <kPayPerStylist value="100">
+      <!--How much to pay stylists per hour they are working-->
+    </kPayPerStylist>
+    <kPayPerTattooArtist value="100">
+      <!--How much to pay tattoo artists per hour they are working-->
+    </kPayPerTattooArtist>
+    <kPayPerPianist value="100">
+      <!--How much to pay pianists per hour they are working-->
+    </kPayPerPianist>
+  </Current_Tuning>
+</base>

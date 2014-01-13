@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<CareerFiles>
+  <SkillFile>
+    <Skills></Skills>
+  </SkillFile>
+  <SkillFile>
+    <Skills>NRaas.Assassination.Skills</Skills>
+  </SkillFile>
+  <SocializingFile>
+    <SocialData></SocialData>
+    <SocializingActionAvailability></SocializingActionAvailability>
+  </SocializingFile>
+  <SocializingFile>
+    <SocialData>NRaas.Assassination.SocialData</SocialData>
+    <SocializingActionAvailability>NRaas.Assassination.SocializingActionAvailability</SocializingActionAvailability>
+  </SocializingFile>
+</CareerFiles>

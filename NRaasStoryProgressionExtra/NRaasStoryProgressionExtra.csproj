@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E06E26B0-7872-4320-8215-B171DA3D2AE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasStoryProgressionExtra</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="StoryProgressionModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoryProgressionSpace\MapTags\TrackedLot.cs" />
+    <Compile Include="StoryProgressionSpace\MapTags\TrackedSim.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticTemperatureOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ForceTraitOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ForceCurfewOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CurfewEndOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CurfewStartOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowTraitOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticBladderOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticDestructionOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticEnergyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticExerciseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticFunOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticHungerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticHygieneOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticMotiveOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticSocialOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\StaticThirstOption.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\AutoCleanScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\DuplicateLibraryBooksScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\HandleMapTagsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\RemoveZeroValueBookScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\RepopulateLibraryScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\StockTerrariumsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\AddMissingTraitsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\AddForcedTraitsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\UpdateMotivesHouseChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\FormalOutfitScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\HandleMapTagsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\PutAwayBooksScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\SingedOutfitScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\UpdateMotivesScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\ActiveVisitLotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\CurfewScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\FightInjuryScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\SparInjuryScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\StirCrazyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\OccultPushScenario.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\Personalities\StringTableOthers_Dutch.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_SpanishStandard.txt" />
+    <Content Include="StringTables\Personalities\StringTableFairiesAndWerewolves_English.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_SpanishStandard.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_SpanishStandard.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_English.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_Finnish.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_French.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_German.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_Italian.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_Russian.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_SpanishStandard.txt" />
+    <Content Include="StringTables\Personalities\StringTableCopsAndRobbers_Taiwanese.txt" />
+    <Content Include="StringTables\StringTablePortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableDutch.txt" />
+    <Content Include="StringTables\StringTablePolish.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="StringTables\StringTableFinnish.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="StringTables\StringTableKorean.txt" />
+    <Content Include="StringTables\StringTableRussian.txt" />
+    <Content Include="StringTables\StringTableTaiwanese.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_Chinese.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_English.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_Finnish.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_French.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_German.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_Italian.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_Korean.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_Russian.txt" />
+    <Content Include="StringTables\Personalities\StringTableLovers_Taiwanese.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_Chinese.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_English.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_French.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_German.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_Italian.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_Korean.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_Russian.txt" />
+    <Content Include="StringTables\Personalities\StringTableMeanies_Taiwanese.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_English.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_Finnish.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_French.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_German.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_Italian.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_Korean.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_Russian.txt" />
+    <Content Include="StringTables\Personalities\StringTableOthers_Taiwanese.txt" />
+    <Content Include="StringTables\Personalities\StringTableVampiresAndSlayers_English.txt" />
+    <Content Include="StringTables\Personalities\StringTableVampiresAndSlayers_Finnish.txt" />
+    <Content Include="StringTables\Personalities\StringTableVampiresAndSlayers_German.txt" />
+    <Content Include="StringTables\Personalities\StringTableVampiresAndSlayers_Italian.txt" />
+    <Content Include="StringTables\Personalities\StringTableVampiresAndSlayers_Russian.txt" />
+    <Content Include="StringTables\Personalities\StringTableVampiresAndSlayers_SpanishStandard.txt" />
+    <Content Include="XML\StoryProgressionFairiesAndWerewolvesScoring.xml" />
+    <Content Include="XML\StoryProgressionFairiesAndWerewolves.xml" />
+    <Content Include="XML\StoryProgressionFairiesAndWerewolvesPersonalities.xml" />
+    <Content Include="XML\StoryProgressionCopsAndRobbers.xml" />
+    <Content Include="XML\StoryProgressionCopsAndRobbersPersonalities.xml" />
+    <Content Include="XML\StoryProgressionCopsAndRobbersScoring.xml" />
+    <Content Include="XML\StoryProgressionLovers.xml" />
+    <Content Include="XML\StoryProgressionLoversPersonalities.xml" />
+    <Content Include="XML\StoryProgressionLoversScoring.xml" />
+    <Content Include="XML\StoryProgressionMeanies.xml" />
+    <Content Include="XML\StoryProgressionMeaniesPersonalities.xml" />
+    <Content Include="XML\StoryProgressionMeaniesScoring.xml" />
+    <Content Include="XML\StoryProgressionOthers.xml" />
+    <Content Include="XML\StoryProgressionOthersPersonalities.xml" />
+    <Content Include="XML\StoryProgressionOthersScoring.xml" />
+    <Content Include="XML\StoryProgressionExtra.xml" />
+    <Content Include="XML\StoryProgressionExtraPersonalities.xml" />
+    <Content Include="XML\StoryProgressionExtraScoring.xml" />
+    <Content Include="XML\StoryProgressionVampiresAndSlayers.xml" />
+    <Content Include="XML\StoryProgressionVampiresAndSlayersPersonalities.xml" />
+    <Content Include="XML\StoryProgressionVampiresAndSlayersScoring.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NRaasStoryProgression\NRaasStoryProgression.csproj">
+      <Project>{4AAAE3A6-D66F-47F9-A55C-68CF03A8E54F}</Project>
+      <Name>NRaasStoryProgression</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

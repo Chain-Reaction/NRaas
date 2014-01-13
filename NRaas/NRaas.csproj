@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43A72B7A-88B4-40E3-9491-41DD1C0DA082}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas.CommonSpace</RootNamespace>
+    <AssemblyName>NRaas</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Booters\BuffBooter.cs" />
+    <Compile Include="Booters\BooterLogger.cs" />
+    <Compile Include="Booters\BooterHelper.cs" />
+    <Compile Include="Booters\InvalidPartBooter.cs" />
+    <Compile Include="Booters\ScoringBooter.cs" />
+    <Compile Include="Booters\SkillBooter.cs" />
+    <Compile Include="Booters\SocializingBooter.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Converters\StringToStringList.cs" />
+    <Compile Include="Converters\StringToSpeciesList.cs" />
+    <Compile Include="Converters\StringToMultiList.cs" />
+    <Compile Include="Converters\ListToString.cs" />
+    <Compile Include="Helpers\OccultPlantSimEx.cs" />
+    <Compile Include="Helpers\OccultGenieEx.cs" />
+    <Compile Include="Replacers\ActionAvailabilityReplacer.cs" />
+    <Compile Include="SpeedTrap.cs" />
+    <Compile Include="Dialogs\EnrollmentDialogEx.cs" />
+    <Compile Include="Helpers\AcademicCareerEx.cs" />
+    <Compile Include="Helpers\BinCommonEx.cs" />
+    <Compile Include="Helpers\BinEx.cs" />
+    <Compile Include="Converters\StringToList.cs" />
+    <Compile Include="Helpers\AddSims.cs" />
+    <Compile Include="Helpers\CareerManagerEx.cs" />
+    <Compile Include="Helpers\CommoditiesEx.cs" />
+    <Compile Include="Helpers\Aging.cs" />
+    <Compile Include="Helpers\CollegeGraduationEx.cs" />
+    <Compile Include="Helpers\AnnexEx.cs" />
+    <Compile Include="Helpers\BaseWorldRevision.cs" />
+    <Compile Include="Helpers\ShowStageEx.cs" />
+    <Compile Include="Helpers\SimEx.cs" />
+    <Compile Include="Helpers\SimRoutingComponentEx.cs" />
+    <Compile Include="Helpers\CustomAcademicDegrees.cs" />
+    <Compile Include="Helpers\StoryProgressionServiceEx.cs" />
+    <Compile Include="Helpers\HouseholdMemberEx.cs" />
+    <Compile Include="Helpers\ProductVersions.cs" />
+    <Compile Include="Helpers\SimDescriptionEx.cs" />
+    <Compile Include="Helpers\TravelUtilEx.cs" />
+    <Compile Include="Helpers\Lots.cs" />
+    <Compile Include="Helpers\Traits.cs" />
+    <Compile Include="Helpers\SleepWatch.cs" />
+    <Compile Include="Helpers\GameflowEx.cs" />
+    <Compile Include="Helpers\Routes.cs" />
+    <Compile Include="Helpers\OccultFairyEx.cs" />
+    <Compile Include="Options\OperationSettingOption.cs" />
+    <Compile Include="Options\StringSettingOption.cs" />
+    <Compile Include="Options\FloatRangeSettingOption.cs" />
+    <Compile Include="Options\IntegerRangeSettingOption.cs" />
+    <Compile Include="Options\RangeSettingOption.cs" />
+    <Compile Include="Options\ProtoResetSettings.cs" />
+    <Compile Include="Options\ValueSettingOption.cs" />
+    <Compile Include="Proxies\InventoryProxy.cs" />
+    <Compile Include="Helpers\ParserFunctionsEx.cs" />
+    <Compile Include="Helpers\Transition.cs" />
+    <Compile Include="Helpers\Genealogies.cs" />
+    <Compile Include="Helpers\Objects.cs" />
+    <Compile Include="Helpers\InsectTerrariums.cs" />
+    <Compile Include="Helpers\OccultTypeHelper.cs" />
+    <Compile Include="Helpers\ExportBinContentsEx.cs" />
+    <Compile Include="Helpers\Urnstones.cs" />
+    <Compile Include="Helpers\Persistence.cs" />
+    <Compile Include="Helpers\FilePersistence.cs" />
+    <Compile Include="Helpers\Roles.cs" />
+    <Compile Include="Helpers\HouseholdEx.cs" />
+    <Compile Include="Helpers\SwitchOutfits.cs" />
+    <Compile Include="Helpers\NormalMap.cs" />
+    <Compile Include="Helpers\PetAdoptions.cs" />
+    <Compile Include="Helpers\Investments.cs" />
+    <Compile Include="Helpers\InvalidPartBase.cs" />
+    <Compile Include="Helpers\CleanseTheDead.cs" />
+    <Compile Include="Helpers\Annihilation.cs" />
+    <Compile Include="Helpers\CASParts.cs" />
+    <Compile Include="Helpers\Consignments.cs" />
+    <Compile Include="Helpers\HudModelEx.cs" />
+    <Compile Include="Helpers\StackTracer.cs" />
+    <Compile Include="Helpers\Pregnancies.cs" />
+    <Compile Include="Helpers\Households.cs" />
+    <Compile Include="Helpers\OpportunityEx.cs" />
+    <Compile Include="Helpers\Tunings.cs" />
+    <Compile Include="Helpers\InteractionsEx.cs" />
+    <Compile Include="Helpers\Instantiation.cs" />
+    <Compile Include="Helpers\Corrections.cs" />
+    <Compile Include="Helpers\MiniSims.cs" />
+    <Compile Include="Helpers\SimListing.cs" />
+    <Compile Include="Helpers\FacialBlends.cs" />
+    <Compile Include="Helpers\HomeInspection.cs" />
+    <Compile Include="Helpers\ObjectComponents.cs" />
+    <Compile Include="Helpers\LifeSpan.cs" />
+    <Compile Include="Helpers\GoToSchoolInRabbitHoleHelper.cs" />
+    <Compile Include="Helpers\Inventories.cs" />
+    <Compile Include="Helpers\DreamCatcher.cs" />
+    <Compile Include="Helpers\SavedOutfit.cs" />
+    <Compile Include="Interactions\BaseInteraction.cs" />
+    <Compile Include="Interactions\CallInviteOverForeignVisitorsEx.cs" />
+    <Compile Include="Interactions\CommonSkillTutor.cs" />
+    <Compile Include="Options\AgeSettingOption.cs" />
+    <Compile Include="Options\ListedSettingOption.cs" />
+    <Compile Include="Proxies\CASModelProxy.cs" />
+    <Compile Include="Proxies\HouseholdContentsProxy.cs" />
+    <Compile Include="Proxies\HudModelProxy.cs" />
+    <Compile Include="Proxies\MiniSimDescriptionProxy.cs" />
+    <Compile Include="ScoringMethods\ScoringBin.cs" />
+    <Compile Include="ScoringMethods\GenericSimListedScoringMethod.cs" />
+    <Compile Include="Scoring\CareerRabbitholeMatchScoring.cs" />
+    <Compile Include="Scoring\CombinedDualLifetimeWantScoring.cs" />
+    <Compile Include="Scoring\TraitCompareScoring.cs" />
+    <Compile Include="Scoring\DualLifetimeWantScoring.cs" />
+    <Compile Include="Scoring\DualSimMethodScoring.cs" />
+    <Compile Include="Scoring\DualSimGenericScoring.cs" />
+    <Compile Include="Scoring\TraitBaseScoring.cs" />
+    <Compile Include="Scoring\LongTermRelationshipBaseScoring.cs" />
+    <Compile Include="Scoring\SimTypeMatchScoring.cs" />
+    <Compile Include="Scoring\DivorcedScoring.cs" />
+    <Compile Include="Situations\ForeignVisitorsSituationEx.cs" />
+    <Compile Include="Stores\CareerStore.cs" />
+    <Compile Include="Stores\OpportunityStore.cs" />
+    <Compile Include="Stores\SafeStore.cs" />
+    <Compile Include="Tasks\AgeTransitionTask.cs" />
+    <Compile Include="Tasks\WaitTask.cs" />
+    <Compile Include="Tasks\RepeatingTask.cs" />
+    <Compile Include="Tasks\FixInvisibleTask.cs" />
+    <Compile Include="Tasks\RecoverMissingSimTask.cs" />
+    <Compile Include="Helpers\ReferenceWrapper.cs" />
+    <Compile Include="Helpers\ObjectCreation.cs" />
+    <Compile Include="Helpers\SimTypes.cs" />
+    <Compile Include="Helpers\Relationships.cs" />
+    <Compile Include="Interactions\RouteToObject.cs" />
+    <Compile Include="Options\InteractionDefinitionOptionList.cs" />
+    <Compile Include="Options\InteractionDefinitionOption.cs" />
+    <Compile Include="Scoring\OtherSkillLevelScoring.cs" />
+    <Compile Include="Scoring\SkillLevelScoring.cs" />
+    <Compile Include="Selection\CommonSelection.cs" />
+    <Compile Include="Dialogs\ObjectPickerDialogEx.cs" />
+    <Compile Include="Selection\ProtoSelection.cs" />
+    <Compile Include="Selection\ProtoSimSelection.cs" />
+    <Compile Include="Tasks\ResetSimTask.cs" />
+    <Compile Include="Helpers\LifetimeWant.cs" />
+    <Compile Include="Helpers\StatBin.cs" />
+    <Compile Include="Interactions\ListedInteraction.cs" />
+    <Compile Include="Interactions\PrimaryInteraction.cs" />
+    <Compile Include="Options\BooleanSettingOption.cs" />
+    <Compile Include="Options\EnumSettingOption.cs" />
+    <Compile Include="Options\FloatSettingOption.cs" />
+    <Compile Include="Options\IntegerSettingOption.cs" />
+    <Compile Include="Options\GenericSettingOption.cs" />
+    <Compile Include="Options\PopupOptionList.cs" />
+    <Compile Include="Options\ProtoReapply.cs" />
+    <Compile Include="Interactions\CommonInteraction.cs" />
+    <Compile Include="Options\CommonOptionList.cs" />
+    <Compile Include="Options\CommonOptionItem.cs" />
+    <Compile Include="Options\InteractionOptionItem.cs" />
+    <Compile Include="Options\InteractionOptionList.cs" />
+    <Compile Include="Options\ProtoVersion.cs" />
+    <Compile Include="Replacers\ActionDataReplacer.cs" />
+    <Compile Include="Replacers\SocialRHSReplacer.cs" />
+    <Compile Include="ScoringMethods\DualSimListedScoringMethod.cs" />
+    <Compile Include="ScoringMethods\ListedScoringMethod.cs" />
+    <Compile Include="ScoringMethods\SimListedScoringMethod.cs" />
+    <Compile Include="ScoringMethods\SimScoringList.cs" />
+    <Compile Include="Scoring\AgeGenderMatchScoring.cs" />
+    <Compile Include="Scoring\AgeGenderScoring.cs" />
+    <Compile Include="Scoring\BestestFlirtScoring.cs" />
+    <Compile Include="Scoring\BuffScoring.cs" />
+    <Compile Include="Scoring\CareerLevelScoring.cs" />
+    <Compile Include="Scoring\CareerRabbitholeScoring.cs" />
+    <Compile Include="Scoring\IsSiblingScoring.cs" />
+    <Compile Include="Scoring\IsCloselyRelatedScoring.cs" />
+    <Compile Include="Scoring\CombinedAgeGenderMatchScoring.cs" />
+    <Compile Include="Scoring\CombinedLifetimeWantScoring.cs" />
+    <Compile Include="Scoring\CombinedOtherSimTraitScoring.cs" />
+    <Compile Include="Scoring\CombinedScoring.cs" />
+    <Compile Include="Scoring\CombinedSimScoring.cs" />
+    <Compile Include="Scoring\CombinedTraitScoring.cs" />
+    <Compile Include="Scoring\FacialMatchScoring.cs" />
+    <Compile Include="Scoring\FavoriteColorMatchScoring.cs" />
+    <Compile Include="Scoring\FavoriteFoodMatchScoring.cs" />
+    <Compile Include="Scoring\FavoriteMusicMatchScoring.cs" />
+    <Compile Include="Scoring\FitnessMatchScoring.cs" />
+    <Compile Include="Scoring\FitnessScaledScoring.cs" />
+    <Compile Include="Scoring\HitMissScoring.cs" />
+    <Compile Include="Scoring\IsChildScoring.cs" />
+    <Compile Include="Scoring\IsOlderScoring.cs" />
+    <Compile Include="Scoring\IsParentScoring.cs" />
+    <Compile Include="Scoring\IsYoungerScoring.cs" />
+    <Compile Include="Scoring\LifetimeWantScoring.cs" />
+    <Compile Include="Scoring\LongTermPartnerScoring.cs" />
+    <Compile Include="Scoring\LongTermRelationshipScaledScoring.cs" />
+    <Compile Include="Scoring\LongTermRelationshipScoring.cs" />
+    <Compile Include="Scoring\MarriedScoring.cs" />
+    <Compile Include="Scoring\MethodScoring.cs" />
+    <Compile Include="Scoring\OccupationScoring.cs" />
+    <Compile Include="Scoring\OtherSimTraitScoring.cs" />
+    <Compile Include="Scoring\PartnerScoring.cs" />
+    <Compile Include="Scoring\RandomScoring.cs" />
+    <Compile Include="Scoring\RelationshipBitScoring.cs" />
+    <Compile Include="Scoring\RelationshipCircleScoring.cs" />
+    <Compile Include="Scoring\SameHouseScoring.cs" />
+    <Compile Include="Scoring\Scoring.cs" />
+    <Compile Include="ScoringMethods\ScoringList.cs" />
+    <Compile Include="ScoringMethods\ScoringLookup.cs" />
+    <Compile Include="Scoring\SimGenericScoring.cs" />
+    <Compile Include="Scoring\SimMethodScoring.cs" />
+    <Compile Include="Scoring\SimScaledScoring.cs" />
+    <Compile Include="Scoring\SimTypeScoring.cs" />
+    <Compile Include="Scoring\SkillCareerScoring.cs" />
+    <Compile Include="Scoring\SkillMetricScoring.cs" />
+    <Compile Include="Scoring\TraitMatchScoring.cs" />
+    <Compile Include="Scoring\TraitMismatchScoring.cs" />
+    <Compile Include="Scoring\TraitScoring.cs" />
+    <Compile Include="Scoring\WeightMatchScoring.cs" />
+    <Compile Include="Scoring\WeightScaledScoring.cs" />
+    <Compile Include="Scoring\YoungChildrenScoring.cs" />
+    <Compile Include="Scoring\ZodiacMatchScoring.cs" />
+    <Compile Include="Skills\CommonSkill.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems">
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib">
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System">
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData">
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml">
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore">
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects">
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace">
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI">
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CCmerged\Buffs.xml" />
+    <Content Include="CCmerged\Skills.xml" />
+    <Content Include="CCmerged\Plants.xml" />
+    <Content Include="CCmerged\Ingredients.xml" />
+    <Content Include="CCmerged\Recipes.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP11.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP11.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP10.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP4.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP5.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP6.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP9.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP9.xml" />
+    <Content Include="Test.txt" />
+    <Content Include="Test.xml" />
+    <Content Include="Source XML\OriginalPlants.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP8.xml" />
+    <Content Include="Source XML\OriginalTraits.xml" />
+    <Content Include="Source XML\OriginalActiveCareers.xml" />
+    <Content Include="Source XML\OriginalBooks.xml" />
+    <Content Include="Source XML\OriginalBuffs.xml" />
+    <Content Include="Source XML\OriginalCareerEvents.xml" />
+    <Content Include="Source XML\OriginalCareers.xml" />
+    <Content Include="Source XML\OriginalDreamsAndPromisesNodes.xml" />
+    <Content Include="Source XML\OriginalGameplayInitializers.xml" />
+    <Content Include="Source XML\OriginalIngredients.xml" />
+    <Content Include="Source XML\OriginalJobsAndTasks.xml" />
+    <Content Include="Source XML\OriginalMotives.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesBaseGame.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP1.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP2.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP3.xml" />
+    <Content Include="Source XML\OriginalOpportunitiesEP7.xml" />
+    <Content Include="Source XML\OriginalPostWorldInitializers.xml" />
+    <Content Include="Source XML\OriginalPreWorldInitializers.xml" />
+    <Content Include="Source XML\OriginalRecipeMasterList.xml" />
+    <Content Include="Source XML\OriginalSkillBasedCareers.xml" />
+    <Content Include="Source XML\OriginalSkills.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP0.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP1.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP2.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP3.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP4.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP5.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP6.xml" />
+    <Content Include="Source XML\OriginalSocialDataEP7.xml" />
+    <Content Include="Source XML\OriginalSocializing.xml" />
+    <Content Include="Source XML\OriginalSocializingActionAvailability.xml" />
+    <Content Include="Source XML\OriginalSocializingTuningPets.xml" />
+    <Content Include="XML\CommonSpaceInteractionsBaseInteractionTuning.xml" />
+    <Content Include="XML\NotificationManager.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

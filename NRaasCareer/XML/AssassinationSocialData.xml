@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<Socializing>
+  
+  <Action key="NRaas Assassin Burn" com="Steamed" ver="BaseGame">
+    <Text key="NRaasAssassinBurn" pvt="NRaasAssassinBurn" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Burn, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_shoo" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Burn,NRaasCareer,OnAccepted" />
+        <Trait x="MeanSpirited,Insane,Evil" y="" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  
+  <Action key="NRaas Assassin Electrocution" com="Steamed" ver="BaseGame">
+    <Text key="NRaasAssassinElectrocution" pvt="NRaasAssassinElectrocution" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Electrocute, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="FriendlyHug" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Electrocute,NRaasCareer,OnAccepted" />
+        <Trait x="MeanSpirited,Insane,Evil" y="" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  
+  <Action key="NRaas Assassin Starve" com="Steamed" ver="BaseGame">
+    <Text key="NRaasAssassinStarve" pvt="NRaasAssassinStarve" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Starve, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="RevealSecret" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Starve,NRaasCareer,OnAccepted" />
+        <Trait x="MeanSpirited,Insane,Evil" y="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  
+  <Action key="NRaas Assassin Drown" com="Steamed" ver="BaseGame">
+    <Text key="NRaasAssassinDrown" pvt="NRaasAssassinDrown" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Drown, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_insult" data="BaseGame" x="Bad" y="Bad" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="accept">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Drown,NRaasCareer,OnAccepted" />
+        <Trait x="MeanSpirited,Insane,Evil" y="" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaas Assassin MummyCurse" com="Steamed" ver="EP1">
+    <Text key="NRaasAssassinMummyCurse" pvt="NRaasAssassinMummyCurse" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Curse, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="Slap" data="BaseGame" x="Bad" y="Bad" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Curse,NRaasCareer,OnAccepted" />
+        <TUN val="200" />
+        <Trait x="MeanSpirited,Insane,Evil" y="" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaas Assassin Thirst" com="Steamed" ver="EP3">
+    <Text key="NRaasAssassinThirst" pvt="NRaasAssassinThirst" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Thirst, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="takeBlood" data="EP3" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Thirst,NRaasCareer,OnAccepted" />
+        <Trait x="MeanSpirited,Insane,Evil" y="" />
+        <TUN />
+        <Topic />
+      </RHS>      
+    </Rules>
+  </Action>
+
+  <Action key="NRaas Assassin Meteor" com="Steamed" ver="EP2">
+    <Text key="NRaasAssassinMeteor" pvt="NRaasAssassinMeteor" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Meteor, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="rejectUglyClient" data="EP2" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <EndStance x="Bad" y="Bad" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Meteor,NRaasCareer,OnAccepted" />
+        <Trait x="MeanSpirited,Insane,Evil" y="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaas Assassin None" com="Steamed" ver="BaseGame">
+    <Text key="NRaasAssassinNone" pvt="NRaasAssassinNone" />
+    <AD val="0x0000009C">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Insane,Evil" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Erase, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="DeclareNemesis" data="BaseGame" x="Bad" y="Bad" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Erase,NRaasCareer,OnAccepted" />
+        <TUN val="160" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaas Assassin Bribe" com="Friendly" ver="BaseGame">
+    <Text key="NRaasAssassinBribe" pvt="NRaasAssassinBribe" />
+    <AD val="0x00000108">
+      <Misc ITLA="100" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Bribe, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Awkward" state="reject">
+        <EndStance x="" y="Bad" />
+        <Anim />
+        <Buff x="RejectedFirstKiss" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="reject">
+        <EndStance x="Bad" y="" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Bribe,NRaasCareer,OnAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="1000">
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="3000" ProcTest="NRaas.CareerSpace.Interactions.Bribe,NRaasCareer,OnScoreAwkward">
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="4000" ProcTest="NRaas.CareerSpace.Interactions.Bribe,NRaasCareer,OnScoreInsulting">
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+</Socializing>

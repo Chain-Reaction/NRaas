@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Socializing>
+  <Action key="NRaasAskContagious" com="Friendly" ver="BaseGame">
+    <Text key="NRaasAskContagious" pvt="NRaasAskContagious" />
+    <AD val="0x00000118">
+      <Misc ITLA="25" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.VectorSpace.Interactions.AskContagious,NRaasVector,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.VectorSpace.Interactions.AskContagious,NRaasVector,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="NRaasVaccinate" com="Friendly" ver="EP2">
+    <Text key="Vaccinate" pvt="GetVaccination" />
+    <AD val="0x00000018">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.VectorSpace.Interactions.Vaccinate,NRaasVector,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_Vaccinate" data="EP2" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Vaccinate">
+        <Anim />
+        <Buff />
+        <RPROC pebu="NRaas.VectorSpace.Interactions.Vaccinate,NRaasVector,OnAccept" peau="" />
+        <TUN charInc="0" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+</Socializing>

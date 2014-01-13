@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptError Version="6" Type="MiniScriptError" MaxRecursionDepth="0">
+  <ExceptionData>simulating object is null
+unable to obtain an interaction object
+
+-- Total Scenarios --
+
+Allowed: ActiveCareerSlacker: 84
+Allowed: AddInteractions: 222
+Allowed: AddMissingTraits: 18
+Allowed: Admiration: 1
+Allowed: Adoption: 8
+Allowed: AgeUp: 4
+Allowed: Alimony: 484
+Allowed: Antagonize: 20
+Allowed: AttachLostFathers: 144
+Allowed: Attack: 10
+Allowed: AttendCoursePush: 404
+Allowed: Attraction: 1
+Allowed: AutoClean: 475
+Allowed: Break: 19
+Allowed: BreakHate: 52
+Allowed: Bribe: 8
+Allowed: BrokenHome: 233
+Allowed: Busker: 138
+Allowed: CampaignGathering: 1
+Allowed: CampaignMooch: 14
+Allowed: Canoodle: 6
+Allowed: CareerBranch: 1
+Allowed: CareerChanged: 95
+Allowed: CatHate: 1
+Allowed: Chess: 673
+Allowed: ChooseLifetimeWish: 1
+Allowed: ClanDelight: 95
+Allowed: CleanupAging: 1
+Allowed: CleanupLot: 480
+Allowed: CleanupMini: 1
+Allowed: CleanupSims: 15
+Allowed: Cohesion: 20
+Allowed: ConsignmentUpdate: 5
+Allowed: Date: 13
+Allowed: DebtMooch: 7
+Allowed: DebtMove: 7
+Allowed: DebtSale: 39
+Allowed: DebtSplit: 7
+Allowed: Demotion: 1
+Allowed: Depreciation: 315
+Allowed: Derision: 20
+Allowed: Disapproval: 25
+Allowed: Disgust: 37
+Allowed: ExistingEnemy: 48
+Allowed: ExistingFriend: 26
+Allowed: FamilyGathering: 6
+Allowed: FamilyVisitor: 45
+Allowed: FightHate: 7
+Allowed: FightResults: 6
+Allowed: FindJob: 183
+Allowed: Fishing: 412
+Allowed: FreeSkill: 91
+Allowed: FriendlyOuting: 6
+Allowed: FriendlyVisitor: 11
+Allowed: GiveAway: 9
+Allowed: GoHomePush: 395
+Allowed: GoToHospital: 7
+Allowed: Hacking: 221
+Allowed: HandleLotMapTags: 24955
+Allowed: HandleSimMapTags: 69503
+Allowed: HarvestCrops: 278
+Allowed: HarvestHouseholdCrops: 272
+Allowed: Hate: 45
+Allowed: HireMaid: 236
+Allowed: Hired: 5
+Allowed: Homeless: 8
+Allowed: Homework: 6
+Allowed: HomeworkCompletion: 2842
+Allowed: HouseName: 259
+Allowed: HouseTransfer: 7
+Allowed: ImmigrantPressure: 7
+Allowed: Immigrate: 7
+Allowed: Immigration: 7
+Allowed: InactiveDeedPost: 27
+Allowed: InactiveDeeds: 288
+Allowed: InactiveTones: 13752
+Allowed: InheritVoice: 1
+Allowed: InitCareerSimData: 1
+Allowed: InitNetWorthSimData: 1
+Allowed: InterloperMove: 238
+Allowed: Inventing: 304
+Allowed: Investigate: 3
+Allowed: JobPerformance: 12012
+Allowed: JobTransition: 1
+Allowed: Learn: 6
+Allowed: Liking: 43
+Allowed: LoseMember: 3
+Allowed: ManageCareer: 92
+Allowed: MarkAsProtected: 1412
+Allowed: MartialArts: 648
+Allowed: Mooch: 14
+Allowed: MugHate: 13
+Allowed: Nectar: 41
+Allowed: NewBoss: 1198
+Allowed: NewClassmate: 389
+Allowed: NewCoworker: 1030
+Allowed: NewEnemy: 1
+Allowed: NewFlirt: 2
+Allowed: NightlyLot: 485
+Allowed: NoMoreDebt: 38
+Allowed: OldFlirt: 3
+Allowed: OnceADay: 5
+Allowed: OnlyOneMayLead: 90
+Allowed: OutOfNest: 84
+Allowed: Painting: 263
+Allowed: Partnered: 2
+Allowed: PensionCheck: 14
+Allowed: PhotogPush: 1064
+Allowed: PlayConcert: 89
+Allowed: PoorAssignSchool: 134
+Allowed: PregnancyCheck: 5
+Allowed: PregnancyOutfit: 2
+Allowed: Promoted: 89
+Allowed: Promotion: 48
+Allowed: PropagateAlimonyFail: 4
+Allowed: PropagateWonFight: 54
+Allowed: PurchaseBicycle: 17
+Allowed: PurchaseCar: 22
+Allowed: PurchaseDeeds: 7
+Allowed: PushLaundry: 37
+Allowed: PutAwayBooks: 93
+Allowed: RandomGuitarSong: 12747
+Allowed: ReadJournal: 26
+Allowed: RecoverMissingSims: 5
+Allowed: Recruit: 14
+Allowed: Repair: 1701
+Allowed: Repaired: 5
+Allowed: RepairedEvent: 5
+Allowed: RepopulateLibrary: 170
+Allowed: RequestRepairman: 238
+Allowed: ResetChance: 45
+Allowed: RestoreDecay: 28
+Allowed: RichAssignSchool: 134
+Allowed: Run: 80
+Allowed: ScheduledAssignSchool: 370
+Allowed: ScheduledEnemy: 14
+Allowed: ScheduledExistingFlirt: 100
+Allowed: ScheduledFlirt: 196
+Allowed: ScheduledFriend: 8
+Allowed: ScheduledMarriage: 606
+Allowed: ScheduledRomance: 17
+Allowed: ScheduledUnpopular: 12
+Allowed: ScheduledWorkPush: 17129
+Allowed: SchoolCommute: 87
+Allowed: SchoolCommuteSetAlarm: 87
+Allowed: SchoolSlacker: 372
+Allowed: SchoolStartTwoHourCommute: 2051
+Allowed: SchoolTwoHourCommute: 88
+Allowed: SchoolTwoHourSetAlarm: 88
+Allowed: SchoolUpdate: 3033
+Allowed: ScoredBreakup: 255
+Allowed: Sculpting: 294
+Allowed: SellCollectables: 122
+Allowed: SellCrafts: 770
+Allowed: SellDrafts: 1948
+Allowed: SellDuplicateInventory: 220
+Allowed: SellFish: 1628
+Allowed: SellFishingJunk: 1930
+Allowed: SellGhosts: 1943
+Allowed: SellNectar: 1965
+Allowed: SellVeggies: 279
+Allowed: ServiceCleanup: 429
+Allowed: ServicePoolCleanup: 8
+Allowed: ServicePushHome: 7
+Allowed: SingedOutfit: 1341
+Allowed: SkillIncrease: 61
+Allowed: Stalker: 7
+Allowed: Steal: 19
+Allowed: StuckCheck: 119
+Allowed: StylistHelp: 1
+Allowed: Success: 54
+Allowed: UnifiedBilling: 34
+Allowed: UpdateAging: 713
+Allowed: UpdateCareer: 95
+Allowed: UpdateSimData: 713
+Allowed: ValidatePregnancy: 147
+Allowed: WealthMove: 24
+Allowed: WealthMoveInLot: 17
+Allowed: WentToWork: 551
+Allowed: Wolfrun: 14
+Allowed: WonChess: 1
+Allowed: WorkCommute: 258
+Allowed: WorkCommuteSetAlarm: 258
+Allowed: WorkOutfits: 1732
+Allowed: WorkSlacker: 1048
+Allowed: WorkStartTwoHourCommute: 6665
+Allowed: WorkTwoHourCommute: 258
+Allowed: WorkTwoHourSetAlarm: 258
+Allowed: WorkUpdate: 7945
+Allowed: WorkedOut: 5858
+Allowed: Writing: 139
+Duration ActiveCareerSlacker: Min:0,Max:500 : 84100 (Tot:17105,Avg:5)
+Duration AddInteractions: Min:200,Max:400 : 47700 (Tot:222,Avg:215)
+Duration AddMissingTraits: Min:0,Max:1100 : 10400 (Tot:18,Avg:578)
+Duration Admiration: Min:100,Max:100 : 100 (Tot:1,Avg:100)
+Duration Adoption: Min:0,Max:73700 : 214100 (Tot:10,Avg:21410)
+Duration AgeUp: Min:0,Max:0 : 0.00 (Tot:4,Avg:0.00)
+Duration Alimony: Min:0,Max:1600 : 10300 (Tot:484,Avg:21)
+Duration Antagonize: Min:100,Max:19700 : 96200 (Tot:20,Avg:4810)
+Duration AttachLostFathers: Min:0,Max:100 : 1500 (Tot:144,Avg:10)
+Duration Attack: Min:0,Max:400 : 2300 (Tot:11,Avg:209)
+Duration AttendCoursePush: Min:0,Max:1000 : 36000 (Tot:404,Avg:89)
+Duration Attraction: Min:100,Max:100 : 100 (Tot:1,Avg:100)
+Duration AutoClean: Min:200,Max:600 : 185500 (Tot:475,Avg:391)
+Duration BirthdayGathering: Min:0,Max:0 : 0.00 (Tot:2,Avg:0.00)
+Duration Break: Min:100,Max:20000 : 93800 (Tot:19,Avg:4937)
+Duration BreakHate: Min:0,Max:16700 : 95900 (Tot:52,Avg:1844)
+Duration Bribe: Min:200,Max:16000 : 50600 (Tot:8,Avg:6325)
+Duration BrokenHome: Min:0,Max:1200 : 52700 (Tot:233,Avg:226)
+Duration Busker: Min:0,Max:32100 : 108800 (Tot:138,Avg:788)
+Duration CampaignGathering: Min:29900,Max:29900 : 29900 (Tot:1,Avg:29900)
+Duration CampaignMooch: Min:0,Max:100 : 300 (Tot:14,Avg:21)
+Duration Canoodle: Min:100,Max:38000 : 46100 (Tot:6,Avg:7683)
+Duration CareerBranch: Min:0,Max:100 : 800 (Tot:88,Avg:9)
+Duration CareerChanged: Min:0,Max:100 : 400 (Tot:95,Avg:4)
+Duration CatHate: Min:100,Max:100 : 100 (Tot:1,Avg:100)
+Duration Chess: Min:0,Max:17100 : 298600 (Tot:673,Avg:444)
+Duration ChooseLifetimeWish: Min:0,Max:200 : 200 (Tot:3,Avg:67)
+Duration ChooseTraits: Min:0,Max:0 : 0.00 (Tot:2,Avg:0.00)
+Duration ClanDelight: Min:0,Max:100 : 1400 (Tot:95,Avg:15)
+Duration CleanupAging: Min:1500,Max:1500 : 1500 (Tot:1,Avg:1500)
+Duration CleanupLot: Min:0,Max:31500 : 169500 (Tot:480,Avg:353)
+Duration CleanupMini: Min:2300,Max:2300 : 2300 (Tot:1,Avg:2300)
+Duration CleanupSims: Min:0,Max:100 : 400 (Tot:15,Avg:27)
+Duration Cohesion: Min:0,Max:3100 : 15600 (Tot:21,Avg:743)
+Duration ConsignmentUpdate: Min:30200,Max:62700 : 243500 (Tot:5,Avg:48700)
+Duration Date: Min:100,Max:14800 : 36000 (Tot:14,Avg:2571)
+Duration DebtMooch: Min:8200,Max:10500 : 62600 (Tot:7,Avg:8943)
+Duration DebtMove: Min:400,Max:500 : 3300 (Tot:7,Avg:471)
+Duration DebtSale: Min:800,Max:1600 : 36000 (Tot:39,Avg:923)
+Duration DebtSplit: Min:400,Max:500 : 2900 (Tot:7,Avg:414)
+Duration Demotion: Min:100,Max:100 : 100 (Tot:1,Avg:100)
+Duration Depreciation: Min:0,Max:18300 : 194900 (Tot:315,Avg:619)
+Duration Derision: Min:0,Max:25900 : 106300 (Tot:20,Avg:5315)
+Duration Disapproval: Min:0,Max:17100 : 48400 (Tot:25,Avg:1936)
+Duration Disgust: Min:0,Max:10100 : 16100 (Tot:37,Avg:435)
+Duration DuplicateLibraryBooks: Min:0,Max:100 : 1400 (Tot:480,Avg:3)
+Duration EarlyFlirt: Min:0,Max:100 : 300 (Tot:19,Avg:16)
+Duration Escort: Min:0,Max:0 : 0.00 (Tot:2,Avg:0.00)
+Duration ExistingEnemy: Min:0,Max:2800 : 18200 (Tot:115,Avg:158)
+Duration ExistingFriend: Min:0,Max:2100 : 5900 (Tot:38,Avg:155)
+Duration FamilyGathering: Min:0,Max:1100 : 4800 (Tot:9,Avg:533)
+Duration FamilyVisitor: Min:0,Max:1800 : 23900 (Tot:50,Avg:478)
+Duration FightHate: Min:0,Max:17100 : 33000 (Tot:7,Avg:4714)
+Duration FightResults: Min:0,Max:0 : 0.00 (Tot:6,Avg:0.00)
+Duration FindJob: Min:0,Max:3400 : 64500 (Tot:183,Avg:352)
+Duration Fishing: Min:0,Max:18900 : 201500 (Tot:413,Avg:488)
+Duration FreeSkill: Min:0,Max:200 : 2900 (Tot:91,Avg:32)
+Duration FriendlyOuting: Min:600,Max:40200 : 50400 (Tot:6,Avg:8400)
+Duration FriendlyVisitor: Min:0,Max:11400 : 31600 (Tot:12,Avg:2633)
+Duration GiveAway: Min:100,Max:50200 : 68700 (Tot:9,Avg:7633)
+Duration GoHomePush: Min:0,Max:100 : 12000 (Tot:395,Avg:30)
+Duration GoToHospital: Min:300,Max:1800 : 5700 (Tot:7,Avg:814)
+Duration Hacking: Min:0,Max:13700 : 96100 (Tot:221,Avg:435)
+Duration HandleLotMapTags: Min:0,Max:300 : 218700 (Tot:24955,Avg:9)
+Duration HandleSimMapTags: Min:0,Max:29500 : 611200 (Tot:69503,Avg:9)
+Duration HarvestCrops: Min:0,Max:1600 : 29800 (Tot:278,Avg:107)
+Duration HarvestHouseholdCrops: Min:0,Max:100 : 2100 (Tot:272,Avg:8)
+Duration Hate: Min:0,Max:15500 : 31700 (Tot:45,Avg:704)
+Duration HireMaid: Min:0,Max:300 : 16900 (Tot:236,Avg:72)
+Duration Hired: Min:100,Max:100 : 500 (Tot:5,Avg:100)
+Duration Homeless: Min:0,Max:100 : 500 (Tot:8,Avg:63)
+Duration Homework: Min:300,Max:5900 : 15900 (Tot:6,Avg:2650)
+Duration HomeworkCompletion: Min:0,Max:2400 : 187600 (Tot:2991,Avg:63)
+Duration HouseName: Min:0,Max:100 : 6400 (Tot:259,Avg:25)
+Duration HouseTransfer: Min:100,Max:200 : 1100 (Tot:7,Avg:157)
+Duration ImmigrantPressure: Min:0,Max:100 : 300 (Tot:7,Avg:43)
+Duration Immigrate: Min:13200,Max:44400 : 129500 (Tot:7,Avg:18500)
+Duration Immigration: Min:0,Max:100 : 100 (Tot:7,Avg:14)
+Duration InactiveDeedPost: Min:100,Max:1400 : 4800 (Tot:27,Avg:178)
+Duration InactiveDeeds: Min:0,Max:12500 : 59700 (Tot:290,Avg:206)
+Duration InactiveTones: Min:0,Max:25800 : 202600 (Tot:13752,Avg:15)
+Duration InheritVoice: Min:100,Max:400 : 500 (Tot:2,Avg:250)
+Duration InitCareerSimData: Min:200,Max:200 : 200 (Tot:1,Avg:200)
+Duration InitNetWorthSimData: Min:4800,Max:4800 : 4800 (Tot:1,Avg:4800)
+Duration InterloperMove: Min:0,Max:1100 : 39500 (Tot:238,Avg:166)
+Duration Inventing: Min:100,Max:32300 : 156400 (Tot:304,Avg:514)
+Duration Investigate: Min:0,Max:100 : 100 (Tot:3,Avg:33)
+Duration JackOfAllTrades: Min:0,Max:100 : 1200 (Tot:88,Avg:14)
+Duration JobPerformance: Min:0,Max:900 : 326400 (Tot:12012,Avg:27)
+Duration JobTransition: Min:0,Max:0 : 0.00 (Tot:2,Avg:0.00)
+Duration Learn: Min:100,Max:700 : 1700 (Tot:6,Avg:283)
+Duration Liking: Min:0,Max:16900 : 64300 (Tot:43,Avg:1495)
+Duration LoseMember: Min:100,Max:2700 : 2900 (Tot:3,Avg:967)
+Duration ManageCareer: Min:0,Max:100 : 1400 (Tot:96,Avg:15)
+Duration MarkAsProtected: Min:0,Max:100 : 15800 (Tot:1412,Avg:11)
+Duration Marriage: Min:0,Max:600 : 4800 (Tot:254,Avg:19)
+Duration MartialArts: Min:0,Max:25400 : 383000 (Tot:650,Avg:589)
+Duration Mooch: Min:100,Max:18400 : 75100 (Tot:14,Avg:5364)
+Duration MugHate: Min:0,Max:17600 : 48900 (Tot:13,Avg:3762)
+Duration Nectar: Min:200,Max:500 : 16400 (Tot:41,Avg:400)
+Duration NewBoss: Min:0,Max:300 : 33100 (Tot:1198,Avg:28)
+Duration NewClassmate: Min:0,Max:600 : 21300 (Tot:462,Avg:46)
+Duration NewCoworker: Min:0,Max:300 : 33700 (Tot:1030,Avg:33)
+Duration NewEnemy: Min:2100,Max:2100 : 2100 (Tot:1,Avg:2100)
+Duration NewFlirt: Min:0,Max:2700 : 5100 (Tot:19,Avg:268)
+Duration NightlyLot: Min:0,Max:100 : 3400 (Tot:485,Avg:7)
+Duration NoImmigrantHome: Min:14500,Max:15800 : 106100 (Tot:7,Avg:15157)
+Duration NoMoreDebt: Min:0,Max:1500 : 2700 (Tot:38,Avg:71)
+Duration OldFlirt: Min:0,Max:100 : 100 (Tot:20,Avg:5)
+Duration OnceADay: Min:0,Max:100 : 100 (Tot:5,Avg:20)
+Duration OnlyOneMayLead: Min:0,Max:3300 : 4400 (Tot:90,Avg:49)
+Duration OutOfNest: Min:0,Max:30500 : 73900 (Tot:84,Avg:880)
+Duration Painting: Min:0,Max:13900 : 116500 (Tot:263,Avg:443)
+Duration Partnered: Min:0,Max:3300 : 4100 (Tot:6,Avg:683)
+Duration PensionCheck: Min:100,Max:200 : 2100 (Tot:14,Avg:150)
+Duration PhotogPush: Min:0,Max:21700 : 149300 (Tot:1064,Avg:140)
+Duration PlayConcert: Min:100,Max:200 : 16300 (Tot:89,Avg:183)
+Duration PoorAssignSchool: Min:0,Max:100 : 4800 (Tot:356,Avg:13)
+Duration PregnancyCheck: Min:0,Max:400 : 600 (Tot:5,Avg:120)
+Duration PregnancyOutfit: Min:0,Max:200 : 200 (Tot:2,Avg:100)
+Duration Promoted: Min:0,Max:100 : 1000 (Tot:89,Avg:11)
+Duration Promotion: Min:0,Max:200 : 4700 (Tot:89,Avg:53)
+Duration PropagateAlimonyFail: Min:0,Max:300 : 500 (Tot:4,Avg:125)
+Duration PropagateWonFight: Min:0,Max:100 : 1400 (Tot:54,Avg:26)
+Duration PurchaseBicycle: Min:200,Max:13300 : 117600 (Tot:17,Avg:6918)
+Duration PurchaseCar: Min:100,Max:7300 : 95800 (Tot:22,Avg:4355)
+Duration PurchaseDeeds: Min:2500,Max:3900 : 20300 (Tot:7,Avg:2900)
+Duration PushLaundry: Min:600,Max:1200 : 28500 (Tot:37,Avg:770)
+Duration PutAwayBooks: Min:0,Max:17900 : 93000 (Tot:93,Avg:1000)
+Duration RandomGuitarSong: Min:0,Max:200 : 72000 (Tot:12747,Avg:6)
+Duration ReadJournal: Min:0,Max:200 : 2100 (Tot:26,Avg:81)
+Duration RecoverMissingSims: Min:400,Max:600 : 2500 (Tot:5,Avg:500)
+Duration Recruit: Min:100,Max:41900 : 76000 (Tot:14,Avg:5429)
+Duration Repair: Min:0,Max:48100 : 409200 (Tot:1707,Avg:240)
+Duration Repaired: Min:300,Max:1800 : 3500 (Tot:5,Avg:700)
+Duration RepairedEvent: Min:0,Max:100 : 100 (Tot:5,Avg:20)
+Duration RepopulateLibrary: Min:0,Max:300 : 11800 (Tot:480,Avg:25)
+Duration RequestRepairman: Min:0,Max:400 : 40100 (Tot:238,Avg:168)
+Duration ResetChance: Min:0,Max:100 : 200 (Tot:45,Avg:4)
+Duration RestoreDecay: Min:0,Max:100 : 400 (Tot:28,Avg:14)
+Duration Retire: Min:0,Max:0 : 0.00 (Tot:2,Avg:0.00)
+Duration RichAssignSchool: Min:0,Max:500 : 18300 (Tot:356,Avg:51)
+Duration Run: Min:0,Max:100 : 1300 (Tot:80,Avg:16)
+Duration ScheduledAssignSchool: Min:0,Max:200 : 7300 (Tot:370,Avg:20)
+Duration ScheduledEnemy: Min:0,Max:55600 : 74000 (Tot:42,Avg:1762)
+Duration ScheduledExistingFlirt: Min:0,Max:4200 : 158500 (Tot:106,Avg:1495)
+Duration ScheduledFlirt: Min:0,Max:25700 : 405300 (Tot:196,Avg:2068)
+Duration ScheduledFriend: Min:0,Max:54000 : 98600 (Tot:10,Avg:9860)
+Duration ScheduledMarriage: Min:0,Max:300 : 16300 (Tot:606,Avg:27)
+Duration ScheduledRomance: Min:0,Max:700 : 2200 (Tot:18,Avg:122)
+Duration ScheduledUnpopular: Min:0,Max:28100 : 66200 (Tot:22,Avg:3009)
+Duration ScheduledWorkPush: Min:0,Max:25800 : 135200 (Tot:17129,Avg:8)
+Duration SchoolCommute: Min:0,Max:100 : 4800 (Tot:87,Avg:55)
+Duration SchoolCommuteSetAlarm: Min:0,Max:100 : 3100 (Tot:88,Avg:35)
+Duration SchoolSlacker: Min:0,Max:900 : 77000 (Tot:3121,Avg:25)
+Duration SchoolStartTwoHourCommute: Min:0,Max:200 : 152300 (Tot:3031,Avg:50)
+Duration SchoolTwoHourCommute: Min:0,Max:100 : 800 (Tot:88,Avg:9)
+Duration SchoolTwoHourSetAlarm: Min:0,Max:100 : 13000 (Tot:2051,Avg:6)
+Duration SchoolUpdate: Min:0,Max:100 : 57800 (Tot:17105,Avg:3)
+Duration ScoredBreakup: Min:0,Max:28900 : 77100 (Tot:255,Avg:302)
+Duration Sculpting: Min:0,Max:10500 : 95500 (Tot:294,Avg:325)
+Duration SellCollectables: Min:0,Max:188800 : 994800 (Tot:131,Avg:7594)
+Duration SellCrafts: Min:0,Max:2800 : 53000 (Tot:772,Avg:69)
+Duration SellDrafts: Min:0,Max:1400 : 119800 (Tot:1993,Avg:60)
+Duration SellDuplicateBook: Min:0,Max:100 : 1000 (Tot:480,Avg:2)
+Duration SellDuplicateInventory: Min:0,Max:3500 : 40200 (Tot:220,Avg:183)
+Duration SellFish: Min:0,Max:1400 : 200000 (Tot:1630,Avg:123)
+Duration SellFishingJunk: Min:0,Max:28600 : 155900 (Tot:1932,Avg:81)
+Duration SellGhosts: Min:0,Max:30700 : 160800 (Tot:1988,Avg:81)
+Duration SellNectar: Min:0,Max:1400 : 120600 (Tot:1967,Avg:61)
+Duration SellVeggies: Min:0,Max:2800 : 51500 (Tot:281,Avg:183)
+Duration ServiceCleanup: Min:0,Max:100 : 5700 (Tot:429,Avg:13)
+Duration ServicePoolCleanup: Min:100,Max:22800 : 115800 (Tot:8,Avg:14475)
+Duration ServicePushHome: Min:0,Max:100 : 500 (Tot:7,Avg:71)
+Duration SingedOutfit: Min:0,Max:200 : 14800 (Tot:1341,Avg:11)
+Duration SkillIncrease: Min:0,Max:300 : 8100 (Tot:61,Avg:133)
+Duration Stalker: Min:3600,Max:61100 : 141800 (Tot:7,Avg:20257)
+Duration StandardMoveInLot: Min:0,Max:100 : 100 (Tot:146,Avg:0.68)
+Duration Steal: Min:0,Max:18800 : 78600 (Tot:19,Avg:4137)
+Duration StrandedCouple: Min:0,Max:100 : 900 (Tot:255,Avg:4)
+Duration StuckCheck: Min:300,Max:91700 : 4883100 (Tot:119,Avg:41034)
+Duration StylistHelp: Min:100,Max:100 : 100 (Tot:1,Avg:100)
+Duration Success: Min:0,Max:100 : 200 (Tot:54,Avg:4)
+Duration Tryst: Min:0,Max:1200 : 1200 (Tot:3,Avg:400)
+Duration UnexpectedPregnancy: Min:0,Max:400 : 400 (Tot:3,Avg:133)
+Duration UnifiedBilling: Min:100,Max:1800 : 9300 (Tot:34,Avg:274)
+Duration UpdateAging: Min:400,Max:1000 : 322000 (Tot:713,Avg:452)
+Duration UpdateCareer: Min:0,Max:100 : 1100 (Tot:95,Avg:12)
+Duration UpdateSimData: Min:100,Max:27600 : 217400 (Tot:713,Avg:305)
+Duration ValidatePregnancy: Min:0,Max:100 : 1600 (Tot:147,Avg:11)
+Duration WealthMove: Min:0,Max:1700 : 8800 (Tot:24,Avg:367)
+Duration WealthMoveInLot: Min:1600,Max:4900 : 46400 (Tot:17,Avg:2729)
+Duration WentToWork: Min:0,Max:100 : 5000 (Tot:551,Avg:9)
+Duration Wolfrun: Min:2100,Max:2500 : 31200 (Tot:14,Avg:2229)
+Duration WonChess: Min:1600,Max:1600 : 1600 (Tot:1,Avg:1600)
+Duration WorkCommute: Min:0,Max:200 : 17300 (Tot:258,Avg:67)
+Duration WorkCommuteSetAlarm: Min:0,Max:31500 : 40100 (Tot:258,Avg:155)
+Duration WorkOutfits: Min:0,Max:300 : 47500 (Tot:1732,Avg:27)
+Duration WorkSlacker: Min:0,Max:1600 : 133900 (Tot:8203,Avg:16)
+Duration WorkStartTwoHourCommute: Min:0,Max:200 : 447900 (Tot:7913,Avg:57)
+Duration WorkTwoHourCommute: Min:0,Max:100 : 2100 (Tot:258,Avg:8)
+Duration WorkTwoHourSetAlarm: Min:0,Max:100 : 47800 (Tot:6665,Avg:7)
+Duration WorkUpdate: Min:0,Max:300 : 93500 (Tot:17105,Avg:5)
+Duration WorkedOut: Min:0,Max:12000 : 95500 (Tot:5865,Avg:16)
+Duration Writing: Min:100,Max:38700 : 131700 (Tot:139,Avg:947)
+Duration ZeroValueBook: Min:0,Max:100 : 1100 (Tot:480,Avg:2)
+Rescheduled: AttachLostFathers: Min:30,Max:60 : 6551 (Tot:144,Avg:45)
+Rescheduled: Busker: Min:126,Max:239 : 6997 (Tot:41,Avg:171)
+Rescheduled: Chess: Min:60,Max:237 : 10797 (Tot:81,Avg:133)
+Rescheduled: DebtSale: Min:60,Max:120 : 3014 (Tot:33,Avg:91)
+Rescheduled: FamilyVisitor: Min:67,Max:85 : 152 (Tot:2,Avg:76)
+Rescheduled: Hacking: Min:123,Max:235 : 7007 (Tot:39,Avg:180)
+Rescheduled: HarvestHouseholdCrops: Min:231,Max:231 : 231 (Tot:1,Avg:231)
+Rescheduled: InactiveTones: Min:30,Max:60 : 6505 (Tot:146,Avg:45)
+Rescheduled: Inventing: Min:124,Max:238 : 6987 (Tot:40,Avg:175)
+Rescheduled: MartialArts: Min:60,Max:119 : 3759 (Tot:42,Avg:90)
+Rescheduled: Nectar: Min:121,Max:235 : 7080 (Tot:40,Avg:177)
+Rescheduled: Painting: Min:129,Max:240 : 6976 (Tot:39,Avg:179)
+Rescheduled: PhotogPush: Min:120,Max:232 : 6974 (Tot:39,Avg:179)
+Rescheduled: PlayConcert: Min:30,Max:60 : 3732 (Tot:83,Avg:45)
+Rescheduled: PushLaundry: Min:123,Max:238 : 5724 (Tot:32,Avg:179)
+Rescheduled: Repair: Min:60,Max:115 : 3569 (Tot:42,Avg:85)
+Rescheduled: Run: Min:32,Max:60 : 1655 (Tot:35,Avg:47)
+Rescheduled: ScheduledExistingFlirt: Min:60,Max:97 : 399 (Tot:5,Avg:80)
+Rescheduled: ScheduledFlirt: Min:67,Max:118 : 687 (Tot:7,Avg:98)
+Rescheduled: ScheduledMarriage: Min:72,Max:118 : 491 (Tot:5,Avg:98)
+Rescheduled: Sculpting: Min:123,Max:237 : 6974 (Tot:39,Avg:179)
+Rescheduled: SellCrafts: Min:67,Max:120 : 848 (Tot:9,Avg:94)
+Rescheduled: SellDrafts: Min:62,Max:120 : 3036 (Tot:33,Avg:92)
+Rescheduled: SellDuplicateInventory: Min:115,Max:115 : 115 (Tot:1,Avg:115)
+Rescheduled: SellFish: Min:61,Max:118 : 2452 (Tot:27,Avg:91)
+Rescheduled: SellFishingJunk: Min:60,Max:120 : 3059 (Tot:32,Avg:96)
+Rescheduled: SellGhosts: Min:60,Max:115 : 2828 (Tot:33,Avg:86)
+Rescheduled: SellNectar: Min:60,Max:116 : 2919 (Tot:33,Avg:88)
+Rescheduled: ValidatePregnancy: Min:30,Max:60 : 6508 (Tot:147,Avg:44)
+Rescheduled: Writing: Min:120,Max:240 : 7063 (Tot:38,Avg:186)
+Scenarios Full Update: 713
+Success ActiveCareerSlacker: 83
+Success AddInteractions: 222
+Success AddMissingTraits: 4
+Success Adoption: 4
+Success AgeUp: 2
+Success Alimony: 7
+Success Antagonize: 6
+Success AttendCoursePush: 3
+Success Break: 6
+Success BreakHate: 40
+Success Bribe: 2
+Success Busker: 53
+Success Canoodle: 2
+Success Chess: 78
+Success ClanDelight: 47
+Success CleanupAging: 1
+Success CleanupLot: 480
+Success CleanupMini: 1
+Success CleanupSims: 15
+Success Cohesion: 6
+Success ConsignmentUpdate: 5
+Success Date: 2
+Success Demotion: 1
+Success Depreciation: 310
+Success Derision: 6
+Success Disapproval: 19
+Success Disgust: 33
+Success ExistingEnemy: 47
+Success ExistingFriend: 26
+Success FamilyGathering: 1
+Success FamilyVisitor: 3
+Success FightHate: 3
+Success FightResults: 6
+Success FindJob: 1
+Success Fishing: 6
+Success FreeSkill: 91
+Success FriendlyOuting: 2
+Success FriendlyVisitor: 4
+Success GiveAway: 3
+Success GoHomePush: 337
+Success GoToHospital: 7
+Success Hacking: 19
+Success HandleLotMapTags: 33
+Success HandleSimMapTags: 316
+Success HarvestCrops: 13
+Success HarvestHouseholdCrops: 13
+Success Hate: 41
+Success HireMaid: 57
+Success Hired: 5
+Success Homework: 2
+Success HomeworkCompletion: 90
+Success ImmigrantPressure: 7
+Success Immigration: 7
+Success InactiveDeedPost: 27
+Success InactiveDeeds: 27
+Success InactiveTones: 385
+Success InheritVoice: 1
+Success InitCareerSimData: 1
+Success InitNetWorthSimData: 1
+Success Inventing: 11
+Success JobTransition: 1
+Success LoseMember: 1
+Success MarkAsProtected: 1404
+Success Mooch: 3
+Success MugHate: 7
+Success NewClassmate: 1
+Success NewEnemy: 1
+Success NewFlirt: 2
+Success NightlyLot: 480
+Success NoMoreDebt: 1
+Success OnceADay: 5
+Success OnlyOneMayLead: 1
+Success Painting: 25
+Success Partnered: 2
+Success PregnancyCheck: 5
+Success PregnancyOutfit: 1
+Success Promoted: 89
+Success Promotion: 48
+Success PropagateAlimonyFail: 2
+Success PropagateWonFight: 32
+Success PurchaseBicycle: 9
+Success PurchaseCar: 11
+Success PutAwayBooks: 35
+Success RecoverMissingSims: 5
+Success Recruit: 2
+Success Repair: 17
+Success Repaired: 1
+Success RepairedEvent: 1
+Success ResetChance: 45
+Success Run: 45
+Success ScheduledEnemy: 2
+Success ScheduledExistingFlirt: 6
+Success ScheduledFlirt: 5
+Success ScheduledFriend: 2
+Success ScheduledMarriage: 1
+Success ScheduledRomance: 2
+Success ScheduledUnpopular: 2
+Success ScheduledWorkPush: 463
+Success SchoolCommute: 87
+Success SchoolCommuteSetAlarm: 87
+Success SchoolSlacker: 2
+Success SchoolStartTwoHourCommute: 2051
+Success SchoolTwoHourCommute: 87
+Success SchoolTwoHourSetAlarm: 88
+Success SchoolUpdate: 90
+Success ScoredBreakup: 1
+Success SellCollectables: 20
+Success SellCrafts: 6
+Success SellDuplicateInventory: 8
+Success SellFish: 2
+Success SellVeggies: 14
+Success ServiceCleanup: 7
+Success SingedOutfit: 1327
+Success SkillIncrease: 40
+Success Stalker: 2
+Success Steal: 5
+Success StuckCheck: 119
+Success Success: 54
+Success UpdateAging: 713
+Success UpdateSimData: 713
+Success WentToWork: 82
+Success WonChess: 1
+Success WorkCommute: 258
+Success WorkCommuteSetAlarm: 258
+Success WorkOutfits: 39
+Success WorkSlacker: 32
+Success WorkStartTwoHourCommute: 258
+Success WorkTwoHourCommute: 258
+Success WorkTwoHourSetAlarm: 258
+Success WorkUpdate: 290
+Success WorkedOut: 5858
+Success Writing: 52
+Try ActiveCareerSlacker: 17105
+Try AddInteractions: 222
+Try AddMissingTraits: 18
+Try Admiration: 1
+Try Adoption: 10
+Try AgeUp: 4
+Try Alimony: 484
+Try Antagonize: 20
+Try AttachLostFathers: 144
+Try Attack: 11
+Try AttendCoursePush: 404
+Try Attraction: 1
+Try AutoClean: 475
+Try BirthdayGathering: 2
+Try Break: 19
+Try BreakHate: 52
+Try Bribe: 8
+Try BrokenHome: 233
+Try Busker: 138
+Try CampaignGathering: 1
+Try CampaignMooch: 14
+Try Canoodle: 6
+Try CareerBranch: 88
+Try CareerChanged: 95
+Try CatHate: 1
+Try Chess: 673
+Try ChooseLifetimeWish: 3
+Try ChooseTraits: 2
+Try ClanDelight: 95
+Try CleanupAging: 1
+Try CleanupLot: 480
+Try CleanupMini: 1
+Try CleanupSims: 15
+Try Cohesion: 21
+Try ConsignmentUpdate: 5
+Try Date: 14
+Try DebtMooch: 7
+Try DebtMove: 7
+Try DebtSale: 39
+Try DebtSplit: 7
+Try Demotion: 1
+Try Depreciation: 315
+Try Derision: 20
+Try Disapproval: 25
+Try Disgust: 37
+Try DuplicateLibraryBooks: 480
+Try EarlyFlirt: 19
+Try Escort: 2
+Try ExistingEnemy: 115
+Try ExistingFriend: 38
+Try FamilyGathering: 9
+Try FamilyVisitor: 50
+Try FightHate: 7
+Try FightResults: 6
+Try FindJob: 183
+Try Fishing: 413
+Try FreeSkill: 91
+Try FriendlyOuting: 6
+Try FriendlyVisitor: 12
+Try GiveAway: 9
+Try GoHomePush: 395
+Try GoToHospital: 7
+Try Hacking: 221
+Try HandleLotMapTags: 24955
+Try HandleSimMapTags: 69503
+Try HarvestCrops: 278
+Try HarvestHouseholdCrops: 272
+Try Hate: 45
+Try HireMaid: 236
+Try Hired: 5
+Try Homeless: 8
+Try Homework: 6
+Try HomeworkCompletion: 2991
+Try HouseName: 259
+Try HouseTransfer: 7
+Try ImmigrantPressure: 7
+Try Immigrate: 7
+Try Immigration: 7
+Try InactiveDeedPost: 27
+Try InactiveDeeds: 290
+Try InactiveTones: 13752
+Try InheritVoice: 2
+Try InitCareerSimData: 1
+Try InitNetWorthSimData: 1
+Try InterloperMove: 238
+Try Inventing: 304
+Try Investigate: 3
+Try JackOfAllTrades: 88
+Try JobPerformance: 12012
+Try JobTransition: 2
+Try Learn: 6
+Try Liking: 43
+Try LoseMember: 3
+Try ManageCareer: 96
+Try MarkAsProtected: 1412
+Try Marriage: 254
+Try MartialArts: 650
+Try Mooch: 14
+Try MugHate: 13
+Try Nectar: 41
+Try NewBoss: 1198
+Try NewClassmate: 462
+Try NewCoworker: 1030
+Try NewEnemy: 1
+Try NewFlirt: 19
+Try NightlyLot: 485
+Try NoImmigrantHome: 7
+Try NoMoreDebt: 38
+Try OldFlirt: 20
+Try OnceADay: 5
+Try OnlyOneMayLead: 90
+Try OutOfNest: 84
+Try Painting: 263
+Try Partnered: 6
+Try PensionCheck: 14
+Try PhotogPush: 1064
+Try PlayConcert: 89
+Try PoorAssignSchool: 356
+Try PregnancyCheck: 5
+Try PregnancyOutfit: 2
+Try Promoted: 89
+Try Promotion: 89
+Try PropagateAlimonyFail: 4
+Try PropagateWonFight: 54
+Try PurchaseBicycle: 17
+Try PurchaseCar: 22
+Try PurchaseDeeds: 7
+Try PushLaundry: 37
+Try PutAwayBooks: 93
+Try RandomGuitarSong: 12747
+Try ReadJournal: 26
+Try RecoverMissingSims: 5
+Try Recruit: 14
+Try Repair: 1707
+Try Repaired: 5
+Try RepairedEvent: 5
+Try RepopulateLibrary: 480
+Try RequestRepairman: 238
+Try ResetChance: 45
+Try RestoreDecay: 28
+Try Retire: 2
+Try RichAssignSchool: 356
+Try Run: 80
+Try ScheduledAssignSchool: 370
+Try ScheduledEnemy: 42
+Try ScheduledExistingFlirt: 106
+Try ScheduledFlirt: 196
+Try ScheduledFriend: 10
+Try ScheduledMarriage: 606
+Try ScheduledRomance: 18
+Try ScheduledUnpopular: 22
+Try ScheduledWorkPush: 17129
+Try SchoolCommute: 87
+Try SchoolCommuteSetAlarm: 88
+Try SchoolSlacker: 3121
+Try SchoolStartTwoHourCommute: 3031
+Try SchoolTwoHourCommute: 88
+Try SchoolTwoHourSetAlarm: 2051
+Try SchoolUpdate: 17105
+Try ScoredBreakup: 255
+Try Sculpting: 294
+Try SellCollectables: 131
+Try SellCrafts: 772
+Try SellDrafts: 1993
+Try SellDuplicateBook: 480
+Try SellDuplicateInventory: 220
+Try SellFish: 1630
+Try SellFishingJunk: 1932
+Try SellGhosts: 1988
+Try SellNectar: 1967
+Try SellVeggies: 281
+Try ServiceCleanup: 429
+Try ServicePoolCleanup: 8
+Try ServicePushHome: 7
+Try SingedOutfit: 1341
+Try SkillIncrease: 61
+Try Stalker: 7
+Try StandardMoveInLot: 146
+Try Steal: 19
+Try StrandedCouple: 255
+Try StuckCheck: 119
+Try StylistHelp: 1
+Try Success: 54
+Try Tryst: 3
+Try UnexpectedPregnancy: 3
+Try UnifiedBilling: 34
+Try UpdateAging: 713
+Try UpdateCareer: 95
+Try UpdateSimData: 713
+Try ValidatePregnancy: 147
+Try WealthMove: 24
+Try WealthMoveInLot: 17
+Try WentToWork: 551
+Try Wolfrun: 14
+Try WonChess: 1
+Try WorkCommute: 258
+Try WorkCommuteSetAlarm: 258
+Try WorkOutfits: 1732
+Try WorkSlacker: 8203
+Try WorkStartTwoHourCommute: 7913
+Try WorkTwoHourCommute: 258
+Try WorkTwoHourSetAlarm: 6665
+Try WorkUpdate: 17105
+Try WorkedOut: 5865
+Try Writing: 139
+Try ZeroValueBook: 480
+</ExceptionData>
+  <GameData>
+    <BuildType>Release Mono</BuildType>
+    <CommandLine>C:\games\The Sims 3 Fast Lane Stuff\game\bin\TS3SP02.exe</CommandLine>
+    <Game_Version>5.0.44.008017</Game_Version>
+    <Code_Version>0.RL-2.0.113</Code_Version>
+    <Content_Version>1.Content.rl.31</Content_Version>
+    <Thumbnail_Version>1.Thumbnail.dl.933</Thumbnail_Version>
+    <TCC_Version>1.TCC.dl.1209</TCC_Version>
+    <Build_Version>0.2.0.113</Build_Version>
+    <Type>Release</Type>
+    <Timestamp>2010-07-26-1729</Timestamp>
+    <CPU_Level>UltraHigh</CPU_Level>
+    <GPU_Level>Uber</GPU_Level>
+    <Game_Start>2010-10-10 21:16:58</Game_Start>
+    <Data>C:\games\The Sims 3/GameData\</Data>
+    <Overrides>(none)</Overrides>
+    <Exe_Path>C:\games\The Sims 3 Fast Lane Stuff\game\bin\</Exe_Path>
+    <User>codebuilder</User>
+    <Host>SIMS-BUILD141</Host>
+  </GameData>
+  <ObjectData>
+  </ObjectData>
+</ScriptError>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kRealMinutesBetweenSaves value="30">
+      <!--The number of real-time minutes between saves-->
+    </kRealMinutesBetweenSaves>
+    <kSimMinutesBetweenSaves value="1440">
+      <!--The number of sim-minutes between saves (unused if RealMinutes is greater than zero)-->
+    </kSimMinutesBetweenSaves>
+    <kSimSaveHour value="5">
+      <!--Comma separated list of hours at which to save (unused if RealMinutes or SimMinutes is greater than zero)-->
+    </kSimSaveHour>
+    <kSaveCycles value="4">
+      <!--Number of saves to cycle through-->
+    </kSaveCycles>
+    <kSwitchToMapView value="False">
+      <!--Whether to switch to map view prior to saving-->
+    </kSwitchToMapView>
+    
+    <kPromptInBuildBuy value="True">
+      <!--Whether to prompt while in Build/Buy Mode-->
+    </kPromptInBuildBuy>    
+  </Current_Tuning>
+</base>

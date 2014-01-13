@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<CareerFiles>
+  <OpportunityFile>
+    <Opportunities></Opportunities>
+  </OpportunityFile>
+  <OpportunityFile>
+    <Opportunities>NRaas.Mobster.Opportunities</Opportunities>
+  </OpportunityFile>
+  <CareerFile>
+    <Careers></Careers>
+    <CareerEvents></CareerEvents>
+  </CareerFile>
+  <CareerFile>
+    <Careers>NRaas.Mobster.Careers</Careers>
+    <CareerEvents>NRaas.Mobster.CareerEvents</CareerEvents>
+  </CareerFile>
+  <ToneFile>
+    <Tones></Tones>
+  </ToneFile>
+  <ToneFile>
+    <Tones>NRaas.Mobster.Tones</Tones>
+  </ToneFile>
+  <BookFile>
+    <Books></Books>
+  </BookFile>
+  <BookFile>
+    <Books>NRaas.Mobster.Books</Books>
+  </BookFile>
+</CareerFiles>

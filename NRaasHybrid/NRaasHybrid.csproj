@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5C1198A-FB20-4943-AC2C-0F12FA591BC2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasHybrid</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToMultiList.cs">
+      <Link>CommonSpace\Converters\StringToMultiList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToSpeciesList.cs">
+      <Link>CommonSpace\Converters\StringToSpeciesList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultFairyEx.cs">
+      <Link>CommonSpace\Helpers\OccultFairyEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SavedOutfit.cs">
+      <Link>CommonSpace\Helpers\SavedOutfit.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SwitchOutfits.cs">
+      <Link>CommonSpace\Helpers\SwitchOutfits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Tunings.cs">
+      <Link>CommonSpace\Helpers\Tunings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOption.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ListedSettingOption.cs">
+      <Link>CommonSpace\Options\ListedSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
+      <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\replacers\ActionDataReplacer.cs">
+      <Link>CommonSpace\Replacers\ActionDataReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\RepeatingTask.cs">
+      <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
+    </Compile>
+    <Compile Include="Hybrid.cs" />
+    <Compile Include="HybridSpace\Helpers\CastSpellEx.cs" />
+    <Compile Include="HybridSpace\Helpers\CommonSocials.cs" />
+    <Compile Include="HybridSpace\Interactions\CastUpgradeEx.cs" />
+    <Compile Include="HybridSpace\Interactions\BloomEx.cs" />
+    <Compile Include="HybridSpace\Interactions\FairyRepairEx.cs" />
+    <Compile Include="HybridSpace\Interactions\PutOutFireInteractionEx.cs" />
+    <Compile Include="HybridSpace\Interactions\LightFireEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SpellcastingDuelEx.cs" />
+    <Compile Include="HybridSpace\Interfaces\IMagicalSubInteraction.cs" />
+    <Compile Include="HybridSpace\Interfaces\IMagicalInteraction.cs" />
+    <Compile Include="HybridSpace\Interfaces\IInteractionProxy.cs" />
+    <Compile Include="HybridSpace\Proxies\CastSpellProxy.cs" />
+    <Compile Include="HybridSpace\Helpers\OccultManagerEx.cs" />
+    <Compile Include="HybridSpace\Interactions\AutonomousSplashInPuddleEx.cs" />
+    <Compile Include="HybridSpace\Interactions\OptimumFertilizePlantEx.cs" />
+    <Compile Include="HybridSpace\Interactions\ServoBotRepairEx.cs" />
+    <Compile Include="HybridSpace\Interactions\PerformComedyShowEx.cs" />
+    <Compile Include="HybridSpace\Interactions\GetSprayTanEx.cs" />
+    <Compile Include="HybridSpace\Interactions\EatKelpEx.cs" />
+    <Compile Include="HybridSpace\Interactions\MermaidEatEx.cs" />
+    <Compile Include="HybridSpace\Interactions\RemoveMermaidWithVortexEx.cs" />
+    <Compile Include="HybridSpace\Interactions\MermaidEatFromFishContainerEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SummonSharkEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SummonWeatherWithEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SummonWeatherEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SkateEx.cs" />
+    <Compile Include="HybridSpace\Interfaces\IMagicalDefinition.cs" />
+    <Compile Include="HybridSpace\MagicControls\UnicornControl.cs" />
+    <Compile Include="HybridSpace\MagicControls\GenieControl.cs" />
+    <Compile Include="HybridSpace\MagicControls\FairyControl.cs" />
+    <Compile Include="HybridSpace\MagicControls\WitchControl.cs" />
+    <Compile Include="HybridSpace\MagicControls\MagicControl.cs" />
+    <Compile Include="HybridSpace\Helpers\WerewolfOutfitControl.cs" />
+    <Compile Include="HybridSpace\Helpers\MotivesControl.cs" />
+    <Compile Include="HybridSpace\Helpers\SocialControl.cs" />
+    <Compile Include="HybridSpace\Helpers\MotivesPanelControl.cs" />
+    <Compile Include="HybridSpace\Helpers\MotivesPanelEx.cs" />
+    <Compile Include="HybridSpace\Helpers\SimDisplayEx.cs" />
+    <Compile Include="HybridSpace\Helpers\SimDisplayControl.cs" />
+    <Compile Include="HybridSpace\Helpers\InteractionAdjustment.cs" />
+    <Compile Include="HybridSpace\Interactions\CastGoodLuckCharmEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastLoveCharmEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastPestilenceCurseEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastSunlightCharmEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastFireBlastEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastIceBlastEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastToadifyEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastHauntingCurseEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastMotiveCharmEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastMotiveCurseEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastConvertEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastFireBlastTerrainEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastRestorationEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastReanimateEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastIceBlastTerrainEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastFireBlastOnStatueEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastSunlightCharmOnStatueEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CastIceBlastPlumbingEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CheatTheSystemEx.cs" />
+    <Compile Include="HybridSpace\Interactions\CreateCloneOfSimEx.cs" />
+    <Compile Include="HybridSpace\Interactions\VoucherCloneMeRedeemEx.cs" />
+    <Compile Include="HybridSpace\Interactions\RemoveSimEx.cs" />
+    <Compile Include="HybridSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="HybridSpace\Interactions\WerewolfScratchObjectEx.cs" />
+    <Compile Include="HybridSpace\Interactions\TransformationToHumanEx.cs" />
+    <Compile Include="HybridSpace\Interactions\TransformationToWerewolfEx.cs" />
+    <Compile Include="HybridSpace\Interactions\UnicornIgniteFireEx.cs" />
+    <Compile Include="HybridSpace\Interactions\ReturnToLampEx.cs" />
+    <Compile Include="HybridSpace\Interactions\FairyRideTrainEx.cs" />
+    <Compile Include="HybridSpace\Interactions\UnicornExtinguishFireEx.cs" />
+    <Compile Include="HybridSpace\Interactions\UnicornBlessPlantEx.cs" />
+    <Compile Include="HybridSpace\Interactions\WerewolfHuntEx.cs" />
+    <Compile Include="HybridSpace\Interactions\EnchantHouseEx.cs" />
+    <Compile Include="HybridSpace\Interactions\UnicornDespawnEx.cs" />
+    <Compile Include="HybridSpace\Interactions\EnsorcelInteractionEx.cs" />
+    <Compile Include="HybridSpace\Interactions\UnicornCursePlantEx.cs" />
+    <Compile Include="HybridSpace\Options\AllowOccultSkatingSetting.cs" />
+    <Compile Include="HybridSpace\Options\OccultSetting.cs" />
+    <Compile Include="HybridSpace\Options\SkillLevel\BanishSim.cs" />
+    <Compile Include="HybridSpace\Options\SkillLevel\SkillLevelBase.cs" />
+    <Compile Include="HybridSpace\Options\SkillLevel\ISkillLevelOption.cs" />
+    <Compile Include="HybridSpace\Options\SkillLevel\ListingOption.cs" />
+    <Compile Include="HybridSpace\Options\SpecialWerewolfOutfitSetting.cs" />
+    <Compile Include="HybridSpace\Options\ValidOccult\BanishSim.cs" />
+    <Compile Include="HybridSpace\Options\ValidOccult\IValidOccultOption.cs" />
+    <Compile Include="HybridSpace\Options\ValidOccult\ListingOption.cs" />
+    <Compile Include="HybridSpace\PersistedSettings.cs" />
+    <Compile Include="HybridSpace\Proxies\CastSpellOnStatueProxy.cs" />
+    <Compile Include="HybridSpace\Proxies\FireIceBlastProxy.cs" />
+    <Compile Include="HybridSpace\Proxies\InteractionProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableEnglish.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

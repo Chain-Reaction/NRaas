@@ -1,0 +1,273 @@
+﻿<?xml version="1.0"?>
+<!-- This file contains initialization/shutdown functions that should be run after loading objects -->
+<!-- On entering the world, initialization functions are run top to bottom -->
+<!-- On leaving the world, shutdown functions are run bottom to top -->
+<!-- Every initializer is represented with a row containing the following attributes:
+type:           [compulsory] This is the fully namespaced class in a given assembly. E.g. type="Sims3.Gameplay.Tuning.TuningControl,Sims3GameplaySystems"
+init:           This is a public static method of the above mentioned class. It is invoked during the initialization sequence. E.g. init="GameplayInitialize"
+shutdown:       This is a public static method of the above mentioned class. It is invoked during the shutdown sequence. E.g. shutdown="GameplayShutdown"
+                A valid initializer contains either an init method or a shutdown method or both.
+productversions:[optional] Comma separated ProductVersion enum values. The initializer is valid if any Product in this attribute is installed.
+                Default: BaseGame. E.g. productversions="EP1,EP4"
+configurations: [optional] Comma separated Configuration enum values. The initializer is valid if the game is launched in a configuration supplied in this attribute.
+                Default: Debug,DebugRelease,Release. E.g. configurations="Debug,DebugRelease"
+editingame:     [optional] This attribute validates the initializer in Edit-in game mode. Default: True. E.g. editingame="False"
+-->
+
+<PostWorldInitializers>
+  <Action type="System.GC,mscorlib" shutdown="Collect"/>
+
+  <!-- Sims3.WorldBuilderUtil.WorldBuilderData.StartupBegin should be the FIRST initializer because it makes available metadata other initializers might need. -->
+  <Action type="Sims3.Gameplay.WorldBuilderUtil.WorldBuilderData,Sims3GameplaySystems" init="StartupBegin"/>
+  <Action type="Sims3.SimIFace.PersistAttributes,SimIFace" init="PostWorldInit"/>
+  <Action type="Sims3.Gameplay.Core.Camera,Sims3GameplaySystems" init="StartUp" shutdown="ShutDown"/>
+
+  <Action type="Sims3.Gameplay.InWorldState,Sims3GameplaySystems" init="RegisterEventHandlers" shutdown="UnregisterEventHandlers" instance="this"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="InitSceneWindow" shutdown="DestroySceneWindow"/>
+  <Action type="Sims3.Gameplay.InWorldState,Sims3GameplaySystems" init="InitSceneWindow" shutdown="ShutdownSceneWindow" instance="this"/>
+  <Action type="Sims3.Gameplay.Core.Commands,Sims3GameplaySystems" init="RegisterWorldCommands" shutdown="UnregisterWorldCommands"/>
+  <Action type="Sims3.Gameplay.Core.LotManager,Sims3GameplaySystems" init="PostWorldLoad"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.RoutingComponent,Sims3GameplaySystems" init="PostWorldLoad"/>
+
+  <Action type="Sims3.Gameplay.Tasks.PickObjectTask,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Tasks.SelectObjectTask,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.CAS.Household,Sims3GameplaySystems" init="FixHouseholdsInWorld" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.CAS.SimDescription,Sims3GameplaySystems" init="OnWorldLoadFinished"/>
+
+  <!-- Can be removed once all lots have been saved without bad shared fridge inventories or shared family inventories -->
+  <Action type="Sims3.Gameplay.CAS.Household,Sims3GameplaySystems" init="CleanupBadlySavedInventories"/>
+  <Action type="Sims3.Gameplay.CAS.SimDescription,Sims3GameplaySystems" init="PostLoadFixUp"/>
+  <Action type="Sims3.Gameplay.Core.PlumbBob,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+
+  <Action type="Sims3.Gameplay.Core.Bin,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Core.Lot" init="EnsureAllLotObjects"/>
+  <!-- The car npc manager has dependencies on the CAS houshold because of the management of npc drivers. -->
+  <Action type="Sims3.Gameplay.Objects.Vehicles.CarNpcManager,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.FoodObjects.SharedFridgeInventory,Sims3GameplaySystems" init="CleanupFridgeRecipeCaches"/>
+
+  <Action type="Sims3.Gameplay.Careers.CareerManager,Sims3GameplaySystems" init="FixUpCareersAndCareerLocations" shutdown="CleanUpAnyStaticData"/>
+  <Action type="Sims3.Gameplay.Actors.Sim,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+
+  <Action type="Sims3.SimIFace.UserToolUtils,SimIFace" init="InitUserToolManager" shutdown="ShutdownUserToolManager"/>
+  <Action type="Sims3.Gameplay.Core.LotManager,Sims3GameplaySystems" init="InitUIPreferences" shutdown="ShutdownUIPreferences"/>
+  <Action type="Sims3.Gameplay.UI.Responder,Sims3GameplaySystems" init="InitAlarm" shutdown="ShutdownAlarm"/>
+  <Action type="Sims3.Gameplay.InWorldState,Sims3GameplaySystems" init="LoadUI" shutdown="UnloadUI" instance="this"/>
+  <Action type="Sims3.UI.Hud.MapViewController,UI" shutdown="ResetFilterOnShutdown"/>
+  <Action type="Sims3.Gameplay.Opportunities.OpportunityTrackerModel,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Electronics.Phone,Sims3GameplayObjects" init="OnWorldLoaded" shutdown="OnWorldUnloaded"/>
+  <Action type="Sims3.Gameplay.ActorSystems.AgingManager,Sims3GameplaySystems" init="Start" shutdown="Stop"/>
+  <Action type="Sims3.Gameplay.Core.Mailbox,Sims3GameplaySystems" init="OnPostWorldLoad" shutdown="OnWorldShutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Decorations.UberBoxPedestal,Sims3GameplayObjects" init="AdoptObjects"/>
+  <Action type="Sims3.Gameplay.Objects.HobbiesSkills.SculptingStation,Sims3GameplayObjects" init="StartUpInits"/>
+
+  <!-- NPC Services -->
+  <Action type="Sims3.Gameplay.Services.Services,Sims3GameplaySystems" init="PostWorldLoadStartup" shutdown="PostWorldLoadShutdown"/>
+  <Action type="Sims3.Gameplay.Services.Maid,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.PizzaDelivery,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Babysitter,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Repairman,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Repoman,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.FakeMetaAutonomy,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.NewspaperDelivery,Sims3GameplayObjects" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.MailCarrier,Sims3GameplayObjects" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.GrimReaper,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Burglar,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Police,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Firefighter,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.SocialWorkerChildAbuse,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.SocialWorkerAdoption,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Magician,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.DJ,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Singer,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.PerformanceArtist,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Objects.Tutorial.TutorialNpcManager,Sims3GameplayObjects" init="SeekAndDestroy"/>
+  <Action type="Sims3.Gameplay.Scenarios.ScienceGeek,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Services.Butler,Sims3GameplaySystems" init="Create" shutdown="Destroy" productversions="EP3"/>
+  <Action type="Sims3.Gameplay.Services.BartenderService,Sims3GameplaySystems" init="Create" shutdown="Destroy" productversions="EP3"/>
+  <Action type="Sims3.Gameplay.Services.Dancer,Sims3GameplaySystems" init="Create" shutdown="Destroy" productversions="EP4"/>
+  <Action type="Sims3.Gameplay.Services.SocialWorkerPetPutUp,Sims3GameplaySystems" init="Create" shutdown="Destroy" productversions="EP5" editingame = "false"/>
+  <Action type="Sims3.Gameplay.Services.SocialWorkerPetAdoption,Sims3GameplaySystems" init="Create" shutdown="Destroy" productversions="EP5" editingame = "false"/>
+  <Action type="Sims3.Gameplay.UI.ServicesModel,Sims3GameplaySystems" init="ReflectServicesInObjectAssembly" shutdown="ShutDown"/>
+
+  <!-- Miscellaneous -->
+  <Action type="Sims3.Gameplay.UI.VisitorTracker,Sims3GameplaySystems" init="StaticInitialize" shutdown="StaticShutdown"/>
+  <Action type="Sims3.Gameplay.Core.LotManager,Sims3GameplaySystems" init="InitTeenHangout" shutdown="ShutdownTeenHangout"/>
+  <Action type="Sims3.Gameplay.Abstracts.GameObject,Sims3GameplaySystems" init="InitAppreciationDepreciation" shutdown="ShutdownAppreciationDepreciation"/>
+  <Action type="Sims3.Gameplay.Core.LotManager,Sims3GameplaySystems" init="InitVenueMaintenance" shutdown="ShutdownVenueMaintenance"/>
+  <Action type="Sims3.Gameplay.StoryProgression.StoryProgressionService,Sims3GameplaySystems" init="StaticInitialize" shutdown="StaticShutdown"/>
+  <Action type="Sims3.Gameplay.StoryProgression.Notifications,Sims3GameplaySystems" init="StaticInitialize" shutdown="StaticShutdown"/>
+  <Action type="Sims3.Gameplay.Rewards.LifeEventRewards,Sims3GameplaySystems" init="StaticInitialize" shutdown="StaticShutdown"/>
+  <Action type="Sims3.Gameplay.Actors.Sim,Sims3GameplaySystems" init="PostWorldLoadInit" shutdown="PostWorldLoadShutdown"/>
+  <Action type="Sims3.Gameplay.UI.PieMenu,Sims3GameplaySystems" init="Initalize" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Socializing.SocialComponent, Sims3GameplaySystems" init="Initialize" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Book,Sims3GameplaySystems" init="DeleteBadWorldbuilderBooks"/>
+  <Action type="Sims3.Gameplay.Objects.Gardening.Plant,Sims3GameplaySystems" init="CleanupGardeningObjects"/>
+  <Action type="Sims3.Gameplay.Abstracts.GameObject,Sims3GameplaySystems" init="ValidateDataDrivenObjects"/>
+  <Action type="Sims3.Gameplay.Abstracts.GameObject,Sims3GameplaySystems" init="FixupObjectsWithFootprintsOnWorldLot"/>
+  <Action type="Sims3.Gameplay.Telemetry.TelemetryStats, Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Core.RentScheduler, Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Core.LotManager,Sims3GameplaySystems" init="InitLocationBasedOpportunities" shutdown="ShutdownLocationBasedOpportunities"/>
+  <Action type="Sims3.Gameplay.Autonomy.AutonomyManager,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.ActorSystems.AgeUpNpcSituation,Sims3GameplaySystems" init="StaticStartup" shutdown="StaticShutdown"/>
+  <Action type="Sims3.Gameplay.DreamsAndPromises.DreamsAndPromisesManager,Sims3GameplaySystems" init="PostWorldStartup" shutdown="PostWorldShutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Urnstone,Sims3GameplaySystems" init="HandleWorldBuilderDeaths"/>
+  <Action type="Sims3.Gameplay.Objects.Beds.Bed,Sims3GameplayObjects" init="PostLoadFixup"/>
+  <Action type="Sims3.Gameplay.Objects.Miscellaneous.BuffetTable,Sims3GameplayObjects" init="PostLoadFixup"/>
+  <Action type="Sims3.Gameplay.Tutorial.IntroTutorial,Sims3GameplaySystems" shutdown="InternalExitTutorial"/>
+  <!-- Iterates over all the Lots and all the GameObjects on those lots to verify certain GameObject atributes before destroying them on load. -->
+  <Action type="Sims3.Gameplay.Core.LotManager,Sims3GameplaySystems" init="CleanupObjectsNotOnLot"/>
+  <Action type="Sims3.Gameplay.Objects.Counters.Counter,Sims3GameplayObjects" init="PostWorldLoadFixup"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.BikeRack,Sims3GameplaySystems" init="PostWorldLoadFixup"/>
+  <Action type="Sims3.Gameplay.Objects.ModularBuyModeObjectRegistry,Sims3GameplaySystems" init="PostWorldLoadFixup" shutdown="PostWorldShutdownFixup"/>
+  <Action type="Sims3.Gameplay.Objects.Fishing.FishHere,Sims3GameplaySystems" init="ValidateFishingBoxItems"/>
+  <Action type="Sims3.Gameplay.Abstracts.RabbitHole,Sims3GameplaySystems" init="InitAmbientSounds"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.ParkingSpace,Sims3GameplaySystems" init="PostWorldLoadFixup"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.Vehicle,Sims3GameplaySystems" init="PostWorldLoadFixup"/>
+  <!-- Iterates over all the GameObjects in the world to verify the reference list and use list. -->
+  <Action type="Sims3.Gameplay.Abstracts.GameObject,Sims3GameplaySystems" init="ValidateAllReferenceListsAndUseLists"/>
+  <Action type="Sims3.Gameplay.Objects.Fishing.MountedFish" init="PostLoadFixup"/>
+  <Action type="Sims3.Gameplay.Objects.Decorations.FishTank,Sims3GameplayObjects" init="OnPostLoad"/>
+
+  <Action type="Sims3.Gameplay.ObjectComponents.DonatableComponent,Sims3GameplaySystems" init="LoadAllWorldBuilderData"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.TreasureComponent,Sims3GameplaySystems" init="LoadAllWorldBuilderData"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.TombObjectData,Sims3GameplaySystems" init="LoadWorldBuilderData"/>
+  <Action type="Sims3.Gameplay.Controllers.TombRoomManager,Sims3GameplaySystems" init="PostWorldStartup"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.AdventureComponent,Sims3GameplaySystems" init="LoadAllWorldbuilderDataAndAdvendureKeys"/>
+  <Action type="Sims3.Gameplay.ObjectComponents.MaintenanceComponent,Sims3GameplaySystems" init="PostWorldStartup" shutdown="PostWorldShutdown"/>
+
+  <Action type="Sims3.Gameplay.Opportunities.OpportunityManager,Sims3GameplaySystems" init="PostLoadFixup"/>
+  <!-- This initializer destroys all the objects are are being loaded with an incompatible/uninstalled Product -->
+  <Action type="Sims3.Gameplay.Abstracts.GameObject,Sims3GameplaySystems" init="PostWorldLoadDeleteInvalidObjects"/>
+  <Action type="Sims3.Gameplay.Abstracts.ObjectSpawner,Sims3GameplaySystems" init="CheckAllObjectSpawnersPlacement"/>
+
+  <!--  Commenting out the BusyCrowd on startup. It is currently enabled by ALT-SHIFT-P -->
+  <!--  <Action type="Sims3.Gameplay.Situations.BusyCrowd, Sims3GameplaySystems" init="Create" shutdown="Destroy"/> -->
+
+  <Action type="Sims3.Gameplay.Inventory,Sims3GameplaySystems" init="UpdateInventoryDataStructure"/>
+  <Action type="Sims3.SimIFace.StateMachineClient,SimIFace" init="PostWorldLoadFixup"/>
+  <Action type="Sims3.SimIFace.GameUtils,SimIFace" init="ResetProfilerScopeAverages"/>
+  <Action type="Sims3.Gameplay.Core.AutoSave,Sims3GameplaySystems" init="OnPostWorldInit"/>
+  <Action type="Sims3.Gameplay.Abstracts.ShellWithDoor,Sims3GameplaySystems" init="PostLoadFixup" productversions="EP1"/>
+  <Action type="Sims3.Gameplay.Situations.VisitSituation,Sims3GameplaySystems" init ="PostWorldLoad"/>
+  <Action type="Sims3.Gameplay.Roles.RoleManager,Sims3GameplaySystems" init="PostWorldLoadFixup" shutdown="PostWorldShutdown"/>
+  <Action type="Sims3.Gameplay.Objects.CookingObjects.CookingProcess,Sims3GameplayObjects" init="PostWorldRecipeCheck"/>
+  <Action type="Sims3.Gameplay.Objects.TombObjects.KeystonePanel,Sims3GameplayObjects" init="PostWorldLoadAdventureFixup"/>
+  <Action type="Sims3.Gameplay.Objects.TreasureSpawnPoint,Sims3GameplaySystems" init="PostWorldInit"/>
+  <Action type="Sims3.Gameplay.Abstracts.ObjectSpawner,Sims3GameplaySystems" init="PostWorldInit"/>
+  <Action type="Sims3.Gameplay.Controllers.LaundryManager,Sims3GameplaySystems" init="Startup"/>
+  <Action type="Sims3.Gameplay.Objects.Miscellaneous.BakeSaleTable,Sims3GameplayObjects" init="StartSimulation" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.Objects.Miscellaneous.Meteor,Sims3GameplaySystems" init="StartRandomMeteorTimer" shutdown="DisposeRandomMeteorTimer" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.RealEstate.RealEstateManager,Sims3GameplaySystems" init="PostWorldInit"/>
+  <Action type="Sims3.Gameplay.Objects.Register.ConsignmentRegister, Sims3GameplayObjects" init="Startup" shutdown="Shutdown" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.Objects.Register.PotionShopConsignmentRegister, Sims3GameplayObjects" init="Startup" shutdown="Shutdown" productversions="EP7"/>
+  <Action type="Sims3.Gameplay.Objects.HobbiesSkills.Inventing.TimeMachine,Sims3GameplayObjects" shutdown="Shutdown" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.CarpoolManager, Sims3GameplaySystems" init="PostWorldFixup"/>
+  <Action type="Sims3.Gameplay.Core.VenueFlowUtility" init="Startup" shutdown="Shutdown" editingame="false"/>
+
+  <!-- EP03 Additions -->
+  <Action type="Sims3.Gameplay.Skills.Bartending,Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.CelebritySystem.CelebrityManager,Sims3GameplaySystems" init="PostWorldLoad" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Elevator.ElevatorInterior,Sims3GameplaySystems" init="PostWorldLoadFixup" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.TrafficManager, Sims3GameplaySystems" init="StartSimulating" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Environment.MagicGnomeVampire,Sims3GameplayObjects" init="PostWorldInit" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Decorations.DigitalFishTank,Sims3GameplayObjects" init="OnPostLoad" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Electronics.StereoCommunity,Sims3GameplayObjects" init="PostWorldInit" editingame="false"/>
+  <Action type="Sims3.Gameplay.Situations.NpcParty,Sims3GameplaySystems" init="PostWorldLoad" shutdown="PostWorldShutdown" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Counters.BarProfessional,Sims3GameplayObjects" init="PostWorldLoad" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Miscellaneous.VelvetRopes,Sims3GameplayObjects" init="PostWorldLoad" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.HobbiesSkills.BandInstrument,Sims3GameplayObjects" init="PostWorldInit" productversions="EP3" editingame="false"/>
+  <!--Hot Tub is carry forward so we need to Run this in all EP's-->
+  <Action type="Sims3.Gameplay.Objects.Plumbing.HotTubBasin,Sims3GameplayObjects" init="CleanupMissingHottubBasins"/>
+
+  <!-- EP04 Additions -->
+  <Action type="Sims3.Gameplay.ChildAndTeenUpdates.SnubManager,Sims3GameplaySystems" init="DailyAlarmStartup" shutdown="DailyAlarmShutdown" productversions="EP4" editingame="false"/>
+  <Action type="Sims3.Gameplay.Situations.PromSituation,Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP4"/>
+  <Action type="Sims3.Gameplay.Objects.SleepingBagUtil,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <!-- Product check needs to be done within the init delegate. -->
+  <Action type="Sims3.Gameplay.ChildAndTeenUpdates.PlayDateManager,Sims3GameplaySystems" init="DailyPlayDateCheckAlarmStartup" shutdown="DailyPlayDateCheckAlarmShutdown" productversions="EP4" editingame="false"/>
+  <Action type="Sims3.Gameplay.Careers.AfterschoolActivity,Sims3GameplaySystems" init="CheckForValidSchool" productversions="EP4"/>
+  <Action type="Sims3.Gameplay.Objects.Beds.Crib,Sims3GameplayObjects" init="PostWorldLoad" editingame="false"/>
+  <Action type="Sims3.Gameplay.ChildAndTeenUpdates.ScavengerManager,Sims3GameplaySystems" init="PostWorldInit"/>
+  <Action type="Sims3.Gameplay.Objects.HobbiesSkills.Potion,Sims3GameplayObjects" init="CheckVfxState" productversions="EP4"/>
+  <Action type="Sims3.Gameplay.ActorSystems.OccultImaginaryFriend,Sims3GameplaySystems" init="PostLoadFixUp"/>
+  <Action type="Sims3.Gameplay.ChildAndTeenUpdates.SleepDreamManager,Sims3GameplaySystems" init="PostWorldInit" productversions="EP4"/>
+  <Action type="Sims3.Gameplay.Objects.Misc.Gift,Sims3GameplaySystems" init="ValidateGiftDataTuning" configurations="Debug,DebugRelease"/>
+  <Action type="Sims3.Gameplay.Situations.TeenParty,Sims3GameplaySystems" init="PostLoadFixup"/>
+  <Action type="Sims3.Gameplay.Objects.Electronics.TV,Sims3GameplayObjects" init="PostWorldInit" productversions="EP4"/>
+  <Action type="Sims3.Gameplay.Careers.School,Sims3GameplaySystems" init="RemoveAllAfterschoolActivitiesInWorld" />
+  <Action type="Sims3.Gameplay.ActiveCareer.ActiveCareers.DaycareToddlerTransportSituation,Sims3GameplaySystems" init="OnStartupDisposeBabysittersIfNecessary" />
+
+  <!-- EP05 Additions -->
+  <Action type="Sims3.Gameplay.PetSystems.PetPoolManager,Sims3GameplaySystems" init="PostWorldLoadStartup" shutdown="PostWorldShutdown" editingame="false"  productversions="EP5"/>
+  <Action type="Sims3.Gameplay.PetSystems.PetAdoption,Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP5" editingame = "false"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.IceCreamTruckManager, Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP5" editingame="false"/>
+  <Action type="Sims3.Gameplay.PetSystems.UnicornPool,Sims3GameplaySystems" init="StartSpawnAlarm" shutdown="Shutdown" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Roles.NPCAnimal,Sims3GameplaySystems" init="PostWorldLoadFixup" shutdown="PostWorldShutdown" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Objects.Environment.MagicGnomeDog,Sims3GameplayObjects" init="PostWorldInit" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Objects.Environment.MagicGnomeCat,Sims3GameplayObjects" init="PostWorldInit" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Objects.Environment.MagicGnomeHorse,Sims3GameplayObjects" shutdown="ClearStatics" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.Objects.MinorPets.MinorPetBirdLarge,Sims3GameplayObjects" init="PostWorldInit" productversions="EP5"/>
+  <Action type="Sims3.Gameplay.PetSystems.StrayPets,Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP5" editingame = "false"/>
+  <Action type="Sims3.Gameplay.Utilities.DebugVisualizeSim,Sims3GameplaySystems" shutdown="ClearStatics" editingame = "false" configurations="Debug,DebugRelease"/>
+  <Action type="Sims3.Gameplay.Objects.Pets.PetToyCrate,Sims3GameplayObjects" init="ClearInvalidToys" productversions="EP5" configurations="Debug,DebugRelease"/>
+  <Action type="Sims3.Gameplay.Objects.HobbiesSkills.HorseJump,Sims3GameplayObjects" init="PostWorldLoadStartup" productversions="EP5" editingame = "false"/>
+  <Action type="Sims3.Gameplay.ActorSystems.LeadingHorsePosture, Sims3GameplaySystems" init="PostWorldLoadLeadHorsePostureFixUp" productversions="EP5" editingame = "false"/>
+  <Action type="Sims3.Gameplay.Objects.CookingObjects.PetFood,Sims3GameplayObjects" init="PetFoodFixup" />
+
+  <!-- EP06 Additions -->
+  <Action type="Sims3.Gameplay.ActiveCareer.ActiveCareers.NPCShowManager,Sims3GameplaySystems" init="CreateNPCShows" shutdown="EndENPCShows" productversions="EP6"/>
+  <Action type="Sims3.Gameplay.Objects.Environment.MagicGnomeElvis,Sims3GameplayObjects" init="PostWorldInit" productversions="EP6" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.PerformanceObjects.ThrownObjectList,Sims3GameplayObjects" init="CreateThrowableObjectDb" shutdown="DestoryThrowableObjectDb" productversions="EP6"/>
+  <Action type="Sims3.Gameplay.Roles.SimFestManager,Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP6"/>
+
+  <!-- EP07 Additions -->
+  <Action type="Sims3.Gameplay.Controllers.LunarCycleManager,Sims3GameplaySystems" init="CreateLunarCycle" shutdown="EndLunarCycle"  productversions="EP7"/>
+  <Action type="Sims3.Gameplay.Objects.Door.SlidingBookcase,Sims3GameplayObjects" init="PostWorldStartup" productversions="EP7"/>
+
+  <Action type="Sims3.Gameplay.Core.ZombieDanceTimeOut,Sims3GameplaySystems" init="PostWorldStartup" />
+
+  <!-- EP08 Additions -->
+  <Action type="Sims3.Gameplay.Seasons.SeasonsManager,Sims3GameplaySystems" init="PostWorldStartup" />
+  <Action type="Sims3.Gameplay.Seasons.HolidayManager,Sims3GameplaySystems" init="PostWorldInit" shutdown="PostWorldShutdown"/>
+  <Action type="Sims3.Gameplay.Objects.SeasonalLotMarker,Sims3GameplaySystems" init="PostWorldLoad"/>
+  <Action type="Sims3.Gameplay.Objects.Umbrella,Sims3GameplaySystems" init="StartUp" shutdown="ShutDown"/>
+  <Action type="Sims3.Gameplay.ActorSystems.AlienUtils, Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP8" editingame = "false"/>
+  <Action type="Sims3.Gameplay.Objects.Environment.SeasonalGnome,Sims3GameplayObjects" init="PostWorldInit" shutdown="PostWorldShutdown" editingame="false" productversions="EP8"/>
+  <Action type="Sims3.Gameplay.Utilities.EvilMagicGnomeUtil,Sims3GameplaySystems" init="PostWorldInit" shutdown="PostWorldShutdown" editingame="false" productversions="EP8"/>
+  <Action type="Sims3.Gameplay.Seasons.HolidayHouseLights,Sims3GameplaySystems" init="PostLoadInit" shutdown="PostLoadShutdown" editingame="false"/>
+  <Action type="Sims3.Gameplay.Objects.Environment.WeatherStone,Sims3GameplayObjects" init="PostWorldInit" shutdown="PostWorldShutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Wildflower,Sims3GameplaySystems" init="PostWorldInit" productversions="EP8"/>
+  <Action type="Sims3.Gameplay.Utilities.OnlineDatingManager,Sims3GameplaySystems" init="PostWorldInit" />
+  <Action type="Sims3.Gameplay.Socializing.Relationship,Sims3GameplaySystems" init="PostWorldInit" shutdown="PostWorldShutdown" />
+
+  <!-- Fixup code for stale/excessive GameObjects in our shipping worlds. -->
+  <Action type="Sims3.Gameplay.Objects.FirefighterPoleRim, Sims3GameplaySystems" init="CleanupOrphanedRims" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.Objects.HobbiesSkills.Inventing.Scrap, Sims3GameplaySystems" init="PostLoadWorldFixup" productversions="EP2"/>
+  <Action type="Sims3.Gameplay.Abstracts.RabbitHole,Sims3GameplaySystems" init="NukeZombieRabbitHoles" productversions="EP3,EP5,EP6,EP7"/>
+
+  <!-- Eighth LAST. This needs to be one of the last initalizers since it depends on the SimDescription, Household, and other GenericManager fixups. -->
+  <Action type="Sims3.Gameplay.WorldBuilderUtil.CharacterImportOnGameLoad,Sims3GameplaySystems" init="PostWorldInitializerStartup" editingame = "false"/>
+
+  <!-- SEVENTH LAST. This needs to be after Character Import initializer. -->
+  <Action type="Sims3.Gameplay.Socializing.RomanceVisibilityState,Sims3GameplaySystems" init="EnsureRomanceVisibilityStatesForRomanticLtrs"/>
+
+  <!-- SIXTH LAST. This needs to be after Character Import initializer. -->
+  <Action type="Sims3.Gameplay.Actors.Sim,Sims3GameplaySystems" init="MakeWorldNpcSimsGoInsideHome"/>
+
+  <!-- FIFTH LAST. This needs to be after Character Import initializer. -->
+  <Action type="Sims3.Gameplay.CAS.MiniSimDescription,Sims3GameplaySystems" init="PostVacationWorldFixUp"/>
+
+  <!-- FOURTH LAST. This needs to be one of the last few initializers because it will delete the WB metadata other initializers might need. -->
+  <Action type="Sims3.Gameplay.WorldBuilderUtil.WorldBuilderData,Sims3GameplaySystems" init="StartupComplete" shutdown="ShutdownBegin"/>
+
+  <!-- THIRD LAST. This needs to be one of the last few initializers because it clean up pets from the world if EP5 is not installed. -->
+  <Action type="Sims3.Gameplay.CAS.SimDescription,Sims3GameplaySystems" init="PostWorldLoadCleanUpPets" editingame = "false"/>
+
+  <!-- SECOND LAST. This needs to be one of the last few initializers because it cleans up supernatural sims from the world if EP7 is not installed. -->
+  <Action type="Sims3.Gameplay.CAS.SimDescription,Sims3GameplaySystems" init="PostWorldLoadCleanUpSupernatural" editingame = "false"/>
+
+  <!-- LAST. This should be at the bottom of the initializers so that the load music plays throughout the entire load. -->
+  <Action type="Sims3.Gameplay.Core.AudioManager,Sims3GameplaySystems" init="EnterWorld" shutdown="ExitWorld"/>
+</PostWorldInitializers>
+
+

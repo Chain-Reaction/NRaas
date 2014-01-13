@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<SocializingActiveTopic>
+  <ActiveTopic>
+    <Name></Name>
+    <Text></Text>
+    <AvailableForOtherSim>0</AvailableForOtherSim>
+    <TestFunction></TestFunction>
+    <Balloon></Balloon>
+    <AvailableWhenConversationStarts>0</AvailableWhenConversationStarts>
+    <AvailableBeforeTargetHasBeenGreeted>0</AvailableBeforeTargetHasBeenGreeted>
+    <UsedUpAfterDoneOnce>1</UsedUpAfterDoneOnce>
+  </ActiveTopic>
+
+  <TAA>
+    <Cat></Cat>
+    <Gr></Gr>
+    <FPA></FPA>
+    <SPA></SPA>
+  </TAA>
+</SocializingActiveTopic>

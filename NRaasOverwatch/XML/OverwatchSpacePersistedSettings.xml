@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kTestingCheatsEnabled value="False">
+      <!--Whether to enable Testing Cheats on load-up-->
+    </kTestingCheatsEnabled>
+    <kAffectActiveLot value="False">
+      <!--Whether certain actions affect the active lot-->
+    </kAffectActiveLot>
+    <kBootAllGnomes value="True">
+      <!--Whether to boot all errant gnomes on a nightly basis-->
+    </kBootAllGnomes>
+    <kTurnOffStereos value="True">
+      <!--Whether to turn off all stereos nightly-->
+    </kTurnOffStereos>
+    <kTurnOffTelevisions value="True">
+      <!--Whether to turn off all televisions nightly-->
+    </kTurnOffTelevisions>
+    <kRecoverMissingSims value="True">
+      <!--Whether to periodically recover any missing residents-->
+    </kRecoverMissingSims>
+    <kRecoverStrandedToddlers value="True">
+      <!--Whether to periodically return all toddlers to the their home lot-->
+    </kRecoverStrandedToddlers>
+    <kKillAllHomeless value="False">
+      <!--Whether to periodically eliminate all the homeless in town-->
+    </kKillAllHomeless>
+    <kPurgeGeneticHair value="False">
+      <!--Whether to remove the genetic hair-style from all sims-->
+    </kPurgeGeneticHair>
+    <kCleanupGenealogy value="True">
+      <!--Whether to perform a genealogy cleanup and repair on load-up-->
+    </kCleanupGenealogy>
+    <kCleanupConcert value="True">
+      <!--Whether to cancel invalid player-held concerts nightly-->
+    </kCleanupConcert>
+    <kCleanupInventory value="True">
+      <!--Whether to sell off items that say they are in an inventory, but actually are not-->
+    </kCleanupInventory>
+    <kCleanupVehicles value="True">
+      <!--Whether to remove orphaned vehicles on a nightly basis-->
+    </kCleanupVehicles>
+    <kCleanupLaundromat value="True">
+      <!--Whether to periodically reset any community laundry machines-->
+    </kCleanupLaundromat>
+    <kCleanupElevators value="True">
+      <!--Whether to periodically reset any elevators in town-->
+    </kCleanupElevators>
+    <kCleanseTheDead value="False">
+      <!--Whether to periodically remove all unnecessary urnstones from the mausoleum-->
+    </kCleanseTheDead>
+    <kShowSimMenu value="True">
+      <!--Whether to display the interactions in the Sim menu-->
+    </kShowSimMenu>
+    <kShowNotices value="True">
+      <!--Whether to display the nightly alarm notifications-->
+    </kShowNotices>
+    <kLogging value="False">
+      <!--Whether to log the results of any actions performed-->
+    </kLogging>
+    <kStoredCommands value="buydebug, moveobjects on, moveobjects off, unlockoutfits on">
+      <!--Comma delimited list of console commands-->
+    </kStoredCommands>
+    <kAlarmCommands value="">
+      <!--Comma delimited list of commands to run nightly-->
+    </kAlarmCommands>
+    <kAutoCommands value="">
+      <!--Comma delimited list of commands to run on load-up-->
+    </kAutoCommands>
+    <kAlarmHour value="3">
+      <!--Hour at which to run the nightly alarm-->
+    </kAlarmHour>
+
+    <kStuckCheck value="True">
+      <!--Whether to check for stuck sims each night-->
+    </kStuckCheck>
+    <kStuckCheckReset value="True">
+      <!--Whether to automatically reset sims found to be stuck-->
+    </kStuckCheckReset>
+    <kStopPetAdoption value="False">
+      <!--Whether to disable the neighborhood pet adoption system-->
+    </kStopPetAdoption>
+    <kRestartDigitalPhotos value="True">
+      <!--Whether to toggle digital picture frames off and on again each night-->
+    </kRestartDigitalPhotos>
+    <kResetCheck value="True">
+      <!--Whether to check conditions that require a reset-->
+    </kResetCheck>
+    <kReportFirstResetCheck value="True">
+      <!--Whether to notify on the first reset check-->
+    </kReportFirstResetCheck>
+    <kInstantationCheck value="True">
+      <!--Whether to check whenever a sim is instantiated and see whether they should in-game or not-->
+    </kInstantationCheck>
+    <kCleanupSituations value="True">
+      <!--Whether to clean up broken situations on a nightly basis-->
+    </kCleanupSituations>
+    <kCleanupRelationships value="True">
+      <!--Whether to clean up broken relationships on a nightly basis-->
+    </kCleanupRelationships>
+
+  </Current_Tuning>
+</base>

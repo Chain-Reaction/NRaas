@@ -1,0 +1,78 @@
+﻿using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.Autonomy;
+using Sims3.Gameplay.CAS;
+using Sims3.Gameplay.CelebritySystem;
+using Sims3.Gameplay.Interactions;
+using Sims3.Gameplay.Utilities;
+using Sims3.SimIFace;
+using Sims3.UI;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace NRaas.MasterControllerSpace.Sims.Intermediate
+{
+    public class CelebrityLevel : SimFromList, IIntermediateOption
+    {
+        uint mLevel = 0;
+
+        public override string GetTitlePrefix()
+        {
+            return "CelebrityLevel";
+        }
+
+        protected override int GetMaxSelection()
+        {
+            return 0;
+        }
+
+        protected override bool CanApplyAll()
+        {
+            return true;
+        }
+
+        protected override bool PrivateAllow(SimDescription me)
+        {
+            if (!base.PrivateAllow(me)) return false;
+
+            if (me.CelebrityManager == null) return false;
+
+            if (!me.CanBeCelebrity) return false;
+
+            return true;
+        }
+
+        public static void CleanupFreeStuffAlarm(SimDescription sim)
+        {
+            if (sim.CelebrityManager.OwnerSim == null)
+            {
+                // Workaround for error in CelebrityManager:RemoveFreeStuffAlarm
+                if (sim.CelebrityManager.mFreeStuffAlarmHandle != AlarmHandle.kInvalidHandle)
+                {
+                    AlarmManager.Global.RemoveAlarm(sim.CelebrityManager.mFreeStuffAlarmHandle);
+                    sim.CelebrityManager.mFreeStuffAlarmHandle = AlarmHandle.kInvalidHandle;
+                }
+            }
+        }
+
+        protected override bool Run(SimDescription me, bool singleSelection)
+        {
+            if (!ApplyAll)
+            {
+                string text = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix () + ":Prompt", me.IsFemale, new object[] { me, CelebrityManager.HighestLevel }), me.CelebrityLevel.ToString(), 256, StringInputDialog.Validation.None);
+                if (string.IsNullOrEmpty(text)) return false;
+
+                mLevel = 0;
+                if (!uint.TryParse(text, out mLevel))
+                {
+                    SimpleMessageDialog.Show(Name, Common.Localize("Numeric:Error"));
+                    return false;
+                }
+            }
+
+            me.CelebrityManager.ForceSetLevel(mLevel);
+            return true;
+        }
+    }
+}

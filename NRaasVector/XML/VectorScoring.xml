@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scoring>
+  <Methods>
+    <Name></Name>
+    <FullClassName></FullClassName>
+    <Divisor>1</Divisor>
+    <LowerBound></LowerBound>
+    <UpperBound></UpperBound>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorPurchaseProtection</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorPurchaseInoculation</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>NRaasVectorPurchaseResistance</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasVector</FullClassName>
+  </Methods>
+
+  <NRaasVectorPurchaseResistance>
+    <FullClassName></FullClassName>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Schmoozer</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>PartyAnimal</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>PerfectHost</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Genius</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Workaholic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>SocialButterfly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Perfectionist</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Insane</Trait>
+    <HitMinimum>-20</HitMinimum>
+    <HitMaximum>20</HitMaximum>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Mooch</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>AntiTV</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>AbsentMinded</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Frugal</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseResistance>
+  <NRaasVectorPurchaseResistance>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>-10</Minimum>
+    <Maximum>10</Maximum>
+  </NRaasVectorPurchaseResistance>
+
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName></FullClassName>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>FamilyOriented</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Flirty</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>HopelessRomantic</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Charismatic</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Schmoozer</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>PartyAnimal</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Perfectionist</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>PerfectHost</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Genius</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Workaholic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>SocialButterfly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Insane</Trait>
+    <HitMinimum>-20</HitMinimum>
+    <HitMaximum>20</HitMaximum>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Mooch</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>AntiTV</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>AbsentMinded</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Frugal</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseInoculation>
+  <NRaasVectorPurchaseInoculation>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>-10</Minimum>
+    <Maximum>10</Maximum>
+  </NRaasVectorPurchaseInoculation>
+  
+  <NRaasVectorPurchaseProtection>
+    <FullClassName></FullClassName>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
+    <AgeGender>Baby,Toddler,Child</AgeGender>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>FamilyOriented</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Flirty</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>HopelessRomantic</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Charismatic</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Schmoozer</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>PartyAnimal</Trait>
+    <Hit>15</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>PerfectHost</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Genius</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>SocialButterfly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Neat</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Insane</Trait>
+    <HitMinimum>-20</HitMinimum>
+    <HitMaximum>20</HitMaximum>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Mooch</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>AntiTV</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>AbsentMinded</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Frugal</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasVector</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorPurchaseProtection>
+  <NRaasVectorPurchaseProtection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasVector</FullClassName>
+    <Minimum>-10</Minimum>
+    <Maximum>10</Maximum>
+  </NRaasVectorPurchaseProtection>
+</Scoring>

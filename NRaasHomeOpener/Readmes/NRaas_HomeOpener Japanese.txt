@@ -1,0 +1,31 @@
+﻿NRaas_HomeOpener
+
+THE MOD
+
+この mod は街の全てのロットの内部を見れるようになります。
+This mod forces the game to display the interior contents of every lot in town.
+
+インストール
+
+動作させるには Framework が必要です。
+
+Google: Delphy's Framework Install Monkey
+
+注意
+
+カメラをロットに持っていくだけで内部を読み込むようになります。 However doing so will increase the game's memory usage, and may lead to bloatage with extended use.
+
+新しいロットを配置した場合、ゲームを再読み込みするか世帯を変更するまで内部を見れません。
+
+警告
+
+この mod を使用する前には 常に セーブデータのバックアップを取ってください。この mod はものすごくシンプルですが、予期せずして悪さをするかもしれません。
+
+Have Fun. :)
+
+
+----
+日本語訳: The Sims 3 MOD Localize Wiki*
+
+日本語訳に対する意見・誤訳報告・翻訳改善などは
+http://wikiwiki.jp/ts3localize/ までお願いします。

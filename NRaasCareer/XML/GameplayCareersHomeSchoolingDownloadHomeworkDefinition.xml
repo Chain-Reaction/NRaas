@@ -1,0 +1,45 @@
+﻿
+<?xml version="1.0"?>
+<base>
+	<Interaction name="NRaas.Gameplay.Careers.HomeSchooling+DownloadHomework+Definition" />
+	<Object name="Sims3.Gameplay.Objects.Electronics.Computer" />
+	<CodeVersion name="Base Game" />
+	<Current_Tuning>
+		<Disallow DisallowAutonomous="False" DisallowUserDirected="False" DisallowPlayerSim="False" />
+		<BaseAvailability>
+			<Age Children="True" Adults="False" Toddlers="False" Teens="True" Elders="False" />
+			<MotiveThreshold MotiveThresholdType="None" MotiveThresholdValue="0" MotiveBelowCheck="False" />
+			<MoodThreshold MoodThresholdType="None" MoodThresholdValue="0" />
+			<SkillThreshold SkillThresholdType="None" SkillThresholdValue="0" />
+			<ExcludingTrait type="AntiTV" />
+			<CareerThreshold CareerThresholdType="Undefined" CareerThresholdValue="0" IncludePastCareers="False" />
+			<Lot AllowNonGreetedSimsIfObjectOutside="False" AllowNonGreetedSimsIfObjectOutsideUserDirected="True" AllowGreetedSims="False" AllowOnCommunityLots="True" AllowOnAllLots="True" />
+			<World RestrictionType="None" Types="" Names="" />
+			<Room AllowInTombRoomAutonomous="False" />
+			<Misc DisallowedIfPregnant="False" DisallowedFromInventory="False" />
+		</BaseAvailability>
+		<PosturePrecondition name="Sitting" value="1">
+			<Check name="InFrontOfSurfaceForTarget" />
+			<Check name="ChairScootedIntoSurface" />
+		</PosturePrecondition>
+		<PosturePrecondition name="Standing" value="1">
+			<Check name="TargetInInventory" />
+		</PosturePrecondition>
+		<Check type="SelfRegarding" value="1.5" />
+		<Check type="InappropriateForVisitor" value="0.5" />
+		<Check type="All" value="0" />
+		<Tradeoff name="DownloadHomework">
+			<Localization autoGenerate="False" />
+			<Time value="1" addRoute="True" />
+			<Exit funExit="True" stressExit="False" interruptible="False" />
+			<RouteLeadIn allowed="True" />
+			<AskJoinInteraction joinable="False" />
+			<ScoringFunction alwaysChooseBest="False" name="" specificCommodity="None" />
+			<ActionTopic name="Action Read Newspaper" ActionTopicUnavailableAfterActionFinishes="False" />
+			<Output>
+				<Change type="Fun" advertised="20" locked="True" actual="20" updateType="ContinuousFlow" timeDependsOn="False" updateEvenOnFailure="False" updateAboveAndBelowZero="Either" />
+			</Output>
+		</Tradeoff>
+	<Notes Notes="" />
+	</Current_Tuning>
+</base>

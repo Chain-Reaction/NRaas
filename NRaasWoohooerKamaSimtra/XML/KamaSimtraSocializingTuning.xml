@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<SocializingTuning>
+  <LHS>
+    <Key></Key>
+    <GC></GC>
+    <SpAct>None</SpAct>
+    <ThP>0</ThP>
+    <STCPos>0</STCPos>
+    <STCom></STCom>
+    <STContext></STContext>
+    <Mood>-101</Mood>
+    <LTRelationship></LTRelationship>
+    <LTRMin>-100</LTRMin>
+    <LTRMax>100</LTRMax>
+    <AcTr></AcTr>
+    <TaTr></TaTr>
+    <Skill></Skill>
+    <SkillLevel>1</SkillLevel>
+    <AIE></AIE>
+    <ARE></ARE>
+    <TIE></TIE>
+    <TRE></TRE>
+    <Proc></Proc>
+    <Partner>0</Partner>
+    <WrongGender>0</WrongGender>
+    <Repetition>0</Repetition>
+    <ActorAge></ActorAge>
+    <TargetAge></TargetAge>
+    <TargetBetrayed>0</TargetBetrayed>
+    <Spec>0</Spec>
+    <Result></Result>
+    <LTROverride>0</LTROverride>
+   </LHS>
+
+  <LHS>
+    <Key>NRaasBragProwess</Key>
+    <STCPos>1</STCPos>
+    <TaTr>Unflirty</TaTr>
+    <Repetition>1</Repetition>
+    <Spec>43</Spec>
+    <Result>Boring</Result>
+  </LHS>
+  
+  <ActionTuning>
+    <Key></Key>
+    <SpeechAct>None</SpeechAct>
+    <TraitRequired></TraitRequired>
+    <TraitRestricts></TraitRestricts>
+    <TraitRestrictsAutonomously></TraitRestrictsAutonomously>
+    <TraitEncourages></TraitEncourages>
+    <OnlyAvailableEveryNDays>0</OnlyAvailableEveryNDays>
+    <LTRMin>-100</LTRMin>
+    <LTRMax>100</LTRMax>
+    <NumChances>2</NumChances>
+    <NumRecharges>2</NumRecharges>
+    <InterestingnessToLookAt></InterestingnessToLookAt>
+  </ActionTuning>
+  <ActionTuning>
+    <Key>NRaasBragProwess</Key>
+    <TraitRestricts>Unflirty</TraitRestricts>
+    <TraitEncourages>Flirty, Daredevil, Schmoozer</TraitEncourages>
+    <NumRecharges>3</NumRecharges>
+    <InterestingnessToLookAt>50</InterestingnessToLookAt>
+  </ActionTuning>
+
+  <RHSTuning>
+    <Key></Key>
+    <Result></Result>
+    <Value>40</Value>
+    <LearnRandomTrait>0</LearnRandomTrait>
+    <ActorTraitsLearned></ActorTraitsLearned>
+    <TTL></TTL>
+    <Intimacy>10</Intimacy>
+    <Charisma>-1</Charisma>
+  </RHSTuning>
+
+  <RHSTuning>
+    <Key>NRaasBragProwess</Key>
+    <Result>Amorous</Result>
+    <TTL>Flirty</TTL>
+  </RHSTuning>
+  <RHSTuning>
+    <Key>NRaasBragProwess</Key>
+    <Result>Neutral</Result>
+    <TTL>Unflirty</TTL>
+  </RHSTuning>
+  <RHSTuning>
+    <Key>NRaasBragProwess</Key>
+    <Result>Boring</Result>
+    <TTL>Unflirty</TTL>
+  </RHSTuning>
+  <RHSTuning>
+    <Key>NRaasBragProwess</Key>
+    <Result>Awkward</Result>
+    <TTL>Unflirty</TTL>
+  </RHSTuning>
+  <RHSTuning>
+    <Key>NRaasBragProwess</Key>
+    <Result>Creepy</Result>
+    <TTL>Unflirty</TTL>
+  </RHSTuning>
+
+  <SAA>
+    <Cat></Cat>
+    <Gr></Gr>
+    <FPA></FPA>
+    <SPA></SPA>
+  </SAA>
+  <SAA>
+    <Cat>Flirty</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Stranger</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Acquaintance</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Ex Spouse</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Ex</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Romantic Interest</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Good Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friends Forever</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Old Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaasBragProwess</FPA>
+    <SPA>NRaasBragProwess</SPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Seductive</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Stranger</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Acquaintance</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Ex Spouse</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Ex</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Romantic Interest</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Good Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friends Forever</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Old Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaasBragProwess</FPA>
+    <SPA>NRaasBragProwess</SPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Hot</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Stranger</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Acquaintance</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Ex Spouse</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Ex</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Romantic Interest</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Good Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friends Forever</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Old Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaasBragProwess</FPA>
+    <SPA>NRaasBragProwess</SPA>
+  </SAA>
+
+</SocializingTuning>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <!--Visibility Types : ActiveHousehold, WholeTown, SelectedSims, ActiveSimLot, ActiveFamilyLot, ActiveHomeLot, ViewedLot, OnlyIdle, OnlySelectable, Relatives, ActiveHumans, ActiveAnimals, InactiveHumans, InactiveAnimals, SpeciesHumans, SpeciesDogs, SpeciesCats, SpeciesHorses, SpeciesOther -->
+    <kSetType value="ActiveHousehold">
+      <!--Which set of sims to display on the panel (See Visibility Types)-->
+    </kSetType>
+    <kVisibilityType value="">
+      <!--Applied to the sims defined by SetType (See Visibility Types)-->
+    </kVisibilityType>
+    <kSortType value="ByAge">
+      <!--The method to sort the portraits (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, BySpecies, ByRelationship, ActiveHousehold)-->
+    </kSortType>
+    <kReverse value="False">
+      <!--Whether to sort in reverse order-->
+    </kReverse>
+    <kMenuOnLeftClick value="False">
+      <!--Whether the sim menu is displayed when you double click-->
+    </kMenuOnLeftClick>
+    <kShowSimMenu value="True">
+      <!--Whether the show the interactions for this mod in the sim menu-->
+    </kShowSimMenu>
+    <kGoHomeTeleport value="False">
+      <!--Whether to use Teleport interaction when Go Home is pressed (provided a Teleporter object is available)-->
+    </kGoHomeTeleport>
+    <kGoHomeTeleportForAll value="False">
+      <!--Whether to always use Teleport interaction when Go Home is pressed-->
+    </kGoHomeTeleportForAll>
+    <kDreamCatcher value="False">
+      <!--Whether to allow the selection of inactive sims directly from the panel-->
+    </kDreamCatcher>
+    <kZoomInOnRightClick value="False">
+      <!--Whether to zoom in from map view on a single right click-->
+    </kZoomInOnRightClick>
+    <kSecondSortType value="ByName">
+      <!--The secondary sort method (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, BySpecies, ByRelationship, ActiveHousehold)-->
+    </kSecondSortType>
+    <kSecondReverse value="False">
+      <!--Whether to secondary sort in reverse order-->
+    </kSecondReverse>
+    <kShowCycleButton value="True">
+      <!--Whether to cycle portraits button when there are less than 24 sims listed-->
+    </kShowCycleButton>
+    <kThirdSortType value="ByName">
+      <!--The tertiary sort method (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, BySpecies, ByRelationship, ActiveHousehold)-->
+    </kThirdSortType>
+    <kThirdReverse value="False">
+      <!--Whether to perform the tertiary sort in reverse order-->
+    </kThirdReverse>
+    <kColumnFilter1 value="ActiveHumans">
+      <!--The sims to display in column one (See Visibility Types)-->
+    </kColumnFilter1>
+    <kColumnFilter2 value="ActiveAnimals">
+      <!--The sims to display in column two (See Visibility Types)-->
+    </kColumnFilter2>
+    <kColumnFilter3 value="">
+      <!--The sims to display in column three (See Visibility Types)-->
+    </kColumnFilter3>
+    <kRevertToSingleListOnTooMany value="True">
+      <!--Whether to revert to using a single list when there are too many sims listed-->
+    </kRevertToSingleListOnTooMany>
+    <kRevertToSingleListOnFilterFail value="True">
+      <!--Whether to revert to using a single list when one of the sims does not match any of the column filters-->
+    </kRevertToSingleListOnFilterFail>
+    <kShowKnownInfo value="True">
+      <!--Whether to show the known info tooltip-->
+    </kShowKnownInfo>
+    <kUsePortraitSeventeen value="False">
+      <!--Whether to use Portrait seventeen which overlaps with the map tag filter in map view-->
+    </kUsePortraitSeventeen>
+  </Current_Tuning>
+</base>

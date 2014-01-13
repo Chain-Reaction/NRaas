@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kNightlyRandomChangeOutfit value="False">
+      <!--Whether to change all sims outfits to a new selection each night-->
+    </kNightlyRandomChangeOutfit>
+    <kNightlyChangeOutfitHour value="7">
+      <!-- Hour each night to switch the outfits on sims-->
+    </kNightlyChangeOutfitHour>
+    <kRotationAffectActive value="False">
+      <!--Whether to change the outfits of the active sims-->
+    </kRotationAffectActive>
+    <kChanceOfSwitch value="75">
+      <!--The percent chance a sim will consider switching outfits-->
+    </kChanceOfSwitch>
+    <kRotateMartialOutfit value="False">
+      <!--Whether to rotate the martial arts outfit category-->
+    </kRotateMartialOutfit>
+    <kCheckOutfits value="True">
+      <!--Whether to check outfits on age-up-->
+    </kCheckOutfits>
+    <kNotifyOnCheckOutfits value="True">
+      <!--Whether to display an notification whenever a sim's outfit is altered-->
+    </kNotifyOnCheckOutfits>
+    <kSwitchOnOutside value="True">
+      <!--Whether to force a sim to switch out of Sleepwear or Athletic upon entering the outdoors-->
+    </kSwitchOnOutside>
+
+    <kIgnoreValidForRandomClothing value="False">
+      <!--Whether the mod is allowed to use clothing not marked ValidForRandom when replacing invalids-->
+    </kIgnoreValidForRandomClothing>
+    <kIgnoreValidForRandomHair value="False">
+      <!--Whether the mod is allowed to use hair not marked ValidForRandom when replacing invalids-->
+    </kIgnoreValidForRandomHair>
+    <kIgnoreValidForRandomAccessories value="True">
+      <!--Whether the mod is allowed to use accessories not marked ValidForRandom when replacing invalids-->
+    </kIgnoreValidForRandomAccessories>
+    <kIgnoreValidForRandomMakeup value="True">
+      <!--Whether the mod is allowed to use makeup not marked ValidForRandom when replacing invalids-->
+    </kIgnoreValidForRandomMakeup>
+    <kSwitchFormal value="False">
+      <!--Whether to switch out of formal wear upon leaving a lot-->
+    </kSwitchFormal>
+    <kTransitionAffectActive value="False">
+      <!--Whether to change the outfits of the active sims during room transitions-->
+    </kTransitionAffectActive>
+    <kCheckAffectActive value="False">
+      <!--Whether to change the outfits of the active sims during age-up checks-->
+    </kCheckAffectActive>
+    <kSwitchSleepwear value="False">
+      <!--Whether to switch out of sleepwear upon siwtching rooms-->
+    </kSwitchSleepwear>
+    <kSameHairForAllCategories value="True">
+      <!--Whether to use the same hair for all categories when rerolling-->
+    </kSameHairForAllCategories>
+    <kAllowHats value="True">
+      <!--Whether to allow hats when rerolling-->
+    </kAllowHats>
+    <kMartialArtsAccessories value="False">
+      <!--Whether to add accessories to the martial arts outfits-->
+    </kMartialArtsAccessories>
+    <kRotateOccult value="False">
+      <!--Whether to rotate the outfits of skin jobs-->
+    </kRotateOccult>
+    <kAllowRollAgeupHair value="True">
+      <!--Whether to reroll hair on adult age-up-->
+    </kAllowRollAgeupHair>
+    <kAllowRollAgeupMakeup value="True">
+      <!--Whether to reroll makeup on adult age-up-->
+    </kAllowRollAgeupMakeup>
+    <kAddRandomBodyHair value="True">
+      <!--Whether to roll random body hair during Check Outfits-->
+    </kAddRandomBodyHair>
+    <kIgnoreBodyHairGender value="False">
+      <!--Whether to ignore the gender on body hair parts-->
+    </kIgnoreBodyHairGender>
+    <kAddRandomMaleMakeup value="0">
+      <!--The number of random makeup to add to males which have none-->
+    </kAddRandomMaleMakeup>
+    <kAddRandomFemaleMakeup value="2">
+      <!--The number of random makeup to add to females which have none-->
+    </kAddRandomFemaleMakeup>
+    <kSameMakeupForAllCategories value="True">
+      <!--Whether to use the same makeup for all categories when rerolling-->
+    </kSameMakeupForAllCategories>
+    <kAllowPetAccessories value="True">
+      <!--Whether to add accessories to pets during Check Outfits-->
+    </kAllowPetAccessories>
+    <kSimMenuVisibility value="True">
+      <!--Whether to display the mod's sim menu-->
+    </kSimMenuVisibility>
+
+    <kUseMasterControllerBlackList value="False">
+      <!--Whether to use the Master Controller blacklist-->
+    </kUseMasterControllerBlackList>
+    <kVacationOutfitIndex value="0">
+      <!--Defines the first index to use while rotating outfits on vacation-->
+    </kVacationOutfitIndex>
+    <kAllowRollAgeupBodyHair value="False">
+      <!--Whether to reroll body hair on adult age-up-->
+    </kAllowRollAgeupBodyHair>
+    <kAllowRollAgeupAccessories value="False">
+      <!--Whether to reroll accessories on adult age-up-->
+    </kAllowRollAgeupAccessories>
+
+    <kRandomBeardChance value="25">
+      <!--Percent chance of adding a beard to a sim-->
+    </kRandomBeardChance>
+    <kAllowRollAgeupHairGeneral value="True">
+      <!--Whether to reroll hair on general age-up-->
+    </kAllowRollAgeupHairGeneral>
+    <kAllowRollAgeupBodyHairGeneral value="True">
+      <!--Whether to reroll body hair on general age-up-->
+    </kAllowRollAgeupBodyHairGeneral>
+    <kFullAdultReroll value="False">
+      <!--Whether to choose a brand new outfit when a sim ages into Adult-->
+    </kFullAdultReroll>
+    <kAllowStrayPetAccessories value="False">
+      <!--Whether to add accessories to stray animals-->
+    </kAllowStrayPetAccessories>
+    <kRotationAffectInactive value="True">
+      <!--Whether to change the outfits of the inactive sims during nightly rotation-->
+    </kRotationAffectInactive>
+    <kInvalidHatCategories value="Sleepwear,Swimwear">
+      <!--Categories that should not be allowed to roll hats (Everyday,Formalwear,Athletic,Swimwear,Sleepwear)-->
+    </kInvalidHatCategories>
+    <kInheritBodyHair value="True">
+      <!--Whether to inherit body hair from a sim's parents-->
+    </kInheritBodyHair>
+
+    <kInvalidProductVersionGeneral value="">
+      <!--Product versions whose parts are deemed invalid for random-->
+    </kInvalidProductVersionGeneral>
+    <kInvalidProductVersionMakeup value="EP7">
+      <!--Product versions whose parts are deemed invalid for makeup-->
+    </kInvalidProductVersionMakeup>
+    <kInvalidProductVersionAccessories value="">
+      <!--Product versions whose parts are deemed invalid for accessories-->
+    </kInvalidProductVersionAccessories>
+    <kInvalidProductVersionBodyHair value="EP7">
+      <!--Product versions whose parts are deemed invalid for body hair-->
+    </kInvalidProductVersionBodyHair>
+    <kInvalidProductVersionHair value="">
+      <!--Product versions whose parts are deemed invalid for hair-->
+    </kInvalidProductVersionHair>
+
+    <kMinRandomMaleAccessories value="1">
+      <!--The minimum number of random accessories to add to males which have none-->
+    </kMinRandomMaleAccessories>
+    <kMaxRandomMaleAccessories value="1">
+      <!--The maximum number of random accessories to add to males which have none-->
+    </kMaxRandomMaleAccessories>
+    <kMinRandomFemaleAccessories value="1">
+      <!--The minimum number of random accessories to add to females which have none-->
+    </kMinRandomFemaleAccessories>
+    <kMaxRandomFemaleAccessories value="4">
+      <!--The maximum number of random accessories to add to females which have none-->
+    </kMaxRandomFemaleAccessories>
+    <kRandomMaleAccessoriesChance value="0">
+      <!--Percent chance of adding accessories to a male sim-->
+    </kRandomMaleAccessoriesChance>
+    <kRandomFemaleAccessoriesChance value="0">
+      <!--Percent chance of adding accessories to a female sim-->
+    </kRandomFemaleAccessoriesChance>
+    <kAccessoriesByAge value="Teen,YoungAdult,Adult,Elder">
+      <!--Whether to apply accessories to a specific age (Baby,Toddler,Child,Teen,YoungAdult,Adult,Elder)-->
+    </kAccessoriesByAge>
+
+    <kMinRandomMaleMakeup value="0">
+      <!--The minimum number of random makeup to add to males which have none-->
+    </kMinRandomMaleMakeup>
+    <kMaxRandomMaleMakeup value="0">
+      <!--The maximum number of random makeup to add to males which have none-->
+    </kMaxRandomMaleMakeup>
+    <kMinRandomFemaleMakeup value="1">
+      <!--The minimum number of random makeup to add to females which have none-->
+    </kMinRandomFemaleMakeup>
+    <kMaxRandomFemaleMakeup value="2">
+      <!--The maximum number of random makeup to add to females which have none-->
+    </kMaxRandomFemaleMakeup>
+    <kRandomMaleMakeupChance value="0">
+      <!--Percent chance of adding makeup to a male sim-->
+    </kRandomMaleMakeupChance>
+    <kRandomFemaleMakeupChance value="0">
+      <!--Percent chance of adding makeup to a female sim-->
+    </kRandomFemaleMakeupChance>
+    <kMakeupByAge value="Teen,YoungAdult,Adult,Elder">
+      <!--Whether to apply makeup to a specific age (Baby,Toddler,Child,Teen,YoungAdult,Adult,Elder)-->
+    </kMakeupByAge>
+
+    <kMinRandomMaleBodyHair value="3">
+      <!--The minimum number of random body hair to add to males which have none-->
+    </kMinRandomMaleBodyHair>
+    <kMaxRandomMaleBodyHair value="6">
+      <!--The maximum number of random body hair to add to males which have none-->
+    </kMaxRandomMaleBodyHair>
+    <kMinRandomFemaleBodyHair value="0">
+      <!--The minimum number of random body hair to add to females which have none-->
+    </kMinRandomFemaleBodyHair>
+    <kMaxRandomFemaleBodyHair value="0">
+      <!--The maximum number of random body hair to add to females which have none-->
+    </kMaxRandomFemaleBodyHair>
+    <kRandomMaleBodyHairChance value="50">
+      <!--Percent chance of adding body hair to a male sim-->
+    </kRandomMaleBodyHairChance>
+    <kRandomFemaleBodyHairChance value="50">
+      <!--Percent chance of adding body hair to a female sim-->
+    </kRandomFemaleBodyHairChance>
+    <kBodyHairByAge value="Teen,YoungAdult,Adult,Elder">
+      <!--Whether to apply body hair to a specific age (Baby,Toddler,Child,Teen,YoungAdult,Adult,Elder)-->
+    </kBodyHairByAge>
+
+    <kIgnoreValidForRandomBodyHair value="True">
+      <!--Whether the mod is allowed to use body hair not marked ValidForRandom when replacing invalids-->
+    </kIgnoreValidForRandomBodyHair>
+  </Current_Tuning>
+</base>

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0"?>
+<ToneList>
+  <Tone>
+    <ToneName></ToneName>
+    <FullClassName></FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+    <CareerGuid></CareerGuid>
+    <SkillCount>0</SkillCount>
+    <Skill1></Skill1>
+    <SkillRate1></SkillRate1>
+    <MotiveCount>0</MotiveCount>
+    <Motive1></Motive1>
+    <MotiveRate1></MotiveRate1>
+    <MustHaveVisibleSkill>False</MustHaveVisibleSkill>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MilitarySchoolPracticeAthletic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>MilitarySchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Athletic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MilitarySchoolPracticeMartialArts</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <ProductVersion>EP1</ProductVersion>
+    <CareerGuid>MilitarySchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>MartialArts</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MilitarySchoolPracticeHandiness</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>MilitarySchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Handiness</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ArtsSchoolPracticePainting</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>ArtsSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Painting</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ArtsSchoolPracticeGuitar</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>ArtsSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Guitar</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ArtsSchoolPracticeBassGuitar</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <ProductVersion>EP3</ProductVersion>
+    <CareerGuid>ArtsSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>BassGuitar</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ArtsSchoolPracticeDrums</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <ProductVersion>EP3</ProductVersion>
+    <CareerGuid>ArtsSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Drums</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ArtsSchoolPracticePiano</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <ProductVersion>EP3</ProductVersion>
+    <CareerGuid>ArtsSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Piano</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ArtsSchoolPracticeDancing</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <ProductVersion>EP3</ProductVersion>
+    <CareerGuid>ArtsSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>ClubDancing</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ArtsSchoolPracticeSculpting</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <ProductVersion>EP2</ProductVersion>
+    <CareerGuid>ArtsSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Sculpting</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.GeniusSchoolPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>GeniusSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.GeniusSchoolPracticeGardening</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>GeniusSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Gardening</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.GeniusSchoolPracticeInventing</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <ProductVersion>EP2</ProductVersion>
+    <CareerGuid>GeniusSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Inventing</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.GeniusSchoolPracticeChess</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>GeniusSchool</CareerGuid>
+    <SkillCount>2</SkillCount>
+    <Skill1>Chess</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+    <Skill2>Logic</Skill2>
+    <SkillRate2>0.5</SkillRate2>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.EntrepreneurSchoolPracticeWriting</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>EntrepreneurSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Writing</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.EntrepreneurSchoolPracticeCharisma</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>EntrepreneurSchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Charisma</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.CulinaryPracticeCooking</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>CulinarySchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Cooking</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.CulinaryPracticeGardening</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>CulinarySchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Gardening</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.CulinaryPracticeFishing</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>CulinarySchool</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Fishing</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ChildMusicSchool</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasChildMusicSchool</CareerGuid>
+    <SkillCount>4</SkillCount>
+    <Skill1>ChildGuitar</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+    <Skill2>ChildBassGuitar</Skill2>
+    <SkillRate2>0.5</SkillRate2>
+    <Skill3>ChildDrums</Skill3>
+    <SkillRate3>0.5</SkillRate3>
+    <Skill4>ChildPiano</Skill4>
+    <SkillRate4>0.5</SkillRate4>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.ChildMilitarySchool</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasChildMilitarySchool</CareerGuid>
+    <SkillCount>4</SkillCount>
+    <Skill1>ChildCooking</Skill1>
+    <SkillRate1>0.5</SkillRate1>
+    <Skill2>ChildAthletic</Skill2>
+    <SkillRate2>0.5</SkillRate2>
+    <Skill3>Fishing</Skill3>
+    <SkillRate3>0.5</SkillRate3>
+    <Skill4>Logic</Skill4>
+    <SkillRate4>0.5</SkillRate4>
+  </Tone>
+</ToneList>

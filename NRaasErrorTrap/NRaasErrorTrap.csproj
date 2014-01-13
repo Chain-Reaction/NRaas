@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8E28CA7-254F-49FA-8379-5975A9518913}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasErrorTrap</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
+      <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Corrections.cs">
+      <Link>CommonSpace\Helpers\Corrections.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\DreamCatcher.cs">
+      <Link>CommonSpace\Helpers\DreamCatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ObjectComponents.cs">
+      <Link>CommonSpace\Helpers\ObjectComponents.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ReferenceWrapper.cs">
+      <Link>CommonSpace\Helpers\ReferenceWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StatBin.cs">
+      <Link>CommonSpace\Helpers\StatBin.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
+      <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Urnstones.cs">
+      <Link>CommonSpace\Helpers\Urnstones.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\PrimaryInteraction.cs">
+      <Link>CommonSpace\Interactions\PrimaryInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\OpportunityStore.cs">
+      <Link>CommonSpace\Stores\OpportunityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\FixInvisibleTask.cs">
+      <Link>CommonSpace\Tasks\FixInvisibleTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\RecoverMissingSimTask.cs">
+      <Link>CommonSpace\Tasks\RecoverMissingSimTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\ResetSimTask.cs">
+      <Link>CommonSpace\Tasks\ResetSimTask.cs</Link>
+    </Compile>
+    <Compile Include="ErrorTrapSpace\Checks\CheckVehicle.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckPlantLargeTree.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckDataDrivenObject.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckIngredient.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckHarvestPlantFrostable.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckMoondial.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceFollowRouteAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceForce.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceDelegate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceSimDescription.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceController.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceEventListener.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceGameObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Controllers\DereferenceMapTag.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Dereference.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\DereferenceManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\DereferenceGeneric.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCauseEffectService.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultTimeTraveler.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTimeKeeperRecordData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefParentOfRoboticsRecordData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEntertainerRecordData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPhilanthropistRecordData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTrendsetterRecordData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTraitChipManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGlassFloor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultRobot.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHoldingUmbrella.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRepairableComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUnderwaterCave.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMixPotion.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPhone.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAttractionDateCall.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefResortManagerAmenityScoreData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBusiness.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSlidingBookcasePortalComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTreeOfProsperitySimNearTree.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBoatSteeringAdaptor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceSoaked.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBoatOwnable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultMermaid.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMooringPost.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBoatRoutingComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefScientificSample.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSituationCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceFrozenSolid.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChickenCoopClassic.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceImminentNemesis.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBonFire.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBabyMonitor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUseLaptopHere.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPoliceStationGoToJail.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDanceTogetherADefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGraffitiSurface.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultPlantSim.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAttractionGift.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTrickSkillTrickData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBathtubBatheLargeDogInTub.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHorseshoeCourt.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDryerDryClothing.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTakeFoodToLotDefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGardenStation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAncientPortal.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSkatingRinkSkate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEggHuntController.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLemonadeStand.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSculptureFrozenSim.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFruitVeggieStand.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSnowWaterFight.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultMummy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWoodFireOven.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefIgloo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSnowAngel.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSpringDanceFloor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSnowman.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPoolLounger.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPoolParty.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHouseParty.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLeafPile.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFacePaintingBooth.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGrocery.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDeepSnowEffectManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHolidayManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceSmelly.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTeppanyakiGrill.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVehicleTireEffectHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDonatableComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDonatableComponentNumberOfSpotsLeftCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHealthManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRoutingComponentRouteActionsFinishedDelegate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPartComponentPartAvailabilityChanged.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPartComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInteractionQueuePropDestroyer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBandInstrumentLearn.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefImaginaryDoll.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetSurfacePosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceNegligent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimGiveFlowers.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFollowSubPathRouteAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOpportunityInteractionCompleteListener.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSaunaClassicInnerPeaceBuffInstanceInnerPeace.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRoutingComponentRouteEventCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSteeringAdaptor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRoutingComponentRouteEventObstaclesEncounteredCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGameObjectFootprintChangedDelegate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDetonateObjectHelperSingeReaction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTrickSkill.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicBasketSituationCleanUpPicnic.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGoHereWithSituationPutDownPickUpSimsState.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBroomStand.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBeeAttackAlarmDelegate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceBeeAttack.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDanceOnCounterOrTable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUniversityMascot.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceTerrified.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSingagramSpawner.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSingagramCreationSpec.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefJobCreationSpec.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVaultOfAntiquity.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVaultOfAntiquityContestant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSlidingBookcase.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSpellcastingSkill.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGenericPerformanceObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMagicBroom.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimWatchTheStars.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFoodReplicatorReplicationRecord.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBakeSaleTable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstancePermaZombie.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefArboretum.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefArboretumContestant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceStarvingForMoonlight.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceImminentRomance.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMagicWandCastSpell.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHideout.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimExitReasonsAddedCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefScriptAdaptor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFollowRouteAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMoonDial.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUrnstone.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultWitch.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultFairy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultWerewolf.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstancePestilencePlague.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMagicBroomArena.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFlyingVacuum.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBook.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPotionShopConsignmentRegisterConsignedObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBonehildaCoffin.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceHeartBroken.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWashDishesOpportunity.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultUnicorn.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetAdoptionNeighborAdoption.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTerrainMopPuddle.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBirthdayParty.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDaycareChildManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPreparedFood.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimRoutingComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBoxOfDanger.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMountedFish.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDaycare.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefJournalism.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEmergencyFireRestorer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTraitFunctionsStolenObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefJob.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefComboHospitalScienceLab.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSeatingGroup.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRelicStoreRegister.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStoreItem.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCreateObjectCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOneShotFunction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFunction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDaycareSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGameObjectRelationship.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGenieLamp.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRelationshipDictionary.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAllRelationships.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFoodTray.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDelegateListener.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSculptingStationSculptingLoopHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCommodityStage.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVoidEventHandler.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceMourning.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefValidatePlacementDelegate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSeedSpawnerRarity.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefProcessEventDelegate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefActiveDreamNode.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGameObjectObjectDisposedEvent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefProSports.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStateMachineClientHandlerRecord.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSacsEventHandler.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimPostureChangedCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHouseholdMembers.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHangWithCoworkersTone.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInformationLearnedAboutSim.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRelationship.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShortTermContext.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDonatableComponentOnReservationChangedHandler.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDonatableComponentIsObjectDonatableCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCareerManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefActiveTopic.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUpgradableComponentUpgradeChanged.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMedicalJournal.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefReactionBroadcasterBroadcastCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAlarmTimerCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStuffedAnimal.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefItemTestFunction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRenovationCreationSpec.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNectarBottle.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUpgradableComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCraftedToyBoxToy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWidget.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMidlifeCrisisManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGenealogy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCommonDoor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNectarBottleGlassInfo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVisa.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInvention.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTheFox.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimPlaceholder.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefImageObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultImaginaryFriend.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimDescriptionCoreBodyShape.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAgingState.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRelicStatTracking.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTombStatTracking.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSingingInfo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStylistMakeoverCreationSpec.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVisaManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTraitManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFish.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLogicSkill.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMinorPetTerrarium.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSingerCareerListenToSingAGram.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRideHereTone.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDJTurntable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPerformanceCareer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBirdCage.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDeepFryerVegas.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTravelData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGumballMachine.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSniffOut.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShowStageRig.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPerformanceMeter.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStuffedAnimalPlayWith.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultGenie.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPresentObjectToSimDefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSingagramJob.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHorseBallPlayWithBall.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWallMountedSpeaker.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetBedPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGoForWalkWithDog.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHorseGraze.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGetInCarpoolDefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHorseJumpDoJump.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPortableMp3Player.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultMagicPointSystem.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShowFloor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefProprietorSimFestData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefProprietorSimFestContestant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSteadyGigNotificationHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSingerCareer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPerformanceCareerShowStageLayouts.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefObjectWithOrientation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefProprietor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefProprietorCustomerList.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShortOut.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHorseNap.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUberBoxPedestal.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShowStage.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPoolTable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPizzaDeliverySituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPerformanceCareerPerformerPerformForTips.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefActiveNodeBase.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefActivityTablePlayWithBlocks.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefActorTrailerWooHoo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAgeUpNpcSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAgeUpNpcSituationDematerializeAndAgeUp.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAlarmManagerTimer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAnimationEventHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefArcadeMachineBasePlayGame.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAthleticGameObjectWorkOut.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefAutonomy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBakeSaleTableBrowseOrPurchaseFromSim.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBakeSaleTableTendTablePosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBakingDish.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBandInstrument.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBandInstrumentJig.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBandInstrumentSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBandInstrumentSituationJoinJammingSession.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBarProfessional.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBarProfessionalTendingPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBassGuitarWatch.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBathtub.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBedData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBedPostureBase.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBeingCarriedPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBeingRiddenPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBikeRack.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBoardBreakerPractice.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBoardingSchoolInfo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefParentsLeavingTownSituationParentsAreAway.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBookshelfBookHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBookshelfGetBook.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBookSkill.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBookWrittenData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBowl.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBoxStall.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBridgeOrigin.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffExhaustedPassOut.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceCryingBaby.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceCuddleTimeImaginaryDoll.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceEnemy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceExhausted.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceHairball.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceMyLove.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceScared.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffInstanceSinged.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBuffManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBunkBedBunk.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBunkBedContainer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBunkBedUpperData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBurglarSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCake.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCane.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCar.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarDescription.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCaregiverRoutingMonitor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarOwnable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarpoolData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarRelationship.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarRoutingComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarryingChildPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarryingGlassPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCarrySystemPutDownCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCatchInsect.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCelebrity.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCelebrityManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChessSkillStage.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChessTable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChessTableChessPlayerInfo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChessTablePracticeChess.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChessTimedStage.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChewToyJig.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefChildUtilsPutDownClass.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCityHall.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCityHallProtest.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefComboRabbitHole.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefComeAndSeeComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefComputerChatRandom.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefConsignedObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefConsignmentRegister.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefConsignmentRegisterObjectData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefConversation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCookingProcess.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCribInCribPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCurtain.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCuttingBoard.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCuttingBoardPrepareHideCuttingBoardAndShowFoodHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDartboard.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDetonatedObjectRestorer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDigitalFishTankDigitalFishTankItem.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDisgracefulActionEvent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDishwasher.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDishwasherUseDishwasher.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDoCarpoolPickupAndDropoff.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDoCarpoolPickupAndDropoffDefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDoor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDoorPortalComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDreamsAndPromisesManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDrillHole.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDrink.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDriveAwayInServiceCar.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDriveToLotInServiceCarDefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDrumsWatch.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDryer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDynamicRegion.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDynamicRegionBase.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefDynamicSimFootprint.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEasel.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEaselCanvas.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEaselSellPaintingInteraction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEatHeldFoodObjectHideHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefElevatorInterior.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEvent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefEventListener.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFakeMetaAutonomy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFakeMetaAutonomySituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFakeMetaAutonomySituationRouteToRabbitHole.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFieldTripSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFire.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFireExtinguish.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFirefighterInformation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFirefighterPole.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFirefighterSituationExtinguishFire.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFirefighterSituationHangAroundThenExtinguish.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFireFightingJob.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFireManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFirePit.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFireplace.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFireSource.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFishBowlBase.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFishingSpot.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFishingSpotData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFishTank.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFishTankFishTankItem.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFoodReplicator.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFoodTransferHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFoosballTable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFoosballTeam.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFreeClinicSessionSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFridge.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFridge_EatLeftovers.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFridge_EatLeftoversDefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFryingPan.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGameObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGenericPrivacySituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGetInVehicleRouteAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGetMail.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGhostHunterJob.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGnubbField.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGnubbFieldSpot.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGoHereWithSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGoHereWithSituationGoHereWithChildSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGoHereWithSituationGoToPointState.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGoHereWithSituationRideHorsesState.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGrillable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGrimReaperSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGrimReaperSituationReapSoul.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGroupingSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefGuitarWatch.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHarvest.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHarvestPlant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHighChair.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHoldingCanePosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHomework.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHopscotchCourt.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHorseJump.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHostedSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHotTubSeat.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHousehold.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefHousePartyHappening.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefIdleManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefIEnumerator.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefImpassableRegion.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefIncenseHolder.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInRabbitHolePosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInteractionInstance.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInteractionObjectPair.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInteractionQueue.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInteractionScorer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInteriorDesigner.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInventionWorkbench.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInventionWorkbenchMakeInvention.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInventory.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefInventoryItem.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefItemComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefJamController.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefJamInfo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefJungleGymLookOutTower.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLawEnforcement.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLeaderGoHereWith.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLeftEyeOfHorusSpawner.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLifeEventManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLookAtManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLotSavedData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefLoungingPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMagicGnomeBase.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMailbox.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMailCarrier.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMapTag.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMartialArtsMeditate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMedical.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMicrowave.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMinorPet.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMinorPetBirdLarge.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMoodManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMotives.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefMusicalInstrumentWatchBase.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNectarMaker.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNectarRackTasteNectar.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNpcDriversManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNpcParty.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNpcPartyHappening.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefNpcPartyMapTag.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefObjectComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefObjectOwnerComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefObjectSpawner.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultBaseClass.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultFrankenstein.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultVampire.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccupation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOmniPlant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOpportunity.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOpportunityManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOverlay.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOverlayComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOverlayInstance.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPairSimUInt64.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPanguAxeSpawner.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefParkingSpace.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPartData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPathAdaptor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetBed.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetBowl.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetHousePosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPetSittingOnGroundPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPhoneCallChat.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPianoWatch.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPickUpChild.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicBasket.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicBasketGrabPlate.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicBlanket.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicSituationBeAtPicnic.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPicnicTable.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPieMenuSimHead.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlantDisposeDeadPlant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlantWaterPlant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlayBandInstrument.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlayCatchObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlayCatchObjectPlayCatchInteraction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlayCatchSocialInteraction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlayFoodVFXHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlayInSandJig.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlayTagSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPlumbBob.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPoliceBreakTeenPartySituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPoolPortalComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPortalAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPortalComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPortalComponentAcquireLaneRouteAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPostureSwitcher.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPregnancy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPrivacySituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefProgressMeter.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPromSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPuddleManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPuddleManagerFlowingPuddleCallback.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPunishment.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPunishmentTimeOutObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefPutDownChild.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefQueueRecord.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRabbitHole.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRabbitHoleSlotInfo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRadialRangeDestination.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefReactionBroadcaster.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefReactionInteraction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRecycleBinOutdoor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRecycleNewspaper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRidingPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRightEyeOfHorusSpawner.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRole.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRolePaparazziFollowCelebrity.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRoomCheck.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRoomVsLotStageHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRouteInterruptAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSandboxPartData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSarcophagus.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSchool.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefScienceComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefScriptObjectGroupData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSculptingStationCreateSculpture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefService.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefServiceSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefServingContainer.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSharedFridgeInventory.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShowerPrivacySituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShowFoodInContainerHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShowVenueAutonomouslyAttendShow.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShuffleboard.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShuffleboardPlay.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefShuffleboardTeam.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSim.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimActiveTopics.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimDescription.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimDescriptionEvent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimQueue.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimReadToSleepGetBook.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefRoutingComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimRoutingComponentBePushed.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimRoutingComponentWalkStyleRequestHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimScriptAdaptor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimScriptAdaptorTeenCurfewSneakOutHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimSocialPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimStandingPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimSteeringAdaptor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSimWalkStyleRules.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSink.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSittingInVehicle.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSittingPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSituationComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSkill.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSkillManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSkillMeter.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSkillMeterSecondBoneMove.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSleepDreamManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSleepStage.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSlippySlide.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSnubManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSocialComponent.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSocialGroupDiscourageRegion.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSocialGroupInteractionSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSocialInteraction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSocialInteractionA.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSocialJig.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSprinkler.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStateMachineClient.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStereo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStereoDanceSolo.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStove.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStoveStartContainerVFXHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStoveStopCookingHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefStylist.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSurfacePair.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSwimmingInPool.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSwingSet.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSwingSetSwingingPosture.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefSwitchOutfitHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTeachToTalk.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTelescope.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTelescopeLookThroughOrStargaze.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTellGhostStoryDefinition.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTendGardenHarvestPlant.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTerrainTeleportMeHere.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefThoughBalloonManager.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTombObjectData.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefToyBox.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefToyBoxPlayWithToy.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefToyBoxToyPlayWith.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTrait.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTraitFunctionsCowardTraitRunAway.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTraitFunctionsNeatTraitCleanHouse.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTraitListener.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTransferToFryingPanHelper.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTrashcanIndoor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTrashcanOutside.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTrashCompactor.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTreasureSpawnPoint.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTurnInAtRabbitHole.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTutorObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTV.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUniqueObject.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefUniqueObjectSpawner.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVaccinationSessionSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVehicle.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVehicleFollowSubPathRouteAction.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVisitCommunityLot.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVisitLot.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVisitSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVisitSituationHostOutside.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefVoucherCloneMe.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWashingMachine.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWashingMachineDoLaundry.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWeddingParty.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWelcomeWagonSituation.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWelcomeWagonSituationPrepare.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWriting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWritingRoyaltyAlarm.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefWrittenBookData.cs" />
+    <Compile Include="ErrorTrap.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckBakeSaleTable.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckBook.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckChessTable.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckFish.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckFishingSpot.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckGameObject.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckIRoleGiver.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckPicnicTable.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckRoleManager.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckRoleManagerTask.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckSim.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\CheckUrnstone.cs" />
+    <Compile Include="ErrorTrapSpace\ObjectLookup.cs" />
+    <Compile Include="ErrorTrapSpace\GameObjectReference.cs" />
+    <Compile Include="ErrorTrapSpace\IgnoreList.cs" />
+    <Compile Include="ErrorTrapSpace\Checks\Check.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore_Pure, Version=1.0.3859.30363, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore_Pure.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="XML\DereferenceRecursionDebugging.xml" />
+    <Content Include="XML\ErrorTrapIgnoreList.xml" />
+    <Content Include="XML\ErrorTrapTuning2.xml" />
+    <Content Include="XML\ErrorTrapTuning5.xml" />
+    <Content Include="XML\ErrorTrapTuning6.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

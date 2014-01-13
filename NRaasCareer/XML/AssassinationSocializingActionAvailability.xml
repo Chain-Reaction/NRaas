@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<SocializingTuning>
+  <ActiveTopic>
+    <Name></Name>
+    <Text></Text>
+    <AvailableForOtherSim>0</AvailableForOtherSim>
+    <TestFunction></TestFunction>
+    <Balloon></Balloon>
+    <AvailableWhenConversationStarts>0</AvailableWhenConversationStarts>
+    <AvailableBeforeTargetHasBeenGreeted>0</AvailableBeforeTargetHasBeenGreeted>
+    <UsedUpAfterDoneOnce>1</UsedUpAfterDoneOnce>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin Burn</Name>
+    <Text>NRaasAssassinBurn</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin Electrocution</Name>
+    <Text>NRaasAssassinElectrocution</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin Starve</Name>
+    <Text>NRaasAssassinStarve</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin Drown</Name>
+    <Text>NRaasAssassinDrown</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin MummyCurse</Name>
+    <Text>NRaasAssassinMummyCurse</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin Thirst</Name>
+    <Text>NRaasAssassinThirst</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin Meteor</Name>
+    <Text>NRaasAssassinMeteor</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin None</Name>
+    <Text>NRaasAssassinNone</Text>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Assassin Bribe</Name>
+    <Text>NRaasAssassinBribe</Text>
+  </ActiveTopic>
+
+  <SAA>
+    <Cat></Cat>
+    <Gr></Gr>
+    <FPA></FPA>
+    <SPA></SPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Ok</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Bribe</FPA>
+  </SAA>
+  <SAA>
+    <Cat>Friendly</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Bribe</FPA>
+  </SAA>
+  <SAA>
+    <Cat>VeryFriendly</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Bribe</FPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Impolite</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Burn</FPA>
+    <SPA>NRaas Assassin Burn</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Electrocution</FPA>
+    <SPA>NRaas Assassin Electrocution</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Starve</FPA>
+    <SPA>NRaas Assassin Starve</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin MummyCurse</FPA>
+    <SPA>NRaas Assassin MummyCurse</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Drown</FPA>
+    <SPA>NRaas Assassin Drown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Thirst</FPA>
+    <SPA>NRaas Assassin Thirst</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Meteor</FPA>
+    <SPA>NRaas Assassin Meteor</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin None</FPA>
+    <SPA>NRaas Assassin None</SPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Insulting</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Burn</FPA>
+    <SPA>NRaas Assassin Burn</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Electrocution</FPA>
+    <SPA>NRaas Assassin Electrocution</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Starve</FPA>
+    <SPA>NRaas Assassin Starve</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin MummyCurse</FPA>
+    <SPA>NRaas Assassin MummyCurse</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Drown</FPA>
+    <SPA>NRaas Assassin Drown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Thirst</FPA>
+    <SPA>NRaas Assassin Thirst</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Meteor</FPA>
+    <SPA>NRaas Assassin Meteor</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin None</FPA>
+    <SPA>NRaas Assassin None</SPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Creepy</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Burn</FPA>
+    <SPA>NRaas Assassin Burn</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Electrocution</FPA>
+    <SPA>NRaas Assassin Electrocution</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Starve</FPA>
+    <SPA>NRaas Assassin Starve</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin MummyCurse</FPA>
+    <SPA>NRaas Assassin MummyCurse</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Drown</FPA>
+    <SPA>NRaas Assassin Drown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Thirst</FPA>
+    <SPA>NRaas Assassin Thirst</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Meteor</FPA>
+    <SPA>NRaas Assassin Meteor</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin None</FPA>
+    <SPA>NRaas Assassin None</SPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Frightening</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Burn</FPA>
+    <SPA>NRaas Assassin Burn</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Electrocution</FPA>
+    <SPA>NRaas Assassin Electrocution</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Starve</FPA>
+    <SPA>NRaas Assassin Starve</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin MummyCurse</FPA>
+    <SPA>NRaas Assassin MummyCurse</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Drown</FPA>
+    <SPA>NRaas Assassin Drown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Thirst</FPA>
+    <SPA>NRaas Assassin Thirst</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin Meteor</FPA>
+    <SPA>NRaas Assassin Meteor</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Assassin None</FPA>
+    <SPA>NRaas Assassin None</SPA>
+  </SAA>
+  
+</SocializingTuning>

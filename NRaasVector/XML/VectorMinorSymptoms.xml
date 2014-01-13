@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symptoms>
+  <Symptom>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorMinorVomit</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Dizzy</BuffName>
+    <MoodValue>-15</MoodValue>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorMinorNauseous</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Nauseous</BuffName>
+    <MoodValue>-25</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorMinorExhausted</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Energy</Motive>
+    <DeltaValue>-30</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorMinorNotFun</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Fun</Motive>
+    <DeltaValue>-15</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorMinorBackAche</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MoodletSymptom, NRaasVector</FullClassName>
+    <BuffName>Backache</BuffName>
+    <MoodValue>-15</MoodValue>
+    <Duration>60</Duration>
+    <Origin>NRaasFromInfection</Origin>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorMinorDrained</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Energy</Motive>
+    <DeltaValue>-7</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorMinorSniffles</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.MotiveSymptom, NRaasVector</FullClassName>
+    <Motive>Hygiene</Motive>
+    <DeltaValue>-15</DeltaValue>
+    <LowerBound>-101</LowerBound>
+  </Symptom>
+
+  <Symptom>
+    <GUID>NRaasVectorMinorShiver</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>Shiver</Type>
+    <Speed>NowOrLater</Speed>
+  </Symptom>
+  <Symptom>
+    <GUID>NRaasVectorMinorMiserable</GUID>
+    <FullClassName>NRaas.VectorSpace.Symptoms.ReactionSymptom, NRaasVector</FullClassName>
+    <Type>Annoyed</Type>
+    <Speed>NowOrLater</Speed>
+  </Symptom>
+
+</Symptoms>

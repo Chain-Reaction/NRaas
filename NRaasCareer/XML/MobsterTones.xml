@@ -1,0 +1,77 @@
+﻿<?xml version="1.0"?>
+<ToneList>
+  <Tone>
+    <ToneName></ToneName>
+    <FullClassName></FullClassName>
+    <CareerGuid></CareerGuid>
+    <CareerMinLevel>0</CareerMinLevel>
+    <CareerMaxLevel>100</CareerMaxLevel>
+    <CareerBranch></CareerBranch>
+    <OnlySkill>True</OnlySkill>
+    <OnlyMetric>False</OnlyMetric>
+    <MustHaveVisibleSkill>True</MustHaveVisibleSkill>
+    <PerformanceModifier></PerformanceModifier>
+    <SkillCount>0</SkillCount>
+    <Skill1></Skill1>
+    <SkillRate1></SkillRate1>
+    <MotiveCount>0</MotiveCount>
+    <Motive1></Motive1>
+    <MotiveRate1></MotiveRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MobsterHoldMeetings</ToneName>
+    <FullClassName>NRaas.Gameplay.OmniSpace.Tones.HoldMeetingsTone, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasMobster</CareerGuid>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MobsterDoASideJob</ToneName>
+    <FullClassName>NRaas.Gameplay.OmniSpace.Tones.DoASideJob, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasMobster</CareerGuid>
+    <CareerMaxLevel>5</CareerMaxLevel>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MobsterPracticeIllicitActivities</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasMobster</CareerGuid>
+    <CareerBranch>Base</CareerBranch>
+    <SkillCount>1</SkillCount>
+    <Skill1>Athletic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MobsterPracticeIllicitActivities</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasMobster</CareerGuid>
+    <CareerBranch>Family</CareerBranch>
+    <SkillCount>1</SkillCount>
+    <Skill1>Athletic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MobsterPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasMobster</CareerGuid>
+    <CareerBranch>Base</CareerBranch>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MobsterBadPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasMobster</CareerGuid>
+    <CareerBranch>Family</CareerBranch>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.MobsterGoodPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>NRaasMobster</CareerGuid>
+    <CareerBranch>Turncoat</CareerBranch>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+</ToneList>

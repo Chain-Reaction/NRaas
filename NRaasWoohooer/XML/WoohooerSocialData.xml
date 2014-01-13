@@ -1,0 +1,1330 @@
+<?xml version="1.0"?>
+<Socializing>
+  <Action key="NRaasWooHoo" com="Amorous">
+    <Text key="NRaasWooHoo" pvt="BeWooHood" />
+    <AD val="0x00000018">
+      <Misc JL="High" ITLA="90" r="0" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Unflirty,Shy" />
+      <ATE val="Attractive,EyeCandy,Flirty,GreatKisser,HopelessRomantic,Inappropriate,MasterOfSeduction,NoJealousy" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimWoohoo, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="socialization_kissmakeout" data="BaseGame" x="Amorous" y="Amorous" jig="SocialJigTwoPerson" />
+      <LS state="loop" min="1" max="4" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimWoohoo, NRaasWoohooer, OnAccept" />
+        <LTRBits val="0x00002000" />
+        <TUN val="120" />
+        <Trait x="" y="FamilyOriented" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="NeutralReaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="Bad">
+        <EndStance x="" y="Bad" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="3000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreAwkward">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="4000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreCreepy">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="4001">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True"/>
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="5000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreInsulting">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasRiskyWooHoo" com="Amorous">
+    <Text key="NRaasRiskyWooHoo" pvt="BeWooHood" />
+    <AD val="0x00000018">
+      <Misc JL="High" ITLA="90" r="0" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="DislikesChildren,Lucky" />
+      <ATE val="Attractive,CommitmentIssues,Daredevil,EyeCandy,Flirty,GreatKisser,HopelessRomantic,Inappropriate,MasterOfSeduction,NoJealousy" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="socialization_kissmakeout" data="BaseGame" x="Amorous" y="Amorous" jig="SocialJigTwoPerson" />
+      <LS state="loop" min="1" max="4" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo, NRaasWoohooer, OnAccept" />
+        <LTRBits val="0x00002000" />
+        <TUN val="120" />
+        <Trait x="" y="FamilyOriented" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="NeutralReaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="Bad">
+        <EndStance x="" y="Bad" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="3000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreAwkward">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="4000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreCreepy">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="4001">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True"/>
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="5000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreInsulting">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  
+  <Action key="NRaasTryForBaby" com="Amorous">
+    <Text key="NRaasTryForBaby" pvt="BeWooHood" />
+    <AD val="0x00000018">
+      <Misc JL="High" ITLA="90" r="0" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="DislikesChildren,CommitmentIssues" />
+      <ATE val="Attractive,EyeCandy,FamilyOriented,Flirty,GreatKisser,HopelessRomantic,MasterOfSeduction,NoJealousy" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimTryForBaby, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="socialization_kissmakeout" data="BaseGame" x="Amorous" y="Amorous" jig="SocialJigTwoPerson" />
+      <LS state="loop" min="1" max="4" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimTryForBaby, NRaasWoohooer, OnAccept" />
+        <LTRBits val="0x00002000" />
+        <TUN val="120" />
+        <Trait x="" y="FamilyOriented" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="NeutralReaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="Bad">
+        <EndStance x="" y="Bad" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="3000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreAwkward">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="4000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreCreepy">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="4001">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True"/>
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting" val="5000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreInsulting">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasPetWooHoo" com="Amorous">
+    <Text key="NRaasWooHoo" pvt="BeWooHood" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="AC,EC,AD,ED,AL,EL" y="AC,EC,AD,ED,AL,EL" />
+      <ATRA val="ShyPet,LazyPet,SkittishPet" />
+      <ATE val="FriendlyPet,PlayfulPet,AdventurousPet" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimWoohoo, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="Sniff" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Reaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimWoohoo, NRaasWoohooer, OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasPetRiskyWooHoo" com="Amorous">
+    <Text key="NRaasRiskyWooHoo" pvt="BeWooHood" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="AC,EC,AD,ED,AL,EL" y="AC,EC,AD,ED,AL,EL" />
+      <ATRA val="ShyPet,LazyPet,SkittishPet" />
+      <ATE val="FriendlyPet,PlayfulPet,AdventurousPet" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="Sniff" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Reaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo, NRaasWoohooer, OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasPetTryForBaby" com="Amorous">
+    <Text key="NRaasTryForBaby" pvt="BeWooHood" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="AC,EC,AD,ED,AL,EL" y="AC,EC,AD,ED,AL,EL" />
+      <ATRA val="ShyPet,LazyPet,SkittishPet" />
+      <ATE val="FriendlyPet,PlayfulPet,AdventurousPet" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimTryForBaby, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="Sniff" data="EP5" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Reaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimTryForBaby, NRaasWoohooer, OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasHorseWooHoo" com="Amorous">
+    <Text key="NRaasWooHoo" pvt="BeWooHood" />
+    <AD val="0x00002000">
+      <Misc JL="High" ITLA="90" r="0" c="0" />
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="AH,EH" />
+      <ATRA val="ShyPet,LazyPet,SkittishPet" />
+      <ATE val="FriendlyPet,PlayfulPet,AdventurousPet" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimWoohoo, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="nuzzle" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimWoohoo, NRaasWoohooer, OnAccept" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimWoohoo,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasHorseRiskyWooHoo" com="Amorous">
+    <Text key="NRaasRiskyWooHoo" pvt="BeWooHood" />
+    <AD val="0x00002000">
+      <Misc JL="High" ITLA="90" r="0" c="0" />
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="AH,EH" />
+      <ATRA val="ShyPet,LazyPet,SkittishPet" />
+      <ATE val="FriendlyPet,PlayfulPet,AdventurousPet" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="nuzzle" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo, NRaasWoohooer, OnAccept" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimRiskyWoohoo,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasHorseTryForBaby" com="Amorous">
+    <Text key="TryForFoal" pvt="TryForFoal" />
+    <AD val="0x00002000">
+      <Misc JL="High" ITLA="90" r="0" c="0" />
+    </AD>
+    <AA>
+      <AGE x="AH,EH" y="AH,EH" />
+      <ATRA val="ShyPet,LazyPet,SkittishPet" />
+      <ATE val="FriendlyPet,PlayfulPet,AdventurousPet" />
+      <ALTR min="-100" max="100" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.SimTryForBaby, NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="nuzzle" data="EP5" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="" val="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.SimTryForBaby, NRaasWoohooer, OnAccept" />
+        <TUN val="120" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="">
+        <Anim />
+        <Buff />
+        <TUN petRej="True" />
+        <Topic />
+      </RHS>
+
+      <LHS com="Neutral" val="1000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreNeutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="2000" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreFriendly">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="4500" ProcTest="NRaas.WoohooerSpace.Interactions.SimTryForBaby,NRaasWoohooer,OnScoreBoring">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasAskAboutAttraction" com="Neutral" ver="BaseGame">
+    <Text key="NRaasAskAboutAttraction" pvt="NRaasAskAboutAttraction" />
+    <AD val="0x00000118">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.GaugeAttraction,NRaasWoohooer,OnFriendlyTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.GaugeAttraction,NRaasWoohooer,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasAskAboutAttractionRomance" com="Neutral" ver="BaseGame">
+    <Text key="NRaasAskAboutAttraction" pvt="NRaasAskAboutAttraction" />
+    <AD val="0x00000118">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.GaugeAttraction,NRaasWoohooer,OnRomanceTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.GaugeAttraction,NRaasWoohooer,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasCheckAttraction" com="Neutral" ver="BaseGame">
+    <Text key="NRaasCheckAttraction" pvt="NRaasCheckAttraction" />
+    <AD val="0x00000118">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.CheckAttraction,NRaasWoohooer,OnFriendlyTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.CheckAttraction,NRaasWoohooer,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasCheckAttractionRomance" com="Neutral" ver="BaseGame">
+    <Text key="NRaasCheckAttraction" pvt="NRaasCheckAttraction" />
+    <AD val="0x00000118">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.CheckAttraction,NRaasWoohooer,OnRomanceTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.CheckAttraction,NRaasWoohooer,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasAskAboutGender" com="Friendly" ver="BaseGame">
+    <Text key="NRaasAskAboutGender" pvt="NRaasAskAboutGender" />
+    <AD val="0x00000118">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.GenderPreference,NRaasWoohooer,OnFriendlyTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.GenderPreference,NRaasWoohooer,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasAskAboutGenderRomance" com="Friendly" ver="BaseGame">
+    <Text key="NRaasAskAboutGender" pvt="NRaasAskAboutGender" />
+    <AD val="0x00000118">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.GenderPreference,NRaasWoohooer,OnRomanceTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.GenderPreference,NRaasWoohooer,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasAskAboutAge" com="Friendly" ver="BaseGame">
+    <Text key="NRaasAskAboutAge" pvt="NRaasAskAboutAge" />
+    <AD val="0x00000118">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.AskAboutAge,NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.WoohooerSpace.Interactions.AskAboutAge,NRaasWoohooer,OnAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasJetpackRisky" com="Amorous">
+    <Text key="NRaasJetpackRiskyWooHoo" pvt="NRaasJetpackRiskyWooHoo" />
+    <AD val="0x00040118">
+      <Misc JL="High" ITLA="90" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATREQ val="CapacityToLoveChip" />
+      <Available auto="True" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.JetpackRisky,NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="jetpackwoohoo" data="EP11" x="Amorous" y="Amorous" jig="SocialJigTwoPerson" />
+      <LS state="Loop" min="90" max="90" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="accept">
+        <Anim />
+        <Buff x="ICanShowYouTheWorld" y="ICanShowYouTheWorld" />
+        <RPROC pebu="EquipJetPack" peau="NRaas.WoohooerSpace.Interactions.JetpackRisky,NRaasWoohooer,OnAccept" />
+        <LTRBits val="0x00002000" />
+        <TUN val="120" />
+        <Topic x="JetPack" />
+      </RHS>
+      <LHS com="Amorous" val="82">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="False" />
+      </LHS>
+    </Rules>
+  </Action>
+  
+  <Action key="NRaasJetpackTryForBaby" com="Amorous">
+    <Text key="NRaasJetpackTryForBaby" pvt="NRaasJetpackTryForBaby" />
+    <AD val="0x00040118">
+      <Misc JL="High" ITLA="90" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATREQ val="CapacityToLoveChip" />
+      <Available auto="True" udo="True" />
+      <ProcTest key="NRaas.WoohooerSpace.Interactions.JetpackTryForBaby,NRaasWoohooer,OnTest" />
+    </AA>
+    <Jazz>
+      <Graph val="jetpackwoohoo" data="EP11" x="Amorous" y="Amorous" jig="SocialJigTwoPerson" />
+      <LS state="Loop" min="90" max="90" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="accept">
+        <Anim />
+        <Buff x="ICanShowYouTheWorld" y="ICanShowYouTheWorld" />
+        <RPROC pebu="EquipJetPack" peau="NRaas.WoohooerSpace.Interactions.JetpackTryForBaby,NRaasWoohooer,OnAccept" />
+        <LTRBits val="0x00002000" />
+        <TUN val="120" />
+        <Topic x="JetPack" />
+      </RHS>
+      <LHS com="Amorous" val="82">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="False" />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasAskAboutPartnerFriendly" com="Friendly">
+    <Text key="AskAboutPartner" pvt="RespondToQuestionAboutPartner" />
+    <AD val="0x00080100">
+      <Misc ITLA="60" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="FamilyOriented,Flirty,HopelessRomantic" />
+      <Available auto="False" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Helpers.CommonSocials,NRaasWoohooer,TestAskAboutPartnerFriendly" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetPartner" />
+        <TUN />
+        <Trait x="" y="Flirty,FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetPartner" />
+        <TUN />
+        <Trait x="" y="FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="Bad">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <LHS com="Neutral" val="50" TP="1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="49">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE tb="True" />
+      </LHS>
+      <LHS com="Creepy" val="48">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+      <LHS com="Amorous" val="47">
+        <LLTR min="0" />
+        <SC com="Amorous" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="47" cp="-1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="46">
+        <LLTR max="-20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="46">
+        <LLTR min="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="45">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="NRaasAskAboutPartnerAmorous" com="Amorous">
+    <Text key="AskAboutPartner" pvt="RespondToQuestionAboutPartner" />
+    <AD val="0x00080100">
+      <Misc ITLA="60" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="FamilyOriented,Flirty,HopelessRomantic" />
+      <Available auto="False" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Helpers.CommonSocials,NRaasWoohooer,TestAskAboutPartnerAmorous" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetPartner" />
+        <TUN />
+        <Trait x="" y="Flirty,FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetPartner" />
+        <TUN />
+        <Trait x="" y="FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="Bad">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <LHS com="Neutral" val="50" TP="1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="49">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE tb="True" />
+      </LHS>
+      <LHS com="Creepy" val="48">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+      <LHS com="Amorous" val="47">
+        <LLTR min="0" />
+        <SC com="Amorous" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="47" cp="-1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="46">
+        <LLTR max="-20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="46">
+        <LLTR min="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="45">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaasAskSignAmorous" com="Amorous">
+    <Text key="AskSign" pvt="RespondToQuestionAboutSign" />
+    <AD val="0x00080100">
+      <Misc ITLA="60" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="FamilyOriented,Flirty,HopelessRomantic" />
+      <Available auto="False" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Helpers.CommonSocials,NRaasWoohooer,TestAskSignAmorous" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetSign" />
+        <TUN />
+        <Trait x="" y="Flirty,FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetSign" />
+        <TUN />
+        <Trait x="" y="FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="Bad">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <LHS com="Neutral" val="50" TP="1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="49">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE tb="True" />
+      </LHS>
+      <LHS com="Creepy" val="48">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+      <LHS com="Amorous" val="47">
+        <LLTR min="0" />
+        <SC com="Amorous" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="47" cp="-1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="46">
+        <LLTR max="-20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="46">
+        <LLTR min="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="45">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="NRaasAskSignFriendly" com="Friendly">
+    <Text key="AskSign" pvt="RespondToQuestionAboutSign" />
+    <AD val="0x00080100">
+      <Misc ITLA="60" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="FamilyOriented,Flirty,HopelessRomantic" />
+      <Available auto="False" udo="False" />
+      <ProcTest key="NRaas.WoohooerSpace.Helpers.CommonSocials,NRaasWoohooer,TestAskSignFriendly" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetSign" />
+        <TUN />
+        <Trait x="" y="Flirty,FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LearnTargetSign" />
+        <TUN />
+        <Trait x="" y="FamilyOriented,HopelessRomantic" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="Bad">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <LHS com="Neutral" val="50" TP="1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="49">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE tb="True" />
+      </LHS>
+      <LHS com="Creepy" val="48">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+      <LHS com="Amorous" val="47">
+        <LLTR min="0" />
+        <SC com="Amorous" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="47" cp="-1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Creepy" val="46">
+        <LLTR max="-20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="46">
+        <LLTR min="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="45">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+</Socializing>

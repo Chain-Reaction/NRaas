@@ -1,0 +1,65 @@
+﻿<?xml version="1.0"?>
+<AcademicDegrees>
+  <Degrees>
+    <AcademicDegreeEnum>Undefined</AcademicDegreeEnum>
+    <AcademicDegreeName></AcademicDegreeName>
+    <AcademicDegreeDesc></AcademicDegreeDesc>
+    <ResponsibilityTooltipKey></ResponsibilityTooltipKey>
+    <AcademicDegreeIcon></AcademicDegreeIcon>
+    <AcademicDegreeRequiredCreditHours>0</AcademicDegreeRequiredCreditHours>
+    <AcademicDegreeCostPerCredit>0</AcademicDegreeCostPerCredit>
+    <AcademicDefaultCourseID>AcademicsGenericRabbitHoleCourse</AcademicDefaultCourseID>
+    <AcademicDefaultLectureID>Invalid</AcademicDefaultLectureID>
+    <AcademicDefaultLabID>Invalid</AcademicDefaultLabID>
+    <AssociatedOccupationNameEnum>Undefined</AssociatedOccupationNameEnum>
+    <GrantedOccupationNameEnum>Undefined</GrantedOccupationNameEnum>
+    <SkillsThatGrantXP></SkillsThatGrantXP>
+    <BeneficialTraits></BeneficialTraits>
+    <DetrimentalTraits></DetrimentalTraits>
+    <SuggestedTraits></SuggestedTraits>
+  </Degrees>
+  
+  <Degrees>
+    <AcademicDegreeEnum>Business</AcademicDegreeEnum>
+    <AssociatedOccupationNameEnum>NectarMaker, PrivateEye, Daycare</AssociatedOccupationNameEnum>
+  </Degrees>
+  <Degrees>
+    <AcademicDegreeEnum>Technology</AcademicDegreeEnum>
+    <AssociatedOccupationNameEnum>Inventor</AssociatedOccupationNameEnum>
+  </Degrees>
+  <Degrees>
+    <AcademicDegreeEnum>Science</AcademicDegreeEnum>
+    <AssociatedOccupationNameEnum>GhostHunter, Gardener, Fisher</AssociatedOccupationNameEnum>
+  </Degrees>
+  <Degrees>
+    <AcademicDegreeEnum>FineArts</AcademicDegreeEnum>
+    <AssociatedOccupationNameEnum>Stylist, InteriorDesigner, Painter, SingerCareer, Sculptor, PerformanceArtistCareer, MagicianCareer, RockBand</AssociatedOccupationNameEnum>
+  </Degrees>
+  <Degrees>
+    <AcademicDegreeEnum>Communications</AcademicDegreeEnum>
+    <AssociatedOccupationNameEnum>Writer, Photographer</AssociatedOccupationNameEnum>
+  </Degrees>
+  <Degrees>
+    <AcademicDegreeEnum>PhysEd</AcademicDegreeEnum>
+    <AssociatedOccupationNameEnum>Rider, Firefighter, ScubaDiver, Lifeguard</AssociatedOccupationNameEnum>
+  </Degrees>
+  
+  <Degrees>
+    <AcademicDegreeEnum>NRaasEducation</AcademicDegreeEnum>
+    <AcademicDegreeName>NRaasEducation</AcademicDegreeName>
+    <AcademicDegreeDesc>NRaasEducationDesc</AcademicDegreeDesc>
+    <ResponsibilityTooltipKey>NRaasEducationTooltipText</ResponsibilityTooltipKey>
+    <AcademicDegreeIcon>hud_education_career</AcademicDegreeIcon>
+    <AcademicDegreeRequiredCreditHours>8</AcademicDegreeRequiredCreditHours>
+    <AcademicDegreeCostPerCredit>450</AcademicDegreeCostPerCredit>
+    <AcademicDefaultCourseID>NRaasAcademicEducationCourse</AcademicDefaultCourseID>
+    <AcademicDefaultLectureID>NRaasAcademicEducationLecture</AcademicDefaultLectureID>
+    <AcademicDefaultLabID>NRaasAcademicEducationLab</AcademicDefaultLabID>
+    <AssociatedOccupationNameEnum>Education</AssociatedOccupationNameEnum>
+    <GrantedOccupationNameEnum>Education</GrantedOccupationNameEnum>
+    <SkillsThatGrantXP>Charisma, 0.01; Logic, 0.01</SkillsThatGrantXP>
+    <BeneficialTraits>Friendly, Nurturing, BookWorm, FamilyOriented, Brave</BeneficialTraits>
+    <DetrimentalTraits>DislikesChildren, Coward, Shy, Unlucky</DetrimentalTraits>
+    <SuggestedTraits>Friendly</SuggestedTraits>
+  </Degrees>
+</AcademicDegrees>

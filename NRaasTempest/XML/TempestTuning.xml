@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Seasons>
+  <Temperature>
+    <!-- This is the default set, do not alter or remove -->
+    <Season></Season>
+    <Name></Name>
+    <StartDay>1</StartDay>
+    <EndDay>-1</EndDay>
+    <Enabled>True</Enabled>
+    <MorningMin>0</MorningMin>
+    <MorningMax>0</MorningMax>
+    <NoonMin>0</NoonMin>
+    <NoonMax>0</NoonMax>
+    <EveningMin>0</EveningMin>
+    <EveningMax>0</EveningMax>
+    <NightMin>0</NightMin>
+    <NightMax>0</NightMax>
+  </Temperature>
+
+  <SunnyTuning>
+    <!-- This is the default set, do not alter or remove -->
+    <Season></Season>
+    <Name></Name>
+    <Weight>0</Weight>
+    <MinLength>0</MinLength>
+    <MaxLength>24</MaxLength>
+    <MinTemp>-1000</MinTemp>
+    <MaxTemp>1000</MaxTemp>
+  </SunnyTuning>
+
+  <FogTuning>
+    <!-- This is the default set, do not alter or remove -->
+    <Season></Season>
+    <Name></Name>
+    <Weight>0</Weight>
+    <MinLength>0</MinLength>
+    <MaxLength>24</MaxLength>
+    <MinTemp>-1000</MinTemp>
+    <MaxTemp>1000</MaxTemp>
+  </FogTuning>
+
+  <RainTuning>
+    <!-- This is the default set, do not alter or remove -->
+    <Season></Season>
+    <Name></Name>
+    <Weight>0</Weight>
+    <MinLength>0</MinLength>
+    <MaxLength>24</MaxLength>
+    <MinTemp>-1000</MinTemp>
+    <MaxTemp>1000</MaxTemp>
+    <LightWeight>1</LightWeight>
+    <ModerateWeight>1</ModerateWeight>
+    <HeavyWeight>1</HeavyWeight>
+    <MinTransitionTime>0.25</MinTransitionTime>
+    <MaxTransitionTime>1</MaxTransitionTime>
+    <NumIntensityChangeWeights>1,1,1,1,1,1</NumIntensityChangeWeights>
+    <MinIntensityDuration>1</MinIntensityDuration>
+  </RainTuning>
+
+  <SnowTuning>
+    <!-- This is the default set, do not alter or remove -->
+    <Season></Season>
+    <Name></Name>
+    <Weight>0</Weight>
+    <MinLength>0</MinLength>
+    <MaxLength>24</MaxLength>
+    <MinTemp>-1000</MinTemp>
+    <MaxTemp>1000</MaxTemp>
+    <LightWeight>1</LightWeight>
+    <ModerateWeight>1</ModerateWeight>
+    <HeavyWeight>1</HeavyWeight>
+    <MinTransitionTime>0.25</MinTransitionTime>
+    <MaxTransitionTime>1</MaxTransitionTime>
+    <NumIntensityChangeWeights>1,1,1,1,1,1</NumIntensityChangeWeights>
+    <MinIntensityDuration>1</MinIntensityDuration>
+  </SnowTuning>
+
+  <HailTuning>
+    <!-- This is the default set, do not alter or remove -->
+    <Season></Season>
+    <Name></Name>
+    <Weight>0</Weight>
+    <MinLength>0</MinLength>
+    <MaxLength>24</MaxLength>
+    <MinTemp>-1000</MinTemp>
+    <MaxTemp>1000</MaxTemp>
+  </HailTuning>
+</Seasons>

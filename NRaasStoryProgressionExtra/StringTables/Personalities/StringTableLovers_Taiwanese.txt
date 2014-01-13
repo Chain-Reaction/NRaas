@@ -1,0 +1,2558 @@
+﻿<KEY>NRaas.StoryProgression.TownBike:MenuName</KEY>
+<STR>小鎮蕩婦</STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Creation</KEY>
+<STR>蕩婦誕生</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation0</KEY>
+<STR>大家注意一下你身邊的伴侶！{0.SimName}正四處尋找新的野食！</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation1</KEY>
+<STR>{0.SimName}似乎賺到了相當的名聲，而被貼上了蕩婦的稱號。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation2</KEY>
+<STR>很獨特的，{0.SimName}似乎無所不用其極的用新血來解{4.String}渴，讓{3.String}得到了鎮上蕩婦的封號。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation3</KEY>
+<STR>{0.SimName}認為該是讓全世界對{4.String}性誘惑的功力不寒而栗。請注意鎮上這位新蕩婦！</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Dislike</KEY>
+<STR>討厭蕩婦</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike0</KEY>
+<STR>對蕩婦{0.SimName}，夫妻之間似乎已經失去了愛情，{10.SimName}最近和{3.String}也常有口角，看來他們的結局不會太好。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike1</KEY>
+<STR>到處謠傳著{0.SimName}的操弄手法，{10.SimName}決定找{3.String}評評理。{12.String}說：「沒有人會那樣看我的伴侶的！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike2</KEY>
+<STR>當{10.SimName}前幾天看到鎮上的淫婦{0.SimName}在街上閒逛，{12.String}對著她咆哮說：「如果妳敢接近我的伴侶，小心妳的眼珠！」我敢說，這兩個人之間的關係一定很壞。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike3</KEY>
+<STR>{10.SimName}前幾天碰到{0.SimName}後就覺得晦氣，這蕩婦絕對交不到任何已婚的朋友。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Cohesion</KEY>
+<STR>因蕩婦而聚合</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion0</KEY>
+<STR>似乎鎮上蕩婦滑稽的動作已經開始收效...  似乎{0.SimName}和{10.SimName}基於相互不喜歡輕佻的女子而結合。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion1</KEY>
+<STR>{0.SimName}被看到和{10.SimName}閒聊，並對鎮上的賤婦說三道四，並加以嘲笑。最這最詭異的氣氛下，似乎有朋友被抖露了出來。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion2</KEY>
+<STR>{0.SimName}和{10.SimName}因為互相都對當地的蕩婦感到嫌惡而聚在一起，而且被看到無時無刻都在談論她。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion3</KEY>
+<STR>有個蕩婦讓鎮上陷入了大混亂，這卻讓{0.SimName}和{10.SimName}間有更多的話題了，而且兩人的關係最近也持續在改善。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail</KEY>
+<STR>蕩婦失敗</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail0</KEY>
+<STR>當地的賤婦，{0.SimName}，在{4.String}試圖調情勾引{10.SimName}，但卻遇到了一塊大頑石後，看起來是有些呆。\n\n當被問及時，{10.SimFirstName}說：「每個人都知道{0.SimFirstName}是什麼樣的人物 - 和{3.String}在一起，我必定會是一個瘋狂的市民！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail1</KEY>
+<STR>鎮上的蕩婦，{0.SimName}，對{10.SimName}求愛失敗了，因為今天早晨{12.String}在看熱鬧的群眾前公然拒絕了{3.String}。\n\n一個旁觀者評論說：「該是有人能看清{2.String}是什麼樣的人！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail2</KEY>
+<STR>在當地市民{10.SimName}在書店外拒絕了婚姻破壞者{0.SimFirstName}{0.SimLastName}的勾引後，四周就充滿了掌聲。\n\n在{3.String}被當眾羞辱後，{10.SimFirstName}在吹著口哨漫步離開前，還是對著旁觀群眾狂拋媚眼。一個目擊者說：「{19.String}真是浪！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail3</KEY>
+<STR>{0.SimName}在嘗試俘虜{10.SimName}時被擊落。當蕩婦最後鍛羽而歸時，圍觀這場鬥智戰爭的群眾給了予最熱烈的掌聲。 看熱鬧的群眾特別指出，{14.String}堅定立場來面對{4.String}勾引可能就是{14.String}婚姻依然堅如磐石就有力的證明。</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Affair</KEY>
+<STR>蕩婦事件</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair0</KEY>
+<STR>街上傳聞{0.SimName}現在和另一個笨蛋處得很親熱！這次是{10.SimName} {2.String}已經被{4.String}看上！</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair1</KEY>
+<STR>{0.SimName}將{4.String}目光鎖定在另一個當地的{19.String} - 這次是{10.SimName}！難道這些人都不知道嗎？</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair2</KEY>
+<STR>似乎沒有人能制止{0.SimName}因為{2.String}已經放下{4.String}餌來釣另一個來訪的 " 紳士" 。{10.SimName}竟然上鉤... 對謊言信以為真。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair3</KEY>
+<STR>{10.SimName}發現雙膝無力，在當地蕩婦{0.SimName}的面前完全無法自我控制。他們最近被看到在接吻，{12.String}真可憐。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Canoodle</KEY>
+<STR>蕩婦的愛撫</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle0</KEY>
+<STR>{0.SimName}最近很肆無忌憚，任何可以接觸到的人都要染指，可憐那些擋到{4.String}去路的窩囊廢。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle1</KEY>
+<STR>最近的流言需要被日以繼夜地大量製造，才能跟得上當地蕩婦最近的通姦緋聞。看來{0.SimName}需要去城裏工作了。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle2</KEY>
+<STR>看現在誰出去到處串門子？有人看到鎮上的賤婦{0.SimName}在鎮上到處遊蕩和調情，盡{2.String}所能造訪能找到的*朋友*。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle3</KEY>
+<STR>見證那個蕩婦的本領！{0.SimName}的把戲最近正在加強，{2.String}可以在非常短的時間裏就尋獲想要找的獵物。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby</KEY>
+<STR>蕩婦懷孕</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby0</KEY>
+<STR>就當地的蕩婦最近的行為來看，{4.String}是一個表面上很慷慨的人，{0.SimName}和{10.SimName}正期待著孩子的降臨！</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby1</KEY>
+<STR>噢，每個人都知道它終究要發生，最後要自食惡果...  因為{0.SimName}和{10.SimName}知道他們之間已有*愛的結晶*！</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby2</KEY>
+<STR>「你說你忘了套上是什麼意思？」{0.SimName}和{10.SimName}在獲知他們的「家庭」會添丁後，最近看來對這事的印象一點都不覺得好。</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby3</KEY>
+<STR>天啊，{0.SimName}和{10.SimName}從他們小小的秘密遊戲中，得到了比他們預期的還多的東西...  一個嶄新的生命。我們希望這個小生命能比他的父母更小心點！</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond</KEY>
+<STR>蕩婦和有穩定關係者的幽會</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond0</KEY>
+<STR>當地的蕩婦{0.SimName}最近狠狠地快速攻擊，把{10.SimName}撂倒，並痛毆{13.String}。看來{10.SimFirstName}並未做太多的抵抗！</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond1</KEY>
+<STR>{0.SimName}完全沒有顧慮嗎？可憐的{10.SimName}明顯容易被人忽弄，而且一旦{0.SimFirstName}澆熄{13.String}熱情，{13.String}絕對無法自我控制。希望{10.SimName}不會發現！</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond2</KEY>
+<STR>一個偷窺當地的蕩婦和{10.SimName}在做愛做的事的好奇旁觀者說：「我的意思是...  真的！{0.SimName}以為{2.String}是誰？」「那可憐的傢伙不知道什麼打到了{13.String}！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond3</KEY>
+<STR>最近{10.SimName}深深墮入當地蕩婦的魅力中而無法自拔。「我無法幫忙自己，我知道這個不好...  但它真的很棒！」{0.SimName}對此沒有評論，只是拿出{4.String}黑名單，開始數著在{10.SimFirstName}名字旁打星星記號的數目。</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond</KEY>
+<STR>蕩婦和已婚者的幽會</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond0</KEY>
+<STR>要死了！如果{10.SimName}的配偶聽到{14.String}最近和當地蕩婦的風流韻事，準會發生大災難。{0.SimName}現在閉口，不讓{3.String}生氣，不然{2.String}怕會說漏了嘴！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond1</KEY>
+<STR>前幾天一個旁觀者撞見{10.SimFirstName}和當地的蕩婦{0.SimName}，躲在樹後 " 玩遊戲"  後說，「天啊，{10.SimName}可是結過婚了！難道{12.String}毫無感覺嗎？不可思議！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond2</KEY>
+<STR>哦！{10.SimName}明顯去了很多{11.String}以前曾經去過的地方，還好大難不死！當地蕩婦{0.SimName}已經完成另一次的征服。我們希望{10.SimFirstName}的配偶不會發現！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond3</KEY>
+<STR>{0.SimName}對一個被驚嚇到的路人說：「我要給{13.String}四顆星，好體力，而且精力充沛！」我們懷疑{2.String}指得是{4.String}最近征服的市民{10.SimName}。「嚐起來就像是楓葉糖漿，我必需將它記下來。」</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped</KEY>
+<STR>結束穩定關係</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped0</KEY>
+<STR>另一個垮掉的關係！ {0.SimName}和{10.SimName}在經歷和蕩婦一起被抓包的倒楣經歷後，已經終止婚姻關係！</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped1</KEY>
+<STR>一個見證人對最近{10.SimName}和{14.String}伴侶{0.SimFirstName}之間的爭吵，小聲抱怨：「{0.SimName}總是壞消息！可是...  就從來就沒人要聽我的。」「偷偷地鬼混，我告訴過你，那樣很愚蠢！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped2</KEY>
+<STR>{10.SimName}和{0.SimName}絕裂了，{14.String}再次準備出售，看起來{0.SimFirstName}到處鬼混，{10.SimFirstName}最後終於受夠而離開了！</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped3</KEY>
+<STR>一個鄰居看到{0.SimName}和{10.SimName}一場激烈的爭吵最後失控成為很糟糕的分手後評論說：「可憐的傢伙，{12.String}一定心碎了。」「被抓到{4.String}手在知名的餅乾罐中，現在{2.String}要為此付出代價！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped</KEY>
+<STR>結束婚姻關係</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped0</KEY>
+<STR>在知道對方有外遇後，{10.SimName}已經解除和{0.SimName}的關係。明顯的，和鎮上蕩婦太接近對婚姻並不是件太好的事！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped1</KEY>
+<STR>蕩婦又出擊了！最近{0.SimName}的一次幽會被剛變成前妻的{10.SimName}發現，在盛怒之下，{10.SimFirstName}決定結束這段關係！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped2</KEY>
+<STR>最近和蕩婦的私通讓{0.SimName}和{10.SimName}以迅速離婚收場，一個鄰居說：「數年來，這段婚姻已瀕臨破滅！我就是知道這事必定會發生！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped3</KEY>
+<STR>{0.SimName}和{10.SimName}已經結束了他們的婚姻，並不是以太友好的方式。{10.SimFirstName}評論：「為何我曾經操心要和他開始共渡一生的人，是我所無法理解的。」「那傢伙會是流言蜚語的最好原材料！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MoveIn</KEY>
+<STR>搬進</STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MoveInSummary</KEY>
+<STR>下列市民搬去住在一起 {0.SimName}:{10.String}</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn0</KEY>
+<STR>由於他先前和鎮上蕩婦出軌的行為，在這家庭事件餘波之後，{0.SimName}決定搬去和{10.SimName}一起住！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn1</KEY>
+<STR>最近{0.SimName}在狂戀鎮上蕩婦，到頭來只剩下暈眩、迷亂、且無家可歸，{10.SimName}提供了收容的地方給落魄潦倒的{0.SimFirstName}！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn2</KEY>
+<STR>一個最近看到{0.SimName}把{4.String}東西搬到{10.SimName}的家的鄰居說：「這個蕩婦一定知道如何狠狠地把事情弄得一團混亂！」「這個小姐在今晚晚餐來這裏，就是為了這件事！有趣！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn3</KEY>
+<STR>哦，有些市民一生就是無法休息，在最近發生的蕩婦事件後，{10.SimName}被迫出來善後，提供{0.SimName}一個新的地方住！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt</KEY>
+<STR>蕩婦開始狩獵</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt0</KEY>
+<STR>本地蕩婦{0.SimName}將{4.String}目光投向了像{10.SimName}這樣看起來美味可口的新目標：「真不錯，{12.String}看起來很不錯!」</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt1</KEY>
+<STR>在經歷了一段蟄伏期后, 一位好奇的路人親眼目擊到{0.SimName}正在四處遊蕩來尋求殺手攻...或者是平凡受？一個叫{10.SimName}的模擬市民不經意間已被列入名單!</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt2</KEY>
+<STR>那個叫{10.SimName}的可憐蟲最好要小心啦！當地名妓 {0.SimName}被目擊到正在糾纏{4.String}新獵物，并開始全力猛撲！「啊……新鮮的肉!美味無比!」</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt3</KEY>
+<STR>「我可以教會{13.String}很多其他模擬市民夢裡才敢想像的事情。」當有人看見{2.String}正對{10.SimName}暗送秋波時，{0.SimName}這麼辯解道。哦天哪，{10.SimFirstName}最好小心點啦!</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt</KEY>
+<STR>蕩婦新戀情</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt0</KEY>
+<STR>真應該有人在{10.SimName}和{0.SimName}太過黏糊前對{12.String}發出些警告的。那個蕩婦的胃口大的能裝下一個地球，而且只有當{2.String}再也找不到想要的東西才會住手！</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt1</KEY>
+<STR>「我知道我在做啥，不要來煩我！」當有熱心的鄰居提醒{10.SimName}登上{0.SimName}的愛情諾曼第可能並不會是件好事的時候，他咆哮的說，「我已經成年了，可以把握住自己。預言家你好，預言家再見!」</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt2</KEY>
+<STR>{0.SimName}已經把{4.String}貪婪目光射向了{10.SimName}！大家最好提防下{10.SimFirstName},否則有可能會被{12.String}燙傷到!</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt3</KEY>
+<STR>「別跟我說你也想提些關於{0.SimName}的意見，對吧？」{10.SimName}抱怨道，「你還是管好你自己吧，我知道自己在做的事情！」 哎呀呀，可惜啊，大家不認為你知道自己在做啥啊， {10.SimFirstName}！</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt</KEY>
+<STR>蕩婦老情人</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt0</KEY>
+<STR>這個蕩婦絕對稱得上是經驗老道，或者保守的說,已經在鎮子上轉悠得夠久了。但是一次慘痛的教訓明顯已經阻止不了{10.SimName}了. 唉，真是個杯具，讓我們祈禱{12.String}知道{12.String}自己在做啥吧,不然的話{0.SimName}會活活生吞了{13.String}！</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt1</KEY>
+<STR>「光就讓你想一想我為這所制訂的計劃以及我將對你做的一切，」{0.SimName}諷刺道，「你就等著跪下來求饒吧！叫我奶奶都不夠！」{10.SimName}已經被這個蕩婦弄得神魂顛倒，而且{14.String}未來看起來會是那麼的灰暗。</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt2</KEY>
+<STR>「呃，那個，幾乎每個人都去過那個地方，那它肯定有一些與眾不同的地方，而且我也不想被看成是沒去過那裡的火星人，就這些!」當{10.SimName}被發現與{0.SimName}這個蕩婦在某地約會的時候，喃喃解釋說。 不得不說，{10.SimFirstName}扯理由的功力實在是太差了。</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt3</KEY>
+<STR>在和{10.SimName}的非法關係結束后，{0.SimName}這個蕩婦被很愛八卦的狗仔隊聽到曾經這麼說：「我的大門隨時向{10.SimFirstName}敞開，我很期待下一次相會！」</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm</KEY>
+<STR>蕩婦離開了獵物</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm0</KEY>
+<STR>「我還以為我們可以定居在一起呢！夥計，我大大的錯了。」{10.SimName}斷絕了{12.String}和蕩婦{0.SimName}的關係后這麼評論的.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm1</KEY>
+<STR>{0.SimName}和{10.SimName}不再交往了。曾經{10.SimFirstName}嘗試過避免{12.String}和一個蕩婦的關係發展成今天這樣的局面，可惜這基本上是不可能被更改的，因為幾乎沒人成功過。</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm2</KEY>
+<STR>「怎麼可能？我還以為{12.String}會讓我過得幸福！」當{10.SimName}意識到自己不再被{0.SimName}這個蕩婦重視的時候，呻吟地說，「但是……但是……我以後該怎麼辦啊？」</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm3</KEY>
+<STR>「我愛{2.String}，然而我對共享一件鎮子的公共用品不感興趣，你懂嗎？」{10.SimName}與{0.SimName}分手后和親近的人這麼諷刺的說。</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm</KEY>
+<STR>蕩婦離婚</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm0</KEY>
+<STR>「我已經再也無法忍受那些嘲笑了，所以我決定離開{3.String}。」{10.SimName}抱怨地說，「與其再讓我跟這樣一個蕩婦在一起，你乾脆給我個痛快吧。" {0.SimName}的婚姻看來是完蛋了。</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm1</KEY>
+<STR>據說{10.SimName}最終承認了{12.String}是蕩婦的配偶這個現實。{0.SimName}從來沒有想過去改變自己。這對夫婦最終決定分開了。</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm2</KEY>
+<STR>本地蕩婦{0.SimName}最近終於嘗到了{3.String}種下的惡果，當{4.String}配偶{10.SimName}決定離開{2.String}。「我究竟做了啥要承受這樣的打擊？」{2.String}被好事的路人聽到這麼說。</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm3</KEY>
+<STR>這事連大家用腳指頭都能想得到。{0.SimName}和{10.SimName}的婚姻結束了。{10.SimFirstName}感覺和一個蕩婦生活在一起根本不是一個好點子。</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo</KEY>
+<STR>蕩婦入侵穩定情侶</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo0</KEY>
+<STR>「啊，年輕的愛，多么有趣。我都想快點終結這個了！」不明真相的群眾聽到{0.SimName}正在準備征服{10.SimName}所擁有的新領地。</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo1</KEY>
+<STR>「就打個比喻吧，比如說銀行。我打算退還{10.SimName}的帳戶，然後將{14.String}存款變成我的。」{0.SimName}應該遠離{10.SimFirstName}的聯名帳戶，還有那些可怕的比喻！</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo2</KEY>
+<STR>本地蕩婦{0.SimName}被看見正在展開對{10.SimName}的大冒險，而且有細心的路人注意到{10.SimFirstName}開始很享受這一切。可能有人就不禁要問了，他們的關係會持續多久？</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo3</KEY>
+<STR>「蕩婦這個詞太俗了。」{0.SimName}議論說，「就不能說成是內政部門副部長,或者慾望外交官之類的嗎？」那，{0.SimFirstName}，這就是你跟{10.SimName}的外交關係。只能希望{2.String}與{10.SimFirstName}的盟友之間不會爆發戰爭了！</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo</KEY>
+<STR>蕩婦入侵已婚家庭</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo0</KEY>
+<STR>據一位目擊者稱一隻叫{0.SimName}的蝗蟲入侵了一處被稱作{10.SimName}的麥田并開始貪婪地啃食。可憐的{10.SimFirstName}不敢想像這個蕩婦走後{3.String}麥田里還會剩下啥。</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo1</KEY>
+<STR>「我打算襲擊這裡，看見了嗎？這裡輕輕咬一口，那裡再輕輕啃一下……去尋找那些美味的小甜點。當然，你明白我指的啥。」{10.SimName}最好小心點了，因為{0.SimName}聽起來像是餓瘋了！</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo2</KEY>
+<STR>{10.SimLastName}的住宅將會陷入一點點麻煩,因為本地蕩婦將{4.String}目光鎖定在了{10.SimFirstName}周圍。你最好小心點了，{0.SimName}才吃起模擬市民來跟你吃早餐一樣輕鬆1</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo3</KEY>
+<STR>「我喜歡晨跑，而且追逐{10.SimFirstName}也是一項快樂的運動。」{0.SimName}愉快地回答記者的問題。有市民證明這個蕩婦正慢慢放倒{10.SimLastName}家庭中的部份成員.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MenuName</KEY>
+<STR>小鎮花花公子</STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Creation</KEY>
+<STR>花花公子的誕生</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation0</KEY>
+<STR>鎮上似乎出現了一個新的花花公子，他就是{0.SimName}！他們發掘任何願意主動上勾的人！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation1</KEY>
+<STR>{0.SimName}宣佈新店開張，歡迎任何年輕美眉入股！新的花花公子誕生了！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation2</KEY>
+<STR>{0.SimName}有禮和熟練的態度，看來已經得到{3.String}相當的好評。鎮上的閒言閒語已經稱呼{3.String}為新一代的花花公子！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation3</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Worship</KEY>
+<STR>崇拜花花公子</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship0</KEY>
+<STR>就在幾天前，當地的花花公子{0.SimName}似乎已經吸引了{10.SimName}的目光。旁觀者提到，他們聽到{13.String}說「Mmmm...  他真是美麗的花瓶。」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship1</KEY>
+<STR>{10.SimName}密切注意著當地的花花公子{0.SimName}，希望、或許、指望{4.String}目光能指向{13.String}！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship2</KEY>
+<STR>「{0.SimName}」以溫文有禮、和藹親切的風格四處巡視...  而且似乎「{10.SimName}」一看到{3.String}就兩腿發軟跪倒在地。一個旁觀者評論說：「所有花花公子所兜售的東西我都要！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship3</KEY>
+<STR>{0.SimName}在當地以小白臉自居，女人最近都對他拋媚眼。{10.SimName}僅僅被{4.String}不經意的發亮目光掃到，就暈倒在地。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Derision</KEY>
+<STR>為花花公子嘲弄</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision0</KEY>
+<STR>幾天前，{0.SimName}和{10.SimName}似乎爆發了激烈的爭吵。旁觀者說，事情的起因似乎是其中之一堅稱鎮上的花花公子是{2.String}獨有的。老天，那個市民肯定是激起了憤怒的情緒！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision1</KEY>
+<STR>{0.SimName}和{10.SimName}最近在街上，對於鎮上的花花公子比較愛誰，有激烈的爭吵。" 愛我多！" , " 不，是我！" , " 我！"  明顯地，這個幼稚的景象持續了好一段時間。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision2</KEY>
+<STR>{0.SimName}最近宣告對鎮上花花公子，{4.String}不朽愛意，這似乎讓{10.SimName}生氣，暗示{0.SimFirstName}充其量只是個賤婦，而且花花公子對新歡會更有興趣。明顯地，這段交談沒能最後是不歡而散。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision3</KEY>
+<STR>由於鎮上花花公子後宮妃子的人數已經有點多了，我們可以理解為何{0.SimName}和{10.SimName}會認為一個小白臉是不夠分的，最近有人看見她們為此展開彼此恐怖的流血謀殺。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Woo</KEY>
+<STR>花花公子求愛</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo0</KEY>
+<STR>{0.SimName}最近征服了{10.SimName}，拉進一個新會員到{4.String}私人王國裏。天啊，有些市民就是佔盡了便宜！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo1</KEY>
+<STR>{10.SimName}向{14.String}所有朋友炫耀最近和城裏的花花公子{0.SimName}約會的事。看來又有人著了{4.String}的魔了！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo2</KEY>
+<STR>當地的花花公子 " {0.SimName}" ，以{4.String}驚人的床上功夫，最近讓{10.SimName}成為{4.String}桃樹林中的一桃樹。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo3</KEY>
+<STR>{10.SimName}仍然對最近和鎮上花花公子{0.SimName}的約會興奮不已。朋友評論說，{12.String}現在的話題就只有露骨鹹濕的內容！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle</KEY>
+<STR>花花公子的愛撫/STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle0</KEY>
+<STR>當地的花花公子{0.SimName}，最近在施展{4.String}魅功，將他的愛散播到全鎮每個角落。愛人好多，但時間卻好少！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle1</KEY>
+<STR>當地的情夫{0.SimName}最近被看到正在盛情款待{4.String}那群意亂情迷的粉絲。{2.String}聽到一個聲音說：「你看，一個人的慾望是需要被刺激的。」「讓他們的渴望越來越強！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle2</KEY>
+<STR>當地的萬人迷{0.SimName}花了一點時間和{4.String}一些粉絲團團員聯係，每個得到寵幸的人看來都很開心！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle3</KEY>
+<STR>一些幸運的市民最近從當地的花花公子{0.SimName}那邊，得到一些需要的寵幸，{0.SimFirstName}指出：「我已經供應太多了。」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby</KEY>
+<STR>花花公子懷孕</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby0</KEY>
+<STR>花花公子明顯精力太過旺盛！{0.SimName}和{10.SimName}期待新生兒的誕生。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby1</KEY>
+<STR>說也奇怪，縱使已經懷了小孩，意亂神迷的感覺一點也沒消退！上次看到{0.SimName}和{10.SimName}，他們依舊精力充沛。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby2</KEY>
+<STR>懷著他們的私生子，{0.SimName}和{10.SimName}已經證明鎮上的花花公子也可以和其他人完全一樣！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby3</KEY>
+<STR>一個花花公子的忠實粉絲低語：「他們將要一起生出一個漂亮的嬰兒了！我只是希望那個人是我，而不是*其他的*市民！」{0.SimName}和{10.SimName}忙著迎接他們的新生兒，所以沒注意到絃外之音。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy</KEY>
+<STR>因花花公子嫉妒</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy0</KEY>
+<STR>「{2.String}以為{2.String}是誰？那美麗的花瓶是我的！都是我的！」當{10.SimName}聽說花花公子被看見和{0.SimName}嘿咻后尖叫不已。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy1</KEY>
+<STR>當花花公子在自己繁忙的日程中騰出與{0.SimFirstName}的某種面對面時間后，他對{10.SimName}的印象明顯沒有{0.SimName}多。「那個{5.String} 最好小心點自己的舌頭!」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy2</KEY>
+<STR>「這次我真的會挖出{2.String}眼睛！我的地盤我做主，沒有人可以進來！」當周圍傳開關於*{14.String}*花花公子對當地的{5.String}, {0.SimName}發放了少量的愛情時候，{10.SimName}大吐苦水。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy3</KEY>
+<STR>當{12.String}聽說{0.SimName}和花花公子做了某些運動后，{10.SimName}顯然快發狂了。「為什麼要這樣對我，創建者！他為什麼要離棄我？我遲早會打敗那個小賤人！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt</KEY>
+<STR>花花公子出擊</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt0</KEY>
+<STR>「哦，我的創建者！{0.SimName}，{2.String}真的，真的在看我！我感覺快死了！」當感受到太多花花公子那崇拜的目光后，{10.SimName}尖叫起來。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt1</KEY>
+<STR>「啊，一段新的愛情。它品嘗起來是如此美妙，就像在啜饮一杯上好的花蜜果汁，让你想要更多。」最近碰見{10.SimName}后花花公子如此說道，「絕對是非凡的!」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt2</KEY>
+<STR>{0.SimName}在{4.String}眼裡選擇了一個新樣本。不是別人正是{10.SimName}這位被精心挑選后的偶遇對象。「我感覺……實在是太榮幸了。和花花公子在一起，感覺就像是夢變成了現實。」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt3</KEY>
+<STR>「當{12.String}從短暂的昏厥恢复了之后, {10.SimName}和我就經常在鎮子中碰面了。」{0.SimName}如此報導說。又一个人被花花公子的魅力俘虜了。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt</KEY>
+<STR>花花公子新戀情</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt0</KEY>
+<STR>{10.SimName}被好事的群眾發現加入了花花公子{0.SimName}的後宮。看来，他們二人這段時間一直走得很近。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt1</KEY>
+<STR>{0.SimName}，這座平靜小鎮的花花公子，正沉迷于和{10.SimName}的纏綿。「某些市民總會走好運！」一位不願透露姓名的圍觀者提到。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt2</KEY>
+<STR>「我試著讓我的粉絲們都保持快樂。這很難，我承認，但我仍在努力。」當{0.SimName}被看到和{10.SimName}手挽著手在逛街時候，花花公子解釋說。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt3</KEY>
+<STR>和花花公子{0.SimName}約會之後，看來{10.SimName}急需一次醫療援救，因為{10.SimFirstName}直接暈了過去。「我只是無法忍受不在{4.String}身邊的日子！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt</KEY>
+<STR>花花公子的戀人</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt0</KEY>
+<STR>本地花花公子{0.SimName}，精神抖擻地護送著漂亮的{10.SimName}一起外出。「我們一起共進晚餐，然後跳舞……然後是甜點，最後是{3.String}。美味！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt1</KEY>
+<STR>{0.SimName}和{10.SimName}很早就在一塊接吻，快把每一個路人都嫉妒瘋了。「那個花花公子真是個棒傢伙。我真想要啊！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt2</KEY>
+<STR>「哦，我的創建者！你是否能永遠這樣好心地拖延時間！」{0.SimName}微笑地說，當{2.String}和{10.SimName}約會的時候。就像其他追隨者一樣，她省去了很多細節部份。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt3</KEY>
+<STR>{10.SimName}感覺就像上了天堂，因為{12.String}和這迷人的{0.SimName}四處掃視{13.String}目光碰撞後一頓狂喜。「很遺憾我只有一條命來獻給我的小鎮。」花花公子解釋說。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst</KEY>
+<STR>花花公子寵愛</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst0</KEY>
+<STR>當地花花公子{0.SimName}最近常將{4.String}雙手摟著{10.SimName}逛街。然而，正在熱戀期的{0.SimFirstName}也許會想知道這些手指什麼時候可能會離開，或者至少說{2.String}會拿走其中的一隻手。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst1</KEY>
+<STR>擁有一個正在交往的對象並不代表{0.SimName}會忽視{4.String}使命。當{10.SimName}從花花公子那得到的愛的照顧后，對這一點更加明確了。「那是個*非常博愛的*市民！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst2</KEY>
+<STR>「對那些值得我去愛的人我必須要表現的很有價值。」當一個好奇的鄰居問{2.String}怎樣處理一個穩定關係的時候，{0.SimName}解釋說。「當{10.SimName}來尋求我的引導的時候，我怎麼可以拒絕呢？」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst3</KEY>
+<STR>「我洋溢著如此多的愛，以至於我的妃子們都不能自已了。」{0.SimName}說。「儘管我已經有個伴侶了，像{10.SimName}那樣的模擬市民們仍在迫使我與他們保持聯繫。一個簡單的理由肯定是無法打發走他們的。這簡直就像是一種折磨！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond</KEY>
+<STR>花花公子插足</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond0</KEY>
+<STR>「這並不是什麼很嚴重的問題。」當一個朋友問要是{0.SimName}的配偶知道最近{12.String}和花花公子盡情縱欲會怎麼想，{10.SimFirstName}解釋說。「我的意思是如果{0.SimName}擁有了我，那麼不過是另一個愚蠢的男人失去我。」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond1</KEY>
+<STR>「他們倆我都很愛！哦，但是你能讓一個可憐的{15.String}怎麼做呢？」{10.SimName}歎氣道。「當然，我們有可能會確定戀愛關係，但是如果花花公子前來非難，肯定會有一個離去的。」{0.SimName}已經將{4.String}鉤子深深插入了{15.String}心臟！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond2</KEY>
+<STR>有流言說本地花花公子{0.SimName}接近了另一個模擬市民的伴侶身邊。{0.SimName}很快注意到自己是完全無可指責的，並且補充說：「那個溫柔體貼的人不會做錯的！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond3</KEY>
+<STR>現在還不能確定花花公子的愛{0.SimName}是否會讓{10.SimName}打算去終結他們的關係。「對，一方面，我有一個深愛我的情人……另一方面，是花花公子。為什麼我的命這麼慘？」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond4</KEY>
+<STR>「我從來沒有跟我選擇的女士們簽署過任何協議。」{0.SimName}解釋說。「不過，如果{10.SimName} 願意在我的道路里迷失，我不會將她趕出我的後宮的。」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped</KEY>
+<STR>花花公子分手</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped0</KEY>
+<STR>據社區報紙報導，{10.SimName}再也無法忍受{0.SimName}畢生致力於花花公子事業的行為並提出了分手。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped1</KEY>
+<STR>「那花花公子算個什麼東西？」{10.SimName}抱怨道。{0.SimName}和{12.String}都認為結束這段關係或許是最好的。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped2</KEY>
+<STR>「{10.SimFirstName} 本來可以很珍惜的。我的意思是我花花公子的性格是創建者恩賜的！為什麼{12.String}不能理解呢?」當{10.SimFirstName}決定和他解除情侶關係后{0.SimName}哀訴說。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped3</KEY>
+<STR>不再穩定了！0.SimName}和{10.SimName}決定終止他們的關係，原因是{10.SimFirstName}滿耳充斥著「花花公子這，花花公子那 」的話而{0.SimFirstName}卻總是只當玩笑而已。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst</KEY>
+<STR>花花公子外遇</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst0</KEY>
+<STR>一個已婚的花花公子該去做些什麼？必須有人去駕馭那些羊群，不然她們將會失去控制。{0.SimName}最近正在接觸{10.SimName}以確保在{4.String}統治下小鎮一直是太平的.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst1</KEY>
+<STR>「是的，{2.String}又開始冒險了，你知道嘛?" 從花花公子那取得了所需的愛情養料后{10.SimName}這樣議論說，「如果被{0.SimName}的配偶發現了，對{3.String}來說無疑是毀滅性的！」</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst2</KEY>
+<STR>" 他應該學會如何分享！" 當{12.String}被問及如何解決和花花公子的關係時候{10.SimName}粗聲粗氣地說。.  " 嫁給{0.SimName}並沒有賦予她肥水不流外人田的權力！" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst3</KEY>
+<STR>" 我希望每個人都能快樂和滿足。"  {10.SimName}詮釋自己的觀點說，" 身為一名花花公子負擔是很重的，所以我希望能幫助{0.SimName}能減輕負擔如果{4.String}老婆辦不到的話。 I just want to help {3.String} be a better man." </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond</KEY>
+<STR>花花公子外遇</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond0</KEY>
+<STR>當地花花公子熱愛者{10.SimName}在感情方面開始玩火了。很明顯{12.String}打算去戲弄和挑釁{0.SimName}其他愛好者!讓這火勢更加蔓延吧，但不要自己被燒到咯！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond1</KEY>
+<STR>{0.SimName}通常不合已婚人士交往, 作為一位引人矚目的市民{2.String}是。不過有的時候花花公子偶爾會響應召喚，然後去滿足一個模擬市民的需求。{10.SimName}獲得了他所需要的，而且還要更多！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond2</KEY>
+<STR>" 那個花花公子就像夢裡的……" {10.SimName}歎氣說，" 我只渴望{2.String}回家后能更加謹慎點。{4.String}妻子應該不會發現吧。" 不必太憂慮，{0.SimName}已經是{9.String}榮耀了！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond3</KEY>
+<STR>" 哦，{0.SimName}汝在何方？茱麗葉苦喚著乃！"  {12.String}不是莎士比亞,不過已婚的{10.SimName}知道該如何弄得戲劇化點，在{14.String}配偶背後與花花公子私通。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped</KEY>
+<STR>花花公子婚姻破裂</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped0</KEY>
+<STR>撞毀並且燃盡了！{0.SimName}同{10.SimName}已經無法挽回了，當{10.SimFirstName}得知{0.SimFirstName}的花花公子事業是如此的根深蒂固以致于超出了{12.String}想像.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped1</KEY>
+<STR>" 我不會再被那個……那個王八欺騙了！" {10.SimName}被聽到在咆哮，當{12.String}察覺出{10.SimName}被花花公子耍的團團轉。這對夫婦的婚姻顯然走到了盡頭。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped2</KEY>
+<STR>" {10.SimFirstName}並不理解。這並不是花花公子氣質的錯，而我自身的！" {0.SimName}哭泣說，" 當初是那個畜生的吸引力強到無法抗拒！" {10.SimName}和{0.SimFirstName}已經離婚了。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped3</KEY>
+<STR>" 那不過是短暫的分居，直到{2.String}回心轉意。" 當接受記者採訪時候，{10.SimName}辯解說，" 但是，恐怕離婚可能會成為最終的結果。{0.SimFirstName}的性格很難被改變的。" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm</KEY>
+<STR>花花公子提出離婚</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm0</KEY>
+<STR>" 那對{10.SimName}來說太不公平了,你明白嗎?" {0.SimName}解釋說，" 嫁給我確實是一件壓力很大的事情。所以我覺得我們離婚應該是最好的選擇。" 這個花花公子再一次單身了！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm1</KEY>
+<STR>後宮妃子們歡呼吧!花花公子{0.SimName}決定終止{2.String}和{10.SimName}的婚姻了。 " I simply must have more time for my devoted fans, so I decided to move on." </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm2</KEY>
+<STR>空氣突然安靜下來了!每個人都屏住呼吸等待著{0.SimName}的下一個動作會是什麼。現在{2.String}已經從{10.SimName}那裡重獲自由了。這個花花公子的婚姻終於畫上了句話！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm3</KEY>
+<STR>" 我用整個心去愛那位至親至愛的人。" {10.SimName}高興地說，" 當{0.SimName}決定離婚的時候我的內心是多么的興奮。也許是不願意看到我被{4.String}追隨者指手畫腳吧。他真是個好人，大好人！" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Accost</KEY>
+<STR>花花公子搭訕</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost0</KEY>
+<STR>當{0.SimName}聽說{4.String}情侶最近被{10.SimName}搭訕的時候整個人都震驚了。" 我完全不明白了，我得去看看怎麼回事了！當然不會打架。" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost1</KEY>
+<STR>昨天{10.SimName}的嫉妒心已經超出了{14.String}控制,以至於{12.String}突然覺得有必要去痛斥下{0.SimName}的情侶。" 他怎麼可以那麼自私!對{0.SimFirstName}做出那樣的事情t?" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost2</KEY>
+<STR>" 令人高興的是沒有人在那次打架中受傷。" {0.SimName}解釋說，" 不過{10.SimName}將會被我嚴厲地監視著。很明顯，{12.String}會去找個機會發洩下!" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost3</KEY>
+<STR>作為花花公子的伴侶很明顯有它的負面影響，就像{0.SimName}最近的最緊密的發現。 {10.SimName}逐漸被花花公子遺棄了。" 我可以讓他們雙方都平靜下，然後各給點關愛。" {0.SimFirstName}說到。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate</KEY>
+<STR>花花公子痛恨小白臉</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate0</KEY>
+<STR>" 那個{10.SimName}和{14.String}下三濫的手段簡直是玷污了我的名聲!已經無法容忍了！" {0.SimName}抱怨說。在那個當地小白臉的行為前花花公子顯得暴跳如雷。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate1</KEY>
+<STR>" 讓一個模擬市民花錢支付一個本來可以免費得到的服務實在是太可恥了！那個{10.SimName}究竟是靠什麼信念活下來的？悲哀！太悲哀了！" 看來本地眾多小白臉沒有一個是花花公子{0.SimName}的朋友，這是非常肯定的。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate2</KEY>
+<STR>本鎮花花公子{0.SimName}，被傳正在嘲笑當地的小白臉{10.SimName}關於給最高出價人的一些服務。 " 真是令人作嘔。如果某人無法免費提供自己，那就滾出這個遊戲！" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate3</KEY>
+<STR>" 嘿，我可是{0.SimName}的工作的一員，但是你不能靠{2.String}運營方式謀生啊。" {10.SimName}解釋說，" 所以如果{2.String}對我的手法有想法，可以隨便{2.String}怎麼去說。我一點兒也不在乎。" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Break</KEY>
+<STR>花花公子產生的決裂</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break0</KEY>
+<STR>" 我所做的都是為了花花公子的愛。儘管也許現在我會被其他一些人視作他們的真愛。" {0.SimName}在破壞{10.SimName}的{20.String}后這麼叫道。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break1</KEY>
+<STR>花花公子的愛明顯煽動人們趨向暴力！最近的一場發生在{10.SimName}家的爭鬥最後以{0.SimName}摧毀了一個{20.String}而告終。</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break2</KEY>
+<STR>這些都是表現對花花公子的愛嘛？那麼好吧，畢竟是花花公子，可以理解。不過要是你會不會也點燃一個{20.String}以證明你永恆的忠誠？是的，{0.SimName}剛剛這麼做了，就在{10.SimName}的家裡！</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break3</KEY>
+<STR>" 你就像個臭水溝裡的垃圾，而你的家也一樣！" {0.SimName}被聽到這麼咆哮。{2.String}對{10.SimName}的{20.String}猛烈捶了一下然後將它徹底報廢。" 將你的骯髒的爪子從我的花花公子身上挪開！" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Arson</KEY>
+<STR>花花公子燃燒愛火</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson0</KEY>
+<STR>" 我對花花公子的熾熱的愛要比這個可憐的{20.String}火熱得多！!"  {0.SimName}喊叫著，點燃了這個物品。 問題是這玩意可是{10.SimName}家裡的東西，然而{12.String}一點也不在乎!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson1</KEY>
+<STR>剛剛一個{20.String}被火焰吞噬了，在{0.SimName}和{10.SimName}之間的仇恨里熊熊燃燒。" 你給我離花花公子遠點，蕩婦！否則下一次我燒的就不是你家的破玩意了！" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson2</KEY>
+<STR>" 燒得更旺吧！將我的愛，深深地照進花花公子的心裡吧！！" {10.SimName}被{0.SimName}瘋狂的行為嚇得目瞪口呆。{0.SimFirstName}繼續點燃了{14.String}{20.String}。{10.SimFirstName} 立馬反駁道: " 你愛花花公子？就用這種手段？可笑，那美麗的花瓶將都是我的！" </STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson3</KEY>
+<STR>" 燒吧燒吧！燃燒的愛！" {0.SimName}吹著口哨，一邊注視著{10.SimName}家裡的{20.String}被燒成了灰燼。為了花花公子這些模擬市民們還有什麼做不出來的？</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MenuName</KEY>
+<STR>小鎮狐狸精</STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Creation</KEY>
+<STR>狐狸精誕生</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation0</KEY>
+<STR>狐狸精，充滿魅力，而且很溫順，極具挑逗性。是的，這就是{0.SimName}的完美刻畫！</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation1</KEY>
+<STR>一位新的風騷女子已經崛起！她將威脅那些鎮上倒楣的荷爾蒙過剩的傢伙們！小心{0.SimName}這個新狐狸精！</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation2</KEY>
+<STR>{0.SimName}決定要將這個小鎮刷成桃花紅並將號令所有有渴望的生物的心，作為一名新狐狸精！</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation3</KEY>
+<STR>一個美味可口的小狐狸精！{0.SimName}正準備靠{14.String}甜美微笑和*純真可愛*去支配鎮上那些意志薄弱的傻瓜們！</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Recruit</KEY>
+<STR>狐狸精聚集</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit0</KEY>
+<STR>鎮上的生活似乎還不夠甜蜜，於是現在{10.SimName}加入了{0.SimName}的狐狸精領域中。</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit1</KEY>
+<STR>看起來{0.SimName}在鎮上可口的小甜心領域中又有了叫{10.SimName}的新對手!</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit2</KEY>
+<STR>{10.SimName}看起來是那麼的迷人，於是作為一名狐狸精和{0.SimName}混在了一起。</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit3</KEY>
+<STR>那麼的閃亮，那麼的迷人，{10.SimName}是如此的秀色可餐。看起來{12.String}似乎在{0.SimName}的狐狸精團隊中找到了一席之地。</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt</KEY>
+<STR>狐狸精開始調情</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt0</KEY>
+<STR>" 那麼漂亮，那麼正點。我感覺{3.String}全身都散發著令人敬畏的氣味。"  {10.SimName}驚歎說，當他花了一點時間與{0.SimName}交流了一下。 " 我無法控制自己了，我只想要更多！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt1</KEY>
+<STR>{10.SimName}已經被{0.SimName}的魔力給控制了。旁觀者則報導說二人看起來相處地很好, {10.SimFisrtName}很享受和{0.SimFirstName}在一起的每一分鐘時光。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt2</KEY>
+<STR>" 他們倆在一塊看起來是那麼有趣，我希望他們會繼續發展。" 看起來{10.SimName}正在倒立來取悅{0.SimName},而且{2.String}似乎很喜歡這種關注。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt3</KEY>
+<STR>本地狐狸精{0.SimName}最近被多事的人看到在玩弄{10.SimName}於{4.String}鼓掌中。" 讓{13.String}聽我的指揮實在是太容易了。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt</KEY>
+<STR>狐狸精新調情</STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt0</KEY>
+<STR>那個小潑婦，眾所周知並且受人敬仰的{0.SimName}似乎被看見正在和一個倒楣的傻瓜{10.SimName}一同外出。" {10.SimFirstName}非常喜歡我，{12.String}或許會為我做任何事情……我很喜歡這樣。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt1</KEY>
+<STR>好奇的旁觀者們似乎就是無法將自己的視線從{0.SimName}和那個傍著她的胳膊的倒楣愚蠢的傻瓜身上移開。{10.SimName}顯得是如此的癡情、目瞪口呆的盯著{0.SimFirstName}不放，而且當{12.String}被問及那天有什麼計劃的時候這麼回答的：" 無論我那可愛的小甜心要啥我都會滿足。我就是無法對{3.String}說半個不字。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt2</KEY>
+<STR>Love is a curious mistress, and when it comes to {10.SimName}'s devotion to {0.SimName}, clearly it is strong as well!  " I need {3.String}, more than I need air!  Don't look at {3.String} like that!  {0.SimFirstName} is mine, all mine!" </STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt3</KEY>
+<STR>{0.SimName}似乎在通過讓可憐的{10.SimName}對{4.String}每個指令畢恭畢敬的方法展現{4.String}控制{12.String}的魔力有多么強大。" {10.SimFirstName} 喜歡為我做事，你同意嗎？當然你會同意啦。我可愛的小受男!" </STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt</KEY>
+<STR>狐狸精的情人</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt0</KEY>
+<STR>{0.SimName}和{10.SimName}的關係最近變得越發火熱了。看起來{10.SimFirstName}會為那個小甜心做任何事情!</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt1</KEY>
+<STR>" 我非常非常愛{0.SimName}！" {10.SimName}咧著嘴笑著說，" 你知道, 當我為做了些事情后{2.String}會發出很小而又可愛的尖叫，{2.String}就是喜歡這樣!" </STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt2</KEY>
+<STR>流言已經越傳越火熱了,熱到快把新聞社都燒盡了！{0.SimName}將{4.String}鉤子深深地插入了{10.SimName}的心臟，並且讓{12.String}喜歡著每一秒在一起的時光，就像牛仔一樣，喲哈！</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt3</KEY>
+<STR>" 美味！我幾乎可以把{3.String}吃光！事實上，這聽起來確實不賴。"  看起來{10.SimName}知道該怎麼去取悅{4.String}小天使{0.SimName}。</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby</KEY>
+<STR>狐狸精懷孕</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby0</KEY>
+<STR>能顯示出是否為愛真正奉獻的方法，對於這個小狐狸精{0.SimName}來說就是確信懷上了{10.SimName}的孩子！喔，在奉獻和精神錯亂之間是有那麼一層窗戶紙，而且我們很確信遲早會捅破！</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby1</KEY>
+<STR>據說那個小金橘{0.SimName}已經足夠成熟可以採摘了，而且{10.SimName}也為此做好了準備！這對年輕人正準備迎接他們的孩子！</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby2</KEY>
+<STR>難以置信！{10.SimName}對{0.SimName}展示了真摯的愛情，通過{14.String}努力讓一顆種子發了芽。這個狐狸精將擁有一個孩子！</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby3</KEY>
+<STR>那個！就是那個狐狸精！居然{0.SimName} 懷上了{10.SimName}的孩子。 " 就像我說的,我會為我的小甜心{0.SimFirstName}做任何事，任何事！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst</KEY>
+<STR>狐狸精外遇</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst0</KEY>
+<STR>狐狸精{0.SimName}被看見跳進了{10.SimName}的懷抱，儘管自己正在和別人交往。</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst1</KEY>
+<STR>本地一個有情侶的叫{0.SimName}的狐狸精正在用{4.String}方式來玩弄可憐的{10.SimName}." {12.String}是否介意我還在和別人交往呢？當然不會，{12.String}是我的甜心小受男嘛。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst2</KEY>
+<STR>" {0.SimFirstName}！" {10.SimName}尖叫了，" {0.SimFirstName}，寶貝！帶走我吧寶貝，然後甩掉你那個廢物！" 看起來{0.SimName}似乎又勾走了一個可憐蟲的魂魄！</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst3</KEY>
+<STR>{0.SimName}正處於一個穩定的戀愛關係中，而{10.SimName}似乎也應該知道會面對什麼樣的口水。但很明顯這些小波小浪已經無法阻止{10.SimFirstName}這位衝浪選手了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond</KEY>
+<STR>狐狸精插足情侶</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond0</KEY>
+<STR>" 我就是無法控制自己！我愛{3.String}，非{3.String}不愛!我就是想得到{4.String}愛！" {10.SimName}高喊著，在一個朋友的目擊下一躍跳入了當地狐狸精{0.SimName}的懷裡，儘管{10.SimFirstName}還在和另一個人談戀愛。</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond1</KEY>
+<STR>" 你只愛我，對嗎我的愛人？"  有人聽到{0.SimName}在{10.SimName}耳邊低語著。 " 哦當然，親愛的!我的心裡只有你，只有你！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond2</KEY>
+<STR>{10.SimName}似乎被當地狐狸精{0.SimName}給牢牢控制了，儘管{3.String}還在和別人交往。" 你怎能浪費你的美麗呢?我必須擁有你！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond3</KEY>
+<STR>那個迷人的小狐狸精{0.SimName}被確信正在誘惑那個毫無抵抗力的{10.SimName}來闖入{2.String}和{4.String}另一個重要的人之間。" 我只是在唱歌，然後他們就自己跟過來了！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst</KEY>
+<STR>狐狸精出軌</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst0</KEY>
+<STR>已婚的狐狸精{0.SimName}看來難受好評了，特別是當{2.String}被目擊到正和{10.SimName}手牽著手,沉浸在美妙的二人世界中。稍後我們將帶來更詳盡更瘋狂的的報導!</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst1</KEY>
+<STR>{10.SimName}被看到正在同{0.SimName}摟摟抱抱，儘管{12.String}知道{2.String}是有夫之婦了！" 什麼？難道你會拒絕一塊美味的巧克力嘛？" </STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst2</KEY>
+<STR>{0.SimName}結婚了有段時間了，或許你以為{3.String}在面對{10.SimName}的搭訕前會冷言拒絕。" 無論我怎麼抵抗就是無法阻止{13.String}。{12.String}就是對我很癡迷，就像蜜蜂盯上花，你懂的。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst3</KEY>
+<STR>" 我就是喜歡被關注，" {0.SimName}低聲耳語，與此同時{10.SimName}正被看見拜倒在{4.String}石榴裙下并乞求去親吻幾處我們不敢想像的地方。" 唉，看來我又得給我家那口子做點防備工作了" </STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond</KEY>
+<STR>狐狸精第三者</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond0</KEY>
+<STR>妖女迷人的歌聲是如此的威力無比，而且幾乎沒有人能抵抗{4.String}召喚。自認為不是這樣意志薄弱的{10.SimName}最近被看到在{0.SimName}周圍像個傻帽一樣亂轉。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond1</KEY>
+<STR>婚姻誓言是神聖不可隨意動搖的。然而{10.SimName}似乎就是要試著打破{14.String}誓言，完全就是因為那個當地狐狸精{0.SimName}！</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond2</KEY>
+<STR>" 為什麼{2.String}是如此的誘惑？" {10.SimName}呻吟著。我們開始懷疑{12.String}是不是被那個當地狐狸精{0.SimName}給勾到了魂。已婚的市民身份似乎也改變不了{3.String}！</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond3</KEY>
+<STR>" 能看到{0.SimName}那就是一種榮耀，哪怕是透過像我這樣的已婚老男人的雙眼。" {10.SimName}歎氣地說。" 我相信我老婆不會介意我去嘗一下那個小甜點……就一小口而已……他們不會介意的，我相信！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped</KEY>
+<STR>狐狸精被甩</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped0</KEY>
+<STR>歡呼吧！看起來過度的投入狐狸精的事業最終讓{0.SimName}和{10.SimName}分手了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped1</KEY>
+<STR>" 我不明白，為什麼會這樣！" 當得知{10.SimName}決定結束他們直接的關係時候，{0.SimName}哭泣說。</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped2</KEY>
+<STR>當心這個美味的小甜點！當{0.SimName}的小狐狸精身份被曝光后，{10.SimName}決定終止交往。</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped3</KEY>
+<STR>天呐！{0.SimName}被{10.SimName}叫出去聊了一會，然後這個笨蛋終於決定離開{3.String}了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped</KEY>
+<STR>狐狸精被拋棄</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped0</KEY>
+<STR>喔，看來{0.SimName}的甜言蜜語也無法阻止{10.SimName}和{4.String}婚姻畫上句號。 讓我們祈禱那個狐狸精下次出手後不會再被鑽空子了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped1</KEY>
+<STR>正如你所猜到的，有關狐狸精的更多悲劇新聞。是的，據報導{0.SimName}和{10.SimName}之間的婚姻在那次風波后徹底結束了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped2</KEY>
+<STR>估計從{10.SimName}決定跟狐狸精{0.SimName}離婚之后，不再會有人嘗試去品味這塊美味的糕點了吧。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped3</KEY>
+<STR>本台不會再開更多關於糕點的笑話了，真的！好吧，我承認，大概還有一個，那就是糕點的婚姻完蛋了。是的，令人心痛的消息，據說{10.SimName}和{0.SimName}徹底決裂了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MoveIn</KEY>
+<STR>狐狸精搬家</STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MoveInSummary</KEY>
+<STR>同{0.SimName}一起搬入的有以下幾個市民：{10.String}</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn0</KEY>
+<STR>最近狐狸精造成的麻煩正在急速升溫，{0.SimName}已經放棄{4.String}前一個住所然後同{10.SimName}一起搬入了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn1</KEY>
+<STR>" 我從來沒有想過會發生這樣的事情。" {0.SimName}解釋說，一邊打開{4.String}行李。這個可憐的市民似乎因為最近的幾起麻煩不得不搬遷了。幸運的是{10.SimName}被允許搬過去一起住。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn2</KEY>
+<STR>麻煩和問題還在繼續，{0.SimName}仍舊無法回答關於{2.String}搬進{10.SimName}家裡的問題，哪怕是最簡單的， " 呃……那個……這個……"  was pretty much the most one could gather.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn3</KEY>
+<STR>" 前一秒我還很開心地蝸居，後一秒我就倒楣地被趕出來了。" {0.SimName}歎氣說。這個可憐的市民不得不搬入{10.SimName}的家以避免露宿街頭。</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson</KEY>
+<STR>為狐狸精縱火</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson0</KEY>
+<STR>" 你為什麼討厭我的愛，小甜心？" {0.SimName}一邊哭喊著一邊點燃了{10.SimName}的{20.String}。 " 你這混蛋最好離她遠點，不然下一次後果很更糟糕！" 看來那個狐狸精的愛對他的影響實在是太大了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson1</KEY>
+<STR>似乎狐狸精的誘惑魔法甚至能幹擾最講道理的市民的判斷能力。比如說{0.SimName}，就是那個剛剛在{10.SimName}家裡點燃了了一個{20.String}的傢伙。{10.SimFirstName}對狐狸精並不友善，但是不得不說{0.SimFirstName}或許做的有點過了。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson2</KEY>
+<STR>" 別看著我！我可沒有讓{0.SimName}去燒掉那個{20.String}！我幹嘛要那樣做呢？" 似乎{0.SimFirstName}決定去對抗{4.String}狐狸精的敵人，並且在{10.SimName}家裡放了一把火!</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson3</KEY>
+<STR>{0.SimName}在那個無助的小狐狸精偽裝前屈服了，并闖入了{10.SimName}的家中一把火燒掉了{20.String}。 " 如果不是當時就在現場，我真不敢相信！那個傢伙簡直瘋了！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail</KEY>
+<STR>為狐狸精縱火</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail0</KEY>
+<STR>" {0.SimName}就坐在那然後自言自語著一些關於某個我不能透露姓名的狐狸精的事情，就在我進去抓住{3.String}的時候……而且還盯著我的著火的{20.String}看！" {10.String}對趕來報到最近一起火災的記者解釋說。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail1</KEY>
+<STR>火災專案組正在仔細勘察昨天被點燃的{20.String}的殘骸，去尋找{0.SimName}縱火的證據。" 我問{3.String}為什麼這麼做。" {10.SimName}說，" 然後{4.String}唯一的解釋是某個甜點讓{3.String}這麼做。我到現在還沒弄懂{3.String}在說什麼。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail2</KEY>
+<STR>{0.SimName}被警方通知說{3.String}涉嫌最近一起發生在{0.SimName}家中的{20.String}燃燒案。當被問及{2.String}為什麼這麼做的時候，{2.String}只說了這些：" 我的真愛會幫我度過這一切的，你會看到的！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail3</KEY>
+<STR>" 被燒成渣了！我的{20.String}被燒毀了。我真不敢相信這是真的！" {10.SimName}抱怨說，當他回家時候看到{0.SimName}正在點燃它。" 一切就是因為那個狐狸精的愛？簡直就是種浪費！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:LoverArson</KEY>
+<STR>因狐狸精縱火</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson0</KEY>
+<STR>" 狐狸精是我的，你滾遠點！聽到沒？" {0.SimName}點燃了{10.SimName}的{20.String}后大喊著，" 絕不！" {10.SimFirstName}反擊說，" 你會為此付出代價的！狐狸精愛的是我！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson1</KEY>
+<STR>" 我對你的愛就像這熊熊燃燒的{20.String}一樣火熱！"  {0.SimName}被聽到這麼高唱著歌，就在他點燃了那個東西並且從{10.SimName}家裡逃出去后。</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson2</KEY>
+<STR>" 她是我的！就是我的！讓這個被火焰吞噬的{20.String}見證我的愛情吧！" 看來因為一個狐狸精而造成的摩擦在{0.SimName}和{10.SimName}劇烈碰撞著！</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson3</KEY>
+<STR>{0.SimName}和{10.SimName}最近被傳訊到警察局去詢問一起有關前不久{0.SimFirstName}點燃了{10.SimFirstName}的{20.String}來證明{4.String}愛要更加偉大的案件。" 你遲早會付出代價的！我保證！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak</KEY>
+<STR>為狐狸精破壞</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak0</KEY>
+<STR>" 誰還能幹出這樣的事情？闖入我的家然後砸碎了{20.String}?" {10.SimName}憤怒地指責說。大家一直懷疑{0.SimName}就是肇事者，而某個狐狸精就是幕後黑手。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak1</KEY>
+<STR>" 這玩意確實報廢了，掏腰包出修理費也是在所難免了，" {10.SimName}抱怨說。看起來剛剛有人弄壞了{14.String}{20.String}。" {0.SimName}嫌疑最大，我從來不喜歡{3.String}和{4.String}狐狸精*朋友*。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak2</KEY>
+<STR>{0.SimName}在這個鎮子里對那些痛恨狐狸精的人做出了些令人目瞪口呆的事情，比如說闖入{10.SimName}的家裡然後砸壞了一個剛買的{20.String}。" 這個鎮子的未來會成什麼樣啊？" {10.SimFirstName}抱怨說。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak3</KEY>
+<STR>{10.SimName}回家的時候驚訝的發現{4.String} {20.String}被破壞的面目全非。他猜測肯定是那個{0.SimName}！" 自從{4.String}魂被那個狐狸精夠走後那傢伙就一直很反感我！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail</KEY>
+<STR>為狐狸精破壞</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail0</KEY>
+<STR>" 我會再做一遍的！我的狐狸精愛我，我也愛她！" {0.SimName}一邊大叫著一邊被周圍的人從受損的{20.String}旁邊拉開。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail1</KEY>
+<STR>狐狸精讓人失去理智的能力實在是太令人吃驚了。有人相信就是這種力量驅使著{0.SimName}襲擊了{10.SimName}家裡的{20.String}！這真的是太瘋狂了！</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail2</KEY>
+<STR>" 我們暫時無法解釋{0.SimName}的行為。" 當{10.SimName}報警稱{14.String} {20.String}被這個市民破壞時候，警方如此回應說。" {0.SimFirstName} 只是重複著某個當地小狐狸精的名字，僅此而已。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail3</KEY>
+<STR>愛情會降智商，就像{10.SimName}最近發現的，一個愛情瘋子{0.SimName}闖進了{14.String}家裡並且摧毀了{20.String}。" 那傢伙腦子里裝的是什麼？{2.String}肯定是瘋了！簡直就是個榆木腦袋！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak</KEY>
+<STR>因狐狸精破壞</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak0</KEY>
+<STR>" 哦是嗎？你以為你闖進我家砸了{20.String}你就厲害了?那個狐狸精是我的!你等著瞧！" 當{0.SimName}決定要用雙手去證明自己才是更忠誠的情侶時候{10.SimName}大喊著。</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak1</KEY>
+<STR>愛情三角戀最終導致了很一個糟糕的局面。{0.SimName}決定靠破壞{10.SimName}家裡的{20.String}來顯示自己的勝利。" 拉走這個失敗者！狐狸精是我的！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak2</KEY>
+<STR>妖女的歌聲已經擾亂了{0.SimName}的神智，{2.String}壯了壯膽子后摧毀了情敵家的{20.String}。{10.SimName}對這場暴力秀表示沒有壓力：" 我猜{2.String}肯定是因為在床上失利，所以才這麼做！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak3</KEY>
+<STR>{0.SimName}和{10.SimName}對某個狐狸精的角逐進入了白熱化。{0.SimFirstName}衝進了{10.SimFirstName}家裡砸碎了{20.String}。" 我才是她的真愛！滾遠點{10.SimFirstName}！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight</KEY>
+<STR>為狐狸精幹架</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight0</KEY>
+<STR>留言已經在整個小鎮傳開了，{0.SimName}放倒了{10.SimName}來顯示{2.String}對某個當地狐狸精永恆的忠誠。" 不知道從哪就突然冒出來對我腦袋就一敲！" {10.SimFirstName}抱怨說，{14.String}頭上纏滿了繃帶.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight1</KEY>
+<STR>愿狐狸精的力量支配著你！{0.SimName}好像被什麼東西控制住了，{2.String}鼓起勇氣和{10.SimName}，一個已知的{0.SimFirstName}的情敵幹了一架。" 這不公平！他偷襲我，我連還手的餘地都沒有！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight2</KEY>
+<STR>當地狐狸精的偉大的情人{0.SimName}放倒了一個叫{10.SimName}的本地敵人。{0.SimFirstName} 似乎在全力攻擊，並且在這場肉搏賽中拒絕和狐狸精的敵人妥協。</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight3</KEY>
+<STR>在一場精彩的肉搏賽中，{0.SimName}擊倒了毫無防備的{10.SimName}去警告別和{4.String}親密情人，某個本地狐狸精作對。" 我要從像{10.SimFirstName}這樣的憎恨者中保護我的愛情。而且這也能顯示我對她的愛發自真心的，你明白嗎？" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail</KEY>
+<STR>為狐狸精幹架</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail0</KEY>
+<STR>{10.SimName}在和突然冒出的瘋狂的{0.SimName}决鬥中占了上風。這個被擊暈的市民還沒來得及恢復過來就又吃了一記上勾拳。" 我只揍那些可以加分的地方！" {10.SimFirstName}大喊著， " 真希望{2.String}下次為{4.String}小狐狸精發瘋前能先掂量掂量!" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail1</KEY>
+<STR>左勾拳！上沖拳！嘣！{0.SimName}在巨大的痛苦中摔倒在地，就在那個技術嫺熟的拳擊天才{10.SimName}面前。" 這個狂熱的瘋子{0.SimFirstName}到底在想些啥？看起來他並沒有用{4.String}上半身在思考……看來是另一半吧。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail2</KEY>
+<STR>為了顯示雖才是更厲害的鬥士，{10.SimName}輕鬆而且優雅地放倒了{0.SimName}，而且還是這個發瘋的市民從背後突然襲擊他。" 這個蠢貨總在叨叨他的狐狸精長，狐狸精短！有人應該去管管那些小甜點，不然{4.String}腦袋會廢了！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail3</KEY>
+<STR>" 我可以完全幹掉{13.String}！" 最隨後的採訪中{0.SimName}這樣喊著。在這史上持續時間最短的幹架中{10.SimName}從{0.SimFirstName}的偷襲中完美地保護了{13.String}自己, 並且給這可憐的傻瓜來了一記漂亮的過肩摔。" 大概並沒有傷到{2.String}經常用的那玩意，你懂的。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:LoverFight</KEY>
+<STR>因狐狸精幹架t</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight0</KEY>
+<STR>{0.SimName}和{10.SimName}最近決鬥了一場，因為他們都愛上了同一個狐狸精。</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight1</KEY>
+<STR>" 我的意思是，這次騷動不會又想說是我引起的吧？" 某個當地狐狸精聽聞說{0.SimName}和{10.SimName}對掐了起來后這麼說道。</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight2</KEY>
+<STR>三角戀總會引發麻煩，就像{10.SimName}剛剛學到的一樣，因為{0.SimName}剛剛突然襲擊了他。" 那個狐狸精是我的！滾遠點混蛋！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight3</KEY>
+<STR>哦甜心！一個本地狐狸精貌似將她的兩個情人{0.SimName}和{10.SimName}捲入了暴力衝突。憤怒在升溫，拳頭在飛舞，只為同一人！</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:FightHate</KEY>
+<STR>因狐狸精陷入幹架</STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate0</KEY>
+<STR>" 那個笨蛋{0.SimName}在想什麼？突然發起攻擊簡直是……哦，真是的！" {0.SimFirstName}逃跑后{10.SimName}這麼說。</STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate1</KEY>
+<STR>{10.SimName}聽說{0.SimName}被{14.String}朋友好好修理了一頓后表示沒有壓力。" 一個傻子罷了。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate2</KEY>
+<STR>" 簡直就是精神病。那個{0.SimName}被那個狐狸精耍的團團轉。" {10.SimName}抱怨說，" 跟{3.String}說為了榮譽而戰之類的蠢話都是扯淡。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate3</KEY>
+<STR>" 我喜歡决鬥，但是僅限於專業水准的。" {10.SimName}被聽到這麼說，" 那個業餘的叫什麼{0.SimName}的那一推實在是太沒有技術含量了。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate</KEY>
+<STR>因狐狸精陷入麻煩</STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate0</KEY>
+<STR>" 那個笨蛋往地上丟汽油瓶干嘛？" 當{10.SimName}從朋友那聽說{0.SimName}最近的古怪行為后表示不解，" 為了啥？那個狐狸精么？胡說吧！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate1</KEY>
+<STR>{0.SimName}最近策劃的一起縱火案似乎被{10.SimName}挫敗了。很明顯{10.SimFirstName}是受害者的好朋友，而且明顯也不喜歡某個放浪貨。</STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate2</KEY>
+<STR>{10.SimName}在鎮子里四處炫耀{12.String}是怎麼發現并阻止{0.SimName}製作汽油瓶的。 " {0.SimFirstName}會傷到某個人的！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate3</KEY>
+<STR>" 玩火？聽起來確實像是{0.SimName}喜歡幹的事情。"  {10.SimName}議論說，" {0.SimFirstName}從來不會做的正常人的事情，你懂的。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:BreakHate</KEY>
+<STR>因狐狸精陷入麻煩</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate0</KEY>
+<STR>" 我是不是應該把{4.String}腦子撬開，然後看看{3.String}那裏面裝的究竟是些什麼！" {10.SimName}聽說{0.SimName}闖入一個朋友家裡后抱怨說。</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate1</KEY>
+<STR>" 對不起，我已經無話可說了。天天沒事可做，還到處破壞東西，{0.SimName}最好注意下遲早有人會反擊的。"  {10.SimName}這麼說。</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate2</KEY>
+<STR>當聽說{0.SimName}最近的破壞性行為嚴重的時候，{10.SimName}只好這麼說：" 跟我朋友家的東西作對就是和我作對！給我記住了！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate3</KEY>
+<STR>{10.SimName}實在不能理解為什麼{0.SimName}又一次襲擊了朋友家庭。 " 愚蠢的行為。我相信{2.String}遲早會遭到報應的！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:GoToJail</KEY>
+<STR>因狐狸精坐牢</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail0</KEY>
+<STR>看起來{0.SimName}最後把{3.String}自己送進了監獄。或許這樣能夠教會{3.String}以後行事要多用用{4.String}腦子而不是*心肝*。</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail1</KEY>
+<STR>{0.SimName}剛剛被逮捕了。 " 我是清白的，這就是{4.String}唯一的反駁。" 警方報導說。</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail2</KEY>
+<STR>" 別碰我的小狐狸精，抓我就行了。" {0.SimName}被送進監獄讓{3.String}自己反省的時候如此囔囔說道。</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail3</KEY>
+<STR>很幸運的是{4.String}狐狸精甜心會為{0.SimName}烘焙一個蛋糕當牢飯，現在{0.SimFirstName}已經蹲進監獄了！</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MenuName</KEY>
+<STR>小鎮小白臉</STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Creation</KEY>
+<STR>小白臉誕生</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation0</KEY>
+<STR>" 天呐，原來{2.String}就是那個小白臉！" {0.SimName}崛起了，他將挑戰鎮上每個性冷淡的女性市民!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation1</KEY>
+<STR>一個誘惑大師？讓我們瞧瞧是否{0.SimName}有能力成為鎮上的小白臉！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation2</KEY>
+<STR>免費嘿咻機器{0.SimName}覺得{2.String}是時候應該開始收費了，而且希望鎮上的百姓們也會這麼認為。加油吧，小白臉！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation3</KEY>
+<STR>如果名譽能代表一切，那麼{0.SimName}就在一個很好的環境中生活，然而自己似乎不確定小白臉這種生活方式究竟是對的還是錯的。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle</KEY>
+<STR>小白臉愛撫</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle0</KEY>
+<STR>{0.SimName}就是無法控制住{3.String}自己，{2.String}好像很飢渴而且那些人*必須*有所付出！這個小白臉剛剛被看見正在到處尋找目標。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle1</KEY>
+<STR>" 你真熱辣……你真熱辣……我也很棒！跟我來我的公司裡分享快樂吧。" 小白臉{0.SimName}似乎正在外出尋找生意目標！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle2</KEY>
+<STR>" 嘿，過了這村就沒這店了哦，而且我可以獲得任何我想要的還不用出門！" {0.SimName}被看到正在記錄一長串的約會日期時候直言自語地說。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle3</KEY>
+<STR>" 我總是能確保自己生活滿足，還能騰出時間來賺點小費，有趣吧！" {0.SimName}被問及這個星期{2.String}打算把多少市民弄上床的時候這麼解釋的。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion</KEY>
+<STR>小白臉聚集</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion0</KEY>
+<STR>那些小白臉們{0.SimName}和{10.SimName}似乎在互相交換商業機密。 " 記住，一個良好的印象總能換來一次好的約會。而且記住儘量不要在買床的問題上太過節約，那只會讓你的後背更疼！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion1</KEY>
+<STR>甚至是專業人士也是需要有高手的指點的，於是{0.SimName}總在四處尋找最新最好的技術手法。這個小白臉現在正在和與他志同道合的{10.SimName}高談闊論中。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion2</KEY>
+<STR>" 也就是說這樣就行了嘛？感謝創建者，你給了我很多幫忙，朋友！"  {0.SimName}被聽到正在和同道中人{10.SimName}一同探討最新技術。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion3</KEY>
+<STR>旁觀者們開始有點不解了，關於那兩個小白臉{0.SimName}和{10.SimName},以及他們之間展開的話題：" A孔要準確插入B槽內，然後你抓住這裡的把手再一拉。你看多簡單，接下來它就會像絲一樣柔軟了!" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Derision</KEY>
+<STR>嘲笑小白臉</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision0</KEY>
+<STR>" {2.String}的道德下限實在是低的驚悚了！" {10.SimName}聽說最近關於{0.SimName}玩弄女性的習慣后大為震驚，" 作為一個模擬市民應該只忠於一個人！那樣的愚蠢行為只會讓他自討苦吃！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision1</KEY>
+<STR>" 真是不知道{0.SimName}是怎麼處理他那所有的關係的。" {10.SimName}議論道，" 我的意思是，就說我自己吧。我連一個都滿足不了，更別說那麼多了！我都開始有點嫉妒了！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision2</KEY>
+<STR>{10.SimName}對於最近{0.SimName}玩弄女性的行為表示大為不滿。看來有媒體報導了小白臉那令人無法抗拒的高超技術手法。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision3</KEY>
+<STR>" 天呐，我的創建者！如果再我聽到{0.SimName}最近征服了誰，我會給自己一槍……太痛苦了。" {0.SimName}從一個朋友那聽說了那個小白臉的偉大事蹟后呻吟道。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust</KEY>
+<STR>厭惡小白臉</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust0</KEY>
+<STR>" 我的意思是，真的嗎？小白臉他是？{0.SimName}其實可以做得更好！" {10.SimName}從別的地方聽說了{14.String}朋友的黑暗面后抱怨說。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust1</KEY>
+<STR>{10.SimName}聽說{0.SimName}成為本地小白臉的一員后很不高興，認為是誹謗。在反復確認之後，{10.SimFirstName}只好這麼說：" 呃……！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust2</KEY>
+<STR>" 真惡俗，他們做了些什麼？在哪？呃，呃，停停停，我得去洗洗耳朵！" {10.SimName}聽說{14.String}朋友{0.SimName}經常與一個鎮上的小白臉在一起交流經驗后非常反感。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust3</KEY>
+<STR>" 我怎麼會如此吃驚呢？" {10.SimName}最近被問到{12.String}對{0.SimName}近期和當地小白臉越來越麻吉的行為有什麼想法的時候，這麼說的，" {0.SimFirstName}太投入那個角色裡了." </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Date</KEY>
+<STR>小白臉約會</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date0</KEY>
+<STR>" 我的第一準則？當然確保{12.String}們一直想要更多。" {0.SimName}最近和{10.SimName}一起外出約會時候解釋說。{10.SimFirstName}看起來非常享受小白臉所帶來的服務並且慷慨支付了{20.Money}模擬幣。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date1</KEY>
+<STR>" 我對這次約會非常滿足。" {10.SimName}在一個親近的朋友注意到{12.String}紅光滿面時候這麼回答的。" {0.SimName}讓我好好的享受了一次外出，而且我也喜歡跟{2.String}在一起的每一分鐘。而且{20.Money}模擬幣並不是一個很大的數額。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date2</KEY>
+<STR>據說{0.SimName}幾乎以{20.Money}模擬幣這麼低廉的價格來提供{4.String}各種服務，並且牢牢勾住了{10.SimName}!" 價錢合理，而且{0.SimFirstName}的服務也很周到。最重要的是當我想要那個特殊服務的時候也沒有拒絕。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date3</KEY>
+<STR>{10.SimName}在{12.String}被當地小白臉{0.SimName}要求{20.Money}模擬幣的時候顯得非常爽快。 " 我需求那些專業的服務，而且確實收到了。這還有什麼問題嗎？" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm</KEY>
+<STR>小白臉分手</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm0</KEY>
+<STR>和一個小白臉並不是一直都會桃花配奶油那麼甜蜜，{10.SimName}就獲得了這方面的第一手資料，" 我感覺已經超出控制了，所以我決定跟{0.SimName}斷絕來往。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm1</KEY>
+<STR>" 我知道{0.SimName}很好而且……但是我更希望我們之間的關係不僅僅只停留在床上。" {10.SimName}對一個問及{14.String}最近和{0.SimName}分手的原因的朋友時這麼解釋的。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm2</KEY>
+<STR>" 我們決定分道揚鑣了。" {0.SimName}在{10.SimName}決定總結戀愛關係后這麼解釋，" 我覺得要是恢復單身對其他的主顧會有更多的利益。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm3</KEY>
+<STR>當{10.SimFirstName}覺得{12.String}已經無法忍受{0.SimFirstName}的小白臉行徑后，{0.SimName}和{10.SimName}下定決心來個了斷了。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm</KEY>
+<STR>小白臉離婚</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm0</KEY>
+<STR>令人震驚！{10.SimName}和{14.String}小白臉丈夫{0.SimName}決定來個了斷了，" 有誰會忍受……嫁給……像那樣的一個鴨子？" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm1</KEY>
+<STR>{0.SimName}發現{3.String}自己重獲單身而且又可以去推銷{4.String}拿手絕技而且沒有煩人的妻子幹擾了。{10.SimName}已經拋棄了這個小白臉！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm2</KEY>
+<STR>" 婚姻需要互相支持理解，而不是跑去和別人一起震動和起伏! 很明顯{0.SimName}並不理解這個。"  {10.SimName}抱怨說，并終結了{14.String}婚姻。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm3</KEY>
+<STR>小白臉之路是條單人線，{0.SimName}在{4.String}配偶決定離開{3.String}后察覺到了。" {10.SimName}知道怎樣做對{13.String}最好，祝{13.String}好運！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit</KEY>
+<STR>小白臉招聘</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit0</KEY>
+<STR>" 我只想從大師那學到更多。" {10.SimName}被看到最近經常和當地小白臉{0.SimName}在一起時候這麼解釋，" 而且我覺得{0.SimFirstName}會知道我想學的一些技巧。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit1</KEY>
+<STR>當你想要學習如何用魅力來勾引別人的時候該去哪裡報名培訓班？當然不會是花花公子，光處理那幫後宮妃子們就夠他累了。於是，{10.SimName}把{14.String}注意力轉向了小白臉{0.SimName}。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit2</KEY>
+<STR>" 你想學習有關讓那些女士為你尖叫的技巧嗎？哦我的朋友，你算是找對人了。" {0.SimName}將一位名叫{10.SimName}的新市民引入了小白臉之路！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit3</KEY>
+<STR>{10.SimName}鎖定，上膛，並且隨時可以發射！而且在當地小白臉{0.SimName}的幫助下，{12.String}似乎加入了那個本地" 醫療" 組織，" 面帶微笑地服務群眾！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt</KEY>
+<STR>小白臉調情</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt0</KEY>
+<STR>" 我只是剛剛試了下水，你明白嗎？其實我更想在以後經常享受到{4.String}服務。" {10.SimName}和小鎮小白臉{0.SimName}一同外出時候這麼解釋。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt1</KEY>
+<STR>" 真是誘人……也許我可以享受一次折扣？" {10.SimName}在和當地小白臉{0.SimName}初次見面后議論說，" 沒發生什麼，不過{3.String}留下了聯繫方式而已。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt2</KEY>
+<STR>本地小白臉{0.SimName}不太喜歡太慢的發展速度，不過有人就喜歡從頭開始，於是{10.SimName}在兩人相處的時候顯得很滿足。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt3</KEY>
+<STR>{10.SimName}被人看到進了一家叫{0.SimName}的小白臉開的公司。 " 我們其實沒做什麼。噓……但是你也猜得到……誰能料到以後會怎樣呢？"  {2.String}說完後臉紅了。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt</KEY>
+<STR>小白臉新戀情</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt0</KEY>
+<STR>" 我完全就是靠著運氣，只是在恰當的時候出擊罷了。" {0.SimName}解釋說。{10.SimName}最好小心{13.String}自己了，小白臉出現了！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt1</KEY>
+<STR>" 我很喜歡戳{10.SimName}那個地方時候 {12.String}發出的咯咯笑聲，就是這個地方。" 哦天哪，{0.SimName}你不用描述得更詳細了。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt2</KEY>
+<STR>最近被看到跟{10.SimName}在一起后{0.SimName}說了這麼幾句：" 我希望{12.String}會喜歡我這種方法，因為小白臉就是我的生活作風，我不會去改變的。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt3</KEY>
+<STR>據其他小白臉透露，{0.SimName}正在當地居民里經營{4.String}生意，而且最近非常接近{10.SimName}。那只是個皮膚光滑的接線員而已，好吧，優雅的，光滑的。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt</KEY>
+<STR>小白臉情人</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt0</KEY>
+<STR>" 嗯，我很期待那個，你懂的！" {0.SimName}和{10.SimName}進行一次浪漫的外出時解釋說。真粗俗！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt1</KEY>
+<STR>" {10.SimName}從我這就是得不到滿足。我幾乎把我整個人都豁出去了，但是{12.String}仍然會回來。"  {0.SimName}抱怨說，帶著一絲絲疲倦。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt2</KEY>
+<STR>小白臉襲擊警報！{0.SimName}最近被看見在" 幫助" {10.SimName}。很明顯的，{10.SimFirstName}過得很絕望，而且希望得到一些放鬆，{12.String}似乎是接受了那些服務。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt3</KEY>
+<STR>" 我不會說太多細節……在公共場合內，我是這個意思。" {0.SimName}在和{10.SimName}之間的浪漫中場休息以全身濕熱結束后這麼解釋的，" 但是那個傢伙簡直就是野獸！野獸！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby</KEY>
+<STR>小白臉懷孕</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby0</KEY>
+<STR>歡呼吧！看起來哪怕是最經驗老道的小白臉也會犯錯誤，{0.SimName}和{10.SimName}也剛剛發現了。他們馬上就有一個嬰兒了！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby1</KEY>
+<STR>" 其實我也不太清楚究竟怎麼一回事。我原以為那個方法是萬無一失的！"  很可惜不是，於是本地兩個傻瓜{0.SimName}和{10.SimName}馬上就會有個孩子了！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby2</KEY>
+<STR>" 被指責我！我當時可是做了防護手段的！" {0.SimName}聽說{2.String}讓{10.SimName}懷孕后對多管閒事的路人咆哮道。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby3</KEY>
+<STR>{10.SimName}似乎和當地小白臉{0.SimName}玩過頭了，而且超出了{12.String}模擬幣所買的價值。他們倆馬上就有個孩子了！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst</KEY>
+<STR>小白臉幽會</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst0</KEY>
+<STR>本地小白臉{0.SimName}最近看起來狀態不錯，和{10.SimName}一起愉快的討論{14.String}伴侶。" 什麼？你希望我會有所改變？" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst1</KEY>
+<STR>據報導{0.SimName}被目擊到在有情侶的情況下偷偷跑去與{10.SimName}見面。" {10.SimFirstName}是個美味的甜點，我都無法控制自己了，當然這或許對{3.String}不太公平!" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst2</KEY>
+<STR>" 她們倆我都很愛……我承認，每天要同時玩弄兩塊肉是有點困難的。" {0.SimName}和{10.SimName}相處了一會後這麼說，" 當然我是名優秀的騎兵，我會撐過去的。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst3</KEY>
+<STR>{10.SimName}被看到躍入了{0.SimName}的懷抱。有問題嗎？這個確實有，因為{0.SimFirstName}正在和另一個人公開交往中，但是這個已經無法阻止{13.String}了！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond</KEY>
+<STR>小白臉幽會</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond0</KEY>
+<STR>據說{10.SimName}正在尋求某些特殊的需要，而且最後找上了{0.SimName}去幫助減輕{13.String}壓力。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond1</KEY>
+<STR>{0.SimName}，一個著名的小白臉最近在{10.SimName}周圍像個傻子一樣亂轉。如果這些留言傳到了{10.SimFirstName}的伴侶耳中會怎麼想？</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond2</KEY>
+<STR>" 我需要一些愛！而且一個人是滿足不了我的！" {10.SimName}大叫著，" {0.SimName}願意為我提供我說需求的，那我何苦去考慮當初那小小的承諾呢？" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond3</KEY>
+<STR>忠誠的{10.SimName}開始變得有點不像{14.String}情侶希望{13.String}成的樣子。{10.SimFirstName}被看到正在和本地小白臉{0.SimName}一同外出！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst</KEY>
+<STR>小白臉外遇</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst0</KEY>
+<STR>" 什麼？那個黃臉婆才管不了我。" {0.SimName}解釋說，" {10.SimName}需要愛，然後我去提供，當然還沒到情侶階段。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst1</KEY>
+<STR>給我金！給我錢！給我金，錢！這是什麼詛咒？真煩人！已婚的小白臉{0.SimName}被報導時正準備和{10.SimName}重操舊業。要是讓妻子知道肯定沒有好果子吃！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst2</KEY>
+<STR>" 我愛我的妻子以及我的事業。但是我還有些不得不處理的需求！一些需要去填滿的需求，否則我可能就會爆炸了！" {0.SimName}解釋說，" 現在{10.SimName}對這些需求很滿足了，所以不要對我指手畫腳！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst3</KEY>
+<STR>即便已婚了，小白臉還是能艱難地經營自己的生意，{0.SimName}需要同時處理好{4.String}伴侶和那些像{10.SimName}一樣極度需要被充實的人。" 我生來就是來滿足別人的需求的，我在這方面就是個天才！" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond</KEY>
+<STR>小白臉插足</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond0</KEY>
+<STR>看起來{10.SimName}和小白臉幾乎就當著他們情侶面進行交易。{0.SimName}說了這麼幾句：" 很明顯{12.String}在家裡的不到{12.String}想要的。" </STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond1</KEY>
+<STR>" 小聲點，我不希望被他們發現！" {10.SimName}被朋友注意到{13.String}似乎和本地小白臉{0.SimName}玩得過火時低聲耳語說。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond2</KEY>
+<STR>" 我在這裡的目的並不是服務某個人，而是所有的市民。" {0.SimName}辯解說。看起來{4.String}的服務最近又有新買主了，那就是已婚的{10.SimName}！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond3</KEY>
+<STR>已婚的{10.SimName}最近被看到走進了本地小白臉{0.SimName}的公司。可以猜得到他們所進行的*貿易*是如此的不希望被人看到。真是可恥！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped</KEY>
+<STR>小白臉分手</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped0</KEY>
+<STR>" 我們無法從我們的戀愛中獲得想要的。" 於是{0.SimName}和{10.SimName}雙方都同意結束他們的戀愛關係。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped1</KEY>
+<STR>" 我很愛{10.SimName}，但是我也想需要一些關愛。" {0.SimName}抱怨說。當現場抓到{0.SimFirstName}的小白臉生意時候，{10.SimName}無論如何也無法原諒，並且離開了{3.String}！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped2</KEY>
+<STR>" 我同意愛情有的時候是個殘忍的女人，但是慾望卻是個徹頭徹尾的母夜叉。" {10.SimName}發現{0.SimName}依舊在兜售服務的時候抱怨說。這兩個人最終分道揚鑣了。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped3</KEY>
+<STR>看來{10.SimName}並沒有做好自己的課外作業，因為{12.String}發現自己不再是{0.SimName}的小甜心了。{10.SimFirstName}最終決定分手了。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped</KEY>
+<STR>小白臉離婚</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped0</KEY>
+<STR>命運將一隻猴子扔進了婚姻！{0.SimName}在自己的小白臉事業被曝光后只能接受{10.SimName}的離婚要求。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped1</KEY>
+<STR>" 老實說我並不看好他們的婚姻。{10.SimName}對{3.String}來說太過好了。" 一個正在看{0.SimName}的婚姻因為小白臉服務被發現而終結的鬧劇的鄰居如此說道。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped2</KEY>
+<STR>小白臉警報！很明顯{0.SimName}和{10.SimName}的夫妻關係已經到頭了，尤其是最近{3.String}那滑稽可笑的生意被曝光以後。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped3</KEY>
+<STR>" 你的生活被小白臉事業弄得一團糟，而你也罪有應得。這就是我要說的。" 一位差點被電視機砸到的旁觀者看到{0.SimName}和{10.SimName}離婚後這麼回答。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn</KEY>
+<STR>小白臉搬入</STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MoveInSummary</KEY>
+<STR>和{0.SimName}一起搬入的有以下這些:{10.String}</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn0</KEY>
+<STR>啊！這就是你當小白臉的報應！{0.SimName}被趕出了家門，只好暫住在{10.SimName}家中。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn1</KEY>
+<STR>{0.SimName}真是可恥！因為那個小白臉他們不得不搬出去，并住進了{10.SimName}家裡。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn2</KEY>
+<STR>{0.SimName}從{4.String}之前的家中被趕出來後發現{3.String}自己已經無家可歸了，幸運的是{10.SimName}幫了這個可憐蟲一把。</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn3</KEY>
+<STR>真是令人噁心的生意！從家裡掃地出門後，{0.SimName}不得不搬進了{10.SimName}家裡，不然只能露宿街頭！</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Jealousy</KEY>
+<STR>因狐狸精嫉妒</STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy0</KEY>
+<STR>" 我的愛拋棄我了？我不能滿足她了？為什麼你需要{0.SimName},而不是我？" {10.SimName}哭喊著。" 我會證明我的愛更真誠！你會看到的！而且你不會再需要那個傢伙！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy1</KEY>
+<STR>{10.SimName}最近很不舒服，因為他聽說了{0.SimName}已經搶走了{14.String}狐狸精。" 那個甜心是我的！我也不會跟誰分享！{0.SimFirstName}最好給我小心點！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy2</KEY>
+<STR>{0.SimName}似乎踐踏了{10.SimName}的領土，而且{10.SimFirstName}顯得很不爽。小心點吧{0.SimFirstName}，和別人的狐狸精交往可是玩火啊！</STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy3</KEY>
+<STR>" 我的小狐狸精貌似選了個更好的市民，" {0.SimName}議論說，" {10.SimName}明顯對{13.String}現在的關係程度很不滿足。不過我會和他好好談談的！放心，只是談談。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Hate</KEY>
+<STR>蕩婦仇恨</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate0</KEY>
+<STR>" 那個巫婆快把我弄瘋了！" {10.SimName}聽說{0.SimName}最近的快活自在後尖叫不已，" {4.String}就不能老老實實呆在{3.String}身上么？, 然後離我那些朋友的老公遠點。" </STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate1</KEY>
+<STR>" {6.String}真是個瘋狂的騎手，" {10.SimName}議論說，" 我真找{0.SimName}好好談談，{3.String} 那行為真是愚蠢之極！" </STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate2</KEY>
+<STR>" 如果{0.SimName}在哪在我附近出現，我肯定會立馬遠離{2.String}……最好{2.String}注意下自己的腳步！" {10.SimName}聽說這個蕩婦接近了一個朋友的丈夫后憤怒地說。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate3</KEY>
+<STR>{10.SimName}聽說{0.SimName}和{14.String}朋友的丈夫有情況后情緒異常激動。" 那個人盡可夫的蕩婦，我真想吐{2.String}一臉痰！" </STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Arson</KEY>
+<STR>因蕩婦縱火</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson0</KEY>
+<STR>" 或許下次{12.String}接近我丈夫前會三思而後行！" {0.SimName}點燃了{10.SimName}的{20.String}后咆哮說。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson1</KEY>
+<STR>" 那個母狗，她要為這一切付出代價！" {0.SimName}大喊著，" 如果{10.SimName}怎麼做最好，那就是惹火我前先想清楚！否則{12.String}就會發現下次燃燒的就不僅僅是{14.String} {20.String}！" </STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson2</KEY>
+<STR>在蕩婦家裡點燃了{20.String}后，{0.SimName}被聽到這麼說：" {10.SimName}不能再像那樣攪亂別人的生活還不想被懲罰了！" </STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson3</KEY>
+<STR>" 別跟我說那個垃圾的的愛情燃燒起來是多么的明亮。下次要是{10.SimName}敢靠近我的家庭，我就把{20.String}燒了！" 小心{0.SimName}，{2.String}可不是說著玩的 ！</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Break</KEY>
+<STR>因蕩婦破壞</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break0</KEY>
+<STR>" 我弄壞了那個{20.String}？就當對你破壞別人感情的禮物，你這個小賤人！" {0.SimName}因為一些私人恩怨沖著{10.SimName}大吼大叫。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break1</KEY>
+<STR>一個{20.String}最近成為了對抗蕩婦的戰爭的又一個犧牲品。貌似聽起來，{0.SimName}決定要靠{2.String}自己的雙手來傳遞一份影響深刻的警告給{10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break2</KEY>
+<STR>" 我是被那個{20.String}傷到心了！出於某些原因它在我面前崩壞了，就在{0.SimName}過來的時候。我不知道{2.String}在叫喊著什麼，好像是什麼某人的老公還是什麼的。" {10.SimName}再好以後放聰明點，不然下次還會有東西" 神秘地" 崩壞了。</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break3</KEY>
+<STR>{0.SimName}下定決心去對抗本地蕩婦{10.SimName}，利用砸碎一個{20.String}的方法來警告這個攪亂別人家庭的傢伙。" 我究竟做了什麼?" {10.SimFirstName}質問說，" 我是無辜的，真的！" </STR>
+<KEY>NRaas.StoryProgression.TownBike:Break4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Mooch</KEY>
+<STR>狐狸精遊蕩</STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch0</KEY>
+<STR>" 那個小浪蹄子看起來會讓{10.SimName}去做任何事情。" 某個朋友議論說，" {16.String}前段時間給了{0.SimName}{20.Money}模擬幣，只因為{2.String}問了聲好。難以置信！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch1</KEY>
+<STR>{10.SimName}剛剛被看到動用了一些家庭資金給{0.SimName}過度奢侈的生活買單。" 我只希望他們能快樂，那樣做只會讓{3.String}覺得自己會更特殊。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch2</KEY>
+<STR>{0.SimName}剛剛可憐兮兮樣子讓{10.SimName}從{14.String}家庭辛辛苦苦賺來的錢中掏出了{20.Money}模擬幣當做救濟金。" 我並沒要求要這樣做，"   {0.SimFirstName}咯咯地笑。" 看來好運降臨了。" </STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch3</KEY>
+<STR>" 我不清楚{10.SimName}是否見過{0.SimName}。" 看到{10.SimFirstName}遞給了這個狐狸精一張{20.Money}模擬幣的支票后一個好事者議論說 。" 我希望{12.String}能早點清醒，否則{12.String}會發現{13.String}離破產不遠了！" </STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Nemesis</KEY>
+<STR>Tart Nemesis</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis0</KEY>
+<STR>There is no lover lost between {0.SimName} and {10.SimName}, after both decided that a lifetime of mutual loathing and hatred seemed like a perfectly fine idea.</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis1</KEY>
+<STR>"My love knows no bounds...  Okay that's not true, it knows better than to go anywhere near {10.SimName}."  fumed {0.SimName}.  "I just want the sky to fall right on top of their pretentious little grin, and wipe them off the face of the earth!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis2</KEY>
+<STR>"Is it too much to ask for the Builder to send them clipboard diving?" pleaded {0.SimName}.  "Just one little click of the goddesses hand, and poof {10.SimName} would be out of my hair for good!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis3</KEY>
+<STR>{0.SimName} has resigned {3.String}self to knowing that {2.String} has to breath the same air as {10.SimName}, at until one of them dies that is.  "Better {13.String} than me though.  I'm counting the days until {10.SimFirstName} croaks."</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst</KEY>
+<STR>Bike Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst0</KEY>
+<STR>It doesn't appear that {0.SimName} has respect for any type of marriage, much less their own.  The local tramp has been seen canoodling with another local, by the name of {10.SimName}.  We pity the unfortunate spouse who has to put up with these shenanigans.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst1</KEY>
+<STR>"I prefer to spread my love freely around town." commented {0.SimName} after being caught out on-the-town, with someone other than {3.String} spouse.  {10.SimName}, the recipient of the Bike's attentions chose to remain silent, and partly hidden in the shadows, during the conversation.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst2</KEY>
+<STR>"Just don't see what the problem is here." remarked {10.SimName}.  "It is {0.SimName} that is stepping out on their partner, not me!  Don't look at me that way, I'm not doing anything wrong here!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst3</KEY>
+<STR>{0.SimName} has been seen "smooching" amongst the "bleachers", as they say, with a local sim named {10.SimName}.  Appears that the two sims are a bit of an item, irregardless of the fact that {0.SimFirstName} is married.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst4</KEY>
+<STR>Being a married sim means nothing to the Bike.  "It's just a term the world uses to keep someone tied down," remarked {0.SimName}.  "No one really cares if I have some fun on the side, {10.SimName} definitely doesn't seem to, especially when I did that special little wiggle."</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst5</KEY>
+<STR>Marriage is not going to stop a Bike from being a Bike.  {0.SimName} just can't help being a floozy apparently, so why even bother explaining it.  Seems {10.SimName} is taking it all in stride, enjoying the spotlight until {0.SimFirstName} gets bored with {13.String}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst6</KEY>
+<STR>"It is all about experience," sighed {10.SimName}.  "Who has it, and who doesn't.  And the one perk that {0.SimName} has is experience...  Woowee, does {2.String} know how to make those bells ring.  Honestly, {0.SimFirstName} being married and all, sort of adds to the excitement.  {6.String} sure doesn't seem to care, so why should I ?"</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst7</KEY>
+<STR>{10.SimName} is not under any impression that {14.String} recent tryst with {0.SimName} is at all permanent, being as {0.SimName} already has {4.String} hooks in another sim.  "I'm just taking {3.String} for a spin around the block, testing the shocks, and that sort of thing.  I'll have {3.String} home in no time, {3.String} partner can reinflate the tires themselves."</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate</KEY>
+<STR>Casanova Arson Hate</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate0</KEY>
+<STR>"That nutter burned what to the ground?" asked {10.SimName} after a friend mentioned some gossip about {0.SimName}'s recent activities.  "And for what reason?  A tart?  Balls!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate1</KEY>
+<STR>{0.SimName}'s antics regarding a recent fire is not going over well with {10.SimName}.  Apparently {10.SimFirstName} is a good friend of the victim, and not very fond of arsonists!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate2</KEY>
+<STR>{10.SimName} has been spreading it around town that {12.String} finds {0.SimName} alleged arson to be deplorable, and beneath contempt.  "{0.SimFirstName} could have hurt someone with that stunt!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate3</KEY>
+<STR>"Playing with fire?  Yes, that sounds suspiciously like something that {0.SimName} would do." commented {10.SimName}.  "{0.SimFirstName} never was one for smart moves, ya know?"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate</KEY>
+<STR>Casanova Break Hate</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate0</KEY>
+<STR>"I should just go over break one of {4.String} goodies, and see how that make {3.String} feel." muttered {10.SimName} upon learning that {0.SimName} had smashed up a friend's home.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate1</KEY>
+<STR>"No, I'm not very impressed at all.  Cowardly thing to do, attacking that defenseless item.  {0.SimName} should consider taking on someone who can fight back!" quoted {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate2</KEY>
+<STR>After hearing about {0.SimName}'s recent destructive tendencies, {10.SimName} had this to say:  "Mess with my friend's house bub, and you mess with me!  Just remember that!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate3</KEY>
+<STR>{10.SimName} was understandably distressed to learn that {0.SimName} had been suspected in a recent smash up at a friend's place.  "Darn foul business, that is.  I hope {2.String} gets {4.String} due!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.ScenarioWeight:GigoloHate</KEY>
+<STR>Gigolo Hate</STR>
+<KEY>NRaas.StoryProgression.ScenarioWeight:DraculHate</KEY>
+<STR>Dracul Hate</STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate</KEY>
+<STR>Casanova Dracul Hate</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate0</KEY>
+<STR>"Though I will admit that {10.SimName} has some serious skills in the art of love, I fear that {14.String} followers are a bit too, shall we say, subservient ?  It is also as though they are under some sort of spell."  Sounds like {0.SimName} doesn't like the unfair competition.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate1</KEY>
+<STR>{10.SimName} magnetic charm seems to have ruffled the local Casanova's feathers.  {0.SimName} has been heard to state that {2.String} finds {10.SimFirstName}'s domineering methods deplorable.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate2</KEY>
+<STR>"One should be able to attract sims based on your personality, and not with freakish parlor tricks.  That {10.SimName} is nothing but a two bit charlatan, albiet with fangs."  ranted {0.SimName} after watching {10.SimFirstName} woo yet another sim.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate3</KEY>
+<STR>"Perhaps I should not say anything about {10.SimFirstName}, they do have that superhuman strength going for them." commented {0.SimName}.  "But it is difficult not to feel that their methods are simply cheating the natural order of things."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo</KEY>
+<STR>Casanova Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo0</KEY>
+<STR>Looks like {10.SimName} has been doing the deed with local Casanova {0.SimName}.  Now we are all for that, except for the fact that both of the sims have partners, who may take offense to being cheated on.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo1</KEY>
+<STR>We've never been one to pass judgement on anyone...  Yeah, okay we do it all the time.  And this case is no different, seeing as both {0.SimName} and {10.SimName} are cavorting their affections all over town, without any regard for their actual partners.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo2</KEY>
+<STR>"It is none of you darn business what {0.SimName} and I do, okay!" screamed {10.SimName}, making quite the scene on the street the other day.  "We are grown sims and if we want to step out on our partners, then that is what we will do!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo3</KEY>
+<STR>Except for a slight issue if they get caught, {0.SimName} and {10.SimName}'s glorious plan to make out on the street corner is absolutely foolproof!  I wonder which 'head' the sims were using when they thought that one up?</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo</KEY>
+<STR>Casanova Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo0</KEY>
+<STR>"{10.SimName} we can understand, I mean {0.SimName} is the Casanova, who wouldn't want a piece of that action." commented a family friend, "But {10.SimFirstName} is a married sim for Builder's sake!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo1</KEY>
+<STR>1) {0.SimName} is married.\n2) {10.SimName} is married.\n3) They have been spotted in public getting it one together\nResult:  Priceless, if either of their spouses finds out about it.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo2</KEY>
+<STR>"I want {0.SimName} so bad, it hurts...  No really, I probably need to see a doctor about it." groaned {10.SimName}.  "Screw the whole marriage thing, I am gonna jump the Casanova's bones the first chance I get!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo3</KEY>
+<STR>"Ah, love is in the air, can't you just smell the aroma?" mused the Casanova.  "There is no better time to spread the love around to those who need it most, such as {10.SimName}.  {14.String} spouse will just have to share {13.String} for a little bit, until {12.String} is satisfied."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo</KEY>
+<STR>Gigolo Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo0</KEY>
+<STR>Oh la la!  {0.SimName} has been taking the concept of an open relationship to new levels, by doing the deed with {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo1</KEY>
+<STR>What will they think of next ?  A Gigolo that cheats on {3.String} partner ?  How unoriginal.  Try harder next time {0.SimName}, you and {10.SimName} need to be more exciting to make the news around here.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo2</KEY>
+<STR>"I want it all.  The money, the ass...ets, all of it!" exclaimed {0.SimName} after being asked why {2.String} cheats on {4.String} partner the way {2.String} does.  "Go ask {10.SimName}, {12.String} knows what I want!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo3</KEY>
+<STR>{0.SimName} and {10.SimName} have been seen gigolo-ing it up, all other town...  Which would not be so bad if they weren't both partnered up with someone else!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo</KEY>
+<STR>Gigolo Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo0</KEY>
+<STR>Apparently you can make a living as a Professional, and have a married life, provide you are careful that is.  Let's see how long {0.SimName} and {10.SimName} can last before something falls apart.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo1</KEY>
+<STR>A Gigolo's life is never easy, and being married doesn't make it any more so.  {0.SimName} has to balance a home life, and {4.String} various secret love affairs, with sims such as {10.SimName}, without causing too much pain for the spouse.  Good Luck!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo2</KEY>
+<STR>"I never did understand that whole 'one sim for life' concept they teach at marriage counseling." remarked {0.SimName}, with the fabulous {10.SimName} dangling off {4.String} arm.  "That sounds so boring, I simply don't know how other sims manage."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo3</KEY>
+<STR>Gigolo-ing and marriage just should not be mixed, but {0.SimName} and {10.SimName} try to do it none-the-less.  Let's hope their spouses are forgiving, or we could be reporting this story in even more depth sometime soon!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo</KEY>
+<STR>Tart Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo0</KEY>
+<STR>We love flaky pastries, we really do, but the ones that walk on two legs and boss people around, we could live without.  Take {0.SimName} for instance, philandering behind {4.String} partner's back the way {2.String} does, and with {10.SimName} none-the-less...  Disrespect!</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo1</KEY>
+<STR>"Talk to the hand!"  That was the only response we were able to get after confronting {0.SimName} about {4.String}'s recent cheating.  {10.SimName} was even worse, hanging {14.String} head in shame and refusing to speak at all.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo2</KEY>
+<STR>{10.SimName}'s partner must really pretty open in their relationship, considering how blatantly obvious {10.SimFirstName} with respect to {14.String} skanky little Tart, {0.SimName}.  I say, those two cheaters are totally made for each other.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo3</KEY>
+<STR>"Don't be calling me the 'skanky ho', just 'cause you can't get any on the side." blustered {0.SimName}, after we confronted {3.String} regarding recent indiscretions with {10.SimName}.  "Skanky ho, my pretty little bottom, I will not be having any of that!  No sirree."</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo</KEY>
+<STR>Tart Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo0</KEY>
+<STR>"Mmmm...  Don't you just want to eat {3.String}." grinned {10.SimName}, "Wait, no...  Eat {3.String} all up, that sounds better."  Unfortunately we don't do married pastry, so when it comes to {0.SimName}, we'll take a pass.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo1</KEY>
+<STR>While we are on the subject of cheating little Ho's, shall we talk about {0.SimName} and {4.String} equally nasty love-buddy {10.SimName}?  Do they not care about their spouses, or what?</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo2</KEY>
+<STR>{0.SimName} calls it 'friends with benefits', while {10.SimName} just calls it divine.  We call it cheating, and their spouses will probably call it totally outrageous if they ever find out.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo3</KEY>
+<STR>Married sims {0.SimName} and {10.SimName} have been seen meandering the streets groping each other in a truely disgusting fashion.  If you are going to cheat on your spouses, at least get a private room, and try keeping it on the down-low.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Retire</KEY>
+<STR>Bike Retire</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire0</KEY>
+<STR>"No one wants to play with me." huffed {0.SimName}, "So I am going to simply retire from the scene entirely.  Take that world!"  The Bike has left the building!</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire1</KEY>
+<STR>The Bike has chosen to retire the tires and lock up the chasis, after rather long period of drought.  {0.SimName} was slightly distraught by the whole idea, but no one else seemed to care at all.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire2</KEY>
+<STR>{0.SimName} has hung up the stirrups and put away the paddles, leaving the Bike scene for good.  "Unfortunately, a Bike just doesn't go on it's own, I really need a rider to fulfill my needs."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire3</KEY>
+<STR>The Bike has called it quits, after being unable to locate sufficient companions in town.  {0.SimName} was quite nostalgic about {4.String} run as the fabled two-wheeler, and has hopes that {4.String} successor will fair better.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Desperation</KEY>
+<STR>Bike Desperation</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation0</KEY>
+<STR>In what can only be considered an act of desperation on the part of the Bike, {0.SimName} recently threw {3.String} naked form atop a startled {10.SimName}, and proceeded to have {3.String} way with {13.String}.  Afterward, the rather confused {10.SimFirstName} was unable to wipe the grin from {14.String} face.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation1</KEY>
+<STR>"I don't know what came over me!" exclaimed {0.SimName}.  "I just *needed* from companionship, and the first sim to catch my eye was {10.SimName}.  {12.String} appears to be amiable to a little nookie, so I took {13.String} then and there.  It was totally off the cuff, but very satisfying."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation2</KEY>
+<STR>"Whatever came over {0.SimName} seems to have passed now," commented {10.SimName}, straightening out {14.String} clothes that had someone become extremely ruppled.  "I hope {3.String} little hormonal imbalance has been corrected now, because I don't think I could take another round of that action without keeling over!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation3</KEY>
+<STR>The Bike is back in business, after a long dry spell being unable to satisfy {3.String} urges, {0.SimName} simply took matters into {3.String} own hands, and grabbed the first available sim...  In this case, {10.SimName}.  Bing, bang, boom, and ten minutes later the Bike was feeling groovy, and so was {10.SimFirstName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Retire</KEY>
+<STR>Casanova Retire</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire0</KEY>
+<STR>The Casanova has retired.  {0.SimName} has decided that {4.String} attention is best directed towards pleasuring {4.String} spouse, so has decided to step-down.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire1</KEY>
+<STR>And the Casanova's groupies mourn.  {0.SimName} has decided to pull out of the limelight, and allow a new sim take the leadership.  "I wish whomever decides to succeed me the best of luck, and remember to treat your followers with respect."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire2</KEY>
+<STR>After having a heart-to-heart with {4.String}, {0.SimName} has decided it is best if {2.String} turns in the Casanova title and retire.  "We both want to enjoy only each other now, and I thought it best to listen."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire3</KEY>
+<STR>"I only want what is best for my spouse," commented {0.SimName}.  "And I have to acknowledge that my devotees, though well intentioned, are a detriment to my marriage.  Hence I hereby surrending the title of Casanova to whomever decides to follow.  I wish them luck."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Hookup</KEY>
+<STR>Bike Hookup</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup0</KEY>
+<STR>Looks like the Bike has reeled in a new fish, hooking up with {10.SimName}.  I hope {10.SimFirstName} knows what {12.String} is doing, because {0.SimName} is not someone you should be messing with.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup1</KEY>
+<STR>"I am an adult, and I know what I am doing, so stop being such a turd about it, okay?" muttered {10.SimName}, after getting involved with {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup2</KEY>
+<STR>{0.SimName} has sunk {3.String} teeth into a new partner, {10.SimName}.  "I expect us to be extremely happy, at least for next day or so, until I find someone better."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup3</KEY>
+<STR>We hope that {10.SimName} know what {12.String} is getting {13.String}self into dating the Bike.  Appears that {0.SimName} is taken a shine to the sim, and the two are going steady...  Well as steady as a Bike can be that is.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst</KEY>
+<STR>Bike Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst0</KEY>
+<STR>Being a partner of the Bike comes with a couple of benefits, one being that {0.SimName} is so experienced.  Unfortunately that experience comes with a price, and that being {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst1</KEY>
+<STR>"My partner understands my needs," commented {0.SimName}.  "I can only get by with a single lover for so long.  {10.SimName} satisfied my needs perfectly, at least for this evening."</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst2</KEY>
+<STR>{0.SimName} was seen doing {4.String} 'thang' with {10.SimName}, irregardless of {4.String} partner.  But I guess, one really cannot blame the Bike for {4.String} actions, after all, it is just in {4.String} nature.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst3</KEY>
+<STR>"I don't know why {4.String} partner puts up with {3.String}" commented a noisy neighbor, "That {0.SimName} is always carousing about with other sims, like that {10.SimName}.  That Bike just doesn't seem to care who {2.String} hurts."</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis</KEY>
+<STR>Gigolo Nemesis</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis0</KEY>
+<STR>"Why can't people just along?" commented a passerby, "I mean look at {0.SimName} and {10.SimName} over there.  Yelling and screaming at each other for no really good reason.  I mean money exchanged hands fair enough, and services were provided.  Nothing to got hot under the collar about, I say."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis1</KEY>
+<STR>"When there is money involved, there are certain to be tempers flaring.  Add in a little hanky-panky, and its no wonder that {0.SimName} and {10.SimName} have not been seeing eye-to-eye recently.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis2</KEY>
+<STR>"I prefer not to speak on the subject" muttered {0.SimName}.  We received a similar response from {10.SimName}, when asked about their apparent grievance with each other.  Must be something about love or money, or maybe both!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis3</KEY>
+<STR>We don't know what got between {0.SimName} and {10.SimName}, but it has apparently got both sims in quite a tizzy.  Perhaps the falling out has something to do with some recent Gigolo-related gossip we read.  Or maybe not, the two sims are being pretty tight-lipped about the whole thing.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm</KEY>
+<STR>Casanova Steady Leave 'Em</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm0</KEY>
+<STR>"I just could not compete for {4.String} affection, against all those other sims." sighed {10.SimName}, "So I decided the best thing would be to let {0.SimName} go.  I will miss my sweet Casanova though, sigh."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm1</KEY>
+<STR>{0.SimName} no longer needs to worry about {4.String} adoring fans upsetting {4.String} partner, now that {10.SimName} has decided to release {3.String} from {4.String} obligations.  How very kind of {10.SimFirstName} to do so.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm2</KEY>
+<STR>{10.SimName} has decided to part ways with the local Casanova, {0.SimName}.  "I understand {14.String} dilemma," commented {0.SimFirstName}, "I will miss {13.String} dearly, but perhaps we will cross paths sometime in the future."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm3</KEY>
+<STR>"Given all {2.String} does for the community, I was glad to be a part of {0.SimName}'s life, if but for only a short time." remarked {10.SimName}, after breaking up with the Casanova.  "Best to part ways amicably, just in case I change my mind later."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Nemesis</KEY>
+<STR>Bike Nemesis</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis0</KEY>
+<STR>{0.SimName} and {10.SimName} have both agreed that, due to some unfortunate Bike-related events, the two sims have no further reason to ever talk to each other.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis1</KEY>
+<STR>"I find {0.SimName} detestable." sneered {10.SimName}, "I have decided that enough is enough, and am declaring I will have no further contact with that...  That...  Sim!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis2</KEY>
+<STR>{0.SimName} has decreed that {10.SimName} should stay as far away from {3.String} as physically possible.  "Preferably somewhere overseas, that would be best."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis3</KEY>
+<STR>The Bike strikes again, with {0.SimName} and {10.SimName} choosing to hate each other with a vengeance!</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Attraction</KEY>
+<STR>Tart Attraction</STR>

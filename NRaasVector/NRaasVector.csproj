@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91B86BB6-4DE3-47AC-82C9-2B3160C27C91}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasVector</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterHelper.cs">
+      <Link>CommonSpace\Booters\BooterHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BuffBooter.cs">
+      <Link>CommonSpace\Booters\BuffBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\ScoringBooter.cs">
+      <Link>CommonSpace\Booters\ScoringBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\SocializingBooter.cs">
+      <Link>CommonSpace\Booters\SocializingBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToMultiList.cs">
+      <Link>CommonSpace\Converters\StringToMultiList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToSpeciesList.cs">
+      <Link>CommonSpace\Converters\StringToSpeciesList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ParserFunctionsEx.cs">
+      <Link>CommonSpace\Helpers\ParserFunctionsEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Pregnancies.cs">
+      <Link>CommonSpace\Helpers\Pregnancies.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SavedOutfit.cs">
+      <Link>CommonSpace\Helpers\SavedOutfit.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StatBin.cs">
+      <Link>CommonSpace\Helpers\StatBin.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Transition.cs">
+      <Link>CommonSpace\Helpers\Transition.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Tunings.cs">
+      <Link>CommonSpace\Helpers\Tunings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\FloatSettingOption.cs">
+      <Link>CommonSpace\Options\FloatSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
+      <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\replacers\ActionDataReplacer.cs">
+      <Link>CommonSpace\Replacers\ActionDataReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\replacers\SocialRHSReplacer.cs">
+      <Link>CommonSpace\Replacers\SocialRHSReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\DualSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\DualSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\GenericSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\GenericSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoringmethods\ListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\ListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoringmethods\ScoringList.cs">
+      <Link>CommonSpace\ScoringMethods\ScoringList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoringmethods\ScoringLookup.cs">
+      <Link>CommonSpace\ScoringMethods\ScoringLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoringmethods\SimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\SimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoringmethods\SimScoringList.cs">
+      <Link>CommonSpace\ScoringMethods\SimScoringList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\AgeGenderMatchScoring.cs">
+      <Link>CommonSpace\Scoring\AgeGenderMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\AgeGenderScoring.cs">
+      <Link>CommonSpace\Scoring\AgeGenderScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\BuffScoring.cs">
+      <Link>CommonSpace\Scoring\BuffScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedAgeGenderMatchScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedAgeGenderMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedOtherSimTraitScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedOtherSimTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\CombinedScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\CombinedSimScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedSimScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\CombinedTraitScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\DivorcedScoring.cs">
+      <Link>CommonSpace\Scoring\DivorcedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteColorMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteColorMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteFoodMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteFoodMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteMusicMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteMusicMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FitnessMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FitnessMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\FitnessScaledScoring.cs">
+      <Link>CommonSpace\Scoring\FitnessScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\HitMissScoring.cs">
+      <Link>CommonSpace\Scoring\HitMissScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsChildScoring.cs">
+      <Link>CommonSpace\Scoring\IsChildScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsCloselyRelatedScoring.cs">
+      <Link>CommonSpace\Scoring\IsCloselyRelatedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsOlderScoring.cs">
+      <Link>CommonSpace\Scoring\IsOlderScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsParentScoring.cs">
+      <Link>CommonSpace\Scoring\IsParentScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsSiblingScoring.cs">
+      <Link>CommonSpace\Scoring\IsSiblingScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsYoungerScoring.cs">
+      <Link>CommonSpace\Scoring\IsYoungerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermPartnerScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermPartnerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipBaseScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipBaseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipScaledScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\MarriedScoring.cs">
+      <Link>CommonSpace\Scoring\MarriedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\MethodScoring.cs">
+      <Link>CommonSpace\Scoring\MethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\OtherSimTraitScoring.cs">
+      <Link>CommonSpace\Scoring\OtherSimTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\PartnerScoring.cs">
+      <Link>CommonSpace\Scoring\PartnerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\RandomScoring.cs">
+      <Link>CommonSpace\Scoring\RandomScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RelationshipBitScoring.cs">
+      <Link>CommonSpace\Scoring\RelationshipBitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RelationshipCircleScoring.cs">
+      <Link>CommonSpace\Scoring\RelationshipCircleScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\Scoring.cs">
+      <Link>CommonSpace\Scoring\Scoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\SimGenericScoring.cs">
+      <Link>CommonSpace\Scoring\SimGenericScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\SimMethodScoring.cs">
+      <Link>CommonSpace\Scoring\SimMethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\SimScaledScoring.cs">
+      <Link>CommonSpace\Scoring\SimScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\SimTypeScoring.cs">
+      <Link>CommonSpace\Scoring\SimTypeScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\SkillLevelScoring.cs">
+      <Link>CommonSpace\Scoring\SkillLevelScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitBaseScoring.cs">
+      <Link>CommonSpace\Scoring\TraitBaseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitMatchScoring.cs">
+      <Link>CommonSpace\Scoring\TraitMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitMismatchScoring.cs">
+      <Link>CommonSpace\Scoring\TraitMismatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\TraitScoring.cs">
+      <Link>CommonSpace\Scoring\TraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\scoring\WeightScaledScoring.cs">
+      <Link>CommonSpace\Scoring\WeightScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\YoungChildrenScoring.cs">
+      <Link>CommonSpace\Scoring\YoungChildrenScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="Vector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VectorSpace\Booters\InstigatorBooter.cs" />
+    <Compile Include="VectorSpace\Booters\ResistanceBooter.cs" />
+    <Compile Include="VectorSpace\Booters\SymptomBooter.cs" />
+    <Compile Include="VectorSpace\Booters\VectorBooter.cs" />
+    <Compile Include="VectorSpace\DiseaseVector.cs" />
+    <Compile Include="VectorSpace\Helpers\CrossWorldControl.cs" />
+    <Compile Include="VectorSpace\Helpers\PurchaseControl.cs" />
+    <Compile Include="VectorSpace\Instigators\SocialInstigator.cs" />
+    <Compile Include="VectorSpace\Instigators\GenericInstigator.cs" />
+    <Compile Include="VectorSpace\Instigators\MoodletInstigator.cs" />
+    <Compile Include="VectorSpace\Interactions\Vaccinate.cs" />
+    <Compile Include="VectorSpace\Helpers\OutbreakControl.cs" />
+    <Compile Include="VectorSpace\Helpers\VectorControl.cs" />
+    <Compile Include="VectorSpace\Helpers\ScoringLog.cs" />
+    <Compile Include="VectorSpace\Interactions\AskContagious.cs" />
+    <Compile Include="VectorSpace\Interactions\GetProtection.cs" />
+    <Compile Include="VectorSpace\Interactions\GetResistance.cs" />
+    <Compile Include="VectorSpace\Interactions\GetInoculation.cs" />
+    <Compile Include="VectorSpace\Interactions\DownloadInoculationReport.cs" />
+    <Compile Include="VectorSpace\Interactions\VisitDoctor.cs" />
+    <Compile Include="VectorSpace\Interactions\ResearchDisease.cs" />
+    <Compile Include="VectorSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="VectorSpace\Interactions\SimInteraction.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\EnabledSetting.cs" />
+    <Compile Include="VectorSpace\Options\Enabled\EnabledSetting.cs" />
+    <Compile Include="VectorSpace\Options\Enabled\IEnabledOption.cs" />
+    <Compile Include="VectorSpace\Options\Enabled\ListingOption.cs" />
+    <Compile Include="VectorSpace\Options\General\AllowInactivePurchasesSetting.cs" />
+    <Compile Include="VectorSpace\Options\General\AllowRelationshipDeltaSetting.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\MotiveAdjustmentRatioSetting.cs" />
+    <Compile Include="VectorSpace\Options\General\InoculationRatingSetting.cs" />
+    <Compile Include="VectorSpace\Options\General\IGeneralOption.cs" />
+    <Compile Include="VectorSpace\Options\General\ListingOption.cs" />
+    <Compile Include="VectorSpace\Options\General\StrainReinfectionDifferenceSetting.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\DiseasesSetting.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\IDiseasesOption.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\ListingOption.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\ISettingOption.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\CustomSetting.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\ProtectionDurationSetting.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\LowProtectionRatingSetting.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\HighProtectionRatingSetting.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\Automated\AutomatedSetting.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\Automated\IAutomatedOption.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\Automated\ListingOption.cs" />
+    <Compile Include="VectorSpace\Options\General\StageRatioSetting.cs" />
+    <Compile Include="VectorSpace\Options\Sims\InoculateSetting.cs" />
+    <Compile Include="VectorSpace\Options\Diseases\WatchSetting.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\ResistanceBoostSetting.cs" />
+    <Compile Include="VectorSpace\Options\DumpSurvey.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\DoctorsVisitLengthSetting.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\DoctorsVisitCostSetting.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\IDoctorsOption.cs" />
+    <Compile Include="VectorSpace\Options\Doctors\ListingOption.cs" />
+    <Compile Include="VectorSpace\Options\DumpVectors.cs" />
+    <Compile Include="VectorSpace\Options\DebuggingSetting.cs" />
+    <Compile Include="VectorSpace\Options\DumpLogging.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\AllowActiveSetting.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\ShowNoticesSetting.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\StartOutbreak.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\NumPatientZeroSetting.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\IOutbreaksOption.cs" />
+    <Compile Include="VectorSpace\Options\Outbreaks\ListingOption.cs" />
+    <Compile Include="VectorSpace\Options\Sims\CureSetting.cs" />
+    <Compile Include="VectorSpace\Options\Sims\InfectSetting.cs" />
+    <Compile Include="VectorSpace\Options\Sims\DumpVectorsSetting.cs" />
+    <Compile Include="VectorSpace\Options\Sims\ISimOption.cs" />
+    <Compile Include="VectorSpace\PersistedSettings.cs" />
+    <Compile Include="VectorSpace\Resistances\MoodletResistance.cs" />
+    <Compile Include="VectorSpace\Resistances\GenericResistance.cs" />
+    <Compile Include="VectorSpace\Resistances\SocialResistance.cs" />
+    <Compile Include="VectorSpace\Scoring\CounterScaledScoring.cs" />
+    <Compile Include="VectorSpace\Stages\StoryStage.cs" />
+    <Compile Include="VectorSpace\Stages\TestSettingStage.cs" />
+    <Compile Include="VectorSpace\Stages\TestNewStrainStage.cs" />
+    <Compile Include="VectorSpace\Stages\CounterStage.cs" />
+    <Compile Include="VectorSpace\Stages\TestCounterStage.cs" />
+    <Compile Include="VectorSpace\Stages\HitMissTimedStage.cs" />
+    <Compile Include="VectorSpace\Stages\IncrementalStage.cs" />
+    <Compile Include="VectorSpace\Stages\HitMissStage.cs" />
+    <Compile Include="VectorSpace\Stages\TimedStage.cs" />
+    <Compile Include="VectorSpace\Stages\EndStage.cs" />
+    <Compile Include="VectorSpace\Stages\ScoringStage.cs" />
+    <Compile Include="VectorSpace\Stages\WeightedStage.cs" />
+    <Compile Include="VectorSpace\Stages\SimpleStage.cs" />
+    <Compile Include="VectorSpace\Symptoms\CancelInteractionSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\BreakSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\FindSimSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\SocialSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\WeightBaseSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\WeightEqualizationSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\FitnessSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\WeightSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\FirestarterSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\ImpregnateSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\ReactionSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\ResistanceSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\DeathSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\OccultSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\IdleAnimationSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\MotiveSymptom.cs" />
+    <Compile Include="VectorSpace\Symptoms\MoodletSymptom.cs" />
+    <Compile Include="VectorSpace\Tests\GenericTest.cs" />
+    <Compile Include="VectorSpace\Tests\MoodletTest.cs" />
+    <Compile Include="VectorSpace\Tests\SocialTest.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableVectorZombie_French.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_French.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_French.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_French.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_French.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTableVectorZombie_German.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_German.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_German.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_German.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_German.txt" />
+    <Content Include="StringTables\StringTableVectorZombie_PortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableVectorZombie_Russian.txt" />
+    <Content Include="StringTables\StringTableVectorZombie_SpanishStandard.txt" />
+    <Content Include="StringTables\StringTableVectorZombie_English.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_Finnish.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_Finnish.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_Dutch.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_Dutch.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_Dutch.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_Dutch.txt" />
+    <Content Include="StringTables\StringTableDutch.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_Italian.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_Italian.txt" />
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_Italian.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_Italian.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_SpanishStandard.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_SpanishStandard.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_SpanishStandard.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_Taiwanese.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_Taiwanese.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_Taiwanese.txt" />
+    <Content Include="StringTables\StringTableTaiwanese.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_Taiwanese.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_PortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_PortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_PortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_PortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_SpanishStandard.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTablePortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_PortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_PortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_PortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_Russian.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_Russian.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_Russian.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_Russian.txt" />
+    <Content Include="StringTables\StringTableRussian.txt" />
+    <Content Include="StringTables\StringTableVectorGoofy_English.txt" />
+    <Content Include="StringTables\StringTableVectorLethal_English.txt" />
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableVectorLongTerm_English.txt" />
+    <Content Include="StringTables\StringTableVectorMinor_English.txt" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="XML\VectorSpaceInteractionsResearchDiseaseDefinition.xml" />
+    <Content Include="XML\VectorZombieVectors.xml" />
+    <Content Include="XML\VectorZombieScoring.xml" />
+    <Content Include="XML\VectorZombieResistances.xml" />
+    <Content Include="XML\VectorZombieSymptoms.xml" />
+    <Content Include="XML\VectorDataZombie.xml" />
+    <Content Include="XML\VectorDataGoofy.xml" />
+    <Content Include="XML\VectorGoofyResistances.xml" />
+    <Content Include="XML\VectorGoofyScoring.xml" />
+    <Content Include="XML\VectorGoofySymptoms.xml" />
+    <Content Include="XML\VectorGoofyVectors.xml" />
+    <Content Include="XML\VectorLethalScoring.xml" />
+    <Content Include="XML\VectorLethalResistances.xml" />
+    <Content Include="XML\VectorLethalSymptoms.xml" />
+    <Content Include="XML\VectorDataLethal.xml" />
+    <Content Include="XML\VectorLethalVectors.xml" />
+    <Content Include="XML\VectorScoring.xml" />
+    <Content Include="XML\VectorSpacePersistedSettings.xml" />
+    <Content Include="XML\VectorDataLongTerm.xml" />
+    <Content Include="XML\VectorLongTermSymptoms.xml" />
+    <Content Include="XML\VectorLongTermScoring.xml" />
+    <Content Include="XML\VectorLongTermResistances.xml" />
+    <Content Include="XML\VectorLongTermVectors.xml" />
+    <Content Include="XML\VectorMinorResistances.xml" />
+    <Content Include="XML\VectorMinorSymptoms.xml" />
+    <Content Include="XML\VectorMinorVectors.xml" />
+    <Content Include="XML\VectorMinorScoring.xml" />
+    <Content Include="XML\VectorDataMinor.xml" />
+    <Content Include="XML\VectorSocialData.xml" />
+    <Content Include="XML\VectorSocializingActionAvailability.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resistances>
+  <Resistance>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+    <Delta></Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorZombieMeditate</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kMeditated</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorZombieEating</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kAteMeal</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorZombieBathing</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>SqueakyClean,OooBubbles</BuffName>
+    <Delta>2</Delta>
+  </Resistance>
+</Resistances>

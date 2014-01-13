@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<base>
+  <Interaction name="NRaas.WoohooerSpace.Interactions.ActivateWhoring+Definition" />
+  <Object name="Sims3.Gameplay.Objects.Electronics.Computer" />
+  <CodeVersion name="BaseGame" considerCodeVersion="False" />
+  <Current_Tuning>
+    <Disallow DisallowAutonomous="True" DisallowUserDirected="False" DisallowPlayerSim="False" />
+    <BaseAvailability>
+      <AgeSpeciesAvail AgeSpeciesValue="T,Y,A,E" />
+      <MotiveThreshold MotiveThresholdType="None" MotiveThresholdValue="0" MotiveBelowCheck="False" />
+      <MoodThreshold MoodThresholdType="None" MoodThresholdValue="0" />
+      <SkillThreshold SkillThresholdType="None" SkillThresholdValue="0" />
+      <ExcludingTrait type="AntiTV" />
+      <Occult OccultRestrictionType="Ignore" OccultTypes="0x0" OccultTypesHumanAllowed="True" />
+      <CareerThreshold CareerThresholdType="Undefined" CareerThresholdValue="0" IncludePastCareers="False" />
+      <Lot AllowNonGreetedSimsIfObjectOutside="False" AllowNonGreetedSimsIfObjectOutsideUserDirected="True" AllowGreetedSims="True" AllowOnCommunityLots="True" AllowOnAllLots="False" />
+      <World RestrictionType="None" Types="" Names="" />
+      <Room AllowInTombRoomAutonomous="False" AllowEvenIfNotAllowedInRoomAutonomous="False" />
+      <Misc DisallowedIfPregnant="False" DisallowedFromInventory="False" />
+    </BaseAvailability>
+    <PosturePrecondition name="Sitting" value="1">
+      <Check name="InFrontOfSurfaceForTarget" />
+      <Check name="ChairScootedIntoSurface" />
+    </PosturePrecondition>
+    <PosturePrecondition name="Standing" value="1">
+      <Check name="TargetInInventory" />
+    </PosturePrecondition>
+    <Check type="SelfRegarding" value="1.5" />
+    <Check type="InappropriateForVisitor" value="1.5" />
+    <Check type="All" value="0" />
+    <Tradeoff name="ChatRandom">
+      <Localization autoGenerate="True" />
+      <Time value="1" addRoute="True" />
+      <Exit funExit="True" stressExit="False" interruptible="False" />
+      <RouteLeadIn allowed="True" />
+      <AskJoinInteraction joinable="False" />
+      <AllowAutonomousReinforcement allowPraise="False" allowScold="False" />
+      <ScoringFunction alwaysChooseBest="False" name="" specificCommodity="None" />
+      <ActionTopic name="" ActionTopicUnavailableAfterActionFinishes="False" />
+      <Output>
+        <Change type="Fun" advertised="35" locked="False" actual="15" updateType="ContinuousFlow" timeDependsOn="False" updateEvenOnFailure="False" updateAboveAndBelowZero="Either" />
+      </Output>
+    </Tradeoff>
+    <Notes Notes="" DesignerNotes="" LastChange="" />
+  </Current_Tuning>
+</base>

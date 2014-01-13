@@ -1,0 +1,2560 @@
+﻿<KEY>NRaas.StoryProgression.TownBike:MenuName</KEY>
+<STR>苤淜絕蜀</STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Creation</KEY>
+<STR>絕蜀筑汜</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation0</KEY>
+<STR>湮模蛁砩珨狟斕旯晚腔圈舊ㄐ{0.SimName}淏侐揭扆梑陔腔珧妘ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation1</KEY>
+<STR>{0.SimName}侔綱蚻善賸眈絞腔靡汒ㄛ奧掩泂奻賸絕蜀腔備瘍﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation2</KEY>
+<STR>竭黃杻腔ㄛ{0.SimName}侔綱拸垀祥蚚憤腔蚚陔悛懂賤{4.String}褡ㄛ{3.String}腕善賸淜奻絕蜀腔猾瘍﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation3</KEY>
+<STR>{0.SimName}峈蜆岆岍賜勤{4.String}俶袀鼻腔髡薯祥漁奧璦﹝蛁砩淜奻涴弇陔絕蜀ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Dislike</KEY>
+<STR>枒栖絕蜀</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike0</KEY>
+<STR>勤絕蜀{0.SimName}ㄛ痲眳潔侔綱眒冪囮賸乾ㄛ{10.SimName}郔輪睿{3.String}珩都衄諳褒ㄛ艘懂坻蠅腔賦擁祥頗怮疑﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike1</KEY>
+<STR>善揭狴換覂{0.SimName}腔紱讀忒楊ㄛ{10.SimName}樵隅梑{3.String}燴﹝{12.String}佽ㄩ※羶衄頗饒欴艘扂腔圈舊腔ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike2</KEY>
+<STR>絞{10.SimName}撓毞艘善淜奻腔窋蜀{0.SimName}婓誰奻玿嫣ㄛ{12.String}勤覂坴臢祄佽ㄩ※彆斕詫諉輪扂腔圈舊ㄛ苤陑斕腔桉紩ㄐ§扂詫佽ㄛ涴謗跺眳潔腔壽炵珨隅竭輓﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike3</KEY>
+<STR>{10.SimName}撓毞癲善{0.SimName}綴憩橇腕靼ㄛ涴絕蜀橈勤蝠祥善睡眒駁腔攬衭﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Dislike9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Cohesion</KEY>
+<STR>秪絕蜀奧擄磁</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion0</KEY>
+<STR>侔綱淜奻絕蜀賑儉腔雄釬眒冪羲宎彶虴...  侔綱{0.SimName}睿{10.SimName}價衾眈誑祥炰辣椄腔躓赽奧賦磁﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion1</KEY>
+<STR>{0.SimName}掩艘善睿{10.SimName}玿謐ㄛ甜勤淜奻腔獎蜀佽耋侐ㄛ甜樓眕陸虷﹝郔涴郔察祑腔煬狟ㄛ侔綱衄攬衭掩順繞賸堤懂﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion2</KEY>
+<STR>{0.SimName}睿{10.SimName}秪峈誑眈飲勤絞華腔絕蜀覜善珃填奧擄婓珨ㄛ奧掩艘善拸奀拸覦飲婓抶蹦坴﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion3</KEY>
+<STR>衄跺絕蜀淜奻疪賸湮髦觴ㄛ涴{0.SimName}睿{10.SimName}潔衄載嗣腔趕枙賸ㄛ奧謗腔壽炵郔輪珩厥哿婓蜊囡﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Cohesion9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail</KEY>
+<STR>絕蜀囮啖</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail0</KEY>
+<STR>絞華腔獎蜀ㄛ{0.SimName}ㄛ婓{4.String}彸芞覃僑竘{10.SimName}ㄛ筍郣善賸珨輸湮侻坒綴ㄛ艘懂岆衄虳渭﹝\n\n絞掩恀摯奀ㄛ{10.SimFirstName}佽ㄩ※藩跺飲眭耋{0.SimFirstName}岆妦繫欴腔昜 - 睿{3.String}婓珨ㄛ扂斛隅頗岆珨跺瑁遼腔庈鏍ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail1</KEY>
+<STR>淜奻腔絕蜀ㄛ{0.SimName}ㄛ勤{10.SimName}乾囮啖賸ㄛ秪峈踏毞婌鹵{12.String}婓艘齡腔笲鼠擇橈賸{3.String}﹝\n\n珨跺籥夤氪蹦佽ㄩ※蜆岆衄夔艘{2.String}岆妦繫欴腔ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail2</KEY>
+<STR>婓絞華庈鏍{10.SimName}婓抎虛俋擇橈賸駁窆輓氪{0.SimFirstName}{0.SimLastName}腔僑竘綴ㄛ侐笚憩喃雛賸梪汒﹝\n\n婓{3.String}掩絞笲冔綴ㄛ{10.SimFirstName}婓斯覂諳巟鞦祭燭羲ㄛ遜岆勤覂籥夤笲遼纔藥桉﹝珨跺醴僻氪佽ㄩ※{19.String}淩岆檢ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail3</KEY>
+<STR>{0.SimName}婓郭彸睞簡{10.SimName}奀掩僻邈﹝絞絕蜀郔綴傯迼奧寥奀ㄛ峓夤涴部須秷桵淰腔笲跤賸軑郔轄腔梪汒﹝ 艘齡腔笲杻梗硌堤ㄛ{14.String}澄隅蕾部懂醱勤{4.String}僑竘褫夔憩岆{14.String}駁窆甡澄攪坒憩衄薯腔痐隴﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:VictimizeFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Affair</KEY>
+<STR>絕蜀岈璃</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair0</KEY>
+<STR>誰奻換恓{0.SimName}珋婓睿鍚珨跺捫粥揭腕竭ㄐ涴棒岆{10.SimName} {2.String}眒冪掩{4.String}艘奻ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair1</KEY>
+<STR>{0.SimName}蔚{4.String}醴嫖坶隅婓鍚珨跺絞華腔{19.String} - 涴棒岆{10.SimName}ㄐ麵耋涴虳飲祥眭耋鎘ˋ</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair2</KEY>
+<STR>侔綱羶衄夔秶砦{0.SimName}秪峈{2.String}眒冪溫狟{4.String}媾懂袱鍚珨跺懂溼腔 "朹尪"﹝{10.SimName}器奻像... 勤銑晟陓眕峈淩﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair3</KEY>
+<STR>{10.SimName}楷珋邧洏拸薯ㄛ婓絞華絕蜀{0.SimName}腔醱俇拸楊赻扂諷秶﹝坻蠅郔輪掩艘善婓諉恉ㄛ{12.String}淩褫蟒﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Affair9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Canoodle</KEY>
+<STR>絕蜀腔乾葷</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle0</KEY>
+<STR>{0.SimName}郔輪竭佹拸暴筋ㄛ睡褫眕諉揖善腔飲猁硌ㄛ褫蟒饒虳結善{4.String}繚腔恮黨煙﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle1</KEY>
+<STR>郔輪腔霜晟剒猁掩眕樟珗華湮講秶婖ㄛ符夔躲腕奻絞華絕蜀郔輪腔籵潮蝟恓﹝艘懂{0.SimName}剒猁傑爵馱釬賸﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle2</KEY>
+<STR>艘珋婓阰堤善揭揹藷赽ˋ衄艘善淜奻腔獎蜀{0.SimName}婓淜奻善揭蚔絕睿覃ㄛ鴃{2.String}垀夔婖溼夔梑善腔*攬衭*﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle3</KEY>
+<STR>獗痐饒跺絕蜀腔掛鍰ㄐ{0.SimName}腔參牁郔輪淏婓樓ㄛ{2.String}褫眕婓準都傻腔奀潔爵憩扆鳳砑猁梑腔轂昜﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Canoodle9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby</KEY>
+<STR>絕蜀輒婕</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby0</KEY>
+<STR>憩絞華腔絕蜀郔輪腔俴峈懂艘ㄛ{4.String}岆珨跺桶醱奻竭蕊耨腔ㄛ{0.SimName}睿{10.SimName}淏渾覂滯赽腔蔥還ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby1</KEY>
+<STR>頏ㄛ藩跺飲眭耋坳笝噶猁楷汜ㄛ郔綴猁赻妘填彆...  秪峈{0.SimName}睿{10.SimName}眭耋坻蠅眳潔眒衄*乾腔賦儒*ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby2</KEY>
+<STR>※斕佽斕咭賸杶奻岆妦繫砩佷ˋ§{0.SimName}睿{10.SimName}婓鳳眭坻蠅腔※模穸§頗氝間綴ㄛ郔輪艘懂勤涴岈腔荂砓珨萸飲祥橇腕疑﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby3</KEY>
+<STR>毞陛ㄛ{0.SimName}睿{10.SimName}植坻蠅苤苤腔贈躇蚔牁笢ㄛ腕善賸掀坻蠅啎腔遜嗣腔陲昹...  珨跺楖陔腔汜韜﹝扂蠅洷咡涴跺苤汜韜夔掀坻腔虜譫載苤陑萸ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond</KEY>
+<STR>絕蜀睿衄恛隅壽炵氪腔蚅頗</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond0</KEY>
+<STR>絞華腔絕蜀{0.SimName}郔輪端端華辦厒馴僻ㄛ參{10.SimName}賻給ㄛ甜芫饕{13.String}﹝艘懂{10.SimFirstName}甜帤酕怮嗣腔萋蕨ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond1</KEY>
+<STR>{0.SimName}俇羶衄嘈藉鎘ˋ褫蟒腔{10.SimName}隴珆眢掩綺讀ㄛ奧珨筒{0.SimFirstName}蝸洠{13.String}ㄛ{13.String}橈勤拸楊赻扂諷秶﹝洷咡{10.SimName}祥頗楷珋ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond2</KEY>
+<STR>珨跺芚錢絞華腔絕蜀睿{10.SimName}婓酕乾酕腔岈腔疑籥夤氪佽ㄩ※扂腔砩佷岆...  淩腔ㄐ{0.SimName}眕峈{2.String}岆阰ˋ§※饒褫蟒腔模鳴祥眭耋妦繫湖善賸{13.String}ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond3</KEY>
+<STR>郔輪{10.SimName}旮旮園絞華絕蜀腔黰薯笢奧拸楊赻匿﹝※扂拸楊堆疆赻撩ㄛ扂眭耋涴跺祥疑...  筍坳淩腔竭堵ㄐ§{0.SimName}勤森羶衄蹦ㄛ硐岆鏽堤{4.String}窪靡等ㄛ羲宎杅覂婓{10.SimFirstName}靡趼籥湖陎陎暮瘍腔杅醴﹝</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond</KEY>
+<STR>絕蜀睿眒駁氪腔蚅頗</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond0</KEY>
+<STR>猁侚賸ㄐ彆{10.SimName}腔饜髒泭善{14.String}郔輪睿絞華絕蜀腔瑞霜婘岈ㄛ袧頗楷汜湮婐麵﹝{0.SimName}珋婓敕諳ㄛ祥{3.String}汜ㄛ祥{2.String}鷓頗佽穢賸郲ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond1</KEY>
+<STR>撓毞珨跺籥夤氪袉獗{10.SimFirstName}睿絞華腔絕蜀{0.SimName}ㄛ嗚婓攷綴 "俙蚔牁" 綴佽ㄛ※毞陛ㄛ{10.SimName}褫岆賦徹駁賸ㄐ麵耋{12.String}瑭拸覜橇鎘ˋ祥褫佷祜ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond2</KEY>
+<STR>韃ㄐ{10.SimName}隴珆賸竭嗣{11.String}眕崠冪徹腔華源ㄛ遜疑湮麵祥侚ㄐ絞華絕蜀{0.SimName}眒冪俇傖鍚珨棒腔涽督﹝扂蠅洷咡{10.SimFirstName}腔饜髒祥頗楷珋ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond3</KEY>
+<STR>{0.SimName}勤珨跺掩儐狣善腔繚佽ㄩ※扂猁跤{13.String}侐衡陎ㄛ疑极薯ㄛ奧儕薯喃驛ㄐ§扂蠅輒疶{2.String}硌腕岆{4.String}郔輪涽督腔庈鏍{10.SimName}﹝※郭懂憩砉岆瑯珔昒蓮ㄛ扂斛剒蔚坳暮狟懂﹝§</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped</KEY>
+<STR>賦旰恛隅壽炵</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped0</KEY>
+<STR>鍚珨跺踹裁腔壽炵ㄐ {0.SimName}睿{10.SimName}婓冪盪睿絕蜀珨掩蚰婦腔給暽冪盪綴ㄛ眒冪笝砦駁窆壽炵ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped1</KEY>
+<STR>珨跺獗痐勤郔輪{10.SimName}睿{14.String}圈舊{0.SimFirstName}眳潔腔淰陶ㄛ苤汒惕埳ㄩ※{0.SimName}軞岆輓秏洘ㄐ褫岆...  憩植懂憩羶猁泭扂腔﹝§※芚芚華寤髦ㄛ扂豢咂徹斕ㄛ饒欴竭豇替ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped2</KEY>
+<STR>{10.SimName}睿{0.SimName}橈蹊賸ㄛ{14.String}婬棒袧掘堤忮ㄛ艘懂{0.SimFirstName}善揭寤髦ㄛ{10.SimFirstName}郔綴笝衾忳劂奧燭羲賸ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped3</KEY>
+<STR>珨跺邁懈艘善{0.SimName}睿{10.SimName}珨部慾轄腔淰陶郔綴囮諷傖峈竭媎詹腔煦忒綴蹦佽ㄩ※褫蟒腔模鳴ㄛ{12.String}珨隅陑呯賸﹝§※掩蚰善{4.String}忒婓眭靡腔欲補嫡笢ㄛ珋婓{2.String}猁峈森葆堤測歎ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped</KEY>
+<STR>賦旰駁窆壽炵</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped0</KEY>
+<STR>婓眭耋勤源衄俋郣綴ㄛ{10.SimName}眒冪賤壺睿{0.SimName}腔壽炵﹝隴珆腔ㄛ睿淜奻絕蜀怮諉輪勤駁窆甜祥岆璃怮疑腔岈ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped1</KEY>
+<STR>絕蜀衱堤僻賸ㄐ郔輪{0.SimName}腔珨棒蚅頗掩試曹傖腔{10.SimName}楷珋ㄛ婓呏躑眳狟ㄛ{10.SimFirstName}樵隅賦旰涴僇壽炵ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped2</KEY>
+<STR>郔輪睿絕蜀腔佌籵{0.SimName}睿{10.SimName}眕捃厒燭駁彶部ㄛ珨跺邁懈佽ㄩ※杅爛懂ㄛ涴僇駁窆眒梭還鏢ㄐ扂憩岆眭耋涴岈斛隅頗楷汜ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped3</KEY>
+<STR>{0.SimName}睿{10.SimName}眒冪賦旰賸坻蠅腔駁窆ㄛ甜祥岆眕怮衭疑腔源宒﹝{10.SimFirstName}蹦ㄩ※峈睡扂崠冪紱陑猁睿坻羲宎僕傾珨汜腔ㄛ岆扂垀拸楊燴賤腔﹝§※饒模鳴頗岆霜晟蠆逄腔郔疑埻第蹋ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MoveIn</KEY>
+<STR>唸輛</STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MoveInSummary</KEY>
+<STR>狟蹈庈鏍唸蛂婓珨 {0.SimName}:{10.String}</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn0</KEY>
+<STR>蚕衾坻珂睿淜奻絕蜀堤寢腔俴峈ㄛ婓涴模穸岈璃豻疏眳綴ㄛ{0.SimName}樵隅唸睿{10.SimName}珨蛂ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn1</KEY>
+<STR>郔輪{0.SimName}婓遼蟋淜奻絕蜀ㄛ善芛懂硐呁狟婠悈﹜譎觴﹜拸模褫寥ㄛ{10.SimName}枑鼎賸彶腔華源跤邈購給腔{0.SimFirstName}ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn2</KEY>
+<STR>珨跺郔輪艘善{0.SimName}參{4.String}陲昹唸善{10.SimName}腔模腔邁懈佽ㄩ※涴跺絕蜀珨隅眭耋睡端端華參岈讀腕珨芶髦觴ㄐ§※涴跺苤賬婓踏俀俀絃懂涴爵ㄛ憩岆峈賸涴璃岈ㄐ衄ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn3</KEY>
+<STR>韃ㄛ衄虳庈鏍珨汜憩岆拸楊倎洘ㄛ婓郔輪楷汜腔絕蜀岈璃綴ㄛ{10.SimName}掩堤懂囡綴ㄛ枑鼎{0.SimName}珨跺陔腔華源蛂ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MoveIn9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt</KEY>
+<STR>Bike Early Flirt</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt0</KEY>
+<STR>Local bike {0.SimName} has got {4.String} eyes set on some tasty new feeding grounds, in the form of {10.SimName}.  "Oh yes, {12.String} is looking tasty!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt1</KEY>
+<STR>After doing a bit up prowling, {0.SimName} has been spotted moving in the for the kill...  Target ?  An unsuspecting sim by the name of {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt2</KEY>
+<STR>{10.SimName} had better watch out!  Local harlot {0.SimName} has been sighted stalking {4.String} new prey, and is set to pounce!  "Mmmm...  Fresh meat!  Yum!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt3</KEY>
+<STR>"I can teach {13.String} things that many worldly sims can only dream about."  commented {0.SimName}, after someone caught {3.String} leering at {10.SimName}.  Better watch out {10.SimFirstName}!</STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt</KEY>
+<STR>Bike New Flirt</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt0</KEY>
+<STR>Perhaps someone should warn {10.SimName} before they go too far with {0.SimName}.  That bike is a devourer of worlds, and will stop at nothing to get what {2.String} wants!</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt1</KEY>
+<STR>"I know what I'm doing, don't bother me!" grunted {10.SimName} after being confronted with the possibility that a journey into the land of {0.SimName} may not be a very good thing.  "I'm a big sim, I can handle myself, thank you very much!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt2</KEY>
+<STR>{0.SimName} has {4.String} ravenous eye set upon the likes of {10.SimName}!  You better watch out for that one {10.SimFirstName}, or you might end up getting burned!</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt3</KEY>
+<STR>"Oh, don't tell me?  You have some advice regarding {0.SimName} as well, do you?" grumbled {10.SimName}.  "Well mind your own business, I know what I'm doing!"  Yeah, we don't think you do, {10.SimFirstName}!</STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt</KEY>
+<STR>Bike Old Flirt</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt0</KEY>
+<STR>The Bike is an experienced sim, to say the least, having been around the town a couple times...  Though that isn't stopping {10.SimName} from getting a private lesson.  My oh my, let's hope {12.String} knows what's {12.String}'s doing, or {0.SimName} will eat {13.String} alive!</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt1</KEY>
+<STR>"And just thing about what I plan on doing with this!" quiped {0.SimName}.  "You are going to be screaming for mercy by the time I'm done with you, and begging for more!"  {10.SimName} is head over heels for the Bike, and {14.String} future is looking grim indeed.</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt2</KEY>
+<STR>"Well, everyone else went there, there must something to it, and I just didn't want to be left, is all!" murmured {10.SimName}, after a recent rendevous with the Bike, {0.SimName}.  That is not a very good excuse, {10.SimFirstName}, not very good at all!</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt3</KEY>
+<STR>After an illicit encounter with {10.SimName}, the local Bike, {0.SimName} was heard to have noted that:  "{10.SimFirstName} can come again anytime they want, I'm always up for another round!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm</KEY>
+<STR>Bike Steady Leave 'Em</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm0</KEY>
+<STR>"I though maybe they may have been willing to settle down, ya know?  Man, was I wrong!" commented {10.SimName} after breaking off {14.String} relationship with the Bike {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm1</KEY>
+<STR>{0.SimName} and {10.SimName} are no more.  Once {10.SimFirstName} clued into the fact that {12.String} was in a relationship with a Bike, the conclusion was inevitable.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm2</KEY>
+<STR>"What?  I thought {12.String} wanted me to be happy?" moaned {0.SimName} after finding out that {10.SimName} no longer wanted to be seen attached to the Bike.  "But...  But...  What about me?"</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm3</KEY>
+<STR>"I love {3.String}, but I'm not particularly interested in sharing with the rest of the town, ya know?" quiped {10.SimName} after breaking it off with {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm</KEY>
+<STR>Bike Married Leave 'Em</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm0</KEY>
+<STR>"I just cannot stand the constant ridicule any longer, so I decided to leave {3.String}." grumbled {10.SimName}.  "Being married to that Bike is not a trip I want to take again.".  {0.SimName}'s marriage is over.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm1</KEY>
+<STR>It appears the {10.SimName} finally wizened up to the fact that {4.String} Bike of a spouse, {0.SimName} was never going to change.  The couple has decided to split up.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm2</KEY>
+<STR>{0.SimName} has suffered a casuality of {4.String} own recently, when {4.String} spouse, {10.SimName} decided to leave {3.String}.  "Whatever did I do to deserve that?" {2.String} was heard to say.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm3</KEY>
+<STR>As everyone with half-a-brain expected, {0.SimName}'s marriage to {10.SimName} is over.  {10.SimFirstName} decided that living with the Bike was simply not the best of ideas...  Go figure!</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo</KEY>
+<STR>Bike Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo0</KEY>
+<STR>"Ah, young love.  How quaint, I'll put an end to that quick enough." {0.SimName} was heard to say, after preparing to conquer some new territory, owned by {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo1</KEY>
+<STR>"Just think of it as if it were, say, banking.  I plan on withdrawing from {10.SimName}'s account, you see, and deposit it in mine."  {0.SimName} should just stay away from {10.SimFirstName} joint account, and those awful analogies!</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo2</KEY>
+<STR>Local bike {0.SimName} was seen taking advantage of {10.SimName}, though one should note that {10.SimFirstName} appeared to be enjoying it.  One has to wonder how long either of their relationships will last if they spend all this time with each other?</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo3</KEY>
+<STR>"Bike is such a vulgar term." commented {0.SimName}.  "Why couldn't it have been something like, *undersecretary to the department of internal affair*, or *ambassador of lust* ?"  Well, {0.SimFirstName}, here's to diplomatic relations between you and {10.SimName}.  Let's hope war doesn't break out amongst {10.SimFirstName}'s allies!</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo</KEY>
+<STR>Bike Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo0</KEY>
+<STR>Two-timing little {0.SimName} was seen on the plains stalking a local sap named {10.SimName}.  Poor {10.SimFirstName} just does not know what is in store when the Bike is done with {13.String}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo1</KEY>
+<STR>"I strike like this see?  Take a little nibble here, and little bite there...  Looking for those tasty little bits, oh yeah, you know what I'm talking about."  {10.SimName} better watch out, {0.SimName} sounds hungry!</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo2</KEY>
+<STR>The {10.SimLastName} household might be in for a bit of trouble, now that the Bike has set {4.String} wandering gaze upon {10.SimFirstName}.  You better watch out there, {0.SimName} eats sims like you for breakfast!</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo3</KEY>
+<STR>"I love a good run in the morning, and chasing {10.SimFirstName} is some fine exercise." commented {0.SimName}.  The local Bike has been seen chowing down on that particular member of the {10.SimLastName} household.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MenuName</KEY>
+<STR>苤淜豪豪鼠赽</STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Creation</KEY>
+<STR>豪豪鼠赽腔筑汜</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation0</KEY>
+<STR>淜奻侔綱堤珋賸珨跺陔腔苤啞螺ㄛ坻憩岆{0.SimName}ㄐ坻蠅楷橢睡堋砩翋雄奻僑腔ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation1</KEY>
+<STR>{0.SimName}哫票陔虛羲桲ㄛ辣茩睡爛藝羹嘖ㄐ陔腔豪豪鼠赽筑汜賸ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation2</KEY>
+<STR>{0.SimName}衄獰睿抇褶腔怓僅ㄛ艘懂眒冪腕善{3.String}眈絞腔疑﹝淜奻腔玿晟玿逄眒冪備網{3.String}峈陔珨測腔豪豪鼠赽ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation3</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Worship</KEY>
+<STR>喟問豪豪鼠赽</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship0</KEY>
+<STR>憩婓撓毞ㄛ絞華腔豪豪鼠赽{0.SimName}侔綱眒冪柲竘賸{10.SimName}腔醴嫖﹝籥夤氪枑善ㄛ坻蠅泭善{13.String}佽※Mmmm...  坻淩岆藝璨腔豪﹝§</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship1</KEY>
+<STR>{10.SimName}躇蛁砩覂絞華腔豪豪鼠赽{0.SimName}ㄛ洷咡﹜麼勍﹜硌咡{4.String}醴嫖夔硌砃{13.String}ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship2</KEY>
+<STR>※{0.SimName}§眕恲恅衄獰﹜睿高腔瑞跡侐揭挐弝...  奧侔綱※{10.SimName}§珨艘善{3.String}憩謗虯楷嶇給婓華﹝珨跺籥夤氪蹦佽ㄩ※垀衄豪豪鼠赽垀項忮腔陲昹扂飲猁ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship3</KEY>
+<STR>{0.SimName}婓絞華眕苤啞螺赻懈ㄛ躓郔輪飲勤坻纔藥桉﹝{10.SimName}躺躺掩{4.String}祥冪砩腔楷謠醴嫖禸善ㄛ憩婠給婓華﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Worship9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Derision</KEY>
+<STR>峈豪豪鼠赽陸讀</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision0</KEY>
+<STR>撓毞ㄛ{0.SimName}睿{10.SimName}侔綱惇楷賸慾轄腔淰陶﹝籥夤氪佽ㄛ岈腔秪侔綱岆笢眳珨澄備淜奻腔豪豪鼠赽岆坴黃衄腔﹝橾毞ㄛ饒跺庈鏍諫隅岆慾賸猷躑腔唚ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision1</KEY>
+<STR>{0.SimName}睿{10.SimName}郔輪婓誰奻ㄛ勤衾淜奻腔豪豪鼠赽掀誕乾阰ㄛ衄慾轄腔淰陶﹝"乾扂嗣ㄐ", "祥ㄛ岆扂ㄐ", "扂ㄐ" 隴珆華ㄛ涴跺衿窔腔劓砓厥哿賸疑珨僇奀潔﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision2</KEY>
+<STR>{0.SimName}郔輪哫豢勤淜奻豪豪鼠赽ㄛ{4.String}祥冓乾砩ㄛ涴侔綱{10.SimName}汜ㄛ做尨{0.SimFirstName}喃講硐岆跺獎蜀ㄛ奧豪豪鼠赽勤陔辣頗載衄倓﹝隴珆華ㄛ涴僇蝠抶羶夔郔綴岆祥辣奧汃﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision3</KEY>
+<STR>蚕衾淜奻豪豪鼠赽綴僧漦赽腔杅眒冪衄萸嗣賸ㄛ扂蠅褫眕燴賤峈睡{0.SimName}睿{10.SimName}頗峈珨跺苤啞螺岆祥劂煦腔ㄛ郔輪衄艘獗坴蠅峈森桯羲捨森謁窕腔霜悛覺伀﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Derision9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Woo</KEY>
+<STR>豪豪鼠赽乾</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo0</KEY>
+<STR>{0.SimName}郔輪涽督賸{10.SimName}ㄛ嶺輛珨跺陔頗埜善{4.String}佌卼弊爵﹝毞陛ㄛ衄虳庈鏍憩岆梩鴃賸晞皊ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo1</KEY>
+<STR>{10.SimName}砃{14.String}垀衄攬衭嚃珓郔輪睿傑爵腔豪豪鼠赽{0.SimName}埮頗腔岈﹝艘懂衱衄覂賸{4.String}腔藹賸ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo2</KEY>
+<STR>絞華腔豪豪鼠赽 "{0.SimName}"ㄛ眕{4.String}儐腔散奻髡痲ㄛ郔輪{10.SimName}傖峈{4.String}朊攷輿笢腔珨朊攷﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo3</KEY>
+<STR>{10.SimName}勤郔輪睿淜奻豪豪鼠赽{0.SimName}腔埮頗倓煖祥眒﹝攬衭蹦佽ㄛ{12.String}珋婓腔趕枙憩硐衄繞嘎玶坁腔囀ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Woo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle</KEY>
+<STR>豪豪鼠赽腔乾葷/STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle0</KEY>
+<STR>絞華腔豪豪鼠赽{0.SimName}ㄛ郔輪婓囥桯{4.String}黰髡ㄛ蔚坻腔乾汃畦善淜藩跺褒邈﹝乾疑嗣ㄛ筍奀潔疑屾ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle1</KEY>
+<STR>絞華腔痲{0.SimName}郔輪掩艘善淏婓呏遴渾{4.String}饒砩觴譎腔煨佪﹝{2.String}泭善珨跺汒秞佽ㄩ※斕艘ㄛ珨跺腔郗咡岆剒猁掩棧慾腔﹝§※坻蠅腔褡咡埣懂埣ㄐ§</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle2</KEY>
+<STR>絞華腔勀譎{0.SimName}豪賸珨萸奀潔睿{4.String}珨虳煨佪芶芶埜薊炵ㄛ藩跺腕善唾倷腔艘懂飲竭羲陑ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle3</KEY>
+<STR>珨虳倷堍腔庈鏍郔輪植絞華腔豪豪鼠赽{0.SimName}饒晚ㄛ腕善珨虳剒猁腔唾倷ㄛ{0.SimFirstName}硌堤ㄩ※扂眒冪鼎茼怮嗣賸﹝§</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Canoodle9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby</KEY>
+<STR>豪豪鼠赽輒婕</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby0</KEY>
+<STR>豪豪鼠赽隴珆儕薯怮徹咺呏ㄐ{0.SimName}睿{10.SimName}渾陔汜嫁腔筑汜﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby1</KEY>
+<STR>佽珩墅ㄛ軝妏眒冪輒賸苤滯ㄛ砩觴朸譎腔覜橇珨萸珩羶秏豖ㄐ奻棒艘善{0.SimName}睿{10.SimName}ㄛ坻蠅甡導儕薯喃驛﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby2</KEY>
+<STR>輒覂坻蠅腔佌汜赽ㄛ{0.SimName}睿{10.SimName}眒冪痐隴淜奻腔豪豪鼠赽珩褫眕睿坻俇珨欴ㄐ</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby3</KEY>
+<STR>珨跺豪豪鼠赽腔笳妗煨佪腴逄ㄩ※坻蠅蔚猁珨汜堤珨跺謠腔茪嫁賸ㄐ扂硐岆洷咡饒跺岆扂ㄛ奧祥岆*坻腔*庈鏍ㄐ§{0.SimName}睿{10.SimName}疆覂茩諉坻蠅腔陔汜嫁ㄛ垀眕羶蛁砩善玾俋眳秞﹝</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy</KEY>
+<STR>Casanova Jealousy</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy0</KEY>
+<STR>"Who does {2.String} think {2.String} is?  That hunk for gorgeous is mine, all mine!" screamed {10.SimName} after learning that the Casanova had been seen wooing {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy1</KEY>
+<STR>{10.SimName} was less than impressed with {0.SimName} after the Casanova made time in their busy schedule for some {0.SimFirstName} face-to-face time.  "That {5.String} had better watch where they stick that tongue of theirs!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy2</KEY>
+<STR>"This time I really will claw {2.String} eyes out!  I swear, no one moves in on my territory!" griped {10.SimName}, once word got around that *{14.String}* Casanova was doling out the love with local {5.String}, {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy3</KEY>
+<STR>{10.SimName} was apparently down right distraught when {12.String} learned of {0.SimName} getting some action from the Casanova.  "Way not me, Builder!  Why have you forsaken me?  Smite that little Ho from existence!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Jealousy9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt</KEY>
+<STR>Casanova Early Flirt</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt0</KEY>
+<STR>"Oh My Builder!  {0.SimName} looked at me, {2.String} really, really looked at me!  I could just die!" squealed {10.SimName}, after apparently receiving a knowing glance from the much adored Casanova.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt1</KEY>
+<STR>"Ah, new love.  It's taste is exquisite, like that first sip of a fine glass of nectar.  Leaving you wanting more." quoted the Casanova, after meeting up with {10.SimName} recently.  "Simply divine!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt2</KEY>
+<STR>{0.SimName} has chosen a new specimen to direct {4.String} gaze.  None other than {10.SimName} was singled out for a brief encounter.  "I was so...  honored.  To be with the Casanova, it was like a dream come true."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt3</KEY>
+<STR>"Once {14.String} has regained consciousness after that brief fainting spell, {10.SimName} and I had a grand ol' time seeing the town." reported {0.SimName}.  Another has fallen to the Casanova's charms.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt</KEY>
+<STR>Casanova New Flirt</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt0</KEY>
+<STR>{10.SimName} has been seen in the company of the Casanova, {0.SimName}.  It appears that the two of them have been having quite the go of it lately.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt1</KEY>
+<STR>{0.SimName}, Casanova of this fair town has been seen indulging the whims of one {10.SimName}.  "Some sims have all the luck" mentioned a looky-loo.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt2</KEY>
+<STR>"I try to keep all my fans pleased.  It is difficult, I admit, but I manage." commented {0.SimName} after being seen arm-in-arm with {10.SimName} strolling down the way.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt3</KEY>
+<STR>Medical assistance was almost required when poor {10.SimName} simply fainted away, after a date with local Casanova, {0.SimName}, ended.  "I just could not bear to leave {4.String} side!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt</KEY>
+<STR>Casanova Old Flirt</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt0</KEY>
+<STR>Local Casanova, {0.SimName}, was in fine form recently, escorting the graceful {10.SimName}.  "We had dinner, and dancing...  And then for dessert, I had {13.String}.  Yum!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt1</KEY>
+<STR>{0.SimName} and {10.SimName} were seen together early, liplocked and making every passers-by extremely jealous.  "That Casanova is a fine specimen.  I need me some of that!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt2</KEY>
+<STR>"Oh my builder!  If you would be ever so kind as to hold off, until we're in private?" {0.SimName} said with a grin, after being groped by {4.String} date, {10.SimName}.  How very civil of the Casanova, sparing us the messy details.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt3</KEY>
+<STR>{10.SimName} was in heaven early, when the amazing {0.SimName} swept {13.String} off {14.String} feet and into most exquisite bliss.  "I regret I have but one life to give for my town." commented the Casanova.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst</KEY>
+<STR>Casanova Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst0</KEY>
+<STR>Local Casanova {0.SimName} has had {4.String} hands full recently, mostly with parts of {10.SimName}.  However, being in a steady relationship, {0.SimFirstName} may want to consider where those fingers end up, or {2.String} may up with one less!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst1</KEY>
+<STR>Having a steady partner apparently does not mean that {0.SimName} can neglect {4.String} duties.  {10.SimName} knows this first-hand, after getting some loving treatment from the Casanova recently.  "That is one *devoted* sim!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst2</KEY>
+<STR>"I must be available to all those who desire my love." commented {0.SimName}, after a curious neighbor asked how {2.String} dealt with being in a steady relationship.  "When {10.SimName} came seeking my guidance recently, how could I refuse?"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst3</KEY>
+<STR>"I am brimming with so much love, that my flock simply cannot help themselves." noted {0.SimName}.  "Even though I have a partner already, sims like {10.SimName} feel compelled to seek out my touch.  One simply can not leave them unfulfilled, it would be torture!."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond</KEY>
+<STR>Casanova Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond0</KEY>
+<STR>"It's not really that serious." commented {10.SimName} after a friend asked what {12.String} partner thought about {0.SimFirstName}'s recent fling with the Casanova.  "I mean if {0.SimName} will have me, that other sod might as well just get lost."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond1</KEY>
+<STR>"I love them both so dearly!  Oh what is a poor {15.String} to do?" sighed {10.SimName}.  "Oh sure, we may be going steady, but if the Casanova comes a knocking, one simply does not turn them away."  {0.SimName} has {4.String} hooks deep in that {15.String} all right!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond2</KEY>
+<STR>Word on the street has it that local Casanova {0.SimName} has been messing with another sim's partner.  {0.SimName} however was quick to note that {0.SimFirstName} is totally blameless, and added: "That sweet, sweet, sim can do no wrong."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond3</KEY>
+<STR>It is unknown at this time whether Casanova devotee {10.SimName} intends to end their relationship, in favor of {0.SimName}.  "Well, on one hand, I have a steady partner who loves me...  On the other, is the Casanova.  Why must life be so difficult?"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond4</KEY>
+<STR>"I never endorse any infidelity amongst my chosen ones" commented {0.SimName}.  "However, if {10.SimName} wishes to stray in my direction, I will not deny her my company."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped</KEY>
+<STR>Casanova Steady Dumped</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped0</KEY>
+<STR>It appears that {10.SimName} could simply no longer abide {0.SimName}'s devotion to the Casanova, and has decided to end the relationship.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped1</KEY>
+<STR>"What has that Casanova character have that I don't?" grumbled {10.SimName}.  {0.SimName} and {12.String} have decided that it would be best to split.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped2</KEY>
+<STR>"{10.SimFirstName} can be so jealous.  I mean it's the Casanova, for Builder's sake!  Why doesn't {12.String} understand?" whined {0.SimName}, after {10.SimFirstName} decided to end their partnership.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped3</KEY>
+<STR>Steady no more!  {0.SimName} and {10.SimName} has decided to end their relationship, after {10.SimFirstName} simply got fed up with all the "Casanova this, and Casanova that" which {0.SimFirstName} was always bantering on about.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst</KEY>
+<STR>Casanova Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst0</KEY>
+<STR>What is a married Casanova to do?  One must tend to the flock, or they get unruly.  {0.SimName} was with {10.SimName} recently, ensuring peace and tranquility continues to reign in {4.String} fair town.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst1</KEY>
+<STR>"Oh, {2.String} takes such a risk, you know?" commented {10.SimName}, after getting some much needed loving from the Casanova.  "If {0.SimName}'s spouse ever found out, it could be ruinous to {3.String}!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst2</KEY>
+<STR>"That ho just needs to learn to share!" croaked {10.SimName}, when asked about {12.String} dealing with the Casanova.  "Being married to {0.SimName} does not give them the right to hoard that hunk of handsome to themselves!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst2_Female</KEY>
+<STR>"That ho just needs to learn to share!" croaked {10.SimName}, when asked about {12.String} dealing with the Casanova.  "Being married to {0.SimName} does not give them the right to hoard that slice of gorgeous to themselves!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst3</KEY>
+<STR>"I want everyone to be happy and fulfilled." commented {10.SimName}.  "Being the Casanova can be such a burden, and I am here to help {0.SimName} out when {4.String} spouse is not available.  I just want to help {3.String} be a better man."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond</KEY>
+<STR>Casanova Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond0</KEY>
+<STR>Local casanova devotee {10.SimName} has been playing with hot fires of love.  Apparently {12.String} decided to do some poking and prodding with the likes of {0.SimName}!  Keep those fires burning hun, but don't get burned!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond1</KEY>
+<STR>{0.SimName} doesn't normally deal with married sims, being the truly outstanding citizen that {2.String} is.  But sometimes a Casanova simply needs to answer the call, and satisfy a fellow sims urges.  {10.SimName} got just what she needed, and so much more!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond2</KEY>
+<STR>"That Casanova is a dream..." sighed {10.SimName}.  "I just hope that {2.String} is a discreet as I know he must be.  Wouldn't want the spouse finding out, now would we?".  Not to worry, {0.SimName} is a {9.String} of honor!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond3</KEY>
+<STR>"Oh, {0.SimName} where forth art thou?  Your Juliet beckons you?" Shakespeare {12.String} is not, but married {10.SimName} does know how to make a little drama, fooling around with the Casanova behind {12.String} spouse's back.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped</KEY>
+<STR>Casanova Married Dumped</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped0</KEY>
+<STR>Crash and burn!  The marriage between {0.SimName} and {10.SimName} has been terminated, after {10.SimFirstName} learned that {0.SimFirstName}'s devotion to the Casanova went far deeper than {12.String} had imagined.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped1</KEY>
+<STR>"I will not be cuckolded by that, that sim!" {10.SimName} was heard to scream, after {12.String} found out that {0.SimName} had been fooling around with the Casanova.  The couple's marriage is obviously at an end.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped2</KEY>
+<STR>"{10.SimFirstName} just doesn't understand.  It is not the Casanova's fault, it is all mine!", cried {0.SimName}, "That animal magnetism is simply too strong to deny."  {10.SimName} and {0.SimFirstName} have broken up.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped3</KEY>
+<STR>"It's a trial separation, until {2.String} can get {4.String} head back on straight." commented {10.SimName}.  "However, a divorce is most likely going to be the end result.  {0.SimFirstName} appears to unwilling to change."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm</KEY>
+<STR>Casanova Married Leave 'Em</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm0</KEY>
+<STR>"It was simply not fair to {10.SimName}, you understand?" commented {0.SimName}.  "Being married to me is simply too much of a strain for some.  I decided it would be best if we parted."  The Casanova is single once more!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm1</KEY>
+<STR>Devotees rejoice!  The Casanova, {0.SimName}, has chosen to end {4.String} marriage with {10.SimName}.  "I simply must have more time for my devoted fans, so I decided to move on."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm2</KEY>
+<STR>And there was a hush in the air!  Everyone is holding their breath to see what {0.SimName}'s next move will be, now that {2.String} has freed {4.String}self of that ball-and-chain {10.SimName}.  The Casanova's marriage is at an end!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm3</KEY>
+<STR>"I love that dear, dear sim with all my heart." sighed {10.SimName}.  "{0.SimName} had my best interests at heart when {2.String} decided to end our marriage...   Simply did not want to see me mauled by any more of {4.String} followers.  So kind, so kind."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Accost</KEY>
+<STR>Casanova Accost</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost0</KEY>
+<STR>The Casanova was absolutely aghast to hear that {0.SimName} had been accosted by {10.SimName} recently.  "I simply do not understand, there is plenty enough of me to go around!  No need to fight."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost1</KEY>
+<STR>{10.SimName}'s jealousy exceeded {14.String} control last day, when {12.String} suddenly felt the need to berate {0.SimName}, the Casanova's partner.  "How can that sim be so selfish!  Hogging the Casanova all to {3.String}self like that?"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost2</KEY>
+<STR>"Gladly no one was seriously injured in the cat fight." commented the Casanova.  "However, attacking my partner is a shout out for some serious attention, which I shall be providing {10.SimName} later.  Obviously, {12.String} needs to let off some steam!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost3</KEY>
+<STR>Being partnered to the Casanova has its downside, as {0.SimName} found out recently.  {10.SimName} got fed up with not being the center of the Casanova's attention and went a little too far.  "I was able to calm them down, offering each side a little bit of free lovin'." noted the Casanova.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Accost9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate</KEY>
+<STR>Casanova Gigolo Hate</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate0</KEY>
+<STR>"That {10.SimName} is sullying my good name with {14.String} deplorable actions!  I simply cannot stand for it!" commented {0.SimName}.  The Casanova is none-to-impressed with the actions of that local gigolo.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate1</KEY>
+<STR>"Making a sim pay for what should be freely given is utterly shameful!  How does that {10.SimName} live with {13.String}self?  For shame!  For shame!"  The local gigolo population does not have a friend in the Casanova, {0.SimName}, that's for sure.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate2</KEY>
+<STR>The town Casanova, {0.SimName}, was heard deriding against local gigolo, {10.SimName}, for offering {14.String} services to the highest bidder.  "Disgusting.  If one is unable to give freely of one's self, then one should really get out of the game!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate3</KEY>
+<STR>"Hey, I am a fan of {0.SimName}'s work, but really, you can't make a living off how {2.String} operates." commented {10.SimName}, "So if {2.String} wants to complain about my technique, {2.String} can go right ahead.  I don't care one bit."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:GigoloHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Break</KEY>
+<STR>Casanova Break</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break0</KEY>
+<STR>"I did for the love of the Casanova!  Maybe now I will been recognized as their one true love!" screamed {0.SimName} after trashing {10.SimName}'s {20.String}.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break1</KEY>
+<STR>The Casanova's love is apparently inciting sims to violence!  A recent altercation at {10.SimName}'s home ended with {0.SimName} smashing up a {20.String}.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break2</KEY>
+<STR>All this other the love of the Casanova?  Well okay, so it IS the Casanova, understandable.  But would you set a {20.String} on fire, just to prove your undying loyalty?  Well, {0.SimName} did just that, at {10.SimName}'s home none-the-less!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break3</KEY>
+<STR>"You are gutter trash, and your house might as well look the part!" {0.SimName} was heard to yell, as {2.String} took a wrench to {10.SimName}'s {20.String} and totalled it.  "Keep your dirty paws off my Casanova!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Break9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Arson</KEY>
+<STR>Casanova Arson</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson0</KEY>
+<STR>"My love burns hotter for the Casanova than this pathetic {20.String} ever will!" yelled {0.SimName}, upon setting the item ablaze.  Problem being that the item was in {10.SimName}'s home, and {14.String} was not impressed at all!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson1</KEY>
+<STR>A {20.String} burst into flames recently, sparked by the animosity between {0.SimName} and {10.SimName}.  "You WILL stay away from the Casanova, you slut!  Or next time, it won't be your precious stuff I set on fire!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson2</KEY>
+<STR>"Burn bright!  Bright enough to etch the love that I feel, into the heart of my Casanova!"  Fellow devotee {10.SimName} watched, aghast, as {0.SimName} proceeded to set {14.String} {20.String} on fire.  {10.SimFirstName} immediately retorted: "Your Casanova?  After this incident?  That hunk of gorgeous will be all mine!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson3</KEY>
+<STR>"Hunka hunka burning love!" whistled {0.SimName}, as {2.String} watched one of {10.SimName}'s {20.String} burn to a crisp.  What some sims won't do to get noticed by the Casanova!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Arson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MenuName</KEY>
+<STR>Town Tart</STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Creation</KEY>
+<STR>Tart Creation</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation0</KEY>
+<STR>Tart:  A dishy pastry, usually sweet, that is teasing and provocative.  Yep, that defines {0.SimName} perfectly!</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation1</KEY>
+<STR>A new little minx has arisen to terrorize all those hapless hormonal sims in town!  Beware {0.SimName}, the new Tart!</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation2</KEY>
+<STR>{0.SimName} has decided to take paint the town cherry blossom red, and command the hearts of all willing mortals, as the new Tart.</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation3</KEY>
+<STR>Tasty little Tart!  {0.SimName} is working {14.String} sweetness and *innocence* to dominate all the weak willed saps in town!</STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Recruit</KEY>
+<STR>Tart Recruit</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit0</KEY>
+<STR>Life in town couldn't be sweeter, now that {10.SimName} has joined the ranks of the local Tart, {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit1</KEY>
+<STR>Looks like {0.SimName} has got some new competition in the arena of town tasty vixen, in the form of {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit2</KEY>
+<STR>{10.SimName} is looking almost fine enough to eat, working that groove-thang, and joining {0.SimName} as a town Tart.</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit3</KEY>
+<STR>So bright and shiny, {10.SimName} is almost too delicious to behold!  Taking {14.String} place amongst {0.SimName}'s tarts!</STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Recruit9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt</KEY>
+<STR>Tart Early Flirt</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt0</KEY>
+<STR>"So beautiful, so fine.  I just felt in awe just to be around {3.String}." sighed {10.SimName}, after having spent a little time gazing upon {0.SimName}.  "I just could not stop, I need more!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt1</KEY>
+<STR>{10.SimName} has been seen under the spell of local tart {0.SimName}.  Onlookers reported that the two looked to be getting pretty cozy, with {0.SimFirstName} enjoying every minute of it.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt2</KEY>
+<STR>"They look so cute together, I hope it works out between them."  Looks like {10.SimName} has been falling over backwards to impress local tart {0.SimName}, and {2.String} is loving the attention.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt3</KEY>
+<STR>Local tart, {0.SimName} was seen recently, wrapping {10.SimName} around {4.String} little finger.  "It is almost too easy to get {13.String} to do whatever I want."</STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt</KEY>
+<STR>Tart New Flirt</STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt0</KEY>
+<STR>That little vixen, we all know and love, {0.SimName} has been seen out-and-about with poor sap {10.SimName}.  "{10.SimFirstName} completely adores me, {12.String} would anything for me...  I love that."</STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt1</KEY>
+<STR>Curious onlookers were simply unable to pry their eyes off of {0.SimName} and the poor dumb sap on her arm.  {10.SimName} appeared to be drooling, otherwise dumbfounded, and when asked what they were planning on doing that day:  "Whatever my dearest little honey-pot wants.  I just cannot say no to {3.String}."</STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt2</KEY>
+<STR>Love is a curious mistress, and when it comes to {10.SimName}'s devotion to {0.SimName}, clearly it is strong as well!  "I need {3.String}, more than I need air!  Don't look at {3.String} like that!  {0.SimFirstName} is mine, all mine!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt3</KEY>
+<STR>{0.SimName} was showing how powerful {4.String} grasp over poor {10.SimName} really is, by having {13.String} wait on {4.String} every little whim.  "{10.SimFirstName} loves doing things for me, don't you hun?  Yes, yes you do, my little cuddly-wuddly!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt</KEY>
+<STR>Tart Old Flirt</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt0</KEY>
+<STR>{0.SimName} and {10.SimName} were getting plenty hot and heavy recently.  Sounds like {10.SimFirstName} would do anything for a bit of that tastiness!</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt1</KEY>
+<STR>"I love and adore {0.SimName}!" grinned {10.SimName}.  "Ya know, how {2.String} makes this wonderful little squeal when I do this, just the way {2.String} likes it!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt2</KEY>
+<STR>The gossip mill was running hot, burning up the presses...  {0.SimName} has {4.String} hooks in deep, and {10.SimName} is loving every minute of the ride.  Woowee!</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt3</KEY>
+<STR>"Delicious!  I could just eat {3.String} up!  Actually, that sounds like a grand idea."  Looks like {10.SimName} knows how best to please {4.String} little piece of heaven, {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby</KEY>
+<STR>Tart Pregnancy</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby0</KEY>
+<STR>Showing what true devotion really means, the little tart {0.SimName} appears to have convinced {10.SimName} into pollinating a child!  Wow, there is a fine line between devotion and insanity, and we're pretty sure it's been crossed!</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby1</KEY>
+<STR>It appears the little kumquat {0.SimName} was ripe for the picking, and {10.SimName} was ready and able!  The two are now expecting a baby!</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby2</KEY>
+<STR>Incredible!  {10.SimName} has shown true adoration towards {0.SimName}, offering {14.String} services to germinate a new child.  The tart is expecting a new baby!</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby3</KEY>
+<STR>That little tart!  There is a new pregnancy in town, and it seems that {0.SimName} and {10.SimName} are the donors.  "Like I said, I would do anything for my sweet {0.SimFirstName}.  Anything!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst</KEY>
+<STR>Tart Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst0</KEY>
+<STR>The tart {0.SimName} has been seen cavorting with {10.SimName} despite being in a steady relationship with another.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst1</KEY>
+<STR>Local partnered sim {0.SimName} was in true tart form recently, having {4.String} way with poor shmoo {10.SimName}.  "Does {12.String} mind that I'm seeing someone else?  Of course not, {12.String}'s my little honey-bunny."</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst2</KEY>
+<STR>"{0.SimFirstName}!" screamed {10.SimName}, "{0.SimFirstName}, baby!  Take me baby, dump that other clod!".  Looks like {0.SimName} has got the hooks into that one alright!</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst3</KEY>
+<STR>Given that {0.SimName} is currently in a steady relationship, {10.SimName} should know better than to tread those waters.  Hasn't stopped {13.String} though from braving that surf over and over again.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond</KEY>
+<STR>Tart Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond0</KEY>
+<STR>"I just can't stop myself!  I love {3.String}, and no one else!  I need {4.String} love!" moaned {10.SimName}, after being witnessed by a friend cavorting with the local tart, {0.SimName}, despite going steady with another.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond1</KEY>
+<STR>"You love only me, don't you lover?" {0.SimName} was heard to whisper in {10.SimName}'s ear.  "Oh, yes my darling!  There is only room for you in my heart.  Only you."</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond2</KEY>
+<STR>{10.SimName} was in the thrall of the local tart {0.SimName}, despite already having a significant other.  "How can you deny yourself such beauty?  I must have {3.String}!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond3</KEY>
+<STR>Tasty little tart that {2.String} is, {0.SimName} is believed to be luring poor defenseless {10.SimName} into messing up the relationship {2.String} {12.String} has with {4.String} {14.String} significant other. "I simply sing the song, they are the ones that follow!"</STR> 
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst</KEY>
+<STR>Tart Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst0</KEY>
+<STR>Married tart {0.SimName} was unavailable for comment, after being spotted with a one {10.SimName}, apparently on their way for a little show-and-tell.  More detailed reports are forthcoming, once we are done revelling in them!</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst1</KEY>
+<STR>{10.SimName} was seen making the moves on little tart {0.SimName}, even though {12.String} knows that {2.String} is married!  "What?  Could you deny yourself a piece of that scrumptiousness?"</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst2</KEY>
+<STR>Given that {0.SimName} is married, you would have expected a bit more of a rebuff after {10.SimName} put the moves on {3.String}.  "There is nothing I can do to stop {13.String}, {12.String} is simply drawn to me, bee-to-pollen style, ya know?"</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst3</KEY>
+<STR>"I love the attention, of course I do." whispered {0.SimName}, after {10.SimName} was seen throwing {12.String}self at {4.String} feet and begging to kiss several locations we will refrain from mentioning here.  "Now, that spouse of mine.  That relationship needs a bit of work, if you ask me."</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond</KEY>
+<STR>Tart Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond0</KEY>
+<STR>The power of the siren's song is powerful, and there are few who can deny {4.String} call.  {10.SimName} is not one of those sims however, recently seen fooling around with local tart {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond1</KEY>
+<STR>Marriage is not all its cracked up to be apparently.  {10.SimName} appears to be broking {14.String} vows, all in the name of a local tart {0.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond2</KEY>
+<STR>"Why must {2.String} be so seductive?" groaned {10.SimName}.  We suspect {12.String} was referring to none other than local tart {0.SimName}.  Married sims simply do not have a chance around {3.String}!</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond3</KEY>
+<STR>"{0.SimName} is a glory to behold, even for those old married eyes of mine." sighed {10.SimName}.  "I'm sure my spouse won't mind just a little taste of that tart...  Just a bit of flaky pastry, mmm...  They wouldn't mind at all, I'm sure."</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped</KEY>
+<STR>Tart Dumped</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped0</KEY>
+<STR>Whoops!  Looks like too much tart devotion has led to {0.SimName} and {10.SimName} splitting.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped1</KEY>
+<STR>"I don't understand it.  It's like a blur." grunted {0.SimName}, after learning that {10.SimName} had decided to call off their relationship.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped2</KEY>
+<STR>Beware the tasty little pastry!  {0.SimName} and {10.SimName} have decided to call off their relationship after some odd tart business came to light.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped3</KEY>
+<STR>Busted!  {0.SimName} has been called out on account of cheating, and {10.SimName} has left the poor sod to fend for {3.String}self.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped</KEY>
+<STR>Tart Dumped</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped0</KEY>
+<STR>Ouch, it appears that {0.SimName}'s sweet tooth in regards to fluffy pastry has put an end to {4.String} marriage with {10.SimName}.  Let's hope that tart doesn't give someone a cavity as well.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped1</KEY>
+<STR>And to your right:  More Tart Misery.   Yes, it appears that {0.SimName} and {10.SimName}'s marriage is in tatters after an illicit affair.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped2</KEY>
+<STR>Guess no one will be baking any pastry for this particular *celebration*, after {10.SimName} decided to divorce {0.SimName} on account of a stray tart.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped3</KEY>
+<STR>No more pastry jokes, really!  Well okay, maybe one more, to commemorate the ending of another marriage.  Yes, sadly, {0.SimName} and {10.SimName} are no more.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MoveIn</KEY>
+<STR>Tart Move In</STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MoveInSummary</KEY>
+<STR>The following sims have moved in with {0.SimName}:{10.String}</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn0</KEY>
+<STR>Recent Tart troubles have forced {0.SimName} to vacate {4.String} previous dwelling and move in with {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn1</KEY>
+<STR>"I totally did not see this coming." commented {0.SimName}, while unpacking {4.String} stuff.  The poor sim has been asked to relocate after some recent relationship troubles.  Gladly {10.SimName} was able to offer them a place to stay.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn2</KEY>
+<STR>Still dumbfounded and glazed over, {0.SimName} was unable to answer even the simplest of questions regarding {4.String} move into {10.SimName}'s home.  "Buh, buh, buh..." was pretty much the most one could gather.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn3</KEY>
+<STR>"One second I was happy as a clam, and the next I'm out on my arse." groaned {0.SimName}.  The poor sim found themselves having to move in with {10.SimName} to stay off the streets.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MoveIn9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson</KEY>
+<STR>Tart Arson</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson0</KEY>
+<STR>"Why do you hate my love?" cried {0.SimName} after setting fire to {10.SimName}'s {20.String}.  "Stay away or I'll do much worse next time!"  Apparently the tart's love is strong in that one!</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson1</KEY>
+<STR>A tart's spell can cloud even the most reasonable of sim's judgement.  Take {0.SimName} for instance, who apparently set a {20.String} on fire at {10.SimName}'s home.  {10.SimFirstName} is no friend of tart, but we think {0.SimFirstName} may have gone a little too far.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson2</KEY>
+<STR>"Don't look at me!  I didn't ask {0.SimName} to set that {20.String} on fire!  Why would I ever do that?"  It appears that {0.SimFirstName} decided to act out against one of {4.String} tart's enemies, and torched {10.SimName}'s house!</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson3</KEY>
+<STR>{0.SimName} under the guise of assisting a helpless little tart, broke in and burned a {20.String} in {10.SimName}'s home just recently.  "I would not have believed it, if I had not been there at the time!  That sim is insane!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail</KEY>
+<STR>Tart Arson Fail</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail0</KEY>
+<STR>"{0.SimName} was just sitting there muttering about some tart, when I came in and caught {3.String}...  Just watching my {20.String} burn." commented {10.String} to reporters that arrived at the scene of the town's most recent blaze.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail1</KEY>
+<STR>Arson investigators sifted through the charred remains of a {20.String} last day, to find evidence that {0.SimName} was to blame.  "I asked {3.String} why." mentioned {10.SimName}, "And {4.String} only excuse was some pastry told {3.String} to.  I still don't understand."</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail2</KEY>
+<STR>{0.SimName} found {3.String}self implicated in the recent burning of a {20.String} at {0.SimName}'s home recently.  When asked why {2.String} had done it, all {2.String} could say was:  "My love is true and will get me through this, you'll see!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail3</KEY>
+<STR>"Burned to cinders!  My {20.String} is toast.  I just couldn't believe it." bemoaned {10.SimName} after returning home to find that {0.SimName} had lit the item ablaze.  "All over the love of a tart?  What a waste!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyArsonFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:LoverArson</KEY>
+<STR>Tart Arson</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson0</KEY>
+<STR>"The Tart is mine, you stay far, far away!  You hear?" screamed {0.SimName} after setting {10.SimName}'s {20.String} aflame.  "Never!" retorted {10.SimFirstName}, "You'll pay for this, the tart loves me!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson1</KEY>
+<STR>"My love for you burns as hot and true as this {20.String}!" {0.SimName} was heard to utter, after setting the item on fire and fleeing from {10.SimName}'s home.</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson2</KEY>
+<STR>"She's mine!  All mine!  Let this burning {20.String} stand as a testament to my love!" It appears that their is a little rivalry over a certain tart going on between {0.SimName} and {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson3</KEY>
+<STR>{0.SimName} and {10.SimName} found themselves at odds recently after {0.SimFirstName} set {10.SimFirstName}'s {20.String} ablaze to prove {4.String} love for a certain tart was greater.  "There will be payback, I assure you!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverArson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak</KEY>
+<STR>Tart Break</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak0</KEY>
+<STR>"Who would do such a thing?  Break into my home and bust up a {20.String}?" queried {10.SimName}.  Suspicions about town is that {0.SimName} was behind the *hit*, on accounts of some tart.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak1</KEY>
+<STR>"It's busted alright, and the repair bill is coming out of my wallet for sure." groaned {10.SimName}.  Apparently someone purposefully broke a {20.String} at {14.String} house.  "It was most likely that {0.SimName}, I never liked {3.String} or {4.String} tart *friend*."</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak2</KEY>
+<STR>{0.SimName} has struck a blow against tart haters in this town, by breaking into {10.SimName}'s home and busting up a perfectly fine {20.String}.  "What is this town coming to?" muttered {10.SimFirstName}.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak3</KEY>
+<STR>{10.SimName} was aghast when {12.String} returned home to find {14.String} {20.String} had been messed up rather badly, by whom {12.String} suspects was none other than {0.SimName}!  "That sim has had it out for me ever since {2.String} hooked up with that tart of {4.String}!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreak9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail</KEY>
+<STR>Tart Break Fail</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail0</KEY>
+<STR>"And I'd do it again!  My tart loves me, and I love them!" smirked {0.SimName} as they were hauled away for assault and battery on a defenseless {20.String}.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail1</KEY>
+<STR>The power of the tart of a sim's feeble mind is awe-inspiring.  It is believed such power drove {0.SimName} to attack and smash a {20.String} at {10.SimName}'s home recently.  Incredible!</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail2</KEY>
+<STR>"We are at a loss to explain {0.SimName}'s behavior" reported police, after {10.SimName} reported {14.String} {20.String} had been busted by the sim.  "{0.SimFirstName} just kept rambling on about a local tart, we're not sure what to make of it all."</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail3</KEY>
+<STR>Love makes sims do stupid things, as {10.SimName} found out, when a love crazed {0.SimName} broke into {14.String} home and destroyed a {20.String}.  "What was that sim thinking?  Must have been out of {4.String} gourd.  What a nutter!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyBreakFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak</KEY>
+<STR>Tart Break</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak0</KEY>
+<STR>"Oh yeah?  You think you can break into my home and bust up my {20.String}?  That tart is mine!  You'll see!" screamed {10.SimName}, when {0.SimName} decided to take matters into {4.String} hands and prove who was the more loyal lover.</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak1</KEY>
+<STR>Romantic triangles tend to lead to bad feelings all around.  In this case {0.SimName} choose to make {4.String} mark a little more physical by busting a {20.String} over at {10.SimName}'s place.  "Take that loser!  Stay away from my tart!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak2</KEY>
+<STR>The siren song was blaring in {0.SimName}'s mind when {2.String} took it upon {3.String}self to destroy a {20.String} at a rival lover's home.  {10.SimName} was non-to-impressed by the show of force:  "Just can't do the job in bed, so {2.String} has to compensate I guess!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak3</KEY>
+<STR>{0.SimName} and {10.SimName} rivalry regarding a certain tart took a turn for the worse last day, when {0.SimName} smashed up a {20.String} at {10.SimName}'s place.  "My love is truth!  Don't get in my way {10.SimFirstName}!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverBreak9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight</KEY>
+<STR>Tart Fight</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight0</KEY>
+<STR>Gossip around town is that {0.SimName} attacked and beat up {10.SimName} as show of {4.String} undying devotion to a local tart.  "Just came right out of nowhere and smacked me right upside the head!" groaned {10.SimFirstName}, nursing a large lump on {14.String} skull.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight1</KEY>
+<STR>May the power of Tart compel you!  {0.SimName} was obviously possessed by something when {2.String} brazenly provoked a fight with {10.SimName}, a known enemy of {0.SimFirstName}'s lover.  "It was totally unfair!  Took me completely by surprise, I didn't have a chance!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight2</KEY>
+<STR>A genius move on the part of a local tart, having lover {0.SimName} take down a local enemy, by the name of {10.SimName}.  {0.SimFirstName} is taking full credit of course, and is refusing to mention the tart's involvement in the ensuing melee.</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight3</KEY>
+<STR>In what was to become a pitiful attempt at a battle royale, {0.SimName} beat up defenseless {10.SimName} in an attempt to appease {4.String} wanton lover, a local unnamed tart.  "I need to protect my love from vicious haters like this {10.SimFirstName}.  It shows that my love is true, ya know?"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFight9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail</KEY>
+<STR>Tart Fight Fail</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail0</KEY>
+<STR>{10.SimName} got the upper hand recently, after a manic {0.SimName} swung at {13.String} and missed.  The slightly dazed sim was unable to recover quick enough and received a nasty blow to the groin.  "Hit 'em where it counts I say." quoted {10.SimFirstName}, "Hopefully, {2.String}'ll think twice next time, when {4.String} little tart tells {3.String} to do something stupid!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail1</KEY>
+<STR>Smash!  Blam!  {0.SimName} went tumbling to the ground in a pile of misery, after a brillant parry and left-right combo from the talented {10.SimName}.  "What the bloody Builder was {0.SimFirstName} thinking?  Obviously not using that wretched thing attached to the end of {4.String} neck, that's for certain...  Must be that *other* brain in action."</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail2</KEY>
+<STR>Showing just who is the better fighter, {10.SimName} brought down {0.SimName} with ease and finesse, after being unceremoniously attacked from behind by the crazed sim.  "The nutter was ranting on about tart this, tart that!  Someone should obviously lay off the pastries, they are doing something wild to {4.String} noggin!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail3</KEY>
+<STR>"I could have taken {13.String}!" muttered {0.SimName} after regaining consciousness.  In what was considered to be the quickest fight in history, {10.SimName} brazenly defended {13.String}self from an attack by {0.SimFirstName}, knocking the poor sod off-balance and onto {4.String} head.  "Probably didn't hurt anything {2.String} uses anyways, so none the bother."</STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:EnemyFightFail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:LoverFight</KEY>
+<STR>Tart Fight</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight0</KEY>
+<STR>{0.SimName} and {10.SimName} were seen duking it out recently, apparently over a tart they are both involved with.</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight1</KEY>
+<STR>"I mean, really now, is all this hubbub about little ol' me?" a local tart was heard to mention, with a mischievous grin, after learning that {0.SimName} and {10.SimName} had been beating each other up over them.</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight2</KEY>
+<STR>Love triangles are always a cause for trouble, as {10.SimName} learned first-hand, when {0.SimName} attacked them recently.  "That tart is mine!  You back off buster!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight3</KEY>
+<STR>Oh, juicy!  A local tart is suspected in inciting two lovers, namely {0.SimName} and {10.SimName} to violence recently.  Tempers were raised, and fists were flying, all over the lover of a sim!</STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:LoverFight9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:FightHate</KEY>
+<STR>Tart Fight Hate</STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate0</KEY>
+<STR>"What was that idiot {0.SimName} thinking?  Starting fights like that is just dumb, dumb, dumb." commented {10.SimName} after hearing about {0.SimFirstName} recent escapades.</STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate1</KEY>
+<STR>{10.SimName} was quite unimpressed when {12.String} heard that {0.SimName} had been getting physical and beating up on {14.String} friends.  "What a moron, that's all I have to say."</STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate2</KEY>
+<STR>"Total lunacy.  That {0.SimName} is letting that tart lead {3.String} around by the nose." commented {10.SimName}, "Telling {3.String} to get into fight in the name of honor and such, just stupid."</STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate3</KEY>
+<STR>"I love a good fight, but only between professionals." {10.SimName} was heard to say.  "That amateur hour crap that {0.SimName} has been pulling is just bad sportsmanship."</STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:FightHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate</KEY>
+<STR>Tart Arson Hate</STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate0</KEY>
+<STR>"That nutter burned what to the ground?" asked {10.SimName} after a friend mentioned some gossip about {0.SimName}'s recent activities.  "And for what reason?  A tart?  Balls!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate1</KEY>
+<STR>{0.SimName}'s antics regarding a recent fire is not going over well with {10.SimName}.  Apparently {10.SimFirstName} is a good friend of the victim, and not very fond of arsonists!</STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate2</KEY>
+<STR>{10.SimName} has been spreading it around town that {12.String} finds {0.SimName} alleged arson to be deplorable, and beneath contempt.  "{0.SimFirstName} could have hurt someone with that stunt!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate3</KEY>
+<STR>"Playing with fire?  Yes, that sounds suspiciously like something that {0.SimName} would do." commented {10.SimName}.  "{0.SimFirstName} never was one for smart moves, ya know?"</STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:ArsonHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:BreakHate</KEY>
+<STR>Tart Break Hate</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate0</KEY>
+<STR>"I should just go over break one of {4.String} goodies, and see how that make {3.String} feel." muttered {10.SimName} upon learning that {0.SimName} had smashed up a friend's home.</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate1</KEY>
+<STR>"No, I'm not very impressed at all.  Cowardly thing to do, attacking that defenseless item.  {0.SimName} should consider taking one someone who can fight back!" quoted {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate2</KEY>
+<STR>After hearing about {0.SimName}'s recent destructive tendencies, {10.SimName} had this to say:  "Mess with my friend's house bub, and you mess with me!  Just remember that!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate3</KEY>
+<STR>{10.SimName} was understandably distressed to learn that {0.SimName} had been suspected in a recent smash up at a friend's place.  "Darn foul business, that is.  I hope {2.String} gets {4.String} due!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:BreakHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:GoToJail</KEY>
+<STR>Tart Jailed</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail0</KEY>
+<STR>Looks like {0.SimName} got {3.String}self thrown in the pokey.  That should teach {3.String} for following his *heart* rather than {4.String} head.</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail1</KEY>
+<STR>{0.SimName} got {3.String}self arrested recently.  "I'm innocent, was {4.String} only retort."</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail2</KEY>
+<STR>"Better me than my little tart." murmured {0.SimName} after being arrested on suspicion of making an arse out of {3.String}self.</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail3</KEY>
+<STR>Hopefully {4.String} tart sweetheart will bake {0.SimName} a cake with a file in it, now that {0.SimFirstName} has landing in jail!</STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:GoToJail9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MenuName</KEY>
+<STR>Town Gigolo</STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Creation</KEY>
+<STR>Gigolo Creation</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation0</KEY>
+<STR>"Oh, {2.String}'s just a gigolo ya know!"  {0.SimName} has arisen to the occasion to fight the scourge of frigid sims everywhere!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation1</KEY>
+<STR>A master of seduction?  We shall see if {0.SimName} has got what it takes to hold the crown of Town Gigolo!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation2</KEY>
+<STR>Free-styling sex machine {0.SimName} feels {2.String}'s got it where it counts, and is hoping the town's populace thinks so as well.  You go, Gigolo!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation3</KEY>
+<STR>If reputation is everything, then {0.SimName} is swimming in the good life.  However, it is undecided whether being known as the Gigolo is a good thing or not.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Creation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle</KEY>
+<STR>Gigolo Canoodle</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle0</KEY>
+<STR>{0.SimName} simply cannot help {3.String}self, {2.String} has needs and they MUST be satisfied!  The Gigolo has been seen tapping just about everything lately!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle1</KEY>
+<STR>"And you're hot, and you're hot, and you're hot...  And I'm hot!  Let's just get together and share in my company!".  The Gigolo, {0.SimName} has been out taking' care of business!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle2</KEY>
+<STR>"Oh, it's like a one-stop shopping mart.  I can get everything I need and don't even have to order out." commented {0.SimName} after being seen with a number of different dates recently.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle3</KEY>
+<STR>"It takes a lot to keep me sated, and I've always got room for one more morsel, interested?"  grinned {0.SimName}, after being asked just how many sims {2.String} expects to bed this week.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Canoodle9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion</KEY>
+<STR>Gigolo Cohesion</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion0</KEY>
+<STR>Fellow gigolos {0.SimName} and {10.SimName} were seen sharing trade secrets recently.  "Remember, a good massage always gets my date in the mood.  And remember not to skimp on the bed, those cheap ones are a pain in the back!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion1</KEY>
+<STR>Even a professional needs some pointers occasionally, and {0.SimName} is always up for brushing up on latest techniques.  The gigolo was seen chatting up a storm with fellow cohort {10.SimName} recently.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion2</KEY>
+<STR>"Oh, so that goes where?  By the Builder, that explains a lot!" {0.SimName} was heard to proclaim, after brushing up on the latest tools of the trade, with fellow gigolo {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion3</KEY>
+<STR>Onlookers were a little puzzled recently, about what two gigolos, {0.SimName} and {10.SimName}, could possibly be talking about: "Socket A goes into Slot B, and then you grab this handle here and pull.  See easy, and it slides in smooth as silk!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Cohesion9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Derision</KEY>
+<STR>Gigolo Derision</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision0</KEY>
+<STR>"I just think what {2.String} does is outrageous!" sputtered {10.SimName} after learning about {0.SimName} recent philandering behavior.  "A sim should be true to one and only one.  Fooling around like that is just begging for trouble!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision1</KEY>
+<STR>"Just don't know how {0.SimName} juggles all those relationships." commented {10.SimName}, "I mean, myself, I can't even keep one satisfied, much less that many!  I am a little jealous, is all."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision2</KEY>
+<STR>{10.SimName} was up in arms recently over the extracurricular activities as a certain {0.SimName}.  It appears the gigolo has been reported to be flaunting {4.String} prowess, and some sims just can't handle it!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision3</KEY>
+<STR>"Oh, by the Builder, if I hear about {0.SimName} latest conquest again, I'll have to shoot myself...  It would be less painful." groaned {0.SimName}, upon hearing about the gigolo's recent exploits from yet another friend.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Derision9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust</KEY>
+<STR>Gigolo Disgust</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust0</KEY>
+<STR>"I mean, really?  A gigolo?  {0.SimName} could do so much better than that!" argued {10.SimName}, after learning that {14.String} friend had been seen cavorting with the seedy side of town.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust1</KEY>
+<STR>{10.SimName} was not happy at all to hear that {0.SimName} had been seen in the arms of a local gigolo.  After regaining consciousness, {10.SimFirstName} had this to say: "Ewwwww!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust2</KEY>
+<STR>"Oh, gross.  They did what?  Where?  Ew, Ew, stop, I need my ears scrubbed out!".  {10.SimName} was obviously unhappy to hear that {14.String} friend, {0.SimName} had been seen with a town gigolo.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust3</KEY>
+<STR>"Why am I not surprised?" commented {10.SimName} recently, when asked how {12.String} felt about {0.SimName}'s recent dealings with a local gigolo.  "{0.SimFirstName} is totally into that scene."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Disgust9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Date</KEY>
+<STR>Gigolo Date</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date0</KEY>
+<STR>"My one cardinal rule?  Always leave them wanting more." gloated {0.SimName} after escorting the fine {10.SimName} on a date recently.  {10.SimFirstName} was apparently quite pleased and offered some {20.Money} simoleons, for services rendered.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date1</KEY>
+<STR>"I was quite satisfied from the experience." sighed {10.SimName}, after a friend noted {12.String} looked very mellow and content.  "{0.SimName} took me on a nice little trip, and I enjoyed every minute of it."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date2</KEY>
+<STR>It appears that {0.SimName} has been offering {4.String} services at the low-low price of {20.Money} simoleons, and hooked {10.SimName}!  "The price was right, and {0.SimFirstName} was amiable enough.  Didn't complain at all when I asked for that special something-something."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date3</KEY>
+<STR>{10.SimName} was very forthright when {12.String} was asked about the {20.Money} simoleons that exchanged hands between {13.String} and local gigolo {0.SimName}.  "I required the services of a professional, and received them.  What is the problem with that?"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Date9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm</KEY>
+<STR>Gigolo Steady Leave 'Em</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm0</KEY>
+<STR>Apparently dating a gigolo isn't all peaches and cream, as {10.SimName} found out first-hand.  "I just couldn't handle it anymore, so I decided to break it off with {0.SimName}."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm1</KEY>
+<STR>"I mean {0.SimName} is good and all...  But I am expecting something deeper from the relationship than just a good roll in the hay." commented {10.SimName} to a friend, who had asked about {14.String} recent split from {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm2</KEY>
+<STR>"We've decided to go our separate ways" commented {0.SimName}, after {10.SimName} decided to end their relationship.  "I felt that I can pursue my other interests more effectively if I'm single."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm3</KEY>
+<STR>{0.SimName} and {10.SimName} have decided to call it quits, after {10.SimFirstName} came to the decision that {12.String} simply could not bear {0.SimFirstName}'s gigolo ways any longer.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm</KEY>
+<STR>Gigolo Married Leave 'Em</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm0</KEY>
+<STR>What a shocker!  {10.SimName} and {14.String} gigolo of a spouse, {0.SimName}, have decided to call it quits.  "How could anyone stay married to...  to...  a slut like that?"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm1</KEY>
+<STR>{0.SimName} has found {3.String}self single and available to pursue {4.String} extracurricular activities without the hindrance of a spouse.  {10.SimName} has left the gigolo behind!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm2</KEY>
+<STR>"Marriage is a mutual understanding, that you don't go off boinking others for thrills and tickles!  Obviously {0.SimName} didn't understand that." quiped {10.SimName}, after ending {14.String} marriage.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm3</KEY>
+<STR>The gigolo way is a lonely way, as {0.SimName} has recently found out, after {4.String} spouse decided to leave {3.String}.  "{10.SimName} knows what's best for {13.String}, I wish {13.String} luck!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit</KEY>
+<STR>Gigolo Recruit</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit0</KEY>
+<STR>"I just want to learn from the master." commented {10.SimName}, after being seen hanging around with local gigolo {0.SimName}.  "And I feel that {0.SimFirstName} may know the tricks I need."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit1</KEY>
+<STR>Where do you go when you want to know how to seduce with great vigor?  Not the Casanova apparently, who is probably too busy for mere mortals anyways. Rather, {10.SimName} has turned {14.String} attention to Gigolo {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit2</KEY>
+<STR>"So you want to learn all the tricks for making that special someone squeal for me?  Well my good friend, you have come to the right sim."  {0.SimName} has indoctrinated a new sim into the gigolo lifestyle, a sim by the name of {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit3</KEY>
+<STR>{10.SimName} is locked, loaded, and ready to go!  And with the help of local Gigolo {0.SimName}, {12.String} is about to enter the breach as a new member of the local "aid" organization.  "Serving sims everywhere with a smile!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Recruit9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt</KEY>
+<STR>Gigolo Early Flirt</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt0</KEY>
+<STR>"I'm just testing the waters, ya know?  In case I need to use {4.String} services in the future." noted {10.SimName}, after being seen out-and-about with town gigolo {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt1</KEY>
+<STR>"It's so tempting...  Maybe I could even get a discount?" commented {10.SimName}, after meeting up with local gigolo {0.SimName} for a little meet-and-greet.  "Nothing happened, but I know where to find {3.String}."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt2</KEY>
+<STR>Local gigolo {0.SimName} doesn't normally take it slow, but one needs to start at the beginning no matter the relationship, and {10.SimName} did seem to be enjoying {13.String}self while they were together.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt3</KEY>
+<STR>{10.SimName} has been seen in the company of a gigolo by the name of {0.SimName}.  "We didn't actually do anything.  Sheesh...  But ya know...  Who knows what future may bring." {2.String} said with a grin.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:EarlyFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt</KEY>
+<STR>Gigolo New Flirt</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt0</KEY>
+<STR>"I've been working the mojo, waiting for that right moment to strike" commented {0.SimName}.  {10.SimName} had better watch {13.String}self around that gigolo!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt1</KEY>
+<STR>"I love the way {10.SimName} giggles when I stroke that special little spot, you know, right here?".  Whoa there, {0.SimName}, no need to go into that much detail!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt2</KEY>
+<STR>After being seen with {10.SimName} recently, {0.SimName} had this to say: "I hope {12.SimName} is happy with the way I am, because being a gigolo is a calling of mine, and I don't intend to change."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt3</KEY>
+<STR>And speaking of gigolos, {0.SimName} was seen working {4.String} mojo on the local populace...  And mainly in the vicinity of {10.SimName}.  That is one smooth operator alright, smooth and slippery as an eel.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:NewFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt</KEY>
+<STR>Gigolo Old Flirt</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt0</KEY>
+<STR>"Oh yeah, I am so tapping that, ya know?" mentioned {0.SimName} in passing, after a recent romantic excursion with {10.SimName}.  How vulgar!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt1</KEY>
+<STR>"That {10.SimName} just could not get enough of me.  I gave it my all, and {12.String} still came back wanting more." groaned {0.SimName}, nursing what appeared to be a slight limp.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt2</KEY>
+<STR>Gigolo alert!  {0.SimName} was seen rendering "assistance" to one {10.SimName} recently.  Apparently, {10.SimFirstName} was in near desperation and needed some relief, which {12.String} apparently received.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt3</KEY>
+<STR>"Well, I won't go into details...  In public, I mean." commented {0.SimName}, after a romantic interlude with {10.SimName} ended up getting extremely hot and steamy recently.  "But that sim is an animal, ya know?  An animal!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:OldFlirt9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby</KEY>
+<STR>Gigolo Pregnancy</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby0</KEY>
+<STR>Whoops!  It looks like even experienced gigolos can make mistakes, as {0.SimName} and {10.SimName} found out.  The two are expecting a baby!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby1</KEY>
+<STR>"Well, I don't know what happened exactly.  I thought the method we were using was foolproof!"  Apparently not, as local fools {0.SimName} and {10.SimName} have a baby on the way!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby2</KEY>
+<STR>"Don't blame me!  I was on the bottom at the time remember?" grumbled {0.SimName} after learning that {2.String} and {10.SimName} are pregnant!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby3</KEY>
+<STR>{10.SimName} apparently had too much fun with local gigolo {0.SimName}, and got more than {12.String} simoleons worth.  The two are now expecting a new child!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:HaveBaby9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst</KEY>
+<STR>Gigolo Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst0</KEY>
+<STR>Local gigolo, {0.SimName} was in fine form recently, relatively speaking, cheating on {4.String} partner with local sim {10.SimName}.  "What?  Did you expect something different from me?"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst1</KEY>
+<STR>True to form, {0.SimName} is reported to be seeing {10.SimName} in addition to being officially coupled with another sim.  "{10.SimFirstName} is a tasty side-dish, and I can't just stop now, it would unfair to {13.String}!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst2</KEY>
+<STR>"I love loving them both...  Though I will admit, it gets a little difficult to juggle all that gorgeous flesh every day." commented {0.SimName}, after a recent illicit rendevous with {10.SimName}.  "I'm a trooper though, I'll suffer through."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst3</KEY>
+<STR>{10.SimName} has been seen cavorting with local gigolo {0.SimName}.  The problem?  {0.SimFirstName} is officially involved with another sim...  Hasn't stopped {13.String} yet, though!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond</KEY>
+<STR>Gigolo Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond0</KEY>
+<STR>It appears that {10.SimName} has been looking for that little something-something on the side, and has approached {0.SimName} to help ease {13.String} pressure.  Tsk Tsk!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond1</KEY>
+<STR>{0.SimName}, a known gigolo has been seen fooling around with {10.SimName} recently.  We here at the gossip mill wonder what {10.SimFirstName}'s partner has to say about this?</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond2</KEY>
+<STR>"I need some love!  More than just one sim can give!" bemoaned {10.SimName}.  "{0.SimName} is willing and able to provide for my needs, so why should I worry about a little thing like commitment?"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond3</KEY>
+<STR>Committed sim {10.SimName} is apparently not quite as devoted as {14.String} partner might want {13.String} to be.  {10.SimFirstName} was seen out-and-about with a local gigolo, {0.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst</KEY>
+<STR>Gigolo Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst0</KEY>
+<STR>"What?  The old ball and chain is not going to keep me from my appointed rounds." commented {0.SimName}.  "{10.SimName} needs the loving, and I've here to provide, spouse or not."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst1</KEY>
+<STR>Give me a G!  Give me an I, Give me a G, O, L, O!  What does that spell?  Trouble!  Married gigolo {0.SimName} is reported to still be practicing {4.String} trade with {10.SimName}.  That might not go over well with the spouse!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst2</KEY>
+<STR>"I love my spouse as much as the next gigolo.  But I have needs you know?  Needs that need to filled or I'll just burst!" exclaimed {0.SimName}.  "At the moment {10.SimName} is satisfying those needs.  So stop hassling me!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst3</KEY>
+<STR>Being a married gigolo can be a tough business.  {0.SimName} needs to juggle both {4.String} spouse and those of sims like {10.SimName}, whose needs just *must* be filled.  "I'm all for filling needs, I'm just generous like that!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond</KEY>
+<STR>Gigolo Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond0</KEY>
+<STR>Looks like {10.SimName} has been using the services of a gigolo, right under the nose of their spouse.  {0.SimName} has this to say: "Obviously {12.String} ain't getting what {12.String} needs at home."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond1</KEY>
+<STR>"Be quiet about it, I don't want them to find out!" whispered {10.SimName} after a friend noticed {13.String} getting a little too randy with local gigolo {0.SimName}.  Tut tut, you bad, bad {14.String} is all we can say.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond2</KEY>
+<STR>"I am here to serve all forms of sim, not just the single ones you understand." commented {0.SimName}.  It appears that {4.String} services had been recently sought after by, and *humbly* provided to, married sim {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond3</KEY>
+<STR>Two timing {10.SimName} was recently seen in the company of one local gigolo, {0.SimName}.  One can surmise that certain illicit *transactions* probably took place out of the sight of prying eyes.  For shame!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystSecond9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped</KEY>
+<STR>Gigolo Steady Dumped</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped0</KEY>
+<STR>"We just weren't getting what we needed from the relationship." agreed both {0.SimName} and {10.SimName}.  The two has decided to call off their relationship.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped1</KEY>
+<STR>"I love {10.SimName} dearly, but I need some loving too, ya know?" muttered {0.SimName}.  After catching {0.SimFirstName} in a delicious little gigolo fiasco, {10.SimName} decided {12.String} wouldn't stand for it, and left {3.String}!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped2</KEY>
+<STR>"Okay, I agree that love can be a cruel mistress sometimes, but lust is a total domanatrix!" commented {10.SimName}, after finding out that {0.SimName} had been messing around on the side.  The two have single gone their separate ways.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped3</KEY>
+<STR>Extracurricular activities apparently did not mix well with {10.SimName}, who decided that {12.String} wanted no part of {0.SimName} little trysts.  {10.SimFirstName} has moved on to greener pastures.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped</KEY>
+<STR>Gigolo Married Dumped</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped0</KEY>
+<STR>Way to throw a monkey wrench into a marriage!  {0.SimName} and {10.SimName} have split after some nasty gigolo business came to light.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped1</KEY>
+<STR>"Well, I never really liked them as a couple anyways.  {10.SimName} is just too good for {3.String}" commented a noisy neighbor, who had been watching {0.SimName}'s marriage unravel over some recent gigolo escapades.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped2</KEY>
+<STR>Gigolo alert!  Apparently {0.SimName} and {10.SimName} are over as a married couple, after some undisclosed funny business was made public recently.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped3</KEY>
+<STR>"You mess with the gigolo, and you get what you deserve, that's all I'm saying." whispered a looky-loo, who had a front row seat to recent split between {0.SimName} and {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedDumped9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn</KEY>
+<STR>Gigolo Move In</STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MoveInSummary</KEY>
+<STR>The following sims have moved in with {0.SimName}:{10.String}</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn0</KEY>
+<STR>Oh darn!  This is what you get for screwing around with the gigolo!  {0.SimName} has been forced to move out and into {10.SimName}'s place.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn1</KEY>
+<STR>Sucks to be {0.SimName}!  A recent escapade with a local gigolo and now they have to move out, and in with {10.SimName}.  Serves {3.String} right!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn2</KEY>
+<STR>{0.SimName} found {3.String}self almost homeless recently, after being evicted from {4.String} previous home.  Gladly {10.SimName} was able to step in and help the poor sim out.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn3</KEY>
+<STR>Nasty business that!  After being thrown out for cavorting various gigolo related activities, {0.SimName} had to move in with {10.SimName} or end up on the streets.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MoveIn9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Jealousy</KEY>
+<STR>Tart Jealousy</STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy0</KEY>
+<STR>"Doth my love forsake me?  Do I not fulfill them any longer?  Why do you need this {0.SimName}, when you have me?" moaned {10.SimName}.  "I will prove my love is true!  You'll see, you don't need that other sim!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy1</KEY>
+<STR>{10.SimName} was feeling uneasy recently, after hearing that {0.SimName} has with {4.String} hands on {14.String} tart.  "That sweet pastry is mine, and I don't like to share!  {0.SimFirstName} had better watch {4.String} back!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy2</KEY>
+<STR>{0.SimName} has been treading in {10.SimName}'s territory apparently, and {10.SimFirstName} is none-to-impressed.  Watch out fair {0.SimFirstName}, flirting with another sim's tart can prove dangerous!</STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy3</KEY>
+<STR>"Well, my tart has obviously chosen the better sim" commented {0.SimName}.  "Obviously, that {10.SimName} was not fullfilling {14.String} end of the bargain, and I was required to fill in the "gaps", so to speak of course."</STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Jealousy9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Hate</KEY>
+<STR>Bike Hate</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate0</KEY>
+<STR>"The witch makes me so mad!" screamed {10.SimName}, after hearing about {0.SimName}'s latest romp.  "Just can't keep {4.String} hands to {3.String}self, and off any more of my friends' partners."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate1</KEY>
+<STR>"{6.String} really is well ridden alright." commented {10.SimName}.  "I have half a mind to walk right up to {0.SimName} and tell {3.String} what I really feel about their floozy ways!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate2</KEY>
+<STR>"If {0.SimName} comes anywhere near me, I may just lose it...  So {2.String} better just watch {4.String} step." grumbled {10.SimName}, after hearing about the Bike's recent rendevous with a friend's partner.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate3</KEY>
+<STR>{10.SimName} was almost hysterical after learning about {0.SimName} escapade with one of {14.String} friend's partner.  "Oh, that harlot just makes me want to spit!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Arson</KEY>
+<STR>Bike Arson</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson0</KEY>
+<STR>"Maybe next time {12.String}'ll think twice about messing with my partner!"  yelled {0.SimName}, after allegedly torching a {20.String} over at {10.SimName}'s home.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson1</KEY>
+<STR>"That little slut!  Deserves everything and so much more!"  screamed {0.SimName}, "If {10.SimName} knows what's best, they may think twice about screwing with me...  Or {12.String} may find something more than {14.String} {20.String} torched!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson2</KEY>
+<STR>After setting a {20.String} ablaze at the Bike's home, {0.SimName} was heard to say: "{10.SimName} can not just mess with people's lives like that and not expect consequences!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson3</KEY>
+<STR>"Don't give me any of that garbage about {14.String} love burns so brightly.  The next time {10.SimName} comes near my family, I may not limit myself to burning a {20.String}!"  Watch out for that {0.SimName}, {2.String} means business!</STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Arson9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Break</KEY>
+<STR>Bike Break</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break0</KEY>
+<STR>"Oh gee, did I break that {20.String}?  Well serves you right for breaking relationships, you little Bike!"  {0.SimName} is obviously a little miffed at {10.SimName} for some particular reason.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break1</KEY>
+<STR>A {20.String} appears to be the latest casualty in the war against the Bike.  From the sounds of it, {0.SimName} decided to take matters into {4.String} own hands and send a very explicit message to {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break2</KEY>
+<STR>"I could have totally been hurt by that {20.String}!  It just up and broke on me for some reason, right after that {0.SimName} sim came over.  I don't know what {2.String} was ranting about though, something about some partner or other."  {10.SimName} better wise up soon, before something else breaks "mysteriously".</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break3</KEY>
+<STR>{0.SimName} has apparently decided to up the ante against the local Bike, {10.SimName}, by smashing up a {20.String} in retaliation for messing with the local partnered sims in town.  "Whatever did I do?" questioned {10.SimFirstName}, "I'm innocent, really!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Break4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Break9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Mooch</KEY>
+<STR>Tart Mooch</STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch0</KEY>
+<STR>"That little minx seems to be able to get that poor sap {10.SimName} to do anything." commented a friend.  "{16.String} gave {0.SimName} some {20.Money} simoleons earlier, simply because {2.String} asked nicely.  Unbelievable!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch1</KEY>
+<STR>{10.SimName} was seen recently, doling out some of { family funds to pay for local tart's {0.SimName} extravagant life-style.  "I just want them to be happy, you know, things that make {3.String} feel like the special little flower {2.String} is."</STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch2</KEY>
+<STR>{0.SimName} was doling out the sweetness recently, and {10.SimName} responded by doling out som {20.Money} of {14.String} family's hard earned cash.  "I didn't ask to be treated this way."  {0.SimFirstName} giggled, "Nice things just happen to me, is all."</STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch3</KEY>
+<STR>"I don't know what that {10.SimName} sees in {0.SimName} anyways." commented a looky-loo, after watching {10.SimFirstName} hand the tart a billfold of {20.Money} simoleons.  "I hope {12.String} wisens up soon, or {12.String}'ll find {13.String}self broke pretty soon!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Mooch9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Nemesis</KEY>
+<STR>Tart Nemesis</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis0</KEY>
+<STR>There is no lover lost between {0.SimName} and {10.SimName}, after both decided that a lifetime of mutual loathing and hatred seemed like a perfectly fine idea.</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis1</KEY>
+<STR>"My love knows no bounds...  Okay that's not true, it knows better than to go anywhere near {10.SimName}."  fumed {0.SimName}.  "I just want the sky to fall right on top of their pretentious little grin, and wipe them off the face of the earth!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis2</KEY>
+<STR>"Is it too much to ask for the Builder to send them clipboard diving?" pleaded {0.SimName}.  "Just one little click of the goddesses hand, and poof {10.SimName} would be out of my hair for good!"</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis3</KEY>
+<STR>{0.SimName} has resigned {3.String}self to knowing that {2.String} has to breath the same air as {10.SimName}, at until one of them dies that is.  "Better {13.String} than me though.  I'm counting the days until {10.SimFirstName} croaks."</STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:Nemesis9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst</KEY>
+<STR>Bike Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst0</KEY>
+<STR>It doesn't appear that {0.SimName} has respect for any type of marriage, much less their own.  The local tramp has been seen canoodling with another local, by the name of {10.SimName}.  We pity the unfortunate spouse who has to put up with these shenanigans.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst1</KEY>
+<STR>"I prefer to spread my love freely around town." commented {0.SimName} after being caught out on-the-town, with someone other than {3.String} spouse.  {10.SimName}, the recipient of the Bike's attentions chose to remain silent, and partly hidden in the shadows, during the conversation.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst2</KEY>
+<STR>"Just don't see what the problem is here." remarked {10.SimName}.  "It is {0.SimName} that is stepping out on their partner, not me!  Don't look at me that way, I'm not doing anything wrong here!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst3</KEY>
+<STR>{0.SimName} has been seen "smooching" amongst the "bleachers", as they say, with a local sim named {10.SimName}.  Appears that the two sims are a bit of an item, irregardless of the fact that {0.SimFirstName} is married.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst4</KEY>
+<STR>Being a married sim means nothing to the Bike.  "It's just a term the world uses to keep someone tied down," remarked {0.SimName}.  "No one really cares if I have some fun on the side, {10.SimName} definitely doesn't seem to, especially when I did that special little wiggle."</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst5</KEY>
+<STR>Marriage is not going to stop a Bike from being a Bike.  {0.SimName} just can't help being a floozy apparently, so why even bother explaining it.  Seems {10.SimName} is taking it all in stride, enjoying the spotlight until {0.SimFirstName} gets bored with {13.String}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst6</KEY>
+<STR>"It is all about experience," sighed {10.SimName}.  "Who has it, and who doesn't.  And the one perk that {0.SimName} has is experience...  Woowee, does {2.String} know how to make those bells ring.  Honestly, {0.SimFirstName} being married and all, sort of adds to the excitement.  {6.String} sure doesn't seem to care, so why should I ?"</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst7</KEY>
+<STR>{10.SimName} is not under any impression that {14.String} recent tryst with {0.SimName} is at all permanent, being as {0.SimName} already has {4.String} hooks in another sim.  "I'm just taking {3.String} for a spin around the block, testing the shocks, and that sort of thing.  I'll have {3.String} home in no time, {3.String} partner can reinflate the tires themselves."</STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:MarriedTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate</KEY>
+<STR>Casanova Arson Hate</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate0</KEY>
+<STR>"That nutter burned what to the ground?" asked {10.SimName} after a friend mentioned some gossip about {0.SimName}'s recent activities.  "And for what reason?  A tart?  Balls!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate1</KEY>
+<STR>{0.SimName}'s antics regarding a recent fire is not going over well with {10.SimName}.  Apparently {10.SimFirstName} is a good friend of the victim, and not very fond of arsonists!</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate2</KEY>
+<STR>{10.SimName} has been spreading it around town that {12.String} finds {0.SimName} alleged arson to be deplorable, and beneath contempt.  "{0.SimFirstName} could have hurt someone with that stunt!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate3</KEY>
+<STR>"Playing with fire?  Yes, that sounds suspiciously like something that {0.SimName} would do." commented {10.SimName}.  "{0.SimFirstName} never was one for smart moves, ya know?"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:ArsonHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate</KEY>
+<STR>Casanova Break Hate</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate0</KEY>
+<STR>"I should just go over break one of {4.String} goodies, and see how that make {3.String} feel." muttered {10.SimName} upon learning that {0.SimName} had smashed up a friend's home.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate1</KEY>
+<STR>"No, I'm not very impressed at all.  Cowardly thing to do, attacking that defenseless item.  {0.SimName} should consider taking on someone who can fight back!" quoted {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate2</KEY>
+<STR>After hearing about {0.SimName}'s recent destructive tendencies, {10.SimName} had this to say:  "Mess with my friend's house bub, and you mess with me!  Just remember that!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate3</KEY>
+<STR>{10.SimName} was understandably distressed to learn that {0.SimName} had been suspected in a recent smash up at a friend's place.  "Darn foul business, that is.  I hope {2.String} gets {4.String} due!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:BreakHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.ScenarioWeight:GigoloHate</KEY>
+<STR>Gigolo Hate</STR>
+<KEY>NRaas.StoryProgression.ScenarioWeight:DraculHate</KEY>
+<STR>Dracul Hate</STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate</KEY>
+<STR>Casanova Dracul Hate</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate0</KEY>
+<STR>"Though I will admit that {10.SimName} has some serious skills in the art of love, I fear that {14.String} followers are a bit too, shall we say, subservient ?  It is also as though they are under some sort of spell."  Sounds like {0.SimName} doesn't like the unfair competition.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate1</KEY>
+<STR>{10.SimName} magnetic charm seems to have ruffled the local Casanova's feathers.  {0.SimName} has been heard to state that {2.String} finds {10.SimFirstName}'s domineering methods deplorable.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate2</KEY>
+<STR>"One should be able to attract sims based on your personality, and not with freakish parlor tricks.  That {10.SimName} is nothing but a two bit charlatan, albiet with fangs."  ranted {0.SimName} after watching {10.SimFirstName} woo yet another sim.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate3</KEY>
+<STR>"Perhaps I should not say anything about {10.SimFirstName}, they do have that superhuman strength going for them." commented {0.SimName}.  "But it is difficult not to feel that their methods are simply cheating the natural order of things."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:DraculHate9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo</KEY>
+<STR>Casanova Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo0</KEY>
+<STR>Looks like {10.SimName} has been doing the deed with local Casanova {0.SimName}.  Now we are all for that, except for the fact that both of the sims have partners, who may take offense to being cheated on.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo1</KEY>
+<STR>We've never been one to pass judgement on anyone...  Yeah, okay we do it all the time.  And this case is no different, seeing as both {0.SimName} and {10.SimName} are cavorting their affections all over town, without any regard for their actual partners.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo2</KEY>
+<STR>"It is none of you darn business what {0.SimName} and I do, okay!" screamed {10.SimName}, making quite the scene on the street the other day.  "We are grown sims and if we want to step out on our partners, then that is what we will do!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo3</KEY>
+<STR>Except for a slight issue if they get caught, {0.SimName} and {10.SimName}'s glorious plan to make out on the street corner is absolutely foolproof!  I wonder which 'head' the sims were using when they thought that one up?</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo</KEY>
+<STR>Casanova Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo0</KEY>
+<STR>"{10.SimName} we can understand, I mean {0.SimName} is the Casanova, who wouldn't want a piece of that action." commented a family friend, "But {10.SimFirstName} is a married sim for Builder's sake!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo1</KEY>
+<STR>1) {0.SimName} is married.\n2) {10.SimName} is married.\n3) They have been spotted in public getting it one together\nResult:  Priceless, if either of their spouses finds out about it.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo2</KEY>
+<STR>"I want {0.SimName} so bad, it hurts...  No really, I probably need to see a doctor about it." groaned {10.SimName}.  "Screw the whole marriage thing, I am gonna jump the Casanova's bones the first chance I get!"</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo3</KEY>
+<STR>"Ah, love is in the air, can't you just smell the aroma?" mused the Casanova.  "There is no better time to spread the love around to those who need it most, such as {10.SimName}.  {14.String} spouse will just have to share {13.String} for a little bit, until {12.String} is satisfied."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo</KEY>
+<STR>Gigolo Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo0</KEY>
+<STR>Oh la la!  {0.SimName} has been taking the concept of an open relationship to new levels, by doing the deed with {10.SimName}!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo1</KEY>
+<STR>What will they think of next ?  A Gigolo that cheats on {3.String} partner ?  How unoriginal.  Try harder next time {0.SimName}, you and {10.SimName} need to be more exciting to make the news around here.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo2</KEY>
+<STR>"I want it all.  The money, the ass...ets, all of it!" exclaimed {0.SimName} after being asked why {2.String} cheats on {4.String} partner the way {2.String} does.  "Go ask {10.SimName}, {12.String} knows what I want!"</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo3</KEY>
+<STR>{0.SimName} and {10.SimName} have been seen gigolo-ing it up, all other town...  Which would not be so bad if they weren't both partnered up with someone else!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo</KEY>
+<STR>Gigolo Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo0</KEY>
+<STR>Apparently you can make a living as a Professional, and have a married life, provide you are careful that is.  Let's see how long {0.SimName} and {10.SimName} can last before something falls apart.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo1</KEY>
+<STR>A Gigolo's life is never easy, and being married doesn't make it any more so.  {0.SimName} has to balance a home life, and {4.String} various secret love affairs, with sims such as {10.SimName}, without causing too much pain for the spouse.  Good Luck!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo2</KEY>
+<STR>"I never did understand that whole 'one sim for life' concept they teach at marriage counseling." remarked {0.SimName}, with the fabulous {10.SimName} dangling off {4.String} arm.  "That sounds so boring, I simply don't know how other sims manage."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo3</KEY>
+<STR>Gigolo-ing and marriage just should not be mixed, but {0.SimName} and {10.SimName} try to do it none-the-less.  Let's hope their spouses are forgiving, or we could be reporting this story in even more depth sometime soon!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo</KEY>
+<STR>Tart Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo0</KEY>
+<STR>We love flaky pastries, we really do, but the ones that walk on two legs and boss people around, we could live without.  Take {0.SimName} for instance, philandering behind {4.String} partner's back the way {2.String} does, and with {10.SimName} none-the-less...  Disrespect!</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo1</KEY>
+<STR>"Talk to the hand!"  That was the only response we were able to get after confronting {0.SimName} about {4.String}'s recent cheating.  {10.SimName} was even worse, hanging {14.String} head in shame and refusing to speak at all.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo2</KEY>
+<STR>{10.SimName}'s partner must really pretty open in their relationship, considering how blatantly obvious {10.SimFirstName} with respect to {14.String} skanky little Tart, {0.SimName}.  I say, those two cheaters are totally made for each other.</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo3</KEY>
+<STR>"Don't be calling me the 'skanky ho', just 'cause you can't get any on the side." blustered {0.SimName}, after we confronted {3.String} regarding recent indiscretions with {10.SimName}.  "Skanky ho, my pretty little bottom, I will not be having any of that!  No sirree."</STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:SteadyTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo</KEY>
+<STR>Tart Married Tryst</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo0</KEY>
+<STR>"Mmmm...  Don't you just want to eat {3.String}." grinned {10.SimName}, "Wait, no...  Eat {3.String} all up, that sounds better."  Unfortunately we don't do married pastry, so when it comes to {0.SimName}, we'll take a pass.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo1</KEY>
+<STR>While we are on the subject of cheating little Ho's, shall we talk about {0.SimName} and {4.String} equally nasty love-buddy {10.SimName}?  Do they not care about their spouses, or what?</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo2</KEY>
+<STR>{0.SimName} calls it 'friends with benefits', while {10.SimName} just calls it divine.  We call it cheating, and their spouses will probably call it totally outrageous if they ever find out.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo3</KEY>
+<STR>Married sims {0.SimName} and {10.SimName} have been seen meandering the streets groping each other in a truely disgusting fashion.  If you are going to cheat on your spouses, at least get a private room, and try keeping it on the down-low.</STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownTart:MarriedTrystDuo9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Retire</KEY>
+<STR>Bike Retire</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire0</KEY>
+<STR>"No one wants to play with me." huffed {0.SimName}, "So I am going to simply retire from the scene entirely.  Take that world!"  The Bike has left the building!</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire1</KEY>
+<STR>The Bike has chosen to retire the tires and lock up the chasis, after rather long period of drought.  {0.SimName} was slightly distraught by the whole idea, but no one else seemed to care at all.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire2</KEY>
+<STR>{0.SimName} has hung up the stirrups and put away the paddles, leaving the Bike scene for good.  "Unfortunately, a Bike just doesn't go on it's own, I really need a rider to fulfill my needs."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire3</KEY>
+<STR>The Bike has called it quits, after being unable to locate sufficient companions in town.  {0.SimName} was quite nostalgic about {4.String} run as the fabled two-wheeler, and has hopes that {4.String} successor will fair better.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Retire9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Desperation</KEY>
+<STR>Bike Desperation</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation0</KEY>
+<STR>In what can only be considered an act of desperation on the part of the Bike, {0.SimName} recently threw {3.String} naked form atop a startled {10.SimName}, and proceeded to have {3.String} way with {13.String}.  Afterward, the rather confused {10.SimFirstName} was unable to wipe the grin from {14.String} face.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation1</KEY>
+<STR>"I don't know what came over me!" exclaimed {0.SimName}.  "I just *needed* from companionship, and the first sim to catch my eye was {10.SimName}.  {12.String} appears to be amiable to a little nookie, so I took {13.String} then and there.  It was totally off the cuff, but very satisfying."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation2</KEY>
+<STR>"Whatever came over {0.SimName} seems to have passed now," commented {10.SimName}, straightening out {14.String} clothes that had someone become extremely ruppled.  "I hope {3.String} little hormonal imbalance has been corrected now, because I don't think I could take another round of that action without keeling over!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation3</KEY>
+<STR>The Bike is back in business, after a long dry spell being unable to satisfy {3.String} urges, {0.SimName} simply took matters into {3.String} own hands, and grabbed the first available sim...  In this case, {10.SimName}.  Bing, bang, boom, and ten minutes later the Bike was feeling groovy, and so was {10.SimFirstName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Desperation9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:Retire</KEY>
+<STR>Casanova Retire</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire0</KEY>
+<STR>The Casanova has retired.  {0.SimName} has decided that {4.String} attention is best directed towards pleasuring {4.String} spouse, so has decided to step-down.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire1</KEY>
+<STR>And the Casanova's groupies mourn.  {0.SimName} has decided to pull out of the limelight, and allow a new sim take the leadership.  "I wish whomever decides to succeed me the best of luck, and remember to treat your followers with respect."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire2</KEY>
+<STR>After having a heart-to-heart with {4.String}, {0.SimName} has decided it is best if {2.String} turns in the Casanova title and retire.  "We both want to enjoy only each other now, and I thought it best to listen."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire3</KEY>
+<STR>"I only want what is best for my spouse," commented {0.SimName}.  "And I have to acknowledge that my devotees, though well intentioned, are a detriment to my marriage.  Hence I hereby surrending the title of Casanova to whomever decides to follow.  I wish them luck."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:Retire9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Hookup</KEY>
+<STR>Bike Hookup</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup0</KEY>
+<STR>Looks like the Bike has reeled in a new fish, hooking up with {10.SimName}.  I hope {10.SimFirstName} knows what {12.String} is doing, because {0.SimName} is not someone you should be messing with.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup1</KEY>
+<STR>"I am an adult, and I know what I am doing, so stop being such a turd about it, okay?" muttered {10.SimName}, after getting involved with {0.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup2</KEY>
+<STR>{0.SimName} has sunk {3.String} teeth into a new partner, {10.SimName}.  "I expect us to be extremely happy, at least for next day or so, until I find someone better."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup3</KEY>
+<STR>We hope that {10.SimName} know what {12.String} is getting {13.String}self into dating the Bike.  Appears that {0.SimName} is taken a shine to the sim, and the two are going steady...  Well as steady as a Bike can be that is.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Hookup9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst</KEY>
+<STR>Bike Steady Tryst</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst0</KEY>
+<STR>Being a partner of the Bike comes with a couple of benefits, one being that {0.SimName} is so experienced.  Unfortunately that experience comes with a price, and that being {10.SimName}.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst1</KEY>
+<STR>"My partner understands my needs," commented {0.SimName}.  "I can only get by with a single lover for so long.  {10.SimName} satisfied my needs perfectly, at least for this evening."</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst2</KEY>
+<STR>{0.SimName} was seen doing {4.String} 'thang' with {10.SimName}, irregardless of {4.String} partner.  But I guess, one really cannot blame the Bike for {4.String} actions, after all, it is just in {4.String} nature.</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst3</KEY>
+<STR>"I don't know why {4.String} partner puts up with {3.String}" commented a noisy neighbor, "That {0.SimName} is always carousing about with other sims, like that {10.SimName}.  That Bike just doesn't seem to care who {2.String} hurts."</STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:SteadyTryst9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis</KEY>
+<STR>Gigolo Nemesis</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis0</KEY>
+<STR>"Why can't people just along?" commented a passerby, "I mean look at {0.SimName} and {10.SimName} over there.  Yelling and screaming at each other for no really good reason.  I mean money exchanged hands fair enough, and services were provided.  Nothing to got hot under the collar about, I say."</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis1</KEY>
+<STR>"When there is money involved, there are certain to be tempers flaring.  Add in a little hanky-panky, and its no wonder that {0.SimName} and {10.SimName} have not been seeing eye-to-eye recently.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis2</KEY>
+<STR>"I prefer not to speak on the subject" muttered {0.SimName}.  We received a similar response from {10.SimName}, when asked about their apparent grievance with each other.  Must be something about love or money, or maybe both!</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis3</KEY>
+<STR>We don't know what got between {0.SimName} and {10.SimName}, but it has apparently got both sims in quite a tizzy.  Perhaps the falling out has something to do with some recent Gigolo-related gossip we read.  Or maybe not, the two sims are being pretty tight-lipped about the whole thing.</STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownGigolo:Nemesis9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm</KEY>
+<STR>Casanova Steady Leave 'Em</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm0</KEY>
+<STR>"I just could not compete for {4.String} affection, against all those other sims." sighed {10.SimName}, "So I decided the best thing would be to let {0.SimName} go.  I will miss my sweet Casanova though, sigh."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm1</KEY>
+<STR>{0.SimName} no longer needs to worry about {4.String} adoring fans upsetting {4.String} partner, now that {10.SimName} has decided to release {3.String} from {4.String} obligations.  How very kind of {10.SimFirstName} to do so.</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm2</KEY>
+<STR>{10.SimName} has decided to part ways with the local Casanova, {0.SimName}.  "I understand {14.String} dilemma," commented {0.SimFirstName}, "I will miss {13.String} dearly, but perhaps we will cross paths sometime in the future."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm3</KEY>
+<STR>"Given all {2.String} does for the community, I was glad to be a part of {0.SimName}'s life, if but for only a short time." remarked {10.SimName}, after breaking up with the Casanova.  "Best to part ways amicably, just in case I change my mind later."</STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownCasanova:SteadyLeaveEm9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownBike:Nemesis</KEY>
+<STR>Bike Nemesis</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis0</KEY>
+<STR>{0.SimName} and {10.SimName} have both agreed that, due to some unfortunate Bike-related events, the two sims have no further reason to ever talk to each other.</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis1</KEY>
+<STR>"I find {0.SimName} detestable." sneered {10.SimName}, "I have decided that enough is enough, and am declaring I will have no further contact with that...  That...  Sim!"</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis2</KEY>
+<STR>{0.SimName} has decreed that {10.SimName} should stay as far away from {3.String} as physically possible.  "Preferably somewhere overseas, that would be best."</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis3</KEY>
+<STR>The Bike strikes again, with {0.SimName} and {10.SimName} choosing to hate each other with a vengeance!</STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis4</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis5</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis6</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis7</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis8</KEY>
+<STR></STR>
+<KEY>NRaas.StoryProgression.TownBike:Nemesis9</KEY>
+<STR></STR>
+
+<KEY>NRaas.StoryProgression.TownTart:Attraction</KEY>
+<STR>Tart Attraction</STR>

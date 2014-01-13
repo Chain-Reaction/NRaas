@@ -1,0 +1,14 @@
+﻿bool flag;
+if (((!actor.IsInGroupOrDateSituation(out flag) || 
+flag) || 
+(actor.HasTrait((TraitNames) (0xb82d0015b92942d0L)) || 
+actor.HasTrait(TraitNames.Inappropriate))) || 
+(actor.Partner == target.SimDescription))
+{
+    BuffBetrayed.BuffInstanceBetrayed betrayed;
+    if (!BuffBetrayed.DoesSimFeelBetrayed(actor, target.SimDescription, out betrayed) && OccultImaginaryFriend.CanSimGetRomanticWithSim(actor, target))
+    {
+        return true;
+    }
+}
+return false;

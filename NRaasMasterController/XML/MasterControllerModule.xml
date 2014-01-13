@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kInstantiator value="True">
+      <!-- Scripting Mod Instantiator, value does not matter, only its existence -->
+    </kInstantiator>
+  </Current_Tuning>
+</base>

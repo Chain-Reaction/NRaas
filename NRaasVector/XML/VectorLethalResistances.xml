@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resistances>
+  <Resistance>
+    <GUID></GUID>
+    <FullClassName></FullClassName>
+    <Delta></Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalSwimming</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kSwimming</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalMeditate</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kMeditated</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalHygiene</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Smelly</BuffName>
+    <Delta>-25</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalHeatingUp</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>HeatingUp,TooMuchSun</BuffName>
+    <Delta>-25</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalHotTub</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>OooBubbles</BuffName>
+    <Delta>10</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalBath</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kEventTakeBath,kEventTakeShower</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalFire</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kHadFireAtHome,kWasInvolvedInAFire,kPlayedWithFire</Event>
+    <Delta>-100</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalTorched</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Torched</BuffName>
+    <Delta>-100</Delta>
+  </Resistance>
+
+  <Resistance>
+    <GUID>NRaasVectorLethalEating</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.GenericResistance, NRaasVector</FullClassName>
+    <Event>kAteMeal</Event>
+    <Delta>1</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalSanguineSnack</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>SanguineSnack</BuffName>
+    <Delta>10</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalStuffed</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>Stuffed</BuffName>
+    <Delta>10</Delta>
+  </Resistance>
+  <Resistance>
+    <GUID>NRaasVectorLethalDivineMeal</GUID>
+    <FullClassName>NRaas.VectorSpace.Resistances.MoodletResistance, NRaasVector</FullClassName>
+    <BuffName>DivineMeal</BuffName>
+    <Delta>10</Delta>
+  </Resistance>
+</Resistances>

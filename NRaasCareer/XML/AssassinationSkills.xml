@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<Skills>
+  <SkillList>
+    <SkillName></SkillName>
+    <SkillDescription></SkillDescription>
+    <Hex></Hex>
+    <CodeVersion>BaseGame</CodeVersion>
+    <CustomClassName></CustomClassName>
+    <CustomDataSheet></CustomDataSheet>
+    <ThoughtBalloonTopic></ThoughtBalloonTopic>
+    <MaxSkillLevel>10</MaxSkillLevel>
+    <Commodity>None</Commodity>
+    <Physical>False</Physical>
+    <Mental>False</Mental>
+    <Musical>False</Musical>
+    <Creative>False</Creative>
+    <Artistic>False</Artistic>
+    <Hidden>False</Hidden>
+    <Certificate>False</Certificate>
+    <LogicSkillBoost>False</LogicSkillBoost>
+    <Level_2_Text></Level_2_Text>
+    <Level_3_Text></Level_3_Text>
+    <Level_4_Text></Level_4_Text>
+    <Level_5_Text></Level_5_Text>
+    <Level_6_Text></Level_6_Text>
+    <Level_7_Text></Level_7_Text>
+    <Level_8_Text></Level_8_Text>
+    <Level_9_Text></Level_9_Text>
+    <Level_10_Text></Level_10_Text>
+    <Level_10_Text_Alternate></Level_10_Text_Alternate>
+    <Level_1></Level_1>
+    <Level_2></Level_2>
+    <Level_3></Level_3>
+    <Level_4></Level_4>
+    <Level_5></Level_5>
+    <Level_6></Level_6>
+    <Level_7></Level_7>
+    <Level_8></Level_8>
+    <Level_9></Level_9>
+    <Level_10></Level_10>
+    <AvailableAgeSpecies></AvailableAgeSpecies>
+    <DreamsAndPromisesIcon></DreamsAndPromisesIcon>
+    <IconKey>placeholder</IconKey>
+    <SkillUIIcon>placeholder</SkillUIIcon>
+  </SkillList>
+  <SkillList>
+    <SkillName>NRaasAssassination</SkillName>
+    <SkillDescription>NRaasAssassinationSkillDescription</SkillDescription>
+    <CustomClassName>NRaas.CareerSpace.Skills.Assassination, NRaasCareer</CustomClassName>
+    <Hex>NRaasAssassination=0x73318140</Hex>
+    <MaxSkillLevel>8</MaxSkillLevel>
+    <Commodity>SkillNRaasAssassination</Commodity>
+    <Physical>True</Physical>
+    <Hidden>False</Hidden>
+    <Level_1>1</Level_1>
+    <Level_2>2</Level_2> <!-- 1 -->
+    <Level_3>4</Level_3> <!-- 2 -->
+    <Level_4>8</Level_4> <!-- 4 -->
+    <Level_5>16</Level_5> <!-- 8 -->
+    <Level_6>26</Level_6> <!-- 10 -->
+    <Level_7>40</Level_7> <!-- 14 -->
+    <Level_8>58</Level_8> <!-- 18 -->
+    <Level_2_Text>NRaasAssassinationLevel2</Level_2_Text>
+    <Level_3_Text>NRaasAssassinationLevel3</Level_3_Text>
+    <Level_4_Text>NRaasAssassinationLevel4</Level_4_Text>
+    <Level_5_Text>NRaasAssassinationLevel5</Level_5_Text>
+    <Level_6_Text>NRaasAssassinationLevel6</Level_6_Text>
+    <Level_7_Text>NRaasAssassinationLevel7</Level_7_Text>
+    <Level_8_Text>NRaasAssassinationLevel8</Level_8_Text>
+    <AvailableAgeSpecies>T,Y,A,E</AvailableAgeSpecies>
+    <DreamsAndPromisesIcon>w_assassination_skill</DreamsAndPromisesIcon>
+    <IconKey>w_assassination_skill_s</IconKey>
+    <SkillUIIcon>w_assassination_skill</SkillUIIcon>
+  </SkillList>
+</Skills>

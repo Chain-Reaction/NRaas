@@ -1,0 +1,27 @@
+NRaas_HomeOpener
+
+Der Mod
+
+Diese Mod zwingt das Spiel, die Inhalte aller Grundstücke in der Stadt anzuzeigen.
+
+INSTALLATION
+
+Um diesen Mod zu Laufen zu bringen, muss das Modding Framework richtig auf deinem System installiert sein.
+
+Google: Delphy's Framework Install Monkey
+
+BEMERKUNGEN
+- Das System lädt die Inhalte nur, wenn die Kamera auf das Grundstück geschwenkt wird. Es wird jedoch der Speicherverbrauch des Spieles erhöht und kann bei langer Nutzung zu einer Aufblähung des Speicherverbrauchs führen.
+- Wenn Du ein neues Grundstück bebaust, wird es erst geöffnet, wenn Du das Spiel neu lädst oder zu einem anderen Haushalt wechselst.
+
+
+WARNUNG
+Stelle sicher, dass Du Deine Speicherstände sicherst bevor Du den Mod installierst. Dieser Mod ist zwar sehr simple, Wenn aber was schief kann, geht es auch schief.
+
+
+Viel Spass!
+
+
+----
+Deutsche Übersetzung von doyze
+

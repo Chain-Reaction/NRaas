@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kMaxShakedown value="500">
+      <!--The maximum amount of funds allowed to transfer during a Shakedown-->
+    </kMaxShakedown>
+    <kShakedownRelationChange value="-50">
+      <!--The amount of relationship lost during a shakedown-->
+    </kShakedownRelationChange>
+    <kBuskerLevelToGetPaidForConcerts value="7">
+      <!--The level for busker at which a sim can perform concerts-->
+    </kBuskerLevelToGetPaidForConcerts>
+    <kRepairAllowToBreak value="True">
+      <!--Allow the mod to create a broken object during the 'Find Broken' interaction-->
+    </kRepairAllowToBreak>
+    <kHomemakerPayPerMark value="1">
+      <!--How much cash per homemaker mark should be paid daily-->
+    </kHomemakerPayPerMark>
+    <kHomemakerLevelStirCrazy value="2">
+      <!--The Homemaker level at which a sim is immune to Stir Crazy-->
+    </kHomemakerLevelStirCrazy>
+    <kHomemakerLevelDiscount value="3">
+      <!--The Homemaker level at which purchases are discounted-->
+    </kHomemakerLevelDiscount>
+    <kHomemakerLevelLifetimeRewards value="5">
+      <!--The Homemaker level at which lifetime rewards are provided-->
+    </kHomemakerLevelLifetimeRewards>
+    <kHomemakerDiscountRate value="20">
+      <!--The Homemaker discount level as a percent-->
+    </kHomemakerDiscountRate>
+    <kPerformancePerHomework value="20">
+      <!--The amount of performance gained per Home Schooling homework submission-->
+    </kPerformancePerHomework>
+  </Current_Tuning>
+</base>

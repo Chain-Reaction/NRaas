@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Personalities>
+  <Personality>
+    <Name></Name>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.SimPersonality, NRaasStoryProgression</FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+    <IncreasedChancePerCycle>15</IncreasedChancePerCycle>
+    <Speed>250</Speed>
+  </Personality>
+  <Personality>
+    <Name>Extra</Name>
+    <Leaderless>True</Leaderless>
+    <Speed>1000</Speed>
+  </Personality>
+
+  <Extra>
+    <FullClassName></FullClassName>
+    <ProductVersion>BaseGame</ProductVersion>
+  </Extra>
+  <Extra>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.BooleanOption, NRaasStoryProgression</FullClassName>
+    <Name>AllowGoToJail</Name>
+    <Default>False</Default>
+  </Extra>
+  <Extra>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <ProductVersion>EP1</ProductVersion>
+    <Name>MummyAnger</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.SendToHospitalScenario, NRaasStoryProgression</Scenario>
+    <InjuredStory>InjuredMummy</InjuredStory>
+    <Type>MummyCurse</Type>
+
+    <!-- Mummies -->
+    <ActorScoring>ExtraMummy</ActorScoring>
+    <ActorScoringMinimum>0</ActorScoringMinimum>
+
+    <!-- Regular humans -->
+    <TargetStandardFilter>ExistingEnemy</TargetStandardFilter>
+    <TargetStandardIgnoreBusy>False</TargetStandardIgnoreBusy>
+    <TargetStandardGate>-75</TargetStandardGate>
+    <TargetScoring>ExtraHuman</TargetScoring>
+    <TargetScoringMinimum>0</TargetScoringMinimum>
+
+  </Extra>
+  <Extra>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>PyroBurn</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.TorchScenario, NRaasStoryProgression</Scenario>
+    <Delta>-15</Delta>
+    <AllowInjury>True</AllowInjury>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+
+    <!-- Pyros -->
+    <ActorAgeGender>Teen,YoungAdult,Adult,Elder</ActorAgeGender>
+    <ActorScoring>ExtraPyromaniac</ActorScoring>
+    <ActorScoringMinimum>0</ActorScoringMinimum>
+
+    <!-- Non-related adults -->
+    <TargetAgeGender>YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+
+  </Extra>
+  <Extra>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.IntegerOption, NRaasStoryProgression</FullClassName>
+    <Name>MaxKleptoSteal</Name>
+    <Default>1000</Default>
+  </Extra>
+  <Extra>
+    <FullClassName>NRaas.StoryProgressionSpace.Personalities.WeightOption, NRaasStoryProgression</FullClassName>
+    <Name>KleptoSteal</Name>
+    <Weight>10</Weight>
+    <Scenario>NRaas.StoryProgressionSpace.Scenarios.Personalities.BurgleScenario, NRaasStoryProgression</Scenario>
+    <Delta>-15</Delta>
+    <SneakinessScoring>Sneakiness</SneakinessScoring>
+    <KeepObject>False</KeepObject>
+    <AllowInjury>False</AllowInjury>
+    <AllowGoToJail>AllowGoToJail</AllowGoToJail>
+    <AccountingKey>Burgled</AccountingKey>
+    <Minimum>50</Minimum>
+    <Maximum>1000</Maximum>
+
+    <!-- Klepto Traits -->
+    <ActorAgeGender>Teen,YoungAdult,Adult,Elder</ActorAgeGender>
+    <ActorScoring>ExtraKleptomaniac</ActorScoring>
+    <ActorScoringMinimum>0</ActorScoringMinimum>
+
+    <!-- Non-related adults -->
+    <TargetAgeGender>YoungAdult,Adult,Elder</TargetAgeGender>
+    <TargetDisallowRelated>True</TargetDisallowRelated>
+
+  </Extra>
+</Personalities>

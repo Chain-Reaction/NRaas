@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kAllowOverStuffed value="True">
+      <!--Whether to all more the eight sims in a family when using Add Sim or Pollinate-->
+    </kAllowOverStuffed>
+    <kDreamCatcher value="False">
+      <!--Whether to retain Dreams and Opportunities when switching between families-->
+    </kDreamCatcher>
+    <kSliderMultiple value="1">
+      <!--A multiple used to increase the min/max range of facial sliders-->
+    </kSliderMultiple>
+    <kMenuVisibleSim value="True">
+      <!--Whether to display the menu on sims-->
+    </kMenuVisibleSim>
+    <kMenuVisibleLot value="True">
+      <!--Whether to display the menu on lots-->
+    </kMenuVisibleLot>
+    <kMenuVisibleComputer value="True">
+      <!--Whether to display the menu on the computer-->
+    </kMenuVisibleComputer>
+    <kFamilyTreeLevels value="4">
+      <!--How many levels to display on the family tree-->
+    </kFamilyTreeLevels>
+    <kMakeupByCategory value="False">
+      <!--Whether to allow different makeup per outfit category-->
+    </kMakeupByCategory>
+    <kNakedTattoo value="False">
+      <!--Whether to run Tattoo CAS using the naked outfit-->
+    </kNakedTattoo>
+    <kResetEverythingOnActive value="True">
+      <!--Whether to reset the active lot during 'Reset Everything'-->
+    </kResetEverythingOnActive>
+    <kHotkeys value="">
+      <!--Comma separated list of hot key actions (Interaction IDs are the same as those used in STBL translation)-->
+    </kHotkeys>
+    <kCustomBuffs value="">
+      <!--Comma separated list of custom selected buffs-->
+    </kCustomBuffs>
+    <kSkillStamp value="">
+      <!--Comma separated list of skills and minimum levels, where the first element is the name of the stamp.  eg: GMStamp,Guitar:10,MartialArts:5-->
+    </kSkillStamp>
+    <kMenuVisibleOpenSesame value="True">
+      <!--Whether to display the Open and Close interactions in the object menu-->
+    </kMenuVisibleOpenSesame>
+    <kMenuVisibleSortInventory value="True">
+      <!--Whether to display the Sort Inventory interaction in the object menu-->
+    </kMenuVisibleSortInventory>
+    <kMenuVisibleAddSim value="True">
+      <!--Whether to display the Add Sim and Evict interactions in the object menu-->
+    </kMenuVisibleAddSim>
+    <kOverrideCoreSliders value="False">
+      <!--Whether to handle the CAS Slider panels ourselves, and ignore custom Core changes-->
+    </kOverrideCoreSliders>
+    <kByMoneyIntervals value="10">
+      <!--Number of intervals to display on Sims By Money and the money filters-->
+    </kByMoneyIntervals>
+    <kMenuVisibleOwnership value="True">
+      <!--Whether to display the Ownership interaction in the object menu-->
+    </kMenuVisibleOwnership>
+    <kTagInfo value="Limited">
+      <!--What information to display on the map tags added by this mod (Limited, Personal, Career, Relationship, Household)-->
+    </kTagInfo>
+    <kHairColorByOutfit value="False">
+      <!--Whether to retain separate hair coloring for each sim outfit-->
+    </kHairColorByOutfit>
+    <kEnableMemories value="True">
+      <!--Whether to allow the creation of memories-->
+    </kEnableMemories>
+    <kUniGenderHair value="False">
+      <!--Whether to unlock all hairs for every gender-->
+    </kUniGenderHair>
+    <kBeardsForAll value="False">
+      <!--Whether to unlock the beard panel for all sims-->
+    </kBeardsForAll>
+    <kBodyHairForAll value="False">
+      <!--Whether to unlock the body hair panel for all sims-->
+    </kBodyHairForAll>
+    <kDisableMakeupFilter value="True">
+      <!--Whether to display all makeup parts in CAS-->
+    </kDisableMakeupFilter>
+    <kBodySliderOffset value="0">
+      <!--The amount to offset each body slider to produce lower than normally possible values-->
+    </kBodySliderOffset>
+    
+    <kDefaultSpecies value="Human">
+      <!--The default species to display whenever the Species is not explicitly being used (Human, LittleDog, Dog, Cat, Horse)-->
+    </kDefaultSpecies>
+    <kMenuVisibleTransferTo value="True">
+      <!--Whether to display the Transfer To interactions in the object menu-->
+    </kMenuVisibleTransferTo>
+    <kMenuVisibleTransferFrom value="True">
+      <!--Whether to display the Transfer From interactions in the object menu-->
+    </kMenuVisibleTransferFrom>
+    <kCheckForNoDoubleBed value="True">
+      <!--Whether to check for the existence of any double bed during home inspection-->
+    </kCheckForNoDoubleBed>
+    <kShowCASSliderValues value="True">
+      <!--Whether to display the numeric values for each slider, while in CAS-->
+    </kShowCASSliderValues>
+    <kBodySliderMultiple value="1">
+      <!--A multiple used to increase the min/max range of body sliders-->
+    </kBodySliderMultiple>
+    <kClothingSortOrder value="EAStandard">
+      <!--What order to display Clothing in CAS (EAStandard, CustomContentTop, CustomContentBottom)-->
+    </kClothingSortOrder>
+    <kAllowMultipleAccessories value="False">
+      <!--Whether to allow for multiple accessories per body position-->
+    </kAllowMultipleAccessories>
+    <kAllowMultipleMakeup value="False">
+      <!--Whether to allow for multiple makeup parts per body position-->
+    </kAllowMultipleMakeup>
+    <kRemoveActiveTopicLimit value="True">
+      <!--Whether to remove the limit on the number of active topics choices when displaying the sim menu-->
+    </kRemoveActiveTopicLimit>
+    <kEyeColorByCategory value="False">
+      <!--Whether to allow different eye color to be used for each outfit-->
+    </kEyeColorByCategory>
+
+    <kMenuVisibleRadiusPurge value="True">
+      <!--Whether to display the Radius Purge interactions in the object menu-->
+    </kMenuVisibleRadiusPurge>
+    <kUsePartyFilter value="True">
+      <!--Whether to display the filter during party selections-->
+    </kUsePartyFilter>
+    <kDefaultAdvancedPanel value="True">
+      <!--Whether to display the advanced slider panel by default-->
+    </kDefaultAdvancedPanel>
+    <kCommunityAddSim value="False">
+      <!--Whether to allow the use of Add Sim on community lots-->
+    </kCommunityAddSim>
+    <kMenuVisibleRadiusAddToInventory value="True">
+      <!--Whether to display the Radius Add To Inventory interactions in the object menu-->
+    </kMenuVisibleRadiusAddToInventory>
+    <kMaleAdultClothesForTeen value="False">
+      <!--Whether to allow selection of male adult clothing for teenagers-->
+    </kMaleAdultClothesForTeen>
+    <kFemaleAdultClothesForTeen value="False">
+      <!--Whether to allow selection of female adult clothing for teenagers-->
+    </kFemaleAdultClothesForTeen>
+    <kCompactClothingCAS value="False">
+      <!--Whether to display Clothing CAS using the compact method (faster, but missing all the presets)-->
+    </kCompactClothingCAS>
+    <kCompactHatCAS value="False">
+      <!--Whether to display Hat CAS using the compact method (faster, but missing all the presets)-->
+    </kCompactHatCAS>
+    <kCompactAccessoryCAS value="False">
+      <!--Whether to display Accessory CAS using the compact method (faster, but missing all the presets)-->
+    </kCompactAccessoryCAS>
+    <kBodyHairForTeens value="False">
+      <!--Whether to unlock the body hair panel for teens-->
+    </kBodyHairForTeens>
+    <kBodyHairForFemales value="False">
+      <!--Whether to unlock the body hair panel for females-->
+    </kBodyHairForFemales>
+    <kUniGenderAccessories value="False">
+      <!--Whether to unlock all accessories for every gender-->
+    </kUniGenderAccessories>
+    <kUniGenderChildMale value="False">
+      <!--Whether to unlock all toddler/child clothing for males-->
+    </kUniGenderChildMale>
+    <kUniGenderChildFemale value="False">
+      <!--Whether to unlock all toddler/child clothing for females-->
+    </kUniGenderChildFemale>
+    <kAdultClothesForElders value="False">
+      <!--Whether to allow selection of female adult clothing for elders-->
+    </kAdultClothesForElders>
+    <kAdultAccessoriesForTeens value="False">
+      <!--Whether to allow selection of adult accessories for teens-->
+    </kAdultAccessoriesForTeens>
+    <kDisableClothingFilterV2 value="Career">
+      <!--Whether to disable the clothing filter and allow all outfits in every category (Everyday, Career, Outerwear, Formalwear, Swimwear, Sleepwear, Athletic)-->
+    </kDisableClothingFilterV2>
+    <kPartyAgeFilter value="False">
+      <!--Whether to filter party guests by the type of party chosen-->
+    </kPartyAgeFilter>
+    <kHideByProduct value="">
+      <!--Which expansion packs to hide in CAS by default (EP1, SP1, EP2, SP2, etc)-->
+    </kHideByProduct>
+
+    <kSubtleMapTags value="False">
+      <!--Whether to display normal map tags-->
+    </kSubtleMapTags>
+    <kShowHiddenParts value="False">
+      <!--Whether to display normally hidden CAS parts-->
+    </kShowHiddenParts>
+  </Current_Tuning>
+</base>

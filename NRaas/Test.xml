@@ -1,0 +1,300 @@
+﻿[[toc]]
+=[[StoryProgression VampiresAndSlayers]]=
+
+==Options: Town Dracul==
+* The Dracul uses his hypnotic mind control powers to manipulate sims in town and make them do his bidding.
+* Their clan is composed of the sims under the Dracul's command.
+
+* Allow All Genders
+** Whether to allow all genders for the leadership position
+** Default: False
+* Allow Elder
+** Whether to allow elder vampires to hold the leadership position
+** Default: False
+* Allow Go To Jail
+** Whether to allow members controlled by the Dracul to go to jail for their actions
+** Default: True
+* Allow Teen Recruit
+** Whether to allow teens to be recruited to the clan
+** Default: True
+* Enable Progression
+** When enabled, this personality is progressed each cycle
+** Default: True
+* Increased Chance Per Cycle
+** The added chance, each cycle, that an event will occur
+** Default: 15
+* Mooch Maximum
+** Specifies the maximum amount of simoleons a Dracul can ask from a follower
+** Default: 1000
+* Mooch Minimum
+** Specifies the minimum amount of simoleons a Dracul can ask from a follower
+** Default: 250
+* Speed
+** The speed in sim-minutes which this personality cycles
+** Default: 250
+* Stories
+** Which stories to display for this personality
+** Default: All
+* Town Dracul
+** Provides the ability to set the personality manually
+** Default: (Selected by scoring)
+* Weight: Break
+** The relative chance a member will be directed to smash up an object owned by an enemy of the Dracul
+** Default: 15
+* Weight: Canoodle
+** The relative chance that a member of the clan will be directed to get friendly with another sim
+** Default: 10
+* Weight: Cohesion
+** The relative chance two members of the Dracul will improve in relationship
+** Default: 20
+* Weight: Derision
+** The relative chance the Dracul will rant about non-followers in the community
+** Default: 20
+* Weight: Drink
+** The relative chance that a Dracul will drink from one of the members of the clan
+** Default: 30
+* Weight: Fight
+** The relative chance a member will be directed to assault an enemy of the Dracul
+** Default: 15
+* Weight: Mooch
+** The relative chance the Dracul will take money from a follower
+** Default: 20
+* Weight: Recruit
+** The relative chance that a new member will be added to the clan in a non-romantic way
+** Default: 60
+* Weight: Revolt
+** The relative chance a member of the Dracul will attempt slay the master
+** Default: 5
+* Weight: Woo
+** The relative chance that the Dracul will add a new recruit by wooing them
+** Default: 60
+
+==Options: Town Helsing==
+* The Helsing is an anti-occult personality, who hates all types of occult equally. They will slay without warrant.
+* Their clan is composed of other like-minded sims.
+
+* Allow All Genders
+** Whether to allow all genders for the leadership position
+** Default: True
+* Allow Elder
+** Whether to allow elders to join the clan
+** Default: True
+* Allow Go To Jail
+** Whether to allow members controlled by the Dracul to go to jail for their actions
+** Default: True
+* Allow Teen
+** Whether to allow teens to join the clan
+** Default: False
+* Death: Push Chance
+** Chance that a scenario will result in the death of the target
+** Default: 50
+* Enable Progression
+** When enabled, this personality is progressed each cycle
+** Default: True
+* Increased Chance Per Cycle
+** The added chance, each cycle, that an event will occur
+** Default: 15
+* Speed
+** The speed in sim-minutes which this personality cycles
+** Default: 250
+* Stories
+** Which stories to display for this personality
+** Default: All
+* Town Helsing
+** Provides the ability to set the personality manually
+** Default: (Selected by scoring)
+* Weight: Arson
+** The relative chance a member will set fire to an occult's residence
+** Default: 5
+* Weight: Break
+** The relative chance a member will smash up an object at an occult's home
+** Default: 20
+* Weight: Breakup
+** The relative chance a member will find their occult spouse has left them
+** Default: 10
+* Weight: Cohesion
+** The relative chance two members of the clan will improve in relationship
+** Default: 30
+* Weight: Derision
+** The relative chance a member will rant about an occult in town
+** Default: 15
+* Weight: Recruit
+** The relative chance that a new member will be added to the clan
+** Default: 50
+* Weight: Slay Vampire
+** The relative chance a member will take out a vampire in the town
+** Default: 60
+* Weight: Slay Wolf
+** The relative chance a member will take out a werewolf in the town
+** Default: 60
+
+==Options: Town Lestat==
+* The Lestat is a carefree vampire, whose primary activities are paying sims for plasma, and boinking other vampires.
+* Their clan is composed of other like-minded vampires.
+
+* Allow All Genders
+** Whether to allow all genders for the leadership position
+** Default: False
+* Allow Elder
+** Whether to allow elder vampires to hold the leadership position
+** Default: True
+* Chance of Pregnancy
+** The chance that a Canoodle scenario will result in a pregnancy
+** When set to "-1" the "Sim Options" chance is used instead.
+** Default: -1
+* Enable Progression
+** When enabled, this personality is progressed each cycle
+** Default: True
+* Increased Chance Per Cycle
+** The added chance, each cycle, that an event will occur
+** Default: 15
+* Max Payment
+** The maximum amount of cash that a Lestat can offer after drinking from a sim
+** Default: 250
+* Speed
+** The speed in sim-minutes which this personality cycles
+** Default: 250
+* Stories
+** Which stories to display for this personality
+** Default: All
+* Town Lestat
+** Provides the ability to set the personality manually
+** Default: (Selected by scoring)
+* Weight: Canoodle
+** The relative chance that two members of the clan will get hot and heavy with each other
+** Default: 20
+* Weight: Cohesion
+** The relative chance that two members of the clan will improve in relationship
+** Default: 30
+* Weight: Dracul Hate
+** The relative chance that a member will rant about how they don't like the Dracul
+** Default: 15
+* Weight: Drink
+** The relative chance that a Lestat will drink from another sim
+** Default: 30
+* Weight: Mixed Canoodle
+** The relative chance that a member of the clan will be friendly with a non-member
+** Default: 20
+* Weight: Recruit
+** The relative chance that a new sim, who is already a vampire, will be recruited to the clan
+** Default: 60
+* Weight: Sire
+** The relative chance that the leader will sire a new vampire, using one of the general populace
+** Default: 30
+* Weight: Slayer Cohesion
+** The relative chance that one of the clan will improve relationship with a member of the Slayer clan
+** Default: 15
+
+==Options: Town Nosferatu==
+* The Nosferatu is the evil vampire gang, bent on the destruction and subjugation of mankind.
+* Their clan is composed of other like-minded sims.
+
+* Allow All Genders
+** Whether to allow all genders for the leadership position
+** Default: True
+* Allow Elder Recruit
+** Whether to allow elders to be recruited as members
+** Default: True
+* Allow Go To Jail
+** Whether to allow members to go to jail for their actions
+** Default: True
+* Death: Push Chance
+** Chance that a scenario will result in the death of the target
+** Default: 25
+* Enable Progression
+** When enabled, this personality is progressed each cycle
+** Default: True
+* Increased Chance Per Cycle
+** The added chance, each cycle, that an event will occur
+** Default: 15
+* Speed
+** The speed in sim-minutes which this personality cycles
+** Default: 250
+* Stories
+** Which stories to display for this personality
+** Default: All
+* Town Nosferatu
+** Provides the ability to set the personality manually
+** Default: (Selected by scoring)
+* Weight: Antagonize
+** The relative chance a member will pick a fight with a local human
+** Default: 15
+* Weight: Arson
+** The relative chance a sim in town will set fire to a member's home
+** Default: 10
+* Weight: Brawl
+** The relative chance a member will pick a fight with a Helsing or Slayer
+** Default: 15
+* Weight: Feast
+** The relative chance a member will drink from a local sim
+** Default: 25
+* Weight: Recruit
+** The relative chance that a vampire will be added to the clan (vampires can be stolen from Lestat)
+** Default: 40
+* Weight: Turn
+** The relative chance a member will attempt to turn a human into a vampire
+** Default: 40
+* Weight: Wolf Attack
+** The relative chance a member will pick on a werewolf
+** Default: 25
+
+==Options: Town Slayer==
+* The Slayer is the good vampire hunter, choosing to fight alone against the evil vampires in town.
+* Their clan is composed of misfits that tend to simply get in the way.
+
+* Allow Adult
+** Whether to allow adults to hold the leadership position
+** Default: False
+* Allow All Genders
+** Whether to allow all genders for the leadership position
+** Default: False
+* Allow Elder Recruit
+** Whether to allow elders to be recruited to the clan
+** Default: False
+* Chance of Pregnancy
+** The chance of a Canoodle scenario resulting in a pregnancy
+** When set to "-1", the "Sim Options" chance is used instead
+** Default: -1
+* Enable Progression
+** When enabled, this personality is progressed each cycle
+** Default: True
+* Increased Chance Per Cycle
+** The added chance, each cycle, that an event will occur
+** Default: 15
+* Speed
+** The speed in sim-minutes which this personality cycles
+** Default: 250
+* Stories
+** Which stories to display for this personality
+** Default: All
+* Town Slayer
+** Provides the ability to set the personality manually
+** Default: (Selected by scoring)
+* Weight: Antagonize
+** The relative chance an evil vampire will pick on one of the members of the clan
+** Default: 15
+* Weight: Attraction
+** The relative chance that the leader will get friendly with someone in town
+** Default: 20
+* Weight: Brawl
+** The relative chance the leader will combat a vampire in a Leadership position (Lestat exempt)
+** Leaders cannot be slain, so this is merely a negative relationship scenario
+** Default: 20
+* Weight: Cohesion
+** The relative chance two members of the clan will improve in relationship
+** Default: 30
+* Weight: Helsing Hate
+** The relative chance one of the members will rant about the Helsing
+** Default: 15
+* Weight: Recruit
+** The relative chance that a new member will be added to the clan
+** Default: 30
+* Weight: Slay Vampire
+** The relative chance the leader will take out an evil vampire (Lestat and Leaders are exempt)
+** Default: 60
+* Weight: Slay Wolf
+** The relative chance the leader will take out an evil werewolf (Hound and Leaders are exempt)
+** Default: 60
+* Weight: Vampire Attraction
+** The relative chance that the leader will get friendly with a vampire in town
+** Default: 20

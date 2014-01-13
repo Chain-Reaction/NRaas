@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kNotificationStore value="500000">
+      <!--The number of notifications to store before writing a log-->
+    </kNotificationStore>
+  </Current_Tuning>
+</base>

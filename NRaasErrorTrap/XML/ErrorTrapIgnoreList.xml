@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <IgnoreList>
+    <!--This is the default, do not replace or remove it, or the first element of your table will be ignored-->
+    <ExceptionType>
+      <!--The EXACT scripting class name for the exception: ie: System.NullReferenceException-->
+    </ExceptionType>
+    <ExceptionStack>
+      <!--A snippet of the stack frame.  Spacing matters, but upper-lower case does not.  Any portion of any line of the stack will work.-->
+    </ExceptionStack>
+  </IgnoreList>
+</base>

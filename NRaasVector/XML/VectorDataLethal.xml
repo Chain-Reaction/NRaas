@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vector>
+  <VectorMethodFile>
+    <File></File>
+  </VectorMethodFile>
+  <VectorMethodFile>
+    <File>NRaas.VectorLethal.Scoring</File>
+  </VectorMethodFile>
+
+  <SymptomsFile>
+    <File></File>
+  </SymptomsFile>
+  <SymptomsFile>
+    <File>NRaas.VectorLethal.Symptoms</File>
+  </SymptomsFile>
+
+  <ResistancesFile>
+    <File></File>
+  </ResistancesFile>
+  <ResistancesFile>
+    <File>NRaas.VectorLethal.Resistances</File>
+  </ResistancesFile>
+
+  <VectorsFile>
+    <File></File>
+  </VectorsFile>
+  <VectorsFile>
+    <File>NRaas.VectorLethal.Vectors</File>
+  </VectorsFile>
+</Vector>

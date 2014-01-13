@@ -1,0 +1,1196 @@
+<?xml version="1.0"?>
+<Social>
+  <Action key="Challenge to Hot Dog Eating Contest" com="Friendly">
+    <Text key="ChallengeToHotDogEatingContest" pvt="BeChallengedToHotDogEatingContest" />
+    <AD val="0x00080000">
+      <Misc r="0" c="1" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="ChallengeToHotdogEatingContestTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="ChallengeToHotdogEatingContestAcceptCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="ChallengeToHotdogEatingContestSpecialRejectCallback" />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <LHS com="Awkward" val="100" ProcTest="IsChallengeHotDogContestSpecialReject">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Reveal Prank" com="Friendly">
+    <Text key="RevealPrank" pvt="Listen" />
+    <AD val="0x00000200">
+      <Misc ITLA="50" r="4" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="ufoAbduct" data="EP8" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="RevealPrankAfterCallbackAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="">
+        <EndStance x="Neutral" y="Neutral" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="RevealPrankAfterCallbackReject" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Insulting" val="80">
+        <LLTR max="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Mind Control" com="Neutral">
+    <Text key="MindControl" pvt="BeMindControlled" />
+    <AD val="0x00000204">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="MindControlTest" />
+    </AA>
+    <Jazz>
+      <Graph val="MentalServant" data="EP8" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Exit - Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnMindControlAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="Exit - Insulting">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Neutral" ProcTest="MindControlSuccessTest">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Insulting">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Probe" com="Neutral">
+    <Text key="Probe" pvt="BeProbed" />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="ProbeTest" />
+    </AA>
+    <Jazz>
+      <Graph val="Probe" data="EP8" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Probe - Impressed">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Probe - Tickle">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="EasilyImpressed" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="101">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Excitable" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="102">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Flirty" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="103">
+        <LLTR key="RomanticInterest" is="True" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="104">
+        <LLTR key="Partner" is="True" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="105">
+        <LLTR key="Fiancee" is="True" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="106">
+        <LLTR key="Spouse" is="True" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Initiate Water Balloon Fight" com="Friendly">
+    <Text />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestWaterBalloonFightTargetIsOutside" />
+    </AA>
+    <Jazz>
+      <Graph val="SnowWaterFightInitiation" data="EP8" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="WaterBalloonBeforeCallback" peau="OnHaveWaterBalloonFightAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="WaterBalloonBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Initiate Snowball Fight" com="Friendly">
+    <Text />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestSnowballFightTargetIsOutside" />
+    </AA>
+    <Jazz>
+      <Graph val="SnowWaterFightInitiation" data="EP8" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="SnowballBeforeCallback" peau="OnHaveSnowballFightAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="SnowballBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Initiate Water Balloon Fight Inside" com="Friendly">
+    <Text />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestWaterBalloonFightTargetIsInside" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="WaterBalloonBeforeCallback" peau="OnHaveWaterBalloonFightAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Bad">
+        <Anim />
+        <Buff />
+        <RPROC pebu="WaterBalloonBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Initiate Snowball Fight Inside" com="Friendly">
+    <Text />
+    <AD val="0x00000000">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestSnowballFightTargetIsInside" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="SnowballBeforeCallback" peau="OnHaveSnowballFightAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Bad">
+        <Anim />
+        <Buff />
+        <RPROC pebu="SnowballBeforeCallback" peau="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Ask To Make Snowman" com="Friendly">
+    <Text key="AskToMakeSnowman" pvt="BeAskedToMakeSnowman" />
+    <AD val="0x00080100">
+      <Misc r="0" c="1" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="AskToMakeSnowmanProceduralTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AskToMakeSnowmanAcceptCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Trick Or Treat" com="Neutral">
+    <Text key="GiveTrickOrTreat" pvt="TrickOrTreat" />
+    <AD val="0x0000000C">
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="TrickorTreat" data="EP8" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Exit">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnTrickOrTreatAccept" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Neutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Challenge to Pie Eating Contest" com="Friendly">
+    <Text key="ChallengeToPieEatingContest" pvt="BeChallengedToPieEatingContest" />
+    <AD val="0x00080000">
+      <Misc r="0" c="1" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="ChallengeToPieEatingContestTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="ChallengeToPieEatingContestAcceptCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="ChallengeToPieEatingContestSpecialRejectCallback" />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <LHS com="Awkward" val="100" ProcTest="IsChallengePieContestSpecialReject">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Boast About Winning Eating Contest" com="Friendly">
+    <Text key="BoastAboutWinningEatingCompetition" pvt="ListenToBoasting" />
+    <SA key="Boast" />
+    <AD val="0x00080102">
+      <Misc ITLA="30" c="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TestCanBoastAboutWinningEatingContest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_boastabout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="80">
+        <LLTR max="30" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="78">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Athletic" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="77">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Adventurous" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="76">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Daredevil" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="75">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Friendly" />
+        <MAYBE rep="False" />
+      </LHS>
+      <LHS com="Friendly" val="74">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Good" />
+        <MAYBE rep="False" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Challenge to Apple Bobbing Contest" com="Friendly">
+    <Text key="ChallengeToAppleBobbingContest" pvt="BeChallengedToAppleBobbingContest" />
+    <AD val="0x00080000">
+      <Misc r="0" c="1" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="ChallengeToAppleBobbingContestTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="ChallengeToAppleBobbingContestAcceptCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN val="0" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="ShootCloud" com="Neutral">
+    <Text key="ShootCloudAt" pvt="GetShotWithCloud" />
+    <AD val="0x00042000">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <AWT val="Base,Downtown" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="EP8" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Write Love Letter" com="Amorous">
+    <Text key="ConfessAttraction" pvt="ListenToConfession" />
+    <SA key="BeRomanticButNotFlirty" />
+    <AD val="0x00000100">
+      <Misc JL="Low" ITLA="50" r="1" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Coward,Unflirty" />
+      <ATE val="HopelessRomantic,Flirty" />
+      <ALTR min="10" max="100" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="FlirtyCompliment" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Amorous">
+        <Anim />
+        <Buff />
+        <LTRBits val="0x00000002" />
+        <TUN val="80" />
+        <Trait x="" y="HopelessRomantic,Flirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="NeutralReaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="CreepyReaction">
+        <EndStance x="" y="Bad" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <RHS com="Creepy" state="CreepyReaction">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="AddRejectedByEx" />
+        <TUN val="80" />
+        <Trait x="" y="Unflirty" />
+        <Topic />
+      </RHS>
+      <LHS com="Creepy" val="95">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE tb="True" />
+      </LHS>
+      <LHS com="Creepy" val="92">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+      <LHS com="Creepy" val="91">
+        <SC com="Creepy" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="90" cp="-1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="84.1">
+        <LLTR mood="0" min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="~FamilyOriented,HopelessRomantic" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Amorous" val="84.1">
+        <LLTR mood="0" min="40" />
+        <SC />
+        <SE x="None" remX="None" y="AcceptingOfRomance" remY="None" />
+        <Trait y="~FamilyOriented" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Amorous" val="84.1">
+        <LLTR mood="0" min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="FamilyOriented,HopelessRomantic" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Amorous" val="84.1">
+        <LLTR mood="0" min="60" />
+        <SC />
+        <SE x="None" remX="None" y="AcceptingOfRomance" remY="None" />
+        <Trait y="FamilyOriented" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Amorous" val="84">
+        <LLTR mood="0" min="40" />
+        <SC />
+        <SE x="None" remX="None" y="AcceptingOfRomance" remY="None" />
+        <Trait />
+        <MAYBE wgp="True" />
+      </LHS>
+      <LHS com="Amorous" val="84">
+        <LLTR mood="0" min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="HopelessRomantic" />
+        <MAYBE wgp="True" />
+      </LHS>
+      <LHS com="Amorous" val="83.1">
+        <LLTR mood="0" min="80" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="FamilyOriented" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Amorous" val="83.1">
+        <LLTR mood="0" min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="~FamilyOriented" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Amorous" val="83">
+        <LLTR mood="0" min="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE wgp="True" />
+      </LHS>
+      <LHS com="Awkward" val="82.1">
+        <LLTR max="19" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="~FamilyOriented" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Awkward" val="82.1">
+        <LLTR max="39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="FamilyOriented" />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Awkward" val="82">
+        <LLTR max="19" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE wgp="True" />
+      </LHS>
+      <LHS com="Neutral" val="81.1">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE part="True" />
+      </LHS>
+      <LHS com="Neutral" val="81">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE wgp="True" />
+      </LHS>
+      <LHS com="Awkward" val="72">
+        <LLTR min="9" max="39" />
+        <SC />
+        <SE x="None" remX="Romance" y="None" remY="AcceptingOfRomance" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="71">
+        <LLTR min="39" max="69" />
+        <SC />
+        <SE x="None" remX="Romance" y="None" remY="AcceptingOfRomance" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="64">
+        <LLTR mood="0" min="50" max="59" />
+        <SC />
+        <SE x="Romance" remX="None" y="None" remY="AcceptingOfRomance" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="64">
+        <LLTR mood="0" min="40" max="59" />
+        <SC />
+        <SE x="None" remX="Romance" y="AcceptingOfRomance" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="64">
+        <LLTR mood="0" min="40" max="59" />
+        <SC />
+        <SE x="None" remX="Romance" y="None" remY="None" />
+        <Trait y="HopelessRomantic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="62">
+        <LLTR min="9" max="29" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="AcceptingOfRomance" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="62">
+        <LLTR min="9" max="29" />
+        <SC />
+        <SE x="None" remX="Romance" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="61">
+        <LLTR min="29" max="59" />
+        <SC />
+        <SE x="None" remX="Romance" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="61">
+        <LLTR min="29" max="59" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="AcceptingOfRomance" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="54">
+        <LLTR mood="0" min="10" max="40" />
+        <SC />
+        <SE x="Romance" remX="None" y="AcceptingOfRomance" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="54">
+        <LLTR mood="0" min="10" max="40" />
+        <SC />
+        <SE x="Romance" remX="None" y="None" remY="None" />
+        <Trait y="HopelessRomantic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="53">
+        <LLTR mood="0" min="20" max="40" />
+        <SC />
+        <SE x="None" remX="None" y="AcceptingOfRomance" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="53">
+        <LLTR mood="0" min="20" max="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="HopelessRomantic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="52">
+        <LLTR mood="0" min="30" max="40" />
+        <SC />
+        <SE x="Romance" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="51">
+        <LLTR max="9" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="51">
+        <LLTR mood="0" min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="50">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="52.1">
+        <LLTR mood="0" min="30" max="40" />
+        <SC />
+        <SE x="RomanceWithTraitSpecificSims" remX="None" y="None" remY="None" />
+        <Trait y="HopelessRomantic,Flirty,EasilyImpressed" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="54.1">
+        <LLTR mood="0" min="10" max="40" />
+        <SC />
+        <SE x="RomanceWithTraitSpecificSims" remX="None" y="AcceptingOfRomance" remY="None" />
+        <Trait y="HopelessRomantic,Flirty,EasilyImpressed" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="54.1">
+        <LLTR mood="0" min="10" max="40" />
+        <SC />
+        <SE x="RomanceWithTraitSpecificSims" remX="None" y="None" remY="None" />
+        <Trait y="HopelessRomantic,Flirty,EasilyImpressed" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Amorous" val="64.1">
+        <LLTR mood="0" min="50" max="59" />
+        <SC />
+        <SE x="RomanceWithTraitSpecificSims" remX="None" y="None" remY="AcceptingOfRomance" />
+        <Trait y="HopelessRomantic,Flirty,EasilyImpressed" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral">
+        <LLTR max="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Rain" com="Friendly">
+    <Text key="TalkAboutRain" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="50" r="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TalkAboutRainTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Snow" com="Friendly">
+    <Text key="TalkAboutSnow" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="50" r="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATE val="LovesTheCold" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TalkAboutSnowTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" remY="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheCold,ImmuneToCold" y="LovesTheCold,ImmuneToCold" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" remY="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheCold,ImmuneToCold" y="LovesTheCold,ImmuneToCold" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff x="Smalltalked" remY="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheCold,ImmuneToCold" y="LovesTheCold,ImmuneToCold" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="50">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="LovesTheCold" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Hail" com="Friendly">
+    <Text key="TalkAboutHail" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="50" r="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TalkAboutHailTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Fog" com="Friendly">
+    <Text key="TalkAboutFog" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="50" r="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TalkAboutFogTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Cold" com="Friendly">
+    <Text key="TalkAboutCold" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="50" r="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATE val="LovesTheCold" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TalkAboutColdTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheCold,ImmuneToCold" y="LovesTheCold,ImmuneToCold" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheCold,ImmuneToCold" y="LovesTheCold,ImmuneToCold" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheCold,ImmuneToCold" y="LovesTheCold,ImmuneToCold" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="50" ltro="5" TP="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="LovesTheCold" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Heat" com="Friendly">
+    <Text key="TalkAboutHeat" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="50" r="3" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <ATE val="LovesTheHeat" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TalkAboutHeatTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheHeat,ImmuneToHeat" y="LovesTheHeat,ImmuneToHeat" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheHeat,ImmuneToHeat" y="LovesTheHeat,ImmuneToHeat" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff x="Smalltalked" y="Smalltalked" />
+        <RPROC pebu="" peau="TalkAboutWeatherEP8Callback" />
+        <TUN />
+        <Trait x="LovesTheHeat,ImmuneToHeat" y="LovesTheHeat,ImmuneToHeat" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="50" ltro="5" TP="2">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="LovesTheHeat" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Online Dating Chat" com="Friendly">
+    <Text key="ShareInterests" pvt="Listen" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="10" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="Friendly" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnlineDatingChatSuccess" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <RPROC pebu="" peau="OnlineDatingChatFailure" />
+        <TUN val="-40" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" ProcTest="TestOnlineDatingChatSuccess">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" ProcTest="TestOnlineDatingChatFailure">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+</Social>

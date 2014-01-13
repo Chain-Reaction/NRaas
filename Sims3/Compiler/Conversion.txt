@@ -1,0 +1,63 @@
+/*
+ *   family|private
+ *      public
+ *   sealed|initonly
+ *   assembly hidebysig
+ *       public hidebysig
+ *   \.field {|static }assembly
+ *      \.field \1 public
+
+ ScriptCore
+	.class private auto ansi beforefieldinit ScriptCore.ScriptObjectGroupData
+
+ SimIFace
+	add_ObjectGroupCreated
+	remove_ObjectGroupCreated
+	add_ObjectGroupLoaded
+	remove_ObjectGroupLoaded
+	add_ObjectGroupSaving
+	remove_ObjectGroupSaving
+	add_ObjectGroupsPreLoad
+	remove_ObjectGroupsPreLoad
+	add_OnPrepareObject
+	remove_OnPrepareObject
+
+	add_OnObjectPlacedInLotEventHandler
+	remove_OnObjectPlacedInLotEventHandler
+
+	// Must be reversed
+	.field private class [SimIFace]Sims3.SimIFace.PrepareThumbnailObject OnPrepareObject
+	add_OnPrepareObject
+	remove_OnPrepareObject
+ UI
+	add_Click
+	remove_Click
+	add_Tick
+	remove_Tick
+	add_MouseDown
+	remove_MouseDown
+	add_MouseUp
+	remove_MouseUp
+	add_FocusAcquired
+	remove_FocusAcquired
+	add_FocusLost
+	remove_FocusLost
+	add_SliderValueChange
+	remove_SliderValueChange
+	add_SelectionChange (multiple) (Not ObjectPicker, TableContainer)
+	remove_SelectionChange
+	add_DragEnter
+	remove_DragEnter
+	add_DragOver
+	remove_DragOver
+	add_DragDrop
+	remove_DragDrop
+	add_TriggerDown
+	remove_TriggerDown
+	add_FadeTransitionFinished
+	remove_FadeTransitionFinished
+	add_EffectFinished
+	remove_EffectFinished
+	add_TextChange
+	remove_TextChange
+ */

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FileNames>
+  <WorldToFile>
+    <!-- This is the default set, it must remain the first in the list -->
+
+    <!-- This is the name of the world file.  Ensure that name matches exactly, minus the file extension.-->
+    <WorldName></WorldName>
+    <!-- The file name is case sensitive, ensure that it matches the town-file name exactly, minus the file extension. -->
+    <FileName></FileName>
+  </WorldToFile>
+</FileNames>

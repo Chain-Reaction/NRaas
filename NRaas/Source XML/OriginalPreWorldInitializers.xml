@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" ?>
+<!-- This file contains initialization/shutdown functions that should be run before loading objects -->
+<!-- Before loading the world, initialization functions are run top to bottom -->
+<!-- After unloading the world, shutdown functions are run bottom to top -->
+<!-- Every initializer is represented with a row containing the following attributes:
+type:           [compulsory] This is the fully namespaced class in a given assembly. E.g. type="Sims3.Gameplay.Tuning.TuningControl,Sims3GameplaySystems"
+init:           This is a public static method of the above mentioned class. It is invoked during the initialization sequence. E.g. init="GameplayInitialize"
+shutdown:       This is a public static method of the above mentioned class. It is invoked during the shutdown sequence. E.g. shutdown="GameplayShutdown"
+                A valid initializer contains either an init method or a shutdown method or both.
+productversions:[optional] Comma separated ProductVersion enum values. The initializer is valid if any Product in this attribute is installed.
+                Default: BaseGame. E.g. productversions="EP1,EP4"
+configurations: [optional] Comma separated Configuration enum values. The initializer is valid if the game is launched in a configuration supplied in this attribute.
+                Default: Debug,DebugRelease,Release. E.g. configurations="Debug,DebugRelease"
+editingame:     [optional] This attribute validates the initializer in Edit-in game mode. Default: True. E.g. editingame="False"
+-->
+
+<PreWorldInitializers>
+  <Action type="Sims3.Gameplay.ToInWorldState,Sims3GameplaySystems" init="RecordMenuObjects" shutdown="ValidateMenuObjects"/>
+  <Action type="Sims3.SimIFace.FinalizerTask,SimIFace" init="StaticInitialize" shutdown="StaticShutdown"/>
+  <Action type="Sims3.Gameplay.Core.AudioManager,Sims3GameplaySystems" init="LoadWorld"/>
+  <Action type="Sims3.Gameplay.Utilities.AlarmManager,Sims3GameplaySystems" shutdown="ShutdownGlobalAlarmManager"/>
+  <Action type="Sims3.Gameplay.EventSystem.EventTracker,Sims3GameplaySystems" init="PreWorldStartup" shutdown="PreWorldShutdown"/>
+  <Action type="Sims3.Gameplay.DreamsAndPromises.DreamsAndPromisesManager,Sims3GameplaySystems" init="PreWorldStartup" shutdown="PreWorldShutdown"/>
+  <Action type="Sims3.Gameplay.Rewards.RewardsManager,Sims3GameplaySystems" init="OnStartup"/>
+  <Action type="Sims3.Gameplay.Objects.Rewards.CollectionHelperSingleton,Sims3GameplayObjects" init="PreWorldStartup"/>
+
+  <Action type="Sims3.Gameplay.Autonomy.Autonomy,Sims3GameplaySystems" init ="InitializeStatics" shutdown="ClearStatics"/>
+  <Action type="Sims3.Gameplay.Autonomy.CommodityInteractionMap,Sims3GameplaySystems" shutdown="ClearStatics"/>
+  <Action type="Sims3.Gameplay.Socializing.Gossip,Sims3GameplaySystems" shutdown="ClearStatics"/>
+  <Action type="Sims3.Gameplay.Socializing.Relationship,Sims3GameplaySystems" shutdown="ClearStatics"/>
+  <Action type="Sims3.SimIFace.CAS.CASUtils,SimIFace" shutdown="ClearSwapReadyCallbacks"/>
+
+  <Action type="Sims3.Gameplay.Core.LotManager,Sims3GameplaySystems" init="PreWorldLoad" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.CarpoolManager,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Objects.Vehicles.TrafficManager, Sims3GameplaySystems" init="Startup" shutdown="Shutdown" productversions="EP3" editingame="false"/>
+  <Action type="Sims3.Gameplay.ActorSystems.LifeEventManager, Sims3GameplaySystems" init="Start" shutdown="Stop" editingame="false"/>
+
+  <!-- Needs to create static Terrain object before interactions are loaded -->
+  <Action type="Sims3.Gameplay.Core.Terrain,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+  <Action type="Sims3.Gameplay.Core.Camera,Sims3GameplaySystems" init="PreWorldStartUp" shutdown="PreWorldShutDown"/>
+
+  <Action type="Sims3.Gameplay.Utilities.SimClockUtils,Sims3GameplaySystems" init="Startup" shutdown="Shutdown"/>
+
+  <Action type="Sims3.Gameplay.Services.Services,Sims3GameplaySystems" init="PreWorldLoadStartup" shutdown="PreWorldLoadShutdown"/>
+  <Action type="Sims3.Gameplay.Controllers.PhoneService,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.Objects.Appliances.HotBeverageMachine,Sims3GameplayObjects" shutdown="Shutdown"/>
+
+  <!-- Depends on AlarmManager, Sim creation depends on it. -->
+  <Action type="Sims3.Gameplay.ActorSystems.AgingManager,Sims3GameplaySystems" init="Create" shutdown="Destroy"/>
+  <Action type="Sims3.Gameplay.CAS.SimDescription,Sims3GameplaySystems" init="OnWorldLoadStarted"/>
+
+  <Action type="Sims3.Gameplay.GlobalFunctions,Sims3GameplaySystems" init="EnableCreatingObjects" shutdown="DisableCreatingObjects"/>
+  <Action type="Sims3.Gameplay.Abstracts.RabbitHole,Sims3GameplaySystems" shutdown="CleanupAdvertisingDeals"/>
+  <Action type="Sims3.Gameplay.StoryProgression.News,Sims3GameplaySystems" init="StaticInitialize" shutdown="StaticShutdown" />
+  <Action type="Sims3.Gameplay.Gameflow,Sims3GameplaySystems" init="SetLogicReplacements"/>
+  <Action type="Sims3.SimIFace.PersistAttributes,SimIFace" init="PreWorldInit"/>
+  <Action type="Sims3.SimIFace.Animation,SimIFace" shutdown="PreWorldLoadShutdown"/>
+  <Action type="Sims3.Gameplay.Seasons.SeasonsManager,Sims3GameplaySystems" init="PreWorldStartup" shutdown="Shutdown"/>
+</PreWorldInitializers>

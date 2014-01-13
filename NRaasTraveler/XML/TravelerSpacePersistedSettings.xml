@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kPauseTravel value="False">
+      <!-- Whether to pause the travel clock -->
+    </kPauseTravel>
+    <kRemoveTravelRestrictions value="False">
+      <!-- Whether to allow children or pregnant sims to be included for travel -->
+    </kRemoveTravelRestrictions>
+    <kTreatAsVacation value="True">
+      <!-- Whether to handle custom destinations as vacation towns -->
+    </kTreatAsVacation>
+    <kPromptToSave value="True">
+      <!-- Whether to prompt to save prior to travelling -->
+    </kPromptToSave>
+    <kCostPerDay value="200">
+      <!-- The cost per day to visit a Traveler world -->
+    </kCostPerDay>
+    <kAllowSpawnWeatherStone value="True">
+      <!-- Whether to spawn the weather stone -->
+    </kAllowSpawnWeatherStone>
+    <kEnableSeasons value="True">
+      <!-- Whether to enable seasons while on vacation -->
+    </kEnableSeasons>
+    <kUniversityTermLength value="7">
+      <!-- The length of a university term -->
+    </kUniversityTermLength>
+    <kPerformTravelActions value="True">
+      <!-- Whether to perform progression travel actions when updating a vacation world -->
+    </kPerformTravelActions>
+    <kStoreVehicles value="True">
+      <!-- Whether to store vehicles parked on residential lots prior to returning home -->
+    </kStoreVehicles>
+    <kTravelFilter value="None">
+      <!-- Which is allowed to travel (Pets, Friends, Pregnant, Toddlers, Children, Teens, Recovering) -->
+    </kTravelFilter>
+    <kSetAsUnselectable value="False">
+      <!-- Whether to set inactive travelers as unselectable upon arrival on vacation -->
+    </kSetAsUnselectable>
+  </Current_Tuning>
+</base>

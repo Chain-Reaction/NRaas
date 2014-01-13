@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CCAED97-BBC3-4408-B2FF-4BFEA314CD1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasDresser</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\InvalidPartBooter.cs">
+      <Link>CommonSpace\Booters\InvalidPartBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToMultiList.cs">
+      <Link>CommonSpace\Converters\StringToMultiList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToSpeciesList.cs">
+      <Link>CommonSpace\Converters\StringToSpeciesList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\InvalidPartBase.cs">
+      <Link>CommonSpace\Helpers\InvalidPartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ProductVersions.cs">
+      <Link>CommonSpace\Helpers\ProductVersions.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SavedOutfit.cs">
+      <Link>CommonSpace\Helpers\SavedOutfit.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SwitchOutfits.cs">
+      <Link>CommonSpace\Helpers\SwitchOutfits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\AgeSettingOption.cs">
+      <Link>CommonSpace\Options\AgeSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\FloatSettingOption.cs">
+      <Link>CommonSpace\Options\FloatSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ListedSettingOption.cs">
+      <Link>CommonSpace\Options\ListedSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="Dresser.cs" />
+    <Compile Include="DresserSpace\Helpers\DresserInvalidPart.cs" />
+    <Compile Include="DresserSpace\Helpers\SwitchOutfits.cs" />
+    <Compile Include="DresserSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="DresserSpace\Interactions\SimInteraction.cs" />
+    <Compile Include="DresserSpace\Options\ProductVersionSetting.cs" />
+    <Compile Include="DresserSpace\Options\ProcessAllSimsOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\InvalidProductVersionSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RerollAccessories.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\InheritBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\InvalidHatCategoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\IgnoreValidForRandomHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RerollBodyHair.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\InvalidProductVersionHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\InvalidProductVersionSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\InvalidProductVersionGeneralSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\AllowRollAgeupAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\AllowStrayPetAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\RandomMaleAccessoriesChanceSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\RandomFemaleAccessoriesChanceSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\IRandomAccessoriesOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\MinRandomMaleAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\MaxRandomFemaleAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RemoveAccessories.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\FullAdultRerollSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\BodyHairByAgeSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\AllowRollAgeupBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\AllowRollAgeupHairGeneralSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\RandomMaleBodyHairChanceSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\RandomFemaleBodyHairChanceSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RemoveBodyHair.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\MaxRandomMaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\MinRandomMaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\MinRandomFemaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\IRandomBodyHairOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\InvalidProductVersionSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\RandomMaleMakeupChanceSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\MaxRandomMaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\MinRandomMaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\MinRandomFemaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\IRandomMakeupOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\MaxRandomFemaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\RandomFemaleMakeupChanceSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RemoveMakeup.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RerollMakeup.cs" />
+    <Compile Include="DresserSpace\Options\Settings\DebuggingSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\AffectInactiveSetting.cs" />
+    <Compile Include="DresserSpace\Options\Sims\AddOutfit.cs" />
+    <Compile Include="DresserSpace\Options\Sims\CheckOutfits.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Protected.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Copy\ICopyOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Copy\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\OutfitBase.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerollCurrentMakeup.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerollMakeup.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Store\LoadMaternityOutfit.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Store\LoadOutfit.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Store\IStoreOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Store\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Store\LoadCareerOutfit.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Store\StoreOutfit.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerollBodyHair.cs" />
+    <Compile Include="DresserSpace\Options\Sims\RotateOutfits.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Remove\IRemoveOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Remove\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Remove\RemoveCurrentMakeup.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Copy\CopyMakeup.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Remove\RemoveBodyHair.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Remove\RemoveMakeup.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Remove\RemoveAccessories.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Copy\CopyAccessories.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Copy\CopyCurrentHair.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerollAccessories.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerollCurrentAccessories.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerollCurrentOutfit.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\IRerollOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerollCurrentHair.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Reroll\RerolHair.cs" />
+    <Compile Include="DresserSpace\Options\Sims\LogCASParts.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\AccessoriesByAgeSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RandomMakeup\MakeupByAgeSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\UseMasterControllerBlackListSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\VacationOutfitIndexSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\SimMenuVisibilitySetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\AllowPetAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\IAccessoriesOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\AffectActiveSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\AllowHatsSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\AllowRollAgeupHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\MaxRandomFemaleBodyHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\IgnoreBodyHairGenderSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\IHairOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\IgnoreValidForRandomHairSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\IgnoreValidForRandomAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\MartialArtsAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\SameHairForAllCategoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\ImmediateCheckServiceOutfits.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\IgnoreValidForRandomClothingSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RerollHair.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\ICheckOutfitsOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\AllowRollAgeupMakeupSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\IMakeupOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\IgnoreValidForRandomMakeupSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\SameMakeupForAllCategoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\RotateOccultSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Transition\AffectActiveSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Transition\SwitchSleepwearSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Transition\SwitchFormalSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Transition\ITransitionOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Transition\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Transition\SwitchOnOutsideSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\AffectActiveSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\ChanceOfSwitchSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\MaxRandomMaleAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBeardChanceSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\CheckOutfitsSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\MinRandomFemaleAccessoriesSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\NotifyOnCheckOutfitsSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\ImmediateCheckOutfits.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\IRotationOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\ListingOption.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\NightlyChangeOutfitHourSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\RotateMartialOutfitSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\NightlyRandomChangedOutfitSetting.cs" />
+    <Compile Include="DresserSpace\Options\Sims\ISimOption.cs" />
+    <Compile Include="DresserSpace\Options\Sims\Remove\RemoveOutfit.cs" />
+    <Compile Include="DresserSpace\Options\Settings\ResetSettings.cs" />
+    <Compile Include="DresserSpace\Tasks\RemovePartsOutfitTask.cs" />
+    <Compile Include="DresserSpace\Tasks\ProcessOutfitTask.cs" />
+    <Compile Include="DresserSpace\Tasks\CheckOutfitTask.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableKorean.txt" />
+    <Content Include="StringTables\StringTableHungarian.txt" />
+    <Content Include="StringTables\StringTableCzech.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTablePortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTableDutch.txt" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="StringTables\StringTableFinnish.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="StringTables\StringTableJapanese.txt" />
+    <Content Include="StringTables\StringTablePolish.txt" />
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableRussian.txt" />
+    <Content Include="StringTables\StringTableSwedish.txt" />
+    <Content Include="StringTables\StringTableTaiwanese.txt" />
+    <Content Include="XML\DresserValidParts.xml" />
+    <Content Include="XML\DresserInvalidParts.xml" />
+    <Content Include="XML\Dresser+DresserSettings.xml" />
+    <Content Include="XML\Kathy\Dresser+DresserSettings.xml" />
+    <Content Include="XML\Kathy\DresserInvalidParts.xml" />
+    <Content Include="XML\Personal\DresserInvalidParts.xml" />
+    <Content Include="XML\Personal\Dresser+DresserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

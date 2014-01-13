@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<CareerFiles>
+  <OpportunityFile>
+    <Opportunities></Opportunities>
+  </OpportunityFile>
+  <CareerFile>
+    <Careers></Careers>
+    <CareerEvents></CareerEvents>
+  </CareerFile>
+  <CareerFile>
+    <Careers>NRaas.PartTime.Unemployed</Careers>
+    <CareerEvents></CareerEvents>
+  </CareerFile>
+  <ToneFile>
+    <Tones></Tones>
+  </ToneFile>
+  <BookFile>
+    <Books></Books>
+  </BookFile>
+</CareerFiles>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<CareerFiles>
+  <OpportunityFile>
+    <Opportunities></Opportunities>
+  </OpportunityFile>
+  <OpportunityFile>
+    <Opportunities>NRaas.School.Opportunities</Opportunities>
+  </OpportunityFile>
+  
+  <CareerFile>
+    <Careers></Careers>
+    <CareerEvents></CareerEvents>
+  </CareerFile>
+  <CareerFile>
+    <Careers>NRaas.School.Careers</Careers>
+    <CareerEvents>NRaas.School.CareerEvents</CareerEvents>
+  </CareerFile>
+  
+  <ToneFile>
+    <Tones></Tones>
+  </ToneFile>
+  <ToneFile>
+    <Tones>NRaas.School.Tones</Tones>
+  </ToneFile>
+  
+  <AfterschoolActivityFile>
+    <File></File>
+  </AfterschoolActivityFile>
+  <AfterschoolActivityFile>
+    <File>NRaas.School.AfterschoolActivities</File>
+  </AfterschoolActivityFile>
+</CareerFiles>

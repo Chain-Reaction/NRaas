@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kHailKillsHarvestables value="0">
+      <!-- Percent chance hail kills harvestables on outdoor plants -->
+    </kHailKillsHarvestables>
+    <kHailKillsPlants value="0">
+      <!-- Percent chance hail kills plants outright -->
+    </kHailKillsPlants>
+    <kSuppressInsectInWinter value="True">
+      <!-- Whether to suppress insect spawners during winter -->
+    </kSuppressInsectInWinter>
+    <kAllowHolidayParties value="True">
+      <!-- Whether to suppress inactive holiday parties -->
+    </kAllowHolidayParties>
+  </Current_Tuning>
+</base>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kShowNoInteractions value="True">
+      <!--Whether to show the 'No Interactions' tooltip-->
+    </kShowNoInteractions>
+    <kMoveInteractionsToShift value="False">
+      <!--Whether to move all immediate interactions to the Shift-Click Cheat menu-->
+    </kMoveInteractionsToShift>
+    <kDreamCatcher value="True">
+      <!--Whether to allow switching to inactive by right clicking on them-->
+    </kDreamCatcher>
+    <kDebugging value="False">
+      <!--Whether to display debugging messages-->
+    </kDebugging>
+  </Current_Tuning>
+</base>

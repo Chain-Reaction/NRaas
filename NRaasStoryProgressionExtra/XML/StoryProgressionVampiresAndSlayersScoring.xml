@@ -1,0 +1,2236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scoring>
+  <Methods>
+    <Name></Name>
+    <FullClassName></FullClassName>
+    <Divisor>1</Divisor>
+    <LowerBound></LowerBound>
+    <UpperBound></UpperBound>
+  </Methods>
+  <Methods>
+    <Name>TownDraculCandidate</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownDraculRetention</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownDraculMemberRetention</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownDraculNonClan</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownDraculRecruit</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownLestatSubCandidate</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownLestatCandidate</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownLestatDinner</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownLestatRecruit</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownLestatSteal</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownLestatRetention</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownSlayerCandidate</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownSlayerRetention</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownSlayerRecruit</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>SlayerDuel</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownSlayerEvilVampire</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownSlayerNonLeaderWerewolf</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownHelsingNonLeaderWerewolf</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownNosferatuCandidate</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownNosferatuRetention</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownNosferatuRecruit</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownNosferatuVictim</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownNosferatuHunter</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownHelsingSubCandidate</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownHelsingCandidate</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownHelsingRetention</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownHelsingRecruit</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownHelsingNonLeaderVampire</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownSlayerHeadVampire</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownLestatNonMember</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.DualSimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+  <Methods>
+    <Name>TownSlayerVampireAttraction</Name>
+    <FullClassName>NRaas.CommonSpace.ScoringMethods.SimListedScoringMethod, NRaasStoryProgression</FullClassName>
+  </Methods>
+
+  <TownSlayerVampireAttraction>
+    <FullClassName></FullClassName>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Adventurous</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerVampireAttraction>
+  <TownSlayerVampireAttraction>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>-5</Minimum>
+    <Maximum>10</Maximum>
+  </TownSlayerVampireAttraction>
+
+  <TownLestatNonMember>
+    <FullClassName></FullClassName>
+  </TownLestatNonMember>
+  <TownLestatNonMember>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownLestat</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownLestatNonMember>
+
+  <TownHelsingNonLeaderVampire>
+    <FullClassName></FullClassName>
+  </TownHelsingNonLeaderVampire>
+  <TownHelsingNonLeaderVampire>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownHelsingNonLeaderVampire>
+  <TownHelsingNonLeaderVampire>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownHelsing</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownHelsingNonLeaderVampire>
+
+  <TownHelsingRetention>
+    <FullClassName></FullClassName>
+  </TownHelsingRetention>
+  <TownHelsingRetention>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Human</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownHelsingRetention>
+
+  <TownHelsingSubCandidate>
+    <FullClassName></FullClassName>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Scoring>TownHelsingRetention</Scoring>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Adventurous</Trait>
+    <Hit>40</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>40</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>40</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Charismatic</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Perceptive</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Lucky</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Excitable</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>TheHustler</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>XFactor</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Schmoozer</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Dramatic</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Diva</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>BookWorm</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Shy</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CommitmentIssues</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+  <TownHelsingSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownHelsingSubCandidate>
+
+  <TownHelsingRecruit>
+    <FullClassName></FullClassName>
+  </TownHelsingRecruit>
+  <TownHelsingRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Scoring>TownHelsingSubCandidate</Scoring>
+  </TownHelsingRecruit>
+  <TownHelsingRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownHelsingRecruit>
+  <TownHelsingRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>0</Minimum>
+    <Maximum>25</Maximum>
+  </TownHelsingRecruit>
+
+  <TownHelsingCandidate>
+    <FullClassName></FullClassName>
+  </TownHelsingCandidate>
+  <TownHelsingCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Scoring>TownHelsingSubCandidate</Scoring>
+  </TownHelsingCandidate>
+  <TownHelsingCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.WasClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownHelsing</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownHelsingCandidate>
+  <TownHelsingCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownHelsing</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownHelsingCandidate>
+
+  <TownNosferatuHunter>
+    <FullClassName></FullClassName>
+  </TownNosferatuHunter>
+  <TownNosferatuHunter>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownSlayer</Clan>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuHunter>
+  <TownNosferatuHunter>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownHelsing</Clan>
+    <Hit>1</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuHunter>
+
+  <TownNosferatuVictim>
+    <FullClassName></FullClassName>
+  </TownNosferatuVictim>
+  <TownNosferatuVictim>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuVictim>
+  <TownNosferatuVictim>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownSlayer</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuVictim>
+  <TownNosferatuVictim>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownHelsing</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuVictim>
+
+  <TownNosferatuRecruit>
+    <FullClassName></FullClassName>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>StoneHearted</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuRecruit>
+  <TownNosferatuRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>-5</Minimum>
+    <Maximum>20</Maximum>
+  </TownNosferatuRecruit>
+
+  <TownNosferatuCandidate>
+    <FullClassName></FullClassName>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.WasClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownNosferatu</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownNosferatu</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>50</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>50</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>50</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>30</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Diva</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Engaging</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Charismatic</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Insane</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Perceptive</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>StoneHearted</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Dramatic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Inappropriate</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>XFactor</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Excitable</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Lucky</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Perfectionist</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Schmoozer</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Workaholic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Unlucky</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Shy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CommitmentIssues</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+  <TownNosferatuCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownNosferatuCandidate>
+
+  <TownNosferatuRetention>
+    <FullClassName></FullClassName>
+  </TownNosferatuRetention>
+  <TownNosferatuRetention>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownNosferatuRetention>
+
+  <TownSlayerHeadVampire>
+    <FullClassName></FullClassName>
+  </TownSlayerHeadVampire>
+  <TownSlayerHeadVampire>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownLestat</Exclude>
+    <Hit>1</Hit>
+    <Miss>-1000</Miss>
+  </TownSlayerHeadVampire>
+  <TownSlayerHeadVampire>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownSlayerHeadVampire>
+
+  <TownSlayerEvilVampire>
+    <FullClassName></FullClassName>
+  </TownSlayerEvilVampire>
+  <TownSlayerEvilVampire>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownLestat</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerEvilVampire>
+  <TownSlayerEvilVampire>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownSlayer</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerEvilVampire>
+  <TownSlayerEvilVampire>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownSlayerEvilVampire>
+
+  <TownSlayerNonLeaderWerewolf>
+    <FullClassName></FullClassName>
+  </TownSlayerNonLeaderWerewolf>
+  <TownSlayerNonLeaderWerewolf>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownHound</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerNonLeaderWerewolf>
+  <TownSlayerNonLeaderWerewolf>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownSlayer</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerNonLeaderWerewolf>
+  <TownSlayerNonLeaderWerewolf>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Werewolf</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownSlayerNonLeaderWerewolf>
+
+  <TownHelsingNonLeaderWerewolf>
+    <FullClassName></FullClassName>
+  </TownHelsingNonLeaderWerewolf>
+  <TownHelsingNonLeaderWerewolf>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownHelsing</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownHelsingNonLeaderWerewolf>
+  <TownHelsingNonLeaderWerewolf>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Werewolf</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownHelsingNonLeaderWerewolf>
+
+  <SlayerDuel>
+    <FullClassName></FullClassName>
+  </SlayerDuel>
+  <SlayerDuel>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Scoring>Fight</Scoring>
+  </SlayerDuel>
+  <SlayerDuel>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownSlayer</Clan>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </SlayerDuel>
+  <SlayerDuel>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownHelsing</Clan>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </SlayerDuel>
+
+  <TownSlayerRecruit>
+    <FullClassName></FullClassName>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Adventurous</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Excitable</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>ComputerWhiz</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRecruit>
+  <TownSlayerRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>0</Minimum>
+    <Maximum>15</Maximum>
+  </TownSlayerRecruit>
+
+  <TownSlayerCandidate>
+    <FullClassName></FullClassName>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.WasClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownSlayer</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownSlayer</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.WeightScaledScoring, NRaasStoryProgression</FullClassName>
+    <UnderScore>0</UnderScore>
+    <OverScore>-10</OverScore>
+    <Scale>25</Scale>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.FitnessScaledScoring, NRaasStoryProgression</FullClassName>
+    <Score>5</Score>
+    <Scale>20</Scale>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>40</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>40</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>40</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>40</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CommitmentIssues</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Attractive</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Charismatic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>XFactor</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Vegetarian</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Lucky</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Unlucky</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Carefree</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Dramatic</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Diva</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>SocialButterfly</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Excitable</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+  <TownSlayerCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerCandidate>
+
+  <TownSlayerRetention>
+    <FullClassName></FullClassName>
+  </TownSlayerRetention>
+  <TownSlayerRetention>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownSlayerRetention>
+
+  <TownLestatDinner>
+    <FullClassName></FullClassName>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Athletic</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Attractive</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Carefree</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Schmoozer</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Mooch</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EyeCandy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Inappropriate</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Frugal</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Diva</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>SocialButterfly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>XFactor</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Insane</Trait>
+    <HitMinimum>-20</HitMinimum>
+    <HitMaximum>20</HitMaximum>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Shy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownLestatDinner>
+  <TownLestatDinner>
+    <FullClassName>NRaas.CommonSpace.Scoring.FitnessScaledScoring, NRaasStoryProgression</FullClassName>
+    <Score>5</Score>
+    <Scale>25</Scale>
+  </TownLestatDinner>
+
+  <TownLestatCandidate>
+    <FullClassName></FullClassName>
+  </TownLestatCandidate>
+  <TownLestatCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Flirty</Trait>
+    <Hit>50</Hit>
+    <Miss>-1000</Miss>
+  </TownLestatCandidate>
+  <TownLestatCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.WasClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownLestat</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownLestatCandidate>
+  <TownLestatCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownLestat</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownLestatCandidate>
+  <TownLestatCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownLestatCandidate>
+  <TownLestatCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Scoring>TownLestatSubCandidate</Scoring>
+  </TownLestatCandidate>
+
+  <TownLestatRecruit>
+    <FullClassName></FullClassName>
+  </TownLestatRecruit>
+  <TownLestatRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownLestatRecruit>
+  <TownLestatRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Scoring>TownLestatSubCandidate</Scoring>
+  </TownLestatRecruit>
+  <TownLestatRecruit>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownSlayer</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownLestatRecruit>
+  <TownLestatRecruit>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownHelsing</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownLestatRecruit>
+
+  <TownLestatSteal>
+    <FullClassName></FullClassName>
+  </TownLestatSteal>
+  <TownLestatSteal>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownLestatSteal>
+  <TownLestatSteal>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Scoring>TownLestatSubCandidate</Scoring>
+  </TownLestatSteal>
+
+  <TownLestatSubCandidate>
+    <FullClassName></FullClassName>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Carefree</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Flirty</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Adventurous</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>StoneHearted</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EyeCandy</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>AboveReproach</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Attractive</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Charismatic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>NoJealousy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>XFactor</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Engaging</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>SocialButterfly</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CommitmentIssues</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.WeightScaledScoring, NRaasStoryProgression</FullClassName>
+    <UnderScore>-5</UnderScore>
+    <OverScore>-5</OverScore>
+    <Scale>25</Scale>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.FitnessScaledScoring, NRaasStoryProgression</FullClassName>
+    <Score>5</Score>
+    <Scale>25</Scale>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasStoryProgression</FullClassName>
+    <AgeGender>Elder</AgeGender>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownLestatSubCandidate>
+  <TownLestatSubCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.AllowRomanceScoring, NRaasStoryProgression</FullClassName>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownLestatSubCandidate>
+
+  <TownLestatRetention>
+    <FullClassName></FullClassName>
+  </TownLestatRetention>
+  <TownLestatRetention>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownLestatRetention>
+
+  <TownDraculRecruit>
+    <FullClassName></FullClassName>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.IsCloselyRelatedScoring, NRaasStoryProgression</FullClassName>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Carefree</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EasilyImpressed</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CommitmentIssues</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Excitable</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Inappropriate</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Flirty</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>AboveReproach</Trait>
+    <Hit>25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Diva</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Dramatic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Rebellious</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HopelessRomantic</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>OverEmotional</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Shy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Daredevil</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Unlucky</Trait>
+    <HitMinimum>0</HitMinimum>
+    <HitMaximum>25</HitMaximum>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Lucky</Trait>
+    <HitMinimum>-25</HitMinimum>
+    <HitMaximum>0</HitMaximum>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Perfectionist</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Perceptive</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>PrivateEye</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Brave</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Observant</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Workaholic</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CanApprehendBurglar</Trait>
+    <Hit>-25</Hit>
+    <Miss>0</Miss>
+  </TownDraculRecruit>
+  <TownDraculRecruit>
+    <FullClassName>NRaas.CommonSpace.Scoring.DualSimGenericScoring, NRaasStoryProgression</FullClassName>
+    <Minimum>-25</Minimum>
+    <Maximum>5</Maximum>
+  </TownDraculRecruit>
+
+  <TownDraculNonClan>
+    <FullClassName></FullClassName>
+  </TownDraculNonClan>
+  <TownDraculNonClan>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsClanMemberScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownDracul</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculNonClan>
+
+  <TownDraculCandidate>
+    <FullClassName></FullClassName>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>50</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>MeanSpirited</Trait>
+    <Hit>50</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.WasClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Clan>TownDracul</Clan>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.StoryProgressionSpace.Scoring.IsAnyClanLeaderScoring, NRaasStoryProgression</FullClassName>
+    <Exclude>TownDracul</Exclude>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.WeightScaledScoring, NRaasStoryProgression</FullClassName>
+    <UnderScore>-5</UnderScore>
+    <OverScore>-5</OverScore>
+    <Scale>25</Scale>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.FitnessScaledScoring, NRaasStoryProgression</FullClassName>
+    <Score>5</Score>
+    <Scale>25</Scale>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasStoryProgression</FullClassName>
+    <AgeGender>Elder</AgeGender>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Evil</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Diva</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Engaging</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>NaturalBornPerformer</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>NaturalPerformer</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Charismatic</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Ambitious</Trait>
+    <Hit>20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>PerfectHost</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Nurturing</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Attractive</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Disciplined</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Eccentric</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>EyeCandy</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>GreatKisser</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Snob</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>XFactor</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>PartyAnimal</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Inappropriate</Trait>
+    <Hit>10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Slob</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Neurotic</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loner</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>HotHeaded</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Grumpy</Trait>
+    <Hit>-10</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Loser</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>CouchPotato</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Childish</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Clumsy</Trait>
+    <Hit>-20</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Friendly</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Coward</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Good</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+  <TownDraculCandidate>
+    <FullClassName>NRaas.CommonSpace.Scoring.TraitScoring, NRaasStoryProgression</FullClassName>
+    <Trait>Shy</Trait>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculCandidate>
+
+  <TownDraculRetention>
+    <FullClassName></FullClassName>
+  </TownDraculRetention>
+  <TownDraculRetention>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>0</Hit>
+    <Miss>-1000</Miss>
+  </TownDraculRetention>
+
+  <TownDraculMemberRetention>
+    <FullClassName></FullClassName>
+  </TownDraculMemberRetention>
+  <TownDraculMemberRetention>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasStoryProgression</FullClassName>
+    <Type>Vampire</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </TownDraculMemberRetention>
+
+</Scoring>

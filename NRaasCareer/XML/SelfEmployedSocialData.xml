@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<Socializing>
+
+  <Action key="NRaas Train Sim" com="Friendly" ver="BaseGame">
+    <Text key="NRaasTrainSim" pvt="AskedToBeTrained" />
+    <AD val="0x00000118">
+      <Misc ITLA="20" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="CouchPotato" />
+      <ATE val="Athletic" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.TrainSim, NRaasCareer, CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff  />
+        <TUN  />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim />
+        <Buff  />
+        <TUN  />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.TrainSim,NRaasCareer,OnAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaas Ask About Funds" com="Friendly" ver="BaseGame">
+    <Text key="NRaasAskAboutFunds" pvt="NRaasAskAboutFunds" />
+    <AD val="0x00000118">
+      <Misc ITLA="60" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="Workaholic, Schmoozer, Ambitious" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.AskAboutFunds,NRaasCareer,CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.AskAboutFunds,NRaasCareer,OnAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff  />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.AskAboutFunds,NRaasCareer,OnAccepted" />
+        <TUN  />
+        <Topic />
+      </RHS>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.AskAboutFunds,NRaasCareer,OnAccepted" />
+        <Traits x="Workaholic" y="" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.AskAboutFunds,NRaasCareer,OnAccepted" />
+        <Traits x="Workaholic" y="" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Insulting" state="Bad">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.AskAboutFunds,NRaasCareer,OnAccepted" />
+        <Buff cus="BuffOnInsult" />
+        <TTL>Workaholic</TTL>
+        <TUN />
+        <Topic />
+      </RHS>
+
+      <LHS com="Insulting" val="51" ProcTest="TargetIsUnemployed">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Workaholic,HotHeaded" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Awkward" val="50" ProcTest="TargetIsUnemployed">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="27" ltro="5">
+        <LLTR min="40" />
+        <SC stc="Creepy" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="27" ltro="5">
+        <LLTR min="40" />
+        <SC stc="Creepy" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="27" ltro="5">
+        <LLTR min="40" />
+        <SC stc="Insulting" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="27" ltro="5">
+        <LLTR min="40" />
+        <SC stc="Insulting" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="24" ltro="5">
+        <LLTR min="20" />
+        <SC stc="Insulting" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="24" ltro="5">
+        <LLTR min="20" />
+        <SC stc="Creepy" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="24" ltro="5">
+        <LLTR min="20" />
+        <SC stc="Insulting" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="24" ltro="5">
+        <LLTR min="20" />
+        <SC stc="Creepy" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="17" ltro="5">
+        <LLTR min="0" />
+        <SC stc="Odd" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="17" ltro="5">
+        <LLTR min="0" />
+        <SC stc="Impolite" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="17" ltro="5">
+        <LLTR min="0" />
+        <SC stc="Odd" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="17" ltro="5">
+        <LLTR min="0" />
+        <SC stc="Impolite" val="True" />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="14" ltro="5">
+        <LLTR min="-19" />
+        <SC stc="Odd" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="14" ltro="5">
+        <LLTR min="-19" />
+        <SC stc="Impolite" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="14" ltro="5">
+        <LLTR min="-19" />
+        <SC stc="Odd" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="14" ltro="5">
+        <LLTR min="-19" />
+        <SC stc="Impolite" val="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="7" ltro="5">
+        <LLTR min="-19" />
+        <SC />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="7" ltro="5">
+        <LLTR min="-19" />
+        <SC />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="4" ltro="5">
+        <LLTR min="-39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Workaholic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="4" ltro="5">
+        <LLTR min="-39" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Ambitious" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+
+  <Action key="NRaas Challenge To Spar For Tournament" com="Neutral" ver="EP1">
+    <Text key="NRaasChallengeSpar" pvt="NRaasChallengeSpar" />
+    <AD val="0x00000219">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.SparChallenge,NRaasCareer,CallbackTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="challengeSpar" data="EP1" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="" val="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnChallengeSparAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+
+</Socializing>

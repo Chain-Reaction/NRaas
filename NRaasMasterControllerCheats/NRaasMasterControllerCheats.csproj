@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8C97561-B028-41EA-97A0-AE989524E6ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasMasterControllerCheats</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MasterControllerModule.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\VectorProcessor.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\LotProcessor.cs" />
+    <Compile Include="MasterControllerSpace\Helpers\ObjectProcessor.cs" />
+    <Compile Include="MasterControllerSpace\Households\CleanAll.cs" />
+    <Compile Include="MasterControllerSpace\Households\CollectInvestments.cs" />
+    <Compile Include="MasterControllerSpace\Households\ObjectAddToInventory.cs" />
+    <Compile Include="MasterControllerSpace\Households\ObjectInfo.cs" />
+    <Compile Include="MasterControllerSpace\Households\Depreciate.cs" />
+    <Compile Include="MasterControllerSpace\Households\FamilyFunds.cs" />
+    <Compile Include="MasterControllerSpace\Households\MakeHomeless.cs" />
+    <Compile Include="MasterControllerSpace\Households\ObjectReset.cs" />
+    <Compile Include="MasterControllerSpace\Households\ObjectStats.cs" />
+    <Compile Include="MasterControllerSpace\Households\RepairAll.cs" />
+    <Compile Include="MasterControllerSpace\Objects\RadiusAddToInventory.cs" />
+    <Compile Include="MasterControllerSpace\Objects\RadiusPurge.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CustomBuffSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SkillStamps\AddStampSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SkillStamps\ChangeStampSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SkillStamps\ISkillStampOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SkillStamps\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\SkillStamps\RemoveStampSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityRadiusAddToInventorySetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityRadiusPurgeSetting.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\AdjustAutonomy.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\ApplySkillStamp.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\BooksRead.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\ChangeCompositions.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\ChangeRecipes.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\ChangeSinging.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\ChangeAlchemyRecipes.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\FishingBooksRead.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\GeneralBooksRead.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\IBooksOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\PurgeWrittenBooks.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Books\ToddlerBooksRead.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\ChangeLTWCount.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\ChangeLearnedDrinks.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Compress.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\RandomSkills.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\SkillLevelBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\CopySkinTone.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Pregnancy\ResumePregnancy.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Pregnancy\PausePregnancy.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\PlayWithGenetics.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\CopyGenetics.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Pregnancy\DiscontinuePregnancy.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\AddChild.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\AddParent.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\AddSibling.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\GenealogyOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\IGenealogyOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\RemoveChild.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\RemoveParent.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\FamilyTree\RemoveSibling.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Pregnancy\IPregnancyOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Pregnancy\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\RandomizeGenetics.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Selectability.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\SetService.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\SkillLevel.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ChangeTraits.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\CleanTraits.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ChangeSocialTrait.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ChangeGraduationlTrait.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\DropTraits.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\PopulateTraits.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\DropRewards.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ITraitOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Baby\BabyGender.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Baby\BabyGenderOffset.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Baby\BabyMultiple.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Baby\BabySeed.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Baby\IBabyOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\Baby\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\GoHome.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\RemoveOutfit.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\AddCoworker.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\CareerBonus.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\CareerDaysOff.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\CareerPerformance.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChangeAlmaMater.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChangeAlmaMaterName.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChangeCareerLevel.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChooseBoss.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\AcademicDegrees.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\DaysOffBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\SchoolDaysOff.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\EndRetirement.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\GotoSchool.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\GotoWork.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\PerformanceBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\RemoveCoworker.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\RemoveQuit.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\SchoolPerformance.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AddOccult.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AgeBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AlienPercentage.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\OccultBase.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AgeRelative.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\DropOpponents.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Favorites\ChangeFavoriteColor.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Favorites\ChangeFavoriteFood.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Favorites\ChangeFavoriteMusic.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Favorites\IFavoritesOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Favorites\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\AgeAbsolute.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Buffs\AddBuff.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Buffs\AddBuffCustomList.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Buffs\IBuffsOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Buffs\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Buffs\RemoveBuff.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Bust.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\CelebrityLevel.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\CelebrityPoints.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\ChangeLifetimeWish.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\ChangeZodiac.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Fitness.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\GenderPreference.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\InstaBaby.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\LifetimeHappiness.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\MaxMotives.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Muscle.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\NormalMapValue.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\PartnerPollinate.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\RemoveOccult.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Weight.cs" />
+    <Compile Include="MasterControllerSpace\Town\ObjectAddToInventory.cs" />
+    <Compile Include="MasterControllerSpace\Town\ObjectInfo.cs" />
+    <Compile Include="MasterControllerSpace\Town\ObjectReset.cs" />
+    <Compile Include="MasterControllerSpace\Town\ObjectStats.cs" />
+    <Compile Include="MasterControllerSpace\Town\PurgeWrittenBooks.cs" />
+    <Compile Include="MasterControllerSpace\Town\RandomizeGenderPreference.cs" />
+    <Compile Include="MasterControllerSpace\Town\RandomizeVoices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NRaasMasterController\NRaasMasterController.csproj">
+      <Project>{05F375F2-3C0D-4DCC-972A-79BDABA88C47}</Project>
+      <Name>NRaasMasterController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="String Tables\StringTableCheats_Czech.txt" />
+    <Content Include="String Tables\StringTableCheats_Danish.txt" />
+    <Content Include="String Tables\StringTableCheats_Dutch.txt" />
+    <Content Include="String Tables\StringTableCheats_English.txt" />
+    <Content Include="String Tables\StringTableCheats_Finnish.txt" />
+    <Content Include="String Tables\StringTableCheats_French.txt" />
+    <Content Include="String Tables\StringTableCheats_German.txt" />
+    <Content Include="String Tables\StringTableCheats_Hungarian.txt" />
+    <Content Include="String Tables\StringTableCheats_Italian.txt" />
+    <Content Include="String Tables\StringTableCheats_Japanese.txt" />
+    <Content Include="String Tables\StringTableCheats_Korean.txt" />
+    <Content Include="String Tables\StringTableCheats_Polish.txt" />
+    <Content Include="String Tables\StringTableCheats_PortugueseStandard.txt" />
+    <Content Include="String Tables\StringTableCheats_Russian.txt" />
+    <Content Include="String Tables\StringTableCheats_SpanishStandard.txt" />
+    <Content Include="String Tables\StringTableCheats_Swedish.txt" />
+    <Content Include="String Tables\StringTableCheats_Taiwanese.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

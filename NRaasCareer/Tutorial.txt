@@ -1,0 +1,134 @@
+[size="3"][b]This tutorial is for use with Phase Three of the Careers Mod.[/b][/size]
+
+----
+
+The primary update in Phase Three of the Careers is the ability to easily distribute career data files to end-users.  The end-user no longer requires to make any changes on their end, simply install the new career data package and go.
+
+For those of you who read the Phase Two tutorial, the main changes are Steps 13 onwards, and the attached file.
+
+----
+
+Since the Careers Mod is meant to be simply a framework on which other modders can build their own custom careers, it's probably best to actually explain HOW to use the tool.
+
+[b]BEFORE YOU BEGIN[/b]
+
+One must be acquainted with the use of a Sims 3 Package Editor.  I use S3PE personally, but there are others available.
+
+You must also know how to read XML and understand the format enough to at least copy/paste existing XML and change it.
+
+[b]STEPS[/b]
+
+1) Create a copy of the NRaas_CareersDataSchool.package and rename it to be something new.  the name of file can be whatever you feel like.  For this example I will call the file "Bobs_CareerData.package".  We are using the School package as it contains all the XML (where-as the other packages have only a subset).
+
+2) Open your package with a package editor (I will be using S3PE during this guide, so steps may vary)
+
+3) Enable the "Names" and "Tags" options so you can see the Name and Tag columns on the listing
+
+4) Within the package you will find the following:
+[list]
+[*]NRaas.Careers
+[indent]This XML file contains the body of the Careers information[/indent]
+[*]NRaas.CareerEvents
+[indent]This XML file contains the opportunities associated with a Career[/indent]
+[*]NRaas.Opportunities
+[indent]This XML file contains any custom opportunities themselves[/indent]
+[*]NRaas.Tones
+[indent]This XML file contains any custom tones associated with a Career[/indent]
+[*]Strings_*
+[indent]These files contain the language localization strings used by the careers[/indent]
+[/list]
+
+5) First thing we must do is change all the Instance IDs so they do not conflict with the original set of career data
+
+Choose a name for your career data...  Make it unique.  In this example I will use the following names:
+
+Bobs.Careers
+Bobs.CareerEvents
+Bobs.Opportunities
+Bobs.Tones
+
+Run the "Tools \ FNV Hash" menu operation and enter in one of the new names.  Press the "Calculate" and copy the "FNV64" value to somewhere safe.
+
+The results of the example names:
+0xEEE5B989933FAD8E
+0x842E293237D049A4
+0xC4D706471C5D2768
+0xE5CBAE33EFF90634
+
+6) Now double click on the "NRaas.Careers" line in the listing.  In the Resource Details window, replace the "Instance" with the appropriate new ID.  And then change the "Name" to your unhashed name.
+
+Repeat this process for the other three files.
+
+7) You should probably save now.
+
+8) Now you may open each file using the "Editor" button and change the data within them.  You can delete all the data for the default careers, as that data is still in the original copy of the package.
+
+9) Once you have completed filling in those files, you must now create the language localization file for at least English.
+
+10) Firstly, you must choose a new Instance ID for the STBL files.  I will simply reuse the "Bobs.Careers" ID.
+
+The first two digits of the Instance for a STBL file is the language it is associated with.  Change the first two digits to "00" for the English STBL (you can see the other codes in the existing file).
+
+So the Instance in this example would be 0x00E5B989933FAD8E for the English file.
+
+Note, if you don't intend to make your career publicly available, it is only necessary to change the STBL file for your language.
+
+11) For creation of the STBL, I use a separate utility called STBL.exe .  The application is available in the Language Localization forum where I store all the translation files for my mods.
+
+It takes an XML file containing the keys and creates STBL file that can be imported into a package.
+
+An example of one such XML string table is attached to the Careers Mod post.
+
+12) Once you have completed importing the required string tables.  Save the file.
+
+13) Next step...  Exposing "Bobs_CareersData.package" to the Career Mod itself.
+
+14) Download the attached zip and extract to its own folder.  In it you will find two files.  An application called BootStrapCreator.exe and a DLL called NRaasBootStrap.dll
+
+15) Run BootStrapCreator.exe and the program will create a new DLL with a randomly generated name.  This is your personal scripting mod dll.  Since the name is random, I will use 01234567890123.dll in this example.
+                        
+16) Go back you package in S3PE.  Look for the S3SA line that says 70214830780050.dll .  There are two, so make sure you select the S3SA tagged line.
+
+17) Press the "Grid" button, select the "Import/Export" item and choose "Import" to load your newly generated scripting mod into that location, and then Commit.
+
+18) Now take the full name of your DLL (including extension and '.') and FNV64 it.  In the case of 01234567890123.dll, the hash is 0xE6911C8A4E3421EA.
+
+19) Replace the Instance ID for BOTH lines that show 70214830780050.dll .  Remember to change BOTH the _XML and S3SA elements to the new Instance ID.
+
+20) Rename the 70214830780050.dll elements to match your script dll name...  In my case: 01234567890123.dll
+
+21) Now open the _XML element 01234567890123.dll .  In it is the <CareerFiles> data that links your data-set into the Career Mod.
+
+22) Within that file you need to enter a reference to your newly created XML files.  Here is what the XML for this example would look like:
+
+[code]<?xml version="1.0"?>
+<CareerFiles>
+  <OpportunityFile>
+	<Opportunities></Opportunities>
+  </OpportunityFile>
+  <OpportunityFile>
+	<Opportunities>Bobs.Opportunities</Opportunities>
+  </OpportunityFile>
+  <CareerFile>
+	<Careers></Careers>
+	<CareerEvents></CareerEvents>
+  </CareerFile>
+  <CareerFile>
+	<Careers>Bobs.Careers</Careers>
+	<CareerEvents>Bobs.CareerEvents</CareerEvents>
+  </CareerFile>
+  <ToneFile>
+	<Tones></Tones>
+  </ToneFile>
+  <ToneFile>
+	<Tones>Bobs.Tones</Tones>
+  </ToneFile>
+</CareerFiles>[/code]
+
+23) Save that file.
+
+24) Now copy all the files, including the new "Bobs_CareerData.package", into the appropriate location in your Mods folders.
+
+25) Run the game, and your new career should appear.
+
+Cheers. :)

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<SocialData>
+  <Action key="NRaas Recruit" com="Neutral" ver="BaseGame">
+    <Text key="NRaasRecruit" pvt="NRaasRecruit" />
+    <AD val="0x00000118">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ALTR min="40" max="100" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Recruit, NRaasCareer, Test" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Recruit,NRaasCareer,OnAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="NRaas Shakedown" com="Insulting" ver="BaseGame">
+    <Text key="NRaasShakedown" pvt="NRaasShakedown" />
+    <AD val="0x00000118">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ALTR min="-101" max="101" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="MeanSpirited,Evil" />
+      <Available auto="False" udo="False" />
+      <ProcTest key="NRaas.CareerSpace.Interactions.Shakedown, NRaasCareer, Test" />
+    </AA>
+    <Jazz>
+      <Graph val="social_insult" data="BaseGame" x="Bad" y="Bad" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="accept">
+        <EndStance x="Bad" y="" />
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.CareerSpace.Interactions.Shakedown,NRaasCareer,OnAccepted" />
+        <Trait x="MeanSpirited,Evil" y="" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+</SocialData>

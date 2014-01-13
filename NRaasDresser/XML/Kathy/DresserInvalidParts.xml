@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <InvalidParts>
+    <!-- This is the default set, do not alter or remove it -->
+    <BodyType></BodyType>
+    <Instance></Instance>
+    <Group></Group>
+    <Age>AgeMask</Age>
+    <Gender>GenderMask</Gender>
+    <Categories>All</Categories>
+    <Extended></Extended>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Crumplebottom hair -->
+    <Instance>0x3f47e8f2884058d6</Instance>
+    <Group>0x00000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Curly Hair (Teen/Adult) -->
+    <Instance>0x4cd3626b210d0127</Instance>
+    <Group>0x01000000</Group>
+    <Gender>Male</Gender>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Curly Hair (Child) -->
+    <Instance>0x9c6e8e9f4264195f</Instance>
+    <Group>0x01000000</Group>
+    <Gender>Male</Gender>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Flippers (Adult) -->
+    <Instance>0x41435ac5d190f3c8</Instance>
+    <Group>0x01000000</Group>
+    <Categories>Athletic, Everyday</Categories>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Flippers (Teen) -->
+    <Instance>0x145AB1A6F9DAF0E3</Instance>
+    <Group>0x01000000</Group>
+    <Categories>Athletic, Everyday</Categories>
+  </InvalidParts>  
+  <InvalidParts>
+    <!-- Overalls -->
+    <Instance>0xdc91c0656eccfea6</Instance>
+    <Group>0x01000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Coconuts -->
+    <Instance>0x62481cf34d1ee327</Instance>
+    <Group>0x01000000</Group>
+    <Categories>Everyday, Sleepwear, Athletic</Categories>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Frizzy Hair -->
+    <Instance>0x1f1906c29e115312</Instance>
+    <Group>0x00000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Hiking Boots -->
+    <Instance>0x68cd575894d4e246</Instance>
+    <Group>0x08000000</Group>
+    <Gender>Female</Gender>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Bald Hair -->
+    <Instance>0x2aa6be462136b73c</Instance>
+    <Group>0x01000000</Group>
+    <Gender>Female</Gender>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Wet T-Shirt -->
+    <Instance>0xFDBB5C6CDAC0E20C</Instance>
+    <Group>0x01000000</Group>
+    <Categories>Everyday, Formalwear, Sleepwear, Athletic, Career</Categories>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- No Shoes for sleep -->
+    <BodyType>Shoes</BodyType>
+    <Categories>Sleepwear</Categories>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Non Materity Dress -->
+    <Instance>0x76D7AB10E61F060E</Instance>
+    <Group>0x01000000</Group>
+    <Extended>ValidForMaternity</Extended>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Non Materity Dress -->
+    <Instance>0x5968A1E76B397247</Instance>
+    <Group>0x01000000</Group>
+    <Extended>ValidForMaternity</Extended>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Non Materity Dress -->
+    <Instance>0x9999ABA1A4874672</Instance>
+    <Group>0x01000000</Group>
+    <Extended>ValidForMaternity</Extended>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Speedo -->
+    <Instance>0x4F8C78EB48C7C273</Instance>
+    <Group>0x01000000</Group>
+    <Categories>Everyday, Athletic</Categories>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Bad Child Hair -->
+    <Instance>0xB1DDF0A60A1F3FF2</Instance>
+    <Group>0x00000000</Group>
+    <Age>Toddler</Age>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Fire helmet - Male -->
+    <Instance>0x4705BE269848D9BA</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Fire helmet - Female -->
+    <Instance>0xD2FD7F2573CF6DE9</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>  
+  <InvalidParts>
+    <!-- Hard hat - Male -->
+    <Instance>0x0E57EC04557861C6</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Hard hat - Female -->
+    <Instance>0xEFBCE289517D8665</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Hard hat - Male -->
+    <Instance>0xBAA80DC88DD9B54A</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Hard hat - Female -->
+    <Instance>0x62AEC8596490A534</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Hard hat - Male -->
+    <Instance>0xC32ED610EFF2F5E7</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Hard hat - Female -->
+    <Instance>0xDE765E985A4C8991</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Hard hat - Female -->
+    <Instance>0xBA8A276D61F74A34</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Bike helmet - Male -->
+    <Instance>0x45563B32F3642828</Instance>
+    <Group>0x20000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Bike helmet - Female -->
+    <Instance>0xCEA9507548DB7B1B</Instance>
+    <Group>0x20000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Bike helmet - Male -->
+    <Instance>0xD09BF30AB9E4571B</Instance>
+    <Group>0x00000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Bike helmet - Female -->
+    <Instance>0xB8760DCF78099D84</Instance>
+    <Group>0x00000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Motorcycle helmet - Male -->
+    <Instance>0xF631C2752C583EA6</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Motorcycle helmet - Female -->
+    <Instance>0xEAF0BE1D92DFF2BB</Instance>
+    <Group>0x18000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Bike hat - Male -->
+    <Instance>0x2E40973FF360799C</Instance>
+    <Group>0x01000000</Group>
+  </InvalidParts>
+  <InvalidParts>
+    <!-- Female Beard Mascara -->
+    <Instance>0x9C6ED4D581B68772</Instance>
+    <Group>0x00000000</Group>
+  </InvalidParts>
+</base>

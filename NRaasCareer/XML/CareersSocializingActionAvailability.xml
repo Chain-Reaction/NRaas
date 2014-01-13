@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<SocializingActiveTopic>
+  <ActiveTopic>
+    <Name></Name>
+    <Text></Text>
+    <AvailableForOtherSim>0</AvailableForOtherSim>
+    <TestFunction></TestFunction>
+    <Balloon></Balloon>
+    <AvailableWhenConversationStarts>0</AvailableWhenConversationStarts>
+    <AvailableBeforeTargetHasBeenGreeted>0</AvailableBeforeTargetHasBeenGreeted>
+    <UsedUpAfterDoneOnce>1</UsedUpAfterDoneOnce>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>Learn Mobster Career</Name>
+    <Text>LearnMobsterCareer</Text>
+    <AvailableForOtherSim>1</AvailableForOtherSim>
+    <Balloon>Career Criminal</Balloon>
+    <UsedUpAfterDoneOnce>0</UsedUpAfterDoneOnce>
+  </ActiveTopic>
+  <ActiveTopic>
+    <Name>NRaas Recruit</Name>
+    <Text>NRaasRecruit</Text>
+  </ActiveTopic>
+
+  <SAA>
+    <Cat></Cat>
+    <Gr></Gr>
+    <FPA></FPA>
+    <SPA></SPA>
+  </SAA>
+  <SAA>
+    <Cat>Ok</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Romantic Interest</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Good Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friends Forever</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Old Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Recruit</FPA>
+    <SPA>NRaas Recruit</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Shakedown</FPA>
+    <SPA>NRaas Shakedown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>Question</FPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Friendly</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Romantic Interest</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Good Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friends Forever</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Old Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Recruit</FPA>
+    <SPA>NRaas Recruit</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Shakedown</FPA>
+    <SPA>NRaas Shakedown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>Question</FPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Very Friendly</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Romantic Interest</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Good Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Best Friends Forever</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Old Friend</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Recruit</FPA>
+    <SPA>NRaas Recruit</SPA>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Shakedown</FPA>
+    <SPA>NRaas Shakedown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>Question</FPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Impolite</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Shakedown</FPA>
+    <SPA>NRaas Shakedown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>Question</FPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Insulting</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Shakedown</FPA>
+    <SPA>NRaas Shakedown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>Question</FPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Creepy</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Shakedown</FPA>
+    <SPA>NRaas Shakedown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>Question</FPA>
+  </SAA>
+
+  <SAA>
+    <Cat>Frightening</Cat>
+  </SAA>
+  <SAA>
+    <Gr>Default</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Partner</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Fiancee</Gr>
+  </SAA>
+  <SAA>
+    <Gr>Spouse</Gr>
+  </SAA>
+  <SAA>
+    <FPA>NRaas Shakedown</FPA>
+    <SPA>NRaas Shakedown</SPA>
+  </SAA>
+  <SAA>
+    <FPA>Question</FPA>
+  </SAA>
+
+</SocializingActiveTopic>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Socializing>
+
+  <Action key="NRaas Sell Pet" com="Friendly" ver="EP5">
+    <Text key="NRaasSellPet" pvt="NRaasSellPet" />
+    <AD val="0x00000118">
+      <Misc ITLA="60" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE />
+      <Available auto="False" udo="True" />
+      <ProcTest key="NRaas.ConsignerSpace.Interactions.SellPetSocial,NRaasConsigner,Test" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.ConsignerSpace.Interactions.SellPetSocial,NRaasConsigner,OnAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="NRaas.ConsignerSpace.Interactions.SellPetSocial,NRaasConsigner,OnAccepted" />
+        <TUN />
+        <Topic />
+      </RHS>      
+    </Rules>
+  </Action>
+</Socializing>

@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{440A9C04-9DC4-462C-8D27-2D6F3651F03F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasRelativity</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterHelper.cs">
+      <Link>CommonSpace\Booters\BooterHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
+      <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CommoditiesEx.cs">
+      <Link>CommonSpace\Helpers\CommoditiesEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\GameflowEx.cs">
+      <Link>CommonSpace\Helpers\GameflowEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\LifeSpan.cs">
+      <Link>CommonSpace\Helpers\LifeSpan.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StatBin.cs">
+      <Link>CommonSpace\Helpers\StatBin.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\EnumSettingOption.cs">
+      <Link>CommonSpace\Options\EnumSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\FloatSettingOption.cs">
+      <Link>CommonSpace\Options\FloatSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\IntegerSettingOption.cs">
+      <Link>CommonSpace\Options\IntegerSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ListedSettingOption.cs">
+      <Link>CommonSpace\Options\ListedSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
+      <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\RepeatingTask.cs">
+      <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
+    </Compile>
+    <Compile Include="Relativity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelativitySpace\Alterations\BoardBreakerAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\Alteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\AlterationList.cs" />
+    <Compile Include="RelativitySpace\Alterations\CleaningAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\InverseMotiveAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\JungleGymAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\SinkAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\MotiveAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\MotiveDecayAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\UpgradeFireplaceAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\UpgradeAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\GenericAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\FloatAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\AlterationBase.cs" />
+    <Compile Include="RelativitySpace\Alterations\RepairAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\SkillBookAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\WaterPlantAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\HarvestAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\SkillAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\RelativeAlteration.cs" />
+    <Compile Include="RelativitySpace\Alterations\IAlteration.cs" />
+    <Compile Include="RelativitySpace\Helpers\SimEx.cs" />
+    <Compile Include="RelativitySpace\Helpers\MotiveKeyValue.cs" />
+    <Compile Include="RelativitySpace\Helpers\MotiveKey.cs" />
+    <Compile Include="RelativitySpace\Helpers\PriorValues.cs" />
+    <Compile Include="RelativitySpace\Helpers\TuningAlterations.cs" />
+    <Compile Include="RelativitySpace\Options\ApplyLifeSpanSkillFactor.cs" />
+    <Compile Include="RelativitySpace\Options\ActiveSimFactorReduction.cs" />
+    <Compile Include="RelativitySpace\Options\ActiveSimFactorMinimum.cs" />
+    <Compile Include="RelativitySpace\Options\CommonMotive\Age.cs" />
+    <Compile Include="RelativitySpace\Options\CommonMotive\Commodity.cs" />
+    <Compile Include="RelativitySpace\Options\PerformRelativeTuningAlterations.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\AddNewFactor\FactorValue.cs" />
+    <Compile Include="RelativitySpace\Options\CommonMotive\Species.cs" />
+    <Compile Include="RelativitySpace\Options\CommonMotive\Occult.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\AddNewFactor\Age.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\AddNewFactor\Commodity.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\AddNewFactor\IAddNewFactorOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\AddNewFactor\ListingOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\AddNewFactor\Occult.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\AddNewFactor\Species.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\AddNewFactor\Age.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\AddNewFactor\Commodity.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\AddNewFactor\FactorValue.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\AddNewFactor\IAddNewFactorOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\AddNewFactor\ListingOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\AddNewFactor\Occult.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\AddNewFactor\Species.cs" />
+    <Compile Include="RelativitySpace\Options\SkipOnHumanSleep.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\IMotiveDecayDeltaOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\ListingOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDecayDelta\MotiveDecayDeltaFactor.cs" />
+    <Compile Include="RelativitySpace\Options\SwitchSpeedOnFast.cs" />
+    <Compile Include="RelativitySpace\Options\PauseOnCompletion.cs" />
+    <Compile Include="RelativitySpace\Options\RelativeSkills\IRelativeSkillOption.cs" />
+    <Compile Include="RelativitySpace\Options\RelativeSkills\ListingOption.cs" />
+    <Compile Include="RelativitySpace\Options\RelativeSkills\RelativeSkill.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\DumpSpeeds.cs" />
+    <Compile Include="RelativitySpace\Options\CyclesPerUpdate.cs" />
+    <Compile Include="RelativitySpace\Options\Debugging.cs" />
+    <Compile Include="RelativitySpace\Options\Disable.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\IMotiveDeltaOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\ListingOption.cs" />
+    <Compile Include="RelativitySpace\Options\MotiveDelta\MotiveDeltaFactor.cs" />
+    <Compile Include="RelativitySpace\Options\RelativeMotives\IRelativeMotivesOption.cs" />
+    <Compile Include="RelativitySpace\Options\RelativeMotives\ListingOption.cs" />
+    <Compile Include="RelativitySpace\Options\RelativeMotives\RelativeMotive.cs" />
+    <Compile Include="RelativitySpace\Options\SpeedBase.cs" />
+    <Compile Include="RelativitySpace\Options\ShowNotice.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\Interval\DaysOption.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\Interval\EndHour.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\Interval\StartHour.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\Interval\Speed.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\AddInterval.cs" />
+    <Compile Include="RelativitySpace\Options\SkillGain\SkillGainFactor.cs" />
+    <Compile Include="RelativitySpace\Options\SkillGain\ISkillGainOption.cs" />
+    <Compile Include="RelativitySpace\Options\SkillGain\ListingOption.cs" />
+    <Compile Include="RelativitySpace\SpeedInterval.cs" />
+    <Compile Include="RelativitySpace\Interactions\ClockInteraction.cs" />
+    <Compile Include="RelativitySpace\Options\SetSpeed.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\Interval\IIntervalOption.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\Interval\ListingOption.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\Interval\Remove.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\ISpeedsOption.cs" />
+    <Compile Include="RelativitySpace\Options\Speeds\ListingOption.cs" />
+    <Compile Include="RelativitySpace\PersistedSettings.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x0CAE1C361E05B2B3_Sims3StoreObjects">
+      <HintPath>..\Sims3\Compiler\0x0CAE1C361E05B2B3_Sims3StoreObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableCzech.txt" />
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTableDutch.txt" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableHungarian.txt" />
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="StringTables\StringTableJapanese.txt" />
+    <Content Include="StringTables\StringTablePolish.txt" />
+    <Content Include="StringTables\StringTablePortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableRussian.txt" />
+    <Content Include="StringTables\StringTableSwedish.txt" />
+    <Content Include="StringTables\StringTableTaiwanese.txt" />
+    <Content Include="XML\RelativitySpacePersistedSettings.xml" />
+    <Content Include="XML\RelativityTuning.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

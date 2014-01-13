@@ -1,0 +1,1242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AAAE3A6-D66F-47F9-A55C-68CF03A8E54F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <AssemblyName>NRaasStoryProgression</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOT_NEXTPHASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;NOT_NEXTPHASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterHelper.cs">
+      <Link>CommonSpace\Booters\BooterHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Booters\ScoringBooter.cs">
+      <Link>CommonSpace\Booters\ScoringBooter.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToMultiList.cs">
+      <Link>CommonSpace\Converters\StringToMultiList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToSpeciesList.cs">
+      <Link>CommonSpace\Converters\StringToSpeciesList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Dialogs\ObjectPickerDialogEx.cs">
+      <Link>StoryProgressionSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Annihilation.cs">
+      <Link>CommonSpace\Helpers\Annihilation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
+      <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CareerManagerEx.cs">
+      <Link>CommonSpace\Helpers\CareerManagerEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Consignments.cs">
+      <Link>CommonSpace\Helpers\Consignments.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Corrections.cs">
+      <Link>CommonSpace\Helpers\Corrections.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\DreamCatcher.cs">
+      <Link>CommonSpace\Helpers\DreamCatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ExportBinContentsEx.cs">
+      <Link>CommonSpace\Helpers\ExportBinContentsEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\FacialBlends.cs">
+      <Link>CommonSpace\Helpers\FacialBlends.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\FilePersistence.cs">
+      <Link>CommonSpace\Helpers\FilePersistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\GoToSchoolInRabbitHoleHelper.cs">
+      <Link>CommonSpace\Helpers\GoToSchoolInRabbitHoleHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\HomeInspection.cs">
+      <Link>CommonSpace\Helpers\HomeInspection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\HouseholdEx.cs">
+      <Link>CommonSpace\Helpers\HouseholdEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\HouseholdMemberEx.cs">
+      <Link>CommonSpace\Helpers\HouseholdMemberEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Households.cs">
+      <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\InsectTerrariums.cs">
+      <Link>CommonSpace\Helpers\InsectTerrariums.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\InteractionsEx.cs">
+      <Link>CommonSpace\Helpers\InteractionsEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Inventories.cs">
+      <Link>CommonSpace\Helpers\Inventories.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Investments.cs">
+      <Link>CommonSpace\Helpers\Investments.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\LifeSpan.cs">
+      <Link>CommonSpace\Helpers\LifeSpan.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\LifetimeWant.cs">
+      <Link>CommonSpace\Helpers\LifetimeWant.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Lots.cs">
+      <Link>CommonSpace\Helpers\Lots.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\MiniSims.cs">
+      <Link>CommonSpace\Helpers\MiniSims.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\NormalMap.cs">
+      <Link>CommonSpace\Helpers\NormalMap.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\PetAdoptions.cs">
+      <Link>CommonSpace\Helpers\PetAdoptions.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Pregnancies.cs">
+      <Link>CommonSpace\Helpers\Pregnancies.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\ReferenceWrapper.cs">
+      <Link>CommonSpace\Helpers\ReferenceWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Roles.cs">
+      <Link>CommonSpace\Helpers\Roles.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SavedOutfit.cs">
+      <Link>CommonSpace\Helpers\SavedOutfit.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimDescriptionEx.cs">
+      <Link>CommonSpace\Helpers\SimDescriptionEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SleepWatch.cs">
+      <Link>CommonSpace\Helpers\SleepWatch.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StackTracer.cs">
+      <Link>CommonSpace\Helpers\StackTracer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StatBin.cs">
+      <Link>CommonSpace\Helpers\StatBin.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
+      <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SwitchOutfits.cs">
+      <Link>CommonSpace\Helpers\SwitchOutfits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Traits.cs">
+      <Link>CommonSpace\Helpers\Traits.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Tunings.cs">
+      <Link>CommonSpace\Helpers\Tunings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Urnstones.cs">
+      <Link>CommonSpace\Helpers\Urnstones.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Proxies\HouseholdContentsProxy.cs">
+      <Link>CommonSpace\Proxies\HouseholdContentsProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Replacers\SocialRHSReplacer.cs">
+      <Link>CommonSpace\Replacers\SocialRHSReplacer.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\DualSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\DualSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\GenericSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\GenericSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\ListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\ListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\ScoringBin.cs">
+      <Link>CommonSpace\ScoringMethods\ScoringBin.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\ScoringList.cs">
+      <Link>CommonSpace\ScoringMethods\ScoringList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\ScoringLookup.cs">
+      <Link>CommonSpace\ScoringMethods\ScoringLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\SimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\SimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\SimScoringList.cs">
+      <Link>CommonSpace\ScoringMethods\SimScoringList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\AgeGenderMatchScoring.cs">
+      <Link>CommonSpace\Scoring\AgeGenderMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\AgeGenderScoring.cs">
+      <Link>CommonSpace\Scoring\AgeGenderScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\BestestFlirtScoring.cs">
+      <Link>CommonSpace\Scoring\BestestFlirtScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\BuffScoring.cs">
+      <Link>CommonSpace\Scoring\BuffScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CareerLevelScoring.cs">
+      <Link>CommonSpace\Scoring\CareerLevelScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CareerRabbitholeMatchScoring.cs">
+      <Link>CommonSpace\Scoring\CareerRabbitholeMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CareerRabbitholeScoring.cs">
+      <Link>CommonSpace\Scoring\CareerRabbitholeScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedAgeGenderMatchScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedAgeGenderMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedDualLifetimeWantScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedDualLifetimeWantScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedLifetimeWantScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedLifetimeWantScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedOtherSimTraitScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedOtherSimTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedSimScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedSimScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedTraitScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\DivorcedScoring.cs">
+      <Link>CommonSpace\Scoring\DivorcedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\DualLifetimeWantScoring.cs">
+      <Link>CommonSpace\Scoring\DualLifetimeWantScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\DualSimGenericScoring.cs">
+      <Link>CommonSpace\Scoring\DualSimGenericScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\DualSimMethodScoring.cs">
+      <Link>CommonSpace\Scoring\DualSimMethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FacialMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FacialMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteColorMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteColorMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteFoodMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteFoodMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FavoriteMusicMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FavoriteMusicMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FitnessMatchScoring.cs">
+      <Link>CommonSpace\Scoring\FitnessMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\FitnessScaledScoring.cs">
+      <Link>CommonSpace\Scoring\FitnessScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\HitMissScoring.cs">
+      <Link>CommonSpace\Scoring\HitMissScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsChildScoring.cs">
+      <Link>CommonSpace\Scoring\IsChildScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsCloselyRelatedScoring.cs">
+      <Link>CommonSpace\Scoring\IsCloselyRelatedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsOlderScoring.cs">
+      <Link>CommonSpace\Scoring\IsOlderScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsParentScoring.cs">
+      <Link>CommonSpace\Scoring\IsParentScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsSiblingScoring.cs">
+      <Link>CommonSpace\Scoring\IsSiblingScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\IsYoungerScoring.cs">
+      <Link>CommonSpace\Scoring\IsYoungerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LifetimeWantScoring.cs">
+      <Link>CommonSpace\Scoring\LifetimeWantScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermPartnerScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermPartnerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipBaseScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipBaseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipScaledScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\LongTermRelationshipScoring.cs">
+      <Link>CommonSpace\Scoring\LongTermRelationshipScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\MarriedScoring.cs">
+      <Link>CommonSpace\Scoring\MarriedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\MethodScoring.cs">
+      <Link>CommonSpace\Scoring\MethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\OccupationScoring.cs">
+      <Link>CommonSpace\Scoring\OccupationScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\OtherSimTraitScoring.cs">
+      <Link>CommonSpace\Scoring\OtherSimTraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\PartnerScoring.cs">
+      <Link>CommonSpace\Scoring\PartnerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RandomScoring.cs">
+      <Link>CommonSpace\Scoring\RandomScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RelationshipBitScoring.cs">
+      <Link>CommonSpace\Scoring\RelationshipBitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\RelationshipCircleScoring.cs">
+      <Link>CommonSpace\Scoring\RelationshipCircleScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SameHouseScoring.cs">
+      <Link>CommonSpace\Scoring\SameHouseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\Scoring.cs">
+      <Link>CommonSpace\Scoring\Scoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimGenericScoring.cs">
+      <Link>CommonSpace\Scoring\SimGenericScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimMethodScoring.cs">
+      <Link>CommonSpace\Scoring\SimMethodScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimScaledScoring.cs">
+      <Link>CommonSpace\Scoring\SimScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimTypeMatchScoring.cs">
+      <Link>CommonSpace\Scoring\SimTypeMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SimTypeScoring.cs">
+      <Link>CommonSpace\Scoring\SimTypeScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SkillCareerScoring.cs">
+      <Link>CommonSpace\Scoring\SkillCareerScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SkillLevelScoring.cs">
+      <Link>CommonSpace\Scoring\SkillLevelScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\SkillMetricScoring.cs">
+      <Link>CommonSpace\Scoring\SkillMetricScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitBaseScoring.cs">
+      <Link>CommonSpace\Scoring\TraitBaseScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitCompareScoring.cs">
+      <Link>CommonSpace\Scoring\TraitCompareScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitMatchScoring.cs">
+      <Link>CommonSpace\Scoring\TraitMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitMismatchScoring.cs">
+      <Link>CommonSpace\Scoring\TraitMismatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\TraitScoring.cs">
+      <Link>CommonSpace\Scoring\TraitScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\WeightMatchScoring.cs">
+      <Link>CommonSpace\Scoring\WeightMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\WeightScaledScoring.cs">
+      <Link>CommonSpace\Scoring\WeightScaledScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\YoungChildrenScoring.cs">
+      <Link>CommonSpace\Scoring\YoungChildrenScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\ZodiacMatchScoring.cs">
+      <Link>CommonSpace\Scoring\ZodiacMatchScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\selection\ProtoSimSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Stores\OpportunityStore.cs">
+      <Link>CommonSpace\Stores\OpportunityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\FixInvisibleTask.cs">
+      <Link>CommonSpace\Tasks\FixInvisibleTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\RecoverMissingSimTask.cs">
+      <Link>CommonSpace\Tasks\RecoverMissingSimTask.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Tasks\ResetSimTask.cs">
+      <Link>CommonSpace\Tasks\ResetSimTask.cs</Link>
+    </Compile>
+    <Compile Include="StoryProgressionModule.cs" />
+    <Compile Include="StoryProgressionSpace\AgeUpBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\BooleanOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Careers\Retired.cs" />
+    <Compile Include="StoryProgressionSpace\BooleanManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\BooleanAlarmOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\BooleanEventOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\ChanceScenarioOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\BySpeciesManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\CasteOptions.cs" />
+    <Compile Include="StoryProgressionSpace\BooleanBaseManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\ByOccultManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INotExportableOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ICustomClearOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ICasteFilterOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INotHeadOfFamilyCasteLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\OccupationManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\IntegerByOccultManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IOccultOption.cs" />
+    <Compile Include="StoryProgressionSpace\MultiEnumManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\ExportTuningItem.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\Installer.cs" />
+    <Compile Include="StoryProgressionSpace\HouseChangedBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interactions\GoToJail.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IAfterImportOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INotCasteLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\MultiListedBaseManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\EnumBaseManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ISimFromBinOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ISimFromBin.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ISimFromBinManager.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowPushAtDayOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowGoHomePushOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowPushPartyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowPushWorkOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteScoringOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowLotPushOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteApplyToHouseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CastePersonalityMemberOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CastePersonalityLeaderOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteTraitRequireOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteTraitDenyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteDefaultNameOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ChanceofRetirementOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ChanceGoToJailOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ChanceGoToHospitalOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowSummaryOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowMoveSoloOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteMatchAllTypeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowPersonalityOccultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCareerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CareerBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteCanBePregnantOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteCanBePregnantOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\MaximumOccultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\SameSexMarriageNameOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\MarriageNameOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\NameBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\TraitBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\PersonalityBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\AllowAlienHouseholdOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\BustRangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\ChanceOfHybridOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\ChanceOfOccultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\ImmigrantWorldOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\MutationUnsetRangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\MutationSetRangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\SkinToneRangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\ImmigrantOccultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\CustomNamesOnlyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\DisallowHouseholdOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\SimFromRandomChanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\SimFromBinChanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\MaxCelebrityLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\NameTakeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\MaximumBinHouseSizeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\MuscleRangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\FitRangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\FatRangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\Immigration\EqualBinChanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\RangeBaseManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\IntegerBaseManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\MetalEx.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\GemEx.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\HouseholdsEx.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\PersistenceEx.cs" />
+    <Compile Include="StoryProgressionSpace\DaysManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\CreateHouseholdAdjustment.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\PayForFreeObjects.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IGeneralOrNameableOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INameableOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ISimCasteOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteListOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteInheritedOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteAutoOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CastePriorityOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AgeGenderSpeciesOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteAgeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AgeBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteGenderOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteSpeciesOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteTypeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowStoryOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowPersonalityOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\RequireCasteLotOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteFundsMinOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteFundsMaxOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ChanceOfUnexpectedPregnancyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCastePregnancyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteEnemyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteFlirtOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteFriendOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteMoveOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteRomanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\MaximumNumberOfChildrenOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteLotOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\SimTypeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\SpeciesBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\GenderBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteMoveOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteEnemyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteRomanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCastePregnancyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteFlirtOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteFriendOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCasteBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowCareerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\HouseChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Caste\CasteMoveInLotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Caste\HouseChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Caste\OutCasteScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Caste\ResetCasteSimDataScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Caste\CasteMoveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\AgeUpScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\RegularFlirtBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ScheduledEnemyBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ScheduledFriendBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\HouseChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\HouseChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\AgeUpScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\OustScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\HoosegowScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\HouseChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\ScheduledMarriageBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\AgeUpScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\HouseChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\ScoringMethods\CareerScoringMethod.cs" />
+    <Compile Include="StoryProgressionSpace\ScoringMethods\ManagerScoringParameters.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\ClanLawfulScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\AllowGuardianScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\PersonalityOptionScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ChangeCasteOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IReadCasteLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IWriteCasteLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IClanScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ICallbackScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IUpdateManagerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IUpdateManager.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IHasSkill.cs" />
+    <Compile Include="StoryProgressionSpace\ListedManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Booters\NameListBooter.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ChangeLotOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IHasDefaultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IReadLotLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IWriteLotLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerCaste.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowPushAtNightOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowAdoptionOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\BaseNumberOfPetsOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowLotUseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCasteOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteNameOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ManualCasteOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ManualCareerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\PushDeathChanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastPetOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastEngagementOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\LotBooleanOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\LotOptions.cs" />
+    <Compile Include="StoryProgressionSpace\IntegerBySpeciesManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\EnumManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\CasteListingOption.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\AddCasteOption.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\RemoveCasteOption.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ICasteOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\RemoveSimData.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IHasPersonality.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ISpeciesOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IDelayedInstallable.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IFormattedStoryScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IHouseLevelSimOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IDebuggingOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INotPersistableOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IWriteSimLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IAdjustForVacationOption.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\CareerDreamJob.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\ManagedBuyProduct.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\SkillDreamJob.cs" />
+    <Compile Include="StoryProgressionSpace\NestedManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INotRootLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\NestingOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\GenericManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\IntegerEventOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ChangeImmigrantOptions.cs" />
+    <Compile Include="StoryProgressionSpace\MultiListedManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ChangeSimOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INotGlobalLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IInvestigationScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IGeneralOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IElapsedSimLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IWriteHouseLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IReadSimLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IReadHouseLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\BuyProductList.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\DisableRewardCeremonies.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AssetsOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowNameChangeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowMoneyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCareerProgressionOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowFriendshipOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowMoveFamilyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowInventoryOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowAgingOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowSteadyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowPersonalityOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCanBePregnantOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowRomanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowFindJobOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowMarriageOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AccountingOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ClearAccountingOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowPregnancyParticipationOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowCelebrityOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\BaseNumberOfChildrenOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\IsAncestralOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\MaximumPetSizeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\LastLeadershipOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\NotifyOnMoveOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ResetToDefaultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastMoveOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastPartnerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastFlirtOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastRomanceOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastMarriageOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DayOfLastBabyOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\IsRichOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DebtOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\SimIntegerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\HouseIntegerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\HouseBooleanOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\ShowStoriesOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\InStasisOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\SimBooleanOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\LegacyMarriageName.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DreamCatcherOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\InspectedOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\MaximumSizeOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\NetRatioOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\NetWorthOption.cs" />
+    <Compile Include="StoryProgressionSpace\GenericOptionBase.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IRomanticScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IDeltaScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IViolentScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IFriendlyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IAutoPersonalityOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IPersonalityOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IGenericLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IInstallationBase.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\DreamJob.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\BooleanOption.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\AgeGenderOption.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\CustomResigns.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\CustomAccepts.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\CustomTests.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\InvestigationHelper.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\FightScenarioHelper.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\WeightScenarioHelper.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\IntegerOption.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\WeightOption.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\PersonalityLookup.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\AgeUpScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerPushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\ActiveCareerPushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerToneScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerHiredBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\PromoteScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\DemoteScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\NewSchoolScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\JobPerformanceChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\PromotionBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\PensionCheckScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\LowLevelPoliceWorkScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\OccupationPushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\OccupationScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\DraftingPushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\AncestralSaveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\FailureScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\NewEnemyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ScheduledEnemyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ScoredExistingEnemyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\NewZooScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\OutOfNestPetsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ReplaceItemsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\AlterFundsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\ManualCashTransferScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\LadderScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\FineScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\DownsizeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\RefundScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\FamiliarScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\ShindigScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\PrankScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\HaveBabyBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\PetAdoptionBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\ExpectedPregnancyPetScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\ExpectedPregnancyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\RapidPetImmigrationScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\MarriageBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\EngagementScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\AdoptionBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\PetAdoptionScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\ChooseLifetimeWishScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\HorsePushHomeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\GoToJailBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\GatheringScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Skills\SkillGainScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\SocialEventScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\ScheduledRegularFlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\FlirtBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\CelebrityGainScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\DisgracefulActionEventScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\InitialHomelessScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\TransferPropertyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\RetireScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\FeastScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\DrinkScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\SlayScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\CreateOccultScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\TurnScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\SireScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\SimBuffScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\CleanHomelessScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\MoveRegisteredToServiceScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\InitNetWorthSimDataScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\SellDraftsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\SellGhostsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\TaskCompletedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\SchoolPushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\WorkPushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\PurchaseObjectScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\SellObjectsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\TorchScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\AntagonizeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\FixItScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\HelpHomeworkScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\LearnScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\EducateScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\SendToHospitalScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\RecruitScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\StealHomeworkScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\TakeCashScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\SmashScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\SimRecruitFilter.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\BurgleScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\PropagationScenarioHelper.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\DropMemberScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\VictimizeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\TraitAssignScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\ValidatePregnancyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\SimScenarioFilter.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\DualSimSingleProcessScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\DiedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\KillScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ExistingFriendManualScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\InterloperMoveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\BreakScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ArsonScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\RapidImmigrationScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ExtinguishScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\RepairScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\CanoodleScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\CohesionScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\DerisionScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\SimSingleProcessScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Propagation\PropagateClanDelightScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Propagation\PropagateLikingScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Propagation\PropagateEnemyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Propagation\PropagateWonFightScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Propagation\PropagateBuffScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\BecameOccultScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\DisableCelebrityGainScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\GotArrestedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\HeatingUpScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\MoodCheckScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\SimOnFireScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\ReturnAgingInventoryScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\RetainAgingInventoryScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\GoToHospitalScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\GoHomePushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Skills\TeachScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Skills\ReadScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\AllowSoloMoveScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\CareerTraitScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\WasClanLeaderScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\DebtScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\DreamJobScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsClanBaseScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsOpposingClanScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsRicherScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\NetWorthScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsClanAllyScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsClanMemberScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\SufficientChildrenScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\RichScoring.cs" />
+    <Compile Include="StoryProgressionSpace\SimDataElement\RetainedInventorySimData.cs" />
+    <Compile Include="StoryProgressionSpace\SimDataElement\StoredNetWorkSimData.cs" />
+    <Compile Include="StoryProgressionSpace\Situations\SituationBase.cs" />
+    <Compile Include="StoryProgressionSpace\Situations\FirefighterSituation.cs" />
+    <Compile Include="StoryProgressionSpace\StringManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\ExpansionInstaller.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\INameTakeOption.cs" />
+    <Compile Include="StoryProgressionSpace\NameTypeBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\IntegerScenarioOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\DisplaySimData.cs" />
+    <Compile Include="StoryProgressionSpace\Interactions\MassVisitLot.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IInstallable.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IEventHandler.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IAlarmHandler.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ICarpoolSchedulingSimData.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ICommuteSimData.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ICareerAlarmSimData.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IStoryProgressionUpdater.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IScenarioOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ISpeedBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IDumpStatsBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IDebugLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IAlertLevelOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ICooldownOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ITicksPassedBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IAlarmScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\IEventScenario.cs" />
+    <Compile Include="StoryProgressionSpace\ManagerProgressionBase.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\AlarmManagerReference.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\HouseholdBreakdown.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerScenario.cs" />
+    <Compile Include="StoryProgressionSpace\BooleanScenarioOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerEventScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\InitCareerSimDataScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\ChildSaveSplitFamilyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\MarkAsProtectedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\InspectedScoredMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\UninspectedMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\InspectedMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\HomelessMoveInLotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\HomelessMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\HomelessSplitFamilyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ExistingEnemyManualScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\StandardMoveInLotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantRequirementScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\UninspectedScoredMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\RunScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\MarriageMoveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\GotMarriedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\RestoreDecayScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\ResetSimDataScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\GoToJailScenario.cs" />
+    <Compile Include="StoryProgressionSpace\SimDataElement\CareerSimData.cs" />
+    <Compile Include="StoryProgressionSpace\SimDataElement\OnDemandSimData.cs" />
+    <Compile Include="StoryProgressionSpace\SimDataElement\ElementalSimData.cs" />
+    <Compile Include="StoryProgressionSpace\RangeManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\IntegerManagerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Interfaces\ILocalizer.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerMoney.cs" />
+    <Compile Include="StoryProgressionSpace\RangeOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\ImportStringItem.cs" />
+    <Compile Include="StoryProgressionSpace\ExportStringItem.cs" />
+    <Compile Include="StoryProgressionSpace\Helpers\SimFromBin.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerUpdateScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerAlarmScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\WorkUpdateScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\SchoolUpdateScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\UpdateCareerScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\ScheduledWorkPushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\RetiredScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\FiredScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\DemotedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\PromotedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerChangedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\HiredScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\RetirementScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\ImmigrantRequirementScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\CannotFindLoveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ScoredExistingFriendScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Personalities\GiveCashScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\MoneyTransferScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\StealScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\PartnerScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\ScheduledMarriageScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\UpdateSimDataScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\SimUpdateScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\UpdateAgingScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Situations\ServicePushHomeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\SuccessScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\PregnancyCheckScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\OnceADayScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\SimDisposedScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\HouseholdEventScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\LotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\LastOneStandingScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\PregnancySaveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\GettingOldScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\ImmigrantRequirementScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\BrokenHomeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\ChildrenToSafetyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Deaths\AbandonedChildScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\NewcomerGoneScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\SplitMoveOutScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\SplitMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\SplitFamilyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\HomelessMergeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\NewcomerFailScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\ScheduledHomelessScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\ServiceCleanupScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\HouseholdNameScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\OutOfNestScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\ScoredMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\BreakdownMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\MoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\GetOffStreetsScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\NoHomeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\StrandedCoupleScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\BetterHomeMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\CleanupLotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\NightlyLotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantMailOrderScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrateScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantNoHomeScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantRequirementScenarioBase.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantPressureScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantCareerScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\NewImmigrantScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ImmigrantMoveInScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ScheduledImmigrationScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\MoveInLotScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\InspectionFailScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Lots\ScheduledHomeInspectionScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\AttachLostFathersScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\BabyGenderScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\NormaBabyAgingScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\BirthScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\ExpectedPregnancyBaseScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\ImmigrantRequirementScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\ScheduledRomanceScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\CooldownMarriageScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\ScheduledSoloScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ExistingEnemyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ExistingFriendScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\RelationshipScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\MoveOutScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\ScenarioFrame.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\EarlyFlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\OldFlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\NewFlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\ScheduledExistingFlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\ScheduledFlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\NewFriendScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Friends\ScheduledFriendScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\SettleDownScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Households\MoveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\ScheduledFailSafeFlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Flirts\FlirtScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\JobPerformanceScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\HomeworkScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\FindJobScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\MoochScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\DualSimScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\WealthMoveScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\HaveBabyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\RabbitHolePushScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\ExpectedMarriageScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\PartneringScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\NoHoneymoonScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\ShotgunMarriageScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Romances\MarriageScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Pregnancies\UnexpectedPregnancyScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Sims\ImmigrantRequirementScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\InventorySimScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\HouseholdScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\SimScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Scenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\SimEventScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Skills\LeveledScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\AllowRomanceScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\AllowMoneyScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsAnyClanLeaderScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsClanLeaderScoring.cs" />
+    <Compile Include="StoryProgressionSpace\Situations\HousePartySituation.cs" />
+    <Compile Include="StoryProgressionSpace\Situations\FuneralSituation.cs" />
+    <Compile Include="StoryProgressionSpace\StringOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\IntegerOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ChangeHouseholdOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ChangeTownOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\ChangeGeneralOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\TestSim.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\SelectSim.cs" />
+    <Compile Include="StoryProgressionSpace\Settings\SelectLot.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerSituation.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerFlirt.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerSkill.cs" />
+    <Compile Include="StoryProgressionSpace\ScoringMethods\PreferredBabyCountScoringMethod.cs" />
+    <Compile Include="StoryProgressionSpace\PersistentOptionBase.cs" />
+    <Compile Include="StoryProgressionSpace\Scoring\IsMyClanLeaderScoring.cs" />
+    <Compile Include="StoryProgressionSpace\SimIDOption.cs" />
+    <Compile Include="StoryProgressionSpace\GenericOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Situations\GoToLotSituation.cs" />
+    <Compile Include="StoryProgressionSpace\StoryProgressionObject.cs" />
+    <Compile Include="StoryProgressionSpace\ListedOptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerDeath.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerHousehold.cs" />
+    <Compile Include="StoryProgressionSpace\HouseholdOptions.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerCareer.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerFriendship.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\Manager.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerPersonality.cs" />
+    <Compile Include="StoryProgressionSpace\OptionItem.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerLot.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\Main.cs" />
+    <Compile Include="StoryProgressionSpace\OptionStore.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerPregnancy.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerRomance.cs" />
+    <Compile Include="StoryProgressionSpace\SimData.cs" />
+    <Compile Include="StoryProgressionSpace\SimID.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerSim.cs" />
+    <Compile Include="StoryProgressionSpace\Personalities\SimPersonality.cs" />
+    <Compile Include="StoryProgressionSpace\Managers\ManagerStory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoryProgression.cs" />
+    <Compile Include="VersionStamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableSwedish.txt" />
+    <Content Include="StringTables\StringTableDutch.txt" />
+    <Content Include="StringTables\StringTableFinnish.txt" />
+    <Content Include="StringTables\StringTablePolish.txt" />
+    <Content Include="StringTables\StringTablePortugueseBrazilian.txt" />
+    <Content Include="StringTables\StringTablePortugueseStandard.txt" />
+    <Content Include="StringTables\StringTableRussian.txt" />
+    <Content Include="StringTables\StringTableSpanishStandard.txt" />
+    <Content Include="StringTables\StringTableTaiwanese.txt" />
+    <Content Include="XML\StoryProgressionTuning.xml" />
+    <Content Include="XML\StoryProgressionModule.xml" />
+    <Content Include="XML\StoryProgressionNameList.xml" />
+    <Content Include="XML\StoryProgressionRetired.xml" />
+    <Content Include="StringTables\StringTableEnglish.txt" />
+    <Content Include="StringTables\StringTableFrench.txt" />
+    <Content Include="StringTables\StringTableGerman.txt" />
+    <Content Include="StringTables\StringTableItalian.txt" />
+    <Content Include="StringTables\StringTableJapanese.txt" />
+    <Content Include="StringTables\StringTableKorean.txt" />
+    <Content Include="XML\StoryProgressionScoring.xml" />
+    <Content Include="XML\StoryProgression.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StoryProgression>
+  <MethodFile>
+    <File></File>
+  </MethodFile>
+  <MethodFile>
+    <File>NRaas.StoryProgression.FairiesAndWerewolves.Scoring</File>
+  </MethodFile>
+
+  <PersonalityFile>
+    <File></File>
+  </PersonalityFile>
+  <PersonalityFile>
+    <File>NRaas.StoryProgression.FairiesAndWerewolves.Personalities</File>
+  </PersonalityFile>
+</StoryProgression>

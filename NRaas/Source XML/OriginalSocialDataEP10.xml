@@ -1,0 +1,1006 @@
+<?xml version="1.0"?>
+<Social>
+  <Action key="Mermaid Talk About Sharks" com="Friendly">
+    <Text key="TalkAboutSharks" pvt="TalkAboutSharks" />
+    <SA key="Talk" />
+    <AD val="0x00102080">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidUnderwaterSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Invite On Land" com="Friendly">
+    <Text key="InviteOnLand" pvt="BeInvitedOnLand" />
+    <SA key="Talk" />
+    <AD val="0x00102000">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="MermaindInviteOnLandSocialTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnInvitedOver" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="102">
+        <LLTR max="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Show Hidden Island Land" com="Friendly">
+    <Text key="ShowHiddenIsland" pvt="BeShownHiddenIsland" />
+    <SA key="Talk" />
+    <AD val="0x00080008">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidShowHiddenIslandProcLandTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnMermaidLandAskAboutSecret" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Show Hidden Island Water" com="Friendly">
+    <Text key="ShowHiddenIsland" pvt="BeShownHiddenIsland" />
+    <SA key="Talk" />
+    <AD val="0x00102000">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidShowHiddenIslandProcWaterTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnMermaidWaterAskAboutSecret" />
+        <TUN val="100" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Discuss Kelp Recipes" com="Friendly">
+    <Text key="DiscussKelpRecipes" pvt="DiscussKelpRecipes" />
+    <SA key="Talk" />
+    <AD val="0x00102080">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidUnderwaterSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Ask About Fish Parts" com="Friendly">
+    <Text key="AskAboutFishParts" pvt="BeAskedAboutFishParts" />
+    <SA key="Talk" />
+    <AD val="0x00102000">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidAskAboutFishPartsSocialTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="BeforeAskAboutFishParts" peau="OnAskAboutFishPartsSuccess" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="101">
+        <LLTR min="50" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Land Discuss Kelp" com="Friendly">
+    <Text key="DiscussKelpRecipes" pvt="DiscussKelpRecipes" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="Charismatic,Friendly,MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_talkAboutCooking" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="4" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Land Enthuse About Diving" com="Friendly">
+    <Text key="EnthuseAboutDiving" pvt="BeEnthusedAboutDiving" />
+    <SA key="Talk" />
+    <AD val="0x00080000">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="Charismatic,Friendly,MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="EnthuseAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Boring" val="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Land Ask About Scales" com="Friendly">
+    <Text key="AskAboutScales" pvt="TellAboutScales" />
+    <SA key="Talk" />
+    <AD val="0x00080000">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="Charismatic,Friendly" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Mermaid Land Talk About Sharks" com="Friendly">
+    <Text key="TalkAboutSharks" pvt="TalkAboutSharks" />
+    <SA key="Talk" />
+    <AD val="0x00080400">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="Charismatic,Friendly,MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="MermaidSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="5" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Tell Rescue Story" com="Friendly">
+    <Text key="TellRescueStory" pvt="ListenToRescueStory" />
+    <AD val="0x00000000">
+      <Misc ITLA="30" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="C,T,Y,A,E" />
+      <ATE val="Charismatic" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="4" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN is="True" lvl="20" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Complain About Bad Swimmers" com="Insulting">
+    <Text key="ComplainAboutSwimers" pvt="ListenComplainAboutSwimers" />
+    <AD val="0x00000000">
+      <Misc ITLA="25" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="Good,Friendly" />
+      <ATE val="Insane,Grumpy" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="ComplainAbout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="" val="Boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_I_y" />
+        <Buff cus="BuffOnInsult" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Steamed" state="" val="Boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_I_y" />
+        <Buff cus="BuffOnInsult" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Boast About Being a Lifeguard" com="Friendly">
+    <Text key="BoastAboutLifeguard" pvt="ListenBoastAboutLifeguard" />
+    <SA key="Boast" />
+    <AD val="0x00080100">
+      <Misc ITLA="50" c="1" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="CouchPotato" />
+      <ATE val="Athletic,Snob" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_boastabout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <TUN val="80" />
+        <Trait x="" y="Athletic" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim tpa="a2a_soc_neutral_tellJoke_reject_y" />
+        <Buff />
+        <TUN />
+        <Trait x="" y="CouchPotato" />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="59.9" TP="2">
+        <LLTR min="50" max="79" />
+        <SC />
+        <SK key="Charisma" val="9" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CouchPotato" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="58.9" TP="2">
+        <LLTR min="60" max="79" />
+        <SC />
+        <SK key="Charisma" val="6" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CouchPotato" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="57.9" TP="2">
+        <LLTR min="70" max="79" />
+        <SC />
+        <SE x="Impressive" remX="None" y="None" remY="None" />
+        <Trait y="CouchPotato" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="57.9" TP="2">
+        <LLTR min="70" max="79" />
+        <SC />
+        <SK key="Charisma" val="3" is="True" />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CouchPotato" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="57.9" ltro="5" TP="2">
+        <LLTR min="60" max="79" />
+        <SC />
+        <SE x="None" remX="Social" y="None" remY="None" />
+        <Trait y="Athletic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="57.9" ltro="5" TP="2">
+        <LLTR min="60" max="79" />
+        <SC />
+        <SE x="None" remX="Impressive" y="None" remY="None" />
+        <Trait y="Athletic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="57.9" TP="2">
+        <LLTR min="70" max="79" />
+        <SC />
+        <SE x="Social" remX="None" y="None" remY="None" />
+        <Trait y="CouchPotato" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="56.9" TP="2">
+        <LLTR min="60" max="79" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CouchPotato" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring" val="55.9" TP="2">
+        <LLTR min="40" max="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="CouchPotato" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="53.9" ltro="5" TP="2">
+        <LLTR min="40" max="60" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Athletic" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Boring">
+        <LLTR max="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Diva" />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Talk About Beach Safety" com="Friendly">
+    <Text key="TalkAboutBeachSafety" pvt="ListenTalkAboutBeachSafety" />
+    <SA key="Talk" />
+    <AD val="0x00080402">
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATRA val="CantStandArt" />
+      <ATE val="SavvySculptor" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_share_interests" data="BaseGame" x="Neutral" y="Neutral" />
+      <LS state="story" min="2" max="4" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff y="Intrigued" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Demonstrate MtoM" com="Amorous">
+    <Text key="DemonstrateMtoM" pvt="SeeDemonstrateMtoM" />
+    <AD val="0x00002808">
+      <Misc ITLA="50" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="Y,A,E" />
+      <ATE val="Flirty,HopelessRomantic" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="LifeguardM2MLevelTest" />
+    </AA>
+    <Jazz>
+      <Graph val="LifeguardInteractions" data="EP10" x="Neutral" y="Neutral" jig="SocialJigTwoPerson" jigM="lifeguardFakeInjury_jig" jigData="EP10" />
+    </Jazz>
+    <Rules>
+      <RHS com="Amorous" state="Accept">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LifeguardMtMGood" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Awkward" state="Reject">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="LifeguardMtMBad" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Awkward" val="76">
+        <LLTR max="0" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait x="~Flirty,~GreatKisser" />
+        <MAYBE part="False" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="LifeguardSlap" com="Steamed">
+    <Text key="Slap" pvt="BeSlapped" />
+    <AD val="0x00000009">
+      <Misc ITLA="70" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MeanSpirited,HotHeaded,Evil" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" suite="Slap" data="BaseGame" x="Bad" y="Bad" jig="SocialJigTwoPerson" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="">
+        <Anim />
+        <Buff x="FightThePower" cus="BuffOnInsult" />
+        <RPROC pebu="" peau="OnLifeguardComplain" />
+        <TUN val="200" />
+        <Trait x="" y="MeanSpirited,HotHeaded,Evil" />
+        <Topic />
+      </RHS>
+      <LHS com="Steamed" val="80">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="LifeguardInsult" com="Insulting">
+    <Text key="Insult" pvt="ListenToInsult" />
+    <AD val="0x00080000">
+      <Misc ITLA="40" />
+    </AD>
+    <AA>
+      <AGE x="Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_insult" data="BaseGame" x="Bad" y="Bad" />
+    </Jazz>
+    <Rules>
+      <RHS com="Insulting" state="accept">
+        <EndStance x="Bad" y="" />
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <RPROC pebu="" peau="OnLifeguardComplain" />
+        <TUN />
+        <Trait x="MeanSpirited" y="" />
+        <Topic />
+      </RHS>
+      <RHS com="Steamed" state="accept">
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <RPROC pebu="" peau="OnLifeguardComplain" />
+        <TUN />
+        <Trait x="MeanSpirited" y="" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="LifeguardYellAt" com="Steamed">
+    <Text key="YellAt" pvt="BeYelledAt" />
+    <AD val="0x00080000">
+      <Misc ITLA="70" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MeanSpirited,HotHeaded" />
+      <Available auto="True" udo="False" />
+    </AA>
+    <Jazz>
+      <Graph val="social_yellAt" data="BaseGame" x="Bad" y="Bad" />
+    </Jazz>
+    <Rules>
+      <RHS com="Steamed" state="Steamed">
+        <Anim />
+        <Buff cus="BuffOnInsult" />
+        <RPROC pebu="" peau="OnLifeguardComplain" />
+        <TUN val="120" />
+        <Trait x="" y="MeanSpirited,HotHeaded" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Scuba Enthuse About Diving" com="Friendly">
+    <Text key="EnthuseAboutDiving" pvt="EnthuseAboutDiving" />
+    <SA key="Talk" />
+    <AD val="0x00102080">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="UnderwaterSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Scuba Talk About Fish" com="Friendly">
+    <Text key="TalkAboutFish" pvt="TalkAboutFish" />
+    <SA key="Talk" />
+    <AD val="0x00102080">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="UnderwaterSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Scuba Talk About Shells" com="Friendly">
+    <Text key="TalkAboutShells" pvt="TalkAboutShells" />
+    <SA key="Talk" />
+    <AD val="0x00102080">
+      <Misc ITLA="10" r="6" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="UnderwaterSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="2" max="3" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Boast About Being Resort Owner" com="Friendly">
+    <Text key="BoastAboutBeingResortOwner" pvt="ListenToBoasting" />
+    <SA key="Boast" />
+    <AD val="0x00080102">
+      <Misc ITLA="30" r="3" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="DoesActorOwnResortTargetIsOn" />
+    </AA>
+    <Jazz>
+      <Graph val="social_boastabout" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="impressive">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="BoastAboutBeingResortOwnerCallback" />
+        <TUN val="80" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="BoastAboutBeingResortOwnerCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="BoastAboutBeingResortOwnerCallback" />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="100">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Ask About Stay" com="Friendly">
+    <Text key="AskAboutStay" pvt="RespondtoQuestion" />
+    <AD val="0x00080100">
+      <Misc ITLA="25" r="1" c="1" />
+    </AD>
+    <AA oaend="1">
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <LHS com="Friendly" val="50">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Shaka Bra" com="Friendly">
+    <Text key="ShakaBra" pvt="ShakaBra" />
+    <AD val="0x00000008">
+      <Misc ITLA="10" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="TargetNotInBedPosture" />
+    </AA>
+    <Jazz>
+      <Graph val="social_generic" data="EP10" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="">
+        <Anim x="a2a_greet_shakaBrah_x" y="a2a_greet_shakaBrah_y" />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Ask To Change Port" com="Friendly">
+    <Text key="AskToChangePort" pvt="RespondToRequestToChangePort" />
+    <AD val="0x00080390">
+      <Misc ITLA="50" r="0" c="0" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="AskToChangePortTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="OnAskToChangePort" />
+        <TUN />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+  <Action key="Invite to VIP Room" com="Friendly">
+    <Text key="InviteToVIPRoom" pvt="BeInvitedToVIPRoom" />
+    <AD val="0x00080110">
+      <Misc ITLA="60" c="1" />
+    </AD>
+    <AA>
+      <AGE x="C,T,Y,A,E" y="C,T,Y,A,E" />
+      <Available auto="False" udo="True" />
+      <ProcTest key="TestInviteToVIP" />
+    </AA>
+    <Jazz>
+      <Graph val="social_askFor" data="BaseGame" x="Neutral" y="Neutral" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="Friendly">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="InviteToVIP" />
+        <TUN />
+        <Trait x="" y="Friendly" />
+        <Topic />
+      </RHS>
+      <RHS com="Neutral" state="Neutral">
+        <Anim />
+        <Buff />
+        <RPROC pebu="" peau="InviteToVIP" />
+        <TUN />
+        <Trait x="" y="Loner" />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="Neutral">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Trait x="" y="Loner" />
+        <Topic />
+      </RHS>
+      <LHS com="Boring" val="54">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE rep="True" />
+      </LHS>
+      <LHS com="Friendly" val="53" cp="1">
+        <LLTR min="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Loner" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="52" cp="1">
+        <LLTR min="20" max="40" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait y="Loner" />
+        <MAYBE />
+      </LHS>
+      <LHS com="Friendly" val="51" cp="1">
+        <LLTR min="20" />
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+      <LHS com="Neutral" val="50">
+        <SC />
+        <SE x="None" remX="None" y="None" remY="None" />
+        <Trait />
+        <MAYBE />
+      </LHS>
+    </Rules>
+  </Action>
+  <Action key="Scuba Greet" com="Friendly">
+    <Text key="Greet" pvt="BeGreeted" />
+    <AD val="0x00102080">
+      <Misc ITLA="10" />
+    </AD>
+    <AA>
+      <AGE x="T,Y,A,E" y="T,Y,A,E" />
+      <ATE val="MermaidHiddenTrait" />
+      <Available auto="True" udo="False" />
+      <ProcTest key="UnderwaterSocialProcTest" />
+    </AA>
+    <Jazz>
+      <Graph val="social_mermaid_underwater" data="EP10" x="Neutral" y="Neutral" jig="UnderwaterSocial_Jig" />
+      <LS state="story" min="1" max="1" />
+    </Jazz>
+    <Rules>
+      <RHS com="Friendly" state="friendly">
+        <Anim />
+        <Buff />
+        <TUN />
+        <Topic />
+      </RHS>
+      <RHS com="Boring" state="boring">
+        <Anim />
+        <Buff />
+        <TUN val="2" />
+        <Topic />
+      </RHS>
+    </Rules>
+  </Action>
+</Social>

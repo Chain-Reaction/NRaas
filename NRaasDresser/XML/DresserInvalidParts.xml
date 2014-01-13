@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <InvalidParts>
+    <!-- This is the default set, do not alter or remove it -->
+    <BodyType></BodyType>
+    <Instance></Instance>
+    <Group></Group>
+    <Age>AgeMask</Age>
+    <Gender>GenderMask</Gender>
+    <Species>SpeciesMask</Species>
+    <Categories>All</Categories>
+    <Extended></Extended>
+    <WorldTypes></WorldTypes>
+  </InvalidParts>
+</base>

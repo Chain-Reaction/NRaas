@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<CareerFiles>
+  <AcademicDegreeFile>
+    <File></File>
+  </AcademicDegreeFile>
+  <AcademicDegreeFile>
+    <File>NRaas.Academics.AcademicDegree</File>
+  </AcademicDegreeFile>
+  <JobsFile>
+    <File></File>
+  </JobsFile>
+  <JobsFile>
+    <File>NRaas.Academics.Jobs</File>
+  </JobsFile>
+</CareerFiles>

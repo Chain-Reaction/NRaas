@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tuning>
+  <ITUN>
+    <!-- This is the default set, do not alter or remove -->
+    <StartHour></StartHour>
+    <EndHour></EndHour>
+    <Season></Season>
+    <ObjectName></ObjectName>
+    <InteractionName></InteractionName>
+  </ITUN>
+  
+  <Social>
+    <!-- This is the default set, do not alter or remove -->
+    <StartHour></StartHour>
+    <EndHour></EndHour>
+    <Season></Season>
+    <Name></Name>
+  </Social>
+  
+  <XML>
+    <!-- This is the default set, do not alter or remove -->
+    <StartHour></StartHour>
+    <EndHour></EndHour>
+    <Season></Season>
+    <FullClassName></FullClassName>
+    <FieldName></FieldName>
+    <SubFieldName></SubFieldName>
+    <Index></Index>
+    <Value></Value>
+  </XML>
+</Tuning>

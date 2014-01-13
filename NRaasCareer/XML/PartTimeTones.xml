@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<ToneList>
+  <Tone>
+    <ToneName></ToneName>
+    <FullClassName></FullClassName>
+    <CareerGuid></CareerGuid>
+    <SkillCount>0</SkillCount>
+    <Skill1></Skill1>
+    <SkillRate1></SkillRate1>
+    <MotiveCount>0</MotiveCount>
+    <Motive1></Motive1>
+    <MotiveRate1></MotiveRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.PTPatrolPracticeLogic</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>PTPatrol</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Logic</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+  <Tone>
+    <ToneName>NRaasTone.PTSciencePracticeGardening</ToneName>
+    <FullClassName>NRaas.Gameplay.Tones.CareerToneEx, NRaasCareer</FullClassName>
+    <CareerGuid>PTScience</CareerGuid>
+    <SkillCount>1</SkillCount>
+    <Skill1>Gardening</Skill1>
+    <SkillRate1>1</SkillRate1>
+  </Tone>
+</ToneList>
