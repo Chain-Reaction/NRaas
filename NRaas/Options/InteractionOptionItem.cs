@@ -194,7 +194,7 @@ namespace NRaas.CommonSpace.Options
 
             while (result.mResult == OptionResult.Unset)
             {
-                SpeedTrap.Sleep();
+                Common.Sleep();
             }
 
             return result.mResult;

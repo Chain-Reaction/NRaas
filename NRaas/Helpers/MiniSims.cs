@@ -201,7 +201,7 @@ namespace NRaas.CommonSpace.Helpers
                             }
                         }
 
-                        SpeedTrap.Sleep();
+                        Common.Sleep();
                     }
                 }
                 else
@@ -310,7 +310,7 @@ namespace NRaas.CommonSpace.Helpers
             if (ths.CreatedSim != null)
             {
                 ths.CreatedSim.Destroy();
-                SpeedTrap.Sleep();
+                Common.Sleep();
             }
             if (Find(ths.SimDescriptionId) != null)
             {

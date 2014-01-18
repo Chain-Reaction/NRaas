@@ -551,7 +551,7 @@ namespace NRaas.CommonSpace.Helpers
                     simDesc.CreatedSim.RefreshCurrentOutfit(false);
                 }
 
-                SpeedTrap.Sleep();
+                Common.Sleep();
 
                 return true;
             }

@@ -86,7 +86,7 @@ namespace NRaas.CommonSpace.Tasks
         {
             try
             {
-                NRaas.SpeedTrap.Begin();
+                //NRaas.SpeedTrap.Begin();
 
                 mTimer = StopWatch.Create(StopWatch.TickStyles.Milliseconds);
                 mTimer.Start();
@@ -99,7 +99,7 @@ namespace NRaas.CommonSpace.Tasks
                     {
                         while ((mTimer != null) && (mTimer.GetElapsedTime() < Delay))
                         {
-                            SpeedTrap.Sleep();
+                            Common.Sleep();
                         }
 
                         if (!OnPerform())
@@ -108,7 +108,7 @@ namespace NRaas.CommonSpace.Tasks
                             return;
                         }
 
-                        SpeedTrap.Sleep();
+                        Common.Sleep();
                     }
                     catch (ResetException)
                     {
@@ -134,7 +134,7 @@ namespace NRaas.CommonSpace.Tasks
             {
                 OnPostSimulate();
 
-                NRaas.SpeedTrap.End();
+                //NRaas.SpeedTrap.End();
             }
         }
 

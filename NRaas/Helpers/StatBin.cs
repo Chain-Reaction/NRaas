@@ -350,7 +350,7 @@ namespace NRaas.CommonSpace.Helpers
                     otherValue = true;
                 }
 
-                value = mOver.ToString(mMax);
+                value = mOver.ToString();
                 if (!string.IsNullOrEmpty(value))
                 {
                     if (otherValue)

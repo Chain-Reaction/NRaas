@@ -124,105 +124,7 @@ namespace NRaas
             if (old == null) return null;
 
             return new List<T> (old);
-        }
-
-        public static string ObjectName(object obj)
-        {
-            return obj.GetType().ToString() + " - " + obj.GetType().Assembly.FullName.Replace(", Culture=neutral", "");
-        }
-
-        public static string TaskName(ITask task)
-        {
-            if (task == null) return null;
-
-            string result = null;
-
-            IScriptProxy proxy = task as IScriptProxy;
-            if (proxy != null)
-            {
-                if (proxy.Target != null)
-                {
-                    result += ObjectName(proxy.Target);
-
-                    OneShotFunction oneShot = proxy.Target as OneShotFunction;
-                    if (oneShot != null)
-                    {
-                        if ((oneShot.mFunction != null) && (oneShot.mFunction.Method != null))
-                        {
-                            result = "OneShotFunction: " + oneShot.mFunction.Method.Name;
-                            if (oneShot.mFunction.Target != null)
-                            {
-                                result += " - " + ObjectName(oneShot.mFunction.Target);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Sim sim = proxy.Target as Sim;
-                        if (sim != null)
-                        {
-                            result += " - " + sim.FullName;
-                        }
-                        else
-                        {
-                            SimUpdate update = proxy.Target as SimUpdate;
-                            if (update != null)
-                            {
-                                if (update.mSim != null)
-                                {
-                                    result += " - " + update.mSim.FullName;
-                                }
-                            }
-                            else
-                            {
-                                Lot lot = proxy.Target as Lot;
-                                if (lot != null)
-                                {
-                                    result += " - " + lot.Name + " - " + lot.Address;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                result += task.GetType().ToString();
-
-                Sims3.Gameplay.OneShotFunctionTask oneGameplayShot = task as Sims3.Gameplay.OneShotFunctionTask;
-                if (oneGameplayShot != null)
-                {
-                    if ((oneGameplayShot.mFunction != null) && (oneGameplayShot.mFunction.Method != null))
-                    {
-                        result = "OneShotFunctionTask: " + oneGameplayShot.mFunction.Method.Name;
-                        if (oneGameplayShot.mFunction.Target != null)
-                        {
-                            result += " - " + ObjectName(oneGameplayShot.mFunction.Target);
-                        }
-                    }
-                }
-                else
-                {
-                    Sims3.UI.OneShotFunctionTask oneUIShot = task as Sims3.UI.OneShotFunctionTask;
-                    if (oneUIShot != null)
-                    {
-                        if ((oneUIShot.mFunction != null) && (oneUIShot.mFunction.Method != null))
-                        {
-                            result = "OneShotFunctionTask: " + oneUIShot.mFunction.Method.Name;
-                            if (oneUIShot.mFunction.Target != null)
-                            {
-                                result += " - " + ObjectName(oneUIShot.mFunction.Target);
-                            }
-                        }
-                    }
-                    else if (result == "NRaas.Common+FunctionTask")
-                    {
-                        result += ": " + task.ToString();
-                    }
-                }
-            }
-            return result;
-        }
+        }        
 
         private static void OnStartupApp(object sender, EventArgs args)
         {
@@ -749,7 +651,7 @@ namespace NRaas
                     }
                     else
                     {
-                        SpeedTrap.Sleep();
+                        Sleep();
                     }
 
                     results = Sims3.SimIFace.Queries.GetObjects(type.Key);
@@ -787,7 +689,7 @@ namespace NRaas
                         count++;
                         if (count > 250)
                         {
-                            SpeedTrap.Sleep();
+                            Sleep();
                             count = 0;
                         }
                     }
@@ -900,6 +802,35 @@ namespace NRaas
             if (!kDebugging) return false;
 
             return StackLog(msg);
+        }
+
+        public static bool Sleep()
+        {
+            return Sleep(0);
+        }
+
+        public static bool Sleep(uint value)
+        {
+            bool flag;
+            try
+            {
+                if (Simulator.CheckYieldingContext(false))
+                {
+                    Simulator.Sleep(value);
+                    return true;
+                }
+                flag = false;
+            }
+            catch (ResetException)
+            {
+                throw;
+            }
+            catch (Exception exception)
+            {
+                DebugException("Sleep", exception);
+                flag = false;
+            }
+            return flag;
         }
 
         public static bool StackLog(StringBuilder msg)
@@ -2556,28 +2487,19 @@ namespace NRaas
             {
                 try
                 {
-                    NRaas.SpeedTrap.Begin();
-
-                    try
-                    {
-                        mFunction();
-                    }
-                    catch (ResetException)
-                    {
-                        throw;
-                    }
-                    catch (Exception e)
-                    {
-                        Common.Exception(ToString(), e);
-                    }
-
-                    return;
+                    mFunction();
                 }
+                catch (ResetException)
+                {
+                    throw;
+                }
+                catch (Exception e)
+                {
+                    Common.Exception(ToString(), e);
+                }                
                 finally
                 {
-                    Simulator.DestroyObject(ObjectId);
-
-                    NRaas.SpeedTrap.End();
+                    Simulator.DestroyObject(ObjectId);                    
                 }
             }
 
@@ -2585,11 +2507,11 @@ namespace NRaas
             {
                 if (mFunction == null)
                 {
-                    return "NULL function";
+                    return "(OneShotFunctionTask) NULL function";
                 }
                 else
                 {
-                    return (mFunction.Method.ToString() + " - " + mFunction.Method.DeclaringType.ToString() + " - " + mFunction.Method.DeclaringType.Assembly.FullName.Replace(", Culture=neutral", ""));
+                    return ("(OneShotFunctionTask) Function method: " + this.mFunction.Method.ToString() + ", Declaring Type: " + this.mFunction.Method.DeclaringType.ToString());
                 }
             }             
         }
@@ -3282,11 +3204,6 @@ namespace NRaas
             {
                 EventTracker.RemoveListener(mListener);
             }
-
-            public override string ToString()
-            {
-                return mListener.EventId + " - " + mFunc.ToString();
-            }
         }
 
         public class ImmediateEventListener : EventListenerTask
@@ -3384,10 +3301,6 @@ namespace NRaas
 
             public override string ToString()
             {
-                return ToString(0);
-            }
-            public string ToString(float maximum)
-            {
                 if (mCount == 0)
                 {
                     if (!sFullLog)
@@ -3396,29 +3309,21 @@ namespace NRaas
                     }
                     else
                     {
-                        return ",,,,,,,,";
+                        return ",,,,";
                     }
                 }
 
                 if (mValue != mCount)
                 {
-                    float meanTotal = mValue;
-                    float meanAverage = Average;
-                    if ((mCount > 1) && (maximum != 0))
-                    {
-                        meanTotal -= maximum;
-                        meanAverage = ((meanTotal) / (mCount - 1));
-                    }
-
                     string result = mCount.ToString();
-                    result += ",Tot," + mValue.ToString(((mValue > -1) && (mValue < 1)) ? "F2" : "F0") + ",Avg," + Average.ToString(((Average > -1) && (Average < 1)) ? "F2" : "F0") + ",MeanTot," + meanTotal.ToString(((meanTotal > -1) && (meanTotal < 1)) ? "F2" : "F0") + ",MeanAvg," + meanAverage.ToString(((meanAverage > -1) && (meanAverage < 1)) ? "F2" : "F0");
+                    result += ",Tot," + mValue.ToString(((mValue > -1) && (mValue < 1)) ? "F2" : "F0") + ",Avg," + Average.ToString(((Average > -1f) && (Average < 1f)) ? "F2" : "F0");
                     return result;
                 }
                 else
                 {
                     if (sFullLog)
                     {
-                        return mValue.ToString() + ",,,,,,,,";
+                        return (this.mValue.ToString() + ",,,,");
                     }
                     else
                     {
@@ -3531,6 +3436,41 @@ namespace NRaas
                 mStyle = style;
                 mOverrideImage = overrideImage;
                 mOverrideVersion = overrideVersion;
+            }
+        }
+
+        public abstract class WaitTask : FunctionTask
+        {
+            private bool mCompleted;
+
+            protected WaitTask()
+            {
+            }
+
+            protected sealed override void OnPerform()
+            {
+                this.mCompleted = false;
+                this.OnWaitPerform();
+                this.mCompleted = true;
+            }
+
+            protected abstract void OnWaitPerform();
+            protected static T Wait<T>(T task) where T : WaitTask
+            {
+                if (Simulator.CheckYieldingContext(false))
+                {
+                    task.AddToSimulator();
+                    while (!task.mCompleted)
+                    {
+                        if (!Sleep())
+                        {
+                            return task;
+                        }
+                    }
+                    return task;
+                }
+                task.OnPerform();
+                return task;
             }
         }
    }

@@ -45,7 +45,7 @@ namespace NRaas.CommonSpace.Helpers
                     Urnstone urnstone = Urnstones.CreateGrave(sim, SimDescription.DeathType.OldAge, false, true);
                     if (urnstone != null)
                     {
-                        SpeedTrap.Sleep();
+                        Common.Sleep();
 
                         if (!Urnstones.GhostSpawn(urnstone, lot))
                         {

@@ -390,7 +390,7 @@ namespace NRaas.CommonSpace.Helpers
                                 {
                                     sim.SetObjectToReset();
                                 }
-                                SpeedTrap.Sleep();
+                                Common.Sleep();
                             }
                         }
                         catch (Exception e)

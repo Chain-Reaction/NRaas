@@ -27,9 +27,7 @@ namespace NRaas
                     msg += Common.NewLine + "kRecursionDebugging=" + DereferenceManager.kRecursionDebugging;
                     msg += Common.NewLine + "kShowFullReferencing=" + DereferenceGameObject.kShowFullReferencing;
                     msg += Common.NewLine + "kShowFoundReferences=" + DereferenceManagerTuning.kShowFoundReferences;
-                    msg += Common.NewLine + "kForceReferenceLog=" + ErrorTrapTuning4.kForceReferenceLog;
-                    msg += Common.NewLine + "kResetTaskStates=" + ErrorTrapTuning5.kResetTaskStates;
-                    msg += Common.NewLine + "kSpeedTrap=" + ErrorTrapTuning6.kSpeedTrap;
+                    msg += Common.NewLine + "kForceReferenceLog=" + ErrorTrapTuning4.kForceReferenceLog;                   
 
                     return msg;
                 }
@@ -44,14 +42,7 @@ namespace NRaas
          * Issue with unicorn fertilized life fruit being deleted by [ErrorTrap] ?
          * 
          */
-
-        /* Changes
-         * 
-         * DO NOT RELEASE with SpeedTrap code in place
-         * 
-         * Added "ResetTaskStates" tuning
-         *
-         */
+        
         public static readonly int sVersion = 95;
     }
 }

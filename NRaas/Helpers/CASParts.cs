@@ -702,7 +702,7 @@ namespace NRaas.CommonSpace.Helpers
 
                 mBuilder.Dispose();
 
-                SpeedTrap.Sleep();
+                Common.Sleep();
             }
         }
 

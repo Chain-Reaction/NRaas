@@ -97,7 +97,7 @@ namespace NRaas.CommonSpace.Helpers
                     sim.SetObjectToReset();
                 }
 
-                SpeedTrap.Sleep();
+                Common.Sleep();
 
                 if (includeLotContents)
                 {
@@ -194,7 +194,7 @@ namespace NRaas.CommonSpace.Helpers
                     DreamCatcher.PruneDreamManager(sim);
                 }
 
-                SpeedTrap.Sleep();
+                Common.Sleep();
 
                 ulong id = DownloadContent.GenerateGUID();
                 HouseholdContentsProxy householdContents = new HouseholdContentsProxy(household);

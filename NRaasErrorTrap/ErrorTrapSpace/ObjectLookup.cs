@@ -118,14 +118,14 @@ namespace NRaas.ErrorTrapSpace
                 count++;
                 if (count > 10000)
                 {
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
                     count = 0;
                 }
             }
 
             if (count > 0)
             {
-                SpeedTrap.Sleep();
+                Common.Sleep();
             }
 
             return reference;

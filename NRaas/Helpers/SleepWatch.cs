@@ -54,7 +54,7 @@ namespace NRaas.CommonSpace.Helpers
         {
             if (mWatch.GetElapsedTime() >= mInterval)
             {
-                SpeedTrap.Sleep();
+                Common.Sleep();
                 mWatch.Restart();
             }
         }

@@ -110,13 +110,13 @@ namespace NRaas.CommonSpace.Helpers
                 if ((!buyFurnished) && (!lot.IsApartmentLot))
                 {
                     lot.MakeLotUnfurnished();
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
                     lot.UpdateCachedValues();
                 }
 
                 CreateActors(household, lot, false);
                 CreateInventories(household, exportBinItem.HouseholdContents, exportBinItem.IndexMap);
-                SpeedTrap.Sleep();
+                Common.Sleep();
                 BinCommon.UpdateImportedUrnstones(household, lot);
                 household.PostImport();
 

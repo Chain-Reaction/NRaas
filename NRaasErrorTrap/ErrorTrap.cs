@@ -53,12 +53,6 @@ namespace NRaas
         [Tunable, TunableComment("Whether to reset stored task states on loadup")]
         public static bool kResetTaskStates = false;
     }
-
-    public class ErrorTrapTuning6
-    {
-        [Tunable, TunableComment("Whether to perform speed trapping")]
-        public static bool kSpeedTrap = false;
-    }
    
     public class ErrorTrap : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished, Common.IWorldQuit
     {
@@ -83,9 +77,7 @@ namespace NRaas
 
         static long sReferencesCounted = 0;
 
-        static bool sAfterLoadup = false;
-
-        public delegate void OnSleepFunc(string text);
+        private static Dictionary<ObjectGuid, bool> sAllRunning = new Dictionary<ObjectGuid, bool>();        
 
         static ErrorTrap()
         {
@@ -212,51 +204,8 @@ namespace NRaas
             ScriptCore.ExceptionTrap.OnLoadReference += OnLoadReference;
             ScriptCore.ExceptionTrap.OnLoadArrayReference += OnLoadArrayReference;
             ScriptCore.ExceptionTrap.OnRemoveObject += OnRemoveObject;
-            ScriptCore.ExceptionTrap.OnGetOption += OnGetOption;
-
-            if (ErrorTrapTuning6.kSpeedTrap)
-            {
-                MethodInfo sleepFunc = typeof(NRaas.ErrorTrap).GetMethod("OnSleep", BindingFlags.Public | BindingFlags.Static);
-
-                foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
-                {
-                    Type common = assembly.GetType("NRaas.SpeedTrap");
-                    if (common == null) continue;
-
-                    MethodInfo func = common.GetMethod("SetDelegates", BindingFlags.Public | BindingFlags.Static);
-                    if (func == null) continue;
-
-                    func.Invoke(null, new object[] { Delegate.CreateDelegate(typeof(OnSleepFunc), sleepFunc) });
-                }
-            }
-        }
-
-        public static int OnGetOption(string option)
-        {
-            switch (option)
-            {
-                case "ResetTaskStates":
-                    return ErrorTrapTuning5.kResetTaskStates ? 1 : 0;
-            }
-
-            return 0;
-        }
-
-        public static void OnSleep(string text)
-        {
-            try
-            {
-                SleepLogger.Append(text);
-            }
-            catch (ResetException)
-            {
-                throw;
-            }
-            catch (Exception e)
-            {
-                Common.Exception("OnSleep", e);
-            }
-        }
+            ScriptCore.ExceptionTrap.OnProcessObjectGuid += OnProcessObjectGuid;            
+        }        
 
         public void OnWorldLoadFinished()
         {
@@ -265,71 +214,30 @@ namespace NRaas
             sChecked.Clear();
 
             ObjectLookup.StartListener();
-
-            foreach (ITask task in new List<ITask>(ScriptCore.Simulator.mObjHash.Values))
-            //foreach (ObjectGuid guid in new List<ObjectGuid>(sAllRunning.Keys))
-            {
-                //ITask task = Simulator.GetTask(guid);
-
-                IScriptProxy proxy = task as IScriptProxy;
-                if (proxy != null)
+            
+            foreach (ObjectGuid guid in new List<ObjectGuid>(sAllRunning.Keys))
+            {  
+                IScriptProxy proxy = Simulator.GetProxy(guid);
+                if (proxy != null && proxy.Target != null)
                 {
-                    if (proxy.Target != null)
+                    OneShotFunction oneShot = proxy.Target as OneShotFunction;
+                    if (oneShot != null && oneShot.mFunction != null)
                     {
-                        OneShotFunction oneShot = proxy.Target as OneShotFunction;
-                        if (oneShot != null)
+                        IGameObject obj = oneShot.mFunction.Target as IGameObject;
+                        if (obj != null && obj.HasBeenDestroyed)
                         {
-                            if (oneShot.mFunction != null)
-                            {
-                                IGameObject obj = oneShot.mFunction.Target as IGameObject;
-                                if (obj != null)
-                                {
-                                    if (obj.HasBeenDestroyed)
-                                    {
-                                        Simulator.DestroyObject(task.ObjectId);
+                            Simulator.DestroyObject(guid);
 
-                                        LogCorrection("Removed Orphan OneShotFunction");
-                                        LogCorrection(" " + oneShot.mFunction.Method.DeclaringType.ToString());
-                                        LogCorrection(" " + oneShot.mFunction.Target.GetType());
-                                        continue;
-                                    }
-                                }
-                            }
+                            LogCorrection("Removed Orphan OneShotFunction");
+                            LogCorrection(" " + oneShot.mFunction.Method.DeclaringType.ToString());
+                            LogCorrection(" " + oneShot.mFunction.Target.GetType());
+                            continue;
                         }
-                    }
-                }
-                else if (task != null)
-                {
-                    Sims3.Gameplay.OneShotFunctionTask oneShot = task as Sims3.Gameplay.OneShotFunctionTask;
-                    if (oneShot != null)
-                    {
-                        if (oneShot.mFunction != null)
-                        {
-                            IGameObject obj = oneShot.mFunction.Target as IGameObject;
-                            if (obj != null)
-                            {
-                                if (obj.HasBeenDestroyed)
-                                {
-                                    Simulator.DestroyObject(task.ObjectId);
-
-                                    LogCorrection("Removed Orphan OneShotFunctionTask");
-                                    LogCorrection(" " + oneShot.mFunction.Method.DeclaringType.ToString());
-                                    LogCorrection(" " + oneShot.mFunction.Target.GetType());
-                                    continue;
-                                }
-                            }
-                        }
-                    }
-                }
+                    }                  
+                }                
             }
 
-            new Common.AlarmTask(1, TimeUnit.Minutes, OnDelayedWorldLoadFinished);
-            new Common.AlarmTask(3, TimeUnit.Minutes, OnAfterLoadup);
-        }
-
-        public void OnAfterLoadup()
-        {
-            sAfterLoadup = true;
+            new Common.AlarmTask(1, TimeUnit.Minutes, OnDelayedWorldLoadFinished);            
         }
 
         public void OnDelayedWorldLoadFinished()
@@ -463,7 +371,7 @@ namespace NRaas
                         }
                     }
 
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
                 }
                 catch (Exception e)
                 {
@@ -476,8 +384,7 @@ namespace NRaas
 
         public void OnWorldQuit()
         {
-            sLoading = true;
-            sAfterLoadup = false;
+            sLoading = true;            
 
             //sDelayLoading = true;
 
@@ -486,6 +393,8 @@ namespace NRaas
             ObjectLookup.Clear();
 
             sObjectsOfInterest.Clear();
+
+            sAllRunning.Clear();
         }
 
         public static bool Loading
@@ -901,6 +810,18 @@ namespace NRaas
             return type;
         }
 
+        public static void OnProcessObjectGuid(ObjectGuid guid, bool added)
+        {
+            if (added)
+            {
+                sAllRunning[guid] = true;
+            }
+            else
+            {
+                sAllRunning.Remove(guid);
+            }
+        }
+
         public static void OnRemoveObject(ObjectGuid id)
         {
             string msg = id.ToString();
@@ -1248,153 +1169,7 @@ namespace NRaas
                     return base.AddStat(stat, val);
                 }
             }
-        }
-
-        public class SleepLogger : Logger<SleepLogger>
-        {
-            readonly static SleepLogger sLogger = new SleepLogger();
-
-            static Dictionary<ObjectGuid, TaskStats> sByGuid = new Dictionary<ObjectGuid, TaskStats>();
-
-            static Dictionary<string, TaskStats> sByNameBefore = new Dictionary<string, TaskStats>();
-            static Dictionary<string, TaskStats> sByNameAfter = new Dictionary<string, TaskStats>();
-
-            public static void Append(string text)
-            {
-                ObjectGuid currentTask = Simulator.CurrentTask;
-
-                string taskName = Common.TaskName(Simulator.GetTask(currentTask));
-                if (string.IsNullOrEmpty(taskName))
-                {
-                    taskName = "(Empty)";
-                }
-
-                TaskStats stats = null;
-                if (!sByGuid.TryGetValue(currentTask, out stats))
-                {
-                    stats = new TaskStats(currentTask, sAfterLoadup, taskName);
-                    sByGuid.Add(currentTask, stats);
-                }
-
-                long duration = 0;
-                if (text == "Begin")
-                {
-                    stats.mMostRecentBegin = DateTime.Now.Ticks;
-                }
-                else if (stats.mMostRecentBegin > 0)
-                {
-                    duration = DateTime.Now.Ticks - stats.mMostRecentBegin;
-                    stats.Add(duration);
-                }
-
-                if (sAfterLoadup)
-                {
-                    if (!sByNameAfter.TryGetValue(taskName, out stats))
-                    {
-                        stats = new TaskStats(ObjectGuid.InvalidObjectGuid, sAfterLoadup, taskName);
-                        sByNameAfter.Add(taskName, stats);
-                    }
-                }
-                else
-                {
-                    if (!sByNameBefore.TryGetValue(taskName, out stats))
-                    {
-                        stats = new TaskStats(ObjectGuid.InvalidObjectGuid, sAfterLoadup, taskName);
-                        sByNameBefore.Add(taskName, stats);
-                    }
-                }
-
-                stats.Add(duration);
-
-                //sLogger.PrivateAppend(text + "," + taskName + "," + DateTime.Now.Ticks);
-            }
-
-            protected override string Name
-            {
-                get { return "Sleep Logs"; }
-            }
-
-            protected override SleepLogger Value
-            {
-                get { return sLogger; }
-            }
-
-            protected override int PrivateLog(StringBuilder builder)
-            {
-                /*
-                foreach (TaskStats stats in sByGuid.Values)
-                {
-                    PrivateAppend(stats.ToString());
-                }
-
-                PrivateAppend(Common.NewLine);
-                */
-                foreach (TaskStats stats in sByNameBefore.Values)
-                {
-                    PrivateAppend(stats.ToString());
-                }
-
-                foreach (TaskStats stats in sByNameAfter.Values)
-                {
-                    PrivateAppend(stats.ToString());
-                }
-
-                return base.PrivateLog(builder);
-            }
-
-            public class TaskStats
-            {
-                ObjectGuid mGuid;
-
-                string mName;
-
-                int mCount;
-
-                float mDuration;
-
-                bool mAfterLoadup;
-
-                public long mMostRecentBegin;
-
-                public TaskStats(ObjectGuid guid, bool afterLoadup, string name)
-                {
-                    mAfterLoadup = afterLoadup;
-                    mGuid = guid;
-                    mName = name;
-                }
-
-                public void Add(long duration)
-                {
-                    mCount++;
-                    mDuration += duration;
-                }
-
-                public override string ToString()
-                {
-                    Common.StringBuilder result = new StringBuilder();
-
-                    if (mGuid != ObjectGuid.InvalidObjectGuid)
-                    {
-                        result += mGuid.ToString()  + ",";
-                    }
-
-                    if (mAfterLoadup)
-                    {
-                        result += "After,";
-                    }
-                    else
-                    {
-                        result += "Before,";
-                    }
-
-                    result += "\"" + mName + "\"";
-                    result += "," + mCount;
-                    result += "," + (mDuration / TimeSpan.TicksPerMillisecond).ToString();
-
-                    return result.ToString();
-                }
-            }
-        }
+        } 
 
         public class CorrectionLogger : Logger<CorrectionLogger>
         {
@@ -1496,7 +1271,7 @@ namespace NRaas
                     {
                         System.Text.StringBuilder param = new System.Text.StringBuilder();
                         value.Invoke(null, new object[] { param });
-                        PrivateAppend(param.ToString());
+                        base.PrivateAppend(param.ToString());
                     }
                     catch (Exception e)
                     {
@@ -1504,7 +1279,7 @@ namespace NRaas
                     }
                 }
 
-                return base.PrivateLog(builder);
+                return base.PrivateLog(builder);               
             }
         }
 

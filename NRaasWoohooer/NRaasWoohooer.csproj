@@ -54,6 +54,26 @@
     <NoStdLib>true</NoStdLib>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOT_NEXTPHASE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NOT_NEXTPHASE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\NRaas\Booters\BooterHelper.cs">
       <Link>CommonSpace\Booters\BooterHelper.cs</Link>
@@ -483,6 +503,8 @@
     <Compile Include="WoohooerSpace\Interactions\BotMakerWooHoo.cs" />
     <Compile Include="WoohooerSpace\Interactions\JetpackTryForBaby.cs" />
     <Compile Include="WoohooerSpace\Interactions\JetpackRisky.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SendWoohootyTextEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\SendWooHootyTextFromRelationPanelEx.cs" />
     <Compile Include="WoohooerSpace\Interactions\TimePortalWooHoo.cs" />
     <Compile Include="WoohooerSpace\Interactions\HoverTrainWoohoo.cs" />
     <Compile Include="WoohooerSpace\Interactions\HotTubGetOut.cs" />
@@ -818,6 +840,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

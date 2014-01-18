@@ -259,31 +259,31 @@ namespace NRaas.CommonSpace.Tasks
                 {
                     OutfitUtils.AddMissingPartsBots(builder, (OutfitCategories)0x200002, true, sim);
 
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
 
                     OutfitUtils.AddMissingPartsBots(builder, OutfitCategories.Everyday, true, sim);
 
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
                 }
                 else if (sim.IsHuman)
                 {
                     OutfitUtils.AddMissingParts(builder, (OutfitCategories)0x200002, true, sim, sim.IsAlien);
 
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
 
                     OutfitUtils.AddMissingParts(builder, OutfitCategories.Everyday, true, sim, sim.IsAlien);
 
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
                 }
                 else
                 {
                     OutfitUtils.AddMissingPartsPet(builder, OutfitCategories.Everyday | (OutfitCategories)0x200000, true, sim, speciesData);
 
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
 
                     OutfitUtils.AddMissingPartsPet(builder, OutfitCategories.Everyday, true, sim, speciesData);
 
-                    SpeedTrap.Sleep();
+                    Common.Sleep();
                 }
 
                 ResourceKey uniformKey = new ResourceKey();

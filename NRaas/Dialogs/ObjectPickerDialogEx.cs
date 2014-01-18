@@ -216,7 +216,7 @@ namespace NRaas.CommonSpace.Dialogs
         public static List<T> Show<T>(string title, List<ObjectPicker.TabInfo> tabInfo, List<CommonHeaderInfo<T>> paramHeaders, int numSelectableRows, List<ObjectPicker.RowInfo> preSelectedRows, out bool okayed)
             where T : class
         {
-            SpeedTrap.Sleep();
+            Common.Sleep();
 
             Dictionary<List<ObjectPicker.ColumnInfo>, bool> columns = new Dictionary<List<ObjectPicker.ColumnInfo>, bool>();
 

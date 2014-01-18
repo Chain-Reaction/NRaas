@@ -469,7 +469,7 @@ namespace NRaas.CommonSpace.Tasks
                             {
                                 sim.Destroy();
 
-                                SpeedTrap.Sleep();
+                                Common.Sleep();
 
                                 sim = FixInvisibleTask.InstantiateAtHome(simDesc, null);
                             }

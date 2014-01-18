@@ -54,6 +54,7 @@ namespace NRaas.MasterControllerSpace.Households
                             HudModel hudModel = Sims3.UI.Responder.Instance.HudModel as HudModel;
                             if (sim.CreatedSim != null)
                             {
+                                Household.AddDirtyNameSimID(sim.SimDescriptionId);
                                 hudModel.NotifyNameChanged(sim.CreatedSim.ObjectId);
                             }
                         }

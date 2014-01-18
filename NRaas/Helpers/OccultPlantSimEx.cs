@@ -60,7 +60,7 @@ namespace NRaas.CommonSpace.Helpers
                         createdSim.SwitchToOutfitDelayed(outfit, new CASUtils.SwapReadyCallback(ths.PlayConcealEffectAndSwapOutfit));
                         for (int i = 0x0; !ths.mOutfitIsReady && (i < 0xc350); i++)
                         {
-                            SpeedTrap.Sleep(0xa);
+                            Common.Sleep(0xa);
                         }
                         ths.SwapOutfit();
                     }

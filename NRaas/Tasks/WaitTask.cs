@@ -64,7 +64,7 @@ namespace NRaas.CommonSpace.Tasks
                 {
                     try
                     {
-                        SpeedTrap.Sleep();
+                        Common.Sleep();
                     }
                     catch
                     {
