@@ -140,6 +140,11 @@ namespace NRaas.CommonSpace.Helpers
 
             Cleanup3(log, "PotionShopConsignmentRegister", ref PotionShopConsignmentRegister.mObjectsForSale, ref objectsForSale);
 
+            Cleanup1(log, "BotShopRegister", BotShopRegister.kConsignmentPrices.Length, ref BotShopRegister.sConsignedObjects);
+            Cleanup2(log, "BotShopRegister", ref BotShopRegister.sData);
+
+            Cleanup3(log, "BotShopRegister", ref BotShopRegister.mObjectsForSale, ref objectsForSale);
+
             Cleanup1(log, "ConsignmentRegister", ConsignmentRegister.kConsignmentPrices.Length, ref ConsignmentRegister.sConsignedObjects);
             Cleanup2(log, "ConsignmentRegister", ref ConsignmentRegister.sData);
 
@@ -197,7 +202,13 @@ namespace NRaas.CommonSpace.Helpers
                             consignedObj = castObj.Object;
                             age = castObj.Age;
                         }
+                        else if (obj is BotShopRegister.ConsignedObject)
+                        {
+                            BotShopRegister.ConsignedObject castObj = obj as BotShopRegister.ConsignedObject;
 
+                            consignedObj = castObj.Object;
+                            age = castObj.Age;
+                        }
                         try
                         {
                             if ((age < 0) || (age >= maximumAge))
@@ -283,6 +294,12 @@ namespace NRaas.CommonSpace.Helpers
 
                         castObj.CreateObjectInitParameters(out parameters);
                     }
+                    else if (data is BotShopRegister.BotShopConsignmentRegisterData)
+                    {
+                        BotShopRegister.BotShopConsignmentRegisterData castObj = data as BotShopRegister.BotShopConsignmentRegisterData;
+
+                        castObj.CreateObjectInitParameters(out parameters);
+                    }
                 }
                 catch
                 {
@@ -318,6 +335,12 @@ namespace NRaas.CommonSpace.Helpers
 
                         castObj.GetThumbnailKey();
                     }
+                    else if (data is BotShopRegister.BotShopConsignmentRegisterObjectData)
+                    {
+                        BotShopRegister.BotShopConsignmentRegisterObjectData castObj = data as BotShopRegister.BotShopConsignmentRegisterObjectData;
+
+                        castObj.GetThumbnailKey();
+                    }
 
                     validObjects.Add(data, list);
                 }
@@ -339,6 +362,12 @@ namespace NRaas.CommonSpace.Helpers
                         else if (data is PotionShopConsignmentRegister.PotionShopConsignmentRegisterObjectData)
                         {
                             PotionShopConsignmentRegister.PotionShopConsignmentRegisterObjectData castObj = data as PotionShopConsignmentRegister.PotionShopConsignmentRegisterObjectData;
+
+                            castObj.Destroy();
+                        }
+                        else if (data is BotShopRegister.BotShopConsignmentRegisterObjectData)
+                        {
+                            BotShopRegister.BotShopConsignmentRegisterObjectData castObj = data as BotShopRegister.BotShopConsignmentRegisterObjectData;
 
                             castObj.Destroy();
                         }
@@ -366,6 +395,12 @@ namespace NRaas.CommonSpace.Helpers
                     else if (pair.Key is PotionShopConsignmentRegister.PotionShopConsignmentRegisterObjectData)
                     {
                         PotionShopConsignmentRegister.PotionShopConsignmentRegisterObjectData castObj = pair.Key as PotionShopConsignmentRegister.PotionShopConsignmentRegisterObjectData;
+
+                        castObj.Destroy();
+                    }
+                    else if (pair.Key is BotShopRegister.BotShopConsignmentRegisterObjectData)
+                    {
+                        BotShopRegister.BotShopConsignmentRegisterObjectData castObj = pair.Key as BotShopRegister.BotShopConsignmentRegisterObjectData;
 
                         castObj.Destroy();
                     }
