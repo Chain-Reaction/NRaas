@@ -441,7 +441,7 @@ namespace NRaas.CommonSpace.Helpers
                     {
                         FruitVeggieStand.FruitVeggieStandObjectData castObj = pair.Key as FruitVeggieStand.FruitVeggieStandObjectData;
 
-                        castObj.GetThumbnailKey();
+                        castObj.Destroy();
                     }
                 }
             }
