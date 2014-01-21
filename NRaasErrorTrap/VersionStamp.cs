@@ -42,7 +42,13 @@ namespace NRaas
          * Issue with unicorn fertilized life fruit being deleted by [ErrorTrap] ?
          * 
          */
+
+        /* Changes
+         *
+         * (JunJayMdM) Added dereferencing for "FVShoppingRegister"
+         * (JunJayMdM) Added dereferencing for "BotShopRegister"
+         */
         
-        public static readonly int sVersion = 95;
+        public static readonly int sVersion = 96;
     }
 }
