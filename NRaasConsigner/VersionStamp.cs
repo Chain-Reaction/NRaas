@@ -47,6 +47,7 @@ namespace NRaas
 
         /* Changes
          * 
+         * (JunJayMdM) Added BotShopRegister to ConsignmentHelper
          * 
          */
         public static readonly int sVersion = 21;
