@@ -47,9 +47,10 @@ namespace NRaas
 
         /* Changes
          * 
+         * (JunJayMdM) Updated BuyItemWithRegisterEx to handle the BotShopRegister
          * (JunJayMdM) Added BotShopRegister to ConsignmentHelper
          * 
          */
-        public static readonly int sVersion = 21;
+        public static readonly int sVersion = 22;
     }
 }
