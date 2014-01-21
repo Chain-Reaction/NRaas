@@ -158,6 +158,16 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
                             mConsignment[obj.mObject] = true;
                         }
                     }
+
+                    foreach (KeyValuePair<ulong, List<BotShopRegister.ConsignedObject>> sim in BotShopRegister.sConsignedObjects)
+                    {
+                        foreach (BotShopRegister.ConsignedObject obj in sim.Value)
+                        {
+                            if (obj.mObject == null) continue;
+
+                            mConsignment[obj.mObject] = true;
+                        }
+                    }
                 }
                 return mConsignment;
             }
