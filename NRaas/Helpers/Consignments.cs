@@ -13,6 +13,7 @@ using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
+using Sims3.Store.Objects;
 using Sims3.UI;
 using Sims3.UI.CAS;
 using Sims3.UI.GameEntry;
@@ -145,6 +146,14 @@ namespace NRaas.CommonSpace.Helpers
 
             Cleanup3(log, "BotShopRegister", ref BotShopRegister.mObjectsForSale, ref objectsForSale);
 
+            foreach (FruitVeggieStand register in Sims3.Gameplay.Queries.GetObjects<FruitVeggieStand>())
+            {
+                Cleanup1(log, "FruitVeggieStand", FruitVeggieStand.kConsignmentPrices.Length, ref register.mConsignedObjects);
+                Cleanup2(log, "FruitVeggieStand", ref register.mData);
+
+                Cleanup3(log, "FruitVeggieStand", ref register.mObjectsForSale, ref objectsForSale);
+            }
+
             Cleanup1(log, "ConsignmentRegister", ConsignmentRegister.kConsignmentPrices.Length, ref ConsignmentRegister.sConsignedObjects);
             Cleanup2(log, "ConsignmentRegister", ref ConsignmentRegister.sData);
 
@@ -205,6 +214,13 @@ namespace NRaas.CommonSpace.Helpers
                         else if (obj is BotShopRegister.ConsignedObject)
                         {
                             BotShopRegister.ConsignedObject castObj = obj as BotShopRegister.ConsignedObject;
+
+                            consignedObj = castObj.Object;
+                            age = castObj.Age;
+                        }
+                        else if (obj is FruitVeggieStand.ConsignedObject)
+                        {
+                            FruitVeggieStand.ConsignedObject castObj = obj as FruitVeggieStand.ConsignedObject;
 
                             consignedObj = castObj.Object;
                             age = castObj.Age;
@@ -300,6 +316,12 @@ namespace NRaas.CommonSpace.Helpers
 
                         castObj.CreateObjectInitParameters(out parameters);
                     }
+                    else if (data is FruitVeggieStand.FruitVeggieStandData)
+                    {
+                        FruitVeggieStand.FruitVeggieStandData castObj = data as FruitVeggieStand.FruitVeggieStandData;
+
+                        castObj.CreateObjectInitParameters(out parameters);
+                    }
                 }
                 catch
                 {
@@ -341,7 +363,12 @@ namespace NRaas.CommonSpace.Helpers
 
                         castObj.GetThumbnailKey();
                     }
+                    else if (data is FruitVeggieStand.FruitVeggieStandObjectData)
+                    {
+                        FruitVeggieStand.FruitVeggieStandObjectData castObj = data as FruitVeggieStand.FruitVeggieStandObjectData;
 
+                        castObj.GetThumbnailKey();
+                    }
                     validObjects.Add(data, list);
                 }
                 catch
@@ -368,6 +395,12 @@ namespace NRaas.CommonSpace.Helpers
                         else if (data is BotShopRegister.BotShopConsignmentRegisterObjectData)
                         {
                             BotShopRegister.BotShopConsignmentRegisterObjectData castObj = data as BotShopRegister.BotShopConsignmentRegisterObjectData;
+
+                            castObj.Destroy();
+                        }
+                        else if (data is FruitVeggieStand.FruitVeggieStandObjectData)
+                        {
+                            FruitVeggieStand.FruitVeggieStandObjectData castObj = data as FruitVeggieStand.FruitVeggieStandObjectData;
 
                             castObj.Destroy();
                         }
@@ -403,6 +436,12 @@ namespace NRaas.CommonSpace.Helpers
                         BotShopRegister.BotShopConsignmentRegisterObjectData castObj = pair.Key as BotShopRegister.BotShopConsignmentRegisterObjectData;
 
                         castObj.Destroy();
+                    }
+                    else if (pair.Key is FruitVeggieStand.FruitVeggieStandObjectData)
+                    {
+                        FruitVeggieStand.FruitVeggieStandObjectData castObj = pair.Key as FruitVeggieStand.FruitVeggieStandObjectData;
+
+                        castObj.GetThumbnailKey();
                     }
                 }
             }
