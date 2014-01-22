@@ -46,6 +46,6 @@ namespace NRaas
          * Added "Settings \ Minimum Route Failure Testing Time"
          * 
          */
-        public static readonly int sVersion = 112;
+        public static readonly int sVersion = 113;
     }
 }

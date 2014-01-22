@@ -84,6 +84,10 @@ namespace NRaas.ConsignerSpace.Interactions
             {
                 createSellableCallback = CreatePotionObjectsList;
             }
+            else if (ths is BotShopRegister)
+            {
+                createSellableCallback = CreateFutureObjectsList;
+            }
             else if (ths is PetstoreRegister)
             {
                 createSellableCallback = CreatePetObjectsList;
@@ -97,14 +101,14 @@ namespace NRaas.ConsignerSpace.Interactions
         private static List<ISellableUIItem> CreatePetObjectsList(Sim customer)
         {
             List<ISellableUIItem> consignableObjectsList = new List<ISellableUIItem>();
-            foreach (GameObject obj2 in Inventories.QuickFind<GameObject>(customer.Inventory, true, IsPetConsignable))
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Inventory, true, IsPetConsignable))
             {
-                ConsignmentRegister.AddObjectToSellableObjectsList(obj2, consignableObjectsList);
+                ConsignmentRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
             }
 
-            foreach (GameObject obj3 in Inventories.QuickFind<GameObject>(customer.Household.SharedFamilyInventory.Inventory, true, IsPetConsignable))
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Household.SharedFamilyInventory.Inventory, true, IsPetConsignable))
             {
-                ConsignmentRegister.AddObjectToSellableObjectsList(obj3, consignableObjectsList);
+                ConsignmentRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
             }
 
             return consignableObjectsList;
@@ -113,14 +117,14 @@ namespace NRaas.ConsignerSpace.Interactions
         private static List<ISellableUIItem> CreateConsignmentObjectsList(Sim customer)
         {
             List<ISellableUIItem> consignableObjectsList = new List<ISellableUIItem>();
-            foreach (GameObject obj2 in Inventories.QuickFind<GameObject>(customer.Inventory, true, IsObjectConsignable))
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Inventory, true, IsObjectConsignable))
             {
-                ConsignmentRegister.AddObjectToSellableObjectsList(obj2, consignableObjectsList);
+                ConsignmentRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
             }
 
-            foreach (GameObject obj3 in Inventories.QuickFind<GameObject>(customer.Household.SharedFamilyInventory.Inventory, true, IsObjectConsignable))
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Household.SharedFamilyInventory.Inventory, true, IsObjectConsignable))
             {
-                ConsignmentRegister.AddObjectToSellableObjectsList(obj3, consignableObjectsList);
+                ConsignmentRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
             }
 
             return consignableObjectsList;
@@ -129,14 +133,29 @@ namespace NRaas.ConsignerSpace.Interactions
         private static List<ISellableUIItem> CreatePotionObjectsList(Sim customer)
         {
             List<ISellableUIItem> consignableObjectsList = new List<ISellableUIItem>();
-            foreach (GameObject obj2 in Inventories.QuickFind<GameObject>(customer.Inventory, true, IsPotionConsignable))
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Inventory, true, IsPotionConsignable))
             {
-                PotionShopConsignmentRegister.AddObjectToSellableObjectsList(obj2, consignableObjectsList);
+                PotionShopConsignmentRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
             }
 
-            foreach (GameObject obj3 in Inventories.QuickFind<GameObject>(customer.Household.SharedFamilyInventory.Inventory, true, IsPotionConsignable))
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Household.SharedFamilyInventory.Inventory, true, IsPotionConsignable))
             {
-                PotionShopConsignmentRegister.AddObjectToSellableObjectsList(obj3, consignableObjectsList);
+                PotionShopConsignmentRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
+            }
+            return consignableObjectsList;
+        }
+
+        private static List<ISellableUIItem> CreateFutureObjectsList(Sim customer)
+        {
+            List<ISellableUIItem> consignableObjectsList = new List<ISellableUIItem>();
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Inventory, true, IsFutureObjectConsignable))
+            {
+                BotShopRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
+            }
+
+            foreach (GameObject obj in Inventories.QuickFind<GameObject>(customer.Household.SharedFamilyInventory.Inventory, true, IsFutureObjectConsignable))
+            {
+                BotShopRegister.AddObjectToSellableObjectsList(obj, consignableObjectsList);
             }
             return consignableObjectsList;
         }
@@ -231,6 +250,41 @@ namespace NRaas.ConsignerSpace.Interactions
             if (obj is IHazInsect) return true;
 
             if (obj is Wildflower) return true;
+
+            // Future
+
+            if (obj is ChipBlankLarge || obj is ChipBlankMedium || obj is ChipBlankSmall) return true;
+
+            if (obj is TraitChip) return true;
+
+            if (obj is INanite) return true;
+
+            if (obj is ITerrarium) return (obj as ITerrarium).IsNaniteTerrarium;
+
+            return false;
+        }
+
+        private static bool IsFutureObjectConsignable(IGameObject obj, object customData)
+        {
+            if (!IsConsignable(obj, customData)) return false;
+
+            if (Consigner.Settings.mAllowSellAll) return true;
+
+            if (obj is ICraft) return true;
+
+            if (obj.SculptureComponent != null) return true;
+
+            if (obj is IGem) return true;
+
+            if (obj is IMetal) return true;
+
+            if (obj is ChipBlankLarge || obj is ChipBlankMedium || obj is ChipBlankSmall) return true;
+
+            if (obj is TraitChip) return true;
+
+            if (obj is INanite) return true;
+
+            if (obj is ITerrarium) return (obj as ITerrarium).IsNaniteTerrarium;
 
             return false;
         }

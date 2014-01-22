@@ -13,6 +13,7 @@ using Sims3.Gameplay.Pools;
 using Sims3.Gameplay.Seasons;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
+using Sims3.Store.Objects;
 using Sims3.UI;
 using System;
 using System.Collections;
@@ -156,6 +157,31 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
                             if (obj.mObject == null) continue;
 
                             mConsignment[obj.mObject] = true;
+                        }
+                    }
+
+                    foreach (KeyValuePair<ulong, List<BotShopRegister.ConsignedObject>> sim in BotShopRegister.sConsignedObjects)
+                    {
+                        foreach (BotShopRegister.ConsignedObject obj in sim.Value)
+                        {
+                            if (obj.mObject == null) continue;
+
+                            mConsignment[obj.mObject] = true;
+                        }
+                    }
+
+                    foreach (FVShoppingRegister register in Sims3.Gameplay.Queries.GetObjects<FVShoppingRegister>())
+                    {
+                        if (register.mConsignedObjects == null) continue;
+
+                        foreach (KeyValuePair<ulong, List<FVShoppingRegister.ConsignedObject>> sim in register.mConsignedObjects)
+                        {
+                            foreach (FVShoppingRegister.ConsignedObject obj in sim.Value)
+                            {
+                                if (obj.mObject == null) continue;
+
+                                mConsignment[obj.mObject] = true;
+                            }
                         }
                     }
                 }

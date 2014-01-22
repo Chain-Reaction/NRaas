@@ -61,6 +61,21 @@ namespace NRaas.ConsignerSpace.Helpers
                 GameStates.PreReturnHome -= PotionShopConsignmentRegister.OnPreReturnHome;
             }
 
+            if (GameUtils.IsInstalled(ProductVersion.EP11))
+            {
+                if (BotShopRegister.sConsignedObjects == null)
+                {
+                    BotShopRegister.sConsignedObjects = new Dictionary<ulong, List<BotShopRegister.ConsignedObject>>();
+                }
+
+                new Common.AlarmTask(ConsignmentRegister.kTimeOfSale, ~DaysOfTheWeek.None, OnIntoTheFutureConsign);
+
+                AlarmManager.Global.RemoveAlarm(BotShopRegister.sDailyAlarm);
+                BotShopRegister.sDailyAlarm = AlarmHandle.kInvalidHandle;
+
+                GameStates.PreReturnHome -= BotShopRegister.OnPreReturnHome;
+            }
+
             GameStates.PreReturnHome -= OnPreReturnHome;
             GameStates.PreReturnHome += OnPreReturnHome;
         }
@@ -89,6 +104,19 @@ namespace NRaas.ConsignerSpace.Helpers
             Consign(objects, PotionShopConsignmentRegister.sConsignAttempts, PotionShopConsignmentRegister.kConsignmentPrices, PotionShopConsignmentRegister.kMadeGoodSaleThreshold, PotionShopConsignmentRegister.kReputationBonusForPositiveFeedback, PotionShopConsignmentRegister.sQualityVsReputationCurve, PotionShopConsignmentRegister.kSellXItemsOpportunityReputationGainMultiplier, PotionShopConsignmentRegister.kConsignmentLifespan, PotionShopConsignmentRegister.kDailyNumberOfAttemptsDecrement, PotionShopConsignmentRegister.sReputationVsStoreFeeCurve, PotionShopConsignmentRegister.kNumberOfTopSellingItems, PotionShopConsignmentRegister.kMakeXSimoleonsOpportunityConsignmentFeeMultiplier);
 
             PotionShopConsignmentRegister.sConsignedObjects = ConsignedObjectProxy.ConvertToList<PotionShopConsignmentRegister.ConsignedObject>(objects);
+        }
+
+        protected static void OnIntoTheFutureConsign()
+        {
+            if (BotShopRegister.sSkillVsSaleChanceCurve == null)
+            {
+                BotShopRegister.InitializeData();
+            }
+
+            Dictionary<ulong, List<ConsignedObjectProxy>> objects = ConsignedObjectProxy.ConvertToList(BotShopRegister.sConsignedObjects);
+            Consign(objects, BotShopRegister.sConsignAttempts, BotShopRegister.kConsignmentPrices, BotShopRegister.kMadeGoodSaleThreshold, BotShopRegister.kReputationBonusForPositiveFeedback, BotShopRegister.sQualityVsReputationCurve, BotShopRegister.kSellXItemsOpportunityReputationGainMultiplier, BotShopRegister.kConsignmentLifespan, BotShopRegister.kDailyNumberOfAttemptsDecrement, BotShopRegister.sReputationVsStoreFeeCurve, BotShopRegister.kNumberOfTopSellingItems, BotShopRegister.kMakeXSimoleonsOpportunityConsignmentFeeMultiplier);
+
+            BotShopRegister.sConsignedObjects = ConsignedObjectProxy.ConvertToList<BotShopRegister.ConsignedObject>(objects);
         }
 
         protected static void Consign(Dictionary<ulong, List<ConsignedObjectProxy>> lookup, Dictionary<ObjectGuid, float> consignAttempts, float[] consignmentPrices, float madeGoodSaleThreshold, float reputationBonusForPositiveFeedback, Curve qualityVsReputationCurve, float sellXItemsOpportunityReputationGainMultiplier, int consignmentLifespan, float dailyNumberOfAttemptsDecrement, Curve reputationVsStoreFeeCurve, int numberOfTopSellingItems, float makeXSimoleonsOpportunityConsignmentFeeMultiplier)
@@ -377,6 +405,13 @@ namespace NRaas.ConsignerSpace.Helpers
 
                     PotionShopConsignmentRegister.sConsignedObjects = new Dictionary<ulong, List<PotionShopConsignmentRegister.ConsignedObject>>();
                 }
+
+                if (GameUtils.IsInstalled(ProductVersion.EP11))
+                {
+                    PreReturnHome(ConsignedObjectProxy.ConvertToList(BotShopRegister.sConsignedObjects));
+
+                    BotShopRegister.sConsignedObjects = new Dictionary<ulong, List<BotShopRegister.ConsignedObject>>();
+                }
             }
             catch (Exception e)
             {
@@ -431,9 +466,15 @@ namespace NRaas.ConsignerSpace.Helpers
                 {
                     return new AmbitonConsignedObjectProxy(obj);
                 }
-                else
+
+                else if (obj is PotionShopConsignmentRegister.ConsignedObject)
                 {
                     return new SupernaturalConsignedObjectProxy(obj);
+                }
+
+                else
+                {
+                    return new IntoTheFutureConsignedObjectProxy(obj);
                 }
             }
 
@@ -584,6 +625,67 @@ namespace NRaas.ConsignerSpace.Helpers
             public override int GetValueOfSale(SimDescription sim)
             {
                 return PotionShopConsignmentRegister.GetValueOfSale(mData, sim);
+            }
+        }
+
+        public class IntoTheFutureConsignedObjectProxy : ConsignedObjectProxy
+        {
+            BotShopRegister.ConsignedObject mData;
+
+            public IntoTheFutureConsignedObjectProxy(object data)
+            {
+                mData = data as BotShopRegister.ConsignedObject;
+            }
+
+            public override string DisplayName
+            {
+                get
+                {
+                    return mData.DisplayName;
+                }
+            }
+
+            public override int Age
+            {
+                get
+                {
+                    return mData.Age;
+                }
+                set
+                {
+                    mData.Age = value;
+                }
+            }
+
+            public override IGameObject Object
+            {
+                get
+                {
+                    return mData.Object;
+                }
+            }
+
+            public override ICancelSellableUIItem Data
+            {
+                get
+                {
+                    return mData;
+                }
+            }
+
+            protected override float PrivateGetQuality()
+            {
+                return mData.GetQuality();
+            }
+
+            public override float GetChanceOfSale(Sim createdSim)
+            {
+                return BotShopRegister.GetChanceOfSale(createdSim, mData);
+            }
+
+            public override int GetValueOfSale(SimDescription sim)
+            {
+                return BotShopRegister.GetValueOfSale(mData, sim);
             }
         }
     }
