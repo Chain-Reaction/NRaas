@@ -297,15 +297,26 @@ namespace NRaas.TravelerSpace.Helpers
                             // Custom
                             if (!FutureDescendantHouseholdInfoEx.CreateAndAddDescendant(info)) break;
                         }
+
+						foreach (ulong num2 in Household.mDirtyNameSimIds)
+						{
+							if (info.IsSimAProgenitor(num2))
+							{
+								SimDescription description = SimDescription.Find(num2);
+								if(description != null)
+								{
+									foreach (SimDescription description2 in info.DescendantHousehold.SimDescriptions)
+									{
+										description2.LastName = description.LastName;
+									}
+								}
+							}
+						}
                     }
                     else
                     {
                         // Custom
-                        Household household2 = FutureDescendantHouseholdInfoEx.Instantiate(info);
-                        if (household2 != null)
-                        {
-                            ths.SetHouseholdCallback(household2);
-                        }
+                        Household household2 = FutureDescendantHouseholdInfoEx.Instantiate(info);					
                     }
                 }
                 catch (Exception e)
@@ -313,6 +324,7 @@ namespace NRaas.TravelerSpace.Helpers
                     Common.Exception(i.ToString(), e);
                 }
             }
+			Household.ClearDirtyNameSimIDs();
             return false;
         }
 
@@ -336,7 +348,6 @@ namespace NRaas.TravelerSpace.Helpers
 
                     ths.RemoveInactiveDescendantHouseholds();
 
-                    ths.SetHouseholdCallback(Household.ActiveHousehold);
                     List<SimDescription> simDescriptions = Household.ActiveHousehold.SimDescriptions;
                     foreach (SimDescription description in simDescriptions)
                     {

@@ -90,6 +90,6 @@ namespace NRaas
          * Another attempt to fix the issue where sims in the foreign worlds age while in the Future
          * 
          */
-        public static readonly int sVersion = 82;
+        public static readonly int sVersion = 83;
     }
 }
