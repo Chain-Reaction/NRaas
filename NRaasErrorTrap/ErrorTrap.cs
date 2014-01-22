@@ -1261,6 +1261,13 @@ namespace NRaas
                         MethodInfo func = common.GetMethod("ExternalRecordErrors", BindingFlags.Public | BindingFlags.Static);
                         if (func == null) continue;
 
+                        ParameterInfo[] paramInfo = func.GetParameters();
+                        if (paramInfo == null || paramInfo.Length != 1 || paramInfo[0].ParameterType != typeof(System.Text.StringBuilder))
+                        {
+                            base.PrivateAppend(assembly.GetName().Name + " ERROR: " + func.ReflectedType.FullName + "+" + func.Name + " has invalid parameters!" + Common.NewLine);
+                            continue;
+                        }
+
                         sLogs.Add(func);
                     }
                 }
@@ -1270,6 +1277,7 @@ namespace NRaas
                     try
                     {
                         System.Text.StringBuilder param = new System.Text.StringBuilder();
+
                         value.Invoke(null, new object[] { param });
                         base.PrivateAppend(param.ToString());
                     }
