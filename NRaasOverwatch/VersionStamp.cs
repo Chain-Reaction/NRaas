@@ -37,6 +37,9 @@ namespace NRaas
 
         /* Changes:
          *
+         * (JunJayMdM) All alarms will be set to yield only when the game speed is Normal or Paused
+         ** It might defeat the purpose of preventing the Alarm Manager from halting but that's not verified
+         * 
          * All alarms in the game are now set to be yielding
          ** This will stop any one alarm from halting the alarm manager, but may produce unexpected side-effects when running the game at high-speed for long durations
          * 
