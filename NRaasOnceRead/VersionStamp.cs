@@ -21,11 +21,15 @@ namespace NRaas
 
         /* Changes
          * 
- Must release all injection modules for base-mod compatibility
+         * (JunJayMdM) Updated "Choose Book" on the tablet for backpack posture and jetpack posture (Tablet)
+         ** This change constraints the minimum patch level required to 1.63
+         *
+         * (JunJayMdM) Fixed Twallan change => "Choose Book" on the tablet now lists all books in town (Tablet)
+         * 
          * Changes made to handle ITUN changes made by [[Retuner]]
          * "Choose Book" on the tablet now lists all books in town (Tablet)
          * 
          */
-        public static readonly int sVersion = 12;
+        public static readonly int sVersion = 13;
     }
 }

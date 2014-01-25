@@ -22,8 +22,10 @@ using System.Text;
 
 namespace NRaas.OverwatchSpace.Loadup
 {
-    public class YieldAllAlarms : ImmediateLoadupOption
+    public class YieldAllAlarms : ImmediateLoadupOption, Common.IWorldQuit
     {
+        private static bool sYieldRequired = true;
+
         public override string GetTitlePrefix()
         {
             return "YieldAllAlarms";
@@ -33,11 +35,26 @@ namespace NRaas.OverwatchSpace.Loadup
         {
             Overwatch.Log(GetTitlePrefix());
 
+            Sims3.Gameplay.Gameflow.GameSpeedChanged -= OnGameSpeedChanged;
+            Sims3.Gameplay.Gameflow.GameSpeedChanged += OnGameSpeedChanged;
+
             new Common.AlarmTask(1, TimeUnit.Minutes, OnYieldAll, 15, TimeUnit.Minutes);
         }
 
-        protected static void OnYieldAll()
+        public void OnWorldQuit()
         {
+            Sims3.Gameplay.Gameflow.GameSpeedChanged -= OnGameSpeedChanged;
+        }
+
+        private static void OnGameSpeedChanged(Sims3.Gameplay.Gameflow.GameSpeed newSpeed, bool locked)
+        {
+            sYieldRequired = (newSpeed <= Sims3.Gameplay.Gameflow.GameSpeed.Normal);
+
+            OnYieldAll();
+        }
+
+        protected static void OnYieldAll()
+        {           
             AlarmManager manager = AlarmManager.Global;
 
             foreach (object item in manager.mTimerQueue)
@@ -45,7 +62,7 @@ namespace NRaas.OverwatchSpace.Loadup
                 AlarmManager.Timer timer = item as AlarmManager.Timer;
                 if (timer == null) continue;
 
-                timer.YieldRequired = true;
+                timer.YieldRequired = sYieldRequired;
             }
         }
     }

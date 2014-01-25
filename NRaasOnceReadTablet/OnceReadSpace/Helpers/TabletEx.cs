@@ -26,10 +26,9 @@ namespace NRaas.OnceReadSpace.Helpers
         public static List<Book> GetBooksInTown(Sim actor, bool justFirst, bool noDuplicates, bool autonomous)
         {
             List<Book> list = new List<Book>();
+
             if (actor != null)
             {
-                Lot lotHome = actor.LotHome;
-                Predicate<Book> match = null;
                 foreach (Book b in Sims3.Gameplay.Queries.GetObjects<Book>())
                 {
                     // Custom
@@ -40,14 +39,9 @@ namespace NRaas.OnceReadSpace.Helpers
 
                     if (!justFirst && noDuplicates)
                     {
-                        if (match == null)
-                        {
-                            match = delegate(Book toTest)
-                            {
-                                return toTest.BookId == b.BookId;
-                            };
-                        }
-                        if (list.Exists(match))
+
+                        // Fixed Twallan's mistake => he stored the predicate result in a variable outside the loop, so the first "true" value encountered was making it skip all books
+                        if (list.Exists((Book toTest) => toTest.BookId == b.BookId))
                         {
                             continue;
                         }
