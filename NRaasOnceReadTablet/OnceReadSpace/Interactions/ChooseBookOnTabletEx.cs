@@ -64,6 +64,8 @@ namespace NRaas.OnceReadSpace.Interactions
                 bool succeeded = false;
                 BeginCommodityUpdates();
                 Actor.PopCanePostureIfNecessary();
+                Actor.PopBackpackPostureIfNecessary();
+                Actor.PopJetpackPostureIfNecessary();
                 if (Actor.Inventory.Contains(Target))
                 {
                     InteractionDefinition definition = new Tablet.ReadBookOnTablet.Definition(true);
