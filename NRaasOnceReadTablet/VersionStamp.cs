@@ -11,6 +11,6 @@ namespace NRaas
     {
         public static readonly string sNamespace = "NRaas.OnceReadTablet";
 
-        public static readonly int sVersion = 12;
+        public static readonly int sVersion = 13;
     }
 }
