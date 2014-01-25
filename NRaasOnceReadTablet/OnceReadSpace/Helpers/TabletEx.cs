@@ -26,9 +26,12 @@ namespace NRaas.OnceReadSpace.Helpers
         public static List<Book> GetBooksInTown(Sim actor, bool justFirst, bool noDuplicates, bool autonomous)
         {
             List<Book> list = new List<Book>();
+
+            // Retrieves books from the home lot first
+            list.AddRange(Tablet.GetBooksOnMyLot(actor, justFirst, noDuplicates));
+
             if (actor != null)
             {
-                Lot lotHome = actor.LotHome;
                 Predicate<Book> match = null;
                 foreach (Book b in Sims3.Gameplay.Queries.GetObjects<Book>())
                 {
