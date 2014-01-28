@@ -64,7 +64,7 @@ namespace NRaas.GoHereSpace.Interactions
                         listObjs = new List<ObjectPicker.TabInfo>();
                         listObjs.Add(new ObjectPicker.TabInfo(string.Empty, string.Empty, new List<ObjectPicker.RowInfo>()));
 
-                        foreach(GoToVenue.Item choice in GoToVenue.GetChoices(null))
+                        foreach(GoToVenue.Item choice in GoToVenue.GetChoices(actor as Sim))
                         {
                             Lot lot = choice.Value;
 

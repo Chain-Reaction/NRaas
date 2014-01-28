@@ -33,6 +33,7 @@ using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
 using Sims3.UI;
 using Sims3.UI.Controller;
+using Sims3.UI.CAS;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -137,6 +138,12 @@ namespace NRaas
             {
                 Relationship.kAttractionThreshold = sOriginalAttractionThreshold;
             }
+        }
+
+        // Externalized to RelationshipPanel
+        public static InteractionDefinition GetSendWooHootyTextDefinition(IMiniSimDescription simToText)
+        {
+            return new SendWooHootyTextFromRelationPanelEx.Definition(simToText);
         }
 
         // Externalized to MasterController

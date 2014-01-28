@@ -71,11 +71,10 @@ namespace NRaas.GoHereSpace.Interactions
             foreach (Lot lot in LotManager.Lots)
             {
                 if (lot.IsWorldLot) continue;
+                if (lot == actor.LotCurrent) continue;
 
                 if (lot.IsCommunityLot)
-                {
-                    if (lot == actor.LotCurrent) continue;
-
+                {                  
                     switch (lot.CommercialLotSubType)
                     {
                         case CommercialLotSubType.kCommercialUndefined:
