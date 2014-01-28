@@ -19,6 +19,8 @@ namespace NRaas.RelationshipPanelSpace
 {
     public class SimDescriptionEx
     {
+        static Common.MethodStore sGetSendWooHootyTextDefinition = new Common.MethodStore("NRaasWoohooer", "NRaas.Woohooer", "GetSendWooHootyTextDefinition", new Type[] { typeof(SimDescription) });
+
         public static void OnPickFromPanel(SimDescription ths, UIMouseEventArgs eventArgs, GameObjectHit gameObjectHit)
         {
             try
@@ -86,7 +88,17 @@ namespace NRaas.RelationshipPanelSpace
                                         interactions.Add(new InteractionObjectPair(activePhone.GetSendPictureTextFromRelationPanelDefinition(ths), activePhone));
                                         interactions.Add(new InteractionObjectPair(activePhone.GetSendSecretAdmirerTextFromRelationPanelDefinition(ths), activePhone));
                                         interactions.Add(new InteractionObjectPair(activePhone.GetSendBreakUpTextFromRelationPanelDefinition(ths), activePhone));
-                                        interactions.Add(new InteractionObjectPair(activePhone.GetSendWooHootyTextFromRelationPanelDefinition(ths), activePhone));
+                                        if (!sGetSendWooHootyTextDefinition.Valid)
+                                        {
+                                            interactions.Add(new InteractionObjectPair(activePhone.GetSendWooHootyTextFromRelationPanelDefinition(ths), activePhone));
+                                        }
+                                        else
+                                        {
+                                            InteractionDefinition instance = null;
+                                            instance = sGetSendWooHootyTextDefinition.Invoke<InteractionDefinition>(new object[] { ths });
+                                            interactions.Add(new InteractionObjectPair(instance, activePhone));
+            
+                                        }
                                     }
 
                                     if ((!ths.IsEnrolledInBoardingSchool() && !ths.IsDroppingOut) && !GameStates.IsEarlyDepartureSim(ths.SimDescriptionId))

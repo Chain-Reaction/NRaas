@@ -72,6 +72,6 @@ namespace NRaas
          * Added "Allow Car Routing" default: True
          * 
          */
-        public static readonly int sVersion = 41;
+        public static readonly int sVersion = 42;
     }
 }
