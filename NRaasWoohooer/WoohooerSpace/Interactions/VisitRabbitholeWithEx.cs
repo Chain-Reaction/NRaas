@@ -113,7 +113,7 @@ namespace NRaas.WoohooerSpace.Interactions
             protected override bool Perform(GameObject obj, InteractionDefinition definition, Dictionary<Type, bool> existing)
             {
                 RabbitHole hole = obj as RabbitHole;
-                if (hole == null) return false;
+				if (hole == null || hole is EiffelTower) return false;
 
                 VisitRabbitHoleEx.InteractionParameters parameters;
                 if (VisitRabbitHoleEx.Parameters.TryGetValue(hole.Guid, out parameters))
