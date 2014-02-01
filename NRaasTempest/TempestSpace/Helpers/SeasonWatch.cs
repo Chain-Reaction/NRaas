@@ -26,6 +26,7 @@ using Sims3.Gameplay.Utilities;
 using Sims3.Gameplay.UI;
 using Sims3.SimIFace;
 using Sims3.SimIFace.Enums;
+using Sims3.SimIFace.Weather;
 using Sims3.UI;
 using System;
 using System.Collections.Generic;
@@ -125,13 +126,29 @@ namespace NRaas.TempestSpace.Helpers
             {
                 case Season.Spring:
                 case Season.Summer:
+				case Season.Winter:
+					WeatherControl.SetWorldLeavesAmount(0f);
                     foreach (Lot lot in LotManager.Lots)
                     {
-                        World.DecayLeaves(lot.LotId, 1f);
+						RemoveLeaves (lot.LotId);
+						//World.DecayLeaves(lot.LotId, 1f);
                     }
                     break;
             }
         }
+
+		protected static void RemoveLeaves(ulong lotId)
+		{
+			World.DecayLeaves(lotId, 1f);
+			LotLocation[] leavesTiles = World.GetLeavesTiles (lotId, LotLocation.Invalid);
+			if (leavesTiles.Length > 0) 
+			{
+				foreach (LotLocation tile in leavesTiles) 
+				{
+					World.SetLeaves (lotId, tile, false);
+				}
+			}
+		}
 
         protected static void ApplySpawnerSuppression(bool suppress)
         {
