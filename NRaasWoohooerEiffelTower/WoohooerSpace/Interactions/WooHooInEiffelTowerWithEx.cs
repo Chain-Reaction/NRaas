@@ -18,22 +18,22 @@ using System.Collections.Generic;
 
 namespace NRaas.WoohooerSpace.Interactions
 {
-    public class WooHooInRabbitHoleWithEx : RabbitHole.WooHooInRabbitHoleWithBase<VisitRabbitHoleEx>, Common.IPreLoad, Common.IAddInteraction
-    {
-        public void AddInteraction(Common.InteractionInjectorList interactions)
+	public class WooHooInEiffelTowerWithEx : RabbitHole.WooHooInRabbitHoleWithBase<TakeElevatorToTopEx>, Common.IPreLoad, Common.IAddInteraction
+	{
+		public void AddInteraction(Common.InteractionInjectorList interactions)
         {
-            interactions.AddCustom(new CustomInjector());
+			interactions.AddCustom(new WooHooInEiffelTowerWithEx.CustomInjector());
         }
 
-        public void OnPreLoad()
+		public void OnPreLoad()
         {
-            Woohooer.InjectAndReset<RabbitHole, RabbitHole.WooHooInRabbitHoleWith.Definition, MakeoutDefinition>(true);
-            Woohooer.InjectAndReset<RabbitHole, RabbitHole.WooHooInRabbitHoleWith.Definition, SafeDefinition>(true);
-            Woohooer.InjectAndReset<RabbitHole, RabbitHole.WooHooInRabbitHoleWith.Definition, RiskyDefinition>(true);
-            Woohooer.InjectAndReset<RabbitHole, RabbitHole.WooHooInRabbitHoleWith.Definition, TryForBabyDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.MakeoutDefinition, MakeoutDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.SafeDefinition, SafeDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.RiskyDefinition, RiskyDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.TryForBabyDefinition, TryForBabyDefinition>(true);
         }
 
-        public override bool Run()
+		public override bool Run()
         {
             Common.StringBuilder msg = new Common.StringBuilder("WooHooInRabbitHoleWithEx:Run");
 
@@ -53,7 +53,7 @@ namespace NRaas.WoohooerSpace.Interactions
 
                 bool impregnate = true;
 
-                VisitRabbitHoleEx currentInteraction = selectedObject.CurrentInteraction as VisitRabbitHoleEx;
+				TakeElevatorToTopEx currentInteraction = selectedObject.CurrentInteraction as TakeElevatorToTopEx;
                 if (currentInteraction != null)
                 {
                     msg += "C";
@@ -78,7 +78,7 @@ namespace NRaas.WoohooerSpace.Interactions
                     impregnate = false;
                 }
 
-                currentInteraction = Actor.CurrentInteraction as VisitRabbitHoleEx;
+				currentInteraction = Actor.CurrentInteraction as TakeElevatorToTopEx;
                 if (currentInteraction != null)
                 {
                     msg += "D";
@@ -136,11 +136,11 @@ namespace NRaas.WoohooerSpace.Interactions
             }
         }
 
-        public new abstract class BaseDefinition : CommonWoohoo.BaseDefinition<RabbitHole, WooHooInRabbitHoleWithEx>
+		public new abstract class BaseDefinition : CommonWoohoo.BaseDefinition<RabbitHole, WooHooInEiffelTowerWithEx>
         {
-            protected string mPrefix;
-            public Origin VisitBuffOrigin;
-            public RabbitHole.VisitRabbitHoleTuningClass VisitTuning;
+			protected string mPrefix;
+			public Origin VisitBuffOrigin;
+			public RabbitHole.VisitRabbitHoleTuningClass VisitTuning;
 
             public BaseDefinition()
             { }
@@ -151,25 +151,25 @@ namespace NRaas.WoohooerSpace.Interactions
                 VisitTuning = parameters.mTuning;
             }
 
-            public override Sim GetTarget(Sim actor, RabbitHole target, InteractionInstance paramInteraction)
+			public override Sim GetTarget(Sim actor, RabbitHole target, InteractionInstance paramInteraction)
             {
-                WooHooInRabbitHoleWithEx interaction = paramInteraction as WooHooInRabbitHoleWithEx;
+				WooHooInEiffelTowerWithEx interaction = paramInteraction as WooHooInEiffelTowerWithEx;
                 if (interaction == null) return null;
 
                 return interaction.GetSelectedObject() as Sim;
             }
 
-            public override int Attempts
+			public override int Attempts
             {
                 set { }
             }
 
             public override CommonWoohoo.WoohooLocation GetLocation(IGameObject obj)
             {
-                return CommonWoohoo.WoohooLocation.RabbitHole;
+				return CommonWoohoo.WoohooLocation.EiffelTower;
             }
 
-            public virtual bool Makeout
+			public virtual bool Makeout
             {
                 get { return false; }
             }
@@ -349,57 +349,61 @@ namespace NRaas.WoohooerSpace.Interactions
             {
                 return Common.LocalizeEAString(actor.IsFemale, mPrefix + "MakeOutWith", new object[0]);
             }
-        }
+		}
 
-        public class CustomInjector : Common.InteractionInjector<RabbitHole>
+		public class CustomInjector : Common.InteractionInjector<EiffelTower>
         {
             public CustomInjector()
             { }
 
             protected override bool Perform(GameObject obj, InteractionDefinition definition, Dictionary<Type, bool> existing)
             {
-                RabbitHole hole = obj as RabbitHole;
-				if (hole == null || hole is EiffelTower) return false;
+				EiffelTower tower = obj as EiffelTower;
+				if (tower == null) return false;
 
-                Common.RemoveInteraction<RabbitHole.WooHooInRabbitHoleWith.Definition>(obj);
+				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.MakeoutDefinition>(obj);
+				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.SafeDefinition>(obj);
+				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.RiskyDefinition>(obj);
+				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.TryForBabyDefinition>(obj);
+				Common.RemoveInteraction<EiffelTower.WooHooInEiffelTowerWith.Definition>(obj);
 
-                VisitRabbitHoleEx.InteractionParameters parameters;
-                if (VisitRabbitHoleEx.Parameters.TryGetValue(hole.Guid, out parameters))
-                {
+				VisitRabbitHoleEx.InteractionParameters parameters = new VisitRabbitHoleEx.InteractionParameters("Gameplay/Objects/RabbitHoles/EiffelTower:", "TakeElevatorToTop", EiffelTower.kVisitRabbitHoleTuning, Origin.FromEiffelTower);
+				//if (VisitRabbitHoleEx.Parameters.TryGetValue(hole.Guid, out parameters))
+				//{
                     base.Perform(obj, new MakeoutDefinition(parameters), existing);
                     base.Perform(obj, new SafeDefinition(parameters), existing);
                     base.Perform(obj, new RiskyDefinition(parameters), existing);
                     base.Perform(obj, new TryForBabyDefinition(parameters), existing);
                     return true;
-                }
+				//}
 
-                return false;
+				//return false;
             }
-        }
+		}
 
-        public class LocationControl : WoohooLocationControl
+		public class LocationControl : WoohooLocationControl
         {
-            public override CommonWoohoo.WoohooLocation Location
+			public override CommonWoohoo.WoohooLocation Location
             {
-                get { return CommonWoohoo.WoohooLocation.RabbitHole; }
+				get { return CommonWoohoo.WoohooLocation.EiffelTower; }
             }
 
             public override bool Matches(IGameObject obj)
             {
-                return obj is RabbitHole;
+				return obj is EiffelTower;
             }
 
-            public override bool HasWoohooableObject(Lot lot)
+			public override bool HasWoohooableObject(Lot lot)
             {
                 return false;
             }
 
             public override bool HasLocation(Lot lot)
             {
-                return (lot.CountObjects<RabbitHole>() > 0);
+				return (lot.CountObjects<EiffelTower>() > 0);
             }
 
-            public override List<GameObject> GetAvailableObjects(Sim actor, Sim target, ItemTestFunction testFunc)
+			public override List<GameObject> GetAvailableObjects(Sim actor, Sim target, ItemTestFunction testFunc)
             {
                 return null;
             }
@@ -408,7 +412,7 @@ namespace NRaas.WoohooerSpace.Interactions
             {
                 if (!sim.IsHuman) return false;
 
-                return Woohooer.Settings.mAutonomousRabbithole;
+				return Woohooer.Settings.mAutonomousEiffelTower;
             }
 
             public override InteractionDefinition GetInteraction(Sim actor, Sim target, CommonWoohoo.WoohooStyle style)
