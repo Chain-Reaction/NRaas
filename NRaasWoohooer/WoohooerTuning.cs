@@ -446,5 +446,8 @@ namespace NRaas
 
         [Tunable, TunableComment("Whether to use the naked outfit for Time Portal")]
         public static bool kNakedOutfitTimePortal = false;
+
+		[Tunable, TunableComment("Whether to allow autonomous woohoos in the Eiffel Tower")]
+		public static bool kAutonomousEiffelTower = true;
     }
 }

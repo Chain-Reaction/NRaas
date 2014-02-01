@@ -94,6 +94,7 @@ namespace NRaas.WoohooerSpace.Interactions
             BotMaker,
             HoverTrain,
             TimePortal,
+			EiffelTower,
         }
 
         public void OnWorldLoadFinished()
