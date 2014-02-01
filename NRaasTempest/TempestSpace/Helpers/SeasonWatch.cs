@@ -26,6 +26,7 @@ using Sims3.Gameplay.Utilities;
 using Sims3.Gameplay.UI;
 using Sims3.SimIFace;
 using Sims3.SimIFace.Enums;
+using Sims3.SimIFace.Weather;
 using Sims3.UI;
 using System;
 using System.Collections.Generic;
@@ -125,6 +126,8 @@ namespace NRaas.TempestSpace.Helpers
             {
                 case Season.Spring:
                 case Season.Summer:
+				case Season.Winter:
+					WeatherControl.SetWorldLeavesAmount(0f);
                     foreach (Lot lot in LotManager.Lots)
                     {
                         World.DecayLeaves(lot.LotId, 1f);
