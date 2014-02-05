@@ -166,6 +166,9 @@ namespace NRaas.OverwatchSpace.Alarms
                     sRouteData.Remove(id);                        
                 }
 
+                // Keeps Stationary notices for debug only
+                if (mSuffix == "Stationary" && !Common.kDebugging) return;
+
                 Common.Notify(mSim, Common.Localize("StuckCheck:" + mSuffix, mSim.IsFemale, new object[] { mSim }));
             }
         }
