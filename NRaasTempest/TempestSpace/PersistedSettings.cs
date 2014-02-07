@@ -42,6 +42,9 @@ namespace NRaas.TempestSpace
         [Tunable, TunableComment("Whether to suppress inactive holiday parties")]
         protected static bool kAllowHolidayParties = true;
 
+		[Tunable, TunableComment("Whether to remove fallen leaves on lots in Winter")]
+		protected static bool kRemoveLeavesInWinter = false;
+
         public int mHailKillsHarvestables = kHailKillsHarvestables;
 
         public int mHailKillsPlants = kHailKillsPlants;
@@ -49,6 +52,8 @@ namespace NRaas.TempestSpace
         public bool mSuppressInsectInWinter = kSuppressInsectInWinter;
 
         public bool mAllowHolidayParties = kAllowHolidayParties;
+
+		public bool mRemoveLeavesInWinter = kRemoveLeavesInWinter;
 
         Dictionary<Season, HolidaySettings> mHolidaySettings = new Dictionary<Season, HolidaySettings>();
 

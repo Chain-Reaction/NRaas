@@ -122,30 +122,31 @@ namespace NRaas.TempestSpace.Helpers
         {
             ApplySpawnerSuppression(season == Season.Winter);
 
-            switch (season)
-            {
-                case Season.Spring:
-                case Season.Summer:
-				case Season.Winter:
-					WeatherControl.SetWorldLeavesAmount(0f);
-                    foreach (Lot lot in LotManager.Lots)
-                    {
-						RemoveLeaves (lot.LotId);
-						//World.DecayLeaves(lot.LotId, 1f);
-                    }
-                    break;
+			//switch (season)
+			//{
+			//case Season.Spring:
+			//case Season.Summer:
+			//case Season.Winter:
+			if(season == Season.Spring || season == Season.Summer || (season == Season.Winter && Tempest.Settings.mRemoveLeavesInWinter))
+			{
+				WeatherControl.SetWorldLeavesAmount (0f);
+				Common.FunctionTask.Perform(new Sims3.Gameplay.Function(RemoveLeaves));
             }
         }
 
-		protected static void RemoveLeaves(ulong lotId)
+		public static void RemoveLeaves()
 		{
-			World.DecayLeaves(lotId, 1f);
-			LotLocation[] leavesTiles = World.GetLeavesTiles (lotId, LotLocation.Invalid);
-			if (leavesTiles.Length > 0) 
+			foreach (Lot lot in LotManager.Lots)
 			{
-				foreach (LotLocation tile in leavesTiles) 
+				ulong lotId = lot.LotId;
+				World.DecayLeaves(lotId, 1f);
+				LotLocation[] leavesTiles = World.GetLeavesTiles (lotId, LotLocation.Invalid);
+				if (leavesTiles.Length > 0) 
 				{
-					World.SetLeaves (lotId, tile, false);
+					foreach (LotLocation tile in leavesTiles) 
+					{
+						World.SetLeaves (lotId, tile, false);
+					}
 				}
 			}
 		}
