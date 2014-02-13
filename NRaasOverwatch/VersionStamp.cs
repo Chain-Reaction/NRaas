@@ -37,11 +37,6 @@ namespace NRaas
 
         /* Changes:
          *
-         * (JunJayMdM) Notifications about Stationary sims found during Stuck Check will only show if debugging is enabled
-         * 
-         * 
-         * 
-         * === V113 ===
          * (JunJayMdM) All alarms will be set to yield only when the game speed is Normal or Paused
          ** It might defeat the purpose of preventing the Alarm Manager from halting but that's not verified
          * 
