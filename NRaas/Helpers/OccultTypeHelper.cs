@@ -62,6 +62,39 @@ namespace NRaas.CommonSpace.Helpers
 
             return results;
         }
+        public static List<OccultTypes> CreateListOfAllOccults(bool onlyTransferable)
+        {
+            List<OccultTypes> results = new List<OccultTypes>();
+            foreach (OccultTypes type in Enum.GetValues(typeof(OccultTypes)))
+            {
+                if (type == OccultTypes.None) continue;                
+
+                if (onlyTransferable)
+                {
+                    if (!OccultManager.DoesOccultTransferToOffspring(type)) continue;
+                }
+
+                results.Add(type);
+            }
+
+            return results;
+        }
+        public static List<OccultTypes> CreateListOfMissingOccults(List<OccultTypes> types, bool onlyTransferable)
+        {
+            List<OccultTypes> results = new List<OccultTypes>();
+
+            List<OccultTypes> possibleOccults = CreateListOfAllOccults(onlyTransferable);
+
+            foreach (OccultTypes type in possibleOccults)
+            {
+                if (!types.Contains(type))
+                {
+                    results.Add(type);
+                }
+            }
+
+            return results;
+        }
 
         public static bool HasType(Sim sim, OccultTypes type)
         {
@@ -255,7 +288,10 @@ namespace NRaas.CommonSpace.Helpers
                     {
                         manager.mCurrentOccultTypes |= type;
 
-                        log(" Occult Restored A: " + type.ToString() + " (" + sim.FullName + ")");
+                        if (log != null)
+                        {
+                            log(" Occult Restored A: " + type.ToString() + " (" + sim.FullName + ")");
+                        }
                     }
                 }
             }

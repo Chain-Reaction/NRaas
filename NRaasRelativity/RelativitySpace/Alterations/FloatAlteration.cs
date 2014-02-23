@@ -54,7 +54,7 @@ namespace NRaas.RelativitySpace.Alterations
             }
             else if (field.FieldType == typeof(int))
             {
-                field.SetValue(null, (int)value);
+                field.SetValue(null, ((int)value != 0 ? (int)value : 1));
             }
             else
             {

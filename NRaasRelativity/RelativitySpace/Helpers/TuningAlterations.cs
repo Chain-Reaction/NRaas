@@ -15,6 +15,7 @@ using Sims3.Gameplay.Objects.Gardening;
 using Sims3.Gameplay.Objects.HobbiesSkills;
 using Sims3.Gameplay.Objects.Plumbing;
 using Sims3.Gameplay.Pools;
+using Sims3.Gameplay.Scuba;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -445,6 +446,8 @@ namespace NRaas.RelativitySpace.Helpers
 
             sAlterations.Add(new SkillAlteration<TeachToTalk>("kSkillGainPerSimMinute", SkillNames.LearnToTalk));
             sAlterations.Add(new SkillAlteration<TeachToWalk>("kSkillGainPerSimMinute", SkillNames.LearnToWalk));
+
+            sAlterations.Add(new SkillAlteration<ScubaDiving>("kScubaSkillPerMinute", SkillNames.ScubaDiving));
 
             sAlterations.Add(new MotiveDecayAlteration<Motive>("kAdultFunLossPerSimHour", CommodityKind.Fun));
             sAlterations.Add(new MotiveDecayAlteration<Motive>("kChildFunLossPerSimHour", CommodityKind.Fun));

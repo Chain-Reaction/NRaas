@@ -145,6 +145,11 @@ namespace NRaas
         // Externalized to StoryProgression
         public static bool IsSimListed(SimDescription sim)
         {
+            if (sim == null)
+            {
+                return false;
+            }
+
             try
             {
                 return SkewerEx.Instance.IsSimListed(sim);

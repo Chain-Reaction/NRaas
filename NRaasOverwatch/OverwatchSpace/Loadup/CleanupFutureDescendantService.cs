@@ -102,21 +102,19 @@ namespace NRaas.OverwatchSpace.Loadup
                     return;
                 }
 
-                foreach (List<SimDescription> sims in SimListing.AllSims<SimDescription>(null, false).Values)
+                Dictionary<ulong, SimDescription> sims = SimListing.GetResidents(false);
+                foreach (SimDescription sim in sims.Values)
                 {
-                    foreach (SimDescription sim in sims)
-                    {
-                        if (sim.TraitManager == null) continue;
+                    if (sim.TraitManager == null) continue;
 
-                        foreach (KeyValuePair<ulong, Trait> trait in sim.TraitManager.mValues)
+                    foreach (KeyValuePair<ulong, Trait> trait in sim.TraitManager.mValues)
+                    {
+                        if ((trait.Value.Guid == TraitNames.DescendantHiddenTrait) && (!simsToKeep.Contains(sim.SimDescriptionId)) && (sim.Household != null && !sim.Household.IsActive))
                         {
-                            if ((trait.Value.Guid == TraitNames.DescendantHiddenTrait) && (!simsToKeep.Contains(sim.SimDescriptionId)) && (sim.Household != null && !sim.Household.IsActive))
-                            {
-                                simsToPossiblyVanish.Add(sim.SimDescriptionId);
-                                break;
-                            }
+                            simsToPossiblyVanish.Add(sim.SimDescriptionId);
+                            break;
                         }
-                    }
+                    }                    
                 }
                 
                 foreach (ulong desc in simsToPossiblyVanish)
@@ -155,11 +153,7 @@ namespace NRaas.OverwatchSpace.Loadup
                 houses = null;
                 simsToPossiblyVanish = null;            
                 simsToKeep = null;                
-            }
-            else
-            {
-                Overwatch.Log("Instance was null");
-            }
+            }            
         }
     }
 }

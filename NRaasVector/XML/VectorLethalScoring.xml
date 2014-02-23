@@ -35,12 +35,6 @@
     <Hit>-1000</Hit>
     <Miss>0</Miss>
   </NRaasVectorLethalSymptom>
-  <NRaasVectorLethalSymptom>
-    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
-    <Type>PlayableGhost</Type>
-    <Hit>-1000</Hit>
-    <Miss>0</Miss>
-  </NRaasVectorLethalSymptom>
   
   <NRaasVectorLethalInfection>
     <FullClassName></FullClassName>
@@ -51,6 +45,24 @@
     <Species>Human</Species>
     <Hit>0</Hit>
     <Miss>-1000</Miss>
+  </NRaasVectorLethalInfection>
+  <NRaasVectorLethalInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>PlayableGhost</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalInfection>
+  <NRaasVectorLethalInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>TimeTraveler</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLethalInfection>
+  <NRaasVectorLethalInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Plumbot</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
   </NRaasVectorLethalInfection>
   <NRaasVectorLethalInfection>
     <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>

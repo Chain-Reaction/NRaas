@@ -550,8 +550,12 @@ namespace NRaas.WoohooerSpace.Skills
                 sDeathTypes.Remove(SimDescription.DeathType.Jetpack);
             }
 
-            // Removed since the sim is not interactable
+            // Removed since the sims are not interactable
             sOccultTypes.Remove(OccultTypesEx.Bonehilda);
+            sOccultTypes.Remove(OccultTypesEx.TimeTraveler);
+
+            // Removed until the pet check
+            sOccultTypes.Remove(OccultTypesEx.Unicorn);
         }
 
         public static List<WoohooLocationControl> GetOptionedLocations(SimDescription sim)

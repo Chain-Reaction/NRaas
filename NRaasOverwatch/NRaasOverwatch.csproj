@@ -277,7 +277,8 @@
     <Compile Include="OverwatchSpace\Actions\CleanupGenealogy.cs" />
     <Compile Include="OverwatchSpace\Actions\InstantationCheck.cs" />
     <Compile Include="OverwatchSpace\Actions\ListingOption.cs" />
-    <Compile Include="OverwatchSpace\Alarms\BootAllGnomes.cs" />
+    <Compile Include="OverwatchSpace\Alarms\DeleteMagicalGnomes.cs" />
+    <Compile Include="OverwatchSpace\Alarms\ResetAllGnomes.cs" />
     <Compile Include="OverwatchSpace\Alarms\CleanseTheDead.cs" />
     <Compile Include="OverwatchSpace\Alarms\CleanupConcert.cs" />
     <Compile Include="OverwatchSpace\Alarms\CleanupElevators.cs" />
@@ -357,6 +358,7 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupCauseEffect.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupKnownCompositions.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupFutureDescendantService.cs" />
+    <Compile Include="OverwatchSpace\Loadup\FixActiveTopics.cs" />
     <Compile Include="OverwatchSpace\Loadup\YieldAllAlarms.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixToddlerChat.cs" />
     <Compile Include="OverwatchSpace\Loadup\TestDoesObjectNeedCleaning.cs" />

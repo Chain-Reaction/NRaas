@@ -24,11 +24,11 @@ using System.Text;
 
 namespace NRaas.OverwatchSpace.Alarms
 {
-    public class BootAllGnomes : AlarmOption, Common.IDelayedWorldLoadFinished
+    public class ResetAllGnomes : AlarmOption, Common.IDelayedWorldLoadFinished
     {
         public override string GetTitlePrefix()
         {
-            return "BootAllGnomes";
+            return "ResetAllGnomes";
         }
 
         public override ITitlePrefixOption ParentListingOption
@@ -40,11 +40,11 @@ namespace NRaas.OverwatchSpace.Alarms
         {
             get
             {
-                return NRaas.Overwatch.Settings.mBootAllGnomes;
+                return NRaas.Overwatch.Settings.mResetAllGnomes;
             }
             set
             {
-                NRaas.Overwatch.Settings.mBootAllGnomes = value;
+                NRaas.Overwatch.Settings.mResetAllGnomes = value;
             }
         }
 
@@ -57,7 +57,7 @@ namespace NRaas.OverwatchSpace.Alarms
         {
             try
             {
-                Overwatch.Log("Boot All Gnomes");
+                Overwatch.Log("Reset All Gnomes");
 
                 int count = 0;
 
@@ -75,7 +75,7 @@ namespace NRaas.OverwatchSpace.Alarms
 
                 if ((prompt) || (count > 0))
                 {
-                    Overwatch.AlarmNotify(Common.Localize("BootAllGnomes:Success", false, new object[] { count }));
+                    Overwatch.AlarmNotify(Common.Localize("ResetAllGnomes:Success", false, new object[] { count }));
                 }
             }
             catch (Exception e)

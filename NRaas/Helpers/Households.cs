@@ -171,6 +171,12 @@ namespace NRaas.CommonSpace.Helpers
         }
         public static int NumSimsIncludingPregnancy(IEnumerable<SimDescription> sims, ref int humanCount, ref int petCount)
         {
+            int plumbotCount = 0;
+            int count = NumSimsIncludingPregnancy(sims, ref humanCount, ref petCount, ref plumbotCount);
+            return (humanCount + petCount);
+        }
+        public static int NumSimsIncludingPregnancy(IEnumerable<SimDescription> sims, ref int humanCount, ref int petCount, ref int plumbotCount)
+        {
             foreach (SimDescription sim in sims)
             {
                 if (sim.IsPet)
@@ -183,6 +189,10 @@ namespace NRaas.CommonSpace.Helpers
                     {
                         petCount++;
                     }
+                }
+                else if (sim.IsEP11Bot)
+                {
+                    plumbotCount++;
                 }
                 else
                 {
