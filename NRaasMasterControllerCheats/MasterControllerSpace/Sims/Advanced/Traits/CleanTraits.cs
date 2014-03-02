@@ -33,7 +33,7 @@ namespace NRaas.MasterControllerSpace.Sims.Advanced.Traits
         {
             if (!base.PrivateAllow(me)) return false;
 
-            return (me.TraitManager != null);
+            return (me.TraitManager != null && !me.IsEP11Bot);
         }
 
         protected override bool Run(SimDescription me, bool singleSelection)

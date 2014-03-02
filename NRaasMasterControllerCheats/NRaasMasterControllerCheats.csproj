@@ -114,6 +114,7 @@
     <Compile Include="MasterControllerSpace\Sims\Advanced\Books\ToddlerBooksRead.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\ChangeLTWCount.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\ChangeLearnedDrinks.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\ChangePlumbotQuality.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\Compress.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\RandomSkills.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\SkillLevelBase.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="MasterControllerSpace\Sims\Advanced\Selectability.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\SetService.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\SkillLevel.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ChangeTraitChips.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ChangeTraits.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\CleanTraits.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ChangeSocialTrait.cs" />
@@ -147,6 +149,7 @@
     <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\DropRewards.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ITraitOption.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\Traits\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Advanced\UpgradeTraitChipSlots.cs" />
     <Compile Include="MasterControllerSpace\Sims\Basic\Baby\BabyGender.cs" />
     <Compile Include="MasterControllerSpace\Sims\Basic\Baby\BabyGenderOffset.cs" />
     <Compile Include="MasterControllerSpace\Sims\Basic\Baby\BabyMultiple.cs" />
@@ -219,6 +222,7 @@
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -231,6 +235,7 @@
     <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -239,18 +244,22 @@
     <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +291,7 @@
     <ProjectReference Include="..\NRaasMasterController\NRaasMasterController.csproj">
       <Project>{05F375F2-3C0D-4DCC-972A-79BDABA88C47}</Project>
       <Name>NRaasMasterController</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

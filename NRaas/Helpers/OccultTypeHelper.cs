@@ -331,7 +331,7 @@ namespace NRaas.CommonSpace.Helpers
         }
 
         public static bool Add(SimDescription sim, OccultTypes type, bool isReward, bool applyOutfit)
-        {
+        {            
             try
             {
                 if (sim.IsPregnant) return false;
@@ -355,7 +355,7 @@ namespace NRaas.CommonSpace.Helpers
                     }
 
                     if (found) return false;
-                }
+                }                
 
                 return AddOccultType(sim.OccultManager, type, applyOutfit, isReward, false, null);
             }
@@ -378,7 +378,7 @@ namespace NRaas.CommonSpace.Helpers
 
         // From OccultManager
         protected static bool AddOccultType(OccultManager ths, OccultTypes type, bool addOutfit, bool isReward, bool fromRestore, OccultBaseClass overrideOccultToAdd)
-        {
+        {            
             OccultBaseClass newOccult = null;
             OccultBaseClass oldOccult = ths.VerifyOccultList(type);
             if (overrideOccultToAdd != null)
@@ -506,17 +506,28 @@ namespace NRaas.CommonSpace.Helpers
             ths.mOccultList.Add(newOccult);
             ths.mCurrentOccultTypes |= type;
             EventTracker.SendEvent(new BeAnOccultEvent(EventTypeId.kBeAnOccult, ths.mOwnerDescription.CreatedSim, (uint)type));
-            if ((ths.mOwnerDescription.CreatedSim != null) && !Cane.IsAllowedToUseCane(ths.mOwnerDescription.CreatedSim))
+            if (ths.mOwnerDescription.CreatedSim != null)
             {
-                Cane.StopUsingAnyActiveCanes(ths.mOwnerDescription.CreatedSim);
+                if (!Cane.IsAllowedToUseCane(ths.mOwnerDescription.CreatedSim))
+                {
+                    Cane.StopUsingAnyActiveCanes(ths.mOwnerDescription.CreatedSim);
+                }
+                if (!Backpack.IsAllowedToUseBackpack(ths.mOwnerDescription.CreatedSim))
+                {
+                    Backpack.StopUsingAnyActiveBackpacks(ths.mOwnerDescription.CreatedSim);
+                }
+                if (!Jetpack.IsAllowedToUseJetpack(ths.mOwnerDescription.CreatedSim))
+                {
+                    Jetpack.StopUsingAnyActiveJetpacks(ths.mOwnerDescription.CreatedSim);
+                }
             }
 
             (Responder.Instance.HudModel as Sims3.Gameplay.UI.HudModel).OnSimDaysPerAgingYearChanged();
             ths.ClearOneShot();
-            ths.UpdateOccultUI();
+            ths.UpdateOccultUI();            
             if (!fromRestore)
             {
-                EventTracker.SendEvent(EventTypeId.kBecameOccult, ths.mOwnerDescription.CreatedSim);
+                EventTracker.SendEvent(EventTypeId.kBecameOccult, ths.mOwnerDescription.CreatedSim);                
             }
 
             if (oldOccult != null)

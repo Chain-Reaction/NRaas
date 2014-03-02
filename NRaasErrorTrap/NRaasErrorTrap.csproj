@@ -187,7 +187,9 @@
     <Compile Include="ErrorTrapSpace\Dereferences\Dereference.cs" />
     <Compile Include="ErrorTrapSpace\Dereferences\DereferenceManager.cs" />
     <Compile Include="ErrorTrapSpace\Dereferences\DereferenceGeneric.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefBotShopRegisterConsignedObject.cs" />
     <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefCauseEffectService.cs" />
+    <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefFVShoppingRegisterConsignedObject.cs" />
     <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefOccultTimeTraveler.cs" />
     <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefTimeKeeperRecordData.cs" />
     <Compile Include="ErrorTrapSpace\Dereferences\Performers\DerefParentOfRoboticsRecordData.cs" />

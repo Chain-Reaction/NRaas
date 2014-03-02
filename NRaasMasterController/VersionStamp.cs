@@ -274,8 +274,12 @@ namespace NRaas
 
         /*
          * Fixed the "Basic \ Tattoo" interaction so it appears for the correct sims
-         * 
+         * Added Filter \ Trait Chip
+         * Added Filter \ Plumbot Quality Level
+         * Added Advanced \ Change Trait Chips
+         * Added Advanced \ Change Max Trait Chips
+         * Added Advanced \ Change Plumbot Quality Level
          */
-        public static readonly int sVersion = 128;
+        public static readonly int sVersion = 129;
     }
 }

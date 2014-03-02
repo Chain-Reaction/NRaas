@@ -1,6 +1,7 @@
 ﻿using NRaas.CommonSpace.Booters;
 using NRaas.CommonSpace.Helpers;
 using NRaas.MasterControllerSpace;
+using NRaas.MasterControllerSpace.Helpers;
 using NRaas.MasterControllerSpace.Interactions;
 using NRaas.MasterControllerSpace.Settings;
 using Sims3.Gameplay.Abstracts;
@@ -80,6 +81,19 @@ namespace NRaas
                 Common.Exception("Allow", e);
                 return true;
             }
+        }
+
+        // Externalized to StoryProgression
+        public static List<SkillStamp> GetSkillStamps(bool notUsed)
+        {
+            List<SkillStamp> stamps = new List<SkillStamp>();
+
+            foreach (SkillStamp stamp in MasterController.Settings.SkillStamps)
+            {
+                stamps.Add(stamp);
+            }
+
+            return stamps;
         }
 
         protected static void OnStartup()

@@ -602,6 +602,7 @@ namespace NRaas
                 case WorldName.Egypt:
                 case WorldName.France:
                 case WorldName.University:
+                case WorldName.FutureWorld:
                     return true;
             }
 

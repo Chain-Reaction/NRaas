@@ -208,7 +208,10 @@ namespace NRaas.WoohooerSpace.Interactions
                     EnsureForeignFather(pregnancy);
                 }
 
-                ths.GetNewBorns();
+                // ths.GetNewBorns();
+                bool isSelectable = ths.Actor.IsSelectable;
+                Sims3.Gameplay.Gameflow.Singleton.DisableSave(ths, "Gameplay/ActorSystems/Pregnancy:DisableSave");
+                ths.mNewborns = pregnancy.CreateNewborns(0f, isSelectable, true);
                 ths.AcquirePregnancyStateMachine();
 
                 ths.mCurrentStateMachine.SetActor("x", ths.Actor);
