@@ -625,6 +625,7 @@
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\BoxStallHorseSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\PetHouseSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\HaystackSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\WoohootyTextAutonomousSetting.cs" />
     <Compile Include="WoohooerSpace\Proxies\PetPregnancyProxy.cs" />
     <Compile Include="WoohooerSpace\Proxies\PregnancyProxy.cs" />
     <Compile Include="WoohooerTuningHorse.cs" />

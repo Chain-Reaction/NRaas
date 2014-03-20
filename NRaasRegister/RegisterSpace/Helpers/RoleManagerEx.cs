@@ -109,6 +109,7 @@ namespace NRaas.RegisterSpace.Helpers
                                 roleGivingObject.GetRoleTimes(out startHour, out endHour);
                                 if (!SimClock.IsTimeBetweenTimes(startHour, endHour))
                                 {
+                                    msg += Common.NewLine + "Is not valid time for " + role.Type;
                                     localProperTimeForObject = false;
                                 }
                             }
@@ -176,6 +177,7 @@ namespace NRaas.RegisterSpace.Helpers
 
                 if ((num < data.Number) && globalProperTimeForRole)
                 {
+                    msg += Common.NewLine + "GlobalProperTimeForRole";
                     RoleToFill item = new RoleToFill(data.Type, data.Number - num);
                     if ((data.FillRoleFrom == Role.RoleFillFrom.Residents) || (data.FillRoleFrom == Role.RoleFillFrom.Townies))
                     {

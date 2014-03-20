@@ -33,7 +33,7 @@ namespace NRaas.HybridSpace.Interactions
             InteractionTuning tuning = Tunings.Inject<Plant, Plant.Bloom.Definition, Definition>(false);
             if (tuning != null)
             {
-                tuning.Availability.RequiredTraits.Remove(TraitNames.FairyHiddenTrait);
+               // tuning.Availability.RequiredTraits.Remove(TraitNames.FairyHiddenTrait);
             }
 
             sOldSingleton = Singleton;
@@ -45,7 +45,7 @@ namespace NRaas.HybridSpace.Interactions
             interactions.Replace<Plant, Plant.Bloom.Definition>(Singleton);
         }
 
-        public class Definition : Plant.Bloom.Definition, IMagicalDefinition
+        public new class Definition : Plant.Bloom.Definition, IMagicalDefinition
         {
             static PersistedSettings.SpellSettings sSettings;
 

@@ -37,11 +37,33 @@ namespace NRaas.OverwatchSpace.Loadup
                     if (skill.SkillLevel < 1) continue;
                     switch(skill.Guid)
                     {
-                        // EA appears to handle the other skills correctly
+                         // Not sure why these don't work on their own, it may be the active
+                        // topic limit. Either way readding them should troop the limit and fix
+                        // them if they are truly broken
+                        case SkillNames.Bartending:
+                            ActiveTopic.AddToSim(sim.CreatedSim, "Bartending Skill");
+                            Overwatch.Log("Readded Active Topic - Bartending Skill: " + sim.FullName);
+                            break;
+                        case SkillNames.Charisma:
+                            ActiveTopic.AddToSim(sim.CreatedSim, "Smooth Recovery");
+                            Overwatch.Log("Readded Active Topic - Charisma Skill: " + sim.FullName);
+                            break;                                               
+                        case SkillNames.Logic:
+                            if (skill.SkillLevel >= LogicSkill.kSkillLevelForSchoolTutor)
+                            {
+                                ActiveTopic.AddToSim(sim.CreatedSim, "Logic Skill");
+                                Overwatch.Log("Readded Active Topic - Logic Skill: " + sim.FullName);
+                            }
+                            break;                        
+                        case SkillNames.MartialArts:
+                            ActiveTopic.AddToSim(sim.CreatedSim, "Martial Arts Skill");
+                            Overwatch.Log("Readded Active Topic - Martial Arts Skill: " + sim.FullName);
+                            break;
+                        // hopelessly broken regardless
                         case SkillNames.Science:
                             ActiveTopic.AddToSim(sim.CreatedSim, "Science Skill");
-                            Overwatch.Log("Fixed Science Skill: " + sim.FullName);
-                            break;
+                            Overwatch.Log("Readded Active Topic - Science Skill: " + sim.FullName);
+                            break; 
                     }
                 }
             }            

@@ -42,7 +42,9 @@ namespace NRaas.RegisterSpace.Options.PayPerRoles
                     case Role.RoleType.Deer:
                     case Role.RoleType.Explorer:
                     case Role.RoleType.Raccoon:
-                    case Role.RoleType.Tourist:
+                    case Role.RoleType.Tourist:                    
+                    case Role.RoleType.TimeTraveler:                    
+                    case Role.RoleType.FutureHobo:
                         break;
                     default:
                         results.Add(new PayPerRole(type));

@@ -150,6 +150,11 @@ namespace NRaas
                 return false;
             }
 
+            if (SkewerEx.Instance == null)
+            {
+                return false;
+            }
+
             try
             {
                 return SkewerEx.Instance.IsSimListed(sim);

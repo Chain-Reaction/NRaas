@@ -88,6 +88,16 @@ namespace NRaas.RegisterSpace
         public static int kPayPerKissingBoothAttendant = 100;
         [Tunable, TunableComment("How much to pay potion merchants per hour they are working")]
         public static int kPayPerPotionShopMerchant = 100;
+        [Tunable, TunableComment("How much to pay University Mascots per hour they are working")]
+        public static int kPayPerUniversityMascot = 100;
+        [Tunable, TunableComment("How much to pay Barista Bar Tenders per hour they are working")]
+        public static int kPayPerBaristaBarTender = 100;
+        [Tunable, TunableComment("How much to pay Hobby Shop Merchants per hour they are working")]
+        public static int kPayPerHobbyShopMerchant = 100;
+        [Tunable, TunableComment("How much to pay Cafeteria Waiters per hour they are working")]
+        public static int kPayPerCafeteriaWaiter = 100;
+        [Tunable, TunableComment("How much to pay Bot Shop Merchants per hour they are working")]
+        public static int kPayPerBotShopMerchant = 100;
 
         [Tunable, TunableComment("Whether to allow homeworld residents to be used as tourists")]
         public static bool kAllowHomeworldTourists = true;
@@ -140,6 +150,11 @@ namespace NRaas.RegisterSpace
             mPayPerRole.Add(Role.RoleType.KissingBoothAttendantMale, kPayPerKissingBoothAttendant);
             mPayPerRole.Add(Role.RoleType.KissingBoothAttendantFemale, kPayPerKissingBoothAttendant);
             mPayPerRole.Add(Role.RoleType.PotionShopMerchant, kPayPerPotionShopMerchant);
+            mPayPerRole.Add(Role.RoleType.UniversityMascot, kPayPerUniversityMascot);
+            mPayPerRole.Add(Role.RoleType.BaristaBarTender, kPayPerBaristaBarTender);
+            mPayPerRole.Add(Role.RoleType.HobbyShopMerchant, kPayPerHobbyShopMerchant);
+            mPayPerRole.Add(Role.RoleType.CafeteriaWaiter, kPayPerCafeteriaWaiter);
+            mPayPerRole.Add(Role.RoleType.BotShopMerchant, kPayPerBotShopMerchant);
         }
 
         public void ValidateObjects()
