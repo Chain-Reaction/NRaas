@@ -96,6 +96,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
             else if (CarpoolEnabled(job))
             {
                 job.RemoveCarpool();
+                job.mbCarpoolEnabled = false;
                 scenario.Scheduling.mScheduled = false;
 
                 if (SimTypes.IsSelectable(scenario.Sim))
@@ -248,7 +249,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                     IncStat("Carpool");
                 }
 
-                if ((SimTypes.IsSelectable(Sim)) && (GetValue<ShowCarpoolMessageOption, bool>()))
+                if ((SimTypes.IsSelectable(Sim)) && (GetValue<ShowCarpoolMessageOption, bool>()) && job.mHoursUntilWork <= 2)
                 {
                     string msg = GetCarpoolMessage(selfCommute);
                     if (msg != null)

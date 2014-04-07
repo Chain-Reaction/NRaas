@@ -49,6 +49,7 @@ namespace NRaas.StoryProgressionSpace.Options.Immigration
                 case OccultTypes.None:
                 case OccultTypes.Ghost:
                 case OccultTypes.Unicorn:
+                case OccultTypes.TimeTraveler:
                     return false;
             }
 

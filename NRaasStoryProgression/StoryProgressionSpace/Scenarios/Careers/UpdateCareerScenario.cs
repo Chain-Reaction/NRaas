@@ -130,6 +130,8 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
         {
             //ManageService(Sim);
 
+            GetData(Sim).InvalidateCache();            
+
             if ((Sim.Occupation != null) && (Sim.Occupation.Coworkers == null))
             {
                 Sim.Occupation.Coworkers = new List<SimDescription>();

@@ -167,6 +167,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Skills
                     Skill skill = Sim.SkillManager.GetElement(Event.Guid);
                     if (skill != null)
                     {
+                        GetData(Sim).InvalidateCache();
                         if (skill.IsHiddenSkill())
                         {
                             IncStat("Hidden Skill");

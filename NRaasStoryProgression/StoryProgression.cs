@@ -12,6 +12,7 @@ using NRaas.StoryProgressionSpace.Options;
 using NRaas.StoryProgressionSpace.Personalities;
 using NRaas.StoryProgressionSpace.Scoring;
 using NRaas.StoryProgressionSpace.Scenarios.Romances;
+using NRaas.StoryProgressionSpace.Scenarios.Pregnancies;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -283,7 +284,7 @@ namespace NRaas
                 return true;
             }
         }
-        */
+        */        
 
         // Externalized to Careers
         public static bool AllowDeath(SimDescription sim)

@@ -159,8 +159,15 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                 OnCelebrityScenario(this, frame);
             }
 
-            if (ShouldReport)
+            bool antiShowtime = false;
+            if (Sim.LotHome == null && Sim.CareerManager != null && Sim.CareerManager.OccupationAsPerformanceCareer != null)
             {
+                // if I see one more homeless Showtime promotion in the middle of the night I will scream :)
+                antiShowtime = true;
+            }
+
+            if (ShouldReport && !antiShowtime)
+            {               
                 Add(frame, new ReportScenario(Sim, Event.Career, mText), ScenarioResult.Start);
             }
 

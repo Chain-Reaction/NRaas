@@ -115,6 +115,10 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
         {
             if (school == null) return false;
 
+            if (school.OwnerDescription == null) return false;
+
+            if (school.OwnerDescription.Genealogy == null) return false;
+
             if (school.OwnerDescription.Genealogy.Parents.Count != Relationships.GetParents(school.OwnerDescription).Count)
             {
                 if (school.Performance >= school.SchoolTuning.GradeThresholdB)

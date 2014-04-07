@@ -1,12 +1,12 @@
-using NRaas.StoryProgressionSpace.Interfaces;
+﻿using NRaas.StoryProgressionSpace.Interfaces;
 using NRaas.StoryProgressionSpace.Managers;
 using NRaas.StoryProgressionSpace.Personalities;
 using NRaas.StoryProgressionSpace.Scenarios.Romances;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
+using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
-using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -16,27 +16,28 @@ using System.Collections.Generic;
 
 namespace NRaas.StoryProgressionSpace.Options
 {
-    public class DisallowSkillOption : SkillBaseOption, IReadSimLevelOption, IWriteSimLevelOption, IHouseLevelSimOption
+    public class CasteCareerFilterOption : CareerBaseOption, IReadCasteLevelOption, IWriteCasteLevelOption, ISimCasteOption, ICasteFilterOption
     {
-        public DisallowSkillOption()            
+        public CasteCareerFilterOption()
         { }
 
         public override string GetTitlePrefix()
         {
-            return "DisallowSkill";
+            return "CasteCareerFilter";
         }
 
         protected override string ValuePrefix
         {
-            get { return "Disallowed"; }
-        }        
+            get { return "Boolean"; }
+        }
 
         public override bool ShouldDisplay()
         {
-            if (!GetValue<AllowSkillOption, bool>()) return false;
+            if ((!GetValue<CasteAutoOption, bool>()) && (!GetValue<CasteInheritedOption, bool>())) return false;
+
+            if (!GetValue<AllowCareerProgressionOption, bool>()) return false;
 
             return base.ShouldDisplay();
         }
     }
 }
-

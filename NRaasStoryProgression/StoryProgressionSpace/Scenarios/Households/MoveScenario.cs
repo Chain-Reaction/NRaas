@@ -285,9 +285,9 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Households
 
                 if ((breakdownA.SimGoing) && (breakdownB.SimGoing))
                 {
-                    int humans = 0, pets = 0;
-                    breakdownA.GetGoingCount(ref humans, ref pets);
-                    breakdownB.GetGoingCount(ref humans, ref pets);
+                    int humans = 0, pets = 0, plumbots = 0;
+                    breakdownA.GetGoingCount(ref humans, ref pets, ref plumbots);
+                    breakdownB.GetGoingCount(ref humans, ref pets, ref plumbots);
 
                     if ((humans <= Options.GetValue<MaximumSizeOption, int>()) && (pets <= Options.GetValue<MaximumPetSizeOption,int>()))
                     {

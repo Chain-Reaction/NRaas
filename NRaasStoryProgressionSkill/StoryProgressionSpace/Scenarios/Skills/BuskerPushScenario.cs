@@ -133,6 +133,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Skills
                 sSkills.Add(Sims3.Gameplay.Skills.SkillNames.BassGuitar, BassGuitarPlayForTips.Singleton);
                 sSkills.Add(Sims3.Gameplay.Skills.SkillNames.Piano, PianoPlayForTips.Singleton);
                 sSkills.Add(Sims3.Gameplay.Skills.SkillNames.Drums, DrumsPlayForTips.Singleton);
+                sSkills.Add(Sims3.Gameplay.Skills.SkillNames.LaserHarp, LaserHarpPlayForTips.Singleton);
             }
 
             List<Sims3.Gameplay.Skills.SkillNames> choices = new List<Sims3.Gameplay.Skills.SkillNames>();
@@ -187,6 +188,13 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Skills
                         if (instrument == null)
                         {
                             instrument = ManagedBuyProduct<Drums>.Purchase(Sim, 0, this, UnlocalizedName, null, BuildBuyProduct.eBuyCategory.kBuyCategoryElectronics, BuildBuyProduct.eBuySubCategory.kBuySubCategoryHobbiesAndSkills);
+                        }
+                        break;
+                    case Sims3.Gameplay.Skills.SkillNames.LaserHarp:
+                        instrument = Inventories.InventoryFind<LaserHarp>(Sim);
+                        if (instrument == null)
+                        {
+                            instrument = ManagedBuyProduct<LaserHarp>.Purchase(Sim, 0, this, UnlocalizedName, null, BuildBuyProduct.eBuyCategory.kBuyCategoryElectronics, BuildBuyProduct.eBuySubCategory.kBuySubCategoryHobbiesAndSkills);
                         }
                         break;
                 }

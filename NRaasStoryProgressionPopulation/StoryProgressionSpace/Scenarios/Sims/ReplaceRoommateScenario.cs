@@ -30,19 +30,22 @@ using System.Text;
 
 namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 {
-    public class ReplaceServiceScenario : SimEventScenario<Event>
+    public class ReplaceRoommatesScenario : SimScenario, IAlarmScenario        
     {
-        public ReplaceServiceScenario()
+        public ReplaceRoommatesScenario()
+        { }        
+        public ReplaceRoommatesScenario(SimDescription sim)
+            : base(sim)
         { }
-        protected ReplaceServiceScenario(ReplaceServiceScenario scenario)
-            : base (scenario)
+        protected ReplaceRoommatesScenario(ReplaceRoommatesScenario scenario)
+            : base(scenario)
         { }
 
         public override string GetTitlePrefix(PrefixType type)
         {
             if (type != PrefixType.Pure) return null;
 
-            return "ReplaceService";
+            return "ReplaceRoommates";
         }
 
         protected override bool CheckBusy
@@ -55,38 +58,42 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             get { return false; }
         }
 
-        protected override int ContinueChance
+        public AlarmManagerReference SetupAlarm(IAlarmHandler alarms)
         {
-            get { return 25; }
+            return alarms.AddAlarmDay(this, 9);
         }
+
+        protected override bool AllowActive
+        {
+            get { return true; }
+        }        
 
         protected override ICollection<SimDescription> GetSims()
         {
-            return HouseholdsEx.All(Household.NpcHousehold);
-        }
+            if (Household.ActiveHousehold != null)
+            {
+                return Household.ActiveHousehold.AllSimDescriptions;
+            }
 
-        public override bool SetupListener(IEventHandler events)
-        {
-            return events.AddListener(this, EventTypeId.kSimInstantiated);
-        }
+            return new List<SimDescription>();
+        }        
 
         protected override bool Allow()
         {
             if (!GetValue<Option, bool>()) return false;
 
-            return base.Allow();
+            return true;
         }        
 
         protected override bool PrivateUpdate(ScenarioFrame frame)
-        {
-            // Delayed to allow for Role Manager to assign a role
+        {       
             Add(frame, new DelayedScenario(Sim), ScenarioResult.Start);
             return true;
         }
 
         public override Scenario Clone()
         {
-            return new ReplaceServiceScenario(this);
+            return new ReplaceRoommatesScenario(this);
         }
 
         public class DelayedScenario : ReplaceSimScenario
@@ -102,7 +109,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             {
                 if (type != PrefixType.Pure) return null;
 
-                return "ReplaceServiceDelayed";
+                return "ReplaceRoommatesDelayed";
             }
 
             protected override bool CheckBusy
@@ -121,28 +128,23 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             }
 
             protected static bool IsValidSim(SimDescription sim)
-            {
-                if ((SimTypes.InServicePool(sim)) || (sim.AssignedRole != null))
-                {
+            {                
+                if (Household.RoommateManager.IsNPCRoommate(sim))
+                {                    
                     return true;
-                }                                            
+                }
 
                 return false;
             }
 
             protected override bool Allow(SimDescription sim)
             {
-                if (sim.LotHome != null)
-                {
-                    IncStat("Resident");
-                    return false;
-                }  
                 if (!IsValidSim(sim))
                 {
                     IncStat("Invalid");
                     return false;
-                }             
-                else if (GetValue<ReplacedServiceOption, bool>(sim))
+                }
+                else if (GetValue<ReplacedRoommatesOption, bool>(sim))
                 {
                     IncStat("Already Replaced");
                     return false;
@@ -155,7 +157,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             {
                 if (base.PrivateUpdate(frame))
                 {
-                    SetValue<ReplacedServiceOption, bool>(Sim, true);
+                    SetValue<ReplacedRoommatesOption, bool>(Sim, true);
                     return true;
                 }
 
@@ -168,7 +170,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             }
         }        
 
-        public class Option : BooleanScenarioOptionItem<ManagerSim, ReplaceServiceScenario>, ManagerSim.IImmigrationEmigrationOption
+        public class Option : BooleanScenarioOptionItem<ManagerSim, ReplaceRoommatesScenario>, ManagerSim.IImmigrationEmigrationOption
         {
             public Option()
                 : base(false)
@@ -176,7 +178,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 
             public override string GetTitlePrefix()
             {
-                return "ReplaceService";
+                return "ReplaceRoommates";
             }
 
             public override bool Progressed
@@ -186,39 +188,22 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 
             public override bool Install(ManagerSim main, bool initial)
             {
-                if (!base.Install(main, initial)) return false;            
-                
+                if (!base.Install(main, initial)) return false;
+
                 return true;
-            }
-        }        
-
-        public class EventOption : BooleanEventOptionItem<ManagerSim, ReplaceServiceScenario>, ManagerSim.IImmigrationEmigrationOption, IDebuggingOption
-        {
-            public EventOption()
-                : base(true)
-            { }
-
-            public override string GetTitlePrefix()
-            {
-                return "ReplaceServiceEvent";
-            }
-
-            public override bool Progressed
-            {
-                get { return false; }
             }
         }
 
-        public class ReplacedServiceOption : SimBooleanOption, IDebuggingOption, INotCasteLevelOption
+        public class ReplacedRoommatesOption : SimBooleanOption, IDebuggingOption, INotCasteLevelOption
         {
-            public ReplacedServiceOption()
+            public ReplacedRoommatesOption()
                 : base(false)
             { }
 
             public override string GetTitlePrefix()
             {
-                return "ReplacedService";
+                return "ReplacedRoommates";
             }
-        }        
+        } 
     }
 }

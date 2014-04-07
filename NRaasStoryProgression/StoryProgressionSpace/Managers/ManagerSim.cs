@@ -731,6 +731,16 @@ namespace NRaas.StoryProgressionSpace.Managers
 
         public void ApplyOccultChance(Common.IStatGenerator stats, SimDescription sim, List<OccultTypes> validTypes, int occultChance, int maximum)
         {
+            ApplyOccultChance(stats, sim, validTypes, occultChance, maximum, 0);
+        }
+
+        public void ApplyOccultChance(Common.IStatGenerator stats, SimDescription sim, List<OccultTypes> validTypes, int occultChance, int maximum, int mutationChance)
+        {
+            if (occultChance == 0)
+            {
+                return;
+            }
+
             stats.AddStat("Occult Choices", validTypes.Count);
 
             bool activeSim = SimTypes.IsSelectable(sim);
@@ -741,6 +751,8 @@ namespace NRaas.StoryProgressionSpace.Managers
                 occultsAdded = 0;
             }
 
+            List<OccultTypes> possibleOccults = OccultTypeHelper.CreateListOfAllOccults(true);
+
             foreach (OccultTypes type in validTypes)
             {
                 if (occultsAdded >= maximum)
@@ -749,6 +761,27 @@ namespace NRaas.StoryProgressionSpace.Managers
                 }
 
                 if (!RandomUtil.RandomChance(occultChance)) continue;
+
+                if (RandomUtil.RandomChance(mutationChance) && possibleOccults.Count > 0)
+                {                    
+                    while (possibleOccults.Count > 0)
+                    {
+                        OccultTypes mutationType = RandomUtil.GetRandomObjectFromList<OccultTypes>(possibleOccults);
+
+                        if ((activeSim) || SatisfiesTownOccultRatio(mutationType))
+                        {
+                            if (OccultTypeHelper.Add(sim, mutationType, false, false))
+                            {
+                                possibleOccults.Remove(mutationType);
+                                stats.IncStat("Mutation Chance " + mutationType);
+                                occultsAdded++;
+                                break;
+                            }
+                        }
+
+                        possibleOccults.Remove(mutationType);
+                    }
+                }
 
                 if ((!activeSim) && (!SatisfiesTownOccultRatio(type))) continue;
 

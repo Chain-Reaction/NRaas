@@ -39,9 +39,9 @@ namespace NRaas.StoryProgressionSpace.Helpers
             }
         }
 
-        public int GetStayingCount(ref int humans, ref int pets)
+        public int GetStayingCount(ref int humans, ref int pets, ref int plumbots)
         {
-            return Households.NumSimsIncludingPregnancy(mStaying, ref humans, ref pets);
+            return Households.NumSimsIncludingPregnancy(mStaying, ref humans, ref pets, ref plumbots);
         }
 
         public bool NoneStaying
@@ -49,9 +49,9 @@ namespace NRaas.StoryProgressionSpace.Helpers
             get { return (Households.NumSimsIncludingPregnancy(mStaying) == 0); }
         }
 
-        public int GetGoingCount(ref int humans, ref int pets)
+        public int GetGoingCount(ref int humans, ref int pets, ref int plumbots)
         {
-            return Households.NumSimsIncludingPregnancy(mGoing, ref humans, ref pets);
+            return Households.NumSimsIncludingPregnancy(mGoing, ref humans, ref pets, ref plumbots);
         }
 
         public bool NoneGoing
@@ -139,15 +139,17 @@ namespace NRaas.StoryProgressionSpace.Helpers
                 prefix += " Ignore";
             }
 
-            int humans = 0, pets = 0;
+            int humans = 0, pets = 0, plumbots = 0;
 
             stats.AddStat(prefix + ": Sims", mSims.Count);
-            stats.AddStat(prefix + ": Going", GetGoingCount(ref humans, ref pets));
+            stats.AddStat(prefix + ": Going", GetGoingCount(ref humans, ref pets, ref plumbots));
             stats.AddStat(prefix + ": Going Human", humans);
             stats.AddStat(prefix + ": Going Pets", pets);
-            stats.AddStat(prefix + ": Staying", GetStayingCount(ref humans, ref pets));
+            stats.AddStat(prefix + ": Going Plumbots", plumbots);
+            stats.AddStat(prefix + ": Staying", GetStayingCount(ref humans, ref pets, ref plumbots));
             stats.AddStat(prefix + ": Staying Human", humans);
             stats.AddStat(prefix + ": Staying Pets", pets);
+            stats.AddStat(prefix + ": Staying Plumbots", plumbots);
 
             if (SimGoing)
             {
@@ -277,7 +279,7 @@ namespace NRaas.StoryProgressionSpace.Helpers
 
                 List<SimDescription> going = new List<SimDescription>();
                 List<SimDescription> staying = new List<SimDescription>();
-                List<SimDescription> houseChildrenPets = new List<SimDescription>();
+                List<SimDescription> houseChildrenPetsPlumbots = new List<SimDescription>();                
 
                 bool ancestral = manager.GetValue<IsAncestralOption, bool>(focus.Household);
 
@@ -360,7 +362,7 @@ namespace NRaas.StoryProgressionSpace.Helpers
 
                         staying.Add(sim);
                     }
-                    else if ((sim.YoungAdultOrAbove) && (!sim.IsPet))
+                    else if ((sim.YoungAdultOrAbove) && (!sim.IsPet) && (!sim.IsEP11Bot))
                     {
                         stats.IncStat(tag + " Break: Stay");
 
@@ -368,12 +370,12 @@ namespace NRaas.StoryProgressionSpace.Helpers
                     }
                     else
                     {
-                        houseChildrenPets.Add(sim);
+                        houseChildrenPetsPlumbots.Add(sim);
                     }
                 }
 
                 List<SimDescription> extraChildrenPets = new List<SimDescription>();
-                foreach (SimDescription child in houseChildrenPets)
+                foreach (SimDescription child in houseChildrenPetsPlumbots)
                 {
                     bool bGoing = false;
                     bool bMatch = false;
@@ -417,6 +419,7 @@ namespace NRaas.StoryProgressionSpace.Helpers
                     }
                     else
                     {
+                        // this will handle plumbots that are related to the family (i.e. creation)
                         if (children == ChildrenMove.RelatedStay)
                         {
                             foreach (SimDescription parent in Relationships.GetParents(child))
@@ -450,6 +453,39 @@ namespace NRaas.StoryProgressionSpace.Helpers
                                         break;
                                     }
                                 }
+                            }
+                        }
+                    }
+
+                    if (child.IsEP11Bot && !bGoing)
+                    {
+                        // test the liking for Plumbots without the HumanEmotion chip
+                        if (!manager.Households.AllowGuardian(child))
+                        {
+                            bMatch = true;
+                            int goingLiking = int.MinValue;
+                            foreach (SimDescription foci in going)
+                            {
+                                int liking = ManagerSim.GetLTR(child, foci);
+                                if (goingLiking < liking)
+                                {
+                                    goingLiking = liking;
+                                }
+                            }
+
+                            int stayingLiking = int.MinValue;
+                            foreach (SimDescription foci in staying)
+                            {
+                                int liking = ManagerSim.GetLTR(child, foci);
+                                if (stayingLiking < liking)
+                                {
+                                    stayingLiking = liking;
+                                }
+                            }
+
+                            if (goingLiking > stayingLiking)
+                            {
+                                bGoing = true;
                             }
                         }
                     }

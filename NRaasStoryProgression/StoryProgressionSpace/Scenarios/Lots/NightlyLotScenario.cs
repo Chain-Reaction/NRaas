@@ -31,6 +31,8 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Lots
             : base (scenario)
         { }
 
+        public static Common.MethodStore sGetStuckCheckEnabled = new Common.MethodStore("NRaasOverwatch", "NRaas.Overwatch", "GetStuckCheckEnable", new Type[] { typeof(bool) });
+
         public override string GetTitlePrefix(PrefixType type)
         {
             if (type != PrefixType.Pure) return null;
@@ -63,7 +65,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Lots
             {
                 MetaAutonomyManager.DecideTodaysHotSpotsAndDeadZones();
 
-                if (GetValue<StuckCheckOption, bool>())
+                if (GetValue<StuckCheckOption, bool>() && ((!sGetStuckCheckEnabled.Valid) || (sGetStuckCheckEnabled.Valid && !sGetStuckCheckEnabled.Invoke<bool>(new object[] { false }))))
                 {
                     foreach (Sim sim in LotManager.Actors)
                     {
@@ -119,6 +121,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Lots
             }
         }
 
+        // Note this is overwritten if Overwatch is installed and StuckCheck is enabled in that mod
         public class StuckCheckOption : BooleanManagerOptionItem<ManagerLot>, IDebuggingOption
         {
             public StuckCheckOption()

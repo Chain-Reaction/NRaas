@@ -120,10 +120,11 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Lots
             {
                 if ((mBreakdown.NoneStaying) && (mBreakdown.SimLot != null))
                 {
-                    int humans = 0, pets = 0;
-                    AddStat("Going", mBreakdown.GetGoingCount(ref humans, ref pets));
+                    int humans = 0, pets = 0, plumbots = 0;
+                    AddStat("Going", mBreakdown.GetGoingCount(ref humans, ref pets, ref plumbots));
                     AddStat("Going Humans", humans);
                     AddStat("Going Pets", pets);
+                    AddStat("Going Plumbots", plumbots);
                     return false;
                 }
                 else if (!mBreakdown.SimGoing)

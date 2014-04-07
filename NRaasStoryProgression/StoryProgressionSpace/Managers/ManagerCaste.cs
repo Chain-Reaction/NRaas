@@ -324,7 +324,7 @@ namespace NRaas.StoryProgressionSpace.Managers
                 options.AddValue<AllowCastePregnancyOption, CasteOptions>(options);
                 options.SetValue<AllowAgingOption, bool>(false);
             }
-            else
+            else if(options != null)            
             {
                 if (currentVersion < 4)
                 {
@@ -405,6 +405,16 @@ namespace NRaas.StoryProgressionSpace.Managers
                 options.SetValue<AllowAdoptionOption, bool>(false);
             }
 
+            // Setting this just to be safe
+            if (options != null)
+            {
+                if (currentVersion < 5)
+                {
+                    options.SetValue<AllowMoveFamilyOption, bool>(false);
+                    options.SetValue<AllowMoveSoloOption, bool>(false);
+                }
+            }
+
             // For simplicity
             options = Options.GetNewCasteOptions("NonActiveFamily", Common.Localize("Caste:NonActiveFamily"), out created);
             if (created)
@@ -451,7 +461,7 @@ namespace NRaas.StoryProgressionSpace.Managers
 
             Options.InvalidateCache();
 
-            SetValue<Version, int>(4);
+            SetValue<Version, int>(5);
         }
 
         public List<CasteOptions> GetMatching(SimDescription sim, int netWorth)
