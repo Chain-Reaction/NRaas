@@ -54,6 +54,7 @@
     <Compile Include="Converters\ListToString.cs" />
     <Compile Include="Helpers\OccultPlantSimEx.cs" />
     <Compile Include="Helpers\OccultGenieEx.cs" />
+    <Compile Include="Helpers\OccultUnicornEx.cs" />
     <Compile Include="Options\OperationSettingNestledOption.cs" />
     <Compile Include="Replacers\ActionAvailabilityReplacer.cs" />
     <Compile Include="SpeedTrap.cs" />

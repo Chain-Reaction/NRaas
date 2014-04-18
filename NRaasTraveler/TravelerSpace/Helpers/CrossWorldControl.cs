@@ -17,6 +17,7 @@ using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects.Insect;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Socializing;
+using Sims3.Gameplay.TimeTravel;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -112,6 +113,10 @@ namespace NRaas.TravelerSpace.Helpers
 
             public bool mPerformTravelActions;
 
+            public Dictionary<string, object> transitionedSettings = new Dictionary<string, object>();
+
+            public Dictionary<ulong, List<OccultTypes>> transitionedOccults = new Dictionary<ulong, List<OccultTypes>>();
+
             Dictionary<ulong, ulong> mHouseholds = new Dictionary<ulong, ulong>();
 
             public Dictionary<ulong, bool> mTrueActives = new Dictionary<ulong, bool>();
@@ -121,6 +126,39 @@ namespace NRaas.TravelerSpace.Helpers
                 mPerformTravelActions = Traveler.Settings.mPerformTravelActions;
 
                 StoreHouseholds(travelers);
+
+                if (GameStates.sTravelData.mDestWorld == WorldName.FutureWorld)
+                {
+                    // need to figure out the issue with ITransition and expand this into a deriative search
+                    // but I don't see a big use beyond this
+                    transitionedSettings["DisableDescendants"] = Traveler.Settings.mDisableDescendants;
+                    transitionedSettings["ChanceOfOccultMutation"] = Traveler.Settings.mChanceOfOccultMutation;
+                    transitionedSettings["ChanceOfOccultHybrid"] = Traveler.Settings.mChanceOfOccultHybrid;
+                    transitionedSettings["MaxOccult"] = Traveler.Settings.mMaxOccult;
+
+                    // can't use the transtioned household because progenitors could be outside of the active household
+                    foreach (FutureDescendantService.FutureDescendantHouseholdInfo info in FutureDescendantService.sPersistableData.ActiveDescendantHouseholdsInfo)
+                    {
+                        if (info.HasAncestorFromHousehold(Household.ActiveHousehold) && info.mProgenitorSimIds.Count > 0)
+                        {
+                            foreach (ulong num in info.mProgenitorSimIds)
+                            {
+                                SimDescription sim = SimDescription.Find(num);
+                                if (sim != null)
+                                {
+                                    if (sim.OccultManager != null)
+                                    {
+                                        if (sim.OccultManager.HasAnyOccultType())
+                                        {
+                                            transitionedOccults.Add(num, new List<OccultTypes>());
+                                            transitionedOccults[num].AddRange(OccultTypeHelper.CreateList(sim.OccultManager.CurrentOccultTypes, true));
+                                        }                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             protected void StoreHouseholds(ICollection<SimDescription> travelers)

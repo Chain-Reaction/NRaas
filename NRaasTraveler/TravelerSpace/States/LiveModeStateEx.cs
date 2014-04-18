@@ -397,7 +397,7 @@ namespace NRaas.TravelerSpace.States
                         selectedActor.CareerManager.UpdateCareerUI();
                     }
 
-                    if (Traveler.Settings.mAllowSpawnWeatherStone)
+                    if (Traveler.Settings.mAllowSpawnWeatherStone && GameUtils.IsInstalled(ProductVersion.EP7) && GameUtils.IsInstalled(ProductVersion.EP8))
                     {
                         Sims3.Gameplay.UI.Responder.Instance.TrySpawnWeatherStone();
                     }

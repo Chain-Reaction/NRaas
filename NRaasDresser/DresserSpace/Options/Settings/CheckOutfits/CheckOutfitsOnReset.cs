@@ -10,35 +10,30 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NRaas.GoHereSpace.Options
+namespace NRaas.DresserSpace.Options.Settings.CheckOutfits
 {
-    public class AllowCarRoutingSetting : BooleanSettingOption<GameObject>, IPrimaryOption<GameObject>
+    public class CheckOutfitsOnReset : BooleanSettingOption<GameObject>, ICheckOutfitsOption
     {
         protected override bool Value
         {
             get
             {
-                return GoHere.Settings.mAllowCarRouting;
+                return Dresser.Settings.mCheckOutfitsOnReset;
             }
             set
             {
-                GoHere.Settings.mAllowCarRouting = value;
+                Dresser.Settings.mCheckOutfitsOnReset = value;
             }
         }
 
         public override string GetTitlePrefix()
         {
-            return "AllowCarRouting";
-        }
-
-        protected override bool Allow(GameHitParameters<GameObject> parameters)
-        {
-            return base.Allow(parameters);
+            return "CheckOutfitsOnReset";
         }
 
         public override ITitlePrefixOption ParentListingOption
         {
-            get { return null; }
+            get { return new ListingOption(); }
         }
     }
 }

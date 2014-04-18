@@ -21,6 +21,7 @@ using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.Gameplay.Objects.Register;
 using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Socializing;
+using Sims3.Gameplay.TimeTravel;
 using Sims3.Gameplay.Utilities;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Visa;
@@ -145,7 +146,7 @@ namespace NRaas
             if (GameUtils.IsUniversityWorld())
             {
                 AnnexEx.OnWorldLoadFinished();
-            }
+            }            
         }
 
         public static PersistedSettings Settings
@@ -311,7 +312,14 @@ namespace NRaas
                     {
                         if (GameUtils.IsFutureWorld())
                         {
-                            inventory.mTimeAlmanacButton.Visible = (GameStates.TravelHousehold == Household.ActiveHousehold);
+                            inventory.mTimeAlmanacButton.Visible = (GameStates.TravelHousehold == Household.ActiveHousehold);                            
+                        }
+
+                        if (inventory.mTimeAlmanacButton.Visible)
+                        {
+                            inventory.mTimeAlmanacButton.Click -= inventory.OnClickTimeAlmanac;
+                            inventory.mTimeAlmanacButton.Click -= FutureDescendantServiceEx.OnClickTimeAlmanac;
+                            inventory.mTimeAlmanacButton.Click += FutureDescendantServiceEx.OnClickTimeAlmanac;
                         }
                     }
                 }
@@ -367,6 +375,12 @@ namespace NRaas
                             }
                         }
                     }
+                }
+
+                FutureDescendantService instance = FutureDescendantServiceEx.GetInstance();
+                if (Sims3.UI.Responder.Instance.InLiveMode && Traveler.Settings.mDisableDescendants && instance.mEventListeners.Count > 0)
+                {
+                    instance.CleanUpEventListeners();
                 }
 
                 return true;

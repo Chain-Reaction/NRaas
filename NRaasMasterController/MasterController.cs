@@ -14,6 +14,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Objects.Electronics;
 using Sims3.Gameplay.Objects.RabbitHoles;
+using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -84,13 +85,11 @@ namespace NRaas
         }
 
         // Externalized to StoryProgression
-        public static List<SkillStamp> GetSkillStamps(bool notUsed)
+        public static Dictionary<string, Dictionary<SkillNames, int>> GetSkillStamps(Dictionary<string, Dictionary<SkillNames, int>> stamps)
         {
-            List<SkillStamp> stamps = new List<SkillStamp>();
-
             foreach (SkillStamp stamp in MasterController.Settings.SkillStamps)
             {
-                stamps.Add(stamp);
+                stamps.Add(stamp.Name, new Dictionary<SkillNames,int>(stamp.Skills));
             }
 
             return stamps;

@@ -487,6 +487,11 @@ namespace NRaas.CommonSpace.Helpers
                 addOutfit = false;
             }
 
+            if (type == OccultTypes.Unicorn)
+            {
+                OccultUnicornEx.OnAddition(newOccult as OccultUnicorn, ths.mOwnerDescription, addOutfit);
+            }
+
             ApplyTrait(ths.mOwnerDescription, type);
 
             MidlifeCrisisManager midlifeCrisisManager = ths.mOwnerDescription.MidlifeCrisisManager;
@@ -649,6 +654,11 @@ namespace NRaas.CommonSpace.Helpers
 
                 using (CASParts.OutfitBuilder builder = new CASParts.OutfitBuilder(sim, new CASParts.Key(OutfitCategories.Everyday, 1), outfit))
                 { }
+            }
+
+            if (type == OccultTypes.Unicorn)
+            {
+                OccultUnicornEx.OnRemoval(sim);
             }
 
             bool success = false;

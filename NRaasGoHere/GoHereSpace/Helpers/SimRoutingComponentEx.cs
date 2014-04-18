@@ -216,6 +216,12 @@ namespace NRaas.GoHereSpace.Helpers
                 r.SetOption(Route.RouteOption.BeginAsCar, false);
             }
 
+            if (!GoHere.Settings.mAllowBoatRouting)
+            {
+                r.SetOption2(Route.RouteOption2.EnablePlanningAsBoat, false);
+                r.SetOption2(Route.RouteOption2.BeginAsBoat, false);
+            }
+
             Common.StringBuilder msg = new Common.StringBuilder("DoRoute");
 
             try

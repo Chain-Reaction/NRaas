@@ -41,6 +41,8 @@ namespace NRaas.CommonSpace.Tasks
     {
         Sim mSim;
 
+        static Common.MethodStore sSimReset = new Common.MethodStore("NRaasDresser", "NRaas.Dresser", "AddResetSimDesc", new Type[] { typeof(ulong) });
+
         public ResetSimTask(Sim sim)
             : base(1, TimeUnit.Seconds)
         {
@@ -357,7 +359,7 @@ namespace NRaas.CommonSpace.Tasks
                     if (simDesc != null)
                     {
                         sim.Destroy();
-                    }
+                    }                    
 
                     //sim.mSimDescription = null;
                     return null;
@@ -367,7 +369,7 @@ namespace NRaas.CommonSpace.Tasks
                 {
                     sim.mSimDescription = new SimDescription();
 
-                    sim.Destroy();
+                    sim.Destroy();                    
                     return null;
                 }
 
@@ -379,12 +381,12 @@ namespace NRaas.CommonSpace.Tasks
                     {
                         sim.Destroy();
 
-                        simDesc.CreatedSim = null;
+                        simDesc.CreatedSim = null;                        
 
                         return null;
                     }
                     else
-                    {
+                    {                        
                         Bed myBed = null;
                         BedData myBedData = null;
 
@@ -465,11 +467,16 @@ namespace NRaas.CommonSpace.Tasks
                         {
                             bool active = (Sim.ActiveActor == sim);
 
+                            if (sSimReset.Valid)
+                            {
+                                sSimReset.Invoke<bool>(new object[] { simDesc.SimDescriptionId });
+                            }                            
+
                             using (CreationProtection protection = new CreationProtection(simDesc, sim, false, true, false))
                             {
                                 sim.Destroy();
 
-                                Common.Sleep();
+                                Common.Sleep();                                
 
                                 sim = FixInvisibleTask.InstantiateAtHome(simDesc, null);
                             }
@@ -515,7 +522,7 @@ namespace NRaas.CommonSpace.Tasks
                             if (sim.Inventory == null)
                             {
                                 sim.AddComponent<InventoryComponent>(new object[0x0]);
-                            }
+                            }                           
 
                             if (Instantiation.AttemptToPutInSafeLocation(sim, false))
                             {

@@ -115,6 +115,9 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
+	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
     </Compile>
@@ -208,6 +211,7 @@
     <Compile Include="DresserSpace\Options\ProcessAllSimsOption.cs" />
     <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RandomAccessories\InvalidProductVersionSetting.cs" />
     <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Accessories\RerollAccessories.cs" />
+    <Compile Include="DresserSpace\Options\Settings\CheckOutfits\CheckOutfitsOnReset.cs" />
     <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\InheritBodyHairSetting.cs" />
     <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\InvalidHatCategoriesSetting.cs" />
     <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Hair\RandomBodyHair\IgnoreValidForRandomHairSetting.cs" />

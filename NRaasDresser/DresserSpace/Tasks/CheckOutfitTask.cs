@@ -598,6 +598,19 @@ namespace NRaas.DresserSpace.Tasks
                                     default:
                                         switch (part.BodyType)
                                         {
+                                            case BodyTypes.BirthMark:
+                                            case BodyTypes.Dental:
+                                            case BodyTypes.Eyebrows:
+                                            case BodyTypes.Face:
+                                            case BodyTypes.FirstFace:
+                                            case BodyTypes.Freckles:
+                                            case BodyTypes.EyeColor:
+                                            case BodyTypes.Moles:
+                                            case BodyTypes.Scalp:
+                                            case BodyTypes.Tattoo:
+                                            case BodyTypes.TattooTemplate:
+                                            case BodyTypes.WeddingRing:                                           
+                                                break;
                                             case BodyTypes.UpperBody:
                                             case BodyTypes.LowerBody:
                                             case BodyTypes.FullBody:
@@ -616,13 +629,13 @@ namespace NRaas.DresserSpace.Tasks
                                                         replace.Add(BodyTypes.LowerBody);
                                                     }
                                                 }
+                                                replacementLog.Append(Common.NewLine + part.Key + " : BodyType reroll For " + part.BodyType);
                                                 break;
                                             default:
                                                 replace.Add(part.BodyType);
+                                                replacementLog.Append(Common.NewLine + part.Key + " : BodyType reroll For " + part.BodyType);
                                                 break;
-                                        }
-
-                                        replacementLog.Append(Common.NewLine + part.Key + " : BodyType reroll For " + part.BodyType);
+                                        }                                        
                                         break;
                                 }
                             }
@@ -1385,6 +1398,11 @@ namespace NRaas.DresserSpace.Tasks
                 Sim sim = e.TargetObject as Sim;
                 if (sim != null)
                 {
+                    if (!Dresser.Settings.mCheckOutfitsOnReset && Dresser.sSimsReset.Contains(sim.SimDescription.SimDescriptionId))
+                    {
+                        return;
+                    }
+
                     if (Dresser.Settings.ShouldCheck(sim.SimDescription))
                     {
                         AddToQueue(sim.SimDescription, ProcessOptions.Invalid | ProcessOptions.Accessories | ProcessOptions.Makeup | ProcessOptions.BodyHair | ProcessOptions.Beard);

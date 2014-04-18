@@ -348,6 +348,8 @@ namespace NRaas.WoohooerSpace.Interactions
                         flag2 = true;
                     }
 
+                    bool locationTest = false;
+
                     foreach (IMiniRelationship relationship in Relationship.GetMiniRelationships(actor.SimDescription))
                     {
                         SimDescription description = SimDescription.Find(relationship.GetOtherSimDescriptionId(actor.SimDescription));
@@ -373,10 +375,19 @@ namespace NRaas.WoohooerSpace.Interactions
                                 continue;
                             }
 
-                            if (!CommonWoohoo.HasWoohooableObject(actor.LotHome, actor, description.CreatedSim))
+                            if (!locationTest)
                             {
-                                continue;
+                                // only humans can use this so we don't need to keep scanning the lot each loop
+                                if (!CommonWoohoo.HasWoohooableObject(actor.LotHome, actor, description.CreatedSim))
+                                {
+                                    return false;
+                                }
+                                else
+                                {
+                                    locationTest = true;
+                                }
                             }
+
                                                       
                             return true;
                         }                                 
