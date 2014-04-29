@@ -34,8 +34,15 @@ namespace NRaas.OverwatchSpace.Loadup
 {
     public class CleanupFutureDescendantService : DelayedLoadupOption
     {
+        public static bool wasRescheduled = false;
+
         public override void OnDelayedWorldLoadFinished()
-        {          
+        {
+            RunStatic();
+        }
+
+        public static void RunStatic()
+        {      
             Overwatch.Log("CleanupFutureDescendantService");
 
             FutureDescendantService instance = FutureDescendantService.GetInstance();
@@ -101,6 +108,16 @@ namespace NRaas.OverwatchSpace.Loadup
                     // because sims can possibly be deleted beyond here and I don't believe you can delete sims who are minisims while in the homeworld?
                     return;
                 }
+                else
+                {
+                    // this causes a script error if it deletes Sims while cleanup of relationships is running so let that run and come back in a bit...
+                    if (!wasRescheduled)
+                    {
+                        new Common.AlarmTask(10, TimeUnit.Minutes, RunStatic);                        
+                        wasRescheduled = true;
+                        return;
+                    }
+                }                
 
                 Dictionary<ulong, SimDescription> sims = SimListing.GetResidents(false);
                 foreach (SimDescription sim in sims.Values)

@@ -156,6 +156,9 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
+	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
     </Compile>
@@ -602,6 +605,7 @@
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\AllInOneBathroomSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\CaveSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\BotMakerSetting.cs" />
+    <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\EiffelTowerSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\TimePortalSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\HoverTrainSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Woohoo\ValidLocation\JetPackSetting.cs" />

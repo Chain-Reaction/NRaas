@@ -141,6 +141,9 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
     </Compile>
@@ -359,6 +362,7 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupKnownCompositions.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupFutureDescendantService.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixActiveTopics.cs" />
+    <Compile Include="OverwatchSpace\Loadup\ReplaceEP11BaseCampString.cs" />
     <Compile Include="OverwatchSpace\Loadup\YieldAllAlarms.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixToddlerChat.cs" />
     <Compile Include="OverwatchSpace\Loadup\TestDoesObjectNeedCleaning.cs" />

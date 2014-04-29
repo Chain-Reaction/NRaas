@@ -51,7 +51,10 @@ namespace NRaas.TravelerSpace.Options
 
         public void OnWorldLoadFinished()
         {
-            ToggleSeasons();
+            if (GameUtils.IsOnVacation())
+            {
+                ToggleSeasons();
+            }
         }
 
         public void OnWorldQuit()

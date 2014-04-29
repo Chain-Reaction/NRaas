@@ -592,11 +592,12 @@ namespace NRaas.WoohooerSpace.Helpers
         {
             PregnancyChoice choice = Woohooer.Settings.mTryForBabyPregnancyChoice;
             bool playChimes = true;
-            if (style == CommonWoohoo.WoohooStyle.Risky)
+
+            if (Woohooer.Settings.ReplaceWithRisky || style == CommonWoohoo.WoohooStyle.Risky)
             {
                 choice = Woohooer.Settings.mRiskyPregnancyChoice;
                 playChimes = false;
-            }
+            }            
 
             if (actor.SimDescription.Gender == target.SimDescription.Gender)
             {

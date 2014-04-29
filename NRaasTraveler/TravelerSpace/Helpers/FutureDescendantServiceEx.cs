@@ -32,6 +32,10 @@ namespace NRaas.TravelerSpace.Helpers
 
         public static FutureDescendantService GetInstance()
         {
+            if (FutureDescendantService.sInstance == null)
+            {
+                FutureDescendantService.CreateInstance();
+            }
             return FutureDescendantService.GetInstance();
         }
 

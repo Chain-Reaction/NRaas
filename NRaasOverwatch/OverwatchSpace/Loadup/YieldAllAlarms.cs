@@ -57,6 +57,11 @@ namespace NRaas.OverwatchSpace.Loadup
         {           
             AlarmManager manager = AlarmManager.Global;
 
+            if (manager == null)
+            {
+                return;
+            }
+
             foreach (object item in manager.mTimerQueue)
             {
                 AlarmManager.Timer timer = item as AlarmManager.Timer;

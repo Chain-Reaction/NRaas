@@ -217,6 +217,8 @@ namespace NRaas.OverwatchSpace.Alarms
                 if ((!vehicle.InInventory) && (vehicle.Driver != null) && (!vehicle.Driver.HasBeenDestroyed))
                 {
                     if (vehicle.Driver.LotCurrent == vehicle.LotCurrent) continue;
+
+                    if (vehicle.Driver.IsPerformingAService) continue;
                 }
 
                 // Temporary until further review can be done
