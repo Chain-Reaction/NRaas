@@ -1387,7 +1387,12 @@ namespace NRaas.RegisterSpace.Tasks
                         {
                             if (role.SimInRole != null)
                             {
-                                role.EndRole();
+                                try
+                                {
+                                    // EA issue in foreign worlds and StoryProgression unprotect busts out
+                                    role.EndRole();
+                                }
+                                catch { }
                             }
                         }
                     }

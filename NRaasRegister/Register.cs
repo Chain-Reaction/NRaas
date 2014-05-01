@@ -1,6 +1,7 @@
 ﻿using NRaas.CommonSpace.Helpers;
 using NRaas.RegisterSpace;
 using NRaas.RegisterSpace.Helpers;
+using NRaas.RegisterSpace.Options.Service;
 using NRaas.RegisterSpace.Options.Tourists;
 using NRaas.RegisterSpace.Tasks;
 using Sims3.Gameplay;
@@ -18,6 +19,7 @@ using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.Gameplay.Objects.Register;
 using Sims3.Gameplay.PetSystems;
 using Sims3.Gameplay.Roles;
+using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.StoryProgression;
 using Sims3.Gameplay.Utilities;
@@ -258,10 +260,39 @@ namespace NRaas
 
             if (!Register.Settings.mDisableServiceCleanup)
             {
-                // Must be delayed until after the services are initialized
+                // Must be delayed until after the services are initialized                
+                InitDefaultServiceTunings();
                 ServiceCleanup.Task.Perform();
                 ServicePoolCleanup.Task.Perform();
             }
+        }
+
+        public static void InitDefaultServiceTunings()
+        {            
+            foreach(Service service in Services.AllServices)
+            {
+                ServiceSettingKey key;
+                if(Register.Settings.serviceSettings.TryGetValue(service.ServiceType, out key))
+                {                    
+                    ServiceSettingKey def = new ServiceSettingKey(service);
+                    key.tuningDefault = def;
+                    SetServiceTuningFromKey(service, key);
+                }                
+            }           
+        }
+
+        public static void SetServiceTuningFromKey(Service service, ServiceSettingKey key)
+        {            
+            service.Tuning.kCost = key.cost;
+            service.Tuning.kIsRecurrent = key.reoccuring;
+            service.Tuning.kMaxNumNPCsInPool = key.numInPool;           
+
+            ServiceNPCSpecifications.ServiceSpecifications spec;
+            if (ServiceNPCSpecifications.sServiceSpecifications.TryGetValue(service.ServiceType.ToString(), out spec))
+            {                
+                spec.Ages = key.validAges;
+                ServiceNPCSpecifications.sServiceSpecifications[service.ServiceType.ToString()] = spec;
+            }            
         }
 
         public static string GetRoleName(Role.RoleType type)
@@ -459,5 +490,23 @@ namespace NRaas
                 }
             }
         }
+
+        public static bool AllowForService(ServiceType service, CASAgeGenderFlags flag)
+        {
+            switch(service)
+            {
+                case ServiceType.Babysitter:
+                    return (flag & CASAgeGenderFlags.Teen | CASAgeGenderFlags.YoungAdult | CASAgeGenderFlags.Adult | CASAgeGenderFlags.Elder) != CASAgeGenderFlags.None;
+                case ServiceType.NewspaperDelivery:
+                    return (flag & CASAgeGenderFlags.Child) != CASAgeGenderFlags.None;                    
+                case ServiceType.PerformanceArtist:
+                case ServiceType.DJ:
+                case ServiceType.Magician:
+                case ServiceType.Singer:
+                    return (flag & CASAgeGenderFlags.Adult) != CASAgeGenderFlags.None;
+                default:
+                    return (flag & CASAgeGenderFlags.YoungAdult | CASAgeGenderFlags.Adult) != CASAgeGenderFlags.None;                
+            }
+        }        
     }
 }

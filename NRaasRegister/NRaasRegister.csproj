@@ -120,6 +120,9 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
+	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
     </Compile>
@@ -240,6 +243,15 @@
     <Compile Include="RegisterSpace\Helpers\MiniSimDescriptionEx.cs" />
     <Compile Include="RegisterSpace\Interactions\ShowStageTendEx.cs" />
     <Compile Include="RegisterSpace\Interactions\GoToLotThatSatisfiesMyRoleEx.cs" />
+    <Compile Include="RegisterSpace\Options\GlobalRoles\MaximumPaparazzi.cs" />
+    <Compile Include="RegisterSpace\Options\Service\AgeSetting.cs" />
+    <Compile Include="RegisterSpace\Options\Service\CostSetting.cs" />
+    <Compile Include="RegisterSpace\Options\Service\IServiceOption.cs" />
+    <Compile Include="RegisterSpace\Options\Service\ListingOption.cs" />
+    <Compile Include="RegisterSpace\Options\Service\PoolSetting.cs" />
+    <Compile Include="RegisterSpace\Options\Service\ReoccurrenceSetting.cs" />
+    <Compile Include="RegisterSpace\Options\Service\ServiceListingOption.cs" />
+    <Compile Include="RegisterSpace\Options\Service\ServiceSettingKey.cs" />
     <Compile Include="RegisterSpace\Options\Tourists\TouristWorldSetting.cs" />
     <Compile Include="RegisterSpace\Options\AllowImmigration.cs" />
     <Compile Include="RegisterSpace\Options\AllowTourists.cs" />

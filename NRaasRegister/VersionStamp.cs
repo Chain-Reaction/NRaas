@@ -99,20 +99,8 @@ namespace NRaas
          */
 
         /* Changes
-         * 
-         * Added "Tourists \ Chance of Leaving" default: 25
-         * Added "Tourists \ Pool Size" default: 10
-         * Added "Tourists \ Allow Homeworld Tourists" default: True
-         * Renamed the "Paparazzi" menu to "Global Roles"
-         * Added "Global Roles \ Select Special Merchant"
-         * Added "Global Roles \ Remove Special Merchant"
-         * Added "Global Roles \ Select University Mascot"
-         * Added "Global Roles \ Remove University Mascot"
-         * Added "Global Roles \ Remove By Sim"
-         * Added "Disable Assignment" to each role object
-         * Roles are now dropped on seasonal objects which are no longer in world
-         * Added "Tourists \ Disabled Tourist Worlds"
+         *          
          */
-        public static readonly int sVersion = 78;
+        public static readonly int sVersion = 79;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Sims3.Gameplay.Abstracts;
+﻿using NRaas.RegisterSpace.Options.Service;
+using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.CAS;
@@ -8,6 +9,7 @@ using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Objects.Register;
 using Sims3.Gameplay.PetSystems;
 using Sims3.Gameplay.Roles;
+using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
@@ -101,6 +103,9 @@ namespace NRaas.RegisterSpace
 
         [Tunable, TunableComment("Whether to allow homeworld residents to be used as tourists")]
         public static bool kAllowHomeworldTourists = true;
+
+        [Tunable, TunableComment("The maximum paparazzi that the role manager can spawn")]
+        public static int kMaximumPaparazzi = 3;
         
         public bool mShowLotMenu = kShowLotMenu;
         public bool mShowNotices = kShowNotices;
@@ -132,6 +137,10 @@ namespace NRaas.RegisterSpace
         public bool mAllowHomeworldTourists = kAllowHomeworldTourists;
 
         public Dictionary<WorldName, bool> mDisabledTouristWorlds = new Dictionary<WorldName, bool>();
+
+        public int mMaximumPaparazzi = kMaximumPaparazzi;
+
+        public Dictionary<ServiceType, ServiceSettingKey> serviceSettings = new Dictionary<ServiceType, ServiceSettingKey>();
 
         public PersistedSettings()
         {
@@ -220,6 +229,17 @@ namespace NRaas.RegisterSpace
                 default:
                     return -1;
             }
+        }
+
+        public ServiceSettingKey GetSettingsForService(Service service)
+        {
+            ServiceSettingKey settings;
+            if (serviceSettings.TryGetValue(service.ServiceType, out settings))
+            {
+                return settings;
+            }
+
+            return new ServiceSettingKey(service);
         }
 
         public bool Debugging
