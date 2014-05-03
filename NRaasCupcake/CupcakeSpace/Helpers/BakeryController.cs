@@ -3,6 +3,7 @@ using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
+using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Objects.CookingObjects;
 using Sims3.Gameplay.Objects.FoodObjects;
@@ -31,7 +32,7 @@ namespace NRaas.CupcakeSpace.Helpers
                         continue;
                     }
 
-                    if (recipe.Key != "BSBakeWeddingCake" && recipe.Key != "WeddingCake" && recipe.Key != "Pancakes" && recipe.SingleServingContainer != "PlateChild" && GameUtils.IsInstalled(recipe.CodeVersion))
+                    if (recipe.Key != "BSBakeWeddingCake" && recipe.Key != "Wedding Cake Slice" && recipe.Key != "Pancakes" && recipe.Key != "WeddingCakeSliceDOT07" && recipe.SingleServingContainer != "PlateChild" && GameUtils.IsInstalled(recipe.CodeVersion))
                     {                        
                         goodies.Add(recipe);
                     }
@@ -107,13 +108,15 @@ namespace NRaas.CupcakeSpace.Helpers
             if (Cupcake.Settings.mAutoRestock)
             {
                 Common.StringBuilder msg = new Common.StringBuilder();
+                Common.StringBuilder displayMsg;
                 foreach (CraftersConsignmentDisplay display in Sims3.Gameplay.Queries.GetObjects<CraftersConsignmentDisplay>())
                 {                    
-                    RestockDisplay(display, out msg);
-                    msg += msg;
+                    RestockDisplay(display, out displayMsg);
+                    msg += displayMsg + Common.NewLine + Common.NewLine;
                 }
                 Common.DebugWriteLog(msg);
                 msg = null;
+                displayMsg = null;
                 goodies.Clear();
                 qualites.Clear();
             }
@@ -131,8 +134,11 @@ namespace NRaas.CupcakeSpace.Helpers
                 InitLists();
             }
 
-            List<int> slotsToSkipOnChiller = new List<int> { 23, 25 };
-            List<int> slotsToSkipOnRack = new List<int> { 0, 2, 4 };
+            List<int> slotsToSkipForWeddingCakeSetupOnChiller = new List<int> { 23, 25 };
+            List<int> slotsToSkipForWeddingCakeSetupOnRack = new List<int> { 0, 2, 4 };
+            List<int> slotsForWeddingCakesChiller = new List<int> { 21, 22, 24 };
+            List<int> slotsForWeddingCakesOnRack = new List<int> { 1, 3 };
+            Recipe randomRestockRecipe = null;
 
             if (display.LotCurrent != null)
             {
@@ -151,7 +157,14 @@ namespace NRaas.CupcakeSpace.Helpers
                 return;
             }
 
-            if (!Cupcake.Settings.mAffectActive)
+            bool random = false;
+            if (!Cupcake.Settings.HasSettings(display.ObjectId))
+            {
+                debug += Common.NewLine + "Display has no user defined settings.";
+                random = true;
+            }
+
+            if (!Cupcake.Settings.mAffectActive && random)
             {
                 if (display.LotCurrent == null)
                 {
@@ -183,24 +196,27 @@ namespace NRaas.CupcakeSpace.Helpers
                 debug += Common.NewLine + "Slot: " + slot.Key;
                 if (displayType == DisplayHelper.DisplayTypes.Chiller)
                 {
-                    if (slot.Key > 20 && !Cupcake.Settings.mStockWeddingCakes && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
+                    if (!Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
                     {
-                        debug += Common.NewLine + "Skipping top shelf";
-                        continue;
-                    }
+                        if (slot.Key > 20 && !Cupcake.Settings.mStockWeddingCakes)
+                        {
+                            debug += Common.NewLine + "Wedding cakes disabled, skipping top shelf";
+                            continue;
+                        }
 
-                    if (slotsToSkipOnChiller.Contains(slot.Key) && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
-                    {
-                        debug += Common.NewLine + "Skipping top shelf";
-                        continue;
+                        if (Cupcake.Settings.mStockWeddingCakes && slotsToSkipForWeddingCakeSetupOnChiller.Contains(slot.Key))
+                        {
+                            debug += Common.NewLine + "Skipping slots for presentable wedding cake setup";
+                            continue;
+                        }
                     }
                 }
 
                 if (displayType == DisplayHelper.DisplayTypes.Rack)
                 {
-                    if (Cupcake.Settings.mStockWeddingCakes && slotsToSkipOnRack.Contains(slot.Key) && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
+                    if (Cupcake.Settings.mStockWeddingCakes && slotsToSkipForWeddingCakeSetupOnRack.Contains(slot.Key) && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
                     {
-                        debug += Common.NewLine + "Skipping wedding cake slots";
+                        debug += Common.NewLine + "Skipping slots for presentable wedding cake setup";
                         continue;
                     }
                 }
@@ -208,19 +224,12 @@ namespace NRaas.CupcakeSpace.Helpers
                 GameObject containedObject = display.GetContainedObject(slot.Value) as GameObject;
                 if (containedObject == null)
                 {
-                    bool random = false;
-                    if (!Cupcake.Settings.HasSettings(display.ObjectId))
-                    {
-                        debug += Common.NewLine + "Slot has no user defined settings.";
-                        random = true;
-                    }
-
                     Dictionary<string, List<Quality>> settings = Cupcake.Settings.GetDisplaySettingsForSlot(display.ObjectId, slot.Key);
 
                     Recipe recipe = null;
                     IFoodContainer container = null;
                     Quality quality = Quality.Perfect;
-                    if (random && !Cupcake.Settings.mDisableRandomAutoRestock)
+                    if (random && !Cupcake.Settings.mDisableRandomAutoRestock && (!Cupcake.Settings.mOneRecipePerDisplayOnRandom || (Cupcake.Settings.mOneRecipePerDisplayOnRandom && randomRestockRecipe == null)))
                     {
                         debug += Common.NewLine + "Random";
                         if (Cupcake.Settings.mRandomRestockSettings.Count > 0)
@@ -246,7 +255,7 @@ namespace NRaas.CupcakeSpace.Helpers
                                     recipe = Recipe.NameToRecipeHash[pick];
 
                                     debug += Common.NewLine + "Fetching random recipe...";
-                                    debug += Common.NewLine + "Pick: " + recipe.SpecificNameKey;
+                                    debug += Common.NewLine + "Pick: " + recipe.Key;
 
                                     quality = RandomUtil.GetRandomObjectFromList<Quality>(Cupcake.Settings.mRandomRestockSettings[pick]);
                                     debug += Common.NewLine + "Fetching random quality...";
@@ -268,7 +277,15 @@ namespace NRaas.CupcakeSpace.Helpers
                                 debug += Common.NewLine + "Pick: " + recipe.SpecificNameKey;
                                 debug += Common.NewLine + "Quality: Always Perfect";
                             }
-                        }                        
+                        }
+
+                        randomRestockRecipe = recipe;
+                    }
+
+                    if (random && Cupcake.Settings.mOneRecipePerDisplayOnRandom && randomRestockRecipe != null)
+                    {
+                        debug += Common.NewLine + "OneRecipePerDisplayOnRandom = true" + Common.NewLine + "Last Recipe: " + randomRestockRecipe.GenericName;
+                        recipe = randomRestockRecipe;
                     }
 
                     if (settings != null)
@@ -310,7 +327,7 @@ namespace NRaas.CupcakeSpace.Helpers
                         }
                         else
                         {
-                            debug += "Settings for slot was 0 count.";
+                            debug += Common.NewLine + "Settings for slot was 0 count.";
                             continue;
                         }
 
@@ -319,28 +336,30 @@ namespace NRaas.CupcakeSpace.Helpers
                         debug += Common.NewLine + "Pick: " + quality.ToString();
                     }
 
-                    if (Cupcake.Settings.mStockWeddingCakes && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
+                    if (random && Cupcake.Settings.mStockWeddingCakes && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
                     {
-                        List<string> cakes = new List<string> { "WeddingCake", "BSBakeWeddingCake", "WeddingCakeSliceDOT07" };
-                        if ((displayType == DisplayHelper.DisplayTypes.Chiller && (slot.Key == 21 || slot.Key == 22 || slot.Key == 24)) || (displayType == DisplayHelper.DisplayTypes.Rack && (slot.Key == 1 || slot.Key == 3)))
+                        List<string> cakes = new List<string> { "BSBakeWeddingCake", "WeddingCakeSliceDOT07" };
+
+                        if (GameUtils.IsInstalled(ProductVersion.EP4))
                         {
-                            debug += Common.NewLine + "Wedding cake";
+                            cakes.Add("Wedding Cake Slice");
+                        }
+
+                        if ((displayType == DisplayHelper.DisplayTypes.Chiller && slotsForWeddingCakesChiller.Contains(slot.Key)) || (displayType == DisplayHelper.DisplayTypes.Rack && slotsForWeddingCakesOnRack.Contains(slot.Key)))
+                        {
+                            debug += Common.NewLine + "Wedding cake slot";
                             recipe = null;
                             while (recipe == null)
                             {
                                 string pick = RandomUtil.GetRandomObjectFromList<string>(cakes);
-                                if (Recipe.NameToRecipeHash.ContainsKey(pick))
-                                {
-                                    recipe = Recipe.NameToRecipeHash[pick];
-                                }
-                                else
+                                if (!Recipe.NameToRecipeHash.TryGetValue(pick, out recipe))
                                 {
                                     // for folks with out of date mods
                                     if (pick == "BSBakeWeddingCake")
                                     {
                                         break;
                                     }
-                                }
+                                }                                
                             }
                         }                        
                     }                    
@@ -353,32 +372,48 @@ namespace NRaas.CupcakeSpace.Helpers
                             quality = RandomUtil.GetRandomObjectFromList<Quality>(qualites);
                         }
 
+                        // Naturally EA didn't include group model definition for these 2 and it causes explosions
+                        IGameObject cake = null;                        
                         if (recipe.Key == "WeddingCakeSliceDOT07")
                         {
-                            container = (IFoodContainer)GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWedding_DOT07", ~ProductVersion.Undefined);
+                            debug += Common.NewLine + "Attempt at Monte Vista cake";
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingDOT07", ProductVersion.BaseGame);
+                            if (cake == null)
+                            {
+                                cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingDOT07", ~ProductVersion.Undefined);
+                            }                            
                         }
-
-                        /*
-                        if (recipe.SpecificNameKey == "BSBakeBirthdayCake")
+                        else if (recipe.Key == "Wedding Cake Slice")
                         {
-                            container = (IFoodContainer)GlobalFunctions.CreateObjectOutOfWorld("FoodBirthdayCakeBakery", ~ProductVersion.Undefined);
+                            debug += Common.NewLine + "Attempt at Generations cake";
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingTraditional", ProductVersion.EP4);                                                     
                         }
-                        else if (recipe.SpecificNameKey == "BSBakeWeddingCake")
-                        {
-                            container = (IFoodContainer)GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingBakery", ~ProductVersion.Undefined);
-                        }
-                         */
                         else
                         {
-                         
                             container = recipe.CreateFinishedFood(recipe.CanMakeGroupServing ? Recipe.MealQuantity.Group : Recipe.MealQuantity.Single, quality);
                         }
+
+                        if (cake != null && !(cake is FailureObject))
+                        {
+                            debug += Common.NewLine + "Wedding cake success";
+                            DisplayHelper.ParentToSlot(cake as GameObject, slot.Value, display);
+                            cake.AddToWorld();
+
+                            WeddingCake cake2 = cake as WeddingCake;
+                            if (cake2 != null)
+                            {
+                                cake2.RemoveInteractionByType(WeddingCake.CutWeddingCake.Singleton);
+                            }
+                        }
+                        else
+                        {
+                            debug += Common.NewLine + "Wedding cake fail";
+                        }
+
                         if (container != null)
                         {
-                            container.SetPosition(display.GetPositionOfSlot(slot.Value));
-                            container.SetForward(display.GetForwardOfSlot(slot.Value));
-                            container.SetGeometryState(recipe.SingleServingContainer); // this is how EA sets it, don't ask
-                            container.ParentToSlot(display, slot.Value);
+                            DisplayHelper.ParentToSlot(container as GameObject, slot.Value, display);
+                            container.SetGeometryState(recipe.SingleServingContainer); // this is how EA sets it, don't ask                            
                             container.AddToWorld();
 
                             ServingContainer container2 = container as ServingContainer;
@@ -391,7 +426,7 @@ namespace NRaas.CupcakeSpace.Helpers
 
                                 // EA fail
                                 container2.RemoveInteractionByType(ServingContainerGroup.CallToMeal.Singleton);
-                            }
+                            }                            
 
                             // snack handling... needs a lot more
                             Snack container3 = container as Snack;

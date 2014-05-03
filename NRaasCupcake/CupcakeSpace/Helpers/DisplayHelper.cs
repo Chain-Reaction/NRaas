@@ -1,5 +1,6 @@
 ﻿using NRaas.CupcakeSpace.Helpers;
 using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Objects.CookingObjects;
 using Sims3.Gameplay.Objects.FoodObjects;
@@ -24,13 +25,29 @@ namespace NRaas.CupcakeSpace.Helpers
             Slot[] displaySlots = display.GetContainmentSlots();
 
             DisplayTypes displayType;
-            if (displaySlots.Length <= 26)
+            // Yay to brappl for helping me nail this one
+            int length = displaySlots.Length - 1;
+            if (displaySlots[length].ToString() != "TransformBone")
             {
-                displayType = DisplayTypes.Chiller;
+                if (displaySlots.Length == 26)
+                {
+                    displayType = DisplayTypes.Chiller;
+                }
+                else
+                {
+                    displayType = DisplayTypes.Rack;
+                }
             }
             else
             {
-                displayType = DisplayTypes.Rack;
+                if (displaySlots.Length == 27)
+                {
+                    displayType = DisplayTypes.Chiller;
+                }
+                else
+                {
+                    displayType = DisplayTypes.Rack;
+                }
             }
 
             return displayType;
@@ -38,20 +55,25 @@ namespace NRaas.CupcakeSpace.Helpers
 
         public static Dictionary<int, Slot> GetEmptyOrFoodSlots(CraftersConsignmentDisplay display, out DisplayTypes displayType)
         {
-            Dictionary<int, Slot> slots = new Dictionary<int, Slot>();            
-
+            Dictionary<int, Slot> slots = new Dictionary<int, Slot>();
+            
             Slot[] displaySlots = display.GetContainmentSlots();
             for (int i = 0; i < displaySlots.Length; i++)
             {
+                if (i > 25 && displaySlots[i].ToString() == "TransformBone")
+                {
+                    break;
+                }
+
                 GameObject containedObject = display.GetContainedObject(displaySlots[i]) as GameObject;
 
                 if (containedObject is IFoodContainer || containedObject is ServingContainer || containedObject == null)
                 {
-                    slots.Add(i, displaySlots[i]);
+                    slots.Add(i, displaySlots[i]);                    
                 }
             }
 
-            displayType = GetDisplayType(display);
+            displayType = GetDisplayType(display);            
 
             return slots;
         }
@@ -87,5 +109,15 @@ namespace NRaas.CupcakeSpace.Helpers
             quality = Quality.Any;
             return null;
         }
+
+        public static void ParentToSlot(GameObject obj, Slot slot, GameObject parent)
+        {
+            if (obj != null && parent != null)
+            {
+                obj.SetPosition(parent.GetPositionOfSlot(slot));
+                obj.SetForward(parent.GetForwardOfSlot(slot));                
+                obj.ParentToSlot(parent, slot);                
+            }
+        }   
     }
 }

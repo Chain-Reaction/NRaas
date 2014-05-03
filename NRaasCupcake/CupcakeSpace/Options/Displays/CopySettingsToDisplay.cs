@@ -56,13 +56,13 @@ namespace NRaas.CupcakeSpace.Options.Displays
         {
             if (Cupcake.activeDisplay == null)
             {
-                Common.Notify("You must use Select on a display prior to using this option.");
+                Common.Notify(Common.Localize("SlotCopy:NoSelection"));
                 return OptionResult.Failure;
             }
 
             if (Cupcake.activeDisplay == mTarget)
             {
-                Common.Notify("Fail: Trying to copy to the same display");
+                Common.Notify(Common.Localize("SlotCopy:SameDisplay"));
                 return OptionResult.Failure;
             }
 
@@ -71,13 +71,13 @@ namespace NRaas.CupcakeSpace.Options.Displays
 
             if (targetType != activeType)
             {
-                Common.Notify("Unable to copy between displays because they are not the same type.");
+                Common.Notify(Common.Localize("SlotCopy:TypeMismatch"));
                 return OptionResult.Failure;
             }
 
             if (!Cupcake.Settings.HasSettings(Cupcake.activeDisplay.ObjectId))
             {
-                Common.Notify("Active display has no settings to copy from.");
+                Common.Notify(Common.Localize("SlotCopy:NoSettings"));
                 return OptionResult.Failure;
             }
 

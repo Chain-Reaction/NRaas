@@ -1,4 +1,5 @@
-﻿using NRaas.CommonSpace.Helpers;
+﻿// NOTE THIS MOD WILL NOT COMPILE WITHOUT THE DLL'S FROM THE STORE CONTENT IT ALTERS IN THE SIMS3 / COMPILER DIRECTORY
+using NRaas.CommonSpace.Helpers;
 using NRaas.CommonSpace.Selection;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -37,12 +38,16 @@ namespace NRaas.CupcakeSpace
         protected static bool kStockWeddingCakes = true;        
 
         [Tunable, TunableComment("Whether to disble random restock system")]
-        protected static bool kDisableRandomAutoRestock = false;        
+        protected static bool kDisableRandomAutoRestock = false;   
+     
+        [Tunable, TunableComment("Whether to only use the first picked recipe for the entire display when on random selection")]
+        protected static bool kOneRecipePerDiplayOnRandom = false;
 
         public bool mAutoRestock = kAutoRestock;
         public bool mAffectActive = kAffectActive;
         public bool mStockWeddingCakes = kStockWeddingCakes;        
         public bool mDisableRandomAutoRestock = kDisableRandomAutoRestock;
+        public bool mOneRecipePerDisplayOnRandom = kOneRecipePerDiplayOnRandom;
 
         public Dictionary<ObjectGuid, Dictionary<int, Dictionary<string, List<Quality>>>> mDisplayRestockSettings = new Dictionary<ObjectGuid, Dictionary<int, Dictionary<string, List<Quality>>>>();
         public List<ObjectGuid> mExemptDisplays = new List<ObjectGuid>();

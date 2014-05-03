@@ -1,27 +1,22 @@
-﻿using NRaas.CommonSpace.Dialogs;
-using NRaas.CommonSpace.Options;
-using NRaas.CommonSpace.Selection;
+﻿using NRaas.CommonSpace.Options;
 using NRaas.CupcakeSpace.Helpers;
-using NRaas.CupcakeSpace.Options.Displays;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
+using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Controllers;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
-using Sims3.Gameplay.MapTags;
-using Sims3.Gameplay.Objects;
-using Sims3.Gameplay.Objects.Decorations;
-using Sims3.Gameplay.Objects.CookingObjects;
-using Sims3.Gameplay.Objects.FoodObjects;
 using Sims3.Gameplay.Utilities;
-using Sims3.SimIFace;
+using Sims3.Gameplay.UI;
 using Sims3.Store.Objects;
+using Sims3.SimIFace;
+using Sims3.SimIFace.CAS;
 using Sims3.UI;
 using System;
 using System.Collections.Generic;
@@ -30,17 +25,14 @@ using System.Text;
 
 namespace NRaas.CupcakeSpace.Options.Displays
 {
-    public class RestockNow : OperationSettingOption<GameObject>, ICaseOption
+    public class EmptyDisplay : OperationSettingOption<GameObject>, ICaseOption
     {
         IGameObject mTarget;
 
-        public RestockNow()
-        { }
-
         public override string GetTitlePrefix()
         {
-            return "RestockNow";
-        }
+            return "EmptyDisplay";
+        }        
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
@@ -54,10 +46,18 @@ namespace NRaas.CupcakeSpace.Options.Displays
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
-            Common.StringBuilder msg = new Common.StringBuilder("");
-            BakeryController.RestockDisplay(mTarget as CraftersConsignmentDisplay, out msg);
+            DisplayHelper.DisplayTypes type;
+            Dictionary<int, Slot> slots = DisplayHelper.GetEmptyOrFoodSlots(mTarget as CraftersConsignmentDisplay, out type);
 
-            Common.DebugWriteLog(msg);            
+            foreach (KeyValuePair<int, Slot> slot in slots)
+            {
+                IGameObject obj = mTarget.GetContainedObject(slot.Value);
+                if (obj != null)
+                {
+                    obj.UnParent();
+                    obj.Destroy();
+                }
+            }
 
             Common.Notify(Common.Localize("General:Success"));
 

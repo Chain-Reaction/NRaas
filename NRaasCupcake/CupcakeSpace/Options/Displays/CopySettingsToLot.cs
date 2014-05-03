@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace NRaas.CupcakeSpace.Options.Cases
+namespace NRaas.CupcakeSpace.Options.Displays
 {
     public class CopySettingsToLot : OperationSettingOption<GameObject>, ICaseOption
     {

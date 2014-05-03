@@ -143,6 +143,7 @@
     <Compile Include="CupcakeSpace\Options\Displays\CopySettingsToDisplay.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\CopySettingsToLot.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\CopySlotsToSlots.cs" />
+    <Compile Include="CupcakeSpace\Options\Displays\EmptyDisplay.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\EnableAutoRestock.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\ResetDisplaySettings.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\RestockNow.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="CupcakeSpace\Options\Displays\SetDisplaySettings.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\SetDisplaySettingsWithCurrentConfiguration.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\ICaseOption.cs" />
+    <Compile Include="CupcakeSpace\Options\OneRecipePerDisplayOnRandomSetting.cs" />
     <Compile Include="CupcakeSpace\Options\SetGlobalRandomRestockSettings.cs" />
     <Compile Include="CupcakeSpace\Options\StockWeddingCakesSetting.cs" />
     <Compile Include="CupcakeSpace\PersistedSettings.cs" />

@@ -31,6 +31,7 @@ using System.Text;
 
 namespace NRaas.CupcakeSpace.Selection
 {
+    // I swear I will figure out why these won't sort from 0-26 without drama soon :P
     public class SlotSelection : CommonSelection<SlotSelection.Item>        
     {        
         public List<int> selectedItems = new List<int>();
@@ -39,7 +40,7 @@ namespace NRaas.CupcakeSpace.Selection
         public bool all = false;
 
         // should be using a custom type here but this one has quite a bit of what I need so
-        public class Item : ValueSettingOption<int>, IComparable<Item>
+        public class Item : ValueSettingOption<int>
         {
             Dictionary<string, List<Quality>> slotSettings;
             public int itemSlot;
@@ -51,13 +52,7 @@ namespace NRaas.CupcakeSpace.Selection
             {
                 itemSlot = slot;
                 slotSettings = settings;
-            }
-
-            public int CompareTo(Item b)
-            {
-                // Alphabetic sort name[A to Z]
-                return this.itemSlot.CompareTo(b.itemSlot);
-            }
+            }            
 
             public string Auxillary
             {
@@ -109,7 +104,7 @@ namespace NRaas.CupcakeSpace.Selection
             public override bool UsingCount
             {
                 get { return false; }
-            }
+            }           
         }
 
         private SlotSelection(string title, ICollection<Item> items, ObjectPickerDialogEx.CommonHeaderInfo<Item> auxillary)
@@ -117,21 +112,34 @@ namespace NRaas.CupcakeSpace.Selection
         {
         }
 
+        public class SlotComparer : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                return x.itemSlot.CompareTo(y.itemSlot);                
+            }
+        }
+
         public static SlotSelection Create(GameObject mTarget)
         {
             List<Item> options = new List<Item>();
 
-            options.Add(new Item(Common.Localize("General:All"), 100, null));
+            options.Add(new Item(Common.Localize("General:All"), 100, null));            
 
             DisplayHelper.DisplayTypes displayType;
             Dictionary<int, Slot> containmentSlots = DisplayHelper.GetEmptyOrFoodSlots(mTarget as CraftersConsignmentDisplay, out displayType);
 
+            if (displayType == DisplayHelper.DisplayTypes.Chiller)
+            {
+                options.Add(new Item(Common.Localize("General:AllButTop"), 101, null));
+            }
+
             foreach (KeyValuePair<int, Slot> displaySlots in containmentSlots)
             {
                 options.Add(new Item(Common.Localize("General:Slot") + " " + displaySlots.Key, displaySlots.Key, Cupcake.Settings.GetDisplaySettingsForSlot(mTarget.ObjectId, displaySlots.Key)));
-            }
+            }           
             
-            options.Sort();
+            options.Sort(new SlotComparer());
 
             SlotSelection selection = new SlotSelection(Common.Localize("SelectSlots:ListTitle"), options, new AuxillaryColumn());
             selection.containmentSlots = containmentSlots;
@@ -150,19 +158,34 @@ namespace NRaas.CupcakeSpace.Selection
 
             foreach (Item item in results)
             {
-                if (item.Value != 100)
+                if (item.Value < 99)
                 {
                     this.selectedItems.Add(item.Value);
                 }
                 else
                 {
-                    this.selectedItems.AddRange(this.containmentSlots.Keys);
+                    if (item.Value == 100)
+                    {
+                        // all
+                        this.selectedItems.AddRange(this.containmentSlots.Keys);
+                    }
+                    else
+                    {
+                        // all but top
+                        foreach (int key in this.containmentSlots.Keys)
+                        {
+                            if (key < 21)
+                            {
+                                this.selectedItems.Add(key);
+                            }
+                        }
+                    }
                     this.all = true;
                 }
             }
 
             return OptionResult.SuccessClose;
-        }        
+        }       
 
         public class AuxillaryColumn : ObjectPickerDialogEx.CommonHeaderInfo<Item>
         {

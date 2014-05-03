@@ -111,9 +111,9 @@ namespace NRaas.CupcakeSpace.Selection
             foreach (Recipe recipe in Recipe.Recipes)
             {
                 string selected = null;
-                if (selectedValues.ContainsKey(recipe.SpecificNameKey))
+                if (selectedValues.ContainsKey(recipe.Key))
                 {
-                    selected = selectedValues[recipe.SpecificNameKey];
+                    selected = selectedValues[recipe.Key];
                 }
 
                 options.Add(new Item(recipe.GenericName + (Cupcake.Settings.Debugging ? " (" + recipe.Key + ")" : ""), recipe, selected));                
