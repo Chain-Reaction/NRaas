@@ -25,7 +25,7 @@ namespace NRaas.RegisterSpace.Options
         {
             if (sGetWorlds.Valid)
             {
-                sGetWorlds.Invoke<bool>(new object[] { sWorlds });
+                sGetWorlds.Invoke<Dictionary<WorldName, string>>(new object[] { sWorlds });
             }
         }
 

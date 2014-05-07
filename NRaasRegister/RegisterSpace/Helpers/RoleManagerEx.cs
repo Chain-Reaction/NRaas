@@ -108,7 +108,7 @@ namespace NRaas.RegisterSpace.Helpers
                                 float endHour;
                                 roleGivingObject.GetRoleTimes(out startHour, out endHour);
                                 if (!SimClock.IsTimeBetweenTimes(startHour, endHour))
-                                {
+                                {                                    
                                     localProperTimeForObject = false;
                                 }
                             }
@@ -175,7 +175,7 @@ namespace NRaas.RegisterSpace.Helpers
                 }
 
                 if ((num < data.Number) && globalProperTimeForRole)
-                {
+                {                    
                     RoleToFill item = new RoleToFill(data.Type, data.Number - num);
                     if ((data.FillRoleFrom == Role.RoleFillFrom.Residents) || (data.FillRoleFrom == Role.RoleFillFrom.Townies))
                     {

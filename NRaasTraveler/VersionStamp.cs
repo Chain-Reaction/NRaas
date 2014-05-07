@@ -75,8 +75,7 @@ namespace NRaas
          * Did EA fix the career minisim unpack issue with University ?
          * 
          * Transfer smartphone photos to inventory automatically on transition
-         * 
-         * Unlock "ScheduleFireworkShow" for all world types
+         *
          * 
          * Need genealogy cleanup prior to descendant creation ?
          * 
@@ -85,11 +84,8 @@ namespace NRaas
 
         /* Changes
          * 
-         * The Time Almanac is now hidden if you are not playing the travel household while in the future
-         ** Opening the book while in the wrong household can clear the ancestral data
-         * Another attempt to fix the issue where sims in the foreign worlds age while in the Future
-         * 
+         * The weather stone no longer attempts to spawn if you don't have Supernatural and Seasons installed         
          */
-        public static readonly int sVersion = 83;
+        public static readonly int sVersion = 85;
     }
 }

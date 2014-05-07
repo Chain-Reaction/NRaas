@@ -1,6 +1,7 @@
 ﻿using NRaas.CommonSpace.Booters;
 using NRaas.CommonSpace.Helpers;
 using NRaas.MasterControllerSpace;
+using NRaas.MasterControllerSpace.Helpers;
 using NRaas.MasterControllerSpace.Interactions;
 using NRaas.MasterControllerSpace.Settings;
 using Sims3.Gameplay.Abstracts;
@@ -13,6 +14,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Objects.Electronics;
 using Sims3.Gameplay.Objects.RabbitHoles;
+using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -80,6 +82,17 @@ namespace NRaas
                 Common.Exception("Allow", e);
                 return true;
             }
+        }
+
+        // Externalized to StoryProgression
+        public static Dictionary<string, Dictionary<SkillNames, int>> GetSkillStamps(Dictionary<string, Dictionary<SkillNames, int>> stamps)
+        {
+            foreach (SkillStamp stamp in MasterController.Settings.SkillStamps)
+            {
+                stamps.Add(stamp.Name, new Dictionary<SkillNames,int>(stamp.Skills));
+            }
+
+            return stamps;
         }
 
         protected static void OnStartup()

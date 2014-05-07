@@ -39,7 +39,7 @@ namespace NRaas.MasterControllerSpace.Sims.Advanced.Traits
         {
             if (!base.PrivateAllow(me)) return false;
 
-            return (me.TraitManager != null);
+            return (me.TraitManager != null && !me.IsEP11Bot);
         }
 
         protected override bool Run(SimDescription me, bool singleSelection)
@@ -49,7 +49,11 @@ namespace NRaas.MasterControllerSpace.Sims.Advanced.Traits
             {
                 if (trait.IsReward) continue;
 
+                if (trait.Guid == TraitNames.DescendantHiddenTrait) continue;
+
                 if (!trait.TraitValidForAgeSpecies(me.GetCASAGSAvailabilityFlags())) continue;
+
+                if (trait.RobotOnly) continue;                
 
                 int count = 0;
                 if (me.TraitManager.HasElement(trait.Guid))

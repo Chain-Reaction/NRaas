@@ -45,6 +45,9 @@ namespace NRaas
         [Tunable, TunableComment("Whether regular woohoo is autonomous")]
         public static bool kWoohooAutonomous = false;
 
+        [Tunable, TunableComment("Whether woohooty texting is autonomous")]
+        public static bool kWoohootyTextAutonomous = false;
+
         [Tunable, TunableComment("Whether Try For Baby is autonomous")]
         public static bool kTryForBabyAutonomous = false;
 

@@ -272,10 +272,8 @@ namespace NRaas
          * 
          */
 
-        /*
-         * Fixed the "Basic \ Tattoo" interaction so it appears for the correct sims
-         * 
+        /*         
          */
-        public static readonly int sVersion = 128;
+        public static readonly int sVersion = 130;
     }
 }

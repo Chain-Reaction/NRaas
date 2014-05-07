@@ -103,27 +103,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Money
 
             if (obj is CarMotiveMobile) return false;
 
-            if (obj is Boat) return false;
-
-            // C_R
-            Type testRollerCoaster = Type.GetType("Sims3.Store.Objects.RollerCoaster");
-
-            if (testRollerCoaster != null)
-            {
-                Type buying = Type.GetType(obj.ToString());
-
-                if (testRollerCoaster == buying) return false;
-            }
-
-            Type testTractor = Type.GetType("Sims3.Store.Objects.Tractor");
-
-            if (testTractor != null)
-            {
-                Type buying = Type.GetType(obj.ToString());
-
-                if (testTractor == buying) return false;
-            }            
-            // C_R
+            if (obj is Boat) return false;            
 
             if (obj is CarOwnable)
             {

@@ -119,25 +119,25 @@ namespace NRaas.WoohooerSpace.Interactions
                 }
 
                 bool isSelectable = Actor.IsSelectable;
-                if (isSelectable)
-                {
+                //if (isSelectable)
+                //{
                     Sims3.Gameplay.Gameflow.Singleton.DisableSave(this, "Gameplay/ActorSystems/Pregnancy:DisableSave");
                     //mNewborns = CreateNewborns(new HaveBabyHomeEx.PregnancyProxy(pregnancy), kBonusMoodPointsForHospitalBirth, isSelectable, false);
                     mNewborns = new Proxies.PregnancyProxy(pregnancy).CreateNewborns(kBonusMoodPointsForHospitalBirth, isSelectable, false);
-                }
-                else
-                {
-                    try
-                    {
-                        Simulator.YieldingDisabled = true;
-                        //mNewborns = CreateNewborns(new HaveBabyHomeEx.PregnancyProxy(pregnancy), kBonusMoodPointsForHospitalBirth, isSelectable, false);
-                        mNewborns = new Proxies.PregnancyProxy(pregnancy).CreateNewborns(kBonusMoodPointsForHospitalBirth, isSelectable, false);
-                    }
-                    finally
-                    {
-                        Simulator.YieldingDisabled = false;
-                    }
-                }
+               // }
+               // else
+               // {
+                 //   try
+                   // {
+                     //   Simulator.YieldingDisabled = true;
+                        //mNewborns = CreateNewborns(new HaveBabyHomeEx.PregnancyProxy(pregnancy), kBonusMoodPointsForHospitalBirth, isSelectable, false); - was commented
+                       // mNewborns = new Proxies.PregnancyProxy(pregnancy).CreateNewborns(kBonusMoodPointsForHospitalBirth, isSelectable, false);
+                   // }
+                   //// finally
+                   // {
+                   //     Simulator.YieldingDisabled = false;
+                   // }
+               // }
 
                 msg += "C";
 

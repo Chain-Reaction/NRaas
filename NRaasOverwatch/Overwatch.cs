@@ -38,7 +38,7 @@ namespace NRaas
             {
                 if (sSettings == null)
                 {
-                    sSettings = new PersistedSettings();
+                    sSettings = new PersistedSettings();                    
                 }
 
                 return sSettings;
@@ -123,6 +123,22 @@ namespace NRaas
             {
                 Notify(sAlarmNotice);
                 sAlarmNotice = null;
+            }
+        }
+
+        //Externalized to StoryProgression
+        public static bool GetStuckCheckEnable(bool defaultValue)
+        {
+            try
+            {
+                if (Settings == null) return defaultValue;
+
+                return (Settings.mStuckCheckV2);
+            }
+            catch (Exception e)
+            {
+                Common.Exception("GetStuckCheckEnable", e);
+                return defaultValue;
             }
         }
 

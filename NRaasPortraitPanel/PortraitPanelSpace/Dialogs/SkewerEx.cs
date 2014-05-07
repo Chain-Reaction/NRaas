@@ -1425,7 +1425,11 @@ namespace NRaas.PortraitPanelSpace.Dialogs
         {
             if (mSimLookup == null) return false;
 
+            if (sim == null) return false;
+
             if (sim.CreatedSim == null) return false;
+
+            if (sim.CreatedSim.ObjectId == null) return false;
 
             return mSimLookup.ContainsKey(sim.CreatedSim.ObjectId);
         }

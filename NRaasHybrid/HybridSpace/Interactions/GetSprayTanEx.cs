@@ -51,7 +51,7 @@ namespace NRaas.HybridSpace.Interactions
 
             public override bool Test(Sim a, TanningBooth target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
-                if (!OccultTypeHelper.HasType(a, OccultTypes.Vampire | OccultTypes.ImaginaryFriend | OccultTypes.Werewolf | OccultTypes.Fairy | OccultTypes.Witch | OccultTypes.PlantSim)) return false;
+                if (OccultTypeHelper.HasType(a, OccultTypes.Vampire | OccultTypes.ImaginaryFriend | OccultTypes.Werewolf | OccultTypes.Fairy | OccultTypes.Witch | OccultTypes.PlantSim)) return false;
 
                 return base.Test(a, target, isAutonomous, ref greyedOutTooltipCallback);
             }

@@ -35,6 +35,7 @@ namespace NRaas.WoohooerSpace.Interactions
             if (tuning != null)
             {
                 tuning.SetFlags(InteractionTuning.FlagField.DisallowAutonomous, false);
+                tuning.Availability.Teens = true;
             }
 
             sOldSingleton = Singleton;
@@ -307,8 +308,17 @@ namespace NRaas.WoohooerSpace.Interactions
             {                               
                 if (base.Test(actor, target, isAutonomous, ref greyedOutTooltipCallback))
                 {
+                    if (isAutonomous)
+                    {
+                        if (!Woohooer.Settings.mWoohootyTextAutonomous[PersistedSettings.GetSpeciesIndex(actor)])
+                        {                            
+                            return false;
+                        }
+                    }
+
                     if (!actor.IsAtHome)
-                    {                        
+                    {
+                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback(TravelUtil.LocalizeString(actor.IsFemale, "NotAtHome", new object[] { actor }));
                         return false;
                     }
 
@@ -316,13 +326,7 @@ namespace NRaas.WoohooerSpace.Interactions
                     {                        
                         greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback(TravelUtil.LocalizeString(actor.IsFemale, "CannotInviteOver", new object[] { actor }));
                         return false;
-                    }
-
-                    if (SocialCallback.FindNearestBed(actor, null) == null)
-                    {                        
-                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback(Phone.TextingBase.LocalizeTextingString(actor.IsFemale, "NoBed", new object[] { actor }));
-                        return false;
-                    }
+                    }                    
 
                     if (actor.SimDescription.IsEP11Bot)
                     {
@@ -344,6 +348,8 @@ namespace NRaas.WoohooerSpace.Interactions
                         flag2 = true;
                     }
 
+                    bool locationTest = false;
+
                     foreach (IMiniRelationship relationship in Relationship.GetMiniRelationships(actor.SimDescription))
                     {
                         SimDescription description = SimDescription.Find(relationship.GetOtherSimDescriptionId(actor.SimDescription));
@@ -358,6 +364,30 @@ namespace NRaas.WoohooerSpace.Interactions
                             {
                                 continue;
                             }
+
+                            if (isAutonomous && !CommonSocials.CheckAutonomousGenderPreference(actor.SimDescription, description))
+                            {
+                                continue;
+                            }
+
+                            if (isAutonomous && !CommonWoohoo.SatisfiesCooldown(actor, description.CreatedSim, isAutonomous, ref greyedOutTooltipCallback))
+                            {
+                                continue;
+                            }
+
+                            if (!locationTest)
+                            {
+                                // only humans can use this so we don't need to keep scanning the lot each loop
+                                if (!CommonWoohoo.HasWoohooableObject(actor.LotHome, actor, description.CreatedSim))
+                                {
+                                    return false;
+                                }
+                                else
+                                {
+                                    locationTest = true;
+                                }
+                            }
+
                                                       
                             return true;
                         }                                 

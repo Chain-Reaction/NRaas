@@ -43,12 +43,6 @@
     <Hit>-1000</Hit>
     <Miss>0</Miss>
   </NRaasVectorLongTermSymptom>
-  <NRaasVectorLongTermSymptom>
-    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
-    <Type>PlayableGhost</Type>
-    <Hit>-1000</Hit>
-    <Miss>0</Miss>
-  </NRaasVectorLongTermSymptom>
 
   <NRaasVectorLongTermInfection>
     <FullClassName></FullClassName>
@@ -59,6 +53,24 @@
     <Species>Human</Species>
     <Hit>0</Hit>
     <Miss>-1000</Miss>
+  </NRaasVectorLongTermInfection>
+  <NRaasVectorLongTermInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>PlayableGhost</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLongTermInfection>
+  <NRaasVectorLongTermInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>TimeTraveler</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLongTermInfection>
+  <NRaasVectorLongTermInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Plumbot</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
   </NRaasVectorLongTermInfection>
 
   <NRaasVectorLongTermWoohooInfection>
@@ -71,6 +83,24 @@
   <NRaasVectorLongTermWoohooInfection>
     <FullClassName>NRaas.CommonSpace.Scoring.AgeGenderScoring, NRaasVector</FullClassName>
     <AgeGender>Baby,Toddler,Child</AgeGender>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLongTermWoohooInfection>
+  <NRaasVectorLongTermWoohooInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>PlayableGhost</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLongTermWoohooInfection>
+  <NRaasVectorLongTermWoohooInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>TimeTraveler</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorLongTermWoohooInfection>
+  <NRaasVectorLongTermWoohooInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Plumbot</Type>
     <Hit>-1000</Hit>
     <Miss>0</Miss>
   </NRaasVectorLongTermWoohooInfection>

@@ -232,6 +232,7 @@
     <Compile Include="GoHereSpace\Interactions\GoToVirtualHomeMetaEx.cs" />
     <Compile Include="GoHereSpace\Interactions\GoHereWithEx.cs" />
     <Compile Include="GoHereSpace\Interactions\TeleportEx.cs" />
+    <Compile Include="GoHereSpace\Options\AllowBoatRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\AllowGoHereStackSetting.cs" />
     <Compile Include="GoHereSpace\Options\AllowNightVisitLotSetting.cs" />
     <Compile Include="GoHereSpace\Options\AllowVampireDayPushSetting.cs" />

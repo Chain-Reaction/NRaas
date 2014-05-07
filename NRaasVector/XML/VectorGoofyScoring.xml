@@ -179,6 +179,24 @@
     <Hit>-1000</Hit>
     <Miss>0</Miss>
   </NRaasLaughRiotInfection>
+  <NRaasLaughRiotInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>PlayableGhost</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotInfection>
+  <NRaasLaughRiotInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>TimeTraveler</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotInfection>
+  <NRaasLaughRiotInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Plumbot</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasLaughRiotInfection>
 
   <NRaasAccidentitisInfection>
     <FullClassName></FullClassName>
@@ -200,6 +218,24 @@
     <!-- Simbots are immune -->
     <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
     <Type>SimBot</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasAccidentitisInfection>
+  <NRaasAccidentitisInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>TimeTraveler</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasAccidentitisInfection>
+  <NRaasAccidentitisInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>PlayableGhost</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasAccidentitisInfection>
+  <NRaasAccidentitisInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Plumbot</Type>
     <Hit>-1000</Hit>
     <Miss>0</Miss>
   </NRaasAccidentitisInfection>

@@ -49,6 +49,6 @@ namespace NRaas
          * (JunJayMdM) Added dereferencing for "BotShopRegister"
          */
         
-        public static readonly int sVersion = 96;
+        public static readonly int sVersion = 98;
     }
 }

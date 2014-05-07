@@ -24,8 +24,10 @@ namespace NRaas.OverwatchSpace
         public static bool kTestingCheatsEnabled = false;
         [Tunable, TunableComment("Whether certain actions affect the active lot")]
         public static bool kAffectActiveLot = false;
-        [Tunable, TunableComment("Whether to boot all errant gnomes on a nightly basis")]
-        public static bool kBootAllGnomes = true;
+        [Tunable, TunableComment("Whether to reset all errant gnomes on a nightly basis")]        
+        public static bool kResetAllGnomes = true;
+        [Tunable, TunableComment("Whether to delete all magic gnomes in the world on a nightly basis")]
+        public static bool kDeleteAllMagicGnomes = false;
         [Tunable, TunableComment("Whether to turn off all stereos nightly")]
         public static bool kTurnOffStereos = true;
         [Tunable, TunableComment("Whether to turn off all televisions nightly")]
@@ -100,8 +102,9 @@ namespace NRaas.OverwatchSpace
         public static int kRouteFailTestMinutes = 30;
 
         public bool mTestingCheatsEnabled = kTestingCheatsEnabled;
-        public bool mAffectActiveLot = kAffectActiveLot;
-        public bool mBootAllGnomes = kBootAllGnomes;
+        public bool mAffectActiveLot = kAffectActiveLot;        
+        public bool mResetAllGnomes = kResetAllGnomes;
+        public bool mDeleteAllMagicGnomes = kDeleteAllMagicGnomes;
         public bool mTurnOffStereos = kTurnOffStereos;
         public bool mTurnOffTelevisions = kTurnOffTelevisions;
         public bool mRecoverMissingSims = kRecoverMissingSims;

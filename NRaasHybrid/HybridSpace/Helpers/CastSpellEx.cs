@@ -2,6 +2,7 @@
 using NRaas.CommonSpace.Helpers;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Roles;
@@ -21,13 +22,11 @@ namespace NRaas.HybridSpace.Helpers
     public class CastSpellEx
     {
         public static bool CommonSpellTests(Sim a, Sim target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
-        {
-            /*
+        {            
             if (!a.HasTrait(TraitNames.WitchHiddenTrait))
             {
                 return false;
             }
-            */
             if (target.SimDescription.IsEP11Bot)
             {
                 greyedOutTooltipCallback = Common.DebugTooltip("Plumbot Fail");

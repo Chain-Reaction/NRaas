@@ -48,7 +48,7 @@ namespace NRaas.RegisterSpace.Options.GlobalRoles
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
             Sim actorSim = parameters.mActor as Sim;
-
+            
             SimSelection sims = SimSelection.Create(Name, actorSim.SimDescription);
             if (sims.IsEmpty)
             {
@@ -96,7 +96,14 @@ namespace NRaas.RegisterSpace.Options.GlobalRoles
 
                 public override ObjectPicker.ColumnInfo GetValue(SimDescription item)
                 {
-                    return new ObjectPicker.TextColumn(Roles.GetLocalizedName(item.AssignedRole));
+                    if (item != null && item.AssignedRole != null)
+                    {
+                        return new ObjectPicker.TextColumn(Roles.GetLocalizedName(item.AssignedRole));
+                    }
+                    else
+                    {
+                        return new ObjectPicker.TextColumn("");
+                    }
                 }
             }
         }

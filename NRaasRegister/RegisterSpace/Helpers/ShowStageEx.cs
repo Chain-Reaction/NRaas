@@ -16,6 +16,7 @@ using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Objects.PerformanceObjects;
 using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Skills;
+using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
@@ -48,8 +49,18 @@ namespace NRaas.RegisterSpace.Helpers
             return true;
         }
 
-        public static Sim CreateAnNPCPerformer(ShowStage ths)
+        public static void GoToLotSuccess(Sim sim, float f)
         {
+            Common.DebugNotify(sim.FullName + " made it");
+        }
+
+        public static void GoToLotFailure(Sim sim, float f)
+        {
+            Common.DebugNotify(sim.FullName + " failed");
+        }
+
+        public static Sim CreateAnNPCPerformer(ShowStage ths)
+        {            
             Sim createdSim = null;
             Lot lotCurrent = null;
             OccupationNames[] randomList = new OccupationNames[] { OccupationNames.SingerCareer, OccupationNames.MagicianCareer, OccupationNames.PerformanceArtistCareer };
@@ -57,27 +68,68 @@ namespace NRaas.RegisterSpace.Helpers
             bool flag = RandomUtil.CoinFlip();
 
             // Custom
-            List<SimDescription> list = Household.AllTownieSimDescriptions(ValidPerformer);
-            if (list.Count == 0x0)
+            List<SimDescription> list = Household.AllTownieSimDescriptions(ValidPerformer);            
+            if (list.Count != 0)
+            {
+                SimDescription randomObjectFromList = RandomUtil.GetRandomObjectFromList(list);
+                if (randomObjectFromList.CreatedSim == null)
+                {
+                    lotCurrent = ths.LotCurrent;
+                    createdSim = randomObjectFromList.Instantiate(lotCurrent);
+                }
+                else
+                {
+                    createdSim = randomObjectFromList.CreatedSim;
+                }
+            }
+            else
+            {
+                Sim servicePerformer = CreateServicePerformer(ths);
+                if (servicePerformer != null)
+                {
+                    createdSim = servicePerformer;                    
+                }
+            }
+
+            if (createdSim == null)
             {
                 return null;
             }
 
-            SimDescription randomObjectFromList = RandomUtil.GetRandomObjectFromList(list);
-            if (randomObjectFromList.CreatedSim == null)
+            GoToLot interaction = GoToLot.Singleton.CreateInstanceWithCallbacks(ths.LotCurrent, createdSim, new InteractionPriority(InteractionPriorityLevel.CriticalNPCBehavior), false, true, null, new Callback(GoToLotSuccess), new Callback(GoToLotFailure)) as GoToLot;
+            if(createdSim.InteractionQueue != null)
             {
-                lotCurrent = ths.LotCurrent;
-                createdSim = randomObjectFromList.Instantiate(lotCurrent);
+                Common.DebugNotify("Pushing GoToLot on " + createdSim.FullName);
+                createdSim.InteractionQueue.Add(interaction);
             }
-            else
-            {
-                createdSim = randomObjectFromList.CreatedSim;
+
+            if (createdSim.CareerManager == null)
+            {                
+                return null;
             }
 
             if (createdSim.CareerManager.OccupationAsPerformanceCareer == null)
             {
                 try
                 {
+                    if (createdSim.WasCreatedByAService)
+                    {                        
+                        switch(createdSim.Service.ServiceType)
+                        {
+                            case ServiceType.Magician:
+                                occupationParameters = new AcquireOccupationParameters(OccupationNames.MagicianCareer, false, true);
+                                break;
+                            case ServiceType.Singer:
+                                occupationParameters = new AcquireOccupationParameters(OccupationNames.SingerCareer, false, true);
+                                break;
+                            case ServiceType.PerformanceArtist:
+                                occupationParameters = new AcquireOccupationParameters(OccupationNames.PerformanceArtistCareer, false, true);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
                     createdSim.AcquireOccupation(occupationParameters);
 
                     int num = flag ? RandomUtil.GetInt(0x0, 0x5) : RandomUtil.GetInt(0x5, createdSim.Occupation.HighestLevel);
@@ -99,6 +151,62 @@ namespace NRaas.RegisterSpace.Helpers
             return createdSim;
         }
 
+        public static Sim CreateServicePerformer(ShowStage ths)
+        {            
+            List<Service> services = new List<Service>{Magician.Instance, Singer.Instance, PerformanceArtist.Instance};
+            int attempts = 0;
+            Sim performer = null;
+            while (performer == null && attempts <= 5)
+            {
+                Service service = RandomUtil.GetRandomObjectFromList(services);                
+                if (service != null)
+                {                    
+                    foreach (SimDescription description in service.mPool)
+                    {
+                        if (!service.IsSimAssignedTask(description) && description.CreatedSim == null)
+                        {                            
+                            int lotAttempts = 0;
+                            Lot lot = null;
+                            while(lot == null && lotAttempts <= 5)
+                            {
+                                lot = LotManager.SelectRandomLot(null);
+                                lotAttempts++;
+                            }
+
+                            if (lot != null)
+                            {                                
+                                Sim createdSim = service.CreateSim(lot, description);
+                                if (createdSim != null)
+                                {                                    
+                                    createdSim.FadeIn();
+                                    performer = createdSim;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                attempts++;
+            }            
+
+            return performer;            
+        }
+
+        public static void HibernateServiceSims()
+        {
+            foreach(Sim sim in LotManager.Actors)
+            {
+                if (sim.WasCreatedByAService && sim.Service != null && !sim.Service.IsSimAssignedTask(sim.SimDescription) && (sim.Service.ServiceType == ServiceType.Magician || sim.Service.ServiceType == ServiceType.PerformanceArtist || sim.Service.ServiceType == ServiceType.Singer))
+                {
+                    if (sim.LotCurrent != null)
+                    {
+                        Common.DebugNotify("Sent " + sim.FullName + " home.");
+                        Sim.MakeSimGoHome(sim, false);
+                    }
+                }
+            }
+        }
+
         public static void SetupSimFest(ShowStage ths)
         {
             Common.StringBuilder msg = new Common.StringBuilder("SetupSimFest");
@@ -114,9 +222,7 @@ namespace NRaas.RegisterSpace.Helpers
                     {
                         return;
                     }
-                }
-
-                ths.CleanupSimFest();
+                }               
 
                 CommonSpace.Helpers.ShowStageEx.Cleanup(ths, null);
 
@@ -131,91 +237,96 @@ namespace NRaas.RegisterSpace.Helpers
                     }
                 }
 
-                if (list.Count > 0)
+                ths.LoadStage();
+                PerformanceCareer.PerformanceAudiencePosture standing = PerformanceCareer.PerformanceAudiencePosture.Standing;
+                ths.PreShowSetup();
+                foreach (IShowFloor floor in ths.LotCurrent.GetObjects<IShowFloor>())
                 {
-                    ths.LoadStage();
-                    PerformanceCareer.PerformanceAudiencePosture standing = PerformanceCareer.PerformanceAudiencePosture.Standing;
-                    ths.PreShowSetup();
-                    foreach (IShowFloor floor in ths.LotCurrent.GetObjects<IShowFloor>())
+                    floor.ResetShowFloor();
+                    switch (standing)
                     {
-                        floor.ResetShowFloor();
-                        switch (standing)
-                        {
-                            case PerformanceCareer.PerformanceAudiencePosture.Standing:
-                                floor.SetupShowFloorWithStandingLocations();
-                                break;
+                        case PerformanceCareer.PerformanceAudiencePosture.Standing:
+                            floor.SetupShowFloorWithStandingLocations();
+                            break;
 
-                            case PerformanceCareer.PerformanceAudiencePosture.Sitting:
-                                floor.SetupShowFloorWithSittingLocations();
-                                break;
-                        }
+                        case PerformanceCareer.PerformanceAudiencePosture.Sitting:
+                            floor.SetupShowFloorWithSittingLocations();
+                            break;
                     }
-
-                    msg += "A";
-
-                    foreach (ICrowdMonster monster in ths.LotCurrent.GetObjects<ICrowdMonster>())
-                    {
-                        switch (standing)
-                        {
-                            case PerformanceCareer.PerformanceAudiencePosture.Standing:
-                                monster.CreateStandingCrowdMonster();
-                                break;
-
-                            case PerformanceCareer.PerformanceAudiencePosture.Sitting:
-                                monster.CreateSittingCrowdMonster();
-                                break;
-                        }
-                    }
-
-                    msg += "B";
-
-                    ths.mDoesPerformanceAllowDancing = false;
-                    ths.Controller.PostEvent(ShowEventType.kShowSetup);
-                    string titleText = ShowStage.LocalizeString(ths.OwnerProprietor.IsFemale, "AnnounceSimFestStart", new object[] { ths.LotCurrent.Name });
-                    StyledNotification.Format format = new StyledNotification.Format(titleText, ths.OwnerProprietor.ObjectId, StyledNotification.NotificationStyle.kSystemMessage);
-                    StyledNotification.Show(format);
-                    ths.AddSimFestMapTags();
-
-                    msg += "D";
-
-                    for (int i = 0x0; i < 0x2; i++)
-                    {
-                        // Custom
-                        Sim item = CreateAnNPCPerformer(ths);
-                        if (item != null)
-                        {
-                            list.Add(item);
-                        }
-                    }
-
-                    msg += "E";
-
-                    foreach (Sim sim3 in list)
-                    {
-                        if (sim3 != null)
-                        {
-                            ths.PushWatchTheShowOntoSim(sim3);
-                        }
-                    }
-
-                    msg += "F";
-
-                    int audienceSize = ths.GetSimFestDesiredAudienceSize() - list.Count;
-                    if (audienceSize > 0x0)
-                    {
-                        ths.PullAudienceToLot(audienceSize);
-                    }
-
-                    msg += "G";
-
-                    ths.mSimFestStartAlarm = ths.AddAlarmRepeating(10f, TimeUnit.Minutes, ths.SimFestWaitForPerformers, "SimFestWaitForPerformers", AlarmType.AlwaysPersisted);
-                    ShowStage.SimFestWait entry = ShowStage.SimFestWait.Singleton.CreateInstance(ths, ths.OwnerProprietor, new InteractionPriority(InteractionPriorityLevel.RequiredNPCBehavior), ths.OwnerProprietor.IsNPC, false) as ShowStage.SimFestWait;
-
-                    msg += "H";
-
-                    entry.mAction = ShowStage.SimFestWait.SimFestWaitAction.WaitForPerformers;
-                    ths.OwnerProprietor.InteractionQueue.AddNext(entry);
                 }
+
+                msg += "A";
+
+                foreach (ICrowdMonster monster in ths.LotCurrent.GetObjects<ICrowdMonster>())
+                {
+                    switch (standing)
+                    {
+                        case PerformanceCareer.PerformanceAudiencePosture.Standing:
+                            monster.CreateStandingCrowdMonster();
+                            break;
+
+                        case PerformanceCareer.PerformanceAudiencePosture.Sitting:
+                            monster.CreateSittingCrowdMonster();
+                            break;
+                    }
+                }
+
+                msg += "B";
+
+                ths.mDoesPerformanceAllowDancing = false;
+                ths.Controller.PostEvent(ShowEventType.kShowSetup);
+                string titleText = ShowStage.LocalizeString(ths.OwnerProprietor.IsFemale, "AnnounceSimFestStart", new object[] { ths.LotCurrent.Name });
+                StyledNotification.Format format = new StyledNotification.Format(titleText, ths.OwnerProprietor.ObjectId, StyledNotification.NotificationStyle.kSystemMessage);
+                StyledNotification.Show(format);
+                ths.AddSimFestMapTags();
+
+                msg += "D";
+
+                bool addedAlarm = false;
+                for (int i = 0x0; i < 0x3; i++)
+                {
+                    // Custom
+                    Sim item = CreateAnNPCPerformer(ths);
+                    if (item != null)
+                    {
+                        list.Add(item);
+                        if (item.WasCreatedByAService && !addedAlarm)
+                        {                            
+                            addedAlarm = true;
+                            new Common.AlarmTask(9, TimeUnit.Hours, HibernateServiceSims);
+                        }
+                    }                    
+                }
+
+                msg += "E";
+
+                foreach (Sim sim3 in list)
+                {
+                    if (sim3 != null)
+                    {                        
+                        ths.PushWatchTheShowOntoSim(sim3);
+                    }
+                }
+
+                msg += "F";
+
+                int audienceSize = ths.GetSimFestDesiredAudienceSize() - list.Count;
+                if (audienceSize > 0x0)
+                {                    
+                    ths.PullAudienceToLot(audienceSize);
+                }
+
+                msg += "G";
+
+                ths.mSimFestStartAlarm = ths.AddAlarmRepeating(10f, TimeUnit.Minutes, ths.SimFestWaitForPerformers, "SimFestWaitForPerformers", AlarmType.AlwaysPersisted);
+                ShowStage.SimFestWait entry = ShowStage.SimFestWait.Singleton.CreateInstance(ths, ths.OwnerProprietor, new InteractionPriority(InteractionPriorityLevel.RequiredNPCBehavior), ths.OwnerProprietor.IsNPC, false) as ShowStage.SimFestWait;
+
+                msg += "H";                
+
+                entry.mAction = ShowStage.SimFestWait.SimFestWaitAction.WaitForPerformers;
+                ths.OwnerProprietor.InteractionQueue.AddNext(entry);
+
+                Common.DebugWriteLog(msg);                
             }
             catch (ResetException)
             {

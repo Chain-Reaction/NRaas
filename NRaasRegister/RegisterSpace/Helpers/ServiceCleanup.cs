@@ -139,7 +139,7 @@ namespace NRaas.RegisterSpace.Helpers
                         if (sim.CreatedByService != null)
                         {
                             type = sim.CreatedByService.ServiceType;
-                        }
+                        }                        
 
                         if (AgingManager.Singleton.GetCurrentAgeInDays(sim) > averageElderAge)
                         {
@@ -198,9 +198,9 @@ namespace NRaas.RegisterSpace.Helpers
                             AttemptServiceDisposal(sim, false, "No Purpose");
                         }
                         else if ((type != ServiceType.None) && (sim.Age & ServiceNPCSpecifications.GetAppropriateAges(type.ToString())) == CASAgeGenderFlags.None)
-                        {
-                            AttemptServiceDisposal(sim, false, "Wrong Age " + type);
-                        }
+                        {                            
+                            AttemptServiceDisposal(sim, false, "Wrong Age " + type);                            
+                        }                        
                     }
                     catch (Exception e)
                     {

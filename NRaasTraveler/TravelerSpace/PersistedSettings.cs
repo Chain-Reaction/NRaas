@@ -54,6 +54,18 @@ namespace NRaas.TravelerSpace
         [Tunable, TunableComment("Whether to set inactive travelers as unselectable upon arrival on vacation")]
         protected static bool kSetAsUnselectable = false;
 
+        [Tunable, TunableComment("Whether to disable the generate of decendants and stop the llama messages")]
+        public static bool kDisableDescedants = false;
+
+        [Tunable, TunableComment("Chance of descendant being a hybrid")]
+        public static int kChanceOfOccultHybrid = 0;
+
+        [Tunable, TunableComment("Chance of decendant occult mutating")]
+        public static int kChanceOfOccultMutation = 0;
+
+        [Tunable, TunableComment("Maximum occults a descendant can have")]
+        public static int kMaxOccult = 2;
+
         public bool mPauseTravel = kPauseTravel;
 
         public bool mTreatAsVacation = kTreatAsVacation;
@@ -85,6 +97,14 @@ namespace NRaas.TravelerSpace
         public Dictionary<WorldName, bool> mHiddenWorlds = new Dictionary<WorldName, bool>();
 
         public bool mSetAsUnselectable = kSetAsUnselectable;
+
+        public bool mDisableDescendants = kDisableDescedants;
+
+        public int mChanceOfOccultMutation = kChanceOfOccultMutation;
+
+        public int mChanceOfOccultHybrid = kChanceOfOccultHybrid;
+
+        public int mMaxOccult = kMaxOccult;
 
         public void StoreHouseholds(Dictionary<ulong, ulong> sims)
         {

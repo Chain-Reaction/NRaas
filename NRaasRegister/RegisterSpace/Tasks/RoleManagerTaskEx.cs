@@ -307,30 +307,31 @@ namespace NRaas.RegisterSpace.Tasks
 
             List<IRoleGiver> results = new List<IRoleGiver>(Sims3.Gameplay.Queries.GetObjects<IRoleGiver>());
             for (int i = results.Count - 1; i >= 0; i--)
-            {
-                IRoleGiver giver = results[i];
+            {                
+                IRoleGiver giver = results[i];                
 
                 if (Register.Settings.mDisabledAssignment.ContainsKey(giver.ObjectId))
-                {
+                {                    
                     results.RemoveAt(i);
                     continue;
                 }
 
-                Lot lotCurrent = giver.LotCurrent;
+                Lot lotCurrent = giver.LotCurrent;                
+
                 if ((lotCurrent == null) || (!lotCurrent.IsCommunityLot))
-                {
+                {                    
                     results.RemoveAt(i);
                     continue;
                 }
                 else if (!giver.InWorld)
-                {
+                {                    
                     results.RemoveAt(i);
                     continue;
-                }
+                }                
 
                 Role role = giver.CurrentRole;
                 if ((role != null) && (!RoleEx.IsSimGood(role)))
-                {
+                {                    
                     SafeRemoveSimFromRole("E", role);
 
                     role = null;
@@ -340,33 +341,33 @@ namespace NRaas.RegisterSpace.Tasks
                 {
                     IRoleGiverOneNpcPerLot objAsOnePerLot = giver as IRoleGiverOneNpcPerLot;
                     if ((objAsOnePerLot != null) && objAsOnePerLot.DoesRoleLotTypeMatch(objAsOnePerLot.LotCurrent))
-                    {
+                    {                       
                         RecordOnePerLotRole(objAsOnePerLot, objAsOnePerLot.LotCurrent.LotId, lotIdToPerLotRoles);
-                    }
+                    }                    
 
                     results.RemoveAt(i);
                 }
                 else if (giver.RoleType == Role.RoleType.None)
-                {
+                {                    
                     results.RemoveAt(i);
                 }
             }
 
             for (int i = results.Count - 1; i >= 0; i--)
             {
-                IRoleGiver giver = results[i];
+                IRoleGiver giver = results[i];                
 
-                if (!IsValidTimeForRole(giver)) continue;
+                if (!IsValidTimeForRole(giver)) continue;                
 
                 Lot lotCurrent = giver.LotCurrent;
 
                 if ((lotCurrent.CommercialLotSubType == CommercialLotSubType.kEP11_BaseCampFuture) && (giver is IFutureFoodSynthesizer))
-                {
+                {                    
                     results.RemoveAt(i);
                     continue;
                 }
                 if ((lotCurrent.CommercialLotSubType == CommercialLotSubType.kEP10_Resort) && (giver is IResortStaffedObject))
-                {
+                {                    
                     results.RemoveAt(i);
                     continue;
                 }
@@ -378,13 +379,13 @@ namespace NRaas.RegisterSpace.Tasks
                     {
                         List<Role.RoleType> list3;
                         if (lotIdToPerLotRoles.TryGetValue(giver.LotCurrent.LotId, out list3) && list3.Contains(lot3.RoleType))
-                        {
+                        {                            
                             results.RemoveAt(i);
                             continue;
                         }
                     }
                     else
-                    {
+                    {                        
                         results.RemoveAt(i);
                         continue;
                     }
@@ -392,7 +393,7 @@ namespace NRaas.RegisterSpace.Tasks
 
                 Role role = FillInWorldRoleEx(giver.RoleType, giver, residents, townies);
                 if (role != null)
-                {
+                {                    
                     results.RemoveAt(i);
 
                     RoleManager.sRoleManager.AddRole(role);
@@ -409,7 +410,7 @@ namespace NRaas.RegisterSpace.Tasks
 
                     SpeedTrap.Sleep();
                 }
-            }
+            }            
 
             return results;
         }
@@ -684,14 +685,14 @@ namespace NRaas.RegisterSpace.Tasks
 
         public static bool IsValidTimeForRole(IRoleGiver giver)
         {
-            if (giver.LotCurrent == null) return false;
+            if (giver.LotCurrent == null) return false;            
 
             IRoleGiverExtended extended = giver as IRoleGiverExtended;
             if (extended != null)
-            {
+            {                
                 float startTime;
                 float endTime;
-                extended.GetRoleTimes(out startTime, out endTime);
+                extended.GetRoleTimes(out startTime, out endTime);                
                 return SimClock.IsTimeBetweenTimes(SimClock.HoursPassedOfDay, startTime, endTime);
             }
             else
@@ -701,18 +702,31 @@ namespace NRaas.RegisterSpace.Tasks
                     RoleData roleData = RoleData.GetDataForCurrentWorld(giver.RoleType, true);
 
                     // Allow the exception to catch broken tuning errors
-                    //if (roleData == null) return false;
+                    //if (roleData == null) return false;                    
 
-                    if (!roleData.IsValidTimeForRole()) return false;
+                    if (!roleData.IsValidTimeForRole())
+                    {                        
+                        return false;
+                    }                    
 
                     // Apply the same open/close hours to allow roles on the lot
                     Bartending.BarData data;
                     if (Bartending.TryGetBarData(giver.LotCurrent.GetMetaAutonomyType, out data) && data.HasHours())
                     {
-                        return SimClock.IsTimeBetweenTimes(SimClock.HoursPassedOfDay, data.HourOpen, data.HourClose);
+                        // fix for when EA hibernate alarm goes off before the role is set to end... because...EA.
+                        float newClose = 0f;
+                        if (giver.CurrentRole != null && giver.CurrentRole.SimInRole == null)
+                        {
+                            newClose = data.HourClose - 1f;
+                        }
+                        else
+                        {
+                            newClose = data.HourClose;
+                        }                        
+                        return SimClock.IsTimeBetweenTimes(SimClock.HoursPassedOfDay, data.HourOpen, newClose);
                     }
                     else
-                    {
+                    {                        
                         return true;
                     }
                 }
@@ -1142,7 +1156,7 @@ namespace NRaas.RegisterSpace.Tasks
             }
             else
             {
-                role.mSim.AssignedRole = role;
+                role.mSim.AssignedRole = role;                
 
                 Logger.AddTrace("Reattached (B): " + RoleToString(role));
             }
@@ -1189,7 +1203,7 @@ namespace NRaas.RegisterSpace.Tasks
         }
 
         public static void SimulateRoles()
-        {
+        {            
             SpeedTrap.Sleep((uint)SimClock.ConvertToTicks(30f, TimeUnit.Minutes));
 
             bool paySims = (Register.Settings.mPayPerHour > 0);
@@ -1199,27 +1213,27 @@ namespace NRaas.RegisterSpace.Tasks
             List<Role> remove = new List<Role>();
 
             foreach (List<Role> roles in RoleManager.sRoleManager.mRoles.Values)
-            {
+            {                
                 if (roles == null) continue;
 
                 foreach (Role role in roles)
-                {
-                    if (role == null) continue;
+                {                    
+                    if (role == null) continue;                    
 
                     try
                     {
                         if (ValidateRole(role) != ValidationResult.None)
-                        {
+                        {                            
                             remove.Add(role);
                             continue;
                         }
 
                         if (IsValidTimeForRole(role))
-                        {
+                        {                            
                             role.mIsActive = true;
 
                             if (role.SimInRole != null)
-                            {
+                            {                                
                                 bool shouldAge = false;
 
                                 if (role.SimInRole.SimDescription.AgingState != null)
@@ -1252,7 +1266,7 @@ namespace NRaas.RegisterSpace.Tasks
                             if ((role.mSim == null) || (role.RoleGivingObject == null)) continue;
 
                             if (role.SimInRole == null)
-                            {
+                            {                                
                                 bool success = false;
                                 try
                                 {
@@ -1260,7 +1274,7 @@ namespace NRaas.RegisterSpace.Tasks
                                     success = true;
                                 }
                                 catch
-                                {}
+                                { }
 
                                 if ((!success) || (role.SimInRole == null))
                                 {
@@ -1301,7 +1315,7 @@ namespace NRaas.RegisterSpace.Tasks
                             }
 
                             if (repush)
-                            {
+                            {                                
                                 bool activeFound = false;
 
                                 if (interaction != null)
@@ -1328,7 +1342,12 @@ namespace NRaas.RegisterSpace.Tasks
                                 }
 
                                 if (!activeFound)
-                                {
+                                {                                    
+                                    if (role.mSim.CreatedSim.LotCurrent != role.mRoleGivingObject.LotCurrent)
+                                    {
+                                        role.mSim.CreatedSim.InteractionQueue.Add(Sim.GoToLotThatSatisfiesMyRole.Singleton.CreateInstance(role.mSim.CreatedSim, role.mSim.CreatedSim, new InteractionPriority(InteractionPriorityLevel.High), true, true));
+                                    }
+                                    role.mRoleGivingObject.AddRoleGivingInteraction(role.mSim.CreatedSim);
                                     role.mRoleGivingObject.PushRoleStartingInteraction(role.SimInRole);
 
                                     //Logger.AddTrace(role.mSim.FullName + " " + role.Type + " Repushed", role.mSim.CreatedSim.ObjectId);
@@ -1364,6 +1383,18 @@ namespace NRaas.RegisterSpace.Tasks
                                 }
                             }
                         }
+                        else
+                        {
+                            if (role.SimInRole != null)
+                            {
+                                try
+                                {
+                                    // EA issue in foreign worlds and StoryProgression unprotect busts out
+                                    role.EndRole();
+                                }
+                                catch { }
+                            }
+                        }
                     }
                     catch (Exception e)
                     {
@@ -1376,6 +1407,7 @@ namespace NRaas.RegisterSpace.Tasks
             {
                 SafeRemoveSimFromRole("D", role);
             }
+            
             RoleManager.sForceSimulate = false;
         }
 

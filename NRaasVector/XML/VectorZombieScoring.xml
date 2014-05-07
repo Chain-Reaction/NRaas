@@ -123,13 +123,19 @@
   </NRaasVectorZombieInfection>
   <NRaasVectorZombieInfection>
     <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
-    <Type>SimBot</Type>
+    <Type>PlayableGhost</Type>
     <Hit>-1000</Hit>
     <Miss>0</Miss>
   </NRaasVectorZombieInfection>
   <NRaasVectorZombieInfection>
     <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
-    <Type>Mummy</Type>
+    <Type>TimeTraveler</Type>
+    <Hit>-1000</Hit>
+    <Miss>0</Miss>
+  </NRaasVectorZombieInfection>
+  <NRaasVectorZombieInfection>
+    <FullClassName>NRaas.CommonSpace.Scoring.SimTypeScoring, NRaasVector</FullClassName>
+    <Type>Plumbot</Type>
     <Hit>-1000</Hit>
     <Miss>0</Miss>
   </NRaasVectorZombieInfection>

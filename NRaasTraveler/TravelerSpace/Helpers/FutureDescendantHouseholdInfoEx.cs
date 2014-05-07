@@ -31,7 +31,7 @@ using System.Reflection;
 namespace NRaas.TravelerSpace.Helpers
 {
     public class FutureDescendantHouseholdInfoEx
-    {
+    {       
         public static int CalculateHouseholdFamilyScore(FutureDescendantService.FutureDescendantHouseholdInfo ths, Common.StringBuilder results)
         {
             results.Append(Common.NewLine + "CalculateHouseholdFamilyScore");
@@ -111,11 +111,16 @@ namespace NRaas.TravelerSpace.Helpers
             return true;
         }
 
-        protected static SimDescription CreateProgenitor(ulong id, out bool unpacked)
+        public static SimDescription CreateProgenitor(ulong id, out bool unpacked)
         {
             unpacked = false;
 
             if (id == 0) return null;
+
+            if (FutureDescendantServiceEx.UnpackedSims.ContainsKey(id))
+            {
+                return FutureDescendantServiceEx.UnpackedSims[id];
+            }
 
             SimDescription sim = SimDescription.Find(id);
 
@@ -135,12 +140,14 @@ namespace NRaas.TravelerSpace.Helpers
                 if (sim.AgingState != null)
                 {
                     sim.AgingState.MergeTravelInformation(msd);
-                }
+                }                
+
+                FutureDescendantServiceEx.UnpackedSims.Add(id, sim);
 
                 SpeedTrap.Sleep();
-                unpacked = true;
+                unpacked = true;                
             }
-                
+
             sim.Fixup();
 
             return sim;
@@ -173,50 +180,69 @@ namespace NRaas.TravelerSpace.Helpers
         }
 
         protected static SimDescription CreateDescendant(ulong momID, ulong dadID, Household household, CASAgeGenderFlags age, CASAgeGenderFlags gender)
-        {
+        {           
             bool momUnpacked;
             SimDescription mom = CreateProgenitor(momID, out momUnpacked);
-            if (mom == null) return null;
+            if (mom == null) return null;            
 
             bool dadUnpacked;
             SimDescription dad = CreateProgenitor(dadID, out dadUnpacked);
-            if (dad == null) return null;
+            if (dad == null) return null;            
 
             float weight, fitness;
             WeightAndFitness(mom, dad, out weight, out fitness);
 
-            SimUtils.SimCreationSpec spec = new SimUtils.SimCreationSpec();
-            spec.Weight = weight;
-            spec.Fitness = fitness;
-            spec.Age = age;
-            spec.Gender = gender;
-            spec.Normalize();
-            SimDescription sim = spec.Instantiate(mom, dad, false, WorldName.FutureWorld);
+            SimDescription sim = null;
 
-            if (dadUnpacked && (dad != null))
+            try
+            {                
+                SimUtils.SimCreationSpec spec = new SimUtils.SimCreationSpec();
+                spec.Weight = weight;
+                spec.Fitness = fitness;
+                spec.Age = age;
+                spec.Gender = gender;
+                spec.Normalize();
+                sim = spec.Instantiate(mom, dad, false, WorldName.FutureWorld);                
+            }
+            catch (Exception e)
             {
+                Common.Exception("CreateDescendant", e);
+            }  
+          
+            /*
+            if (dadUnpacked && (dad != null))
+            {                
                 dad.PackUpToMiniSimDescription();
             }
 
             if (momUnpacked && (mom != null))
-            {
+            {                
                 mom.PackUpToMiniSimDescription();
             }
+             * */
 
-            sim.TraitManager.AddHiddenElement(TraitNames.DescendantHiddenTrait);
-            household.Add(sim);
+            if (sim != null)
+            {
+                sim.TraitManager.AddHiddenElement(TraitNames.DescendantHiddenTrait);
+                household.Add(sim);
 
-            return sim;
+                return sim;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static Household Instantiate(FutureDescendantService.FutureDescendantHouseholdInfo ths)
-        {
+        {        
             ulong mom1ID = ths.mProgenitorSimIds[0];
             ulong dad1ID = 0;
 
+            // these don't even appear to be being used??
             ulong mom2ID = 0;
             ulong dad2ID = 0;
-
+            
             if (ths.mProgenitorSimIds.Count >= 2)
             {
                 dad1ID = ths.mProgenitorSimIds[1];
@@ -238,13 +264,13 @@ namespace NRaas.TravelerSpace.Helpers
 
             if (household != null)
             {
-                currentDesiredHouseholdSize -= household.NumMembers;
-            }
+                currentDesiredHouseholdSize -= household.NumMembers;                
+            }            
 
             if (currentDesiredHouseholdSize <= 0x0) return null;
 
             if (household == null)
-            {
+            {                
                 household = Household.Create();
             }
 
@@ -260,9 +286,9 @@ namespace NRaas.TravelerSpace.Helpers
             List<SimDescription> dispose = new List<SimDescription>();
 
             if (currentDesiredHouseholdSize > 0x0)
-            {
+            {                
                 SimDescription mom = CreateDescendant(mom1ID, dad1ID, household, age, CASAgeGenderFlags.Female | CASAgeGenderFlags.Male);
-                if (mom == null) return null;
+                if (mom == null) return null;                
 
                 potentialParents.Add(mom);
                 ths.mHouseholdMembers.Add(mom.SimDescriptionId);
@@ -271,7 +297,7 @@ namespace NRaas.TravelerSpace.Helpers
             }
 
             if (currentDesiredHouseholdSize > 0x0)
-            {
+            {                
                 bool disposeSpouse = false;
 
                 Household spouseHouse = household;
@@ -288,7 +314,7 @@ namespace NRaas.TravelerSpace.Helpers
                 }
 
                 SimDescription dad = CreateDescendant(mom1ID, dad1ID, spouseHouse, potentialParents[0].Age, gender);
-                if (dad == null) return null;
+                if (dad == null) return null;                
 
                 if (disposeSpouse)
                 {
@@ -304,11 +330,11 @@ namespace NRaas.TravelerSpace.Helpers
             }
 
             while (currentDesiredHouseholdSize > 0x0)
-            {
+            {                
                 bool noParents;
                 SimDescription child = GenerateOffspring(potentialParents, out noParents);
                 if (child != null)
-                {
+                {                    
                     household.Add(child);
                     ths.mHouseholdMembers.Add(child.SimDescriptionId);
                 }
@@ -324,8 +350,8 @@ namespace NRaas.TravelerSpace.Helpers
             foreach (SimDescription sim in dispose)
             {
                 sim.Dispose(true, true, true);
-            }
-
+            }            
+           
             return household;
         }
 
@@ -374,10 +400,75 @@ namespace NRaas.TravelerSpace.Helpers
                 else if (choiceDad != null)
                 {
                     child.LastName = choiceDad.LastName;
+                }                
+            }            
+
+            return child;
+        }
+
+        public static bool ApplyOccultChance(SimDescription sim, List<OccultTypes> validTypes, int chanceOfOccult, int chanceOfMutation, int maximumOccultPerSim)
+        {
+            if (sim == null)
+            {
+                return false;
+            }
+
+            if (FutureDescendantServiceEx.OccultProcessed.Contains(sim.SimDescriptionId))
+            {
+                return false;
+            }
+
+            List<OccultTypes> possibleOccults = OccultTypeHelper.CreateListOfAllOccults(true);           
+
+            int occultsAdded = -1;
+            if (OccultTypeHelper.CreateList(sim).Count > 0) // this handles the possible occult added by EA when the Sim was generated
+            {
+                occultsAdded = 0;
+            }
+
+            foreach (OccultTypes type in validTypes)
+            {
+                if (occultsAdded >= maximumOccultPerSim)
+                {
+                    break;
+                }
+
+                if (!RandomUtil.RandomChance(chanceOfOccult)) continue;
+
+                if (RandomUtil.RandomChance(chanceOfMutation) && possibleOccults.Count > 0)
+                {
+                    while (possibleOccults.Count > 0)
+                    {
+                        OccultTypes mutationType = RandomUtil.GetRandomObjectFromList<OccultTypes>(possibleOccults);
+
+                        if (OccultTypeHelper.Add(sim, mutationType, false, false))
+                        {
+                            possibleOccults.Remove(mutationType);                                
+                            occultsAdded++;
+                            break;
+                        }
+
+                        possibleOccults.Remove(mutationType);
+                    }
+                }
+
+                if (OccultTypeHelper.Add(sim, type, false, false))
+                {                    
+                    occultsAdded++;
                 }
             }
 
-            return child;
+            OccultTypeHelper.ValidateOccult(sim, null);
+            FutureDescendantServiceEx.OccultProcessed.Add(sim.SimDescriptionId);
+
+            if (occultsAdded > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

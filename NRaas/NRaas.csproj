@@ -54,6 +54,8 @@
     <Compile Include="Converters\ListToString.cs" />
     <Compile Include="Helpers\OccultPlantSimEx.cs" />
     <Compile Include="Helpers\OccultGenieEx.cs" />
+    <Compile Include="Helpers\OccultUnicornEx.cs" />
+    <Compile Include="Options\OperationSettingNestledOption.cs" />
     <Compile Include="Replacers\ActionAvailabilityReplacer.cs" />
     <Compile Include="SpeedTrap.cs" />
     <Compile Include="Dialogs\EnrollmentDialogEx.cs" />
@@ -258,6 +260,11 @@
   <ItemGroup>
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems">
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0x0CAE1C361E05B2B3_Sims3StoreObjects">
+      <HintPath>..\Sims3\Compiler\0x0CAE1C361E05B2B3_Sims3StoreObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x28EE9D383A73463E_mscorlib">
       <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
@@ -267,21 +274,26 @@
     </Reference>
     <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData">
       <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x6AC101133051BEF1_System.Xml">
       <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
     </Reference>
     <Reference Include="0x78CF6CF5304D0C4F_ScriptCore">
       <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects">
       <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xC356DF69B70ADD42_SimIFace">
       <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xF7C3ADE896D4E765_UI">
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

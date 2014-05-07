@@ -17,6 +17,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,7 +30,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -182,6 +182,9 @@
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
@@ -554,14 +557,20 @@
     <Compile Include="StoryProgressionSpace\Options\AllowGoHomePushOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowPushPartyOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowPushWorkOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CareerLevelBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteCareerLevelFilterOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteCareerFilterOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteScoringOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowLotPushOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteApplyToHouseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CastePersonalityMemberOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CastePersonalityLeaderOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteSkillLevelFilterOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteSkillFilterOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteTraitRequireOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteTraitDenyOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteDefaultNameOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteZodiacFilterOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\ChanceofRetirementOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\ChanceGoToJailOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\ChanceGoToHospitalOption.cs" />
@@ -572,11 +581,16 @@
     <Compile Include="StoryProgressionSpace\Options\AllowCareerOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CareerBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowCasteCanBePregnantOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowOccultOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\DisallowCasteCanBePregnantOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowOccultOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\Immigration\MaximumOccultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\OccultTypeOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\SameSexMarriageNameOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\MarriageNameOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\NameBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\SkillBaseOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\SkillLevelBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\TraitBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\PersonalityBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\Immigration\AllowAlienHouseholdOption.cs" />
@@ -1168,6 +1182,10 @@
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0x0CAE1C361E05B2B3_Sims3StoreObjects">
+      <HintPath>..\Sims3\Compiler\0x0CAE1C361E05B2B3_Sims3StoreObjects.dll</HintPath>
     </Reference>
     <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1180,6 +1198,7 @@
     <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1188,18 +1207,22 @@
     <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

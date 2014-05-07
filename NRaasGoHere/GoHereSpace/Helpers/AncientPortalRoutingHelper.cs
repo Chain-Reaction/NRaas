@@ -63,7 +63,7 @@ namespace NRaas.GoHereSpace.Helpers
             {
                 if ((r.Follower != null) && (r.Follower.Target is Sim))
                 {
-                    if ((r.GetOption(Route.RouteOption.EnableSubwayPlanning)) || (r.GetOption2(Route.RouteOption2.EnableHoverTrainPlanning)))
+                    if (((r.GetOption(Route.RouteOption.EnableSubwayPlanning)) || (r.GetOption2(Route.RouteOption2.EnableHoverTrainPlanning))) && !r.GetOption(Route.RouteOption.EnableUFOPlanning))
                     {
                         CheckAndUpdateRouteForPortals(r);
                     }

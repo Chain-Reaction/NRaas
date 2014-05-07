@@ -33,8 +33,6 @@ namespace NRaas.GoHereSpace.Options
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
-            if (!Common.kDebugging) return false;
-
             return base.Allow(parameters);
         }
 

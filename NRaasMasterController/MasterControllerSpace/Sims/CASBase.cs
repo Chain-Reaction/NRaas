@@ -2821,7 +2821,7 @@ namespace NRaas.MasterControllerSpace.Sims
 
             public bool mFemaleBodyHair;
 
-            bool mRobotCAS;
+            bool mRobotCAS;            
 
             OutfitCategories mDisableFilterCategories;
 
@@ -2855,9 +2855,9 @@ namespace NRaas.MasterControllerSpace.Sims
             {
                 // Iteration 0 - Find Age/Gender related maternity outfits
                 // Iteration 1 - Find Age/Gender non-category specific outfits
-                // Iteration 2 - Find any outfit
+                // Iteration 2 - Find any outfit                
 
-                if (mHideByProduct.ContainsKey(newPart.GetVersion())) return false;
+                if (mHideByProduct.ContainsKey(newPart.GetVersion())) return false;                
 
                 if (((newPart.mPart.Age & CASAgeGenderFlags.YoungAdult) == CASAgeGenderFlags.YoungAdult) ||
                     ((newPart.mPart.Age & CASAgeGenderFlags.Adult) == CASAgeGenderFlags.Adult))
@@ -2911,12 +2911,12 @@ namespace NRaas.MasterControllerSpace.Sims
                         }
                         else if (mBuilder.Age != (newPart.mPart.AgeGenderSpecies & mBuilder.Age))
                         {
-                            // Wrong Age
+                            // Wrong Age                            
                             return false;
                         }
                         else if (mBuilder.Gender != (newPart.mPart.AgeGenderSpecies & mBuilder.Gender))
                         {
-                            // Wrong Gender
+                            // Wrong Gender                            
                             return false;
                         }
                     }
@@ -3017,7 +3017,7 @@ namespace NRaas.MasterControllerSpace.Sims
                 }
 
                 if ((mIteration != 0) || (mDisableFilterCategories != OutfitCategories.None) || (IsSpecialEdit()))
-                {
+                {                    
                     newPart.mPart.CategoryFlags |= (uint)mDisableFilterCategories;
                 }
 
@@ -3027,21 +3027,21 @@ namespace NRaas.MasterControllerSpace.Sims
 
                     bool flag = false;
                     if (!logic.HiddenInCAS)
-                    {
+                    {                        
                         flag = true;
                     }
                     else if ((newPart.mPart.CategoryFlags & 0x1000000) == 0x0)
-                    {
+                    {                        
                         flag = true;
                     }
                     else if (logic.ActiveWardrobeContains(newPart.mPart))
-                    {
+                    {                        
                         flag = true;
                     }
                     else if ((logic.mCASMode == CASMode.Stylist) && ((newPart.mPart.CategoryFlags & 0x400) != 0x0))
-                    {
+                    {                        
                         flag = true;
-                    }
+                    }                    
 
                     if (!flag) return false;
                 }
@@ -3049,7 +3049,7 @@ namespace NRaas.MasterControllerSpace.Sims
                 if (newPart.BodyType == BodyTypes.UpperBody)
                 {
                     mValidTop = true;
-                }
+                }                
 
                 switch (newPart.BodyType)
                 {
@@ -3059,6 +3059,8 @@ namespace NRaas.MasterControllerSpace.Sims
                     case BodyTypes.CostumeMakeup:
                     case BodyTypes.EyeLiner:
                     case BodyTypes.EyeShadow:
+                    case BodyTypes.Tattoo:
+                    case BodyTypes.TattooTemplate:
                         return !mRobotCAS;
                     default:
                         return (mRobotCAS == OutfitUtils.IsBotPart(newPart.mPart));

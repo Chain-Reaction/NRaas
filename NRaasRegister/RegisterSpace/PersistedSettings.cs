@@ -1,4 +1,5 @@
-﻿using Sims3.Gameplay.Abstracts;
+﻿using NRaas.RegisterSpace.Options.Service;
+using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.CAS;
@@ -8,6 +9,7 @@ using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Objects.Register;
 using Sims3.Gameplay.PetSystems;
 using Sims3.Gameplay.Roles;
+using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
@@ -88,9 +90,22 @@ namespace NRaas.RegisterSpace
         public static int kPayPerKissingBoothAttendant = 100;
         [Tunable, TunableComment("How much to pay potion merchants per hour they are working")]
         public static int kPayPerPotionShopMerchant = 100;
+        [Tunable, TunableComment("How much to pay University Mascots per hour they are working")]
+        public static int kPayPerUniversityMascot = 100;
+        [Tunable, TunableComment("How much to pay Barista Bar Tenders per hour they are working")]
+        public static int kPayPerBaristaBarTender = 100;
+        [Tunable, TunableComment("How much to pay Hobby Shop Merchants per hour they are working")]
+        public static int kPayPerHobbyShopMerchant = 100;
+        [Tunable, TunableComment("How much to pay Cafeteria Waiters per hour they are working")]
+        public static int kPayPerCafeteriaWaiter = 100;
+        [Tunable, TunableComment("How much to pay Bot Shop Merchants per hour they are working")]
+        public static int kPayPerBotShopMerchant = 100;
 
         [Tunable, TunableComment("Whether to allow homeworld residents to be used as tourists")]
         public static bool kAllowHomeworldTourists = true;
+
+        [Tunable, TunableComment("The maximum paparazzi that the role manager can spawn")]
+        public static int kMaximumPaparazzi = 3;
         
         public bool mShowLotMenu = kShowLotMenu;
         public bool mShowNotices = kShowNotices;
@@ -123,6 +138,10 @@ namespace NRaas.RegisterSpace
 
         public Dictionary<WorldName, bool> mDisabledTouristWorlds = new Dictionary<WorldName, bool>();
 
+        public int mMaximumPaparazzi = kMaximumPaparazzi;
+
+        public Dictionary<ServiceType, ServiceSettingKey> serviceSettings = new Dictionary<ServiceType, ServiceSettingKey>();
+
         public PersistedSettings()
         {
             mPayPerRole.Add(Role.RoleType.GenericMerchant, kPayPerGenericMerchant);
@@ -140,6 +159,11 @@ namespace NRaas.RegisterSpace
             mPayPerRole.Add(Role.RoleType.KissingBoothAttendantMale, kPayPerKissingBoothAttendant);
             mPayPerRole.Add(Role.RoleType.KissingBoothAttendantFemale, kPayPerKissingBoothAttendant);
             mPayPerRole.Add(Role.RoleType.PotionShopMerchant, kPayPerPotionShopMerchant);
+            mPayPerRole.Add(Role.RoleType.UniversityMascot, kPayPerUniversityMascot);
+            mPayPerRole.Add(Role.RoleType.BaristaBarTender, kPayPerBaristaBarTender);
+            mPayPerRole.Add(Role.RoleType.HobbyShopMerchant, kPayPerHobbyShopMerchant);
+            mPayPerRole.Add(Role.RoleType.CafeteriaWaiter, kPayPerCafeteriaWaiter);
+            mPayPerRole.Add(Role.RoleType.BotShopMerchant, kPayPerBotShopMerchant);
         }
 
         public void ValidateObjects()
@@ -205,6 +229,17 @@ namespace NRaas.RegisterSpace
                 default:
                     return -1;
             }
+        }
+
+        public ServiceSettingKey GetSettingsForService(Service service)
+        {
+            ServiceSettingKey settings;
+            if (serviceSettings.TryGetValue(service.ServiceType, out settings))
+            {
+                return settings;
+            }
+
+            return new ServiceSettingKey(service);
         }
 
         public bool Debugging

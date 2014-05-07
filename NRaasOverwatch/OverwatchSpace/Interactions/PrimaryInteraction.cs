@@ -19,7 +19,7 @@ namespace NRaas.OverwatchSpace.Interactions
 {
     public class PrimaryInteraction : ListedInteraction<IPrimaryOption<GameObject>,GameObject>
     {
-        static InteractionDefinition Singleton = new CommonDefinition<PrimaryInteraction>();
+        public static InteractionDefinition Singleton = new CommonDefinition<PrimaryInteraction>();
 
         public override void AddInteraction(Common.InteractionInjectorList interactions)
         {

@@ -11,6 +11,7 @@ using NRaas.StoryProgressionSpace.Scoring;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
@@ -383,6 +384,14 @@ namespace NRaas.StoryProgressionSpace.Managers
             if (sim == null) return false;
 
             if (!sim.IsHuman) return false;
+
+            if (sim.IsEP11Bot && (sim.TraitManager != null && sim.TraitChipManager != null))
+            {
+                if (!sim.TraitManager.HasElement(TraitNames.RoboNannyChip) && !sim.TraitManager.HasElement(TraitNames.HumanEmotionChip))
+                {
+                    return false;
+                }
+            }
 
             if (sim.YoungAdultOrAbove) return true;
 

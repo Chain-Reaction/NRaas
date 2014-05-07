@@ -32,7 +32,7 @@ namespace NRaas.MasterControllerSpace.Sims.Intermediate
             foreach(SelectionCriteria.Occult.Values type in mTypes)
             {
                 if (type.mOccult != OccultTypes.None)
-                {
+                {                    
                     OccultTypeHelper.Add(me, type.mOccult, false, true);
                 }
                 else

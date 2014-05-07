@@ -53,6 +53,12 @@ namespace NRaas
         [Tunable, TunableComment("Whether to reset stored task states on loadup")]
         public static bool kResetTaskStates = false;
     }
+
+    public class ErrorTrapTuning6
+    {
+        [Tunable, TunableComment("Whether to enable OnProcessEventCallback UI exception reporting")]
+        public static bool kEnableOPECReporting = false;
+    }
    
     public class ErrorTrap : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished, Common.IWorldQuit
     {
@@ -99,15 +105,18 @@ namespace NRaas
 
         public void OnStartupApp()
         {
-            UIManager.mUIEventCallbackDelegate = OnProcessEventCallback;
-            UIManager.mUILocaleChangedCallbackDelegate = OnUILocaleChangedCallback;
-            UIManager.mUIInGameStoreDelegate = OnUIInGameStoreMessageCallback;
-            UIManager.mUIResolutionChangedCallbackDelegate = OnUIResolutionChangedCallback;
-            UIManager.mUIWindowShutdownCallbackDelegate = OnUIWindowShutdownCallback;
-            UIManager.mUINewContentInstalledDelegate = OnUINewContentInstalled;
-            UIManager.mUINewHotInstallDataCallback = OnUINewHotInstallData;
+            if (ErrorTrapTuning6.kEnableOPECReporting)
+            {
+                UIManager.mUIEventCallbackDelegate = OnProcessEventCallback;
+                UIManager.mUILocaleChangedCallbackDelegate = OnUILocaleChangedCallback;
+                UIManager.mUIInGameStoreDelegate = OnUIInGameStoreMessageCallback;
+                UIManager.mUIResolutionChangedCallbackDelegate = OnUIResolutionChangedCallback;
+                UIManager.mUIWindowShutdownCallbackDelegate = OnUIWindowShutdownCallback;
+                UIManager.mUINewContentInstalledDelegate = OnUINewContentInstalled;
+                UIManager.mUINewHotInstallDataCallback = OnUINewHotInstallData;
 
-            UIManager.gUIMgr.SetUICallbacks(UIManager.mUIEventCallbackDelegate, UIManager.mUILocaleChangedCallbackDelegate, UIManager.mUIResolutionChangedCallbackDelegate, UIManager.mUIWindowShutdownCallbackDelegate, UIManager.mUINewContentInstalledDelegate, UIManager.mUIInGameStoreDelegate, UIManager.mUINewHotInstallDataCallback);
+                UIManager.gUIMgr.SetUICallbacks(UIManager.mUIEventCallbackDelegate, UIManager.mUILocaleChangedCallbackDelegate, UIManager.mUIResolutionChangedCallbackDelegate, UIManager.mUIWindowShutdownCallbackDelegate, UIManager.mUINewContentInstalledDelegate, UIManager.mUIInGameStoreDelegate, UIManager.mUINewHotInstallDataCallback);
+            }            
         }
 
         protected static bool OnProcessEventCallback(uint winHandle, uint eventType, uint srcHandle, uint dstHandle, int arg1, int arg2, int arg3, float f1, float f2, float f3, float f4, ref bool result, string text)

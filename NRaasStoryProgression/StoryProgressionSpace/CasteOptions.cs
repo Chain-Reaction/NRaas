@@ -9,8 +9,10 @@ using NRaas.StoryProgressionSpace.Personalities;
 using NRaas.StoryProgressionSpace.Scenarios.Romances;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
+using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
+using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -255,6 +257,14 @@ namespace NRaas.StoryProgressionSpace
 
             public readonly int mPriority;
 
+            List<Zodiac> mZodiac;
+
+            List<OccupationNames> mCareer;
+            Dictionary<OccupationNames, List<int>> mCareerLevel;
+
+            List<SkillNames> mSkill;
+            Dictionary<SkillNames, List<int>> mSkillLevel;
+
             public CasteFilter(CasteOptions options)
             {
                 mPriority = options.GetValue<CastePriorityOption, int>();
@@ -318,8 +328,265 @@ namespace NRaas.StoryProgressionSpace
                 {
                     mDeniedTraits[trait] = true;
                 }
+
+                // I need to refactor this but she works for now
+                mSkill = new List<SkillNames>();
+
+                foreach (string skill in options.GetValue<CasteSkillFilterOption, List<string>>())
+                {
+                    // we aren't storing this as skillnames cause twallan didn't for some reason.
+                    // I assume changing it will wipe existing DisallowSkill settings
+                    SkillNames skillName;
+                    if (ParserFunctions.TryParseEnum<SkillNames>(skill, out skillName, SkillNames.None))
+                    {
+                        mSkill.Add(skillName);
+                    }
+                }
+
+                mSkillLevel = new Dictionary<SkillNames, List<int>>();
+                foreach (string skillLevel in options.GetValue<CasteSkillLevelFilterOption, List<string>>())
+                {
+                    string[] split = skillLevel.Split('-');
+                    if (split.Length == 2)
+                    {
+                        SkillNames skillName;
+                        if (ParserFunctions.TryParseEnum<SkillNames>(split[0], out skillName, SkillNames.None))
+                        {
+                            if (!mSkillLevel.ContainsKey(skillName))
+                            {
+                                mSkillLevel.Add(skillName, new List<int>());
+                            }
+
+                            int result;
+                            if(int.TryParse(split[1], out result))
+                            {
+                                if (skillName != SkillNames.None && result > 0)
+                                {
+                                    mSkillLevel[skillName].Add(result);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                mCareer = new List<OccupationNames>();
+
+                foreach (OccupationNames career in options.GetValue<CasteCareerFilterOption, List<OccupationNames>>())
+                {
+                    mCareer.Add(career);
+                }
+
+                mCareerLevel = new Dictionary<OccupationNames, List<int>>();
+
+                foreach (string careerLevel in options.GetValue<CasteCareerLevelFilterOption, List<string>>())
+                {
+                    string[] split = careerLevel.Split('-');
+                    if (split.Length == 2)
+                    {
+                        OccupationNames careerName;
+                        if (ParserFunctions.TryParseEnum<OccupationNames>(split[0], out careerName, OccupationNames.Undefined))
+                        {
+                            if (!mCareerLevel.ContainsKey(careerName))
+                            {
+                                mCareerLevel.Add(careerName, new List<int>());
+                            }
+
+                            int result;
+                            if (int.TryParse(split[1], out result))
+                            {
+                                if (careerName != OccupationNames.Undefined && result > 0)
+                                {
+                                    mCareerLevel[careerName].Add(result);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                mZodiac = new List<Zodiac>();
+
+                foreach (Zodiac zodiac in options.GetValue<CasteZodiacFilterOption, List<Zodiac>>())
+                {
+                    mZodiac.Add(zodiac);
+                }
             }
 
+            public bool HasAnyCareer(SimDescription sim, List<OccupationNames> careers)
+            {
+                if (sim.CareerManager == null || sim.CareerManager.Occupation == null)
+                {
+                    return false;
+                }
+
+                if (careers.Contains(sim.CareerManager.Occupation.Guid)) return true;
+
+                return false;
+            }
+
+            public bool HasAllCareers(SimDescription sim, List<OccupationNames> careers)
+            {
+                // here for consistency but admittedly rather silly :)
+                // will only loop once (or twice) so doesn't really matter
+                if (sim.CareerManager == null || sim.CareerManager.Occupation == null)
+                {
+                    return false;
+                }
+
+                foreach (OccupationNames career in careers)
+                {
+                    if (sim.CareerManager.Occupation.Guid != career) return false;
+                }
+
+                return true;
+            }
+
+            public bool HasAnyCareerOfLevel(SimDescription sim, Dictionary<OccupationNames, List<int>> careers)
+            {
+                if (careers.Count == 0)
+                {                    
+                    return false;
+                }
+
+                if (!HasAnyCareer(sim, new List<OccupationNames>(careers.Keys))) return false;
+
+                foreach (KeyValuePair<OccupationNames, List<int>> entry in careers)
+                {
+                    if (entry.Value.Count == 0)
+                    {                        
+                        continue;
+                    }                   
+
+                    if (entry.Value.Contains(sim.CareerManager.Occupation.Level)) return true;                    
+                }
+
+                return false;
+            }
+
+            public bool HasAllCareersOfLevel(SimDescription sim, Dictionary<OccupationNames, List<int>> careers)
+            {
+                if (careers.Count == 0)
+                {
+                    return false;
+                }
+
+                if (!HasAllCareers(sim, new List<OccupationNames>(careers.Keys))) return false;
+
+                foreach (KeyValuePair<OccupationNames, List<int>> entry in careers)
+                {
+                    if (entry.Value.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (!entry.Value.Contains(sim.CareerManager.Occupation.Level)) return false;
+                }
+
+                return true;
+            }
+
+            public bool HasAllSkills(SimDescription sim, List<SkillNames> skills)
+            {
+                if (sim.SkillManager == null || skills.Count == 0)
+                {
+                    return false;
+                }
+
+                foreach (SkillNames skill in skills)
+                {
+                    if (sim.SkillManager.GetElement(skill) == null || sim.SkillManager.GetElement(skill).SkillLevel == 0) return false;
+                }
+
+                return true;
+            }
+
+            public bool HasAnySkill(SimDescription sim, List<SkillNames> skills)
+            {
+                if (sim.SkillManager == null || skills.Count == 0)
+                {
+                    return false;
+                }
+
+                foreach (SkillNames skill in skills)
+                {
+                    if (sim.SkillManager.GetElement(skill) != null && sim.SkillManager.GetElement(skill).SkillLevel > 0) return true;
+                }
+
+                return false;
+            }
+
+            public bool HasAnySkillOfLevel(SimDescription sim, Dictionary<SkillNames, List<int>> skills)
+            {
+                if (skills.Count == 0)
+                {
+                    return false;
+                }
+
+                if (!HasAnySkill(sim, new List<SkillNames>(skills.Keys))) return false;
+
+                foreach (KeyValuePair<SkillNames, List<int>> entry in skills)
+                {
+                    if (entry.Value.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (entry.Value.Contains(sim.SkillManager.GetElement(entry.Key).SkillLevel)) return true;                    
+                }
+
+                return false;
+            }
+
+            public bool HasAllSkillsOfLevel(SimDescription sim, Dictionary<SkillNames, List<int>> skills)
+            {
+                if (skills.Count == 0)
+                {
+                    return false;
+                }
+
+                if (!HasAllSkills(sim, new List<SkillNames>(skills.Keys))) return false;
+
+                foreach (KeyValuePair<SkillNames, List<int>> entry in skills)
+                {
+                    if (entry.Value.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (!entry.Value.Contains(sim.SkillManager.GetElement(entry.Key).SkillLevel)) return false;
+                }
+
+                return true;
+            }
+
+            public bool HasAnyZodiac(SimDescription sim, List<Zodiac> zodiacs)
+            {
+                if (zodiacs.Count == 0)
+                {
+                    return false;
+                }
+
+                if (zodiacs.Contains(sim.Zodiac)) return true;
+
+                return false;
+            }
+
+            public bool HasAllZodiacs(SimDescription sim, List<Zodiac> zodiacs)
+            {
+                // same case as the careers
+                if (zodiacs.Count == 0)
+                {
+                    return false;
+                }
+
+                foreach (Zodiac zodiac in zodiacs)
+                {
+                    if (sim.Zodiac != zodiac) return false;
+                }
+
+                return true;
+            }
+
+            // the caste cache seems to be invalided too rapidly for my taste, something to look into...
             public bool Matches(SimDescription sim, int netWorth)
             {
                 CASAgeGenderFlags ageGender = sim.mSimFlags & sAgeGenderMask;
@@ -333,10 +600,50 @@ namespace NRaas.StoryProgressionSpace
                 if (mMatchAll)
                 {
                     if (!SimTypes.MatchesAll(sim, mTypes)) return false;
+                    if (mCareer.Count > 0)
+                    {
+                        if (!HasAllCareers(sim, mCareer)) return false;
+                    }
+                    if (mCareerLevel.Count > 0)
+                    {
+                        if (!HasAllCareersOfLevel(sim, mCareerLevel)) return false;
+                    }
+                    if (mSkill.Count > 0)
+                    {
+                        if (!HasAllSkills(sim, mSkill)) return false;
+                    }
+                    if (mSkillLevel.Count > 0)
+                    {
+                        if (!HasAllSkillsOfLevel(sim, mSkillLevel)) return false;
+                    }
+                    if (mZodiac.Count > 0)
+                    {
+                        if (!HasAllZodiacs(sim, mZodiac)) return false;
+                    }
                 }
                 else
                 {
                     if (!SimTypes.MatchesAny(sim, mTypes, true)) return false;
+                    if (mCareer.Count > 0)
+                    {
+                        if (!HasAnyCareer(sim, mCareer)) return false;
+                    }
+                    if (mCareerLevel.Count > 0)
+                    {
+                        if (!HasAnyCareerOfLevel(sim, mCareerLevel)) return false;
+                    }
+                    if (mSkill.Count > 0)
+                    {
+                        if (!HasAnySkill(sim, mSkill)) return false;
+                    }
+                    if (mSkillLevel.Count > 0)
+                    {
+                        if (!HasAnySkillOfLevel(sim, mSkillLevel)) return false;
+                    }
+                    if (mZodiac.Count > 0)
+                    {
+                        if (!HasAnyZodiac(sim, mZodiac)) return false;
+                    }
                 }
 
                 if (netWorth < mMinNetWorth) return false;

@@ -108,6 +108,9 @@
     <Compile Include="..\NRaas\Helpers\AnnexEx.cs">
       <Link>CommonSpace\Helpers\AnnexEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\Annihilation.cs">
+      <Link>CommonSpace\Helpers\Annihilation.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
       <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
     </Compile>
@@ -155,6 +158,9 @@
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
@@ -234,6 +240,9 @@
     <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
       <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
     </Compile>
+	<Compile Include="..\NRaas\Options\OperationSettingNestledOption.cs">
+      <Link>CommonSpace\Options\OperationSettingNestledOption.cs</Link>
+    </Compile>
     <Compile Include="..\nraas\options\PopupOptionList.cs">
       <Link>CommonSpace\Options\PopupOptionList.cs</Link>
     </Compile>
@@ -309,6 +318,7 @@
     <Compile Include="TravelerSpace\Helpers\InitializersEx.cs" />
     <Compile Include="TravelerSpace\Interactions\AncientPortalTimeTravelEx.cs" />
     <Compile Include="TravelerSpace\Interactions\AncientPortalTimeTravelWithEx.cs" />
+    <Compile Include="TravelerSpace\Interactions\ScheduleFireworkShowEx.cs" />
     <Compile Include="TravelerSpace\Interactions\TimePortalActivateDeactivateEx.cs" />
     <Compile Include="TravelerSpace\Interactions\TimeMachineTimeTravelWithEx.cs" />
     <Compile Include="TravelerSpace\Interactions\TimeMachineTimeTravelEx.cs" />
@@ -319,6 +329,13 @@
     <Compile Include="TravelerSpace\Interactions\PhoneCallEnrollForUniversityTermEx.cs" />
     <Compile Include="TravelerSpace\Interactions\ComputerEnrollForUniversityTermEx.cs" />
     <Compile Include="TravelerSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\ChanceOfOccultHybrid.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\ChanceOfOccultMutation.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\DisableDescendants.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\IDescendantOption.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\ListingOption.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\MaxOccult.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\RegenerateDescendants.cs" />
     <Compile Include="TravelerSpace\Options\ForceTimeTravelerSummonedSetting.cs" />
     <Compile Include="TravelerSpace\Options\TestDescendantScoringSetting.cs" />
     <Compile Include="TravelerSpace\Options\TestAlmanacSetting.cs" />

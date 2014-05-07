@@ -472,5 +472,17 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Pregnancies
                 return "MaximumNewbornOccult";
             }
         }
+
+        public class ChanceOfOccultMutation : IntegerBaseManagerOptionItem<ManagerPregnancy>, IGeneralOption
+        {
+            public ChanceOfOccultMutation()
+                : base(0)
+            { }
+
+            public override string GetTitlePrefix()
+            {
+                return "ChanceOfOccultMutation";
+            }
+        }
     }
 }

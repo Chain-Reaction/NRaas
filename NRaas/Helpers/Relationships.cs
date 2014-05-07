@@ -438,6 +438,37 @@ namespace NRaas.CommonSpace.Helpers
             return IsCloselyRelated(a.Genealogy, b.Genealogy, thoroughCheck);
         }
 
+        public static bool IsPlumbotRelated(SimDescription a, SimDescription b)
+        {
+            if ((!a.IsEP11Bot && !b.IsEP11Bot) || (a.IsEP11Bot && b.IsEP11Bot) || (a.IsPet || b.IsPet))
+            {
+                return false;
+            }
+
+            if (a.IsEP11Bot)
+            {
+                foreach (SimDescription sim in GetParents(a))
+                {
+                    if(sim.SimDescriptionId == b.SimDescriptionId)
+                    {
+                        return true;
+                    }                
+                }
+            }
+            else
+            {                
+                foreach (SimDescription sim in GetChildren(a))
+                {
+                    if (sim.SimDescriptionId == b.SimDescriptionId)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         public static List<SimDescription> GetParents(SimDescription sim)
         {
             if ((sim == null) || (sim.Genealogy == null))

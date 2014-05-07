@@ -16,6 +16,7 @@ using Sims3.Gameplay.Objects.Appliances;
 using Sims3.Gameplay.Objects.Miscellaneous;
 using Sims3.Gameplay.Objects.Register;
 using Sims3.Gameplay.Roles;
+using Sims3.Gameplay.Seasons;
 using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Situations;
 using Sims3.Gameplay.Skills;
@@ -204,6 +205,18 @@ namespace NRaas.OverwatchSpace.Loadup
             foreach (KeyValuePair<AlarmHandle, AlarmManager> handle in remove)
             {
                 handle.Value.RemoveAlarm(handle.Key);
+            }
+
+            // cleanup trick or treating fail
+            HolidayManager instance = HolidayManager.Instance;
+            if (instance != null && AlarmManager.Global != null)
+            {
+                if (!instance.IsFallHoliday && TrickOrTreatSituation.NPCTrickOrTreatAlarm != AlarmHandle.kInvalidHandle)
+                {
+                    Overwatch.Log("Cleaned up run away trick or treat alarm");
+                    AlarmManager.Global.RemoveAlarm(TrickOrTreatSituation.NPCTrickOrTreatAlarm);
+                    TrickOrTreatSituation.NPCTrickOrTreatAlarm = AlarmHandle.kInvalidHandle;
+                }
             }
         }
     }

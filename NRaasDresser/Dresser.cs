@@ -34,6 +34,8 @@ namespace NRaas
 
         static Common.AlarmTask sTask = null;
 
+        public static List<ulong> sSimsReset = new List<ulong>();
+
         [PersistableStatic]
         static DresserSettings sSettings;
 
@@ -101,6 +103,17 @@ namespace NRaas
             {
                 DresserSpace.Helpers.SwitchOutfits.PerformRotation(sim, false, false);
             }
+        }
+
+        // Externalized to the Common reset task
+        public static bool AddResetSimDesc(ulong descID)
+        {            
+            if (!sSimsReset.Contains(descID))
+            {                
+                sSimsReset.Add(descID);
+            }
+
+            return true;
         }
 
         [Persistable]
@@ -247,6 +260,9 @@ namespace NRaas
             [Tunable, TunableComment("Whether the mod is allowed to use body hair not marked ValidForRandom when replacing invalids")]
             public static bool kIgnoreValidForRandomBodyHair = true;
 
+            [Tunable, TunableComment("Wheather to check outfits on Sims who were reset")]
+            public static bool kCheckOutfitsOnReset = false;
+
             private bool mNightlyRandomChangeOutfit = kNightlyRandomChangeOutfit;
             private float mNightlyChangeOutfitHour = kNightlyChangeOutfitHour;
             public bool mRotationAffectActive = kRotationAffectActive;
@@ -307,6 +323,8 @@ namespace NRaas
             protected bool mDebugging = Common.kDebugging;
 
             public bool mIgnoreValidForRandomBodyHair = kIgnoreValidForRandomBodyHair;
+
+            public bool mCheckOutfitsOnReset = kCheckOutfitsOnReset;
 
             public bool Debugging
             {

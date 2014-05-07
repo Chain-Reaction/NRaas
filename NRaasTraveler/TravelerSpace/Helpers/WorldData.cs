@@ -227,9 +227,17 @@ namespace NRaas.TravelerSpace.Helpers
                 {
                     List<WorldType> types = new List<WorldType>(action.mAllowedWorldTypes);
 
-                    if ((!types.Contains(WorldType.Vacation)) && (types.Count > 0))
+                    if(types.Count > 0)
                     {
-                        types.Add(WorldType.Vacation);
+                        if ((!types.Contains(WorldType.Vacation)))
+                        {
+                            types.Add(WorldType.Vacation);
+                        }
+
+                        if ((!types.Contains(WorldType.Future)))
+                        {
+                            types.Add(WorldType.Future);
+                        }
 
                         action.mAllowedWorldTypes = types.ToArray();
                     }
@@ -989,12 +997,14 @@ namespace NRaas.TravelerSpace.Helpers
         }
 
         // Externalized to [Register]
-        public static void GetWorlds(Dictionary<WorldName, string> worlds)
+        public static Dictionary<WorldName, string> GetWorlds(Dictionary<WorldName, string> worlds)
         {
             foreach (KeyValuePair<WorldName, WorldNameData> data in sData)
             {
                 worlds[data.Key] = GetLocationName(data.Key);
             }
+
+            return worlds;
         }
 
         public static string GetLocationName(WorldName world)

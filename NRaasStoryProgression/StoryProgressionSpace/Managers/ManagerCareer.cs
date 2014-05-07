@@ -324,10 +324,36 @@ namespace NRaas.StoryProgressionSpace.Managers
                         return false;
                     }
                 }
-                else if (job.OwnerDescription.YoungAdultOrAbove != boss.YoungAdultOrAbove)
+                else
                 {
-                    stats.IncStat("Valid: Too Young");
-                    return false;
+                    if (job.OwnerDescription.YoungAdultOrAbove != boss.YoungAdultOrAbove)
+                    {
+                        stats.IncStat("Valid: Too Young");
+                        return false;
+                    }
+
+                    if (boss.IsEP11Bot)
+                    {
+                        if (boss.Household.IsActive)
+                        {
+                            stats.IncStat("Valid: EP11 Bot In Active Household");
+                            return false;
+                        }
+
+                        if (boss.TraitManager != null)
+                        {                         
+                            if(!boss.TraitManager.HasElement(TraitNames.ProfessionalChip))
+                            {
+                                stats.IncStat("Valid: EP11 Bot doesn't have ProfessionalChip");
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            stats.IncStat("Valid: EP11 Bot TraitManager Null");
+                            return false;
+                        }
+                    }
                 }
             }
 

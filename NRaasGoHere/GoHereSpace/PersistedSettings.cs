@@ -68,6 +68,9 @@ namespace NRaas.GoHereSpace
         [Tunable, TunableComment("Whether to allow cars during routing operations")]
         protected static bool kDisallowCarRouting = false;
 
+        [Tunable, TunableComment("Whether to allow boats during routing operations")]
+        protected static bool kDisallowBoatRouting = false;
+
         [Persistable(false)]
         public bool mIgnoreLogs = true;
 
@@ -105,6 +108,8 @@ namespace NRaas.GoHereSpace
         public Dictionary<ulong, CaregiverMonitorHelper.Caregivers> mCaregivers = new Dictionary<ulong, CaregiverMonitorHelper.Caregivers>();
 
         public bool mAllowCarRouting = !kDisallowCarRouting;
+
+        public bool mAllowBoatRouting = !kDisallowBoatRouting;
 
         public bool AllowPush(Sim sim, Lot lot)
         {

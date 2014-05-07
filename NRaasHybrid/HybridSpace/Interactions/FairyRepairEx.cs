@@ -45,7 +45,7 @@ namespace NRaas.HybridSpace.Interactions
             interactions.Replace<IGameObject, RepairableComponent.FairyRepair.Definition>(Singleton);
         }
 
-        public class Definition : RepairableComponent.FairyRepair.Definition, IMagicalDefinition
+        public new class Definition : RepairableComponent.FairyRepair.Definition, IMagicalDefinition
         {
             static PersistedSettings.SpellSettings sSettings;
 

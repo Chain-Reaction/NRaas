@@ -67,6 +67,11 @@ namespace NRaas.RegisterSpace.Options.RoleGiver
             SimDescription sim = PrivateRun(parameters.mActor, giver.RoleType, parameters.mHit);
             if (sim == null) return OptionResult.Failure;
 
+            if (GameUtils.IsFutureWorld() && (giver.RoleType == Role.RoleType.BotShopMerchant || giver.RoleType == Role.RoleType.CafeteriaWaiter) && !sim.IsEP11Bot)
+            {
+                return OptionResult.Failure;
+            }
+
             if (!Register.DropRole(sim, giver)) return OptionResult.Failure;
 
             if (Register.AssignRole(sim, giver.RoleType, giver))

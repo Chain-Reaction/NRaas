@@ -47,6 +47,14 @@ namespace NRaas.StoryProgressionSpace.Helpers
 
                 if (product.Price > maximumPrice) continue;
 
+                // 319e4f1d:00000000:00000000000f5f40
+                if(product.ObjectInstanceName == "RCcart") continue;
+
+                // 319e4f1d:00000000:00000000000f5e5a
+                if (product.ProductResourceKey != ResourceKey.kInvalidResourceKey && product.ProductResourceKey.ToString() == "319e4f1d:00000000:00000000000f5e5a") continue;
+
+                // Common.WriteLog("Product: " + product.CatalogName + " ResKey: " + product.ProductResourceKey + " Instance: " + product.ObjectInstanceName);                
+
                 mProducts.Add(product);
             }
 

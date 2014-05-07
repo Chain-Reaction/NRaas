@@ -79,6 +79,7 @@ namespace NRaas.WoohooerSpace
         public int mWoohooTeenBaseChanceScoring = WoohooerTuning.kWoohooTeenBaseChanceScoring;
         public bool mHideWoohoo = WoohooerTuning.kHideWoohoo;
         public bool[] mWoohooAutonomousV2 = new bool[] { WoohooerTuning.kWoohooAutonomous, WoohooerTuningHorse.kWoohooAutonomous, WoohooerTuningDog.kWoohooAutonomous, WoohooerTuningCat.kWoohooAutonomous };
+        public bool[] mWoohootyTextAutonomous = new bool[] { WoohooerTuning.kWoohootyTextAutonomous };
         public bool mAllowTeenWoohoo = WoohooerTuning.kAllowTeenWoohoo;
         public bool mAllowTeenAdultWoohoo = WoohooerTuning.kAllowTeenAdultWoohoo;
         public bool[] mAllowNearRelationWoohooV2 = new bool[] { WoohooerTuning.kAllowNearRelationWoohoo, WoohooerTuningHorse.kAllowNearRelationWoohoo, WoohooerTuningDog.kAllowNearRelationWoohoo, WoohooerTuningCat.kAllowNearRelationWoohoo };

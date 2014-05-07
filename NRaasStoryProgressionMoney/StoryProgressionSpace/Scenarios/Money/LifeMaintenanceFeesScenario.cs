@@ -99,7 +99,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Money
             {
                 int elders = 0, children = 0;
 
-                foreach (SimDescription sim in HouseholdsEx.All(House))
+                foreach (SimDescription sim in HouseholdsEx.Humans(House))
                 {
                     if (sim.Elder)
                     {

@@ -101,6 +101,10 @@ namespace NRaas.StoryProgressionSpace.Managers
                     tuning.Availability.Adults = true;
                     tuning.Availability.Elders = true;
                 }
+
+                // set to 0 by EA default but in case someone has a tuning mod.
+                Pregnancy.kBaseChanceOfBabyHavingRandomOccultMutation = 0;
+                BuffMagicInTheAir.kRandomOccultMutationChanceIncrease = 0;
             }
 
             if ((ProgressionEnabled) && (fullUpdate))
@@ -180,7 +184,7 @@ namespace NRaas.StoryProgressionSpace.Managers
             }
 
             return true;
-        }
+        }        
 
         public bool AllowImpregnation(IScoringGenerator stats, SimDescription sim, AllowCheck check)
         {

@@ -18,7 +18,7 @@ namespace NRaas.WoohooerSpace.Options
 {
     public abstract class SpeciesBooleanSettingOption : BooleanSettingOption<GameObject>, ISpeciesItem
     {
-        CASAgeGenderFlags mSpecies;
+        protected CASAgeGenderFlags mSpecies;
 
         public SpeciesBooleanSettingOption()
         {}

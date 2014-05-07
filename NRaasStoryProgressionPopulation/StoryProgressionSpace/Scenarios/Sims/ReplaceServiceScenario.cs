@@ -30,7 +30,7 @@ using System.Text;
 
 namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 {
-    public class ReplaceServiceScenario : SimEventScenario<Event>, ISimFromBinManager
+    public class ReplaceServiceScenario : SimEventScenario<Event>
     {
         public ReplaceServiceScenario()
         { }
@@ -75,12 +75,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             if (!GetValue<Option, bool>()) return false;
 
             return base.Allow();
-        }
-
-        protected override bool AllowSpecies(SimDescription sim)
-        {
-            return sim.IsHuman;
-        }
+        }        
 
         protected override bool PrivateUpdate(ScenarioFrame frame)
         {
@@ -94,7 +89,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             return new ReplaceServiceScenario(this);
         }
 
-        public class DelayedScenario : SimScenario
+        public class DelayedScenario : ReplaceSimScenario
         {
             public DelayedScenario(SimDescription sim)
                 : base(sim)
@@ -130,13 +125,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
                 if ((SimTypes.InServicePool(sim)) || (sim.AssignedRole != null))
                 {
                     return true;
-                }
-                /* Needs option
-                else if (Household.RoommateManager.IsNPCRoommate(sim))
-                {
-                    return true;
-                }
-                */
+                }                                            
 
                 return false;
             }
@@ -147,32 +136,12 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
                 {
                     IncStat("Resident");
                     return false;
-                }
-                else if (!IsValidSim(sim))
+                }  
+                if (!IsValidSim(sim))
                 {
                     IncStat("Invalid");
                     return false;
-                }
-                else if ((!SimTypes.InServicePool(sim)) && (sim.AssignedRole == null))
-                {
-                    IncStat("Not Service");
-                    return false;
-                }
-                else if (sim.IsZombie)
-                {
-                    IncStat("Zombie");
-                    return false;
-                }
-                else if ((sim.AssignedRole is RoleTourist) || (sim.AssignedRole is RoleExplorer))
-                {
-                    IncStat("Tourist");
-                    return false;
-                }
-                else if (SimTypes.IsSkinJob(sim))
-                {
-                    IncStat("Skinjob");
-                    return false;
-                }
+                }             
                 else if (GetValue<ReplacedServiceOption, bool>(sim))
                 {
                     IncStat("Already Replaced");
@@ -184,155 +153,20 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 
             protected override bool PrivateUpdate(ScenarioFrame frame)
             {
-                SimDescription newSim = null;
-
-                using (SimFromBin<ManagerSim> bin = new SimFromBin<ManagerSim>(this, Sims))
+                if (base.PrivateUpdate(frame))
                 {
-                    CASAgeGenderFlags gender = Sim.Gender;
-
-                    switch (GetValue<GenderOption, BabyGenderScenario.FirstBornGender>())
-                    {
-                        case BabyGenderScenario.FirstBornGender.Male:
-                            gender = CASAgeGenderFlags.Male;
-                            break;
-                        case BabyGenderScenario.FirstBornGender.Female:
-                            gender = CASAgeGenderFlags.Female;
-                            break;
-                    }
-
-                    newSim = bin.CreateNewSim(Sim.Age, gender, CASAgeGenderFlags.Human);
-                    if (newSim == null)
-                    {
-                        IncStat("Creation Fail");
-                        return false;
-                    }
+                    SetValue<ReplacedServiceOption, bool>(Sim, true);
+                    return true;
                 }
 
-                bool genderChanged = (Sim.Gender != newSim.Gender);
-
-                bool result = FacialBlends.CopyGenetics(newSim, Sim, false, false);
-
-                Sim.VoiceVariation = newSim.VoiceVariation;
-                Sim.VoicePitchModifier = newSim.VoicePitchModifier;
-
-                Sim.FirstName = newSim.FirstName;
-
-                if (genderChanged)
-                {
-                    Sim.Gender = newSim.Gender;
-
-                    SavedOutfit.Cache cache = new SavedOutfit.Cache(newSim);
-
-                    Dictionary<OutfitCategories, bool> replaced = new Dictionary<OutfitCategories, bool>();
-
-                    Sim.RemoveOutfits(OutfitCategories.Career, true);
-
-                    SimOutfit geneOutfit = CASParts.GetOutfit(Sim, CASParts.sPrimary, false);
-
-                    foreach (SavedOutfit.Cache.Key outfit in cache.Outfits)
-                    {
-                        using (CASParts.OutfitBuilder builder = new CASParts.OutfitBuilder(Sim, outfit.mKey, geneOutfit))
-                        {
-                            builder.Builder.Gender = Sim.Gender;
-
-                            outfit.Apply(builder, false, null, null);
-
-                            if (!replaced.ContainsKey(outfit.Category))
-                            {
-                                replaced.Add(outfit.Category, true);
-
-                                CASParts.RemoveOutfits(Sim, outfit.Category, false);
-                            }
-                        }
-                    }
-
-                    if (Sim.CreatedSim != null)
-                    {
-                        Sim.CreatedSim.UpdateOutfitInfo();
-
-                        Sim.CreatedSim.RefreshCurrentOutfit(true);
-
-                        SwitchOutfits.SwitchNoSpin(Sim.CreatedSim, new CASParts.Key(OutfitCategories.Everyday, 0));
-                    }
-                }
-                else
-                {
-                    new SavedOutfit.Cache(Sim).PropagateGenetics(Sim, CASParts.sPrimary);
-                }
-
-                if (newSim.OccultManager.CurrentOccultTypes != OccultTypes.None)
-                {
-                    if (Instantiation.PerformOffLot(Sim, Household.ActiveHousehold.LotHome, null) != null)
-                    {
-                        List<OccultTypes> occults = OccultTypeHelper.CreateList(newSim, true);
-
-                        foreach (OccultTypes occult in occults)
-                        {
-                            switch (occult)
-                            {
-                                case OccultTypes.Frankenstein:
-                                    Sim.TraitManager.AddElement(TraitNames.Brave);
-                                    Sim.TraitManager.AddElement(TraitNames.Hydrophobic);
-                                    break;
-                            }
-                        }
-
-                        Sims.ApplyOccultChance(this, Sim, occults, 100, int.MaxValue);
-                    }
-
-                    if (Sim.GetOutfitCount(OutfitCategories.Everyday) > 1)
-                    {
-                        Sim.RemoveOutfit(OutfitCategories.Everyday, 1, true);
-                    }
-
-                    SimOutfit currentOutfit = Sim.GetOutfit(OutfitCategories.Everyday, 0);
-                    if (currentOutfit != null)
-                    {
-                        try
-                        {
-                            ThumbnailManager.GenerateHouseholdSimThumbnail(currentOutfit.Key, currentOutfit.Key.InstanceId, 0x0, ThumbnailSizeMask.Large | ThumbnailSizeMask.ExtraLarge | ThumbnailSizeMask.Medium | ThumbnailSizeMask.Small, ThumbnailTechnique.Default, true, false, Sim.AgeGenderSpecies);
-                        }
-                        catch (Exception e)
-                        {
-                            Common.Exception(Sim, e);
-                        }
-                    }
-                }
-
-                Deaths.CleansingKill(newSim, true);
-
-                if (!result) return false;
-
-                if (Common.kDebugging)
-                {
-                    Common.DebugNotify(GetTitlePrefix(PrefixType.Pure) + ": " + Sim.FullName, Sim.CreatedSim);
-                }
-
-                SpeedTrap.Sleep();
-
-                SetValue<ReplacedServiceOption, bool>(Sim, true);
-                return true;
+                return false;
             }
 
             public override Scenario Clone()
             {
                 return new DelayedScenario(this);
             }
-        }
-
-        public class Controller : SimFromBinController
-        {
-            public Controller(ManagerSim manager)
-                : base(manager)
-            { }
-
-            public override bool ShouldDisplayImmigrantOptions()
-            {
-                if (!Manager.GetValue<Option, bool>()) return false;
-
-                return true;
-            }
-        }
+        }        
 
         public class Option : BooleanScenarioOptionItem<ManagerSim, ReplaceServiceScenario>, ManagerSim.IImmigrationEmigrationOption
         {
@@ -352,12 +186,11 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 
             public override bool Install(ManagerSim main, bool initial)
             {
-                if (!base.Install(main, initial)) return false;
-            
-                SimFromBin<ManagerSim>.Install(new Controller(Manager), main, initial);
+                if (!base.Install(main, initial)) return false;            
+                
                 return true;
             }
-        }
+        }        
 
         public class EventOption : BooleanEventOptionItem<ManagerSim, ReplaceServiceScenario>, ManagerSim.IImmigrationEmigrationOption, IDebuggingOption
         {
@@ -386,29 +219,6 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
             {
                 return "ReplacedService";
             }
-        }
-
-        public class GenderOption : BabyGenderScenario.FirstBornGenderOptionBase<ManagerSim>, ManagerSim.IImmigrationEmigrationOption
-        {
-            public GenderOption()
-            { }
-
-            public override string GetTitlePrefix()
-            {
-                return "ServiceImmigrantGender";
-            }
-
-            public override bool Progressed
-            {
-                get { return false; }
-            }
-
-            public override bool ShouldDisplay()
-            {
-                if (!Manager.GetValue<Option, bool>()) return false;
-
-                return base.ShouldDisplay();
-            }
-        }
+        }        
     }
 }
