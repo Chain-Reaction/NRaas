@@ -9,7 +9,7 @@ namespace NRaas
 {
     public class VersionStamp : Common.ProtoVersionStamp
     {
-        public static readonly string sNamespace = "NRaas.PocketProtectorTablet";
+        public static readonly string sNamespace = "NRaas.PocketProtectorPotionCase";
 
         public class Version : ProtoVersion<GameObject>
         { }
@@ -22,6 +22,6 @@ namespace NRaas
          * 
          * 
          */
-        public static readonly int sVersion = 3;
+        public static readonly int sVersion = 1;
     }
 }

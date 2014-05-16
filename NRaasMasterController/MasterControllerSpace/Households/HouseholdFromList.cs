@@ -313,7 +313,7 @@ namespace NRaas.MasterControllerSpace.Households
             static Dictionary<CommercialLotSubType, Lot.CommercialSubTypeData> sComercialLotTypes;
 
             public LotTypeColumn()
-				: base("NRaas.MasterController.OptionList:LotTypeTitle", "NRaas.MasterController.OptionList:LotTypeTitle", /*40*/ 70)
+                : base("NRaas.MasterController.OptionList:LotTypeTitle", "NRaas.MasterController.OptionList:LotTypeTitle", 40)
             { }
 
             public override ObjectPicker.ColumnInfo GetValue(LotHouseItem item)
@@ -351,7 +351,7 @@ namespace NRaas.MasterControllerSpace.Households
             public LotHouseItem(Lot lot, Household house, int count)
                 : base (null, count)
             {
-				if ((lot == null) && (house == null))
+                if ((lot == null) && (house == null))
                 {
                     mName = "(" + Common.LocalizeEAString("Ui/Caption/ObjectPicker:All") + ")";
                 }
@@ -366,7 +366,7 @@ namespace NRaas.MasterControllerSpace.Households
                 else
                 {
                     mName = lot.Name;
-					if (!string.IsNullOrEmpty(mName))
+                    if (!string.IsNullOrEmpty(mName))
                     {
                         mName += " - ";
                     }

@@ -291,6 +291,8 @@ namespace NRaas
             if (ServiceNPCSpecifications.sServiceSpecifications.TryGetValue(service.ServiceType.ToString(), out spec))
             {                
                 spec.Ages = key.validAges;
+                spec.UseHoverbot = key.useBots;
+                spec.UseServobot = key.useBots;
                 ServiceNPCSpecifications.sServiceSpecifications[service.ServiceType.ToString()] = spec;
             }            
         }

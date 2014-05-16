@@ -120,7 +120,7 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
       <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
@@ -252,6 +252,7 @@
     <Compile Include="RegisterSpace\Options\Service\ReoccurrenceSetting.cs" />
     <Compile Include="RegisterSpace\Options\Service\ServiceListingOption.cs" />
     <Compile Include="RegisterSpace\Options\Service\ServiceSettingKey.cs" />
+    <Compile Include="RegisterSpace\Options\Service\UseBotsSetting.cs" />
     <Compile Include="RegisterSpace\Options\Tourists\TouristWorldSetting.cs" />
     <Compile Include="RegisterSpace\Options\AllowImmigration.cs" />
     <Compile Include="RegisterSpace\Options\AllowTourists.cs" />

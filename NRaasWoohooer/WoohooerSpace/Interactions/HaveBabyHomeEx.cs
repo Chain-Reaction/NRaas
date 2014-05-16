@@ -208,8 +208,8 @@ namespace NRaas.WoohooerSpace.Interactions
                     EnsureForeignFather(pregnancy);
                 }
 
-                // ths.GetNewBorns();
-                if (ths.InteractionDefinition is AlienUtils.MaleHaveBabyHome)
+                // ths.GetNewBorns();                
+                if (ths is MaleHaveBabyHomeEx)
                 {
                     ths.GetNewBorns();
                 }
