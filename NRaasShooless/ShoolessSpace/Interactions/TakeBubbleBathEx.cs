@@ -36,6 +36,12 @@ namespace NRaas.ShoolessSpace.Interactions
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubRectangle, Bathtub.TakeBubbleBath.Definition, Definition>(false);
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubShowerModern, Bathtub.TakeBubbleBath.Definition, Definition>(false);
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubValue, Bathtub.TakeBubbleBath.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubFuture, Bathtub.TakeBubbleBath.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubRomantic, Bathtub.TakeBubbleBath.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubRanch, Bathtub.TakeBubbleBath.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubDarkLux, Bathtub.TakeBubbleBath.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubShowerSeasonChic, Bathtub.TakeBubbleBath.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubShowerTILocal, Bathtub.TakeBubbleBath.Definition, Definition>(false);
 
             sOldSingleton = Singleton;
             Singleton = new Definition();

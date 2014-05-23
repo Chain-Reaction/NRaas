@@ -71,7 +71,7 @@ namespace NRaas.CommonSpace.Tasks
                 }
             }
 
-            Dictionary<GameObject,bool> inventory = new Dictionary<GameObject,bool>();
+            Dictionary<GameObject, bool> inventory = new Dictionary<GameObject, bool>();
             if ((sim.CreatedSim != null) && (sim.CreatedSim.Inventory != null))
             {
                 foreach (GameObject obj in Inventories.QuickFind<GameObject>(sim.CreatedSim.Inventory))
@@ -316,7 +316,7 @@ namespace NRaas.CommonSpace.Tasks
 
         }
 
-        public static void ResetRoleMotives(Sim sim)
+        public static void ResetRole(Sim sim)
         {
             if (sim == null) return;
 
@@ -328,21 +328,43 @@ namespace NRaas.CommonSpace.Tasks
             {
                 try
                 {
-                    foreach (CommodityKind kind in role.Data.Motives)
-                    {
-                        sim.Motives.CreateMotive(kind);
-                    }
-
-                    foreach (CommodityKind kind2 in role.Data.MotivesToFreeze)
-                    {
-                        sim.Motives.SetMax(kind2);
-                        sim.Motives.SetDecay(kind2, false);
-                    }
+                    role.mIsActive = false;
+                    role.StartRole();
                 }
                 catch (Exception e)
                 {
                     Common.Exception(sim, e);
+                }                
+            }
+        }
+
+        public static void ResetRouting(Sim sim)
+        {
+            if (sim == null) return;
+
+            SimRoutingComponent component = sim.SimRoutingComponent;
+            if (component != null)
+            {
+                if (component.LockedDoorsDuringPlan != null && component.LockedDoorsDuringPlan.Count > 0)
+                {
+                    foreach (Door door in component.LockedDoorsDuringPlan)
+                    {
+                        if (door == null)
+                        {
+                            continue;
+                        }                        
+
+                        PortalComponent portalComponent = door.PortalComponent;
+                        if (portalComponent != null)
+                        {
+                            portalComponent.FreeAllRoutingLanes();
+                        }
+
+                        door.SetObjectToReset();
+                    }
                 }
+
+                component.LockedDoorsDuringPlan = new List<Door>();
             }
         }
 
@@ -359,7 +381,7 @@ namespace NRaas.CommonSpace.Tasks
                     if (simDesc != null)
                     {
                         sim.Destroy();
-                    }                    
+                    }                  
 
                     //sim.mSimDescription = null;
                     return null;
@@ -470,13 +492,15 @@ namespace NRaas.CommonSpace.Tasks
                             if (sSimReset.Valid)
                             {
                                 sSimReset.Invoke<bool>(new object[] { simDesc.SimDescriptionId });
-                            }                            
+                            }
+
+                            ResetRouting(sim);
 
                             using (CreationProtection protection = new CreationProtection(simDesc, sim, false, true, false))
                             {
                                 sim.Destroy();
 
-                                Common.Sleep();                                
+                                Common.Sleep();
 
                                 sim = FixInvisibleTask.InstantiateAtHome(simDesc, null);
                             }
@@ -526,7 +550,9 @@ namespace NRaas.CommonSpace.Tasks
 
                             if (Instantiation.AttemptToPutInSafeLocation(sim, false))
                             {
-                                sim.SetObjectToReset();
+                                ResetRouting(sim);
+
+                                sim.SetObjectToReset();                                
 
                                 // This is necessary to clear certain types of interactions
                                 //   (it is also called in SetObjectToReset(), though doesn't always work there)
@@ -539,7 +565,7 @@ namespace NRaas.CommonSpace.Tasks
 
                         ResetSkillModifiers(simDesc);
 
-                        ResetRoleMotives(sim);
+                        ResetRole(sim);
 
                         if (simDesc.IsEnrolledInBoardingSchool())
                         {
@@ -582,7 +608,7 @@ namespace NRaas.CommonSpace.Tasks
                 }
                 else if (simDesc.IsBonehilda)
                 {
-                    foreach(BonehildaCoffin coffin in Sims3.Gameplay.Queries.GetObjects<BonehildaCoffin>())
+                    foreach (BonehildaCoffin coffin in Sims3.Gameplay.Queries.GetObjects<BonehildaCoffin>())
                     {
                         if (coffin.mBonehilda == simDesc)
                         {
@@ -591,7 +617,7 @@ namespace NRaas.CommonSpace.Tasks
                         }
                     }
                 }
-                
+
                 if (fadeOut)
                 {
                     sim.Destroy();
@@ -608,7 +634,7 @@ namespace NRaas.CommonSpace.Tasks
 
         public class HouseholdSimsProtection : IDisposable
         {
-            Dictionary<SimDescription,Sim> mSims = new Dictionary<SimDescription,Sim>();
+            Dictionary<SimDescription, Sim> mSims = new Dictionary<SimDescription, Sim>();
 
             public HouseholdSimsProtection(Household house)
             {
@@ -882,8 +908,8 @@ namespace NRaas.CommonSpace.Tasks
                 {
                     if (!postLoad)
                     {
-                        if ((mSim.CreatedSim != null) && 
-                            (mSim.CreatedSim.OpportunityManager != null) && 
+                        if ((mSim.CreatedSim != null) &&
+                            (mSim.CreatedSim.OpportunityManager != null) &&
                             (mSim.CreatedSim.OpportunityManager.Count > 0))
                         {
                             OpportunityTrackerModel.FireOpportunitiesChanged();
@@ -1009,4 +1035,3 @@ namespace NRaas.CommonSpace.Tasks
         }
     }
 }
-

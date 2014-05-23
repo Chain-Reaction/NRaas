@@ -1,5 +1,6 @@
 ﻿using NRaas.CupcakeSpace.Helpers;
 using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Objects.CookingObjects;
@@ -66,6 +67,15 @@ namespace NRaas.CupcakeSpace.Helpers
                 }
 
                 GameObject containedObject = display.GetContainedObject(displaySlots[i]) as GameObject;
+
+                if (containedObject is FailureObject)
+                {
+                    try
+                    {
+                        containedObject.Destroy();
+                    }
+                    catch { }
+                }
 
                 if (containedObject is IFoodContainer || containedObject is ServingContainer || containedObject == null)
                 {

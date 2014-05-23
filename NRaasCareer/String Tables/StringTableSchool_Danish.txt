@@ -1,0 +1,494 @@
+<KEY>Gameplay/Excel/Careers/CareerList:MilitarySchool</KEY>
+<STR>Militær Skole</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:MilitarySchool</KEY>
+<STR>Indskrevet til Militær Skole</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer7015398996251744832</KEY>
+<STR>Indskriv til Militær Skole</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:MilitarySchoolStart</KEY>
+<STR>Ønsker du at lære i et streng og kontrolleret miljø? Hvor alle dine behov bliver behandlet af regeringen? Hvis du kan klare lydighed og adlyder kommandoer, så skal du indskrive dig til Militær Skolen!</STR>
+<KEY>Gameplay/Excel/Careers/MilitarySchool:Classmate</KEY>
+<STR>Kadet</STR>
+<KEY>Gameplay/Excel/Careers/MilitarySchool:Classmates</KEY>
+<STR>Kadeter</STR>
+<KEY>Gameplay/Excel/Careers/MilitarySchool:MilitarySchoolStudent</KEY>
+<STR>Militær Skole Kadet</STR>
+<KEY>Gameplay/Excel/Careers/MilitarySchool:MilitarySchoolStudent_Female</KEY>
+<STR>Militær Skole Kadet</STR>
+
+<KEY>Gameplay/Excel/Careers/CareerList:ArtsSchool</KEY>
+<STR>Kunsts Skole</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:ArtsSchool</KEY>
+<STR>Indskerevet til Kunsts Skole</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer6462623313726928547</KEY>
+<STR>Indskriv til Kunsts Skole</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:ArtsSchoolStart</KEY>
+<STR>Føler du, at du har en magisk berøring når det kommer til maling og madlavning? Ønsker du at lære hvordan man klimpre nogle melodier på en el-guitar? Så indskriv dig til Kunsts Skolen!</STR>
+<KEY>Gameplay/Excel/Careers/ArtsSchool:Classmate</KEY>
+<STR>Filosof</STR>
+<KEY>Gameplay/Excel/Careers/ArtsSchool:Classmates</KEY>
+<STR>Filosofer</STR>
+<KEY>Gameplay/Excel/Careers/ArtsSchool:ArtsSchoolStudent</KEY>
+<STR>At være Kunstner</STR>
+<KEY>Gameplay/Excel/Careers/ArtsSchool:ArtsSchoolStudent_Female</KEY>
+<STR>At være Kunstner</STR>
+
+<KEY>Gameplay/Excel/Careers/CareerList:GeniusSchool</KEY>
+<STR>Videnskabs Akademi</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:GeniusSchool</KEY>
+<STR>Indskrevet til Videnskabs Akademi</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer4359347199196048190</KEY>
+<STR>Inskriv til Videnskabs Akademi</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:GeniusSchoolStart</KEY>
+<STR>Har du hjernen til at lave en bærbar radioaktiv fissions bombe i din kælder? Hvis du har, så skal du være lukket inde... med andre Mensa kandidater! Indskriv til Videnskabs Akademi og høst goderne!</STR>
+<KEY>Gameplay/Excel/Careers/GeniusSchool:Classmate</KEY>
+<STR>Intellekt</STR>
+<KEY>Gameplay/Excel/Careers/GeniusSchool:Classmates</KEY>
+<STR>Intellekter</STR>
+<KEY>Gameplay/Excel/Careers/GeniusSchool:GeniusSchoolStudent</KEY>
+<STR>Intellektuel</STR>
+<KEY>Gameplay/Excel/Careers/GeniusSchool:GeniusSchoolStudent_Female</KEY>
+<STR>Intellektuel</STR>
+
+<KEY>Gameplay/Excel/Careers/CareerList:EntrepreneurSchool</KEY>
+<STR>Iværksætter Træning</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:EntrepreneurSchool</KEY>
+<STR>Indskrevet til Iværksætter Træning</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer11705389280423272520</KEY>
+<STR>Indskriv til Iværksætter Træning</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:EntrepreneurSchoolStart</KEY>
+<STR>Vil du lære noget forretnings viden? Eller måske er du interesseret i en fremtid i en politisk scene? Du skulle indskrive dig til Iværksætter Træning og tage det til næste level!</STR>
+<KEY>Gameplay/Excel/Careers/EntrepreneurSchool:Classmate</KEY>
+<STR>Praktikant</STR>
+<KEY>Gameplay/Excel/Careers/EntrepreneurSchool:Classmates</KEY>
+<STR>Praktikant</STR>
+<KEY>Gameplay/Excel/Careers/EntrepreneurSchool:EntrepreneurSchoolStudent</KEY>
+<STR>Iværksætter Praktikant</STR>
+<KEY>Gameplay/Excel/Careers/EntrepreneurSchool:EntrepreneurSchoolStudent_Female</KEY>
+<STR>Iværksætter Praktikant</STR>
+
+<KEY>Gameplay/Excel/Careers/CareerList:HomeSchooling</KEY>
+<STR>Hjemme Skolet</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:HomeSchooling</KEY>
+<STR>Indskrevet til Hjemme Skole</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer9095808975938344480</KEY>
+<STR>Indskriv til Hjemme Skole</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:HomeSchoolingOffer</KEY>
+<STR>Vil du have frihed og lære ting på din måde? Uden de pakkede og larmende klasseværelser... uden de kommanderende lærere der lærer dig ting som du jo alligevel aldrig vil bruge? Inskriv til hjemme undervisning og gør det på din måde!</STR>
+<KEY>Gameplay/Excel/Careers/HomeSchooling:Classmate</KEY>
+<STR>Elev</STR>
+<KEY>Gameplay/Excel/Careers/HomeSchooling:Classmates</KEY>
+<STR>Elev</STR>
+<KEY>Gameplay/Excel/Careers/HomeSchooling:HomeSchooled</KEY>
+<STR>Home Skole Elev</STR>
+<KEY>Gameplay/Excel/Careers/HomeSchooling:HomeSchooled_Female</KEY>
+<STR>Home Skole Elev</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnPaintingName</KEY>
+<STR>Vægmaleriet</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnPaintingDescription</KEY>
+<STR>Kunstens afdeling søger efter talentfulde unge artister, som vil hjælpe med at male et nyt vægmaleri. Du skal forbedre dit malerarbejde, før de vil rekruttere dig til teamet.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnPaintingHint</KEY>
+<STR>Forbedre din malings færdighed og vend tilbage til skolen for præsentation stigning.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnPaintingCompletion</KEY>
+<STR>Du forbedrede succesfuld din Malings færdighed. Kunst afdelingen tillader dig at deltage i vægmaleri projektet, og du modtager en præsentations forbedring!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnPaintingSecondaryCompletion</KEY>
+<STR><span style="background-color: #ffffff; line-height: 1.5;">Du forbedrede succesfuld din Malings færdighed. Kunst afdelingen tillader dig at deltage i vægmaleri projektet, og du modtager en præsentations forbedring!
+</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnPaintingFailure</KEY>
+<STR>Du fejlede i at forbedre din Malings færdighed. Kunst afdelingen vil blive så skuffede.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnPaintingProgress</KEY>
+<STR>Forbedre din Malings Færdighed</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnPaintingName</KEY>
+<STR>The Mural</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnPaintingDescription</KEY>
+<STR>The Arts department at school is looking for talented young artists to help paint a new mural. You need to improve your painting though, before they will allow you on the team.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnPaintingHint</KEY>
+<STR>Improve your Painting skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnPaintingCompletion</KEY>
+<STR>You were successful in improving your painting skill. The arts departments has allowed you participate in its mural project, and you receive a performance improvement!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnPaintingSecondaryCompletion</KEY>
+<STR>You were successful in improving your painting skill. The arts departments has allowed you participate in its mural project, and you receive a performance improvement!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnPaintingFailure</KEY>
+<STR>You failed to increase your Painting skill. The arts department will be so disappointed.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnPaintingProgress</KEY>
+<STR>Improve your Painting Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnWritingName</KEY>
+<STR>The Writing Club</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnWritingDescription</KEY>
+<STR>Some of your classmates are getting together to form a creative writing club, and asked whether you'd like to join. If so, you'll need to improve your writing skill, so as to not embarrass yourself.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnWritingHint</KEY>
+<STR>Improve your Writing skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnWritingCompletion</KEY>
+<STR>You hard work paid off, and the short story you wrote was the hit of the club. You even showed it to your teacher, who thought it was excellent. Good job!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnWritingSecondaryCompletion</KEY>
+<STR>You hard work paid off, and the short story you wrote was the hit of the club. You even showed it to your teacher, who thought it was excellent. Good job!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnWritingFailure</KEY>
+<STR>Oh bummer, since you didn't meet the clubs "high" standards in writing skill, they have decided not to let you join.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnWritingProgress</KEY>
+<STR>Improve your Writing Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnWritingName</KEY>
+<STR>The School Herald</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnWritingDescription</KEY>
+<STR>You were reading the school's newsletter today and decided that some fresh new perspective is required on its writing staff. If you are looking to join, and improve your grade in the process, you'll first need to improve your writing skill.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnWritingHint</KEY>
+<STR>Improve your Writing skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnWritingCompletion</KEY>
+<STR>Your work has paid off and the newsletter has agreed to give you a brand new section. Your teachers will surely look on in favor of this, provided you have some kind words to say.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnWritingSecondaryCompletion</KEY>
+<STR>Your work has paid off and the newsletter has agreed to give you a brand new section. Your teachers will surely look on in favor of this, provided you have some kind words to say.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnWritingFailure</KEY>
+<STR>You failed to increase your Writing skill. The school newsletter will simply have to live without your pithy commentary.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnWritingProgress</KEY>
+<STR>Improve your Writing Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnLogicName</KEY>
+<STR>Counting Beyond Ten</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnLogicDescription</KEY>
+<STR>Some of your classmates have decided to show off their "elite" math skills and have been making fun of the other children. Show them all by improving your own Logic skill, and solving their complex math problem yourself.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnLogicHint</KEY>
+<STR>Improve your Logic skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnLogicCompletion</KEY>
+<STR>You showed them! You solved their complex math problem in no time flat, leaving them all speechless. Your teachers also approve and have upped your grade.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnLogicSecondaryCompletion</KEY>
+<STR>You showed them! You solved their complex math problem in no time flat, leaving them all speechless. Your teachers also approve and have upped your grade.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnLogicFailure</KEY>
+<STR>Too bad, without the required Logic skill, those math bullies were able to devise an unsolvable problem for you.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnLogicProgress</KEY>
+<STR>Improve your Logic Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnLogicName</KEY>
+<STR>The Theory of Everything</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnLogicDescription</KEY>
+<STR>The local Physics department is stuck on a particularly difficult mathematical model, and was wondering if you'd have time to help. You'll need to improve your logic beforehand, or you look the fool.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnLogicHint</KEY>
+<STR>Improve your Logic skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnLogicCompletion</KEY>
+<STR>The Physics department has been talking non-stop about your solution to their math problem. The department is sure to improve your grade for this!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnLogicSecondaryCompletion</KEY>
+<STR>The Physics department has been talking non-stop about your solution to their math problem. The department is sure to improve your grade for this!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnLogicFailure</KEY>
+<STR>You were simply unable to wrap your mind around the math the Physics department showed you. Better luck next time.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnLogicProgress</KEY>
+<STR>Improve your Logic Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnCookingName</KEY>
+<STR>The Easy Bake Oven</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnCookingDescription</KEY>
+<STR>Your muffins are hard, tasteless and completely indigestible... Or so your classmates tell you. Show them all by improving your cooking skill and baking a better muffin!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnCookingHint</KEY>
+<STR>Improve your Cooking skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnCookingCompletion</KEY>
+<STR>Yum! You muffins were the hit of the Home Ec. class. Your teacher ate several and even shared a couple with the other staff. Bonus!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnCookingSecondaryCompletion</KEY>
+<STR>Yum! You muffins were the hit of the Home Ec. class. Your teacher ate several and even shared a couple with the other staff. Bonus!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnCookingFailure</KEY>
+<STR>Your muffins still leave a dent in the floor. Pity, no one was impressed.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolElementary_LearnCookingProgress</KEY>
+<STR>Improve your Cooking Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCookingName</KEY>
+<STR>The Ultimate Soufflé</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCookingDescription</KEY>
+<STR>Your cooking class has been baking up a store the last couple days, and you feel left behind. Improve your cooking skill, and show them you mean business in the kitchen!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCookingHint</KEY>
+<STR>Improve your Cooking skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCookingCompletion</KEY>
+<STR>The aroma coming from the oven is a sure sign that your cooking skill has improved. All your classmates are lining up to taste your newest creation, and the teacher is right behind them.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCookingSecondaryCompletion</KEY>
+<STR>The aroma coming from the oven is a sure sign that your cooking skill has improved. All your classmates are lining up to taste your newest creation, and the teacher is right behind them.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCookingFailure</KEY>
+<STR>That sour smell is your latest concoction burning on the stove! Perhaps a little more effort on your part would have helped your grade.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCookingProgress</KEY>
+<STR>Improve your Cooking Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCharismaName</KEY>
+<STR>The Debate Team</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCharismaDescription</KEY>
+<STR>Debate team is looking for some new blood, and has been putting out feelers among the other students. If you wish to join, you'll need to improve your Charisma, or you may fall flat at the podium!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCharismaHint</KEY>
+<STR>Improve your Charisma skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCharismaCompletion</KEY>
+<STR>Whoa, you absolutely demolished the competition in the debates. Your opponent ended up flabbergasted and started agreeing with your side of the argument! The teachers were most impressed.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCharismaSecondaryCompletion</KEY>
+<STR>Whoa, you absolutely demolished the competition in the debates. Your opponent ended up flabbergasted and started agreeing with your side of the argument! The teachers were most impressed.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCharismaFailure</KEY>
+<STR>Oh my! You were trounced at the debates. Your opponent poked so many holes in your argument, there was nothing left but hot air!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnCharismaProgress</KEY>
+<STR>Improve your Charisma Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGuitarName</KEY>
+<STR>The Garage Band</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGuitarDescription</KEY>
+<STR>A couple classmates are getting together to form their own garage band and asked if you'd be interested. If so, you should improve your guitar skill, or your band mates may decide to make a hasty retreat.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGuitarHint</KEY>
+<STR>Improve your Guitar skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGuitarCompletion</KEY>
+<STR>Your band played for the school, and rocked the crowd! Even the teachers were inspired by your playing, and have improved your grade!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGuitarSecondaryCompletion</KEY>
+<STR>Your band played for the school, and rocked the crowd! Even the teachers were inspired by your playing, and have improved your grade!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGuitarFailure</KEY>
+<STR>Busted. Sadly your meager strumming did not impress the other members of the band, and they have decided to go it alone.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGuitarProgress</KEY>
+<STR>Improve your Guitar Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGardeningName</KEY>
+<STR>The Greenhouse</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGardeningDescription</KEY>
+<STR>Some of the plants have been dying in the greenhouse and no one seems to know why. Improve your Gardening skill and take a crack at the problem.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGardeningHint</KEY>
+<STR>Improve your Gardening skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGardeningCompletion</KEY>
+<STR>You solved the mystery and turned the sprinklers back on after the night janitor had decided to conserve water. Your instructors were very impressed and a wee bit embarrassed.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGardeningSecondaryCompletion</KEY>
+<STR>You solved the mystery and turned the sprinklers back on after the night janitor had decided to conserve water. Your instructors were very impressed and a wee bit embarrassed.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGardeningFailure</KEY>
+<STR>No joy. You were unable to figure out why the plants are dying. The world will have to live with one less cow plant harvest this year.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnGardeningProgress</KEY>
+<STR>Improve your Gardening Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnFishingName</KEY>
+<STR>The Aquarium</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnFishingDescription</KEY>
+<STR>Yet again, someone has jokingly released a piranha into the school's aquarium and no one seems able to fish it out. If you want to have a go at it, improve your fishing skill.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnFishingHint</KEY>
+<STR>Improve your Fishing skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnFishingCompletion</KEY>
+<STR>You caught that nasty little bugger in your first try. The school was mighty impressed that so few of its rare fish were eaten, they have offered to improve your grade.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnFishingSecondaryCompletion</KEY>
+<STR>You caught that nasty little bugger in your first try. The school was mighty impressed that so few of its rare fish were eaten, they have offered to improve your grade.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnFishingFailure</KEY>
+<STR>Oh no! The piranha escaped your hook and went on a rampage, devouring several exotic fish! The school was none too impressed.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnFishingProgress</KEY>
+<STR>Improve your Fishing Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnAthleticName</KEY>
+<STR>Track Meet</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnAthleticDescription</KEY>
+<STR>You school needs you! They are in desperate need of some decent track and field stars. Improve your athletics, and join the team!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnAthleticHint</KEY>
+<STR>Improve your Athletic skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnAthleticCompletion</KEY>
+<STR>You ran circles around the competition. No one was able to catch you, and the medals rained down upon you! The school was impressed and has deemed you worthy of a grade improvement.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnAthleticSecondaryCompletion</KEY>
+<STR>You ran circles around the competition. No one was able to catch you, and the medals rained down upon you! The school was impressed and has deemed you worthy of a grade improvement.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnAthleticFailure</KEY>
+<STR>You fell flat on your face right off the mark. How embarrassing to say the least. No one will be impressed with that performance!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnAthleticProgress</KEY>
+<STR>Improve your Athletic Skill.</STR>
+
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnHandinessName</KEY>
+<STR>Car Troubles</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnHandinessDescription</KEY>
+<STR>The mechanics department put out a request for training vehicles to repair, and ended up receiving WAY too many for it to handle. If you want to help sort out the mess, you should improve your handiness.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnHandinessHint</KEY>
+<STR>Improve your Handiness skill and return to school for a performance increase.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnHandinessCompletion</KEY>
+<STR>After some grueling hours, your cramped grease covered hands can finally take a rest. All the vehicles are rebuilt, and the school is very impressed with your gung-ho attitude!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnHandinessSecondaryCompletion</KEY>
+<STR>After some grueling hours, your cramped grease covered hands can finally take a rest. All the vehicles are rebuilt, and the school is very impressed with your gung-ho attitude!</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnHandinessFailure</KEY>
+<STR>The mechanics department remains totally backlogged with no end in sight. Pity you were unable to help out.</STR>
+<KEY>Gameplay/Excel/Opportunities/Names:SchoolHigh_LearnHandinessProgress</KEY>
+<STR>Improve your Handiness Skill.</STR>
+
+<KEY>Gameplay/Excel/Careers/CareerList:CulinarySchool</KEY>
+<STR>Culinary School</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:CulinarySchool</KEY>
+<STR>Enrolled in Culinary School</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer1591309730376419816</KEY>
+<STR>Enroll in Culinary School</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:CulinarySchoolStart</KEY>
+<STR>Do you have an appetite for knowledge? Do you feel your taste buds quiver whenever you cross paths with a new recipe or ingredient? Well join culinary school, roast, broil, baste, and flambé your way into the world of cooking!</STR>
+<KEY>Gameplay/Excel/Careers/CulinarySchool:Classmate</KEY>
+<STR>Cook</STR>
+<KEY>Gameplay/Excel/Careers/CulinarySchool:Classmates</KEY>
+<STR>Cooks</STR>
+<KEY>Gameplay/Excel/Careers/CulinarySchool:CulinarySchoolStudent</KEY>
+<STR>Future Gourmand</STR>
+<KEY>Gameplay/Excel/Careers/CulinarySchool:CulinarySchoolStudent_Female</KEY>
+<STR>Future Gourmand</STR>
+
+<KEY>NRaasTone.MilitarySchoolPracticeAthletic</KEY>
+<STR>Train in track and field</STR>
+<KEY>NRaasTone.MilitarySchoolPracticeAthleticDescription</KEY>
+<STR>Work on your athletic skill as a member of the track team.</STR>
+<KEY>NRaasTone.ArtsSchoolPracticePainting</KEY>
+<STR>Focus on Painting</STR>
+<KEY>NRaasTone.ArtsSchoolPracticePaintingDescription</KEY>
+<STR>Spend your free time in the art class.</STR>
+<KEY>NRaasTone.GeniusSchoolPracticeLogic</KEY>
+<STR>Focus on Logic</STR>
+<KEY>NRaasTone.GeniusSchoolPracticeLogicDescription</KEY>
+<STR>Study hard in your logic classes.</STR>
+<KEY>NRaasTone.EntrepreneurSchoolPracticeWriting</KEY>
+<STR>Focus on Writing</STR>
+<KEY>NRaasTone.EntrepreneurSchoolPracticeWritingDescription</KEY>
+<STR>Pay attention during creative writing.</STR>
+<KEY>NRaasTone.GeniusSchoolPracticeGardening</KEY>
+<STR>Focus on Gardening</STR>
+<KEY>NRaasTone.GeniusSchoolPracticeGardeningDescription</KEY>
+<STR>Weed and water your heart out in the greenhouse.</STR>
+<KEY>NRaasTone.GeniusSchoolPracticeChess</KEY>
+<STR>Focus on Chess</STR>
+<KEY>NRaasTone.GeniusSchoolPracticeChessDescription</KEY>
+<STR>Captain the chess team.</STR>
+<KEY>NRaasTone.EntrepreneurSchoolPracticeCharisma</KEY>
+<STR>Focus on Charisma</STR>
+<KEY>NRaasTone.EntrepreneurSchoolPracticeCharismaDescription</KEY>
+<STR>Captain the debate team.</STR>
+<KEY>NRaasTone.MilitarySchoolPracticeHandiness</KEY>
+<STR>Focus on Handiness</STR>
+<KEY>NRaasTone.MilitarySchoolPracticeHandinessDescription</KEY>
+<STR>Spend your free time in the mechanic and electronics departments.</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeGuitar</KEY>
+<STR>Practice the Guitar</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeGuitarDescription</KEY>
+<STR>Hone your skills in the music department.</STR>
+
+<KEY>NRaasTone.CulinaryPracticeCooking</KEY>
+<STR>Burn Stuff... Er, Flambé!</STR>
+<KEY>NRaasTone.CulinaryPracticeCookingDescription</KEY>
+<STR>Read up on secrets behind the culinary masters, and test out new concoctions in the kitchen.</STR>
+<KEY>NRaasTone.CulinaryPracticeGardening</KEY>
+<STR>Tend the Herbs</STR>
+<KEY>NRaasTone.CulinaryPracticeGardeningDescription</KEY>
+<STR>Toil in the soil. The best ingredients are hand made!</STR>
+<KEY>NRaasTone.CulinaryPracticeFishing</KEY>
+<STR>Test out new lures</STR>
+<KEY>NRaasTone.CulinaryPracticeFishingDescription</KEY>
+<STR>The tastiest fish are always fresh. So learn to catch them yourself!</STR>
+
+<KEY>NRaasTone.ArtsSchoolPracticeBassGuitar</KEY>
+<STR>Practice the Bass Guitar</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeBassGuitarDescription</KEY>
+<STR>Hone your skills in the music department.</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeDrums</KEY>
+<STR>Practice the Drums</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeDrumsDescription</KEY>
+<STR>Work out that teenage angst by beating the school drums.</STR>
+<KEY>NRaasTone.ArtsSchoolPracticePiano</KEY>
+<STR>Practice the Piano</STR>
+<KEY>NRaasTone.ArtsSchoolPracticePianoDescription</KEY>
+<STR>Tickle the ivories on the school's baby grand.</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeDancing</KEY>
+<STR>Dance Dance Revolution!</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeDancingDescription</KEY>
+<STR>Study the art of being foot loose and fancy free.</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeSculpting</KEY>
+<STR>Carve Stuff</STR>
+<KEY>NRaasTone.ArtsSchoolPracticeSculptingDescription</KEY>
+<STR>Work on your hammer, chisel, and chainsaw skills.</STR>
+
+<KEY>NRaasTone.GeniusSchoolPracticeInventing</KEY>
+<STR>Study Da Vinci</STR>
+<KEY>NRaasTone.GeniusSchoolPracticeInventingDescription</KEY>
+<STR>Read up on the renaissance masters of old for inspiration.</STR>
+
+<KEY>NRaasTone.MilitarySchoolPracticeMartialArts</KEY>
+<STR>Study Martial Combat</STR>
+<KEY>NRaasTone.MilitarySchoolPracticeMartialArtsDescription</KEY>
+<STR>Engage in martial combat conditioning to improve your inner focus.</STR>
+
+<KEY>NRaas.Careers.HomeSchooling:HaveHomework</KEY>
+<STR>{0.SimName} already has an assignment to complete, and does not require a new one.</STR>
+<KEY>NRaas.Careers.HomeSchooling:ExistingHomework</KEY>
+<STR>{0.SimName} has submitted his latest assignment, and downloaded a new one.</STR>
+<KEY>NRaas.Careers.HomeSchooling:ExistingHomework_Female</KEY>
+<STR>{0.SimName} has submitted her latest assignment, and downloaded a new one.</STR>
+<KEY>NRaas.Careers.HomeSchooling:NewHomework</KEY>
+<STR>{0.SimName} has received a new assignment from the online classroom.</STR>
+<KEY>NRaas.Careers.HomeSchooling:MissHomework</KEY>
+<STR>{0.SimName} has missed submitting their assignment, and has been docked for it.</STR>
+<KEY>NRaas.Careers.HomeSchooling:InteractionMenuName</KEY>
+<STR>Download Homework</STR>
+
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:1000807810</KEY>
+<STR>Chess Club</STR>
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:1000807810Description</KEY>
+<STR>Are you a socially stunted geek? Hang with your friends playing chess, and learning logic.</STR>
+
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:368286082</KEY>
+<STR>Entomology Club</STR>
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:368286082Description</KEY>
+<STR>Explore the fun world or nature, by collecting insects, and diagraming them, all while socializing with your friends.</STR>
+
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:652050474</KEY>
+<STR>Geology Club</STR>
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:652050474Description</KEY>
+<STR>Everyone loves to play in the dirt, so might as well learn something about the rocks in the process. May even get one cool souvenirs in the process.</STR>
+
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:1828194895</KEY>
+<STR>Junior Explorers</STR>
+<KEY>Gameplay/Abstracts/Careers/AfterschoolActivity:1828194895Description</KEY>
+<STR>You are an adventurer in training. Meet with your schoolmates and investigate the world around you. If you are lucky, you may even find some cool stuff to show the folks.</STR>
+
+<KEY>Gameplay/Excel/Careers/CareerList:NRaasChildMusicSchool</KEY>
+<STR>Music School</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMusicSchool:NRaasChildMusicSchool</KEY>
+<STR>Music School</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:NRaasChildMusicSchool</KEY>
+<STR>Enrolled in Music School</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer11476477153280014677</KEY>
+<STR>Enroll in Music School</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:NRaasChildMusicSchoolStart</KEY>
+<STR>Want to be superstar? Unless you have natural talent, then your parents are right : You are going to need to work hard to get ahead in life. Get a head start with a school specializing in music!</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMusicSchool:Classmate</KEY>
+<STR>Musician</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMusicSchool:Classmates</KEY>
+<STR>Musicians</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMusicSchool:NRaasChildMusicSchoolStudent</KEY>
+<STR>Future Superstar</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMusicSchool:NRaasChildMusicSchoolStudent_Female</KEY>
+<STR>Future Superstar</STR>
+
+<KEY>NRaasTone.ChildMusicSchool</KEY>
+<STR>Practice the Classics</STR>
+<KEY>NRaasTone.ChildMusicSchoolDescription</KEY>
+<STR>Hone your skills in the music department, for your future career in superstardom!</STR>
+
+<KEY>Gameplay/Excel/Careers/CareerList:NRaasChildMilitarySchool</KEY>
+<STR>Military Academy</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMilitarySchool:NRaasChildMilitarySchool</KEY>
+<STR>Military Academy</STR>
+<KEY>Gameplay/Excel/Socializing/LearnedCareer:NRaasChildMilitarySchool</KEY>
+<STR>Enrolled in Military Academy</STR>
+<KEY>Gameplay/Careers/GetJobInRabbitHole:JoinCareer8608484047087824805</KEY>
+<STR>Enroll in Military Academy</STR>
+<KEY>Gameplay/Excel/Careers/CareerList:NRaasChildMilitarySchoolStart</KEY>
+<STR>You heard about those rumors at school where a classmate got shipped off to military school? Well congratulations, your parents have decided you should join them! Get some discipline to cure your unruliness, while working on future life-skills.</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMilitarySchool:Classmate</KEY>
+<STR>Cadet</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMilitarySchool:Classmates</KEY>
+<STR>Cadets</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMilitarySchool:NRaasChildMilitarySchoolStudent</KEY>
+<STR>Future Leader</STR>
+<KEY>Gameplay/Excel/Careers/NRaasChildMilitarySchool:NRaasChildMilitarySchoolStudent_Female</KEY>
+<STR>Future Leader</STR>
+
+<KEY>NRaasTone.ChildMilitarySchool</KEY>
+<STR>Practice Life-Skills</STR>
+<KEY>NRaasTone.ChildMilitarySchoolDescription</KEY>
+<STR>Work in the kitchen, train in the base gym, or work your mind with logic puzzles.</STR>
+
+<KEY>NRaas.Careers.HomeSchooling:RabbitholeMenuName</KEY>
+<STR>Collect Homework</STR>
+
+<KEY>NRaas.Careers.HomeSchooling:NewHomeworkRabbithole</KEY>
+<STR>{0.SimName} has received a new assignment from the local school board.</STR>
+<KEY>NRaas.Careers.HomeSchooling:ExistingHomeworkRabbithole</KEY>
+<STR>{0.SimName} has submitted his latest assignment, and received a new one.</STR>
+<KEY>NRaas.Careers.HomeSchooling:ExistingHomeworkRabbithole_Female</KEY>
+<STR>{0.SimName} has submitted her latest assignment, and received a new one.</STR>
+
+<KEY>NRaas.Careers.HomeSchoolingMaxPerformance:Enable</KEY>
+<STR>Home Schooling: Enable homework</STR>
+<KEY>NRaas.Careers.HomeSchoolingMaxPerformance:Disable</KEY>
+<STR>Home Schooling: Disable homework</STR>
+
+<KEY>NRaas.Careers.HomeSchoolingPerformancePerHomework:MenuName</KEY>
+<STR>Home Schooling: Performance Per Homework</STR>
+<KEY>NRaas.Careers.HomeSchoolingPerformancePerHomework:Prompt</KEY>
+<STR>Enter the performance gain provided by submitting home schooling homework:</STR>

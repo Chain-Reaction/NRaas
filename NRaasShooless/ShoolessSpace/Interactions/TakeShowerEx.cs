@@ -41,6 +41,11 @@ namespace NRaas.ShoolessSpace.Interactions
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.ShowerLoft, Shower.TakeShower.Definition, Definition>(false);
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.ShowerModern, Shower.TakeShower.Definition, Definition>(false);
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubShowerModern, Shower.TakeShower.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.ShowerFuture, Shower.TakeShower.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.ShowerRanch, Shower.TakeShower.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.ShowerRomantic, Shower.TakeShower.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubShowerSeasonChic, Shower.TakeShower.Definition, Definition>(false);
+            Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.Mimics.BathtubShowerTILocal, Shower.TakeShower.Definition, Definition>(false);
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.ShowerCheap, Shower.TakeShower.Definition, Definition>(false);
             Tunings.Inject<Sims3.Gameplay.Objects.Plumbing.ShowerExpensive, Shower.TakeShower.Definition, Definition>(false);
             Tunings.Inject<IShowerable, Shower.TakeShower.Definition, Definition>(false);

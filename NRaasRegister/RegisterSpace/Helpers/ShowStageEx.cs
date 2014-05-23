@@ -57,6 +57,7 @@ namespace NRaas.RegisterSpace.Helpers
         public static void GoToLotFailure(Sim sim, float f)
         {
             Common.DebugNotify(sim.FullName + " failed");
+            Sim.MakeSimGoHome(sim, false);
         }
 
         public static Sim CreateAnNPCPerformer(ShowStage ths)

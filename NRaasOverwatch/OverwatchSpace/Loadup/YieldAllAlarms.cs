@@ -48,26 +48,40 @@ namespace NRaas.OverwatchSpace.Loadup
 
         private static void OnGameSpeedChanged(Sims3.Gameplay.Gameflow.GameSpeed newSpeed, bool locked)
         {
+            if (LoadingScreenController.IsLayoutLoaded())
+            {
+                return;
+            }
+
             sYieldRequired = (newSpeed <= Sims3.Gameplay.Gameflow.GameSpeed.Normal);
 
             OnYieldAll();
         }
 
         protected static void OnYieldAll()
-        {           
-            AlarmManager manager = AlarmManager.Global;
-
-            if (manager == null)
+        {
+            try
             {
-                return;
+                AlarmManager manager = AlarmManager.Global;
+
+                if (manager == null || manager.mTimerQueue == null)
+                {
+                    return;
+                }
+
+                foreach (object item in manager.mTimerQueue)
+                {
+                    if (item == null) continue;
+
+                    AlarmManager.Timer timer = item as AlarmManager.Timer;
+                    if (timer == null) continue;
+
+                    timer.YieldRequired = sYieldRequired;
+                }
             }
-
-            foreach (object item in manager.mTimerQueue)
+            catch (Exception e)
             {
-                AlarmManager.Timer timer = item as AlarmManager.Timer;
-                if (timer == null) continue;
-
-                timer.YieldRequired = sYieldRequired;
+                Common.Exception("", e);
             }
         }
     }

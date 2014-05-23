@@ -116,6 +116,11 @@ namespace NRaas.CupcakeSpace.Selection
                     selected = selectedValues[recipe.Key];
                 }
 
+                if (!GameUtils.IsInstalled(recipe.CodeVersion))
+                {
+                    continue;
+                }
+
                 options.Add(new Item(recipe.GenericName + (Cupcake.Settings.Debugging ? " (" + recipe.Key + ")" : ""), recipe, selected));                
             }
 
@@ -130,6 +135,11 @@ namespace NRaas.CupcakeSpace.Selection
 
             foreach (Recipe recipe in Recipe.Recipes)
             {
+                if (!GameUtils.IsInstalled(recipe.CodeVersion))
+                {
+                    continue;
+                }
+
                 if (filter.Contains(recipe.Key))
                 {
                     options.Add(new Item(recipe.GenericName, recipe));

@@ -110,9 +110,16 @@ namespace NRaas.CupcakeSpace.Helpers
                 Common.StringBuilder msg = new Common.StringBuilder();
                 Common.StringBuilder displayMsg;
                 foreach (CraftersConsignmentDisplay display in Sims3.Gameplay.Queries.GetObjects<CraftersConsignmentDisplay>())
-                {                    
-                    RestockDisplay(display, out displayMsg);
-                    msg += displayMsg + Common.NewLine + Common.NewLine;
+                {
+                    try
+                    {
+                        RestockDisplay(display, out displayMsg);
+                        msg += displayMsg + Common.NewLine + Common.NewLine;
+                    }
+                    catch (Exception e)
+                    {
+                        Common.Exception("", e);
+                    }                    
                 }
                 Common.DebugWriteLog(msg);
                 msg = null;
@@ -336,9 +343,11 @@ namespace NRaas.CupcakeSpace.Helpers
                         debug += Common.NewLine + "Pick: " + quality.ToString();
                     }
 
+                    bool tryCake = false;
                     if (random && Cupcake.Settings.mStockWeddingCakes && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
                     {
                         List<string> cakes = new List<string> { "BSBakeWeddingCake", "WeddingCakeSliceDOT07" };
+                        tryCake = true;
 
                         if (GameUtils.IsInstalled(ProductVersion.EP4))
                         {
@@ -372,30 +381,62 @@ namespace NRaas.CupcakeSpace.Helpers
                             quality = RandomUtil.GetRandomObjectFromList<Quality>(qualites);
                         }
 
-                        // Naturally EA didn't include group model definition for these 2 and it causes explosions
+                        // Catalog recipes                        
                         IGameObject cake = null;                        
                         if (recipe.Key == "WeddingCakeSliceDOT07")
                         {
                             debug += Common.NewLine + "Attempt at Monte Vista cake";
-                            cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingDOT07", ProductVersion.BaseGame);
-                            if (cake == null)
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingDOT07", ~ProductVersion.Undefined);                            
+                            if (cake is FailureObject)
                             {
-                                cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingDOT07", ~ProductVersion.Undefined);
+                                cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingDOT07", ProductVersion.BaseGame);
                             }                            
                         }
                         else if (recipe.Key == "Wedding Cake Slice")
                         {
                             debug += Common.NewLine + "Attempt at Generations cake";
-                            cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingTraditional", ProductVersion.EP4);                                                     
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingTraditional", ProductVersion.EP4);
+                            if (cake is FailureObject)
+                            {
+                                cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingTraditional", ProductVersion.BaseGame);
+                            }
+                        } else if (((tryCake && cake is FailureObject) || recipe.Key == "BSBakeWeddingCake"))
+                        {
+                            debug += Common.NewLine + "Attempt at Store Wedding cake";
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeWeddingCake", ~ProductVersion.Undefined);
+                            if (cake is FailureObject)
+                            {
+                                cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeWeddingCake", ProductVersion.BaseGame);
+                            }   
+                        }
+                        else if (recipe.Key == "BSBakeBirthdayCake")
+                        {
+                            debug += Common.NewLine + "Attempt at Store Birthday cake";
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeBirthdayCake", ~ProductVersion.Undefined);
+                            if (cake is FailureObject)
+                            {
+                                cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeBirthdayCake", ProductVersion.BaseGame);
+                            }   
                         }
                         else
                         {
                             container = recipe.CreateFinishedFood(recipe.CanMakeGroupServing ? Recipe.MealQuantity.Group : Recipe.MealQuantity.Single, quality);
                         }
 
-                        if (cake != null && !(cake is FailureObject))
+                        if (cake != null)
                         {
-                            debug += Common.NewLine + "Wedding cake success";
+                            if (cake is FailureObject)
+                            {
+                                debug += Common.NewLine + "Cake was FailureObject";
+                                try
+                                {
+                                    cake.Destroy();
+                                }
+                                catch { }
+                                continue;
+                            }
+
+                            debug += Common.NewLine + "Cake success";
                             DisplayHelper.ParentToSlot(cake as GameObject, slot.Value, display);
                             cake.AddToWorld();
 
@@ -404,14 +445,21 @@ namespace NRaas.CupcakeSpace.Helpers
                             {
                                 cake2.RemoveInteractionByType(WeddingCake.CutWeddingCake.Singleton);
                             }
-                        }
-                        else
-                        {
-                            debug += Common.NewLine + "Wedding cake fail";
-                        }
+                        }                        
 
                         if (container != null)
                         {
+                            if (container is FailureObject)
+                            {
+                                debug += Common.NewLine + "Container was FailureObject";
+                                try
+                                {
+                                    container.Destroy();
+                                }
+                                catch { }
+                                continue;
+                            }
+
                             DisplayHelper.ParentToSlot(container as GameObject, slot.Value, display);
                             container.SetGeometryState(recipe.SingleServingContainer); // this is how EA sets it, don't ask                            
                             container.AddToWorld();

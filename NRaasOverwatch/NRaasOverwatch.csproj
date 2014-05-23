@@ -361,6 +361,7 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupCauseEffect.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupKnownCompositions.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupFutureDescendantService.cs" />
+    <Compile Include="OverwatchSpace\Loadup\ClearInvalidTimeTravelerServiceRequests.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixActiveTopics.cs" />
     <Compile Include="OverwatchSpace\Loadup\ReplaceEP11BaseCampString.cs" />
     <Compile Include="OverwatchSpace\Loadup\YieldAllAlarms.cs" />

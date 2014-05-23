@@ -104,17 +104,17 @@ namespace NRaas.CommonSpace.Helpers
 
         public static List<CASParts.Wrapper> GetParts(TestPart onTest)
         {
-            List<CASParts.Wrapper> results = new List<CASParts.Wrapper>();
+            List<CASParts.Wrapper> results = new List<CASParts.Wrapper>();            
 
             PartSearch search = new PartSearch();
             foreach (CASPart part in search)
             {
-                CASParts.Wrapper newPart = new CASParts.Wrapper(part);
+                CASParts.Wrapper newPart = new CASParts.Wrapper(part);               
 
-                if ((onTest != null) && (!onTest(newPart))) continue;
+                if ((onTest != null) && (!onTest(newPart))) continue;                
 
                 results.Add(newPart);
-            }
+            }          
 
             search.Reset();
 

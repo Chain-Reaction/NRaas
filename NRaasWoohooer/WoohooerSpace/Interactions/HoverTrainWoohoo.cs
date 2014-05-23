@@ -83,7 +83,7 @@ namespace NRaas.WoohooerSpace.Interactions
         }
 
         public override bool Run()
-        {
+        {            
             try
             {
                 IWooHooDefinition definition = InteractionDefinition as IWooHooDefinition;

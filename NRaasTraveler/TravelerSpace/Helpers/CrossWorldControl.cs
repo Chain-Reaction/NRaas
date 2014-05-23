@@ -127,6 +127,9 @@ namespace NRaas.TravelerSpace.Helpers
 
                 StoreHouseholds(travelers);
 
+                transitionedSettings.Clear();
+                transitionedOccults.Clear();
+
                 if (GameStates.sTravelData.mDestWorld == WorldName.FutureWorld)
                 {
                     // need to figure out the issue with ITransition and expand this into a deriative search
@@ -148,7 +151,7 @@ namespace NRaas.TravelerSpace.Helpers
                                 {
                                     if (sim.OccultManager != null)
                                     {
-                                        if (sim.OccultManager.HasAnyOccultType())
+                                        if (sim.OccultManager.HasAnyOccultType() && !transitionedOccults.ContainsKey(num))
                                         {
                                             transitionedOccults.Add(num, new List<OccultTypes>());
                                             transitionedOccults[num].AddRange(OccultTypeHelper.CreateList(sim.OccultManager.CurrentOccultTypes, true));

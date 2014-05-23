@@ -56,7 +56,7 @@ namespace NRaas
         static DateTime sPreLoadDate = DateTime.MinValue;
         static DateTime sLoadFinishedDate = DateTime.MinValue;
 
-        static ulong sBuildBuyLotId = 0;
+        static ulong sBuildBuyLotId = 0;        
 
         public static readonly string NewLine = System.Environment.NewLine;
 
