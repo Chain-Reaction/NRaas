@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77E4BC06-F728-412E-852B-1D7FDF2F68EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NRaas</RootNamespace>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>NRaasAddressBook</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>NRaasAddressBook</AssemblyName>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <AssemblyName>NRaasWrittenWord</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AssemblyName>NRaasWrittenWord</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterLogger.cs">
+      <Link>CommonSpace\Booters\BooterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Common.cs">
+      <Link>CommonSpace\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimListing.cs">
+      <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\PrimaryInteraction.cs">
+      <Link>CommonSpace\Interactions\PrimaryInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionItem.cs">
+      <Link>CommonSpace\Options\CommonOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\InteractionOptionItem.cs">
+      <Link>CommonSpace\Options\InteractionOptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ProtoVersion.cs">
+      <Link>CommonSpace\Options\ProtoVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\SpeedTrap.cs">
+      <Link>CommonSpace\SpeedTrap.cs</Link>
+    </Compile>
+    <Compile Include="VersionStamp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AddressBook.cs" />
+    <Compile Include="..\NRaas\Options\StringSettingOption.cs">
+      <Link>CommonSpace\Options\StringSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="AddressBookSpace\Interactions\SetLotAddress.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Sims3GameplaySystems">
+      <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+    </Reference>
+    <Reference Include="Sims3Metadata">
+      <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptCore">
+      <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Sims3GameplayObjects">
+      <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="SimIFace">
+      <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+    </Reference>
+    <Reference Include="UI">
+      <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StringTables\StringTableEnglish.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Folder Include="AddressBookSpace\" />
+    <Folder Include="AddressBookSpace\Interactions\" />
+  </ItemGroup>
+</Project>
