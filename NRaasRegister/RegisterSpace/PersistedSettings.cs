@@ -1,4 +1,6 @@
-﻿using NRaas.RegisterSpace.Options.Service;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.RegisterSpace.Helpers;
+using NRaas.RegisterSpace.Options.Service;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
@@ -101,6 +103,7 @@ namespace NRaas.RegisterSpace
         [Tunable, TunableComment("How much to pay Bot Shop Merchants per hour they are working")]
         public static int kPayPerBotShopMerchant = 100;
 
+        // This has been depreciated in favor of using the Disabled Tourist Worlds setting
         [Tunable, TunableComment("Whether to allow homeworld residents to be used as tourists")]
         public static bool kAllowHomeworldTourists = true;
 
@@ -240,6 +243,24 @@ namespace NRaas.RegisterSpace
             }
 
             return new ServiceSettingKey(service);
+        }
+
+        public void Import(Persistence.Lookup settings)
+        {
+            serviceSettings.Clear();
+            foreach (ServiceSettingKey setting in settings.GetList<ServiceSettingKey>("Services"))
+            {
+                serviceSettings[setting.type] = setting;
+            }           
+
+            Register.InitDefaultServiceTunings();
+            ServiceCleanup.Task.Perform();
+            ServicePoolCleanup.Task.Perform();
+        }
+
+        public void Export(Persistence.Lookup settings)
+        {
+            settings.Add("Services", serviceSettings.Values);            
         }
 
         public bool Debugging

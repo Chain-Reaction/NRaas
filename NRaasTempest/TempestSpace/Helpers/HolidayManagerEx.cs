@@ -134,6 +134,8 @@ namespace NRaas.TempestSpace.Helpers
             HolidayManager ths = HolidayManager.sInstance;
             if (ths == null) return;
 
+            if (SeasonsManager.sInstance == null) return;
+
             if (clear)
             {
                 ths.ClearCurrentHoliday();
@@ -196,6 +198,8 @@ namespace NRaas.TempestSpace.Helpers
             HolidayManager ths = HolidayManager.sInstance;
             if (ths == null) return;
 
+            if (SeasonsManager.sInstance == null) return;
+
             ths.OnHolidayStarted();
 
             if (!Tempest.Settings.mAllowHolidayParties)
@@ -225,8 +229,8 @@ namespace NRaas.TempestSpace.Helpers
             result += Common.NewLine + SimClock.ElapsedTime(TimeUnit.Days, startTime);
 
             foreach (HolidaySettings.Holiday day in settings.Days)
-            {
-                uint actualDay = day.GetActualDay(season);
+            {                
+                uint actualDay = day.GetActualDay(season);                
                 if (actualDay == 0) continue;
 
                 days.Add(new Pair<Season, uint>(day.mSeason, actualDay - 1));
@@ -235,7 +239,7 @@ namespace NRaas.TempestSpace.Helpers
             days.Sort(SortByDay);
 
             foreach (Pair<Season, uint> day in days)
-            {
+            {                
                 ths.mStartDateTimeOfHoliday = SimClock.Add(startTime, TimeUnit.Days, day.Second);
 
                 result += Common.NewLine + "Days: " + day.Second + " Time: " + ths.mStartDateTimeOfHoliday;

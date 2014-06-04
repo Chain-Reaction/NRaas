@@ -183,7 +183,7 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
       <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
@@ -560,6 +560,7 @@
     <Compile Include="StoryProgressionSpace\Options\CareerLevelBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteCareerLevelFilterOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteCareerFilterOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\CasteDegreeFilterOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteScoringOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowLotPushOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\CasteApplyToHouseOption.cs" />
@@ -582,6 +583,7 @@
     <Compile Include="StoryProgressionSpace\Options\CareerBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowCasteCanBePregnantOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowOccultOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DegreeBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\DisallowCasteCanBePregnantOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\DisallowOccultOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\Immigration\MaximumOccultOption.cs" />

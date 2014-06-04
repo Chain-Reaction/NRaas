@@ -11,6 +11,6 @@ namespace NRaas
     {
         public static readonly string sNamespace = "NRaas.MasterControllerCheats";
 
-        public static readonly int sVersion = 130;
+        public static readonly int sVersion = 131;
     }
 }

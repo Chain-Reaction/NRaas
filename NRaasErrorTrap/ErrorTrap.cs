@@ -1001,6 +1001,11 @@ namespace NRaas
                     if (obj != null)
                     {
                         id = obj.ObjectId;
+
+                        if (obj.GetType() == typeof(Sims3.Gameplay.Objects.Decorations.MoonDial))
+                        {
+                            record = false;
+                        }
                     }
 
                     if (record)

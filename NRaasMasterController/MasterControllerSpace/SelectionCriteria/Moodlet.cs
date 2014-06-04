@@ -28,7 +28,9 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             { }
             public Item(BuffInstance value, int count)
                 : base(value.Guid, GetName(value), count)
-            { }
+            {
+                SetValue(value.Guid, value.Guid);            
+            }
 
             public override bool Get(SimDescription me, IMiniSimDescription actor, Dictionary<BuffNames,BuffNames> results)
             {
@@ -46,15 +48,15 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
             public override void SetValue(BuffNames value, BuffNames storeType)
             {
- 	            mValue = value;
+ 	            mValue = value;                
 
                 BuffInstance buff = null;
                 if (BuffManager.BuffDictionary.TryGetValue((ulong)value, out buff))
                 {
                     mName = GetName(buff);
 
-                    SetThumbnail(buff.ThumbKey);
-                }
+                    SetThumbnail(buff.ThumbKey);                    
+                }                
             }
 
             protected static string GetName(BuffInstance buff)

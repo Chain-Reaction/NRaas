@@ -7,6 +7,7 @@ using NRaas.StoryProgressionSpace.Managers;
 using NRaas.StoryProgressionSpace.Options;
 using NRaas.StoryProgressionSpace.Personalities;
 using NRaas.StoryProgressionSpace.Scenarios.Romances;
+using Sims3.Gameplay.Academics;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Careers;
@@ -265,6 +266,8 @@ namespace NRaas.StoryProgressionSpace
             List<SkillNames> mSkill;
             Dictionary<SkillNames, List<int>> mSkillLevel;
 
+            List<AcademicDegreeNames> mDegree;
+
             public CasteFilter(CasteOptions options)
             {
                 mPriority = options.GetValue<CastePriorityOption, int>();
@@ -409,6 +412,43 @@ namespace NRaas.StoryProgressionSpace
                 {
                     mZodiac.Add(zodiac);
                 }
+
+                mDegree = new List<AcademicDegreeNames>();
+
+                foreach (AcademicDegreeNames degree in options.GetValue<CasteDegreeFilterOption, List<AcademicDegreeNames>>())
+                {
+                    mDegree.Add(degree);
+                }
+            }
+
+            public bool HasAnyDegree(SimDescription sim, List<AcademicDegreeNames> degrees)
+            {
+                if (sim.CareerManager == null || sim.CareerManager.DegreeManager == null)
+                {
+                    return false;
+                }
+
+                foreach (AcademicDegreeNames degree in degrees)
+                {
+                    if (sim.CareerManager.DegreeManager.HasCompletedDegree(degree)) return true;
+                }
+
+                return false;
+            }
+
+            public bool HasAllDegrees(SimDescription sim, List<AcademicDegreeNames> degrees)
+            {
+                if (sim.CareerManager == null || sim.CareerManager.DegreeManager == null)
+                {
+                    return false;
+                }
+
+                foreach (AcademicDegreeNames degree in degrees)
+                {
+                    if (!sim.CareerManager.DegreeManager.HasCompletedDegree(degree)) return false;
+                }
+
+                return true;
             }
 
             public bool HasAnyCareer(SimDescription sim, List<OccupationNames> careers)

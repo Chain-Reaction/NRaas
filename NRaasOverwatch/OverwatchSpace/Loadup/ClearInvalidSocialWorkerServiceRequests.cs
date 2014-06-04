@@ -22,24 +22,25 @@ using System.Text;
 
 namespace NRaas.OverwatchSpace.Loadup
 {
-    public class ClearInvalidTimeTravelerServiceRequests : ImmediateLoadupOption
+    public class ClearInvalidSocialWorkerServiceRequests : ImmediateLoadupOption
     {
         public override string GetTitlePrefix()
         {
-            return "ClearInvalidTimeTravelerServiceRequests";
+            return "ClearInvalidSocialWorkerServiceRequests";
         }
 
         public override void OnWorldLoadFinished()
         {
             Overwatch.Log(GetTitlePrefix());
 
-            TimeTraveler service = TimeTraveler.Instance;
+            SocialWorkerChildAbuse service = SocialWorkerChildAbuse.Instance;
             List<ulong> remove = new List<ulong>();
             if (service != null)
             {
                 foreach (KeyValuePair<ulong, Service.ServiceRequest> pair in service.mLotsRequested)
                 {
-                    if (!service.mTimeTravelerServiceRequests.ContainsKey(pair.Key))
+                    Lot lot = LotManager.GetLot(pair.Key);
+                    if (lot == null || (lot != Household.ActiveHouseholdLot))
                     {
                         remove.Add(pair.Key);
                     }
@@ -56,7 +57,7 @@ namespace NRaas.OverwatchSpace.Loadup
                     {
                         service.mLotsRequested.Remove(num);
                     }
-                    Overwatch.Log("Removed invalid Time Traveler service request");
+                    Overwatch.Log("Removed invalid Social Worker service request");
                 }
             }
         }

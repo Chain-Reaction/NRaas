@@ -654,6 +654,21 @@ namespace NRaas.CommonSpace.Helpers
             return null;
         }
 
+        // From ManagerCareer in SP. Seems fitting here...
+        public static bool IsCoworkerOrBoss(Occupation career, SimDescription sim)
+        {
+            if (career == null) return false;
+
+            if (career.Boss == sim) return true;
+
+            if (career.Coworkers != null)
+            {
+                if (career.Coworkers.Contains(sim)) return true;
+            }
+
+            return false;
+        }
+
         public abstract class RepairGenealogy
         {
             public delegate void Logger(string text);

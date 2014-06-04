@@ -637,7 +637,7 @@ namespace NRaas.StoryProgressionSpace.Helpers
                 newSim.LastName = dad.LastName;
             }
 
-            if (string.IsNullOrEmpty(newSim.LastName))
+            if (!updateGenealogy && Manager.GetValue<CustomNamesOnlyOption<TManager>, bool>())
             {
                 newSim.LastName = LastNameListBooter.GetRandomName(!Manager.GetValue<CustomNamesOnlyOption<TManager>, bool>(), newSim.Species, newSim.IsFemale);
             }

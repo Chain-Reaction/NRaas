@@ -13,6 +13,7 @@ using NRaas.StoryProgressionSpace.Personalities;
 using NRaas.StoryProgressionSpace.Scoring;
 using NRaas.StoryProgressionSpace.Scenarios.Romances;
 using NRaas.StoryProgressionSpace.Scenarios.Pregnancies;
+using NRaas.StoryProgressionSpace.Situations;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -433,6 +434,102 @@ namespace NRaas
                 Common.Exception(actor, target, e);
                 return true;
             }
+        }
+
+        // Externalized to Tagger
+        // Oh dear this is hacky, someone teach me to reflect custom types? :P
+        public static Dictionary<string, object> GetNPCPartyInvolvingLot(Lot lot)
+        {
+            if (lot == null || lot.ObjectId == ObjectGuid.InvalidObjectGuid)
+            {
+                return null;
+            }
+
+            if (lot.Household != null)
+            {
+                Dictionary<string, object> dic = new Dictionary<string, object>();
+                foreach (HousePartySituation sit in Situation.GetSituations<HousePartySituation>())
+                {
+                    if (sit.Lot == lot)
+                    {
+                        dic.Add("Host", sit.Host);
+                        dic.Add("StartTime", Common.LocalizeEAString(false, "Gameplay/MapTags/NpcPartyMapTag:Time", new object[] { sit.StartTime }));
+                        dic.Add("DressCode", sit.GetClothingStyle().ToString());
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        // Externalized to Tagger
+        public static string GetLocalizedDebtAndNetworth(SimDescription sim)
+        {
+            if (sim == null || !sim.IsValidDescription)
+            {
+                return "";
+            }
+
+            string str = "";
+            if (!SimTypes.IsSpecial(sim))
+            {
+                int debt = NRaas.StoryProgression.Main.GetValue<DebtOption, int>(sim.Household);
+                if (debt > 0)
+                {
+                    str += Common.Localize("Status:Debt", sim.IsFemale, new object[] { debt });
+                }
+
+                str += Common.Localize("Status:NetWorth", sim.IsFemale, new object[] { NRaas.StoryProgression.Main.GetValue<NetWorthOption, int>(sim.Household) });
+            }
+
+            return str;
+        }
+
+        // Externalized to Tagger
+        public static bool IsPersonalityLeader(SimDescription sim)
+        {
+            if (sim == null || !sim.IsValidDescription)
+            {
+                return false;
+            }
+
+            if (NRaas.StoryProgression.Main.Personalities.GetClanLeadership(sim).Count > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Externalized to Tagger
+        public static List<string> FetchLocalizedPersonalityInfo(SimDescription sim)
+        {
+            if (sim == null || !sim.IsValidDescription)
+            {
+                return null;
+            }
+
+            List<string> info = new List<string>();
+
+            List<SimPersonality> clans = NRaas.StoryProgression.Main.Personalities.GetClanLeadership(sim);
+            if (clans.Count > 0)
+            {
+                foreach (SimPersonality personality in clans)
+                {
+                    info.Add(Common.Localize("Status:Leader", personality.IsFemaleLocalization(), new object[] { personality.GetLocalizedName() }));
+                }
+            }
+
+            clans = NRaas.StoryProgression.Main.Personalities.GetClanMembership(sim, false);
+            if (clans.Count > 0)
+            {
+                foreach (SimPersonality personality in clans)
+                {
+                    info.Add(Common.Localize("Status:Member", personality.IsFemaleLocalization(), new object[] { personality.GetLocalizedName() }));
+                }
+            }
+
+            return info;
         }
 
         public class Stats : IScoringGenerator

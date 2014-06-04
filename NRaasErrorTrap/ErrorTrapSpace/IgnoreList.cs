@@ -52,7 +52,7 @@ namespace NRaas.ErrorTrapSpace
         {
             try
             {
-                // Register bouncincg the EA Role Manager prior to switching it out
+                // Register bouncing the EA Role Manager prior to switching it out
                 AddIgnored(typeof(NullReferenceException), "RoleManager:VerifyRoleGivingObjectRoles ()", true, false);
 
                 // Error regarding the bird cage at the Pet Store
@@ -65,6 +65,12 @@ namespace NRaas.ErrorTrapSpace
 
                 // Routing Error
                 AddIgnored(typeof(SacsErrorException), "StateMachineClient:CheckForException", false, true);
+
+                // Moon Dial Errors
+                AddIgnored(typeof(ArgumentOutOfRangeException), "Sims3.Gameplay.Objects.Decorations.MoonDial:DoReset", false, false);
+                AddIgnored(typeof(ArgumentOutOfRangeException), "Sims3.Gameplay.Objects.Decorations.MoonDial:OnStartup", false, false);
+                AddIgnored(typeof(IndexOutOfRangeException), "Sims3.Gameplay.Objects.Decorations.MoonDial:DoReset", false, false);
+                AddIgnored(typeof(IndexOutOfRangeException), "Sims3.Gameplay.Objects.Decorations.MoonDial:OnStartup", false, false);               
                 
                 /*
                 AddIgnored(typeof(NullReferenceException), "CarNpcManager:DriveAwayInNpcCar (", true);
@@ -138,7 +144,7 @@ namespace NRaas.ErrorTrapSpace
                 fullReset = true;
                 return true;
             }
-            */
+            */                 
 
             Dictionary<string, Ignore> ignore;
             if (sIgnored.TryGetValue(type, out ignore))

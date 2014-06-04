@@ -67,6 +67,20 @@ namespace NRaas
 
         public static void ResetSettings()
         {
+            foreach (Service service in Services.AllServices)
+            {
+                ServiceSettingKey key;
+                if (Register.Settings.serviceSettings.TryGetValue(service.ServiceType, out key))
+                {
+                    if (key.tuningDefault == null)
+                    {
+                        ServiceSettingKey def = new ServiceSettingKey(service);
+                        key.tuningDefault = def;
+                    }
+                    SetServiceTuningFromKey(service, key.tuningDefault);
+                }
+            }
+
             sSettings = null;
         }
 
@@ -273,9 +287,12 @@ namespace NRaas
             {
                 ServiceSettingKey key;
                 if(Register.Settings.serviceSettings.TryGetValue(service.ServiceType, out key))
-                {                    
-                    ServiceSettingKey def = new ServiceSettingKey(service);
-                    key.tuningDefault = def;
+                {
+                    if (key.tuningDefault == null)
+                    {
+                        ServiceSettingKey def = new ServiceSettingKey(service);
+                        key.tuningDefault = def;
+                    }
                     SetServiceTuningFromKey(service, key);
                 }                
             }           
@@ -293,6 +310,23 @@ namespace NRaas
                 spec.Ages = key.validAges;
                 spec.UseHoverbot = key.useBots;
                 spec.UseServobot = key.useBots;
+
+                if (key.tuningDefault != null && key.tuningDefault.useBots && key.tuningDefault.uniforms.Count > 0 && GameUtils.GetCurrentWorld() == WorldName.FutureWorld)
+                {
+                    int defaults = (int)WorldName.Undefined;
+                    int bot = (int)WorldName.FutureWorld;
+
+                    // have to switch the uniforms
+                    if (!key.useBots)
+                    {
+                        spec.Uniforms[bot] = key.tuningDefault.uniforms[defaults];
+                    }
+                    else if (key.useBots)
+                    {
+                        spec.Uniforms[bot] = key.tuningDefault.uniforms[bot];
+                    }
+                }
+
                 ServiceNPCSpecifications.sServiceSpecifications[service.ServiceType.ToString()] = spec;
             }            
         }

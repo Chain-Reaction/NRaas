@@ -55,7 +55,11 @@ namespace NRaas.RetunerSpace.Options.Socials
             results.Add(new AgeSetting(mData));
             results.Add(new PoolSetting(mData));
             results.Add(new CostSetting(mData));
-            results.Add(new ReoccurrenceSetting(mData));            
+            results.Add(new ReoccurrenceSetting(mData));
+            if (GameUtils.IsFutureWorld())
+            {
+                results.Add(new UseBotsSetting(mData));
+            }
 
             return results;
         }

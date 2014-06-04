@@ -36,7 +36,10 @@ namespace NRaas.WoohooerSpace.Options.Woohoo
             }
             set
             {
-                NRaas.Woohooer.Settings.mWoohootyTextAutonomous[SpeciesIndex] = value;
+                if (SpeciesIndex == 0)
+                {
+                    NRaas.Woohooer.Settings.mWoohootyTextAutonomous[SpeciesIndex] = value;
+                }
             }
         }
 

@@ -99,6 +99,24 @@
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
       <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultFairyEx.cs">
+      <Link>CommonSpace\Helpers\OccultFairyEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Persistence.cs">
       <Link>CommonSpace\Helpers\Persistence.cs</Link>
     </Compile>
@@ -177,6 +195,9 @@
     <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
       <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Replacers\SocialRHSReplacer.cs">
+      <Link>CommonSpace\Replacers\SocialRHSReplacer.cs</Link>
+    </Compile>
     <Compile Include="..\nraas\selection\CommonSelection.cs">
       <Link>CommonSpace\Selection\CommonSelection.cs</Link>
     </Compile>
@@ -191,9 +212,10 @@
     <Compile Include="TempestSpace\Booters\BySeasonBooter.cs" />
     <Compile Include="TempestSpace\Booters\WeatherBooter.cs" />
     <Compile Include="TempestSpace\Booters\TemperatureBooter.cs" />
-    <Compile Include="TempestSpace\Helpers\MoneyTreeEx.cs" />
-    <Compile Include="TempestSpace\Helpers\HarvestPlantEx.cs" />
+    <Compile Include="TempestSpace\Helpers\CommonSocials.cs" />
+    <Compile Include="TempestSpace\Helpers\FireplaceEx.cs" />
     <Compile Include="TempestSpace\Helpers\PercipitationData.cs" />
+    <Compile Include="TempestSpace\Helpers\SprinklerEx.cs" />
     <Compile Include="TempestSpace\Helpers\WeatherData.cs" />
     <Compile Include="TempestSpace\Helpers\WeatherProfile.cs" />
     <Compile Include="TempestSpace\Helpers\WeatherSettings.cs" />
@@ -201,11 +223,11 @@
     <Compile Include="TempestSpace\Helpers\HolidayManagerEx.cs" />
     <Compile Include="TempestSpace\Helpers\SeasonWatch.cs" />
     <Compile Include="TempestSpace\Helpers\WeatherWatch.cs" />
-    <Compile Include="TempestSpace\Interactions\HarvestEx.cs" />
     <Compile Include="TempestSpace\Interactions\PlantObjectHereEx.cs" />
     <Compile Include="TempestSpace\Interactions\PrimaryInteraction.cs" />
     <Compile Include="TempestSpace\Options\ExportTuning.cs" />
     <Compile Include="TempestSpace\Options\DebuggingSetting.cs" />
+    <Compile Include="TempestSpace\Options\Holidays\ChanceOfOccultItemTrickOrTreat.cs" />
     <Compile Include="TempestSpace\Options\Holidays\IHolidayOption.cs" />
     <Compile Include="TempestSpace\Options\Holidays\Seasons\AllowSchool.cs" />
     <Compile Include="TempestSpace\Options\Holidays\Seasons\CurrentDay.cs" />
@@ -219,6 +241,7 @@
     <Compile Include="TempestSpace\Options\Holidays\Seasons\AddDay.cs" />
     <Compile Include="TempestSpace\Options\Holidays\AllowHolidayParties.cs" />
     <Compile Include="TempestSpace\Options\AllSeasonListingOption.cs" />
+    <Compile Include="TempestSpace\Options\RemoveLeavesInWinter.cs" />
     <Compile Include="TempestSpace\Options\SeasonListingOption.cs" />
     <Compile Include="TempestSpace\Options\SuppressInsectInWinter.cs" />
     <Compile Include="TempestSpace\Options\Plants\HailKillsPlants.cs" />

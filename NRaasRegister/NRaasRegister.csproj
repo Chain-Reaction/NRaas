@@ -253,9 +253,9 @@
     <Compile Include="RegisterSpace\Options\Service\ServiceListingOption.cs" />
     <Compile Include="RegisterSpace\Options\Service\ServiceSettingKey.cs" />
     <Compile Include="RegisterSpace\Options\Service\UseBotsSetting.cs" />
+    <Compile Include="RegisterSpace\Options\Tourists\AllowTourists.cs" />
     <Compile Include="RegisterSpace\Options\Tourists\TouristWorldSetting.cs" />
     <Compile Include="RegisterSpace\Options\AllowImmigration.cs" />
-    <Compile Include="RegisterSpace\Options\AllowTourists.cs" />
     <Compile Include="RegisterSpace\Options\AllowResidentAssignment.cs" />
     <Compile Include="RegisterSpace\Options\GlobalRoles\RemoveBySim.cs" />
     <Compile Include="RegisterSpace\Options\GlobalRoles\SelectUniversityMascot.cs" />
@@ -263,7 +263,6 @@
     <Compile Include="RegisterSpace\Options\GlobalRoles\RemoveSpecialMerchant.cs" />
     <Compile Include="RegisterSpace\Options\GlobalRoles\SelectSpecialMerchant.cs" />
     <Compile Include="RegisterSpace\Options\RoleGiver\AllowAssignment.cs" />
-    <Compile Include="RegisterSpace\Options\Tourists\AllowHomeworldTourists.cs" />
     <Compile Include="RegisterSpace\Options\Tourists\TouristAmount.cs" />
     <Compile Include="RegisterSpace\Options\Tourists\TouristChanceOfLeaving.cs" />
     <Compile Include="RegisterSpace\Options\DisableServiceCleanup.cs" />

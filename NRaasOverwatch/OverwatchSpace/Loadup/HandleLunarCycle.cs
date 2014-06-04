@@ -12,8 +12,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
-using Sims3.Gameplay.Objects.Appliances;
-using Sims3.Gameplay.Objects.Register;
+using Sims3.Gameplay.Objects.Decorations;
 using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.UI;
@@ -63,8 +62,30 @@ namespace NRaas.OverwatchSpace.Loadup
 
                 if (SimClock.HoursPassedOfDay >= (World.GetSunsetTime() + LunarCycleManager.kLunarEffectsDelayHours))
                 {
-                    LunarCycleManager.TriggerLunarLighting();
+                    if (!Overwatch.Settings.mDisableFullMoonLighting)
+                    {
+                        LunarCycleManager.TriggerLunarLighting();
+                    }
                 }
+            }
+
+            if (Overwatch.Settings.mDisableFullMoonLighting)
+            {
+                AlarmManager.Global.RemoveAlarm(LunarCycleManager.mLunarEffectsAlarm);
+                LunarCycleManager.mLunarEffectsAlarm = AlarmHandle.kInvalidHandle;
+            }
+
+            foreach (MoonDial dial in Sims3.Gameplay.Queries.GetObjects<MoonDial>())
+            {
+                try
+                {
+                    if (dial.mLunarFXLookUp.Length > Overwatch.Settings.mCurrentPhaseIndex)
+                    {
+                        dial.StartLunarFX(dial.mLunarFXLookUp[Overwatch.Settings.mCurrentPhaseIndex]);
+                    }
+                }
+                catch
+                { }
             }
 
             Sims3.UI.Responder.Instance.OptionsModel.OptionsChanged += OnOptionsChanged;
@@ -210,6 +231,28 @@ namespace NRaas.OverwatchSpace.Loadup
             if (model.LunarUpdate != null)
             {
                 model.LunarUpdate((uint)World.GetLunarPhase());
+            }
+
+            if (Overwatch.Settings.mDisableFullMoonLighting)
+            {
+                if (LunarCycleManager.mLunarEffectsAlarm != AlarmHandle.kInvalidHandle)
+                {
+                    AlarmManager.Global.RemoveAlarm(LunarCycleManager.mLunarEffectsAlarm);
+                    LunarCycleManager.mLunarEffectsAlarm = AlarmHandle.kInvalidHandle;
+                }
+            }
+
+            foreach (MoonDial dial in Sims3.Gameplay.Queries.GetObjects<MoonDial>())
+            {
+                try
+                {
+                    if (dial.mLunarFXLookUp.Length > Overwatch.Settings.mCurrentPhaseIndex)
+                    {
+                        dial.StartLunarFX(dial.mLunarFXLookUp[Overwatch.Settings.mCurrentPhaseIndex]);
+                    }
+                }
+                catch
+                { }
             }
 
             if (choices != null)
