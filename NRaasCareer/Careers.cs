@@ -66,6 +66,22 @@ namespace NRaas
             {
                 Sim.kTeenEndCurfewHour = 3;
             }
+
+            // Fix EA's genius wake up times            
+            foreach (Career career in CareerManager.CareerList)
+            {               
+                foreach(KeyValuePair<string, Dictionary<int, CareerLevel>> data in career.CareerLevels)
+                {                    
+                    foreach (KeyValuePair<int, CareerLevel> data2 in data.Value)
+                    {                        
+                        if (data2.Value.StartTime - data2.Value.WakeupTime == 1f)
+                        {                           
+                            data2.Value.WakeupTime = data2.Value.StartTime - 2f;
+                        }
+                    }
+                }                
+            }
+            
         }
 
         public static PersistedSettings Settings

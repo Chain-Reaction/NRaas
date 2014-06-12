@@ -83,6 +83,8 @@ namespace NRaas.TravelerSpace.Options
 
                 SeasonsManager.Shutdown();
 
+                SeasonsManager.sSeasonsValidForWorld = SeasonsManager.Validity.Invalid;
+
                 foreach (MotiveTuning tuning in MotiveTuning.GetAllTunings(CommodityKind.Temperature))
                 {
                     tuning.Universal = false;

@@ -45,6 +45,9 @@ namespace NRaas.TempestSpace
 		[Tunable, TunableComment("Whether to remove fallen leaves on lots in Winter")]
 		protected static bool kRemoveLeavesInWinter = false;
 
+        [Tunable, TunableComment("Percent chance occults will give occult items during trick or treating")]
+        protected static int kChanceOccultItemTrickOrTreat = 50;
+
         public int mHailKillsHarvestables = kHailKillsHarvestables;
 
         public int mHailKillsPlants = kHailKillsPlants;
@@ -54,6 +57,8 @@ namespace NRaas.TempestSpace
         public bool mAllowHolidayParties = kAllowHolidayParties;
 
 		public bool mRemoveLeavesInWinter = kRemoveLeavesInWinter;
+
+        public int mChanceOccultItemTrickOrTreat = kChanceOccultItemTrickOrTreat;
 
         Dictionary<Season, HolidaySettings> mHolidaySettings = new Dictionary<Season, HolidaySettings>();
 
@@ -128,7 +133,7 @@ namespace NRaas.TempestSpace
             }
             else
             {
-                day = ((int)length + day) + 1;
+                day = ((int)length + day);
 
                 if (day < 0) return 0;
             }

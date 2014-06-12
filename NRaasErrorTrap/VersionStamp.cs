@@ -44,11 +44,9 @@ namespace NRaas
          */
 
         /* Changes
-         *
-         * (JunJayMdM) Added dereferencing for "FVShoppingRegister"
-         * (JunJayMdM) Added dereferencing for "BotShopRegister"
+         *         
          */
         
-        public static readonly int sVersion = 98;
+        public static readonly int sVersion = 99;
     }
 }

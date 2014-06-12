@@ -149,7 +149,7 @@ namespace NRaas.TempestSpace.Helpers
 					}
 				}
 			}
-		}
+		}        
 
         protected static void ApplySpawnerSuppression(bool suppress)
         {

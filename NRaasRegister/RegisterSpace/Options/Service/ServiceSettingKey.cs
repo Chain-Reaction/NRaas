@@ -13,15 +13,17 @@ namespace NRaas.RegisterSpace.Options.Service
     [Persistable]
     public class ServiceSettingKey : IPersistence
     {
-        private ServiceType type;
+        public ServiceType type;
         public CASAgeGenderFlags validAges;
         public int numInPool = 0;
         public int cost = 0;
         public bool reoccuring = false;
-        public bool useBots = false;        
+        public bool useBots = false;
+        [Persistable(false)]
+        public Dictionary<int, string[]> uniforms;
 
         [Persistable(false)]
-        public ServiceSettingKey tuningDefault;
+        public ServiceSettingKey tuningDefault = null;
        
         public ServiceSettingKey()
         { }
@@ -33,6 +35,12 @@ namespace NRaas.RegisterSpace.Options.Service
             cost = service.Tuning.kCost;
             reoccuring = service.Tuning.kIsRecurrent;
             useBots = Sims3.Gameplay.Services.ServiceNPCSpecifications.ShouldUseServobot(service.ServiceType.ToString());
+
+            ServiceNPCSpecifications.ServiceSpecifications spec;
+            if (ServiceNPCSpecifications.sServiceSpecifications.TryGetValue(service.ServiceType.ToString(), out spec))
+            {
+                uniforms = spec.Uniforms;
+            }
         }
         public ServiceSettingKey(Sims3.Gameplay.Services.Service service, CASAgeGenderFlags flags, int poolSetting, int serviceCost, bool reoccur, bool bots)
         {
@@ -53,13 +61,11 @@ namespace NRaas.RegisterSpace.Options.Service
 
         public List<CASAgeGenderFlags> AgeSpeciesToList()
         {
-            List<CASAgeGenderFlags> results = new List<CASAgeGenderFlags>();
-
-            ServiceSettingKey source = this; // this.tuningDefault == null ? this : this.tuningDefault;
+            List<CASAgeGenderFlags> results = new List<CASAgeGenderFlags>();            
 
             foreach (CASAgeGenderFlags ageSpecies in Enum.GetValues(typeof(CASAgeGenderFlags)))
             {
-                if ((source.validAges & ageSpecies) == ageSpecies)
+                if ((this.validAges & ageSpecies) == ageSpecies)
                 {
                     if (ageSpecies != CASAgeGenderFlags.None)
                     {
@@ -128,17 +134,19 @@ namespace NRaas.RegisterSpace.Options.Service
                 if (settings.Exists("UseBots") && GameUtils.GetCurrentWorld() == WorldName.FutureWorld)
                 {
                     useBots = settings.GetBool("UseBots", false);
-                }
+                }                
             }
         }
 
         public void Export(Persistence.Lookup settings)
         {
-            if (this.tuningDefault != null)
-            {
+            //Common.Notify("Register:Export");
+            //if (tuningDefault != null)
+            //{
+              //  Common.Notify("tuningDefault not null");
                 settings.Add("ServiceType", type.ToString());
 
-                List<CASAgeGenderFlags> ages = this.AgeSpeciesToList();
+                List<CASAgeGenderFlags> ages = AgeSpeciesToList();
                 List<string> agesString = new List<string>();
                 foreach (CASAgeGenderFlags ageSpecies in ages)
                 {
@@ -157,7 +165,15 @@ namespace NRaas.RegisterSpace.Options.Service
                 settings.Add("Cost", cost);
 
                 settings.Add("UseBots", useBots);
+                /*
             }
+            else
+            {
+                Common.Notify("Tuning def null");
+
+                Common.Notify(type.ToString());
+            }
+                 */
         }
 
         public string PersistencePrefix
@@ -165,5 +181,42 @@ namespace NRaas.RegisterSpace.Options.Service
             get { return type.ToString(); }
         }
 
+        public override string ToString()
+        {
+            return ToXMLString(null);
+        }
+
+        public string ToXMLString(ServiceSettingKey key)
+        {
+            string result = null;
+
+            result += "  <Service>";
+
+            result += Common.NewLine + "    <Name>" + type.ToString() + "</Name>";
+
+            List<CASAgeGenderFlags> ages = AgeSpeciesToList();
+            List<string> agesString = new List<string>();
+            foreach (CASAgeGenderFlags ageSpecies in ages)
+            {
+                agesString.Add(ageSpecies.ToString());
+            }
+
+            if (agesString.Count > 0)
+            {
+                result += Common.NewLine + "    <ValidAges>" + String.Join(",", agesString.ToArray()) + "</ValidAges>";                
+            }
+
+            result += Common.NewLine + "    <Reoccuring>" + reoccuring + "</Reoccuring>";
+
+            result += Common.NewLine + "    <PoolSize>" + numInPool + "</PoolSize>";
+
+            result += Common.NewLine + "    <Cost>" + cost + "</Cost>";
+
+            result += Common.NewLine + "    <useBots>" + useBots + "</useBots>";            
+
+            result += Common.NewLine + "  </Service>";
+
+            return result;
+        }
     }
 }

@@ -305,6 +305,8 @@
     <Compile Include="OverwatchSpace\Helpers\AgingManagerEx.cs" />
     <Compile Include="OverwatchSpace\Helpers\AgingStateEx.cs" />
     <Compile Include="OverwatchSpace\Helpers\CommonSocials.cs" />
+    <Compile Include="OverwatchSpace\Helpers\HarvestPlantEx.cs" />
+    <Compile Include="OverwatchSpace\Helpers\MoneyTreeEx.cs" />
     <Compile Include="OverwatchSpace\Helpers\ResortManagerCareerProtection.cs" />
     <Compile Include="OverwatchSpace\Helpers\MailboxEx.cs" />
     <Compile Include="OverwatchSpace\Helpers\FilePersistenceEx.cs" />
@@ -312,6 +314,7 @@
     <Compile Include="OverwatchSpace\Interactions\AgeUpEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\GetMailEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\GetSmeltEx.cs" />
+    <Compile Include="OverwatchSpace\Interactions\HarvestEx.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupAging.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupAutonomy.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupBadPostures.cs" />
@@ -333,6 +336,7 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupGigs.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupHarvestPlant.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupHomework.cs" />
+    <Compile Include="OverwatchSpace\Loadup\ClearInvalidSocialWorkerServiceRequests.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupJigs.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupKnownRecipes.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupMissingLotSavedData.cs" />
@@ -388,6 +392,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="OverwatchSpace\Settings\CleanupVehiclesHourlySetting.cs" />
+    <Compile Include="OverwatchSpace\Settings\DisableFullMoonLightingSetting.cs" />
     <Compile Include="OverwatchSpace\Settings\RouteFailTestMinutesSetting.cs" />
     <Compile Include="OverwatchSpace\Settings\MinimumRouteFailSetting.cs" />
     <Compile Include="OverwatchSpace\Startup\StartupOption.cs" />

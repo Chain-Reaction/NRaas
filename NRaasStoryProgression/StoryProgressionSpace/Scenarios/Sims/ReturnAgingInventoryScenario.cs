@@ -96,8 +96,10 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 
         protected override bool PrivateUpdate(ScenarioFrame frame)
         {
+            if (Sim == null) return false;
+
             RetainedInventorySimData data = GetData<RetainedInventorySimData>(Sim);
-            if (data == null)
+            if (data == null || data.mInventory == null)
             {
                 IncStat("Retention Missing");
                 return false;
@@ -113,6 +115,8 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Sims
 
             foreach (GameObject obj in data.mInventory)
             {
+                if (mSim.Inventory == null) continue;
+
                 mSim.Inventory.IgnoreInventoryValidation = true;
                 try
                 {

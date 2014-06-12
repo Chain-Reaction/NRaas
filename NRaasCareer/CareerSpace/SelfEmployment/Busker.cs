@@ -38,6 +38,7 @@ namespace NRaas.CareerSpace.SelfEmployment
             new Common.DelayedEventListener(EventTypeId.kPlayedGuitar, OnPlayedInstrument);
             new Common.DelayedEventListener(EventTypeId.kPlayedPiano, OnPlayedInstrument);
             new Common.DelayedEventListener(EventTypeId.kPlayedBassGuitar, OnPlayedInstrument);
+            new Common.DelayedEventListener(EventTypeId.kPlayedLaserHarp, OnPlayedInstrument);
         }
 
         public static void OnPlayedInstrument(Event e)
@@ -62,6 +63,9 @@ namespace NRaas.CareerSpace.SelfEmployment
                     break;
                 case EventTypeId.kPlayedPiano:
                     instrumentSkill = SkillNames.Piano;
+                    break;
+                case EventTypeId.kPlayedLaserHarp:
+                    instrumentSkill = SkillNames.LaserHarp;
                     break;
             }
 

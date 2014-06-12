@@ -188,9 +188,7 @@ namespace NRaas
         * Listing during "Transfer Genetics" that determines which facial regions to copy (or simply all of them)
 
         * Ability to add multiple body hair to the same location
-        ** Ability to add multiple facial hair
-
-        * Add random Unicorn Horn, Beard when the occult is applied to a horse
+        ** Ability to add multiple facial hair        
 
         * Alter "Go To Work" to operate against role sims. Possible ?
 
@@ -274,6 +272,6 @@ namespace NRaas
 
         /*         
          */
-        public static readonly int sVersion = 130;
+        public static readonly int sVersion = 131;
     }
 }

@@ -60,6 +60,9 @@
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
       <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\CASParts.cs">
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\EnumInjection.cs">
       <Link>CommonSpace\Helpers\EnumInjection.cs</Link>
     </Compile>
@@ -69,11 +72,32 @@
     <Compile Include="..\NRaas\Helpers\Inventories.cs">
       <Link>CommonSpace\Helpers\Inventories.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultGenieEx.cs">
+      <Link>CommonSpace\Helpers\OccultGenieEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
+      <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
+      <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Persistence.cs">
       <Link>CommonSpace\Helpers\Persistence.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\Relationships.cs">
+      <Link>CommonSpace\Helpers\Relationships.cs</Link>
+    </Compile>
+	<Compile Include="..\NRaas\Helpers\Roles.cs">
+      <Link>CommonSpace\Helpers\Roles.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\SimListing.cs">
       <Link>CommonSpace\Helpers\SimListing.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
+      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\Tunings.cs">
       <Link>CommonSpace\Helpers\Tunings.cs</Link>
@@ -140,22 +164,39 @@
     <Compile Include="TaggerSpace\Booters\LotTypeBooter.cs" />
     <Compile Include="TaggerSpace\Helpers\InjectionHelper.cs" />
     <Compile Include="TaggerSpace\Helpers\MapTagHelper.cs" />
+    <Compile Include="TaggerSpace\Helpers\TagDataHelper.cs" />
+    <Compile Include="TaggerSpace\Interactions\PrimaryInteraction.cs" />
     <Compile Include="TaggerSpace\MapTags\CustomTagNRaas.cs" />
+    <Compile Include="TaggerSpace\MapTags\TrackedLot.cs" />
+    <Compile Include="TaggerSpace\MapTags\TrackedSim.cs" />
+    <Compile Include="TaggerSpace\Options\AgeTags\AgeTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\AgeTags\ColorSetting.cs" />
+    <Compile Include="TaggerSpace\Options\AgeTags\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorSettingOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorTagsByAge.cs" />
+    <Compile Include="TaggerSpace\Options\ColorTagsByRelationship.cs" />
+    <Compile Include="TaggerSpace\Options\HotspotPersonalityTags.cs" />
+    <Compile Include="TaggerSpace\Options\AgeTags\IAgeTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\LotTagsSetting.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipTags\ColorSetting.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipTags\IRelationshipTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipTags\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipTags\RelationshipTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\SimTagsSetting.cs" />
     <Compile Include="TaggerSpace\Options\TagSettingKey.cs" />
     <Compile Include="TaggerSpace\Options\TagStaticData.cs" />
-    <Compile Include="TaggerSpace\Options\Tags\ColorSetting.cs" />
-    <Compile Include="TaggerSpace\Options\Tags\ITagOption.cs" />
-    <Compile Include="TaggerSpace\Options\Tags\ListingOption.cs" />
-    <Compile Include="TaggerSpace\Options\Tags\TagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTags\ColorSetting.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTags\ITagOption.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTags\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTags\TagListingOption.cs" />
     <Compile Include="TaggerSpace\PersistedSettings.cs" />
     <Compile Include="VersionStamp.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TaggerSpace\Interactions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems">
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x28EE9D383A73463E_mscorlib">
       <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
@@ -165,21 +206,26 @@
     </Reference>
     <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData">
       <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x6AC101133051BEF1_System.Xml">
       <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
     </Reference>
     <Reference Include="0x78CF6CF5304D0C4F_ScriptCore">
       <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects">
       <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xC356DF69B70ADD42_SimIFace">
       <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xF7C3ADE896D4E765_UI">
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

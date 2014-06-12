@@ -1,4 +1,6 @@
-﻿using NRaas.CommonSpace.Helpers;
+﻿using NRaas.CommonSpace.Booters;
+using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Replacers;
 using NRaas.TempestSpace;
 using NRaas.TempestSpace.Booters;
 using NRaas.TempestSpace.Helpers;
@@ -11,7 +13,7 @@ using System.Collections.Generic;
 
 namespace NRaas
 {
-    public class Tempest : Common, Common.IWorldLoadFinished, Common.IDelayedWorldLoadFinished, Common.IWorldQuit
+    public class Tempest : Common, Common.IPreLoad, Common.IWorldLoadFinished, Common.IDelayedWorldLoadFinished, Common.IWorldQuit
     {
         [Tunable, TunableComment("Scripting Mod Instantiator, value does not matter, only its existence")]
         protected static bool kInstantiator = false;
@@ -63,9 +65,14 @@ namespace NRaas
             }
         }
 
+        public void OnPreLoad()
+        {
+            BooterLogger.AddError(SocialRHSReplacer.Perform<CommonSocials>("Trick Or Treat", "OnTrickOrTreatAccept"));
+        }
+
         public void OnWorldLoadFinished()
         {
-            kDebugging = Settings.Debugging;
+            kDebugging = Settings.Debugging;            
 
             if (sDefaultProfiles == null)
             {

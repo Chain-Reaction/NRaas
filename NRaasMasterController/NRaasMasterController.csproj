@@ -188,7 +188,7 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
       <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
@@ -525,6 +525,7 @@
     <Compile Include="MasterControllerSpace\Settings\Visibility\Object\ListingOption.cs" />
     <Compile Include="MasterControllerSpace\SimSelection.cs" />
     <Compile Include="MasterControllerSpace\Sims\Basic\ChangeScaleColor.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChangeStageName.cs" />
     <Compile Include="MasterControllerSpace\Sims\Intermediate\CopyCategoryClothing.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\SurgeryBody.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\SurgeryFace.cs" />

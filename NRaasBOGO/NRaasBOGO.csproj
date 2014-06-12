@@ -48,7 +48,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-	<Compile Include="..\NRaas\Common.cs">
+    <Compile Include="..\NRaas\Common.cs">
       <Link>CommonSpace\Common.cs</Link>
     </Compile>
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
@@ -127,12 +127,14 @@
       <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
     </Compile>
     <Compile Include="BOGO.cs" />
+    <Compile Include="BOGOSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="BOGOSpace\PersistedSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VersionStamp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BOGOSpace\" />
-    <Folder Include="CommonSpace\" />
+    <Folder Include="BOGOSpace\Helpers\" />
+    <Folder Include="BOGOSpace\Options\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems">

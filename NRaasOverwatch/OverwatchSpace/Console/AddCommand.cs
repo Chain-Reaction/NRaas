@@ -30,7 +30,7 @@ namespace NRaas.OverwatchSpace.Console
         {
             while (true)
             {
-                string command = StringInputDialog.Show(Name, Common.Localize("AddConsoleCommand:Prompt"), "");
+                string command = StringInputDialog.Show(Name, Common.Localize("AddConsoleCommand:Prompt"), "", false, 1024);
                 if (string.IsNullOrEmpty(command)) return OptionResult.SuccessRetain;
 
                 if (Overwatch.Settings.mStoredCommands.Contains(command))

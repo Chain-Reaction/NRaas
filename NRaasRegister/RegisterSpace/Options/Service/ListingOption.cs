@@ -51,7 +51,7 @@ namespace NRaas.RetunerSpace.Options.Socials
                 ServiceNPCSpecifications.ServiceSpecifications specs;
                 if (ServiceNPCSpecifications.sServiceSpecifications.TryGetValue(data.ServiceType.ToString(), out specs))
                 {
-                    if (GameUtils.IsInstalled(specs.Version))
+                    if (GameUtils.IsInstalled(specs.Version) && data.ServiceType != ServiceType.TimeTraveler)
                     {
                         ServiceListingOption option = new ServiceListingOption(data);
                         results.Add(option);

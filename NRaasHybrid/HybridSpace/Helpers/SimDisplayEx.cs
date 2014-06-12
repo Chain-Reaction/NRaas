@@ -146,7 +146,7 @@ namespace NRaas.HybridSpace.Helpers
 
                 if (Common.kDebugging)
                 {
-                    Common.DebugNotify("Left: " + leftExtent + "\nRight: " + rightExtent + "\nDual: " + dual + "\nLeftFactor: " + leftFactor + "\nRightFactor: " + rightFactor);
+                    //Common.DebugNotify("Left: " + leftExtent + "\nRight: " + rightExtent + "\nDual: " + dual + "\nLeftFactor: " + leftFactor + "\nRightFactor: " + rightFactor);
                 }
 
                 area.Set(sMagicMotiveSizeControlLeft + (leftFactor * ths.mMagicMotiveSizeReferenceWin.Area.Width), area.TopLeft.y, sMagicMotiveSizeControlLeft + (rightFactor * ths.mMagicMotiveSizeReferenceWin.Area.Width), area.BottomRight.y);

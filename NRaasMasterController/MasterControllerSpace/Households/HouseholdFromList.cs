@@ -313,7 +313,7 @@ namespace NRaas.MasterControllerSpace.Households
             static Dictionary<CommercialLotSubType, Lot.CommercialSubTypeData> sComercialLotTypes;
 
             public LotTypeColumn()
-                : base("NRaas.MasterController.OptionList:LotTypeTitle", "NRaas.MasterController.OptionList:LotTypeTitle", 40)
+                : base("NRaas.MasterController.OptionList:LotTypeTitle", "NRaas.MasterController.OptionList:LotTypeTitle", /*40*/ 70)
             { }
 
             public override ObjectPicker.ColumnInfo GetValue(LotHouseItem item)

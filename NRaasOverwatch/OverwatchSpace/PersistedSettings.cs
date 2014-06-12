@@ -101,6 +101,11 @@ namespace NRaas.OverwatchSpace
         [Tunable, TunableComment("The number of sim-minutes from the start of the route failure to when the sim will be reset")]
         public static int kRouteFailTestMinutes = 30;
 
+        [Tunable, TunableComment("Whether to cleanup vehicles hourly")]
+        public static bool kCleanupVehiclesHourly = false;
+        [Tunable, TunableComment("Whether to disable the full moon lighting effect")]
+        public static bool kDisableFullMoonLighting = false;
+
         public bool mTestingCheatsEnabled = kTestingCheatsEnabled;
         public bool mAffectActiveLot = kAffectActiveLot;        
         public bool mResetAllGnomes = kResetAllGnomes;
@@ -140,7 +145,8 @@ namespace NRaas.OverwatchSpace
         public int mMinimumRouteFail = kMinimumRouteFail;
         public int mRouteFailTestMinutesV2 = kRouteFailTestMinutes;
 
-        public bool mCleanupVehiclesHourly = false;
+        public bool mCleanupVehiclesHourly = kCleanupVehiclesHourly;
+        public bool mDisableFullMoonLighting = kDisableFullMoonLighting;
 
         public List<string> mAlarmCommands = new List<string>(kAlarmCommands);
         public List<string> mAutoCommands = new List<string>(kAutoCommands);
