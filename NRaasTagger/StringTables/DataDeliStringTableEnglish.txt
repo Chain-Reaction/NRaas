@@ -1,0 +1,2 @@
+<KEY>Gameplay/Excel/Venues/CommunityTypes:kOwnableDeliNRaas</KEY>
+<STR>Deli</STR>
