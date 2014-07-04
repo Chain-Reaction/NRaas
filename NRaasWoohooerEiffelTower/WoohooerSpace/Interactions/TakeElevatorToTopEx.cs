@@ -47,10 +47,10 @@ namespace NRaas.WoohooerSpace.Interactions
 
 		public void AddInteraction(Common.InteractionInjectorList interactions)
         {
-			interactions.Replace<EiffelTower, EiffelTower.TakeElevatorToTop.ElevatorDefinition>(new ElevatorDefinition (new VisitRabbitHoleEx.InteractionParameters ("Gameplay/Objects/RabbitHoles/EiffelTower:", "TakeElevatorToTop", EiffelTower.kVisitRabbitHoleTuning, Origin.FromEiffelTower)));
-			interactions.Replace<EiffelTower, EiffelTower.TakeElevatorToTop.StairsDefinition>(new StairsDefinition (new VisitRabbitHoleEx.InteractionParameters ("Gameplay/Objects/RabbitHoles/EiffelTower:", "TakeStairsToTop", EiffelTower.kVisitRabbitHoleTuning, Origin.FromEiffelTower)));
+			//interactions.Replace<EiffelTower, EiffelTower.TakeElevatorToTop.ElevatorDefinition>(new ElevatorDefinition (new VisitRabbitHoleEx.InteractionParameters ("Gameplay/Objects/RabbitHoles/EiffelTower:", "TakeElevatorToTop", EiffelTower.kVisitRabbitHoleTuning, Origin.FromEiffelTower)));
+			//interactions.Replace<EiffelTower, EiffelTower.TakeElevatorToTop.StairsDefinition>(new StairsDefinition (new VisitRabbitHoleEx.InteractionParameters ("Gameplay/Objects/RabbitHoles/EiffelTower:", "TakeStairsToTop", EiffelTower.kVisitRabbitHoleTuning, Origin.FromEiffelTower)));
 
-			//interactions.AddCustom(new TakeElevatorToTopEx.CustomInjector());
+			interactions.AddCustom(new TakeElevatorToTopEx.CustomInjector());
         }
 
 		public void OnPreLoad()
@@ -479,7 +479,7 @@ namespace NRaas.WoohooerSpace.Interactions
             }
         }*/
 
-		/*public class CustomInjector : Common.InteractionInjector<EiffelTower>
+		public class CustomInjector : Common.InteractionInjector<EiffelTower>
         {
             public CustomInjector()
             { }
@@ -489,8 +489,8 @@ namespace NRaas.WoohooerSpace.Interactions
 				EiffelTower tower = obj as EiffelTower;
 				if (tower == null) return false;
 
-				Common.RemoveInteraction<EiffelTower.TakeElevatorToTop.ElevatorDefinition>(obj);
-				Common.RemoveInteraction<EiffelTower.TakeElevatorToTop.StairsDefinition>(obj);
+				RemoveInteractionCustom<EiffelTower.TakeElevatorToTop.ElevatorDefinition>(obj);
+				RemoveInteractionCustom<EiffelTower.TakeElevatorToTop.StairsDefinition>(obj);
 
 				//Common.RemoveInteraction<VisitRabbitHoleEx.Definition>(obj);
 				base.Perform (obj, new ElevatorDefinition (new VisitRabbitHoleEx.InteractionParameters ("Gameplay/Objects/RabbitHoles/EiffelTower:", "TakeElevatorToTop", EiffelTower.kVisitRabbitHoleTuning, Origin.FromEiffelTower)), existing);
@@ -498,6 +498,21 @@ namespace NRaas.WoohooerSpace.Interactions
 				return true;
                 
             }
-		}*/
+
+			public static void RemoveInteractionCustom<DEF>(GameObject obj) where DEF : InteractionDefinition
+			{
+				if (obj.Interactions != null)
+				{
+					for (int i = 0; i < obj.Interactions.Count; i++)
+					{
+						InteractionObjectPair interactionObjectPair = obj.Interactions[i];
+						if (interactionObjectPair.InteractionDefinition is DEF)
+						{
+							obj.Interactions.RemoveAt(i);
+						}
+					}
+				}
+			}
+		}
     }
 }
