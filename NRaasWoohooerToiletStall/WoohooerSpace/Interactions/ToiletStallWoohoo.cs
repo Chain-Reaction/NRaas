@@ -92,7 +92,7 @@ namespace NRaas.WoohooerSpace.Interactions
 			}
 			protected override bool Satisfies(Sim actor, Sim target, ToiletStall obj, bool isAutonomous, ref GreyedOutTooltipCallback callback)
 			{
-				return base.Satisfies(actor, target, obj, isAutonomous, ref callback) && CommonWoohoo.SatisfiesWoohoo(actor, target, "ToiletStallWooHoo", isAutonomous, true, true, ref callback);
+				return base.Satisfies (actor, target, obj, isAutonomous, ref callback) && CommonSocials.SatisfiesRomance(actor, target, "ToiletStallMakeOut ", isAutonomous, ref callback);
 			}
 			public override InteractionDefinition ProxyClone(Sim target)
 			{
@@ -177,7 +177,7 @@ namespace NRaas.WoohooerSpace.Interactions
 				return new ToiletStallWooHoo.ProxyDefinition(new ToiletStallWooHoo.TryForBabyDefinition(target));
 			}
 		}
-		/*public class LocationControl : WoohooLocationControl
+		public class LocationControl : WoohooLocationControl
 		{
 			public override CommonWoohoo.WoohooLocation Location
 			{
@@ -252,7 +252,7 @@ namespace NRaas.WoohooerSpace.Interactions
 					return null;
 				}
 			}
-		}*/
+		}
 		private static readonly InteractionDefinition MakeOutSingleton = new ToiletStallWooHoo.MakeOutDefinition();
 		private static readonly InteractionDefinition SafeSingleton = new ToiletStallWooHoo.SafeDefinition();
 		private static readonly InteractionDefinition RiskySingleton = new ToiletStallWooHoo.RiskyDefinition();
