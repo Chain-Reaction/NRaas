@@ -414,5 +414,11 @@
     <kNakedOutfitTimePortal value="False">
       <!--Whether to use the naked outfit for Time Portal-->
     </kNakedOutfitTimePortal>
+	<kAutonomousEiffelTower value="True">
+      <!--Whether to allow autonomous woohoos in the Eiffel Tower-->
+    </kAutonomousEiffelTower>
+	<kAutonomousToiletStall value="True">
+      <!--Whether to allow autonomous woohoos in Toilet Stalls-->
+    </kAutonomousToiletStall>
   </Current_Tuning>
 </base>

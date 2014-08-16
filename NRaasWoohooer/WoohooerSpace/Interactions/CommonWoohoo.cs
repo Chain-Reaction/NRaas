@@ -95,6 +95,7 @@ namespace NRaas.WoohooerSpace.Interactions
             HoverTrain,
             TimePortal,
 			EiffelTower,
+			ToiletStall
         }
 
         public void OnWorldLoadFinished()
