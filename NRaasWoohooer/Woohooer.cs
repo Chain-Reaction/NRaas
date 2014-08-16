@@ -111,6 +111,48 @@ namespace NRaas
             Conversation.ReactToSocialParams.AffectBroadcasterRoomOnly = true;
 
             AdjustAttractionTuning();
+
+            FixupProfessionalServices();
+        }
+
+        public static void FixupProfessionalServices()
+        {
+            bool ksInstalled = Common.AssemblyCheck.IsInstalled("NRaasWoohooerKamaSimtra");
+            foreach (KeyValuePair<ulong, KamaSimtraSettings.ServiceData> data in KamaSimtra.Settings.sRequests)
+            {
+                bool dispose = !ksInstalled;
+                KamaSimtraSettings.ServiceData dat = data.Value;
+                if (dat.mProfessional != 0)
+                {
+                    SimDescription proDesc = SimDescription.Find(dat.mProfessional);
+                    SimDescription clientDesc = SimDescription.Find(dat.mRequester);
+                    if (proDesc != null && proDesc.CreatedSim != null && clientDesc != null && clientDesc.CreatedSim != null)
+                    {
+                        if (proDesc.CreatedSim.LotCurrent != clientDesc.CreatedSim.LotHome)
+                        {
+                            if ((proDesc.CreatedSim.InteractionQueue != null && proDesc.CreatedSim.CurrentInteraction != null) && (proDesc.CreatedSim.RoutingComponent != null && proDesc.CreatedSim.RoutingComponent.GetDestinationLot() == clientDesc.LotHome))
+                            {
+                                proDesc.CreatedSim.InteractionQueue.CancelInteraction(proDesc.CreatedSim.CurrentInteraction, false);
+                            }
+
+                            dispose = true;
+                        }
+                    }
+                    else
+                    {
+                        dispose = true;
+                    }
+                }
+
+                if (dispose)
+                {
+                    dat.Dispose();
+                }
+                else
+                {
+                    dat.SetupAlarm();
+                }
+            }
         }
 
         protected static new void OnNewObject(Event e)

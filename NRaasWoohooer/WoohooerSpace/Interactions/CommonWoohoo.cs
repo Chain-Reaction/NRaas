@@ -213,6 +213,12 @@ namespace NRaas.WoohooerSpace.Interactions
                 Woohooer.Settings.AddCount(actor);
 
                 WoohooBuffs.Apply(actor, target, style == WoohooStyle.Risky);
+
+                KamaSimtraSettings.ServiceData data = KamaSimtra.Settings.GetServiceData(targetDesc.SimDescriptionId, true);
+                if (data != null)
+                {
+                    data.Dispose();                    
+                }
             }
         }
 

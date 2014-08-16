@@ -6,6 +6,7 @@ using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
+using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Controllers;
 using Sims3.Gameplay.Core;
@@ -13,6 +14,8 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects.Beds;
+using Sims3.Gameplay.Objects.Misc;
+using Sims3.Gameplay.Opportunities;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Situations;
 using Sims3.Gameplay.Socializing;
@@ -110,6 +113,7 @@ namespace NRaas.WoohooerSpace.Helpers
                 relation.AttractionNPCController.Dispose();
             }
         }
+        
 
         protected static void OnHouseSelected(Event e)
         {
@@ -122,7 +126,7 @@ namespace NRaas.WoohooerSpace.Helpers
         }
 
         public static bool TestEnableAttractionNPCController(Relationship relation)
-        {
+        {            
             if (relation == null) return false;
 
             GreyedOutTooltipCallback greyedOutTooltipCallback = null;

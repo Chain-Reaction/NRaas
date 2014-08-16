@@ -822,6 +822,17 @@ namespace NRaas.WoohooerSpace.Skills
 
                         if (skill.SkillLevel < 7) continue;
 
+                        if (sim.TraitManager == null) continue;
+
+                        if (sim.TraitManager.HasElement(TraitNames.LongDistanceFriend)) continue;
+
+                        Charisma cSkill = sim.SkillManager.GetSkill<Charisma>(SkillNames.Charisma);
+
+                        if (cSkill != null)
+                        {
+                            if (cSkill.IsSuperFriendly()) continue;
+                        }
+
                         if (Settings.mDailyRelationshipChange != 0)
                         {
                             foreach (Relationship relation in Relationship.Get(sim))
@@ -830,6 +841,17 @@ namespace NRaas.WoohooerSpace.Skills
                                 if (other.ChildOrBelow) continue;
 
                                 if (!SimTypes.IsEquivalentSpecies(sim, other)) continue;
+
+                                if (other.TraitManager == null) continue;
+
+                                if (other.TraitManager.HasElement(TraitNames.LongDistanceFriend)) continue;
+
+                                Charisma oCSkill = other.SkillManager.GetSkill<Charisma>(SkillNames.Charisma);
+
+                                if (oCSkill != null)
+                                {
+                                    if (oCSkill.IsSuperFriendly()) continue;
+                                }
 
                                 try
                                 {
@@ -1650,26 +1672,64 @@ namespace NRaas.WoohooerSpace.Skills
             return types;
         }
 
-        public static Dictionary<int, List<SimDescription>> GetPotentials(bool allowTeen)
+        public static void SeedServicePool(bool seedPros)
         {
-            Dictionary<int, List<SimDescription>> results = new Dictionary<int, List<SimDescription>>();
-
-            foreach(SimDescription sim in Households.Humans(Household.NpcHousehold))
+            foreach (SimDescription sim in Households.Humans(Household.NpcHousehold))
             {
                 if (!SimTypes.InServicePool(sim)) continue;
 
-                if (!sim.TeenOrAbove) continue;
+                if (Woohooer.Settings.AllowTeen(true))
+                {
+                    if (sim.ChildOrBelow) continue;
+                }
+                else
+                {
+                    if (sim.TeenOrBelow) continue;
+                }
 
+                bool done = false;                
                 if (sim.SkillManager.GetSkillLevel(StaticGuid) == -1)
                 {
                     KamaSimtra skill = sim.SkillManager.AddElement(StaticGuid) as KamaSimtra;
                     if (skill != null)
                     {
+                        done = true;
+
                         skill.ForceSkillLevelUp(RandomUtil.GetInt(1, 10));
                         skill.RendezvousActive = true;
+
+                        if (KamaSimtra.Settings.mSeedServicePool && RandomUtil.CoinFlip())
+                        {
+                            skill.WhoringActive = true;
+                        }
                     }
                 }
-            }
+
+                if (!done && seedPros)
+                {
+                    KamaSimtra skill = sim.SkillManager.GetSkill<KamaSimtra>(StaticGuid);
+                    if (skill != null)
+                    {
+                        if (KamaSimtra.Settings.mSeedServicePool && RandomUtil.CoinFlip())
+                        {
+                            skill.WhoringActive = true;
+                        }
+                    }
+                }
+                
+            }    
+        }
+
+        public static Dictionary<int, List<SimDescription>> GetPotentials(bool allowTeen)
+        {
+            return GetPotentials(allowTeen, false);
+        }
+
+        public static Dictionary<int, List<SimDescription>> GetPotentials(bool allowTeen, bool professionals)
+        {
+            Dictionary<int, List<SimDescription>> results = new Dictionary<int, List<SimDescription>>();
+
+            SeedServicePool(false);       
 
             foreach (SimDescription sim in Household.EverySimDescription())
             {
@@ -1677,8 +1737,15 @@ namespace NRaas.WoohooerSpace.Skills
                 {
                     if (sim.Teen) continue;
                 }
-                
-                if (!IsRendezvous(sim)) continue;
+
+                if (!professionals)
+                {                    
+                    if (!IsRendezvous(sim)) continue;
+                }
+                else
+                {                    
+                    if (!IsWhoring(sim)) continue;
+                }                
 
                 int level = sim.SkillManager.GetSkillLevel(StaticGuid);
                 if (level <= 0) continue;
@@ -1699,7 +1766,7 @@ namespace NRaas.WoohooerSpace.Skills
                 {
                     result = new List<SimDescription>();
                     results.Add(level, result);
-                }
+                }                
 
                 result.Add(sim);
             }
@@ -1774,6 +1841,8 @@ namespace NRaas.WoohooerSpace.Skills
 
             AddBuff(target.CreatedSim, key, !isNew);
 
+            KamaSimtraSettings.ServiceData data = KamaSimtra.Settings.GetServiceData(target.SimDescriptionId, false);
+
             if (WhoringActive)
             {
                 if ((SkillOwner.Partner != target) && 
@@ -1781,6 +1850,39 @@ namespace NRaas.WoohooerSpace.Skills
                     ((target.IsPlayableGhost) || (!target.IsDead)))
                 {
                     int payment = GetPayment();
+
+                    if (data != null && !data.mWasRandom && data.mProfessional == SkillOwner.SimDescriptionId)
+                    {
+                        Common.Notify("In correct place");
+                        payment = payment *= 2;
+                    }
+                    else
+                    {
+                        if (data == null)
+                        {
+                            Common.Notify("Null data");
+                        }
+                        else
+                        {
+                            if (!data.mWasRandom)
+                            {
+                                Common.Notify("Wasn't random");
+                            }
+                            else
+                            {
+                                Common.Notify("Was random");
+                            }
+
+                            if (data.mProfessional == SkillOwner.SimDescriptionId)
+                            {
+                                Common.Notify("mProfessional correct");
+                            }
+                            else
+                            {
+                                Common.Notify("mProfessional: " + data.mProfessional + " SkillOwner: " + SkillOwner.FullName + " - " + SkillOwner.SimDescriptionId);
+                            }
+                        }
+                    }
 
                     if (!target.Household.IsSpecialHousehold)
                     {

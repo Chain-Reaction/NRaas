@@ -1154,6 +1154,8 @@ namespace NRaas.WoohooerSpace.Interactions
 
                 if (!obj.Placed) return false;
 
+                if (!obj.InWorld) return false;
+
                 return true;
             }
 
