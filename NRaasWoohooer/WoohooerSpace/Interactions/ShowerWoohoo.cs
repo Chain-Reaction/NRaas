@@ -99,7 +99,7 @@ namespace NRaas.WoohooerSpace.Interactions
                 mSwitchOutfitHelper.Start();
                 if (WaitForBToEnterShower)
                 {
-                    Actor.RouteToObjectRadialRange(Shower, 1.5f, 4f);
+                    //Actor.RouteToObjectRadialRange(Shower, 1.5f, 4f);
                     while (Shower.SimInShower != Target)
                     {
                         if ((Target.InteractionQueue.GetCurrentInteraction() != TakeShowerInst) || Target.HasExitReason(ExitReason.Canceled))
@@ -178,7 +178,7 @@ namespace NRaas.WoohooerSpace.Interactions
 
                     if ((succeeded) && (Actor.RouteToSlot(Shower, Slot.RoutingSlot_0)))
                     {
-                        MotiveDelta[] deltaArray = new MotiveDelta[5];
+                        MotiveDelta[] deltaArray = new MotiveDelta[6];
                         deltaArray[0] = AddMotiveDelta(CommodityKind.Fun, 1500f);
                         deltaArray[1] = TakeShowerInst.AddMotiveDelta(CommodityKind.Fun, 1500f);
                         deltaArray[2] = AddMotiveDelta(CommodityKind.Social, 50f);
@@ -190,6 +190,11 @@ namespace NRaas.WoohooerSpace.Interactions
                         else
                         {
                             deltaArray[4] = AddMotiveDelta(CommodityKind.Hygiene, 800f);
+                        }
+
+                        if (Actor.SimDescription.IsMermaid)
+                        {
+                            deltaArray[5] = AddMotiveDelta(CommodityKind.MermaidDermalHydration, 800f);
                         }
 
                         Target.EnableCensor(Sim.CensorType.FullHeight);
@@ -239,6 +244,12 @@ namespace NRaas.WoohooerSpace.Interactions
                         RemoveMotiveDelta(deltaArray[0x2]);
                         TakeShowerInst.RemoveMotiveDelta(deltaArray[0x3]);
                         RemoveMotiveDelta(deltaArray[0x4]);
+
+                        if (Actor.SimDescription.IsMermaid)
+                        {
+                            RemoveMotiveDelta(deltaArray[0x5]);
+                        }
+
                         mCurrentStateMachine.RequestState("y", "Exit Working Y");
                         Target.AutoEnableCensor();
 
@@ -537,7 +548,7 @@ namespace NRaas.WoohooerSpace.Interactions
                 // Exclude Outdoor showers
                 if (obj.GetType().ToString().Contains("ShowerOutdoor")) return false;
 
-                return (obj.UseCount == 0);
+                return (obj.UseCount == 0 && obj.InWorld);
             }
 
             public override List<GameObject> GetAvailableObjects(Sim actor, Sim target, ItemTestFunction testFunc)

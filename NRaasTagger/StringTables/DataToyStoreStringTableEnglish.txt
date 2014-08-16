@@ -1,0 +1,2 @@
+<KEY>Gameplay/Excel/Venues/CommunityTypes:kOwnableToyStoreNRaas</KEY>
+<STR>Toy Store</STR>

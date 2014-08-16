@@ -34,6 +34,7 @@ namespace NRaas.WoohooerSpace
             Rendezvous,
             Tantraport,
             ScanRoom,
+            ProfessionalServices,
         }
 
         Dictionary<SimDescription,int> mScores = new Dictionary<SimDescription,int>();
@@ -55,6 +56,10 @@ namespace NRaas.WoohooerSpace
                     AddColumn(new SimPriceColumn());
                     AddColumn(new RelationshipColumn(this));
                     break;
+                case Type.ProfessionalServices:
+                    AddColumn(new SimPriceServicesColumn());
+                    AddColumn(new RelationshipColumn(this));
+                    break;
                 case Type.Matchmaker:
                 case Type.ScanRoom:
                     AddColumn(new SimAttractionColumn(mScores));
@@ -65,7 +70,7 @@ namespace NRaas.WoohooerSpace
 
         protected override void GetName(SimDescription sim, out string firstName, out string lastName)
         {
-            if (mType == Type.Rendezvous)
+            if (mType == Type.Rendezvous || mType == Type.ProfessionalServices)
             {
                 firstName = "\"" + KamaSimtra.Settings.GetAlias(sim) + "\"";
                 lastName = "";
@@ -151,6 +156,26 @@ namespace NRaas.WoohooerSpace
             public override ObjectPicker.ColumnInfo GetValue(SimDescription sim)
             {
                 int price = sim.SkillManager.GetSkillLevel(KamaSimtra.StaticGuid) * KamaSimtra.Settings.mRendezvousCostPerLevel;
+
+                return new ObjectPicker.TextColumn(EAText.GetMoneyString(price));
+            }
+        }
+
+        protected class SimPriceServicesColumn : ObjectPickerDialogEx.CommonHeaderInfo<SimDescription>
+        {
+            public SimPriceServicesColumn()
+                : base("NRaas.Woohooer.SimSelection:PriceTitle", "NRaas.Woohooer.SimSelection:PriceTooltip", 40)
+            { }
+
+            public override ObjectPicker.ColumnInfo GetValue(SimDescription sim)
+            {
+                int price = 0;
+
+                KamaSimtra skill = sim.SkillManager.GetSkill<KamaSimtra>(KamaSimtra.StaticGuid);
+                if (skill != null)
+                {
+                    price = skill.GetPayment() * 2;
+                }               
 
                 return new ObjectPicker.TextColumn(EAText.GetMoneyString(price));
             }

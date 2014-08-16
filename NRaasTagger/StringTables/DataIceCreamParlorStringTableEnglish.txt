@@ -1,0 +1,2 @@
+<KEY>Gameplay/Excel/Venues/CommunityTypes:kOwnableIceCreamParlorNRaas</KEY>
+<STR>Ice Cream Parlor</STR>

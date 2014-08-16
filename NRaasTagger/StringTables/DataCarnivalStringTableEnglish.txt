@@ -1,0 +1,2 @@
+<KEY>Gameplay/Excel/Venues/CommunityTypes:kCarnivalNRaas</KEY>
+<STR>Carnival</STR>

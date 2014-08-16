@@ -60,6 +60,9 @@
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
       <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\Aging.cs">
+      <Link>CommonSpace\Helpers\Aging.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\CASParts.cs">
       <Link>CommonSpace\Helpers\CASParts.cs</Link>
     </Compile>
@@ -90,7 +93,7 @@
     <Compile Include="..\NRaas\Helpers\Relationships.cs">
       <Link>CommonSpace\Helpers\Relationships.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\Roles.cs">
+    <Compile Include="..\NRaas\Helpers\Roles.cs">
       <Link>CommonSpace\Helpers\Roles.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\SimListing.cs">
@@ -165,25 +168,53 @@
     <Compile Include="TaggerSpace\Helpers\InjectionHelper.cs" />
     <Compile Include="TaggerSpace\Helpers\MapTagHelper.cs" />
     <Compile Include="TaggerSpace\Helpers\TagDataHelper.cs" />
+    <Compile Include="TaggerSpace\Interactions\CityHallInteraction.cs" />
     <Compile Include="TaggerSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="TaggerSpace\Interactions\SetLotAddress.cs" />
+    <Compile Include="TaggerSpace\Interactions\SimInteraction.cs" />
     <Compile Include="TaggerSpace\MapTags\CustomTagNRaas.cs" />
     <Compile Include="TaggerSpace\MapTags\TrackedLot.cs" />
     <Compile Include="TaggerSpace\MapTags\TrackedSim.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\AgeTagListingOption.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\ColorSetting.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorLotTagsByRelationship.cs" />
     <Compile Include="TaggerSpace\Options\ColorSettingOption.cs" />
     <Compile Include="TaggerSpace\Options\ColorTagsByAge.cs" />
+    <Compile Include="TaggerSpace\Options\ColorTagsByOrientation.cs" />
     <Compile Include="TaggerSpace\Options\ColorTagsByRelationship.cs" />
+    <Compile Include="TaggerSpace\Options\ColorTagsByRelationshipStatus.cs" />
+    <Compile Include="TaggerSpace\Options\ColorTagsBySimType.cs" />
     <Compile Include="TaggerSpace\Options\HotspotPersonalityTags.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\IAgeTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\IMapTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\ISimOption.cs" />
     <Compile Include="TaggerSpace\Options\LotTagsSetting.cs" />
+    <Compile Include="TaggerSpace\Options\OrientationTags\ColorSetting.cs" />
+    <Compile Include="TaggerSpace\Options\OrientationTags\IOrientationTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\OrientationTags\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\OrientationTags\OrientationTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipStatusTags\ColorPregnancyGenderSetting.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipStatusTags\ColorSetting.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipStatusTags\IRelationshipStatusTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipStatusTags\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\RelationshipStatusTags\RelationshipStatusTagListingOption.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\ColorSetting.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\IRelationshipTagOption.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\ListingOption.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\RelationshipTagListingOption.cs" />
     <Compile Include="TaggerSpace\Options\SimTagsSetting.cs" />
+    <Compile Include="TaggerSpace\Options\SimTypeTags\ColorSetting.cs" />
+    <Compile Include="TaggerSpace\Options\SimTypeTags\ISimTypeTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\SimTypeTags\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\SimTypeTags\SimTypeTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\SubtleSimTagsOption.cs" />
+    <Compile Include="TaggerSpace\Options\TagData\DataEnabled.cs" />
+    <Compile Include="TaggerSpace\Options\TagData\ITagDataOption.cs" />
+    <Compile Include="TaggerSpace\Options\TagData\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\TagData\TagDataListingOption.cs" />
     <Compile Include="TaggerSpace\Options\TagSettingKey.cs" />
+    <Compile Include="TaggerSpace\Options\TagSim.cs" />
     <Compile Include="TaggerSpace\Options\TagStaticData.cs" />
     <Compile Include="TaggerSpace\Options\CustomTags\ColorSetting.cs" />
     <Compile Include="TaggerSpace\Options\CustomTags\ITagOption.cs" />

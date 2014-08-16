@@ -1,0 +1,2 @@
+<KEY>Gameplay/Excel/Venues/CommunityTypes:kOwnablePizzariaNRaas</KEY>
+<STR>Pizzaria</STR>

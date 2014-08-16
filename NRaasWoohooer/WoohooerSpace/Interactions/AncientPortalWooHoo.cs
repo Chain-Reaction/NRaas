@@ -414,7 +414,7 @@ namespace NRaas.WoohooerSpace.Interactions
             {
                 if (!TestRepaired(obj)) return false;
 
-                return (obj.mRoutingSims.Count == 0);
+                return (obj.mRoutingSims.Count == 0 && obj.InWorld);
             }
 
             public override List<GameObject> GetAvailableObjects(Sim actor, Sim target, ItemTestFunction testFunc)

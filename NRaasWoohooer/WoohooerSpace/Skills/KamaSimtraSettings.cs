@@ -1,4 +1,5 @@
 ﻿using NRaas.CommonSpace.ScoringMethods;
+using NRaas.WoohooerSpace.Interactions;
 using NRaas.WoohooerSpace.Options.Romance;
 using NRaas.WoohooerSpace.Scoring;
 using NRaas.WoohooerSpace.Skills;
@@ -10,6 +11,7 @@ using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Skills;
+using Sims3.Gameplay.Situations;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
@@ -144,6 +146,9 @@ namespace NRaas.WoohooerSpace.Skills
         [Tunable, TunableComment("Whether to display a notice when a sim receives a new notch")]
         public static bool kShowNotices = false;
 
+        [Tunable, TunableComment("Whether to seed the service pool with professionals")]
+        public static bool kSeedServicePool = false;
+
         public int mRenownPerLevel = kRenownPerLevel;
         public int mRenownPerOpportunity = kRenownPerOpportunity;
         public float mRenownToMoodMultiple = kRenownToMoodMultiple;
@@ -205,7 +210,11 @@ namespace NRaas.WoohooerSpace.Skills
 
         public bool mShowNotices = kShowNotices;
 
+        public bool mSeedServicePool = kSeedServicePool;
+
         Dictionary<ulong, string> mAlias = new Dictionary<ulong, string>();
+
+        public Dictionary<ulong, ServiceData> sRequests = new Dictionary<ulong, ServiceData>();        
 
         public int GetSkillPoints(int level)
         {
@@ -300,6 +309,153 @@ namespace NRaas.WoohooerSpace.Skills
             }
 
             return result;
+        }
+
+        public ServiceData GetServiceData(ulong simDescID, bool createIfNotExists)
+        {
+            ServiceData data;
+            if (sRequests.TryGetValue(simDescID, out data))
+            {
+                return data;
+            }
+
+            if (createIfNotExists)
+            {
+                return new ServiceData();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public void SetServiceData(ulong simDescId, ServiceData data)
+        {
+            sRequests[simDescId] = data;
+        }
+        
+        public class ServiceData
+        {
+            public bool mWasRandom;
+            public Common.AlarmTask mPush;
+            public ulong mProfessional;
+            public ulong mRequester;
+            public int mAttempts;
+            public bool autonomyWasDisabled;
+
+            public ServiceData()
+            {
+                mWasRandom = false;
+                mPush = null;
+                mProfessional = 0;
+                mRequester = 0;
+                autonomyWasDisabled = false;
+            }            
+
+            public void DisableAutonomy()
+            {
+                if (this.mProfessional != 0)
+                {                    
+                    SimDescription desc = SimDescription.Find(this.mProfessional);
+                    if (desc != null && desc.CreatedSim != null && desc.CreatedSim.Autonomy != null)
+                    {
+                        if (desc.CreatedSim.Autonomy.mAutonomyDisabledCount > 0)
+                        {
+                            // already disabled by the user
+                            this.autonomyWasDisabled = true;
+                            return;
+                        }
+
+                        desc.CreatedSim.Autonomy.mAutonomyDisabledCount = int.MaxValue / 2;
+                    }
+                }
+            }
+
+            public void CheckWoohoo()
+            {                
+                if (this.mAttempts == 20 && this.mPush != null && this.mPush.Valid)
+                {
+                    this.Dispose();
+                    return;
+                }
+
+                mAttempts++;
+
+                if (this.mProfessional != 0)
+                {
+                    SimDescription desc = SimDescription.Find(this.mProfessional);
+                    SimDescription descClient = SimDescription.Find(this.mRequester);
+                    if ((desc != null && desc.CreatedSim != null) && (descClient != null && descClient.CreatedSim != null))
+                    {
+                        if (desc.CreatedSim.LotCurrent != descClient.CreatedSim.LotHome)
+                        {
+                            this.Dispose();
+                            return;
+                        }
+
+                        IWooHooDefinition def = null;
+                        if (desc.CreatedSim.CurrentInteraction != null)
+                        {
+                            def = desc.CreatedSim.CurrentInteraction.InteractionDefinition as IWooHooDefinition;                                                     
+                        }
+
+                        if (def == null)
+                        {
+                            new CommonWoohoo.PushWoohoo(desc.CreatedSim, descClient.CreatedSim, false, CommonWoohoo.WoohooStyle.Safe);
+                        }   
+                    }
+                }
+            }
+
+            public void SetupAlarm()
+            {
+                this.mPush = new Common.AlarmTask(5, TimeUnit.Minutes, CheckWoohoo, 10, TimeUnit.Minutes);
+            }
+
+            public void SetupDisposeAlarm()
+            {
+                new Common.AlarmTask(5, TimeUnit.Minutes, this.Cleanup);
+            }
+
+            public void Cleanup()
+            {                
+                if (this.mProfessional != 0)
+                {
+                    SimDescription desc = SimDescription.Find(this.mProfessional);
+                    if (desc != null)
+                    {                        
+                        VisitSituation.MakeSimExitToYard(desc.CreatedSim.LotCurrent, desc.CreatedSim);
+                        Sim.MakeSimGoHome(desc.CreatedSim, false, new InteractionPriority(InteractionPriorityLevel.UserDirected));
+                    }
+                }
+
+                if (this.mRequester != 0)
+                {
+                    KamaSimtra.Settings.sRequests.Remove(this.mRequester);
+                }
+            }
+
+            public void Dispose()
+            {                
+                if (this.mPush != null && this.mPush.Valid)
+                {
+                    this.mPush.Dispose();
+                }
+
+                if (this.mProfessional != 0)
+                {
+                    SimDescription desc = SimDescription.Find(this.mProfessional);
+                    if (desc != null && desc.CreatedSim != null && desc.CreatedSim.Autonomy != null)
+                    {                        
+                        if (!this.autonomyWasDisabled && desc.CreatedSim.Autonomy.mAutonomyDisabledCount > 0)
+                        {
+                            desc.CreatedSim.Autonomy.mAutonomyDisabledCount = 0;
+                        }
+
+                        SetupDisposeAlarm();                        
+                    }                    
+                }               
+            }
         }
     }
 }

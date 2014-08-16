@@ -1,0 +1,2 @@
+<KEY>Gameplay/Excel/Venues/CommunityTypes:kOwnableJapaneseRestaurantNRaas</KEY>
+<STR>Japanese Restaurant</STR>

@@ -70,6 +70,14 @@ namespace NRaas.CommonSpace.Helpers
         Mermaid,
         Plumbot,
         TimeTraveler,
+        Dog,
+        Cat,
+        Horse,
+        Deer,
+        Raccoon,
+        Stray,
+        WildHorse,
+        Role,
     }
 
     public class SimTypes
@@ -300,6 +308,18 @@ namespace NRaas.CommonSpace.Helpers
                     return (sim.HomeWorld == GameUtils.GetCurrentWorld());
                 case SimType.Plumbot:
                     return sim.IsEP11Bot;
+                case SimType.Dog:
+                    return sim.IsADogSpecies;
+                case SimType.Cat:
+                    return sim.IsCat;
+                case SimType.Horse:
+                    return sim.IsHorse;
+                case SimType.Deer:
+                    return sim.IsDeer;
+                case SimType.Raccoon:
+                    return sim.IsRaccoon;
+                case SimType.Role:
+                    return sim.HasAssignedRole;
             }
 
             return false;
@@ -437,6 +457,22 @@ namespace NRaas.CommonSpace.Helpers
                     if (sim.Partner == null) return false;
 
                     return (sim.Household != sim.Partner.Household);
+                case SimType.Dog:
+                    return sim.IsADogSpecies;
+                case SimType.Cat:
+                    return sim.IsCat;
+                case SimType.Horse:
+                    return sim.IsHorse;
+                case SimType.Deer:
+                    return sim.IsDeer;
+                case SimType.Raccoon:
+                    return sim.IsRaccoon;
+                case SimType.Role:
+                    return sim.HasActiveRole;
+                case SimType.WildHorse:
+                    return (sim.IsHorse && sim.IsWildAnimal);
+                case SimType.Stray:
+                    return (!sim.IsHorse && sim.IsWildAnimal);
             }
 
             return false;
@@ -478,6 +514,8 @@ namespace NRaas.CommonSpace.Helpers
                     return sim.IsWitch;
                 case OccultTypes.Mermaid:
                     return sim.IsMermaid;
+                case OccultTypes.Robot:
+                    return sim.IsEP11Bot;
             }
 
             return false;

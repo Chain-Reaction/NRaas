@@ -1,0 +1,2 @@
+<KEY>Gameplay/Excel/Venues/CommunityTypes:kOwnableRestaurantNRaas</KEY>
+<STR>Restaurant</STR>
