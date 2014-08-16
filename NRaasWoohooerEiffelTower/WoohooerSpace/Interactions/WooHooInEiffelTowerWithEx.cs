@@ -22,15 +22,15 @@ namespace NRaas.WoohooerSpace.Interactions
 	{
 		public void AddInteraction(Common.InteractionInjectorList interactions)
         {
-			interactions.AddCustom(new WooHooInEiffelTowerWithEx.CustomInjector());
+			interactions.AddCustom(new CustomInjector());
         }
 
 		public void OnPreLoad()
         {
-			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.MakeoutDefinition, MakeoutDefinition>(true);
-			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.SafeDefinition, SafeDefinition>(true);
-			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.RiskyDefinition, RiskyDefinition>(true);
-			Woohooer.InjectAndReset<EiffelTower, WooHooInRabbitHoleWithEx.TryForBabyDefinition, TryForBabyDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, EiffelTower.WooHooInEiffelTowerWith.Definition, MakeoutDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, EiffelTower.WooHooInEiffelTowerWith.Definition, SafeDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, EiffelTower.WooHooInEiffelTowerWith.Definition, RiskyDefinition>(true);
+			Woohooer.InjectAndReset<EiffelTower, EiffelTower.WooHooInEiffelTowerWith.Definition, TryForBabyDefinition>(true);
         }
 
 		public override bool Run()
