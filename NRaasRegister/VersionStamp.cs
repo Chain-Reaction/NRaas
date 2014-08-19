@@ -69,8 +69,6 @@ namespace NRaas
 * Ability to rotate the Commercial Lot Type for venues so a user only needs a couple of bars in town, rather than all of them
 ** http://nraas.wikispaces.com/message/view/Chatterbox/57356160
 
-* Option to define the number of paparazzi to spawn
-
 * Option to only disallow homeless to be chosen as tourists/explorers
 
 * Paparazzi alterations : http://nraas.wikispaces.com/message/view/Register+Issues/59367228
@@ -101,6 +99,6 @@ namespace NRaas
         /* Changes
          *          
          */
-        public static readonly int sVersion = 79;
+        public static readonly int sVersion = 80;
     }
 }

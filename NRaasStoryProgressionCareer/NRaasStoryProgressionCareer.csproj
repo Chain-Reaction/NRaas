@@ -87,6 +87,7 @@
     <Compile Include="StoryProgressionSpace\Scenarios\Careers\AfterSchoolActivityScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Careers\AssignSchoolAgeUpScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Careers\AssignSchoolScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Careers\AssignUniversityProfessorsScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Careers\CampaignMoochScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Careers\CareerBranchScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Careers\CaughtEmbezzlingScenario.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="StoryProgressionSpace\Scenarios\Friends\MeetTheTeacherScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Friends\MeetTheWorkerScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Money\CampaignDonationScenario.cs" />
+    <Compile Include="StoryProgressionSpace\Scenarios\Money\PayUniversityProfessorsScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Situations\CampaignGatheringScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Situations\GraduationScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Situations\PlayConcertScenario.cs" />

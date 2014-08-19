@@ -63,6 +63,10 @@ namespace NRaas.OverwatchSpace.Helpers
                     {
                         found = true;
                     }
+                    else
+                    {
+                        obj.Destroy();
+                    }
                 }
                 else
                 {
@@ -72,6 +76,8 @@ namespace NRaas.OverwatchSpace.Helpers
 
             foreach (IAmPutInMailbox obj in list)
             {
+                if (obj.HasBeenDestroyed) continue;
+
                 try
                 {
                     obj.OnTransferComplete(a as Sim);

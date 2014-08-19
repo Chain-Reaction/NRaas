@@ -19,6 +19,7 @@ namespace NRaas.RegisterSpace.Options.Service
         public int cost = 0;
         public bool reoccuring = false;
         public bool useBots = false;
+
         [Persistable(false)]
         public Dictionary<int, string[]> uniforms;
 
@@ -97,10 +98,11 @@ namespace NRaas.RegisterSpace.Options.Service
 
         public void Import(Persistence.Lookup settings)
         {            
-            // unfortunately no easy way to get defaults for these..
-            string iType = settings.GetString("ServiceType");
+            // unfortunately no easy way to get defaults for these..            
             if (settings.GetEnum<ServiceType>("ServiceType", ServiceType.None) != ServiceType.None)
-            {                
+            {
+                type = settings.GetEnum<ServiceType>("ServiceType", ServiceType.None);
+
                 if (settings.Exists("ValidAges"))
                 {
                     string[] ages = settings.GetStringList("ValidAges");
@@ -109,14 +111,14 @@ namespace NRaas.RegisterSpace.Options.Service
                     {
                         CASAgeGenderFlags flag;
                         if (ParserFunctions.TryParseEnum<CASAgeGenderFlags>(age, out flag, CASAgeGenderFlags.None))
-                        {
+                        {                            
                             validAges |= flag;
                         }
                     }
                 }
 
                 if (settings.Exists("Reoccuring"))
-                {
+                {                    
                     reoccuring = settings.GetBool("Reoccuring", false);
                 }
 
@@ -126,7 +128,7 @@ namespace NRaas.RegisterSpace.Options.Service
                 }
 
                 if (settings.Exists("Cost"))
-                {
+                {                    
                     cost = settings.GetInt("Cost", 0);
                 }
 
@@ -140,45 +142,32 @@ namespace NRaas.RegisterSpace.Options.Service
 
         public void Export(Persistence.Lookup settings)
         {
-            //Common.Notify("Register:Export");
-            //if (tuningDefault != null)
-            //{
-              //  Common.Notify("tuningDefault not null");
-                settings.Add("ServiceType", type.ToString());
+            settings.Add("ServiceType", type.ToString());
 
-                List<CASAgeGenderFlags> ages = AgeSpeciesToList();
-                List<string> agesString = new List<string>();
-                foreach (CASAgeGenderFlags ageSpecies in ages)
-                {
-                    agesString.Add(ageSpecies.ToString());
-                }
-
-                if (agesString.Count > 0)
-                {
-                    settings.Add("ValidAges", String.Join(",", agesString.ToArray()));
-                }
-
-                settings.Add("Reoccuring", reoccuring);
-
-                settings.Add("PoolSize", numInPool);
-
-                settings.Add("Cost", cost);
-
-                settings.Add("UseBots", useBots);
-                /*
-            }
-            else
+            List<CASAgeGenderFlags> ages = AgeSpeciesToList();
+            List<string> agesString = new List<string>();
+            foreach (CASAgeGenderFlags ageSpecies in ages)
             {
-                Common.Notify("Tuning def null");
-
-                Common.Notify(type.ToString());
+                agesString.Add(ageSpecies.ToString());
             }
-                 */
+
+            if (agesString.Count > 0)
+            {
+                settings.Add("ValidAges", String.Join(",", agesString.ToArray()));
+            }
+
+            settings.Add("Reoccuring", reoccuring);
+
+            settings.Add("PoolSize", numInPool);
+
+            settings.Add("Cost", cost);
+
+            settings.Add("UseBots", useBots);
         }
 
         public string PersistencePrefix
         {
-            get { return type.ToString(); }
+            get { return null; }
         }
 
         public override string ToString()

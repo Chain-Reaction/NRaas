@@ -439,7 +439,7 @@ namespace NRaas
         // Externalized to Tagger
         // Oh dear this is hacky, someone teach me to reflect custom types? :P
         public static Dictionary<string, object> GetNPCPartyInvolvingLot(Lot lot)
-        {
+        {            
             if (lot == null || lot.ObjectId == ObjectGuid.InvalidObjectGuid)
             {
                 return null;
@@ -463,7 +463,7 @@ namespace NRaas
         }
 
         // Externalized to Tagger
-        public static string GetLocalizedDebtAndNetworth(SimDescription sim)
+        public static string GetLocalizedDebtAndNetworth(SimDescription sim, int bit)
         {
             if (sim == null || !sim.IsValidDescription)
             {
@@ -473,14 +473,17 @@ namespace NRaas
             string str = "";
             if (!SimTypes.IsSpecial(sim))
             {
-                int debt = NRaas.StoryProgression.Main.GetValue<DebtOption, int>(sim.Household);
-                if (debt > 0)
+                int debt = NRaas.StoryProgression.Main.GetValue<DebtOption, int>(sim.Household);                
+                if (debt > 0 && (bit == 1 || bit == 5))
                 {
-                    str += Common.Localize("Status:Debt", sim.IsFemale, new object[] { debt });
+                    str += " " + Common.Localize("Status:Debt", sim.IsFemale, new object[] { debt });
                 }
-
-                str += Common.Localize("Status:NetWorth", sim.IsFemale, new object[] { NRaas.StoryProgression.Main.GetValue<NetWorthOption, int>(sim.Household) });
-            }
+                
+                if (bit >= 4)
+                {
+                    str += Common.NewLine + Common.Localize("Status:NetWorth", sim.IsFemale, new object[] { NRaas.StoryProgression.Main.GetValue<NetWorthOption, int>(sim.Household) });
+                }                
+            }           
 
             return str;
         }

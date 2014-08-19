@@ -43,6 +43,8 @@ namespace NRaas.OverwatchSpace.Loadup
 
         public static void RunStatic()
         {      
+            if(!GameUtils.IsInstalled(ProductVersion.EP11)) return;
+
             Overwatch.Log("CleanupFutureDescendantService");
 
             FutureDescendantService instance = FutureDescendantService.GetInstance();
@@ -140,12 +142,12 @@ namespace NRaas.OverwatchSpace.Loadup
                     if (mini != null)
                     {                        
                         Annihilation.Cleanse(mini);
-                    }
 
-                    if (houses.ContainsKey(mini.LotHomeId))
-                    {
-                        houses[mini.LotHomeId].mHouseholdMembers.Remove(desc);
-                    }
+                        if (houses.ContainsKey(mini.LotHomeId))
+                        {                    
+                            houses[mini.LotHomeId].mHouseholdMembers.Remove(desc);
+                        }
+                    }                    
 
                     Overwatch.Log(" Annihilated: " + mini.FullName);
                 }

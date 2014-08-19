@@ -492,11 +492,12 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Situations
                 sChildStartCurfewHour = Sim.kChildStartCurfewHour;
                 sChildEndCurfewHour = Sim.kChildEndCurfewHour;
 
-                Sim.kTeenStartCurfewHour = -2;
-                Sim.kTeenEndCurfewHour = -1;
+                // breaks parties without MC Integration
+                //Sim.kTeenStartCurfewHour = -2;
+                //Sim.kTeenEndCurfewHour = -1;
 
-                Sim.kChildStartCurfewHour = -2;
-                Sim.kChildEndCurfewHour = -1;
+                //Sim.kChildStartCurfewHour = -2;
+                //Sim.kChildEndCurfewHour = -1;
             }
 
             public static bool ChildCurfewIsInEffect()

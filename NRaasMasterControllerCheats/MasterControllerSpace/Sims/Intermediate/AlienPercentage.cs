@@ -36,7 +36,7 @@ namespace NRaas.MasterControllerSpace.Sims.Intermediate
         {
             if (!ApplyAll)
             {
-                string text = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix() + ":Prompt", me.IsFemale, new object[] { me, CelebrityManager.HighestLevel }), me.CelebrityLevel.ToString(), 256, StringInputDialog.Validation.None);
+                string text = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix() + ":Prompt", me.IsFemale, new object[] { me, 100 }), me.AlienDNAPercentage.ToString(), 256, StringInputDialog.Validation.None);
                 if (string.IsNullOrEmpty(text)) return false;
 
                 mPercent = 0;

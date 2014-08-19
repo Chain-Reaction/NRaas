@@ -5,6 +5,7 @@ using NRaas.OverwatchSpace.Loadup;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Controllers;
 using Sims3.Gameplay.EventSystem;
+using Sims3.Gameplay.Services;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -76,6 +77,9 @@ namespace NRaas
                 kDebugging = Settings.Logging;
 
                 RestartAlarm();
+
+                Butler.kDelayBeforeArriving = 0.02f;
+                Butler.kServiceTuning.kIsRecurrent = true;
             }
             catch (Exception exception)
             {

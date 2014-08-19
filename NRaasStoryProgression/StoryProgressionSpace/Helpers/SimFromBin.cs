@@ -218,7 +218,7 @@ namespace NRaas.StoryProgressionSpace.Helpers
 
             SetBustMuscleSliders(result);
 
-            FacialBlends.RandomizeBlends(mStats.AddStat, result, Manager.GetValue<MutationSetRangeOption<TManager>, Vector2>(), true, Manager.GetValue<MutationSetRangeOption<TManager>, Vector2>(), false);
+            FacialBlends.RandomizeBlends(mStats.AddStat, result, Manager.GetValue<MutationSetRangeOption<TManager>, Vector2>(), true, Manager.GetValue<MutationSetRangeOption<TManager>, Vector2>(), false, Manager.GetValue<AllowAlienHouseholdOption<TManager>, bool>());
 
             mDispose.Add(result);
 
@@ -530,7 +530,7 @@ namespace NRaas.StoryProgressionSpace.Helpers
 
             if (!updateGenealogy)
             {
-                FacialBlends.RandomizeBlends(mStats.AddStat, newSim, new Vector2(0f, 0f), true, Manager.GetValue<MutationUnsetRangeOption<TManager>, Vector2>(), true);
+                FacialBlends.RandomizeBlends(mStats.AddStat, newSim, new Vector2(0f, 0f), true, Manager.GetValue<MutationUnsetRangeOption<TManager>, Vector2>(), true, Manager.GetValue<AllowAlienHouseholdOption<TManager>, bool>());
             }
 
             List<OccultTypes> occults = new List<OccultTypes>();

@@ -334,6 +334,7 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupGems.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupGenericPerformanceObjects.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupGigs.cs" />
+    <Compile Include="OverwatchSpace\Loadup\CleanupGroupScienceStation.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupHarvestPlant.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupHomework.cs" />
     <Compile Include="OverwatchSpace\Loadup\ClearInvalidSocialWorkerServiceRequests.cs" />
@@ -367,6 +368,7 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupFutureDescendantService.cs" />
     <Compile Include="OverwatchSpace\Loadup\ClearInvalidTimeTravelerServiceRequests.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixActiveTopics.cs" />
+    <Compile Include="OverwatchSpace\Loadup\FixResortManagers.cs" />
     <Compile Include="OverwatchSpace\Loadup\ReplaceEP11BaseCampString.cs" />
     <Compile Include="OverwatchSpace\Loadup\YieldAllAlarms.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixToddlerChat.cs" />
@@ -385,6 +387,7 @@
     <Compile Include="OverwatchSpace\Preload\FixFishData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="OverwatchSpace\Preload\FixOrderPizza.cs" />
     <Compile Include="OverwatchSpace\Preload\FixPetFatigue.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -29,9 +29,23 @@ namespace NRaas.StoryProgressionSpace.Scoring
         {
             ManagerMoney money = StoryProgression.Main.Money;
 
+            bool allow = false;
             using (NetWorthOption.CacheValue cache = new NetWorthOption.CacheValue(money, parameters.Actor.Household))
             {
-                return money.Allow(money, parameters.Actor);
+                allow = money.Allow(money, parameters.Actor, true);
+                if (allow)
+                {
+                    SimData data = StoryProgression.Main.GetData(parameters.Actor);
+                    if (data != null)
+                    {                        
+                        if ((!data.GetValue<AllowMoneyOption, bool>()))
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+                return allow;
             }
         }
     }

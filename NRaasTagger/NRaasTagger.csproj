@@ -171,6 +171,7 @@
     <Compile Include="TaggerSpace\Interactions\CityHallInteraction.cs" />
     <Compile Include="TaggerSpace\Interactions\PrimaryInteraction.cs" />
     <Compile Include="TaggerSpace\Interactions\SetLotAddress.cs" />
+    <Compile Include="TaggerSpace\Interactions\SetMetaAutonomyType.cs" />
     <Compile Include="TaggerSpace\Interactions\SimInteraction.cs" />
     <Compile Include="TaggerSpace\MapTags\CustomTagNRaas.cs" />
     <Compile Include="TaggerSpace\MapTags\TrackedLot.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="TaggerSpace\Options\RelationshipTags\IRelationshipTagOption.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\ListingOption.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\RelationshipTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\ShowLotInteractions.cs" />
     <Compile Include="TaggerSpace\Options\SimTagsSetting.cs" />
     <Compile Include="TaggerSpace\Options\SimTypeTags\ColorSetting.cs" />
     <Compile Include="TaggerSpace\Options\SimTypeTags\ISimTypeTagOption.cs" />

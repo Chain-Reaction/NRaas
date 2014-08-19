@@ -21,7 +21,6 @@ using Sims3.SimIFace;
 using Sims3.SimIFace.BuildBuy;
 using Sims3.SimIFace.CAS;
 using Sims3.UI;
-using Sims3.Store.Objects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -103,7 +102,14 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Money
 
             if (obj is CarMotiveMobile) return false;
 
-            if (obj is Boat) return false;            
+            if (obj is Boat) return false;
+
+            List<string> mDisallowed = Manager.GetValue<DisallowCar, List<string>>();
+
+            if (mDisallowed.Count > 0)
+            {                
+                if(mDisallowed.Contains(obj.GetResourceKey().ToString())) return false;
+            }
 
             if (obj is CarOwnable)
             {
@@ -177,6 +183,73 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Money
                 if (Manager.GetValue<Option, int>() <= 0) return false;
 
                 return base.ShouldDisplay();
+            }
+        }
+
+        public class DisallowCar : MultiListedManagerOptionItem<ManagerMoney, string>, ManagerMoney.IPurchaseOption            
+        {
+            public DisallowCar()
+                : base(new List<string>())
+            { }
+
+            public override string GetTitlePrefix()
+            {
+                return "DisallowCars";
+            }
+
+            public override bool ShouldDisplay()
+            {
+                if (Manager.GetValue<Option, int>() <= 0) return false;
+
+                return base.ShouldDisplay();
+            }
+
+            public override string ValuePrefix
+            {
+                get { return "Disallowed"; }
+            }
+
+            protected override bool PersistCreate(ref string defValue, string value)
+            {
+                defValue = value;
+                return true;
+            }
+
+            protected override List<IGenericValueOption<string>> GetAllOptions()
+            {
+                List<IGenericValueOption<string>> results = new List<IGenericValueOption<string>>();
+
+                BuyProductList list = null;
+                try
+                {
+                    list = new BuyProductList(Manager, BuildBuyProduct.eBuyCategory.kBuyCategoryVehicles, BuildBuyProduct.eBuySubCategory.kBuySubCategoryCars | BuildBuyProduct.eBuySubCategory.kBuySubCategoryMiscellaneousVehicles, 0, int.MaxValue);
+                }
+                catch (Exception e)
+                {
+                    Common.DebugException(ToString(), e);
+                }
+
+                foreach (BuildBuyProduct product in list.GetProducts())
+                {
+                    if (product.IsWallObject || !product.IsStealable) continue;
+                    results.Add(new ListItem(this, product.CatalogName, product.ProductResourceKey.ToString()));
+                }
+
+                return results;
+            }
+
+            public class ListItem : BaseListItem<DisallowCar>
+            {
+                public ListItem(DisallowCar option, string name, string value)
+                    : base(option, value)
+                {
+                    mName = name;
+                }
+
+                public override string Name
+                {
+                    get { return mName; }
+                }
             }
         }
     }

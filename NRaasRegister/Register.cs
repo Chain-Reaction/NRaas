@@ -154,10 +154,29 @@ namespace NRaas
 
             TouristAmount.ApplySize();
 
+            FixFutureSims();
+
             new AlarmTask(1, TimeUnit.Seconds, OnRestoreRoles);
 
             // Must be performed after CleanupBadRole
             new RoleManagerTaskEx.StartupTask();
+        }
+
+        public static void FixFutureSims()
+        {
+            // just in case any of them get reset and the trait doesn't get added back
+            Register.Settings.mFutureSims.Clear();            
+
+            if (GameUtils.IsFutureWorld())
+            {
+                foreach (Sim sim in LotManager.Actors)
+                {
+                    if (sim.SimDescription.HomeWorld == WorldName.FutureWorld && !sim.SimDescription.HasTrait(TraitNames.FutureSim))
+                    {
+                        RoleTouristEx.RestoreFutureTrait(sim.SimDescription);
+                    }
+                }
+            }
         }
 
         protected static void CloneResidentRole(Role.RoleType type, WorldName world)
@@ -278,7 +297,7 @@ namespace NRaas
                 InitDefaultServiceTunings();
                 ServiceCleanup.Task.Perform();
                 ServicePoolCleanup.Task.Perform();
-            }
+            }            
         }
 
         public static void InitDefaultServiceTunings()
@@ -287,7 +306,7 @@ namespace NRaas
             {
                 ServiceSettingKey key;
                 if(Register.Settings.serviceSettings.TryGetValue(service.ServiceType, out key))
-                {
+                {                    
                     if (key.tuningDefault == null)
                     {
                         ServiceSettingKey def = new ServiceSettingKey(service);
@@ -543,6 +562,24 @@ namespace NRaas
                 default:
                     return (flag & CASAgeGenderFlags.YoungAdult | CASAgeGenderFlags.Adult) != CASAgeGenderFlags.None;                
             }
-        }        
+        }
+
+        public class SettingPersistence : Persistence
+        {
+            public override string PersistencePrefix
+            {
+                get { return "Settings"; }
+            }
+
+            public override void Import(Persistence.Lookup settings)
+            {
+                Settings.Import(settings);
+            }
+
+            public override void Export(Persistence.Lookup settings)
+            {
+                Settings.Export(settings);
+            }
+        }
     }
 }

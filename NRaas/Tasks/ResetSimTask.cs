@@ -165,7 +165,14 @@ namespace NRaas.CommonSpace.Tasks
                 Posture posture = sim.Posture;
                 while ((posture != null) && (count < 5))
                 {
-                    posture.OnReset(sim);
+                    try
+                    {
+                        posture.OnReset(sim);
+                    }
+                    catch (Exception e)
+                    {
+                        Common.Exception(sim, e);                       
+                    }
 
                     count++;
                     posture = posture.PreviousPosture;

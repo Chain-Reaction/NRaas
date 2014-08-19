@@ -61,7 +61,7 @@ namespace NRaas.StoryProgressionSpace.Options
                 {
                     result = (SkillNames)guid;
                 } else {
-                    return SkillNames.None + " 0";
+                    return SkillNames.None + " " + EAText.GetNumberString(0);
                 }
             }
 
@@ -69,12 +69,15 @@ namespace NRaas.StoryProgressionSpace.Options
 
             if (skill == null)
             {
-                return SkillNames.None + " 0";
+                return SkillNames.None + " " + EAText.GetNumberString(0);
             }
 
             icon = new ThumbnailKey(skill.DreamsAndPromisesIconKey, ThumbnailSize.Medium);
 
-            return skill.Name + " " + split[1];            
+            int num = 0;
+            int.TryParse(split[1], out num);
+
+            return skill.Name + " " + EAText.GetNumberString(num);            
         }        
 
         protected override string GetLocalizationValueKey()

@@ -40,8 +40,9 @@ namespace NRaas.TaggerSpace.MapTags
                 {
                     MapTagType type;
                     if (ParserFunctions.TryParseEnum<MapTagType>("CustomTagNRaas", out type, MapTagType.Count, true))
-                    {                        
-                        return type;                       
+                    {
+                        // turns out we don't need the customtagtype.
+                        return MapTagType.Proprietor;                      
                     }
                 }
                 catch (Exception e)
@@ -82,32 +83,7 @@ namespace NRaas.TaggerSpace.MapTags
                     else
                     {
                         return new Color(color);
-                    }
-                    
-                    /*
-                    int type = Convert.ToInt32(target.CommercialLotSubType);
-                    if (type == 95)
-                    {
-                        return new Color(252, 121, 5);
-                    }
-                    else if (type == 96)
-                    {
-                        return new Color(124, 83, 47);
-                    }
-                    else if (type == 97)
-                    {
-                        return new Color(47, 124, 89);
-                    }
-                    else if (type == 98)
-                    {
-                        return new Color(213, 11, 11);
-                    }
-                    else if (type == 99)
-                    {
-                        return new Color(203, 196, 10);
-                    }
-                     */
-                    
+                    }                   
                 }
                 catch (Exception exception)
                 {
@@ -147,6 +123,22 @@ namespace NRaas.TaggerSpace.MapTags
         {
             get
             {
+                return this.LotAddress;
+                /*
+                Lot target = this.Target as Lot;
+                if (target != null)
+                {
+                    return target.Name;
+                }
+                return string.Empty;
+                 */
+            }
+        }
+
+        public override string HouseholdName
+        {
+            get
+            {
                 Lot target = this.Target as Lot;
                 if (target != null)
                 {
@@ -167,7 +159,6 @@ namespace NRaas.TaggerSpace.MapTags
                 }
                 return string.Empty;
             }
-        }
-
+        }        
     }
 }

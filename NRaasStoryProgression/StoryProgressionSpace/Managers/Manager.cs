@@ -32,6 +32,7 @@ namespace NRaas.StoryProgressionSpace.Managers
             None = 0x00,
             Active = 0x01,
             UserDirected = 0x02,
+            Scoring = 0x04,
         }
 
         public delegate bool OnAllow(IScoringGenerator stats, SimData settings, AllowCheck check);

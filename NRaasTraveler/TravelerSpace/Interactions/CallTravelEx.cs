@@ -89,11 +89,13 @@ namespace NRaas.TravelerSpace.Interactions
 
             public override bool Test(Sim a, Phone target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
+                /*
                 if (!GameUtils.IsInstalled(ProductVersion.EP1))
                 {
                     greyedOutTooltipCallback = Common.DebugTooltip("EP1 Fail");
                     return false;
                 }
+                 */
 
                 if (!target.IsUsableBy(a))
                 {

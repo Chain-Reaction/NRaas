@@ -553,6 +553,8 @@
     <Compile Include="StoryProgressionSpace\Interfaces\ISimFromBinOption.cs" />
     <Compile Include="StoryProgressionSpace\Interfaces\ISimFromBin.cs" />
     <Compile Include="StoryProgressionSpace\Interfaces\ISimFromBinManager.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowBeProfessorOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\AllowDegreeOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowPushAtDayOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowGoHomePushOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\AllowPushPartyOption.cs" />
@@ -585,6 +587,7 @@
     <Compile Include="StoryProgressionSpace\Options\AllowOccultOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\DegreeBaseOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\DisallowCasteCanBePregnantOption.cs" />
+    <Compile Include="StoryProgressionSpace\Options\DisallowDegreeOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\DisallowOccultOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\Immigration\MaximumOccultOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\OccultTypeOption.cs" />

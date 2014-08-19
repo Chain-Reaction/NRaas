@@ -22,8 +22,8 @@ namespace NRaas.TaggerSpace.Helpers
 {
     public class TagDataHelper
     {
-        static Common.MethodStore sGetClanInfo = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "FetchLocalizedPersonalityInfo", new Type[] { typeof(List<string>) });
-        static Common.MethodStore sGetDebtAndNetworth = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "GetLocalizedDebtAndNetworth", new Type[] { typeof(string) });
+        static Common.MethodStore sGetClanInfo = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "FetchLocalizedPersonalityInfo", new Type[] { typeof(SimDescription) });
+        static Common.MethodStore sGetDebtAndNetworth = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "GetLocalizedDebtAndNetworth", new Type[] { typeof(SimDescription), typeof(int) });
         
         public enum TagRelationshipType
         {
@@ -201,6 +201,10 @@ namespace NRaas.TaggerSpace.Helpers
             if ((serviceOrRole) || (Tagger.Settings.mTagDataSettings[TagDataType.Orientation] && Tagger.Settings.mTagDataSettings[TagDataType.LifeStage] && (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || (Tagger.Settings.mTagDataSettings[TagDataType.DaysTillNextStage] && sim.AgingEnabled))))
             {
                 str += Common.NewLine;
+            }
+            else
+            {
+                str += " - ";
             }
 
             if (sim.TeenOrAbove && !sim.IsPet && Tagger.Settings.mTagDataSettings[TagDataType.Orientation])
@@ -409,7 +413,7 @@ namespace NRaas.TaggerSpace.Helpers
                     {
                         bit = bit + 1;
                     }
-                    else if (Tagger.Settings.mTagDataSettings[TagDataType.NetWorth])
+                    if (Tagger.Settings.mTagDataSettings[TagDataType.NetWorth])
                     {
                         bit = bit + 4;
                     }

@@ -57,21 +57,24 @@ namespace NRaas.StoryProgressionSpace.Options
                     result = (OccupationNames)guid;
                 }
                 else
-                {                   
-                    return OccupationNames.Undefined + " 0";
+                {
+                    return OccupationNames.Undefined + " " + EAText.GetNumberString(0);
                 }
             }            
 
             career = CareerManager.GetStaticOccupation(result);            
 
             if (career == null)
-            {                
-                return OccupationNames.Undefined + " 0";
+            {
+                return OccupationNames.Undefined + " " + EAText.GetNumberString(0);
             }
 
             icon = new ThumbnailKey(ResourceKey.CreatePNGKey(career.CareerIconColored, ResourceUtils.ProductVersionToGroupId(ProductVersion.BaseGame)), ThumbnailSize.Medium);
-           
-            return career.CareerName + " " + split[1];                
+
+            int num = 0;
+            int.TryParse(split[1], out num);
+
+            return career.CareerName + " " + EAText.GetNumberString(num);                
         }
 
         protected override string GetLocalizationValueKey()

@@ -13,7 +13,7 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
-using Sims3.Gameplay.Objects.Appliances;
+using Sims3.Gameplay.Objects.Miscellaneous;
 using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Socializing;
@@ -52,17 +52,17 @@ namespace NRaas.RegisterSpace.Helpers
                     }
                 }
 
+                // Drop the EndRole alarm
+                foreach (AlarmHandle handle in ths.mAlarmHandles)
+                {
+                    AlarmManager.Global.RemoveAlarm(handle);
+                }
+
+                ths.mAlarmHandles.Clear();
+
                 if (baseCamps.Count > 0)
                 {
-                    // Drop the EndRole alarm
-                    foreach (AlarmHandle handle in ths.mAlarmHandles)
-                    {
-                        AlarmManager.Global.RemoveAlarm(handle);
-                    }
-
-                    ths.mAlarmHandles.Clear();
-
-                    Sim createdSim = ths.mSim.CreatedSim;
+                    Sim createdSim = ths.mSim != null ? ths.mSim.CreatedSim : null;
                     if (createdSim != null)
                     {
                         if (ths.mMinInLot >= RoleExplorer.kMinPassToAllowSwitchingLots)
@@ -71,6 +71,8 @@ namespace NRaas.RegisterSpace.Helpers
                             {
                                 if (RandomUtil.RandomChance(Register.Settings.mTouristChanceOfLeaving))
                                 {
+                                    RestoreFutureTrait(ths.mSim);
+
                                     ths.EndRole();
                                     return;
                                 }
@@ -108,12 +110,144 @@ namespace NRaas.RegisterSpace.Helpers
                             }
                         }
                     }
-                }
+                }                
                 else
                 {
-                    ths.SimulateRole(minPassed);
+                    // needs tuning check
+                    if (SimClock.HoursUntil(16) <= 6)
+                    {
+                        if (ths.mSim != null && ths.mSim.CreatedSim != null && ths.mSim.CreatedSim.CurrentInteraction == null)
+                        {
+                            if (ths.mSim.HomeWorld == WorldName.FutureWorld && ths.mSim.CreatedSim.Posture != null && ths.mSim.CreatedSim.Posture.ReactionAllowed())
+                            {
+                                // this is fun but naturally it breaks because EA
+                               // ths.mSim.CreatedSim.PlayReaction(ReactionTypes.StandingAwe, ReactionSpeed.NowOrLater);
+                            }
+                        }
+
+                        ths.SimulateRole(minPassed);
+                    }
+                    else
+                    {
+                        if (ths.mSim != null)
+                        {
+                            RestoreFutureTrait(ths.mSim);
+                        }
+
+                        ths.EndRole();
+                        return;
+                    }
+                }               
+            }
+        }
+
+        public static void StripFutureTraitFromBots()
+        {
+            Household tourists = Household.TouristHousehold;
+            if (tourists != null)
+            {
+                foreach (SimDescription sim in tourists.AllSimDescriptions)
+                {
+                    StripFutureTrait(sim);
                 }
             }
         }
+
+        public static void RestoreFutureTrait(SimDescription desc)
+        {
+            if (Register.Settings.mFutureSims.Contains(desc.SimDescriptionId) && desc.TraitManager != null && !desc.HasTrait(TraitNames.FutureSim))
+            {
+                Trait trait = TraitManager.GetTraitFromDictionary(TraitNames.FutureSim);
+                if (trait != null)
+                {
+                    desc.AddTrait(trait);
+                }
+            }
+        }
+
+        public static void StripFutureTrait(SimDescription simDescription)
+        {
+            // Stops an issue in "GrantFutureObjects" regarding the use of sIsChangingWorlds=true                            
+            if (simDescription.TraitManager != null)
+            {
+                if (simDescription.TraitManager.HasElement(TraitNames.FutureSim))
+                {
+                    simDescription.TraitManager.RemoveElement(TraitNames.FutureSim);
+                    Register.Settings.mFutureSims.Add(simDescription.SimDescriptionId);
+                }
+            } 
+        }
+
+        public static void SpawnInPortal(SimDescription sim)
+        {
+            if (sim == null || sim.CreatedSim == null)
+            {
+                return;
+            }
+
+            ITimePortal[] portals = Sims3.Gameplay.Queries.GetObjects<ITimePortal>();
+            foreach (ITimePortal portal in portals)
+            {
+                TimePortal usePortal = portal as TimePortal;
+                if (usePortal != null && usePortal.HasTimeTravelerBeenSummoned() && usePortal.LotCurrent != null && usePortal.InWorld)
+                {
+                    bool wasInactive = false;
+                    if (usePortal.State == TimePortal.PortalState.Inactive)
+                    {
+                        wasInactive = true;
+                        usePortal.UpdateState(TimePortal.PortalState.Active);
+                    }
+
+                    if (sim.CreatedSim.InteractionQueue != null)
+                    {
+                        sim.CreatedSim.InteractionQueue.CancelAllInteractions();
+
+                        /*
+                        while(sim != null && sim.CreatedSim != null && sim.CreatedSim.CurrentInteraction != null)
+                        {
+                            Common.Sleep(5);
+                        }
+                         */
+                    }
+                    
+                    usePortal.PushArriveInteraction(new List<SimDescription>{ sim });                    
+
+                    if (wasInactive)
+                    {
+                        while (sim != null && sim.CreatedSim != null && sim.CreatedSim.CurrentInteraction is TimePortal.Arrive)
+                        {
+                            Common.Sleep(10);
+                        }
+                        usePortal.UpdateState(TimePortal.PortalState.Inactive);
+                    }
+
+                    //usePortal.PushDeactivatePortal(usePortal, sim.CreatedSim);
+
+                    if (sim.CreatedSim != null)
+                    {
+                        List<Lot> randomList = new List<Lot>();
+                        foreach (Lot lot in LotManager.AllLots)
+                        {
+                            if ((((lot != sim.CreatedSim.LotCurrent) && !lot.IsWorldLot) && (lot.IsCommunityLot && !lot.IsNeighborOfPlayer())))
+                            {
+                                randomList.Add(lot);
+                            }
+                        }
+
+                        Lot choosen = null;
+                        if (randomList.Count != 0)
+                        {
+                            choosen = RandomUtil.GetRandomObjectFromList<Lot>(randomList);
+                        }
+
+                        if (choosen != null)
+                        {                            
+                            sim.CreatedSim.InteractionQueue.Add(VisitCommunityLot.Singleton.CreateInstance(choosen, sim.CreatedSim, new InteractionPriority(InteractionPriorityLevel.Autonomous), false, true));                            
+                        }                        
+                    }
+                }
+                break;
+            }
+        }       
     }
 }

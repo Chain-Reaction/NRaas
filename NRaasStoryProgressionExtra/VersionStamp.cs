@@ -11,7 +11,7 @@ namespace NRaas
     {
         public static readonly string sNamespace = "NRaas.StoryProgressionExtra";
 
-        public static readonly int sVersion = 264;
+        public static readonly int sVersion = 266;
     }
 }
 

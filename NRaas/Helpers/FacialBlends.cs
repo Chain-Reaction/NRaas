@@ -223,7 +223,7 @@ namespace NRaas.CommonSpace.Helpers
 
         public delegate int Logger(string text, int value);
 
-        public static void RandomizeBlends(Logger log, SimDescription me, Vector2 rangeIfSet, bool addToExisting, Vector2 rangeIfUnset, bool propagate)
+        public static void RandomizeBlends(Logger log, SimDescription me, Vector2 rangeIfSet, bool addToExisting, Vector2 rangeIfUnset, bool propagate, bool disallowAlien)
         {
             using (CASParts.OutfitBuilder builder = new CASParts.OutfitBuilder(me, CASParts.sPrimary))
             {
@@ -256,6 +256,27 @@ namespace NRaas.CommonSpace.Helpers
                         case CASAgeGenderFlags.Horse:
                             if ((blend.Category != FacialBlendCategories.PetCommon) && (blend.Category != FacialBlendCategories.Horse)) continue;
                             break;
+                    }
+
+                    if (disallowAlien)
+                    {
+                        ResourceKey alienEyeCKey = new ResourceKey(ResourceUtils.HashString64("EyeAlienCorrector"), 0x358b08a, 0);
+                        if (blend.mKey == alienEyeCKey)
+                        {
+                            continue;
+                        }
+
+                        ResourceKey alienEyeKey = new ResourceKey(ResourceUtils.HashString64("EyeAlien"), 0x358b08a, 0);
+                        if (blend.mKey == alienEyeKey)
+                        {
+                            continue;
+                        }
+
+                        ResourceKey alienEarKey = new ResourceKey(ResourceUtils.HashString64("EarPoint"), 0x358b08a, 0);
+                        if (blend.mKey == alienEarKey)
+                        {
+                            continue;
+                        }
                     }
 
                     float value = GetValue(builder.Builder, blend);

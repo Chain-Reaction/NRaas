@@ -24,7 +24,7 @@ namespace NRaas.TaggerSpace.MapTags
 {
     public class TrackedSim : MapTag
     {
-        static Common.MethodStore sGetIsClanLeader = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "IsPersonalityLeader", new Type[] { typeof(bool) });
+        static Common.MethodStore sGetIsClanLeader = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "IsPersonalityLeader", new Type[] { typeof(SimDescription) });
         
         public TrackedSim(Sim targetsim, Sim owner)
             : base(targetsim, owner)
@@ -91,7 +91,7 @@ namespace NRaas.TaggerSpace.MapTags
 
                     if (NRaas.Tagger.Settings.mHotspotPersonalityTags)
                     {
-                        if (sGetIsClanLeader.Valid)
+                        if (sGetIsClanLeader.Valid && CameraController.IsMapViewModeEnabled())
                         {
                             return sGetIsClanLeader.Invoke<bool>(new object[] { target.SimDescription });
                         }
@@ -147,7 +147,8 @@ namespace NRaas.TaggerSpace.MapTags
                                     }
                                 }
                             }
-                            else if (!Tagger.Settings.mSubtleTaggedSims && Tagger.Settings.mTaggedSims.Contains(target.SimDescription.SimDescriptionId))
+                            
+                            if (!Tagger.Settings.mSubtleTaggedSims && Tagger.Settings.mTaggedSims.Contains(target.SimDescription.SimDescriptionId))
                             {
                                 mType = MapTagType.PrivateEyeCase;
                             }

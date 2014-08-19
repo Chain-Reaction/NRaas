@@ -446,6 +446,7 @@ namespace NRaas.RegisterSpace.Tasks
         {
             SimDescription simDescription = null;
             MiniSimDescription simDesc = null;
+            //bool mWasFutureSim = false;
             if ((foreignMSDs != null) && (foreignMSDs.Count > 0x0))
             {
                 int @int = RandomUtil.GetInt(foreignMSDs.Count - 0x1);
@@ -472,9 +473,11 @@ namespace NRaas.RegisterSpace.Tasks
                             {
                                 s.mGenealogy = new Genealogy(s.FullName);
                                 s.mGenealogy.mMiniSim = s;
-                            }
+                            }                         
 
                             simDescription = MiniSims.UnpackSimAndUpdateRel(s);
+
+                            RoleTouristEx.StripFutureTrait(simDescription);                          
 
                             //bool flag = ((data.Type == Role.RoleType.Proprietor) && (simDescription != null)) && simDescription.OccultManager.HasAnyOccultType();
                             if (simDescription != null)
@@ -576,6 +579,9 @@ namespace NRaas.RegisterSpace.Tasks
                                 {
                                     simDescription.AgingState.MergeTravelInformation(simDesc);
                                 }
+
+                                // plumbots get it added back on init
+                                new Common.AlarmTask(5, TimeUnit.Minutes, RoleTouristEx.StripFutureTraitFromBots);                               
                             }
 
 
@@ -715,7 +721,7 @@ namespace NRaas.RegisterSpace.Tasks
                     {
                         // fix for when EA hibernate alarm goes off before the role is set to end... because...EA.
                         float newClose = 0f;
-                        if (giver.CurrentRole != null && giver.CurrentRole.SimInRole == null)
+                        if (giver.CurrentRole.IsActive && giver.CurrentRole != null && giver.CurrentRole.mSim != null && giver.CurrentRole.SimInRole == null)
                         {
                             newClose = data.HourClose - 1f;
                         }
@@ -1033,11 +1039,19 @@ namespace NRaas.RegisterSpace.Tasks
                                 RoleData data = RoleData.GetDataForCurrentWorld(fill2.RoleType, true);
                                 bool flag = true;
                                 if (data.IsValidTimeForRole())
-                                {
+                                {                                    
                                     Role toAdd = FillForeignRoleEx(fill2.RoleType, data, vacationWorldSimDescriptions);
                                     if (toAdd != null)
                                     {
                                         RoleManager.sRoleManager.AddRole(toAdd);
+
+                                        if (toAdd.mSim != null && toAdd.SimInRole != null)
+                                        {
+                                            if (toAdd.mSim.HomeWorld == WorldName.FutureWorld)
+                                            {                                                
+                                                RoleTouristEx.SpawnInPortal(toAdd.mSim);
+                                            }
+                                        }
 
                                         Register.ShowNotice(toAdd);
 
@@ -1125,6 +1139,10 @@ namespace NRaas.RegisterSpace.Tasks
             else if (role is Deer)
             {
                 if (Register.Settings.mMaximumDeer < 0) return ValidationResult.Object;
+            }
+            else if (role is RolePaparazzi)
+            {
+                if (!Register.Settings.mAllowPaparazzi) return ValidationResult.Object;
             }
 
             string msg = Common.NewLine + "Role:" + RoleToString(role);
@@ -1232,10 +1250,10 @@ namespace NRaas.RegisterSpace.Tasks
                         {                            
                             role.mIsActive = true;
 
-                            if (role.SimInRole != null)
-                            {                                
-                                bool shouldAge = false;
+                            bool shouldAge = false;
 
+                            if (role.SimInRole != null)
+                            { 
                                 if (role.SimInRole.SimDescription.AgingState != null)
                                 {
                                     shouldAge = AgingManager.Singleton.SimIsOldEnoughToTransition(role.SimInRole.SimDescription.AgingState);
@@ -1341,13 +1359,13 @@ namespace NRaas.RegisterSpace.Tasks
                                     }
                                 }
 
-                                if (!activeFound)
-                                {                                    
-                                    if (role.mSim.CreatedSim.LotCurrent != role.mRoleGivingObject.LotCurrent)
+                                if (!activeFound && !shouldAge)
+                                {                            
+                                    if (role.SimInRole.LotCurrent != role.mRoleGivingObject.LotCurrent)
                                     {
-                                        role.mSim.CreatedSim.InteractionQueue.Add(Sim.GoToLotThatSatisfiesMyRole.Singleton.CreateInstance(role.mSim.CreatedSim, role.mSim.CreatedSim, new InteractionPriority(InteractionPriorityLevel.High), true, true));
+                                        role.SimInRole.InteractionQueue.Add(Sim.GoToLotThatSatisfiesMyRole.Singleton.CreateInstance(role.SimInRole, role.SimInRole, new InteractionPriority(InteractionPriorityLevel.High), true, true));
                                     }
-                                    role.mRoleGivingObject.AddRoleGivingInteraction(role.mSim.CreatedSim);
+                                    role.mRoleGivingObject.AddRoleGivingInteraction(role.SimInRole);
                                     role.mRoleGivingObject.PushRoleStartingInteraction(role.SimInRole);
 
                                     //Logger.AddTrace(role.mSim.FullName + " " + role.Type + " Repushed", role.mSim.CreatedSim.ObjectId);

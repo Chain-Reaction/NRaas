@@ -417,6 +417,15 @@ namespace NRaas.TravelerSpace.States
                         if (miniSim != null)
                         {
                             miniSim.Instantiated = true;
+                            if (miniSim.HomeWorld != GameUtils.GetCurrentWorld())
+                            {
+                                miniSim.HomeWorld = GameUtils.GetCurrentWorld();
+                            }
+                        }
+
+                        if (sim.HomeWorld != GameUtils.GetCurrentWorld())
+                        {
+                            sim.HomeWorld = GameUtils.GetCurrentWorld();
                         }
                     }
                 }

@@ -108,6 +108,11 @@ namespace NRaas.StoryProgressionSpace.Managers
                 {
                     teenOptions.SetValue<AllowAdoptionOption, bool>(false);
                 }
+
+                if (currentVersion < 6)
+                {
+                    teenOptions.SetValue<AllowBeProfessorOption, bool>(false);
+                }
             }
 
             bool youngAdultCreated;
@@ -128,6 +133,11 @@ namespace NRaas.StoryProgressionSpace.Managers
                     {
                         youngAdultOptions.AddValue<DisallowCareerOption, OccupationNames>(OccupationNames.AcademicCareer);
                     }
+                }
+
+                if (currentVersion < 6)
+                {
+                    youngAdultOptions.SetValue<AllowBeProfessorOption, bool>(true);
                 }
             }
 
@@ -150,6 +160,11 @@ namespace NRaas.StoryProgressionSpace.Managers
                         adultOptions.AddValue<DisallowCareerOption, OccupationNames>(OccupationNames.AcademicCareer);
                     }
                 }
+
+                if (currentVersion < 6)
+                {
+                    adultOptions.SetValue<AllowBeProfessorOption, bool>(true);
+                }
             }
 
             bool elderCreated;
@@ -170,6 +185,11 @@ namespace NRaas.StoryProgressionSpace.Managers
                     {
                         elderOptions.AddValue<DisallowCareerOption, OccupationNames>(OccupationNames.AcademicCareer);
                     }
+                }
+
+                if (currentVersion < 6)
+                {
+                    elderOptions.SetValue<AllowBeProfessorOption, bool>(true);
                 }
             }
 
@@ -221,6 +241,41 @@ namespace NRaas.StoryProgressionSpace.Managers
                 options.SetValue<AllowPushWorkOption, bool>(false);
             }
 
+            if (options != null)
+            {
+                if (currentVersion < 6)
+                {
+                    options.SetValue<AllowBeProfessorOption, bool>(false);
+                }
+            }
+
+            // No Role Flirt, Friends, Personality, Pregnancies
+            options = Options.GetNewCasteOptions("RoleSims", Common.Localize("Caste:Role"), out created);
+            if (created)
+            {
+                options.SetValue<CasteAutoOption, bool>(true);
+                options.SetValue<CasteTypeOption, List<SimType>>(null);
+                options.AddValue<CasteTypeOption, SimType>(SimType.Role);
+
+                options.SetValue<AllowRomanceOption, bool>(false);
+                options.SetValue<AllowFriendshipOption, bool>(false);
+                options.SetValue<AllowMarriageOption, bool>(false);
+                options.SetValue<AllowPersonalityOption, bool>(false);
+                options.SetValue<AllowPregnancyParticipationOption, bool>(false);
+                options.SetValue<AllowPushAtDayOption, bool>(false);
+                options.SetValue<AllowPushAtNightOption, bool>(false);
+                options.SetValue<AllowStoryOption, bool>(false);
+                options.SetValue<AllowPushWorkOption, bool>(false);
+            }
+
+            if (options != null)
+            {
+                if (currentVersion < 6)
+                {
+                    options.SetValue<AllowBeProfessorOption, bool>(false);
+                }
+            }
+
             // No Homeless Pregnancies
             options = Options.GetNewCasteOptions("Homeless", Common.Localize("Caste:Homeless"), out created);
             if (created)
@@ -244,6 +299,14 @@ namespace NRaas.StoryProgressionSpace.Managers
                 options.SetValue<AllowFriendshipOption, bool>(false);
                 options.SetValue<AllowPregnancyParticipationOption, bool>(false);
                 options.SetValue<AllowPushWorkOption, bool>(false);
+            }
+
+            if (options != null)
+            {
+                if (currentVersion < 6)
+                {
+                    options.SetValue<AllowBeProfessorOption, bool>(false);
+                }
             }
 
             if (teenCreated)
@@ -389,6 +452,14 @@ namespace NRaas.StoryProgressionSpace.Managers
                 options.SetValue<AllowPushAtNightOption, bool>(false);
             }
 
+            if (options != null)
+            {
+                if (currentVersion < 6)
+                {
+                    options.SetValue<AllowBeProfessorOption, bool>(false);
+                }
+            }
+
             // Don't Push Actives
             options = Options.GetNewCasteOptions("ActiveFamily", Common.Localize("Caste:ActiveFamily"), out created);
             if (created)
@@ -412,6 +483,11 @@ namespace NRaas.StoryProgressionSpace.Managers
                 {
                     options.SetValue<AllowMoveFamilyOption, bool>(false);
                     options.SetValue<AllowMoveSoloOption, bool>(false);
+                }
+
+                if (currentVersion < 6)
+                {
+                    options.SetValue<AllowBeProfessorOption, bool>(false);
                 }
             }
 
@@ -461,7 +537,7 @@ namespace NRaas.StoryProgressionSpace.Managers
 
             Options.InvalidateCache();
 
-            SetValue<Version, int>(5);
+            SetValue<Version, int>(6);
         }
 
         public List<CasteOptions> GetMatching(SimDescription sim, int netWorth)
@@ -491,6 +567,8 @@ namespace NRaas.StoryProgressionSpace.Managers
 
                 results.Sort(CasteOptions.SortByPriority);
             }
+           
+            // aye, adding another simData check here seems to cause this to explode...
 
             return results;
         }

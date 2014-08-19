@@ -53,6 +53,24 @@ namespace NRaas.MasterControllerSpace.Sims.Basic.Baby
             if (me.Pregnancy != null)
             {
                 me.Pregnancy.mGender = NRaas.MasterControllerSpace.Helpers.Baby.InterpretGender(mGender);
+
+                string str = "";
+                switch(mGender)
+                {
+                    case CASAgeGenderFlags.GenderMask:
+                        str = MasterController.Localize("Criteria.Random:MenuName");
+                        break;
+                    case CASAgeGenderFlags.Female:
+                        str = MasterController.Localize("BabyGender:Female");
+                        break;
+                    case CASAgeGenderFlags.Male:
+                        str = MasterController.Localize("BabyGender:Male");
+                        break;
+                    default:
+                        break;
+                }
+
+                Common.Notify(me.FullName + " " + MasterController.Localize("BabyGender:MenuName") + ": " + str);
             }
 
             return true;

@@ -71,6 +71,13 @@ namespace NRaas.OverwatchSpace.Alarms
                     }
                 }
 
+                foreach (GnomeMemorial memorial in Sims3.Gameplay.Queries.GetObjects<GnomeMemorial>())
+                {
+                    memorial.Dispose();
+                    memorial.Destroy();
+                    count++;
+                }
+
                 if ((prompt) || (count > 0))
                 {
                     Overwatch.AlarmNotify(Common.Localize("DeleteAllMagicalGnomes:Success", false, new object[] { count }));
