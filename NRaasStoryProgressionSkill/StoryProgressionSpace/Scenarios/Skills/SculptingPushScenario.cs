@@ -169,7 +169,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Skills
             {
                 IncStat("Sculpture Continued");
 
-                return Situations.PushInteraction(this, Sim, choice, SculptingStation.ContinueSculpture.Singleton);
+                return Situations.PushInteraction(this, Sim, choice, ContinueSculptureEx.Singleton);
             }
             else
             {
@@ -211,7 +211,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Skills
 
                 IncStat("Sculpture Started");
 
-                return Situations.PushInteraction(this, Sim, choice, new SculptingStation.CreateSculpture.Definition(null, sculptureChoice, materialChoice, new string[0]));
+                return Situations.PushInteraction(this, Sim, choice, new CreateSculptureEx.Definition(null, sculptureChoice, materialChoice, new string[0]));
             }
         }
 
