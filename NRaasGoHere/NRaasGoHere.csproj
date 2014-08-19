@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{231A6590-3D1E-433A-815F-0CAADAC16401}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -65,6 +65,8 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -75,6 +77,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\NRaas\Common.cs">
@@ -260,45 +263,36 @@
     <Compile Include="VersionStamp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sims3GameplaySystems">
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="mscorlib">
       <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="System">
       <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
     </Reference>
-    <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sims3Metadata">
       <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="System.Xml">
       <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
     </Reference>
-    <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ScriptCore">
       <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="0xB9C90FDC6793BC0A_Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sims3GameplayObjects">
       <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="0xC356DF69B70ADD42_SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SimIFace">
       <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="0xF7C3ADE896D4E765_UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="UI">
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
       <Private>False</Private>
     </Reference>

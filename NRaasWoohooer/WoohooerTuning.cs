@@ -452,5 +452,8 @@ namespace NRaas
 
 		[Tunable, TunableComment("Whether to allow autonomous woohoos in the Eiffel Tower")]
 		public static bool kAutonomousEiffelTower = true;
+
+		[Tunable, TunableComment("Whether to allow autonomous woohoos in Toilet Stalls")]
+		public static bool kAutonomousToiletStall = true;
     }
 }

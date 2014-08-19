@@ -162,6 +162,7 @@ namespace NRaas.WoohooerSpace
         public bool mAutonomousBotMaker = WoohooerTuning.kAutonomousBotMaker;
         public bool mAutonomousTimePortal = WoohooerTuning.kAutonomousTimePortal;
 		public bool mAutonomousEiffelTower = WoohooerTuning.kAutonomousEiffelTower;
+		public bool mAutonomousToiletStall = WoohooerTuning.kAutonomousToiletStall;
 
         public bool mNakedOutfitHotTub = WoohooerTuning.kNakedOutfitHotTub;
         public bool mNakedOutfitElevator = WoohooerTuning.kNakedOutfitElevator;
