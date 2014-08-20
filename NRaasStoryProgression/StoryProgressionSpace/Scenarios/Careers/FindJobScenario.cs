@@ -338,27 +338,14 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
             }
             else if (Careers.TestCareer(this, Sim, OccupationNames.AcademicCareer))
             {
-                if (Common.AssemblyCheck.IsInstalled("NRaasCareer"))
+                if (Careers.AllowHomeworldUniversity(Sim))
                 {
-                    bool success = false;
-                    foreach (AdminstrationCenter center in Sims3.Gameplay.Queries.GetObjects<AdminstrationCenter>())
+                    AcademicDegreeManager degreeManager = Sim.CareerManager.DegreeManager;
+                    if (degreeManager != null)
                     {
-                        if (GetLotOptions(center.LotCurrent).AllowCastes(this, Sim))
+                        if (!degreeManager.HasCompletedAnyDegree())
                         {
-                            success = true;
-                            break;
-                        }
-                    }
-
-                    if (success)
-                    {
-                        AcademicDegreeManager degreeManager = Sim.CareerManager.DegreeManager;
-                        if (degreeManager != null)
-                        {
-                            if (!degreeManager.HasCompletedAnyDegree())
-                            {
-                                enroll = true;
-                            }
+                            enroll = true;
                         }
                     }
                 }
@@ -469,6 +456,11 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                 if (degreeName == AcademicDegreeNames.Undefined)
                 {
                     degreeName = AcademicDegreeManager.ChooseWeightRandomSuitableDegree(Sim);
+                }
+
+                if (!Careers.IsDegreeAllowed(Manager, Sim, degreeName))
+                {
+                    degreeName = Careers.GetAllowedDegree(Manager, Sim);
                 }
 
                 if (degreeName != AcademicDegreeNames.Undefined)

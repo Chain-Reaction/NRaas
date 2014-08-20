@@ -998,11 +998,14 @@ namespace NRaas
                     }
 
                     ObjectGuid id = ObjectGuid.InvalidObjectGuid;
+                    bool moonDial = false;
                     if (obj != null)
                     {
                         id = obj.ObjectId;
 
-                        if (obj.GetType() == typeof(Sims3.Gameplay.Objects.Decorations.MoonDial))
+                        moonDial = obj.GetType() == typeof(Sims3.Gameplay.Objects.Decorations.MoonDial);
+
+                        if (moonDial)
                         {
                             record = false;
                         }
@@ -1019,7 +1022,7 @@ namespace NRaas
                         new CheckRoleManagerTask().Perform(proxy.Target as RoleManagerTask, true);
                     }
 
-                    Sim simObj = obj as Sim;
+                    Sim simObj = obj as Sim;                    
                     if (simObj != null)
                     {
                         try
@@ -1056,7 +1059,7 @@ namespace NRaas
                             return;
                         }
                     }
-                    else if (proxy != null)
+                    else if (proxy != null && !moonDial)
                     {
                         proxy.OnReset();
                     }

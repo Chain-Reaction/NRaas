@@ -39,7 +39,7 @@ namespace NRaas
 
         protected static void GenerateGoodies()
         {
-            BakeryController.RefillDisplays();
+            RefillDisplaysTask.Perform();
         }
 
         public static PersistedSettings Settings
@@ -68,7 +68,26 @@ namespace NRaas
 
             BakeryController.UnlockRecipes();
 
+            BakeryController.InitInteractions();
+
             new Common.AlarmTask(5, DaysOfTheWeek.All, GenerateGoodies);
-        }        
+        }
+
+        public class RefillDisplaysTask : Common.FunctionTask
+        {
+            protected RefillDisplaysTask()
+            {
+            }
+
+            public static void Perform()
+            {
+                new RefillDisplaysTask().AddToSimulator();
+            }
+
+            protected override void OnPerform()
+            {
+                BakeryController.RefillDisplays();
+            }
+        }
     }
 }

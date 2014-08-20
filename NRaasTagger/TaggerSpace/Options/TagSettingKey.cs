@@ -11,10 +11,15 @@ namespace NRaas.TaggerSpace.Options
     public class TagSettingKey : IPersistence
     {
         private uint guid;
-        private uint colorHEX;        
+        private uint colorHEX;
+        private uint metaAutonomyType;
 
         public TagSettingKey()
         { }
+        public TagSettingKey(uint guid)
+        {
+            this.guid = guid;
+        }
 
         public uint GUID
         {
@@ -25,7 +30,13 @@ namespace NRaas.TaggerSpace.Options
         public uint Color
         {
             get { return colorHEX; }
-            private set { }
+            set { colorHEX = value; }
+        }
+
+        public uint MetaAutonomyType
+        {
+            get { return metaAutonomyType; }
+            set { metaAutonomyType = value; }
         }
 
         public void SetGUID(string val)
@@ -36,12 +47,7 @@ namespace NRaas.TaggerSpace.Options
         public void SetColorHex(string hex)
         {
             this.colorHEX = uint.Parse(hex, System.Globalization.NumberStyles.HexNumber);
-        }
-
-        public void SetColor(uint color)
-        {
-            this.colorHEX = color;
-        }
+        }        
 
         public void Export(Persistence.Lookup settings)
         {

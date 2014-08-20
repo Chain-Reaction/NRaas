@@ -50,7 +50,10 @@ namespace NRaas.TaggerSpace
         [Tunable, TunableComment("Whether to color pregnancy tag based on expected gender")]
         protected static bool kColorPregnancyTag = true;
         [Tunable, TunableComment("Whether to use the normal tag without the obnoxious eye catching border for tagged Sims")]
-        protected static bool kSubtleTaggedSims = false; 
+        protected static bool kSubtleTaggedSims = false;
+
+        [Tunable, TunableComment("Whether to show the lot specific interactions")]
+        protected static bool kEnableLotInteractions = true; 
 
         public bool mEnableSimTags = kEnableSimTags;
         public bool mEnableLotTags = kEnableLotTags;
@@ -63,6 +66,8 @@ namespace NRaas.TaggerSpace
         public bool mHotspotPersonalityTags = kHotspotPersonalityTags;
         public bool mColorPregnancyTag = kColorPregnancyTag;
         public bool mSubtleTaggedSims = kSubtleTaggedSims;
+
+        public bool mEnableLotInteractions = kEnableLotInteractions;
 
         public Dictionary<uint, TagSettingKey> mCustomTagSettings = new Dictionary<uint, TagSettingKey>();
 
@@ -137,7 +142,7 @@ namespace NRaas.TaggerSpace
             }
 
             TagSettingKey key;
-            if (this.mCustomTagSettings.TryGetValue(lotType, out key))
+            if (this.mCustomTagSettings.TryGetValue(lotType, out key) && key.Color > 0)
             {                
                 return key.Color;
             }

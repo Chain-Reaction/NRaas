@@ -25,15 +25,6 @@ namespace NRaas.MasterControllerSpace
     [Persistable]
     public class PersistedSettings
     {
-        public enum TagInfo
-        {
-            Limited,
-            Personal,
-            Career,
-            Relationship,
-            Household,
-        }
-
         [Tunable, TunableComment("Whether to all more the eight sims in a family when using Add Sim or Pollinate")]
         public static bool kAllowOverStuffed = true;
         [Tunable, TunableComment("Whether to retain Dreams and Opportunities when switching between families")]
@@ -71,9 +62,7 @@ namespace NRaas.MasterControllerSpace
         [Tunable, TunableComment("Number of intervals to display on Sims By Money and the money filters")]
         public static int kByMoneyIntervals = 10;
         [Tunable, TunableComment("Whether to display the Ownership interaction in the object menu")]
-        public static bool kMenuVisibleOwnership = true;
-        [Tunable, TunableComment("What information to display on the map tags added by this mod (Limited, Personal, Career, Relationship, Household)")]
-        public static TagInfo kTagInfo = TagInfo.Limited;
+        public static bool kMenuVisibleOwnership = true;        
         [Tunable, TunableComment("Whether to retain separate hair coloring for each sim outfit")]
         public static bool kHairColorByOutfit = false;
         [Tunable, TunableComment("Whether to unlock all hairs for every gender")]
@@ -147,15 +136,15 @@ namespace NRaas.MasterControllerSpace
         [Tunable, TunableComment("Whether to filter party guests by the type of party chosen")]
         public static bool kPartyAgeFilter = false;
         [Tunable, TunableComment("Which expansion packs to hide in CAS by default (EP1, SP1, EP2, SP2, etc)")]
-        public static ProductVersion[] kHideByProduct = new ProductVersion[0];
-
-        [Tunable, TunableComment("Whether to display normal map tags")]
-        public static bool kSubtleMapTags = false;
+        public static ProductVersion[] kHideByProduct = new ProductVersion[0];        
 
         [Tunable, TunableComment("Whether to display normally hidden CAS parts")]
         public static bool kShowHiddenParts = false;
         [Tunable, TunableComment("Whether to unlock all adults clothing for all genders")]
         public static bool kUniGenderAdult = false;
+
+        [Tunable, TunableComment("The number of sliders to allow in CAS")]
+        public static int kMaxCASSliders = 100;
 
         public List<SelectionCriteria.SavedFilter> mFilters = new List<SelectionCriteria.SavedFilter>();
         public List<OutfitCategories> mDisableClothingFilterV2 = new List<OutfitCategories>(kDisableClothingFilterV2);
@@ -175,8 +164,7 @@ namespace NRaas.MasterControllerSpace
         public bool mMenuVisibleAddSim = kMenuVisibleAddSim;
         public bool mOverrideCoreSliders = kOverrideCoreSliders;
         public int mByMoneyIntervals = kByMoneyIntervals;
-        public bool mMenuVisibleOwnership = kMenuVisibleOwnership;
-        public TagInfo mTagInfo = kTagInfo;
+        public bool mMenuVisibleOwnership = kMenuVisibleOwnership;       
         public bool mHairColorByOutfit = kHairColorByOutfit;
         public bool mUniGenderHair = kUniGenderHair;
         public bool mBeardsForAll = kBeardsForAll;
@@ -213,10 +201,11 @@ namespace NRaas.MasterControllerSpace
         public bool mAdultClothesForElders = kAdultClothesForElders;
         public bool mAdultAccessoriesForTeens = kAdultAccessoriesForTeens;
         public bool mPartyAgeFilter = kPartyAgeFilter;
-        public List<ProductVersion> mHideByProduct = new List<ProductVersion>(kHideByProduct);
-        public bool mSubtleMapTags = kSubtleMapTags;
+        public List<ProductVersion> mHideByProduct = new List<ProductVersion>(kHideByProduct);        
         public bool mShowHiddenParts = kShowHiddenParts;
         public bool mUniGenderAdult = kUniGenderAdult;
+
+        public int mMaxCASSliders = kMaxCASSliders;
 
         public List<string> mHotkeys = new List<string>(kHotkeys);
         public List<string> mCustomBuffs = new List<string>(kCustomBuffs);

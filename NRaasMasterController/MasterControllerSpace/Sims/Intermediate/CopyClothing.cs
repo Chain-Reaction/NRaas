@@ -140,6 +140,7 @@ namespace NRaas.MasterControllerSpace.Sims.Intermediate
                         case OutfitCategories.Athletic:
                         case OutfitCategories.Career:
                         case OutfitCategories.Outerwear:
+                        case OutfitCategories.MartialArts:
                             allOptions.Add(new ChangeOutfit.Item(outfit.mKey, a));
                             break;
                     }

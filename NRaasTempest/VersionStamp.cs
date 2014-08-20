@@ -22,14 +22,11 @@ namespace NRaas
          * 
         * Have playing in sprinklers reduce sim temperature
         * Drinking specific drinks should increase or decrease a sim's temperature (how to specify which drinks do what ?)
-
-        * Stop fireplaces from auto-lighting based on season
-        ** Fireplace:SwitchLight()
-        * Automatic Sprinklers and Winter ?
+        
          * 
          * There are no holidays while at University ?
          * 
-         * EA Issue with trick or treating running all year round ?
+         
          * 
          */
 
@@ -37,6 +34,6 @@ namespace NRaas
          * 
          * 
          */
-        public static readonly int sVersion = 13;
+        public static readonly int sVersion = 14;
     }
 }

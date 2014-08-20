@@ -78,12 +78,12 @@ namespace NRaas.TaggerSpace.Interactions
         {
             Lot lot = GetLot(target, hit);
 
-            return lot != null && !lot.IsWorldLot && (lot.IsResidentialLot || lot.LastDisplayedLevel >= 0);
+            return Tagger.Settings.mEnableLotInteractions && lot != null && !lot.IsWorldLot && (lot.IsResidentialLot || lot.LastDisplayedLevel >= 0);
         }
 
         public override string GetInteractionName()
         {
-            return "Set Lot Address";
+            return Common.Localize("SetLotAddress:MenuName");
         }
 
         protected override OptionResult Perform(IActor actor, GameObject target, GameObjectHit hit)

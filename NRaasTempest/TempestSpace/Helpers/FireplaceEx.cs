@@ -25,6 +25,11 @@ namespace NRaas.TempestSpace.Helpers
                 return;
             }
 
+            if (!Tempest.Settings.mAutoLightFireplaces)
+            {
+                return;
+            }
+
             foreach (Fireplace fireplace in Sims3.Gameplay.Queries.GetObjects<Fireplace>())
             {
                 if (!fireplace.InWorld) continue;
@@ -34,14 +39,21 @@ namespace NRaas.TempestSpace.Helpers
                 if (lotCurrent == null) continue;
                 if (lotCurrent.Household == null) continue;
 
-                if (fireplace.CanAutoLight && SeasonsManager.Temperature <= 40 && lotCurrent.Household.IsActive && lotCurrent.Household.HasMemberOnLot(lotCurrent))
+                try
                 {
-                    fireplace.StartFire();
+                    if ((fireplace.Upgradable != null || fireplace is FireplaceUltra) && fireplace.CanAutoLight && SeasonsManager.Temperature <= Tempest.Settings.mAutoLightFireplacesTemperature && lotCurrent.Household.IsActive && lotCurrent.Household.HasMemberOnLot(lotCurrent))
+                    {
+                        fireplace.StartFire();
+                    }
+                    else
+                    {
+                        fireplace.UserControlled = true;
+                        fireplace.StopFire();
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    fireplace.UserControlled = true;
-                    fireplace.StopFire();
+                    Common.Exception("FireplaceEx:ShouldAutoLight", e);
                 }
             }
         }

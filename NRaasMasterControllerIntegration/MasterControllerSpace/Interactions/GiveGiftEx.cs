@@ -37,6 +37,8 @@ namespace NRaas.MasterControllerSpace.Interactions
             {
                 BooterLogger.AddError(SocialRHSReplacer.Perform<GiveGiftEx>("Give Gift", "OnGiveGiftAccept"));
                 BooterLogger.AddError(SocialRHSReplacer.Perform<GiveGiftEx>("Give Gift", "OnGiveGiftReject"));
+
+                BooterLogger.AddError(ActionDataReplacer.Perform<GiveGiftEx>("GiveGiftProceduralTest"));
             }
         }
 
@@ -178,6 +180,36 @@ namespace NRaas.MasterControllerSpace.Interactions
             {
                 actor.ShowTNSIfSelectable(message, StyledNotification.NotificationStyle.kSimTalking, target.ObjectId, gift.ObjectId);
             }
+        }
+
+        public static bool GiveGiftProceduralTest(Sim actor, Sim target, ActiveTopic topic, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+        {            
+            OccultImaginaryFriend friend;
+            if (actor.GetRelationship(target, false) == null)
+            {
+                return false;
+            }
+            if (SocialComponent.IsInServicePreventingSocialization(target))
+            {
+                return false;
+            }
+            if (!SocialComponent.WouldShowMultiLevelSocialPieMenu(actor, target))
+            {
+                return false;
+            }
+            if (OccultImaginaryFriend.TryGetOccultFromSim(target, out friend) && !friend.IsReal)
+            {
+                return false;
+            }
+
+            /*
+            if (!Sim.GiveGift.Definition.DoesGiftForTargetSimExist(actor, target))
+            {
+                greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback(Sim.GiveGift.GiveGiftLocalizeString(actor.IsFemale, "NoGiftsToGive", new object[0]));
+                return false;
+            }
+             */
+            return true;
         }
 
         public new class Definition : Sim.GiveGift.Definition

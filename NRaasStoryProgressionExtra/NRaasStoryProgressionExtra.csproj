@@ -77,8 +77,6 @@
   <ItemGroup>
     <Compile Include="StoryProgressionModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StoryProgressionSpace\MapTags\TrackedLot.cs" />
-    <Compile Include="StoryProgressionSpace\MapTags\TrackedSim.cs" />
     <Compile Include="StoryProgressionSpace\Options\StaticTemperatureOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\ForceTraitOption.cs" />
     <Compile Include="StoryProgressionSpace\Options\ForceCurfewOption.cs" />
@@ -97,7 +95,6 @@
     <Compile Include="StoryProgressionSpace\Options\StaticThirstOption.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Lots\AutoCleanScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Lots\DuplicateLibraryBooksScenario.cs" />
-    <Compile Include="StoryProgressionSpace\Scenarios\Lots\HandleMapTagsScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Lots\RemoveZeroValueBookScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Lots\RepopulateLibraryScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Lots\StockTerrariumsScenario.cs" />
@@ -105,7 +102,6 @@
     <Compile Include="StoryProgressionSpace\Scenarios\Sims\AddForcedTraitsScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Sims\UpdateMotivesHouseChangedScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Sims\FormalOutfitScenario.cs" />
-    <Compile Include="StoryProgressionSpace\Scenarios\Sims\HandleMapTagsScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Sims\PutAwayBooksScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Sims\SingedOutfitScenario.cs" />
     <Compile Include="StoryProgressionSpace\Scenarios\Sims\UpdateMotivesScenario.cs" />

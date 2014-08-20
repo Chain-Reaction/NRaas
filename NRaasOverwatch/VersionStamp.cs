@@ -31,14 +31,13 @@ namespace NRaas
          * HasHouseholdBeenToThisRoom clean up, where is it ?
          * 
          * Force a Hard-Reset on Elevator users during "Reset Elevators"
-         * 
-         * If a mTimeTravelerServiceRequests is not available for a requested lot, end the service request
+         *         
          */
 
         /* Changes:
          *         
          * 
          */
-        public static readonly int sVersion = 117;
+        public static readonly int sVersion = 118;
     }
 }

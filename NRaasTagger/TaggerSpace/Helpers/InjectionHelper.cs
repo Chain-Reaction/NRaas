@@ -3,6 +3,7 @@ using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.MapTags;
+using Sims3.Gameplay.RealEstate;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
@@ -142,6 +143,30 @@ namespace NRaas.TaggerSpace.Helpers
 
                 sCurrentTuning.mBookGigModifier = 0f;
                 sCurrentTuning.mPerformanceMeterMax = 1f;
+            }
+        }
+
+        public static void InjectRealEstateData(string varname)
+        {
+            // temporary
+            CommercialLotSubType type;
+            if (ParserFunctions.TryParseEnum<CommercialLotSubType>(varname, out type, CommercialLotSubType.kCommercialUndefined))
+            {
+                RealEstateData.VenueData data = default(RealEstateData.VenueData);
+                data.LotType = type;
+                data.BaseCost = 50000;
+
+                List<int> list;
+                List<int> list2;
+
+                string weeklyIncomes = "5800,12750,25000";
+                string upgradeValues = "50000,85000,155000";
+                ParserFunctions.ParseCommaSeperatedInt(weeklyIncomes, out list);
+                ParserFunctions.ParseCommaSeperatedInt(upgradeValues, out list2);
+                data.WeeklyIncomes = list.ToArray();
+                data.UpgradeValues = list2.ToArray();
+
+                RealEstateData.sDictionary.Add(type, data);
             }
         }
     }

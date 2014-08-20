@@ -16,7 +16,7 @@ using System.Text;
 
 namespace NRaas.TravelerSpace.Options
 {
-    public class EnableSeasonsSetting : BooleanSettingOption<GameObject>, IPrimaryOption<GameObject>, Common.IWorldLoadFinished, Common.IWorldQuit
+    public class EnableSeasonsSetting : BooleanSettingOption<GameObject>, IPrimaryOption<GameObject>, Common.IDelayedWorldLoadFinished, Common.IWorldQuit
     {
         protected override bool Value
         {
@@ -46,12 +46,15 @@ namespace NRaas.TravelerSpace.Options
         {
             if (!GameUtils.IsInstalled(ProductVersion.EP8)) return false;
 
+            WorldName world = GameUtils.GetCurrentWorld();
+            if(!Common.IsOnTrueVacation() || (world == WorldName.University || world == WorldName.FutureWorld)) return false;
+
             return base.Allow(parameters);
         }
 
-        public void OnWorldLoadFinished()
+        public void OnDelayedWorldLoadFinished()
         {
-            if (GameUtils.IsOnVacation())
+            if (Common.IsOnTrueVacation())
             {
                 ToggleSeasons();
             }
@@ -70,16 +73,17 @@ namespace NRaas.TravelerSpace.Options
         public static void ToggleSeasons()
         {
             bool enable = Traveler.Settings.mEnableSeasons;
+            
             if (enable)
-            {
-                if (SeasonsManager.Enabled) return;
+            {                
+                if (SeasonsManager.Enabled) return;                
 
                 SeasonsManager.sSeasonsValidForWorld = SeasonsManager.Validity.Valid;
                 SeasonsManager.PostWorldStartup();
             }
             else
-            {
-                if (!SeasonsManager.Enabled) return;
+            {                
+                //if (!SeasonsManager.Enabled) return;                
 
                 SeasonsManager.Shutdown();
 
@@ -103,7 +107,7 @@ namespace NRaas.TravelerSpace.Options
                 {
                     actor.Motives.RemoveMotive(CommodityKind.Temperature);
                 }
-            }
+            }            
         }
     }
 }

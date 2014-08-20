@@ -58,7 +58,7 @@ namespace NRaas.StoryProgressionSpace.Managers
                 }
             }
 
-            if (!settings.GetValue<AllowMoneyOption, bool>())
+            if (((check & AllowCheck.Scoring) != AllowCheck.Scoring) && !settings.GetValue<AllowMoneyOption, bool>())
             {
                 stats.IncStat("Allow: Money Denied");
                 return false;
@@ -92,7 +92,14 @@ namespace NRaas.StoryProgressionSpace.Managers
         {
             return PrivateAllow(stats, sim, check);
         }
-
+        // this was done because the scoring causes the stack depth to be exceeded when a value in the PrivateAllow
+        // function calls SimData so I check the value in the scoring instead        
+        public bool Allow(IScoringGenerator stats, SimDescription sim, bool fromScoring)
+        {
+            AllowCheck check = AllowCheck.None;
+            check &= AllowCheck.Scoring;
+            return PrivateAllow(stats, sim, check);
+        }
         protected override bool PrivateAllow(IScoringGenerator stats, SimDescription sim, AllowCheck check)
         {
             if (Household.RoommateManager.IsNPCRoommate(sim))

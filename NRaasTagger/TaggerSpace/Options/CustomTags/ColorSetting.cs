@@ -29,22 +29,26 @@ namespace NRaas.TaggerSpace.Options.CustomTags
             {
                 if (Tagger.Settings.TypeHasCustomSettings(mData.GUID))
                 {
-                    return Tagger.Settings.mCustomTagSettings[mData.GUID].Color;
+                    // legacy support
+                    if (Tagger.Settings.mCustomTagSettings[mData.GUID].Color > 0)
+                    {
+                        return Tagger.Settings.mCustomTagSettings[mData.GUID].Color;
+                    }
                 }
 
-                return 0;
+                return mData.Color;
             }
             set
             {
                 if (!Tagger.Settings.TypeHasCustomSettings(mData.GUID))
                 {
                     TagSettingKey key = new TagSettingKey();
-                    key.SetColor(value);
+                    key.Color = value;
                     Tagger.Settings.mCustomTagSettings.Add(mData.GUID, key);
                 }
                 else
                 {
-                    Tagger.Settings.mCustomTagSettings[mData.GUID].SetColor(value);
+                    Tagger.Settings.mCustomTagSettings[mData.GUID].Color = value;
                 }
             }
         }  

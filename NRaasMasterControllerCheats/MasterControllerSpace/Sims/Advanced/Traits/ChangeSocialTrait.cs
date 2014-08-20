@@ -46,7 +46,7 @@ namespace NRaas.MasterControllerSpace.Sims.Advanced.Traits
         {
             if (!base.PrivateAllow(me)) return false;
 
-            if (me.TraitManager == null || me.IsEP11Bot) return false;
+            if (me.TraitManager == null) return false;
 
             //if (!me.TraitManager.mSocialGroupTraitEnabled) return false;
 

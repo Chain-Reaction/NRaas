@@ -133,8 +133,11 @@
     <Compile Include="Cupcake.cs" />
     <Compile Include="CupcakeSpace\Helpers\BakeryController.cs" />
     <Compile Include="CupcakeSpace\Helpers\DisplayHelper.cs" />
+    <Compile Include="CupcakeSpace\Interactions\BrowseEx.cs" />
+    <Compile Include="CupcakeSpace\Interactions\ChildObjectPurchaseStubEx.cs" />
     <Compile Include="CupcakeSpace\Interactions\DisplayInteraction.cs" />
     <Compile Include="CupcakeSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="CupcakeSpace\Interactions\PurchaseItemEx.cs" />
     <Compile Include="CupcakeSpace\Options\AffectActiveSetting.cs" />
     <Compile Include="CupcakeSpace\Options\AutoRestockSetting.cs" />
     <Compile Include="CupcakeSpace\Options\DebuggingSetting.cs" />
@@ -151,6 +154,7 @@
     <Compile Include="CupcakeSpace\Options\Displays\SetDisplaySettings.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\SetDisplaySettingsWithCurrentConfiguration.cs" />
     <Compile Include="CupcakeSpace\Options\Displays\ICaseOption.cs" />
+    <Compile Include="CupcakeSpace\Options\ElegantRestockingSetting.cs" />
     <Compile Include="CupcakeSpace\Options\OneRecipePerDisplayOnRandomSetting.cs" />
     <Compile Include="CupcakeSpace\Options\SetGlobalRandomRestockSettings.cs" />
     <Compile Include="CupcakeSpace\Options\StockWeddingCakesSetting.cs" />
@@ -205,6 +209,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CupcakeSpace\Careers\" />
     <Folder Include="StringTables\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

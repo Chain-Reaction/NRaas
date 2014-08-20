@@ -40,6 +40,10 @@ namespace NRaas.RegisterSpace.Helpers
                     {
                         list.Add(description);
                     }
+                    else if (GameUtils.GetWorldType(description.HomeWorld) == WorldType.Future)
+                    {
+                        list.Add(description);
+                    }
                 }
             }
             return list;

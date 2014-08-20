@@ -108,7 +108,7 @@ namespace NRaas.RegisterSpace
         public static bool kAllowHomeworldTourists = true;
 
         [Tunable, TunableComment("The maximum paparazzi that the role manager can spawn")]
-        public static int kMaximumPaparazzi = 3;
+        public static int kMaximumPaparazzi = 3;        
         
         public bool mShowLotMenu = kShowLotMenu;
         public bool mShowNotices = kShowNotices;
@@ -144,6 +144,9 @@ namespace NRaas.RegisterSpace
         public int mMaximumPaparazzi = kMaximumPaparazzi;
 
         public Dictionary<ServiceType, ServiceSettingKey> serviceSettings = new Dictionary<ServiceType, ServiceSettingKey>();
+
+        // the stuff one has to go through because EA is so careless...
+        public List<ulong> mFutureSims = new List<ulong>();        
 
         public PersistedSettings()
         {
@@ -246,11 +249,11 @@ namespace NRaas.RegisterSpace
         }
 
         public void Import(Persistence.Lookup settings)
-        {
+        {            
             serviceSettings.Clear();
             foreach (ServiceSettingKey setting in settings.GetList<ServiceSettingKey>("Services"))
             {
-                serviceSettings[setting.type] = setting;
+                serviceSettings[setting.type] = setting;                
             }           
 
             Register.InitDefaultServiceTunings();

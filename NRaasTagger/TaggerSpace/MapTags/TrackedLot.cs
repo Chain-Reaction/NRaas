@@ -23,7 +23,7 @@ namespace NRaas.TaggerSpace.MapTags
 {
     public class TrackedLot : NeighborLotMapTag, INpcPartyMapTag
     {
-        static Common.MethodStore sGetPartyOnLot = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "GetNPCPartyInvolvingLot", new Type[] { typeof(Dictionary<string, object>) });
+        static Common.MethodStore sGetPartyOnLot = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "GetNPCPartyInvolvingLot", new Type[] { typeof(Lot) });
         
         public TrackedLot(Lot targetLot, Sim owner)
             : base(targetLot, owner)
@@ -216,7 +216,7 @@ namespace NRaas.TaggerSpace.MapTags
 
         protected static Dictionary<string, object> TryGetSPPartyOnLot(Lot lot)
         {
-            if (sGetPartyOnLot.Valid)
+            if (sGetPartyOnLot.Valid && CameraController.IsMapViewModeEnabled())
             {
                 return sGetPartyOnLot.Invoke<Dictionary<string, object>>(new object[] { lot });
             }
@@ -271,7 +271,7 @@ namespace NRaas.TaggerSpace.MapTags
                 try
                 {
                     Lot target = Target as Lot;
-                    if ((target == null) || (target.Household == null) || (Sim.ActiveActor == null) || (target.Household == Sim.ActiveActor.Household))
+                    if ((target == null) || (target.Household == null) || (Sim.ActiveActor == null) || (target.Household == Sim.ActiveActor.Household) || !CameraController.IsMapViewModeEnabled())
                     {
                         return base.ShadeColor;
                     }

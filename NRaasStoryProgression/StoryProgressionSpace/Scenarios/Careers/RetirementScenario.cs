@@ -98,6 +98,11 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                 IncStat("Find Job Denied");
                 return false;
             }
+            else if (sim.OccupationAsAcademicCareer != null)
+            {
+                IncStat("Academic Career");
+                return false;
+            }
 
             return base.Allow(sim);
         }

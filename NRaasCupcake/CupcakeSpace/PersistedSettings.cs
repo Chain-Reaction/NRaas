@@ -43,11 +43,15 @@ namespace NRaas.CupcakeSpace
         [Tunable, TunableComment("Whether to only use the first picked recipe for the entire display when on random selection")]
         protected static bool kOneRecipePerDiplayOnRandom = false;
 
+        [Tunable, TunableComment("Whether to only use the slots that are hand tool enabled to stock")]
+        protected static bool kElegantRestock = false;
+
         public bool mAutoRestock = kAutoRestock;
         public bool mAffectActive = kAffectActive;
         public bool mStockWeddingCakes = kStockWeddingCakes;        
         public bool mDisableRandomAutoRestock = kDisableRandomAutoRestock;
         public bool mOneRecipePerDisplayOnRandom = kOneRecipePerDiplayOnRandom;
+        public bool mElegantRestock = kElegantRestock;
 
         public Dictionary<ObjectGuid, Dictionary<int, Dictionary<string, List<Quality>>>> mDisplayRestockSettings = new Dictionary<ObjectGuid, Dictionary<int, Dictionary<string, List<Quality>>>>();
         public List<ObjectGuid> mExemptDisplays = new List<ObjectGuid>();

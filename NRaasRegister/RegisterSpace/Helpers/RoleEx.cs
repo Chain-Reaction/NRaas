@@ -155,8 +155,8 @@ namespace NRaas.RegisterSpace.Helpers
             }
 
             if (data.FillRoleFrom == Role.RoleFillFrom.PeopleWhoDontLiveInThisWorld)
-            {
-                if ((homeWorld != WorldName.TouristWorld) && (GameUtils.GetWorldType(homeWorld) != WorldType.Vacation))
+            {                
+                if ((homeWorld != WorldName.TouristWorld) && (GameUtils.GetWorldType(homeWorld) != WorldType.Vacation) && (GameUtils.GetWorldType(homeWorld) != WorldType.Future))
                 {
                     reason = "Vacation World Fail";
                     return false;
@@ -165,6 +165,14 @@ namespace NRaas.RegisterSpace.Helpers
                 {
                     reason = "Home World Fail";
                     return false;
+                }
+                if (GameUtils.GetWorldType(homeWorld) == WorldType.Future)
+                {
+                    if (Sims3.Gameplay.Queries.CountObjects<ITimePortal>() == 0)
+                    {
+                        reason = "Time Portal Fail";
+                        return false;
+                    }                    
                 }
             }
             /*

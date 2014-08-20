@@ -83,6 +83,8 @@
     <Compile Include="MasterControllerSpace\Interactions\CallThrowPartyEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\CallThrowOffLotPartyEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\ChangeScaleColorEx.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\CloneFromSampleEx.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\CloneFromSampleObjectEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\ClothingPedestalPlanOutfitEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\ClothingPedestalPurchaseCustomOutfitEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\CustomizeServobotAEx.cs" />

@@ -199,8 +199,12 @@ namespace NRaas.RegisterSpace.Helpers
                         }
                         else if ((type != ServiceType.None) && (sim.Age & ServiceNPCSpecifications.GetAppropriateAges(type.ToString())) == CASAgeGenderFlags.None)
                         {                            
-                            AttemptServiceDisposal(sim, false, "Wrong Age " + type);                            
-                        }                        
+                            AttemptServiceDisposal(sim, false, "Wrong Age " + type);
+                        }
+                        else if (!ServiceNPCSpecifications.ShouldUseServobot(type.ToString()) && sim.IsEP11Bot)
+                        {                            
+                            AttemptServiceDisposal(sim, false, "Not EP11 Bot " + type);
+                        }
                     }
                     catch (Exception e)
                     {

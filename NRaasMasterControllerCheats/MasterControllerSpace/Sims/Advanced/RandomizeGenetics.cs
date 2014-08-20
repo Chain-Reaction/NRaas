@@ -90,7 +90,7 @@ namespace NRaas.MasterControllerSpace.Sims.Advanced
 
             Vector2 range = new Vector2(-mRange / 256f, mRange / 256f);
 
-            FacialBlends.RandomizeBlends(null, me, range, mAdd, range, true);
+            FacialBlends.RandomizeBlends(null, me, range, mAdd, range, true, false);
 
             return true;
         }

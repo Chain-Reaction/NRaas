@@ -83,9 +83,8 @@ namespace NRaas
          */
 
         /* Changes
-         * 
-         * The weather stone no longer attempts to spawn if you don't have Supernatural and Seasons installed         
+         *                 
          */
-        public static readonly int sVersion = 85;
+        public static readonly int sVersion = 86;
     }
 }

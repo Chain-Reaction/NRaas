@@ -103,6 +103,60 @@ namespace NRaas.CupcakeSpace.Helpers
             BakersStation.BSFoodInfos.Add(new BakersStation.BSFoodInfo(BakersStation.BSBaseFoodType.BSCobbler, BakersStation.BSFoodType.BSLemonCobbler, "BSBakeLemonCobbler", "Default", 0));
         }
 
+        public static void InitInteractions()
+        {
+            foreach (CraftersConsignmentDisplay display in Sims3.Gameplay.Queries.GetObjects<CraftersConsignmentDisplay>())
+            {
+                DisplayHelper.DisplayTypes displayType;
+                Dictionary<int, Slot> slots = DisplayHelper.GetEmptyOrFoodSlots(display, out displayType);
+                foreach (KeyValuePair<int, Slot> slot in slots)
+                {
+                    GameObject containedObject = display.GetContainedObject(slot.Value) as GameObject;
+                    if (containedObject != null)
+                    {
+                        InitInteractions(containedObject);
+                    }
+                }
+            }
+        }
+
+        public static void InitInteractions(GameObject obj)
+        {
+            ServingContainer container = obj as ServingContainer;
+            if (container != null)
+            {
+                // EA fail
+                container.RemoveInteractionByType(ServingContainerGroup.CallToMeal.Singleton);
+            }
+
+            WeddingCake cake = obj as WeddingCake;
+            if (cake != null)
+            {
+                cake.RemoveInteractionByType(WeddingCake.CutWeddingCake.Singleton);
+            }
+
+            Snack container2 = obj as Snack;
+            if (container2 != null)
+            {
+                if (obj != null)
+                {
+                    obj.RemoveInteractionByType(CraftersConsignment.ChildObjectBrowseStub.Singleton);
+                    obj.RemoveInteractionByType(CraftersConsignment.ChildObjectPurchaseStub.Singleton);
+                    obj.AddInteraction(CraftersConsignment.ChildObjectBrowseStub.Singleton);
+                    obj.AddInteraction(CraftersConsignment.ChildObjectPurchaseStub.Singleton);
+
+                    obj.RemoveInteractionByType(Sims3.Gameplay.Objects.CookingObjects.Eat.Singleton);
+                    obj.RemoveInteractionByType(Snack_CleanUp.Singleton);
+                }
+
+                ISpoilable spoil = container2 as ISpoilable;
+                if (spoil != null)
+                {
+                    spoil.UpdateSpoilageTime(true, -1f);
+                }
+            }
+        }
+
         public static void RefillDisplays()
         {
             if (Cupcake.Settings.mAutoRestock)
@@ -145,6 +199,9 @@ namespace NRaas.CupcakeSpace.Helpers
             List<int> slotsToSkipForWeddingCakeSetupOnRack = new List<int> { 0, 2, 4 };
             List<int> slotsForWeddingCakesChiller = new List<int> { 21, 22, 24 };
             List<int> slotsForWeddingCakesOnRack = new List<int> { 1, 3 };
+            // wedding cake slots are included in these so they get stocked... if the cakes are disabled, they will be skipped properly
+            List<int> slotsForElegantStockingOnRack = new List<int> { 1, 3, 5, 8, 9, 11, 13, 14, 17, 18, 20, 22, 23, 26 };
+            List<int> slotsForElegantStockingOnChiller = new List<int> { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 21, 22, 24 };
             Recipe randomRestockRecipe = null;
 
             if (display.LotCurrent != null)
@@ -216,15 +273,30 @@ namespace NRaas.CupcakeSpace.Helpers
                             debug += Common.NewLine + "Skipping slots for presentable wedding cake setup";
                             continue;
                         }
+
+                        if (Cupcake.Settings.mElegantRestock && !slotsForElegantStockingOnChiller.Contains(slot.Key))
+                        {
+                            debug += Common.NewLine + "Skipping slot for elegant restocking";
+                            continue;
+                        }
                     }
                 }
 
                 if (displayType == DisplayHelper.DisplayTypes.Rack)
                 {
-                    if (Cupcake.Settings.mStockWeddingCakes && slotsToSkipForWeddingCakeSetupOnRack.Contains(slot.Key) && !Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
+                    if (!Cupcake.Settings.SlotHasSettings(display.ObjectId, slot.Key))
                     {
-                        debug += Common.NewLine + "Skipping slots for presentable wedding cake setup";
-                        continue;
+                        if (Cupcake.Settings.mStockWeddingCakes && slotsToSkipForWeddingCakeSetupOnRack.Contains(slot.Key))
+                        {
+                            debug += Common.NewLine + "Skipping slots for presentable wedding cake setup";
+                            continue;
+                        }
+
+                        if (Cupcake.Settings.mElegantRestock && !slotsForElegantStockingOnRack.Contains(slot.Key))
+                        {
+                            debug += Common.NewLine + "Skipping slot for elegant restocking";
+                            continue;
+                        }
                     }
                 }
 
@@ -403,19 +475,19 @@ namespace NRaas.CupcakeSpace.Helpers
                         } else if (((tryCake && cake is FailureObject) || recipe.Key == "BSBakeWeddingCake"))
                         {
                             debug += Common.NewLine + "Attempt at Store Wedding cake";
-                            cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeWeddingCake", ~ProductVersion.Undefined);
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingBakery", ~ProductVersion.Undefined);
                             if (cake is FailureObject)
                             {
-                                cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeWeddingCake", ProductVersion.BaseGame);
+                                cake = GlobalFunctions.CreateObjectOutOfWorld("foodServeCakeWeddingBakery", ProductVersion.BaseGame);
                             }   
                         }
                         else if (recipe.Key == "BSBakeBirthdayCake")
                         {
                             debug += Common.NewLine + "Attempt at Store Birthday cake";
-                            cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeBirthdayCake", ~ProductVersion.Undefined);
+                            cake = GlobalFunctions.CreateObjectOutOfWorld("FoodBirthdayCakeBakery", ~ProductVersion.Undefined);
                             if (cake is FailureObject)
                             {
-                                cake = GlobalFunctions.CreateObjectOutOfWorld("BSBakeBirthdayCake", ProductVersion.BaseGame);
+                                cake = GlobalFunctions.CreateObjectOutOfWorld("FoodBirthdayCakeBakery", ProductVersion.BaseGame);
                             }   
                         }
                         else
@@ -439,12 +511,7 @@ namespace NRaas.CupcakeSpace.Helpers
                             debug += Common.NewLine + "Cake success";
                             DisplayHelper.ParentToSlot(cake as GameObject, slot.Value, display);
                             cake.AddToWorld();
-
-                            WeddingCake cake2 = cake as WeddingCake;
-                            if (cake2 != null)
-                            {
-                                cake2.RemoveInteractionByType(WeddingCake.CutWeddingCake.Singleton);
-                            }
+                            InitInteractions(cake as GameObject);
                         }                        
 
                         if (container != null)
@@ -470,34 +537,10 @@ namespace NRaas.CupcakeSpace.Helpers
                                 int[] numArray = new int[] { 0, 0, 0, 0, 0, 0, 15, 30, 0x2d, 60, 0x4b, 100, 0x65 };
                                 container2.CookingProcess.FoodPoints = numArray[(int)quality];
                                 container2.CookingProcess.FoodState = FoodCookState.Cooked;
-                                container2.FoodCookStateChanged(container2.CookingProcess.FoodState);
-
-                                // EA fail
-                                container2.RemoveInteractionByType(ServingContainerGroup.CallToMeal.Singleton);
-                            }                            
-
-                            // snack handling... needs a lot more
-                            Snack container3 = container as Snack;
-                            if (container3 != null)
-                            {
-                                GameObject container4 = container as GameObject;
-                                if (container4 != null)
-                                {
-                                    container4.RemoveInteractionByType(CraftersConsignment.ChildObjectBrowseStub.Singleton);
-                                    container4.RemoveInteractionByType(CraftersConsignment.ChildObjectPurchaseStub.Singleton);
-                                    container4.AddInteraction(CraftersConsignment.ChildObjectBrowseStub.Singleton);
-                                    container4.AddInteraction(CraftersConsignment.ChildObjectPurchaseStub.Singleton);
-
-                                    container4.RemoveInteractionByType(Sims3.Gameplay.Objects.CookingObjects.Eat.Singleton);
-                                    container4.RemoveInteractionByType(Snack_CleanUp.Singleton);
-                                }
-
-                                ISpoilable spoil = container as ISpoilable;
-                                if (spoil != null)
-                                {
-                                    spoil.UpdateSpoilageTime(true, -1f);
-                                }
+                                container2.FoodCookStateChanged(container2.CookingProcess.FoodState);                               
                             }
+
+                            InitInteractions(container as GameObject);
 
                             debug += Common.NewLine + "Success: " + recipe.GenericName + Common.NewLine + quality.ToString();
                         }

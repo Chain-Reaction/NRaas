@@ -69,6 +69,12 @@ namespace NRaas.StoryProgressionSpace.Helpers
             }
         }
 
+        public List<BuildBuyProduct> GetProducts()
+        {
+            // Note this just returns catalog data... one should call Get to return an actual created object
+            return mProducts;
+        }
+
         public delegate bool TestDelegate<T>(T obj)
             where T : class;
 

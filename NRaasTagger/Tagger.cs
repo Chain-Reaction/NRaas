@@ -7,6 +7,7 @@ using NRaas.TaggerSpace.Helpers;
 using NRaas.TaggerSpace.MapTags;
 using NRaas.TaggerSpace.Options;
 using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.MapTags;
@@ -18,7 +19,7 @@ using System.Text;
 
 namespace NRaas
 {
-    public class Tagger : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished
+    public class Tagger : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished, Common.IDelayedWorldLoadFinished
     {
         [Tunable, TunableComment("Scripting Mod Instantiator, value does not matter, only its existence")]
         protected static bool kInstantiator = false;
@@ -67,6 +68,7 @@ namespace NRaas
             foreach (KeyValuePair<uint, TagStaticData> data in staticData)
             {                
                 InjectionHelper.InjectCommunityType(data.Value.name);
+                InjectionHelper.InjectRealEstateData(data.Value.name);
             }            
 
             InjectionHelper.InjectMapTag("CustomTagNRaas");            
@@ -86,6 +88,17 @@ namespace NRaas
             return ListenerAction.Remove;
         }
 
+        public ListenerAction OnSimInstantiated(Event e)
+        {
+            Sim sim = e.TargetObject as Sim;
+            if (sim != null)
+            {
+                MapTagHelper.SetupSimTag(sim);
+            }
+
+            return ListenerAction.Keep;
+        }
+
         public ListenerAction OnSimSelected(Event e)
         {
             SetupMapTags(false);
@@ -94,7 +107,7 @@ namespace NRaas
 
         public ListenerAction OnActiveHouseholdMoved(Event e)
         {
-            SetupMapTags(false, true);
+            SetupMapTags(false);
             return ListenerAction.Keep;
         }
 
@@ -164,6 +177,10 @@ namespace NRaas
 
                     model.FireMapTagRefreshAll();
                 }
+                else
+                {                    
+                    RemoveTags();
+                }
             }
         }      
   
@@ -211,8 +228,75 @@ namespace NRaas
         public void OnMapView(bool enabled)
         {
             if (enabled)
-            {
+            {                
                 SetupMapTags(false);
+            }
+        }
+
+        // doesn't seem to be firing...
+        public static void OnLotTypeChanged(object sender, EventArgs args)
+        {            
+            // until I can work on custom MA types, this should push some Sims to the lots (and urge them to buy stuff if the items exist)
+            World.OnLotTypeChangedEventArgs args2 = args as World.OnLotTypeChangedEventArgs;
+            if (args2 != null)
+            {
+                Lot lot = LotManager.GetLot(args2.LotId);
+                if (lot != null)
+                {
+                    if (MapTagHelper.ShouldReplace(lot))
+                    {                        
+                        SetMetaAutonomyType(lot, Lot.MetaAutonomyType.MarketSmall);
+                    }
+                }
+            }
+        }
+
+        public static void SetMetaAutonomyType(Lot lot, Lot.MetaAutonomyType type)
+        {
+            if (lot == null)
+            {
+                return;
+            }
+
+            lot.mMetaAutonomyType = type;
+            Autonomy.AddPublicMetaObject(lot);
+
+            MetaAutonomyTuning tuning = MetaAutonomyManager.GetTuning(lot.GetMetaAutonomyVenueType());
+            if (tuning != null)
+            {
+                foreach (Sim sim in LotManager.Actors)
+                {
+                    if (sim.HasReasonToGoToVenue(tuning))
+                    {
+                        MetaAutonomyManager.AddSimToVenue(sim, lot);
+                    }
+                    else
+                    {
+                        MetaAutonomyManager.RemoveSimFromVenue(sim, lot);
+                    }
+                }
+            }
+        }
+
+        public void OnDelayedWorldLoadFinished()
+        {
+            foreach (Lot lot in LotManager.AllLots)
+            {
+                if (MapTagHelper.ShouldReplace(lot))
+                {
+                    if (Tagger.Settings.TypeHasCustomSettings((uint)lot.CommercialLotSubType))
+                    {
+                        TagSettingKey key = Tagger.Settings.mCustomTagSettings[(uint)lot.CommercialLotSubType];
+                        if (key.MetaAutonomyType > 0)
+                        {
+                            SetMetaAutonomyType(lot, (Lot.MetaAutonomyType)key.MetaAutonomyType);
+                        }
+                    }
+                    else
+                    {                        
+                        SetMetaAutonomyType(lot, Lot.MetaAutonomyType.Hangout);
+                    }
+                }
             }
         }
 
@@ -221,6 +305,8 @@ namespace NRaas
             kDebugging = Settings.Debugging;
 
             EventTracker.AddListener(EventTypeId.kEnterInWorldSubState, new ProcessEventDelegate(this.OnLiveMode));
+            EventTracker.AddListener(EventTypeId.kSimInstantiated, new ProcessEventDelegate(this.OnSimInstantiated));
+            World.sOnLotTypeChangedEventHandler += new EventHandler(OnLotTypeChanged);
 
             if (Tagger.Settings.mAddresses != null)
             {
@@ -243,7 +329,7 @@ namespace NRaas
 
                     BooterLogger.AddTrace("Removed: " + id);
                 }
-            }
+            }            
         }
 
         // Externalized to GoHere

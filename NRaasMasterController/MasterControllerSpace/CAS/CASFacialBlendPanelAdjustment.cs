@@ -88,7 +88,7 @@ namespace NRaas.MasterControllerSpace.CAS
             {
                 if (panel.mSliderData.Length == 25)
                 {
-                    panel.mSliderData = new CASFacialBlendPanel.SliderData[100];
+                    panel.mSliderData = new CASFacialBlendPanel.SliderData[MasterController.Settings.mMaxCASSliders];
                 }
 
                 mSlidersToText.Clear();

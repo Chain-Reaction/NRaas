@@ -1852,37 +1852,9 @@ namespace NRaas.WoohooerSpace.Skills
                     int payment = GetPayment();
 
                     if (data != null && !data.mWasRandom && data.mProfessional == SkillOwner.SimDescriptionId)
-                    {
-                        Common.Notify("In correct place");
+                    {                        
                         payment = payment *= 2;
-                    }
-                    else
-                    {
-                        if (data == null)
-                        {
-                            Common.Notify("Null data");
-                        }
-                        else
-                        {
-                            if (!data.mWasRandom)
-                            {
-                                Common.Notify("Wasn't random");
-                            }
-                            else
-                            {
-                                Common.Notify("Was random");
-                            }
-
-                            if (data.mProfessional == SkillOwner.SimDescriptionId)
-                            {
-                                Common.Notify("mProfessional correct");
-                            }
-                            else
-                            {
-                                Common.Notify("mProfessional: " + data.mProfessional + " SkillOwner: " + SkillOwner.FullName + " - " + SkillOwner.SimDescriptionId);
-                            }
-                        }
-                    }
+                    }                    
 
                     if (!target.Household.IsSpecialHousehold)
                     {

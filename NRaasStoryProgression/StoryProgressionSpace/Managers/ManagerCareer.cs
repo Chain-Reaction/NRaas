@@ -12,6 +12,7 @@ using NRaas.StoryProgressionSpace.SimDataElement;
 using NRaas.StoryProgressionSpace.Scoring;
 using NRaas.StoryProgressionSpace.ScoringMethods;
 using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Academics;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
@@ -22,6 +23,7 @@ using Sims3.Gameplay.DreamsAndPromises;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
+using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.Gameplay.RealEstate;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.TuningValues;
@@ -42,6 +44,7 @@ namespace NRaas.StoryProgressionSpace.Managers
     {
         List<SimDescription> mSchoolChildren = new List<SimDescription>();
         List<SimDescription> mEmployed = new List<SimDescription>();
+        List<SimDescription> mUniversitySims = new List<SimDescription>();
 
         bool mRewardsDisabled = false;
 
@@ -115,6 +118,11 @@ namespace NRaas.StoryProgressionSpace.Managers
             get { return mEmployed; }
         }
 
+        public List<SimDescription> UniversitySims
+        {
+            get { return mUniversitySims; }
+        }
+
         public override void Startup(PersistentOptionBase options)
         {
             base.Startup(options);
@@ -173,6 +181,11 @@ namespace NRaas.StoryProgressionSpace.Managers
 
                             IncStat("Bad School Dropped");
                         }
+                    }
+
+                    if (sim.OccupationAsAcademicCareer != null)
+                    {
+                        mUniversitySims.Add(sim);
                     }
 
                     if (ValidCareer(sim.Occupation))
@@ -864,6 +877,34 @@ namespace NRaas.StoryProgressionSpace.Managers
             return false;
         }
 
+        public bool AllowHomeworldUniversity(SimDescription sim)
+        {
+            if (!Common.AssemblyCheck.IsInstalled("NRaasCareer"))
+            {
+                return false;
+            }
+
+            bool success = false;
+            foreach (AdminstrationCenter center in Sims3.Gameplay.Queries.GetObjects<AdminstrationCenter>())
+            {
+                if (sim != null)
+                {
+                    if (GetLotOptions(center.LotCurrent).AllowCastes(this, sim))
+                    {
+                        success = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    success = true;
+                    break;
+                }
+            }
+
+            return success;
+        }
+
         public bool Test(Common.IStatGenerator stats, DreamJob job, SimDescription sim, Lot lot, Dictionary<OccupationNames, int> scores, bool inspecting)
         {
             if (job == null) return false;
@@ -912,6 +953,48 @@ namespace NRaas.StoryProgressionSpace.Managers
             }
 
             return true;
+        }
+
+        public bool IsDegreeAllowed(Common.IStatGenerator stats, SimDescription sim, AcademicDegreeNames degree)
+        {
+            if (HasAnyValue<AllowDegreeOption, AcademicDegreeNames>(sim))
+            {
+                if (!HasValue<AllowDegreeOption, AcademicDegreeNames>(sim, degree))
+                {
+                    stats.IncStat(degree + " Not Allowed");
+                    return false;
+                }
+            }
+
+            if (HasValue<DisallowDegreeOption, AcademicDegreeNames>(sim, degree))
+            {
+                stats.IncStat(degree + " Disallowed");
+                return false;
+            }
+
+            return true;
+        }
+
+        public AcademicDegreeNames GetAllowedDegree(Common.IStatGenerator stats, SimDescription sim)
+        {
+            List<AcademicDegreeNames> results = new List<AcademicDegreeNames>();
+
+            foreach (AcademicDegreeStaticData data in AcademicDegreeManager.sDictionary.Values)
+            {
+                if (this.IsDegreeAllowed(stats, sim, data.Guid))
+                {
+                    results.Add(data.Guid);
+                }
+            }
+
+            if (results.Count > 0)
+            {
+                return RandomUtil.GetRandomObjectFromList<AcademicDegreeNames>(results);
+            }
+            else
+            {
+                return AcademicDegreeNames.Undefined;
+            }
         }
 
         public bool TestAndAdd(Common.IStatGenerator stats, List<DreamJob> jobs, DreamJob job, SimDescription sim, Lot lot, Dictionary<OccupationNames,int> scores, bool inspecting, bool checkQuit)
@@ -1255,6 +1338,27 @@ namespace NRaas.StoryProgressionSpace.Managers
             public override string GetTitlePrefix()
             {
                 return "SchoolListing";
+            }
+        }
+
+        public interface IHomeworldUniversityOption : INotRootLevelOption
+        { }
+
+        public class HomeworldUniversityListingOption : NestingManagerOptionItem<ManagerCareer, IHomeworldUniversityOption>
+        {
+            public HomeworldUniversityListingOption()
+            { }
+
+            public override string GetTitlePrefix()
+            {
+                return "HomeworldUniversityListing";
+            }
+
+            public override bool ShouldDisplay()
+            {
+                if (!StoryProgression.Main.Careers.AllowHomeworldUniversity(null)) return false;
+
+                return base.ShouldDisplay();
             }
         }
 

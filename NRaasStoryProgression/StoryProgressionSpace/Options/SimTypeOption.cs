@@ -66,6 +66,9 @@ namespace NRaas.StoryProgressionSpace.Options
                 {
                     case SimType.None:
                     case SimType.Frankenstein:
+                    case SimType.TimeTraveler:
+                    case SimType.Deer:
+                    case SimType.Raccoon:
                         continue;
                 }
 

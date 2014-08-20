@@ -163,11 +163,13 @@ namespace NRaas.TravelerSpace.Helpers
                 return false;
             }
 
+            /*
             if (!GameUtils.IsInstalled(ProductVersion.EP1))
             {
                 callback = Common.DebugTooltip("Pack Not Installed");
                 return false;
             }
+             */
 
             string reason = CommonSpace.Helpers.TravelUtilEx.CheckForReasonsToFailTravel(actor.SimDescription, Traveler.Settings.mTravelFilter, WorldName.Undefined, false, testMoveRequested);
             if (!string.IsNullOrEmpty(reason))

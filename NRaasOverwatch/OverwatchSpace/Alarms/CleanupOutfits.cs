@@ -19,6 +19,7 @@ using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
 using Sims3.UI;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -72,6 +73,7 @@ namespace NRaas.OverwatchSpace.Alarms
                     protection = 0;
                     while ((sim.GetOutfitCount(OutfitCategories.Career) > 3) && (protection < 100))
                     {
+                        // this handles the out of control lab coat's from the generation table
                         sim.RemoveOutfit(OutfitCategories.Career, sim.GetOutfitCount(OutfitCategories.Career) - 1, true);
 
                         protection++;
@@ -90,7 +92,53 @@ namespace NRaas.OverwatchSpace.Alarms
                             protection++;
                             count++;
 
-                            Overwatch.Log("Singed Removed " + sim.FullName);
+                            Overwatch.Log("Bonehilda Removed " + sim.FullName);
+                        }
+                    }
+
+                    // fix corrupt generations outfits
+                    ArrayList outfits = sim.GetOutfits(OutfitCategories.ChildImagination);
+                    if (outfits != null)
+                    {
+                        int index = 0;
+                        while (index < outfits.Count)
+                        {
+                            SimOutfit simOutfit = outfits[index] as SimOutfit;
+                            if (simOutfit == null)
+                            {
+                                outfits.RemoveAt(index);
+                            }
+                            else if (!simOutfit.IsValid)
+                            {
+                                outfits.RemoveAt(index);
+                            }
+                            else
+                            {
+                                index++;
+                            }
+                        }                     
+                    }
+
+                    // fix corrupt diving outfits
+                    ArrayList specialOutfits = sim.GetOutfits(OutfitCategories.Special);
+                    if (specialOutfits != null)
+                    {
+                        int index = 0;
+                        while (index < specialOutfits.Count)
+                        {
+                            SimOutfit simOutfit = specialOutfits[index] as SimOutfit;
+                            if (simOutfit == null)
+                            {
+                                sim.RemoveSpecialOutfitAtIndex(index);
+                            }
+                            else if (!simOutfit.IsValid)
+                            {
+                                sim.RemoveSpecialOutfitAtIndex(index);
+                            }
+                            else
+                            {
+                                index++;
+                            }
                         }
                     }
 

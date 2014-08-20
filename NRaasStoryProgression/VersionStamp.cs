@@ -436,7 +436,6 @@ namespace NRaas
          * 
          * See if "Tourists \ Allow Aging" being applied to tourists properly
          * 
-         * Plumbots lacking sentience traits should be considered "children" by the mod
          * 
          * Test curfew in "AllowPushToLot"
 ----
@@ -444,32 +443,10 @@ namespace NRaas
          */
 
         /* Changes
-         * 
-         * Release all modules for compatibility
-         * 
-         * Changes made to the sleeping action to improve performance sharing*
-         * Fixed the "Plumbot \ Flirt: Allow Caste" option which was blocking plumbot-human romance*
-         * Plumbots outside of the active household can no longer be a career boss without the work chip
-         * Plumbots inside the active household can no longer be an active Sims career boss if the active household owns the rabbithole
-         * Another attempt at fixing the issue of inactives trying to buy the rollercoaster and tractor
-         * Inactive Sims can now progress their laser harp skill via busking (Skill)
-         * Renamed "Options: Caste \ Caste: Match All Types" to "Options: Caste \ Caste Filter: Match All Filters"
-         * Renamed "Options: Caste\ Caste: Type" to "Options: Caste \ Caste Filter: Sim Type"
-         * Added "Options: Caste \ Caste Filter: Career"
-         * Added "Options: Caste \ Caste Filter: Career Level"
-         * Added "Options: Caste \ Caste Filter: Skill"
-         * Added "Options: Caste \ Caste Filter: Skill Level"
-         * Added "Options: Caste \ Caste Filter: Zodiac"
-         * Attempt at fixing the Caste: Disable Carpool option (Careers)
-         * Plumbots without the senitence chip should no longer be left alone when the family moves and those who were created by someone who is moving should go with them (pending I found all the correct locations in the code...)
-         * Attempt at stopping the "carpool is coming" message on holidays (Careers)
-         * Added "Options: Pregnancy \ Occult Mutation Chance"
-         * Plumbots without the senitence or robo nanny chips are no longer considered valid guardians
-         * Added "Immigration \ Replace Roommates With Immigrants" (Requires Replace Service Sims With Immigrants to be enabled for now)
-         * Fixed Replace Service Sims With Immigrants
+         *          
          * 
          */
-        public static readonly int sVersion = 265;
+        public static readonly int sVersion = 266;
 
         void TraitTest()
         {

@@ -485,6 +485,7 @@ namespace NRaas.StoryProgressionSpace
                     {
                         mCastes = Castes.GetMatching(mSim, StoryProgression.Main.GetValue<NetWorthOption, int>(mSim.Household));
 
+                        // odd place but Twallan put it here for a reason. Anymore SimData calls in GetMatching explodes the mod
                         List<ulong> disallowed = Options.GetSim(mSim).GetValue<DisallowCasteOption,List<ulong>>();
 
                         for (int i = mCastes.Count - 1; i >= 0; i--)

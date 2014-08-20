@@ -1,5 +1,7 @@
 ﻿using NRaas.CupcakeSpace.Helpers;
+using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
@@ -128,6 +130,90 @@ namespace NRaas.CupcakeSpace.Helpers
                 obj.SetForward(parent.GetForwardOfSlot(slot));                
                 obj.ParentToSlot(parent, slot);                
             }
-        }   
+        }
+
+        public static List<ObjectGuid> GetObjectsICanBuyInDisplay(Sim actor, CraftersConsignment display)
+        {
+            List<ObjectGuid> list = new List<ObjectGuid>();
+            if (!display.Charred)
+            {
+                Slot[] containmentSlots = display.GetContainmentSlots();
+                for (int i = 0; i < containmentSlots.Length; i++)
+                {
+                    GameObject containedObject = display.GetContainedObject(containmentSlots[i]) as GameObject;
+                    if (TestIfObjectCanBeBoughtByActor(containedObject, actor))
+                    {
+                        list.Add(containedObject.ObjectId);
+                    }
+                }
+            }
+            return list;
+        }
+
+        public static bool TestIfObjectCanBeBoughtByActor(GameObject obj, Sim actor)
+        {
+            ServingContainer container = obj as ServingContainer;
+            if (container != null)
+            {                
+                return container.AmountLeft == AmountLeftState.Full;
+            }
+
+            Snack snackContainer = obj as Snack;            
+            return ((snackContainer != null) && (snackContainer.HasFoodLeft()));
+        }
+
+        public static int ComputeFinalPriceOnObject(ObjectGuid targetGuid)
+        {
+            int finalPrice = 0;
+            int basePrice = 0;
+            GameObject obj2 = GlobalFunctions.ConvertGuidToObject<GameObject>(targetGuid);
+            BasePriceFinalPriceDiff(obj2, out finalPrice, out basePrice);
+            return finalPrice;
+        }
+
+        public static int BasePriceFinalPriceDiff(GameObject obj, out int FinalPrice, out int BasePrice)
+        {
+            CraftersConsignment display = obj.Parent as CraftersConsignment;
+
+            if (display == null)
+            {
+                BasePrice = 0;
+                FinalPrice = 0;
+                return 0;
+            }
+
+            BasePrice = 0;
+            if (obj != null)
+            {
+                ServingContainer container = obj as ServingContainer;
+                if (container != null)
+                {
+                    float kSingleServingBasePrice = 0f;
+                    if (container is ISingleServingContainer)
+                    {
+                        kSingleServingBasePrice = CraftersConsignment.kSingleServingBasePrice;
+                    }
+                    else
+                    {
+                        kSingleServingBasePrice = CraftersConsignment.kGroupServingBasePrice;
+                    }
+                    kSingleServingBasePrice *= CraftersConsignment.kFoodQualityMuliplier[QualityHelper.GetQualityIndex(container.GetQuality())];
+                    BasePrice = (int)kSingleServingBasePrice;
+                }
+
+                Snack snackContainer = obj as Snack;
+                if (snackContainer != null)
+                {
+                    float kSingleServingBasePrice = CraftersConsignment.kSingleServingBasePrice;
+                    kSingleServingBasePrice *= CraftersConsignment.kFoodQualityMuliplier[QualityHelper.GetQualityIndex(Quality.Perfect)];
+                    BasePrice = (int)kSingleServingBasePrice;
+                }
+            }
+            float num2 = CraftersConsignment.ConvertMarkupToPercent(display.mMarkup);
+            float num3 = ((float)BasePrice) * num2;
+            num3 -= num3 * display.mSaleDiscount;
+            FinalPrice = (int)num3;
+            return (BasePrice - FinalPrice);
+        }
     }
 }

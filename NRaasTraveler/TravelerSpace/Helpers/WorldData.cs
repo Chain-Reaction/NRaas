@@ -509,11 +509,13 @@ namespace NRaas.TravelerSpace.Helpers
                     case WorldRestrictionType.Disallow:
                         if ((tuning.Availability.WorldRestrictionWorldTypes.Contains(WorldType.Vacation)) ||
                             (tuning.Availability.WorldRestrictionWorldTypes.Contains(WorldType.Downtown)) ||
-                            (tuning.Availability.WorldRestrictionWorldTypes.Contains(WorldType.University)))
+                            (tuning.Availability.WorldRestrictionWorldTypes.Contains(WorldType.University)) ||
+                            (tuning.Availability.WorldRestrictionWorldTypes.Contains(WorldType.Future)))
                         {
                             tuning.Availability.WorldRestrictionWorldTypes.Remove(WorldType.Vacation);
                             tuning.Availability.WorldRestrictionWorldTypes.Remove(WorldType.Downtown);
                             tuning.Availability.WorldRestrictionWorldTypes.Remove(WorldType.University);
+                            tuning.Availability.WorldRestrictionWorldTypes.Remove(WorldType.Future);
 
                             BooterLogger.AddTrace("Tuning Altered: Allowed (B) " + tuning.FullInteractionName + " : " + tuning.FullObjectName);
                         }

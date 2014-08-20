@@ -1728,7 +1728,7 @@ namespace NRaas.MasterControllerSpace.Sims
                     AlterSlider(basics.mMuscleDefinitionSlider);
                     AlterSlider(basics.mThinHeavySlider);
                     AlterSlider(basics.mBreastSizeSlider);
-                    AlterSlider(basics.mMuscleSlider);
+                    AlterSlider(basics.mMuscleSlider);                    
 
                     Text text = basics.GetChildByID(0xdbb8cd0, true) as Text;
                     if (text != null)
@@ -1880,15 +1880,20 @@ namespace NRaas.MasterControllerSpace.Sims
 
         protected static void AlterSlider(Slider slider)
         {
-            if (slider == null) return;
+            if (slider == null) return;            
 
-            if (((slider.MinValue == 0) || (slider.MinValue == -256)) && (slider.MaxValue == 256))
-            {
+            if (((slider.MinValue == 0) || (slider.MinValue == -256)) && (slider.MaxValue == 256 || slider.MaxValue == 320))
+            {                
                 slider.MinValue *= MasterController.Settings.mBodySliderMultiple;
-
                 if (MasterController.Settings.mBodySliderOffset < 0)
                 {
                     slider.MinValue += MasterController.Settings.mBodySliderOffset;
+                }
+
+                if (slider.MaxValue == 320)
+                {
+                    // EA multiplies this themselves in werewolf mode
+                    slider.MaxValue = 256;
                 }
 
                 slider.MaxValue *= MasterController.Settings.mBodySliderMultiple;
@@ -1897,7 +1902,7 @@ namespace NRaas.MasterControllerSpace.Sims
                 {
                     slider.MaxValue += MasterController.Settings.mBodySliderOffset;
                 }
-            }
+            }            
         }
 
         protected static void RestoreOutfits()

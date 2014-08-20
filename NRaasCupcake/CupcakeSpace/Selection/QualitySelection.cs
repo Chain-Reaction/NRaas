@@ -113,7 +113,7 @@ namespace NRaas.CupcakeSpace.Selection
                 options.Add(new Item(type.ToString(), type, selected));
             }
 
-            QualitySelection selection = new QualitySelection(Common.Localize("SelectRecipes:ListTitle"), options, new AuxillaryColumn());
+            QualitySelection selection = new QualitySelection(Common.Localize("SelectQuality:ListTitle"), options, new AuxillaryColumn());
 
             return selection;
         }

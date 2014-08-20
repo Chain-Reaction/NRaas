@@ -911,7 +911,10 @@ namespace NRaas.TravelerSpace.Helpers
             // before it finishes            
             foreach (KeyValuePair<ulong, SimDescription> entry in UnpackedSims)
             {
-                entry.Value.PackUpToMiniSimDescription();
+                if (entry.Value != null && entry.Value.IsValidDescription)
+                {
+                    entry.Value.PackUpToMiniSimDescription();
+                }
             }
         }
     }    

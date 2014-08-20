@@ -78,6 +78,10 @@ namespace NRaas.CommonSpace.Helpers
         Stray,
         WildHorse,
         Role,
+        Employed,
+        Unemployed,
+        HasDegree,
+        Degreeless
     }
 
     public class SimTypes
@@ -266,11 +270,7 @@ namespace NRaas.CommonSpace.Helpers
                 case SimType.Alive:
                     return !IsDead(sim);
                 case SimType.Service:
-                    if (sim.IsServicePerson) return true;
-
-                    if (sim.HasAssignedRole) return true;
-
-                    return false;
+                    return sim.IsServicePerson;
                 case SimType.Mummy:
                     return sim.IsMummy;
                 case SimType.Alien:
@@ -320,6 +320,14 @@ namespace NRaas.CommonSpace.Helpers
                     return sim.IsRaccoon;
                 case SimType.Role:
                     return sim.HasAssignedRole;
+                case SimType.Employed:
+                    return sim.JobIcon != string.Empty;
+                case SimType.Unemployed:
+                    return sim.JobIcon == string.Empty;
+                case SimType.HasDegree:
+                    return sim.mDegrees.Count > 0;
+                case SimType.Degreeless:
+                    return sim.mDegrees.Count == 0;
             }
 
             return false;
@@ -473,6 +481,14 @@ namespace NRaas.CommonSpace.Helpers
                     return (sim.IsHorse && sim.IsWildAnimal);
                 case SimType.Stray:
                     return (!sim.IsHorse && sim.IsWildAnimal);
+                case SimType.Employed:
+                    return (sim.CareerManager != null && sim.CareerManager.mJob != null);
+                case SimType.Unemployed:
+                    return (sim.CareerManager != null && sim.CareerManager.mJob == null);
+                case SimType.HasDegree:
+                    return (sim.CareerManager != null && sim.CareerManager.DegreeManager != null && sim.CareerManager.DegreeManager.GetCompletedDegreeEntries().Count > 0);
+                case SimType.Degreeless:
+                    return (sim.CareerManager != null && sim.CareerManager.DegreeManager != null && sim.CareerManager.DegreeManager.GetCompletedDegreeEntries().Count == 0);
             }
 
             return false;

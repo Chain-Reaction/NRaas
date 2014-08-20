@@ -426,11 +426,11 @@ namespace NRaas.StoryProgressionSpace
                 if (sim.CareerManager == null || sim.CareerManager.DegreeManager == null)
                 {
                     return false;
-                }
+                }                
 
                 foreach (AcademicDegreeNames degree in degrees)
                 {
-                    if (sim.CareerManager.DegreeManager.HasCompletedDegree(degree)) return true;
+                   if (sim.CareerManager.DegreeManager.HasCompletedDegree(degree)) return true;                    
                 }
 
                 return false;
@@ -441,11 +441,11 @@ namespace NRaas.StoryProgressionSpace
                 if (sim.CareerManager == null || sim.CareerManager.DegreeManager == null)
                 {
                     return false;
-                }
+                }                
 
                 foreach (AcademicDegreeNames degree in degrees)
                 {
-                    if (!sim.CareerManager.DegreeManager.HasCompletedDegree(degree)) return false;
+                   if (!sim.CareerManager.DegreeManager.HasCompletedDegree(degree)) return false;                    
                 }
 
                 return true;
@@ -660,6 +660,10 @@ namespace NRaas.StoryProgressionSpace
                     {
                         if (!HasAllZodiacs(sim, mZodiac)) return false;
                     }
+                    if (mDegree.Count > 0)
+                    {
+                        if (!HasAllDegrees(sim, mDegree)) return false;
+                    }
                 }
                 else
                 {
@@ -683,6 +687,10 @@ namespace NRaas.StoryProgressionSpace
                     if (mZodiac.Count > 0)
                     {
                         if (!HasAnyZodiac(sim, mZodiac)) return false;
+                    }
+                    if (mDegree.Count > 0)
+                    {
+                        if (!HasAnyDegree(sim, mDegree)) return false;
                     }
                 }
 

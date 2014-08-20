@@ -302,6 +302,9 @@
     <Compile Include="..\NRaas\Proxies\CASModelProxy.cs">
       <Link>CommonSpace\Proxies\CASModelProxy.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Replacers\ActionDataReplacer.cs">
+      <Link>CommonSpace\Replacers\ActionDataReplacer.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Replacers\SocialRHSReplacer.cs">
       <Link>CommonSpace\Replacers\SocialRHSReplacer.cs</Link>
     </Compile>
@@ -493,15 +496,14 @@
     <Compile Include="MasterControllerSpace\Settings\CAS\HairColorByOutfitSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\CAS\ICASOption.cs" />
     <Compile Include="MasterControllerSpace\Settings\CAS\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\CAS\SliderMaxSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\CheckForNoDoubleBedSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\CommunityAddSimSetting.cs" />
-    <Compile Include="MasterControllerSpace\Settings\SubtleMapTagsSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\PartyAgeFilterSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\ExportSettings.cs" />
     <Compile Include="MasterControllerSpace\Settings\ImportSettings.cs" />
     <Compile Include="MasterControllerSpace\Settings\RemoveActiveTopicLimitSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\DefaultSpeciesFilterSetting.cs" />
-    <Compile Include="MasterControllerSpace\Settings\TagInfoSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\CAS\SliderOverrideSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityTransferFromSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\Visibility\Object\VisibilityOwnershipSetting.cs" />
@@ -554,12 +556,6 @@
     <Compile Include="MasterControllerSpace\Sims\Intermediate\AddRoommate.cs" />
     <Compile Include="MasterControllerSpace\Sims\Intermediate\RemoveRole.cs" />
     <Compile Include="MasterControllerSpace\Sims\Status\SkillsStatus.cs" />
-    <Compile Include="MasterControllerSpace\Sims\Tags\AddTag.cs" />
-    <Compile Include="MasterControllerSpace\Sims\Tags\ReapplyTags.cs" />
-    <Compile Include="MasterControllerSpace\Sims\Tags\RemoveAllTags.cs" />
-    <Compile Include="MasterControllerSpace\Sims\Tags\ITagsOption.cs" />
-    <Compile Include="MasterControllerSpace\Sims\Tags\ListingOption.cs" />
-    <Compile Include="MasterControllerSpace\Sims\Tags\RemoveTag.cs" />
     <Compile Include="MasterControllerSpace\Sims\Basic\LogNames.cs" />
     <Compile Include="MasterControllerSpace\Sims\Basic\Adopt.cs" />
     <Compile Include="MasterControllerSpace\Sims\Intermediate\CopyClothing.cs" />

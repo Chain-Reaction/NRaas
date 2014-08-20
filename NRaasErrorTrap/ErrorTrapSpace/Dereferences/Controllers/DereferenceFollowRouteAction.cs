@@ -7,6 +7,7 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Routing;
+using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
@@ -64,6 +65,11 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
             {
                 foreach (KeyValuePair<Sim, InteractionInstance> pair in sSims)
                 {
+                    if (pair.Key.Service != null && pair.Key.Service is Butler)
+                    {
+                        continue;
+                    }
+
                     new DelayedResetTask(pair.Key, pair.Value);
                 }
 
@@ -92,7 +98,7 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
             {
                 if (!object.ReferenceEquals(mSim.CurrentInteraction, mInstance)) return;
 
-                ErrorTrap.DebugLogCorrection("Follow Route Action Reset: " + mSim.FullName);
+                ErrorTrap.DebugLogCorrection("Follow Route Action Reset: " + mSim.FullName);                
 
                 new ResetSimTask(mSim);
             }
