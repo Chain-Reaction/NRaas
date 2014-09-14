@@ -64,7 +64,7 @@ namespace NRaas.WoohooerSpace.Interactions
 			}
 			protected override bool Satisfies(Sim actor, Sim target, ToiletStall obj, bool isAutonomous, ref GreyedOutTooltipCallback callback)
 			{
-				return true;
+				return LocationControl.TestAccessible(obj, actor) && LocationControl.TestAccessible(obj, target);
 			}
 		}
 		public class MakeOutDefinition : ToiletStallWooHoo.BaseDefinition
@@ -74,6 +74,13 @@ namespace NRaas.WoohooerSpace.Interactions
 				get
 				{
 					return true;
+				}
+			}
+			public override bool PushSocial
+			{
+				get
+				{
+					return false;
 				}
 			}
 			public MakeOutDefinition()
@@ -211,29 +218,9 @@ namespace NRaas.WoohooerSpace.Interactions
 				List<GameObject> list = new List<GameObject>();
 				foreach (ToiletStall current in actor.LotCurrent.GetObjects<ToiletStall>(new Predicate<ToiletStall>(TestUse)))
 				{
-					if (testFunc == null || testFunc(current, null))
+					if ((testFunc == null || testFunc(current, null)) && TestAccessible(current, actor) && TestAccessible(current, target))
 					{
-						bool flag = false;
-						int roomId = current.RoomId;
-						if (actor.RoomId == roomId && target.RoomId == roomId)
-						{
-							flag = true;
-						}
-						else
-						{
-							foreach(CommonDoor door in actor.LotCurrent.GetObjectsInRoom<CommonDoor>(roomId))
-							{
-								if (door.IsAllowedThrough (actor) && door.IsAllowedThrough (target))
-								{
-									flag = true;
-									break;
-								}
-							}
-						}
-						if (flag)
-						{
-							list.Add(current);
-						}
+						list.Add(current);
 					}
 				}
 				return list;
@@ -251,6 +238,23 @@ namespace NRaas.WoohooerSpace.Interactions
 				default:
 					return null;
 				}
+			}
+
+			public static bool TestAccessible(Toilet obj, Sim sim)
+			{
+				int roomId = obj.RoomId;
+				if (sim.RoomId == roomId)
+				{
+					return true;
+				}
+				foreach(CommonDoor door in obj.LotCurrent.GetObjectsInRoom<CommonDoor>(roomId))
+				{
+					if (door.IsAllowedThrough (sim))
+					{
+						return true;
+					}
+				}
+				return false;
 			}
 		}
 		private static readonly InteractionDefinition MakeOutSingleton = new ToiletStallWooHoo.MakeOutDefinition();
@@ -289,15 +293,17 @@ namespace NRaas.WoohooerSpace.Interactions
 			bool result = false;
 			try
 			{
-				BuffNames[] peeBuffs = new BuffNames[]{ BuffNames.HasToPee, BuffNames.ReallyHasToPee };
 				ProxyDefinition proxyDefinition = base.InteractionDefinition as ProxyDefinition;
+				Vector3 slotPosition = Target.GetSlotPosition(Slot.RoutingSlot_0);
 				if (Actor == WooHooer && !Actor.HasExitReason())
 				{
 					if (!Target.SimLine.WaitForTurn(this, Actor, SimQueue.WaitBehavior.CutAheadOfLowerPrioritySims, ExitReason.Default, Toilet.kTimeToWaitInLine))
 					{
 						return result;
 					}
-					isSitting = Actor.BuffManager.HasAnyElement(peeBuffs) || (!WooHooee.BuffManager.HasAnyElement(peeBuffs) && RandomUtil.CoinFlip());
+					//float value1 = Actor.Motives.GetMotiveValue(CommodityKind.Bladder);
+					//float value2 = WooHooee.Motives.GetMotiveValue(CommodityKind.Bladder);
+					isSitting = (Actor.Position - slotPosition).Length() < (WooHooee.Position - slotPosition).Length(); //(value1 < Math.Min(0, value2)) || (value2 >= 0 && RandomUtil.CoinFlip());
 					ToiletStallWooHoo wooHoo = proxyDefinition.ProxyClone(WooHooee).CreateInstance(Target, WooHooee, new InteractionPriority(InteractionPriorityLevel.UserDirected), false, true) as ToiletStallWooHoo;
 					wooHoo.LinkedInteractionInstance = this;
 					wooHoo.WooHooer = WooHooer;
@@ -309,7 +315,7 @@ namespace NRaas.WoohooerSpace.Interactions
 				{
 					if (!isSitting)
 					{
-						Actor.RouteToObjectRadialRange(Target, 1.5f, 2.5f);
+						Actor.RouteToPointRadius(slotPosition, 1f);
 					}
 					if ((isSitting || Actor.WaitForSynchronizationLevelWithSim (LinkedInteractionInstance.InstanceActor, Sim.SyncLevel.Routed, 30f)) && Actor.RouteToSlot(Target, Slot.RoutingSlot_0))
 					{
@@ -319,18 +325,19 @@ namespace NRaas.WoohooerSpace.Interactions
 
 						if (SitDownAndWait(stateMachine))
 						{
-							BuffInstance element = Actor.BuffManager.GetElement(BuffNames.ReallyHasToPee);
+							BuffInstance element =  Actor.BuffManager.GetElement(BuffNames.ReallyHasToPee);
 							if (element != null)
 							{
 								element.mTimeoutPaused = true;
 							}
 							base.BeginCommodityUpdates();
 							isWooHooing = !proxyDefinition.Makeout;
+							bool skipFlush = false;
 							if (isSitting)
 							{
 								Actor.EnableCensor (Sim.CensorType.FullHeight);
 								base.FinishLinkedInteraction(false);
-								RelieveSelf(element);
+								skipFlush = !RelieveSelf(element);
 								base.WaitForSyncComplete();
 								Actor.AutoEnableCensor();
 								Actor.BuffManager.UnpauseBuff (BuffNames.ImaginaryFriendFeelOfPorcelain);
@@ -341,8 +348,7 @@ namespace NRaas.WoohooerSpace.Interactions
 								stateMachine.RequestState("x", stateName);
 								Actor.EnableCensor (Sim.CensorType.FullHeight);
 								TurnOnWooHooFx ();
-								base.DoTimedLoop (RandomUtil.RandomFloatGaussianDistribution(10f, 25f));
-								RelieveSelf(element);
+								base.DoTimedLoop (RandomUtil.RandomFloatGaussianDistribution(5f, isWooHooing ? 15f : 10f));
 								if (!isWooHooing)
 								{
 									EventTracker.SendEvent(new SocialEvent(EventTypeId.kSocialInteraction, WooHooer, WooHooee, "Make Out", false, true, false, CommodityTypes.Undefined));
@@ -364,17 +370,17 @@ namespace NRaas.WoohooerSpace.Interactions
 								{
 									stateMachine.RequestState("x", "putDown");
 								}
+								RelieveSelf(element);
 								base.EndCommodityUpdates(true);
 								LinkedInteractionInstance.EndCommodityUpdates(true);
 							}
 							isWooHooing = false;
 							Target.Cleanable.DirtyInc(Actor);
 							bool autoFlush = !isSitting || Target.ToiletTuning.AutoFlushes;
-							if (autoFlush || Target.ShouldFlush(Actor, base.Autonomous))
+							if (autoFlush || (!skipFlush && Target.ShouldFlush(Actor, base.Autonomous)))
 							{
 								Target.FlushToilet(Actor, stateMachine, !autoFlush);
 							}
-							TurnOffCensorsAndFx(!isSitting && LinkedInteractionInstance.InstanceActor.BuffManager.HasAnyElement(peeBuffs));
 							if (Target.ShouldWashHands(Actor))
 							{
 								Sink sink = Toilet.FindClosestSink(Actor);
@@ -386,6 +392,7 @@ namespace NRaas.WoohooerSpace.Interactions
 							}
 							result = true;
 						}
+						TurnOffCensorsAndFx();
 						stateMachine.RequestState("x", "Exit");
 						if (!isSitting)
 						{
@@ -417,8 +424,29 @@ namespace NRaas.WoohooerSpace.Interactions
 			{
 				isWooHooing = false;
 			}
-			TurnOffCensorsAndFx (false);
+			TurnOffCensorsAndFx ();
 			base.Cleanup();
+		}
+		public bool RelieveSelf(BuffInstance element)
+		{
+			if (element != null)
+			{
+				element.mTimeoutPaused = false;
+			}
+			bool flag = false;
+			Motive motive = Actor.Motives.GetMotive(CommodityKind.Bladder);
+			if (motive != null && (element != null || Actor.BuffManager.HasAnyElement(new BuffNames[]{ BuffNames.HasToPee, BuffNames.ReallyHasToPee })))
+			{
+				motive.PotionBladderDecayOverride = false;
+				Actor.Motives.SetValue (CommodityKind.Bladder, motive.GetIdealMotiveValue());
+				Target.ToiletVolume++;
+				flag = true;
+			}
+			if (!isSitting || flag)
+			{
+				SimClockUtils.SleepForNSimMinutes (Toilet.kMaxLengthUseToilet);
+			}
+			return flag;
 		}
 		public bool SitDownAndWait (StateMachineClient stateMachine)
 		{
@@ -445,20 +473,6 @@ namespace NRaas.WoohooerSpace.Interactions
 			}
 			return true;
 		}
-		public void RelieveSelf(BuffInstance peeBuff)
-		{
-			if (peeBuff != null)
-			{
-				peeBuff.mTimeoutPaused = false;
-			}
-			if (peeBuff != null || Actor.BuffManager.HasAnyElement (new BuffNames[]{ BuffNames.HasToPee, BuffNames.ReallyHasToPee }))
-			{
-				//base.BeginCommodityUpdate (CommodityKind.Bladder, 0f);
-				Actor.Motives.SetMax (CommodityKind.Bladder); //LerpToFill (this, CommodityKind.Bladder, Toilet.kMaxLengthUseToilet);
-				//base.EndCommodityUpdate (CommodityKind.Bladder, true);
-				Target.ToiletVolume++;
-			}
-		}
 		public void TurnOnWooHooFx()
 		{
 			if (mWooHooEffect == null)
@@ -468,7 +482,7 @@ namespace NRaas.WoohooerSpace.Interactions
 				mWooHooEffect.Start();
 			}
 		}
-		public void TurnOffCensorsAndFx(bool actorOnly)
+		public void TurnOffCensorsAndFx()
 		{
 			if (mWooHooEffect != null)
 			{
@@ -476,13 +490,7 @@ namespace NRaas.WoohooerSpace.Interactions
 				mWooHooEffect.Dispose();
 				mWooHooEffect = null;
 			}
-			if (actorOnly)
-			{
-				Actor.AutoEnableCensor ();
-				return;
-			}
-			WooHooer.AutoEnableCensor ();
-			WooHooee.AutoEnableCensor ();
+			Actor.AutoEnableCensor ();
 		}
 	}
 }
