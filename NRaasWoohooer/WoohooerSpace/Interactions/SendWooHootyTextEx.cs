@@ -204,54 +204,12 @@ namespace NRaas.WoohooerSpace.Interactions
         }
 
         public void GetSimToLotEx(SimDescription simDesc, Lot actorHome)
-        {            
-            Sim createdSim = simDesc.CreatedSim;
-            if (createdSim == null)
+        {
+            bool flag = SimEx.GetSimToSimHome(simDesc, base.Actor, new Callback(this.GoToLotSuccessEx));
+
+            if (!flag && base.Actor.IsSelectable && simDesc.CreatedSim != null)
             {
-                createdSim = simDesc.Instantiate(actorHome);
-            }
-            if (createdSim != null)
-            {
-                bool flag = false;
-                if (createdSim.Household == base.Actor.Household)
-                {
-                    GoToLot entry = GoToLot.Singleton.CreateInstanceWithCallbacks(actorHome, createdSim, base.GetPriority(), false, true, null, new Sims3.Gameplay.Autonomy.Callback(this.GoToLotSuccessEx), null) as GoToLot;
-                    flag = createdSim.InteractionQueue.Add(entry);
-                }
-                else
-                {
-                    createdSim.SocialComponent.SetInvitedOver(actorHome);
-                    if (!actorHome.IsBaseCampLotType)
-                    {
-                        Sims3.Gameplay.Core.VisitLot lot2 = Sims3.Gameplay.Core.VisitLot.Singleton.CreateInstanceWithCallbacks(actorHome, createdSim, base.GetPriority(), false, true, null, new Sims3.Gameplay.Autonomy.Callback(this.GoToLotSuccessEx), null) as Sims3.Gameplay.Core.VisitLot;
-                        flag = createdSim.InteractionQueue.Add(lot2);
-                    }
-                    else
-                    {
-                        GoToLot lot3 = GoToLot.Singleton.CreateInstanceWithCallbacks(actorHome, createdSim, base.GetPriority(), false, true, null, new Sims3.Gameplay.Autonomy.Callback(this.GoToLotSuccessEx), null) as GoToLot;
-                        flag = createdSim.InteractionQueue.Add(lot3);
-                    }
-                }
-                if (flag)
-                {
-                    GroupingSituation situationOfType = createdSim.GetSituationOfType<GroupingSituation>();
-                    if (situationOfType != null)
-                    {
-                        Sim leader = situationOfType.Leader;
-                        if ((leader == null) || leader.IsNPC)
-                        {
-                            situationOfType.LeaveGroup(createdSim);
-                        }
-                    }
-                    EventTracker.SendEvent(EventTypeId.kInvitedSimOver, base.Actor, createdSim);
-                }
-                else
-                {
-                    if (base.Actor.IsSelectable)
-                    {
-                        ShowInviteFailedDialog(this.GetInteractionName(), createdSim);
-                    }
-                }
+                ShowInviteFailedDialog(this.GetInteractionName(), simDesc.CreatedSim);
             }
         }
 
@@ -270,7 +228,12 @@ namespace NRaas.WoohooerSpace.Interactions
                     }                    
                     
                     base.Actor.GreetSimOnMyLotIfPossible(sim);
-                    new CommonWoohoo.PushWoohoo(base.Actor, sim, base.Autonomous, CommonWoohoo.WoohooStyle.Safe);
+                    CommonWoohoo.WoohooStyle style = CommonWoohoo.WoohooStyle.Safe;
+                    if (!Woohooer.Settings.ReplaceWithRisky && TwoButtonDialog.Show(Woohooer.Localize("FriskyConfirm:Prompt", sim.IsFemale, new object[] { sim, base.Actor }), Woohooer.Localize("FriskyConfirm:Yes", sim.IsFemale, new object[] { sim, base.Actor }), Woohooer.Localize("FriskyConfirm:No", sim.IsFemale, new object[] { sim, base.Actor })))
+                    {
+                        style = CommonWoohoo.WoohooStyle.Risky;
+                    }
+                    new CommonWoohoo.PushWoohoo(base.Actor, sim, base.Autonomous, style);
                 }
             }
         }

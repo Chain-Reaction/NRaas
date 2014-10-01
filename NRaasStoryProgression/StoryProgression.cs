@@ -455,6 +455,7 @@ namespace NRaas
                         dic.Add("Host", sit.Host);
                         dic.Add("StartTime", Common.LocalizeEAString(false, "Gameplay/MapTags/NpcPartyMapTag:Time", new object[] { sit.StartTime }));
                         dic.Add("DressCode", sit.GetClothingStyle().ToString());
+                        return dic;
                     }
                 }
             }

@@ -34,9 +34,9 @@ namespace NRaas.StoryProgressionSpace.Options
 
         public override bool ShouldDisplay()
         {
-            if (!StoryProgression.Main.Personalities.HasPersonalities) return false;
+            if (!StoryProgression.Main.Personalities.HasPersonalities) return false;            
 
-            return base.ShouldDisplay();
+            return false; // base.ShouldDisplay();
         }
 
         /*

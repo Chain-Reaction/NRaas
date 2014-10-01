@@ -35,8 +35,6 @@ namespace NRaas.StoryProgressionSpace.Options
         {
             if ((!GetValue<CasteAutoOption, bool>()) && (!GetValue<CasteInheritedOption, bool>())) return false;
 
-            if (!GetValue<AllowCareerProgressionOption, bool>()) return false;
-
             return base.ShouldDisplay();
         }
     }

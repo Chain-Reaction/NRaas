@@ -126,8 +126,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                 {                    
                     int payPerHour = GetValue<ProfessorPayPerHour, int>();
                     if (payPerHour > 0)
-                    {
-                        payPerHour *= GetValue<Option, int>();
+                    {                        
                         payPerHour /= 6;                        
                         career.PayOwnerSim(payPerHour, GotPaidEvent.PayType.kCareerNormalPay);
                     }
@@ -171,7 +170,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
             }
         }
 
-        public class ProfessorPayPerHour : IntegerScenarioOptionItem<ManagerCareer, PayUniversityProfessorsScenario>, ManagerCareer.IPerformanceOption
+        public class ProfessorPayPerHour : IntegerScenarioOptionItem<ManagerCareer, PayUniversityProfessorsScenario>, ManagerCareer.IHomeworldUniversityOption
         {
             public ProfessorPayPerHour()
                 : base(1000)

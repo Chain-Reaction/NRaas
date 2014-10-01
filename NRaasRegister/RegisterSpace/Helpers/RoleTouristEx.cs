@@ -189,7 +189,7 @@ namespace NRaas.RegisterSpace.Helpers
             foreach (ITimePortal portal in portals)
             {
                 TimePortal usePortal = portal as TimePortal;
-                if (usePortal != null && usePortal.HasTimeTravelerBeenSummoned() && usePortal.LotCurrent != null && usePortal.InWorld)
+                if (usePortal != null && usePortal.HasTimeTravelerBeenSummoned() && usePortal.LotCurrent != null && usePortal.InWorld && !usePortal.InUse)
                 {
                     bool wasInactive = false;
                     if (usePortal.State == TimePortal.PortalState.Inactive)

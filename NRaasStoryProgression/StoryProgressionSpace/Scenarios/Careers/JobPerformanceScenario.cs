@@ -182,11 +182,23 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
 
                     perfPerHour += career.PerformanceBonusPerHour;
                     perfPerHour += career.OwnerDescription.TraitManager.HasElement(TraitNames.MultiTasker) ? TraitTuning.MultiTaskerWorkPerformanceAdd : 0f;
+					perfPerHour += career.mBonusPerformanceFromDegreePerHour;
 
-                    if (((createdSim != null) && (createdSim.BuffManager != null)) && createdSim.BuffManager.HasElement(BuffNames.MeditativeFocus))
-                    {
-                        perfPerHour += MartialArts.kMeditativeFocusCareerPerformanceModifier;
-                    }
+                    if ((createdSim != null) && (createdSim.BuffManager != null)) 
+					{
+						if (createdSim.BuffManager.HasElement(BuffNames.MeditativeFocus))
+						{
+							perfPerHour += MartialArts.kMeditativeFocusCareerPerformanceModifier;
+						}
+						if (createdSim.BuffManager.HasElement(BuffNames.Jobtastic))
+						{
+						   perfPerHour = career.SharedData.MaxPerfFlowPerHourMaxLevel;
+						}
+						if (createdSim.TraitManager.HasElement(TraitNames.EfficientChip))
+						{
+						   perfPerHour = career.MaxPerfFlowPerHour;
+						}
+					}
                 }
                 else if (career.IsMissingWork())
                 {
@@ -261,6 +273,6 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                     mCount++;
                 }
             }
-        }
+        }        
     }
 }

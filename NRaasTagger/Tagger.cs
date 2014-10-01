@@ -36,6 +36,8 @@ namespace NRaas
             Bootstrap();
 
             BooterHelper.Add(new LotTypeBooter(BooterHelper.sBootStrapFile, false));
+
+            World.sOnLotTypeChangedEventHandler += new EventHandler(OnLotTypeChanged);
         }
 
         public static PersistedSettings Settings
@@ -305,8 +307,7 @@ namespace NRaas
             kDebugging = Settings.Debugging;
 
             EventTracker.AddListener(EventTypeId.kEnterInWorldSubState, new ProcessEventDelegate(this.OnLiveMode));
-            EventTracker.AddListener(EventTypeId.kSimInstantiated, new ProcessEventDelegate(this.OnSimInstantiated));
-            World.sOnLotTypeChangedEventHandler += new EventHandler(OnLotTypeChanged);
+            EventTracker.AddListener(EventTypeId.kSimInstantiated, new ProcessEventDelegate(this.OnSimInstantiated));            
 
             if (Tagger.Settings.mAddresses != null)
             {

@@ -445,16 +445,16 @@ namespace NRaas.RegisterSpace.Tasks
         private Role FillForeignRoleEx(Role.RoleType role, RoleData data, List<MiniSimDescription> foreignMSDs)
         {
             SimDescription simDescription = null;
-            MiniSimDescription simDesc = null;
-            //bool mWasFutureSim = false;
+            MiniSimDescription simDesc = null;            
             if ((foreignMSDs != null) && (foreignMSDs.Count > 0x0))
             {
-                int @int = RandomUtil.GetInt(foreignMSDs.Count - 0x1);
+                //int @int = RandomUtil.GetInt(foreignMSDs.Count - 0x1);
                 int num2 = 0x0;
                 while (num2 < foreignMSDs.Count)
                 {
-                    int num3 = (num2 + @int) % foreignMSDs.Count;
-                    MiniSimDescription s = foreignMSDs[num3];
+                    //int num3 = (num2 + @int) % foreignMSDs.Count;
+                    //MiniSimDescription s = foreignMSDs[num3];
+                    MiniSimDescription s = RandomUtil.GetRandomObjectFromList<MiniSimDescription>(foreignMSDs);
                     if (!Role.IsSimValidForAnyRole(s) || s.Instantiated )
                     {
                         foreignMSDs.Remove(s);
@@ -721,7 +721,7 @@ namespace NRaas.RegisterSpace.Tasks
                     {
                         // fix for when EA hibernate alarm goes off before the role is set to end... because...EA.
                         float newClose = 0f;
-                        if (giver.CurrentRole.IsActive && giver.CurrentRole != null && giver.CurrentRole.mSim != null && giver.CurrentRole.SimInRole == null)
+                        if ((giver.CurrentRole != null && giver.CurrentRole.IsActive) && (giver.CurrentRole.mSim == null || giver.CurrentRole.SimInRole == null))
                         {
                             newClose = data.HourClose - 1f;
                         }

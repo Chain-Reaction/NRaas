@@ -139,7 +139,7 @@ namespace NRaas
 
         public void OnWorldLoadFinished()
         {
-            kDebugging = Settings.Debugging;
+            kDebugging = Settings.Debugging;            
 
             StoreRoles();
 

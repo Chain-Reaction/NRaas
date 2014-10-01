@@ -1,4 +1,5 @@
-﻿using NRaas.CommonSpace.ScoringMethods;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.ScoringMethods;
 using NRaas.WoohooerSpace.Interactions;
 using NRaas.WoohooerSpace.Options.Romance;
 using NRaas.WoohooerSpace.Scoring;
@@ -12,6 +13,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Situations;
+using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
@@ -329,6 +331,23 @@ namespace NRaas.WoohooerSpace.Skills
             }
         }
 
+        public ServiceData FindServiceDataInvolvingProfessionalAndLot(ulong professionalID, ulong lotID)
+        {
+            foreach (KeyValuePair<ulong, ServiceData> data in sRequests)
+            {
+                if (data.Value.mProfessional == professionalID)
+                {
+                    SimDescription desc = SimDescription.Find(data.Key);
+                    if (desc != null && desc.LotHomeId == lotID)
+                    {
+                        return data.Value;
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public void SetServiceData(ulong simDescId, ServiceData data)
         {
             sRequests[simDescId] = data;
@@ -338,18 +357,23 @@ namespace NRaas.WoohooerSpace.Skills
         {
             public bool mWasRandom;
             public Common.AlarmTask mPush;
+            public Common.AlarmTask mLotPush;
             public ulong mProfessional;
             public ulong mRequester;
             public int mAttempts;
+            public int mLotPushAttempts;
             public bool autonomyWasDisabled;
+            public CommonWoohoo.WoohooStyle mStyle;
 
             public ServiceData()
             {
                 mWasRandom = false;
                 mPush = null;
+                mLotPush = null;
                 mProfessional = 0;
                 mRequester = 0;
                 autonomyWasDisabled = false;
+                mStyle = CommonWoohoo.WoohooStyle.Safe;
             }            
 
             public void DisableAutonomy()
@@ -379,7 +403,7 @@ namespace NRaas.WoohooerSpace.Skills
                     return;
                 }
 
-                mAttempts++;
+                this.mAttempts++;
 
                 if (this.mProfessional != 0)
                 {
@@ -396,20 +420,107 @@ namespace NRaas.WoohooerSpace.Skills
                         IWooHooDefinition def = null;
                         if (desc.CreatedSim.CurrentInteraction != null)
                         {
-                            def = desc.CreatedSim.CurrentInteraction.InteractionDefinition as IWooHooDefinition;                                                     
+                            def = desc.CreatedSim.CurrentInteraction.InteractionDefinition as IWooHooDefinition;
                         }
 
                         if (def == null)
                         {
-                            new CommonWoohoo.PushWoohoo(desc.CreatedSim, descClient.CreatedSim, false, CommonWoohoo.WoohooStyle.Safe);
-                        }   
+                            new CommonWoohoo.PushWoohoo(desc.CreatedSim, descClient.CreatedSim, false, mStyle);
+                        }
+                    }
+                    else
+                    {
+                        this.Dispose();
+                        return;
                     }
                 }
             }
 
+            public void CheckArrival()
+            {
+                if (this.mLotPushAttempts >= 5)
+                {
+                    this.Dispose();
+                    return;
+                }
+
+                if (this.mProfessional != 0)
+                {
+                    SimDescription desc = SimDescription.Find(this.mProfessional);
+                    if (desc != null)
+                    {
+                        if (desc.CreatedSim == null)
+                        {
+                            Instantiation.Perform(desc, null);
+                        }
+
+                        if (desc.CreatedSim != null)
+                        {
+                            SimDescription descClient = SimDescription.Find(this.mRequester);
+                            if (descClient != null && descClient.LotHome != null && desc.CreatedSim.LotCurrent != descClient.LotHome)
+                            {
+                                SimEx.GetSimToSimHome(desc, descClient.CreatedSim, new Callback(GoToLotSuccessEx));
+                                this.mLotPushAttempts++;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        this.Dispose();
+                        return;
+                    }
+                }
+            }
+
+            public static void GoToLotSuccessEx(Sim sim, float f)
+            {
+                if (sim.LotCurrent == null)
+                {
+                    return;
+                }
+
+                ServiceData data = KamaSimtra.Settings.FindServiceDataInvolvingProfessionalAndLot(sim.SimDescription.SimDescriptionId, sim.LotCurrent.LotId);
+                SimDescription client = SimDescription.Find(data.mRequester);
+                if (data != null && client != null && client.CreatedSim != null)
+                {
+                    Relationship relationship = Relationship.Get(client, sim.SimDescription, true);
+                    if (relationship != null)
+                    {
+                        relationship.STC.Set(client.CreatedSim, sim, CommodityTypes.Amorous, 500f);
+                        client.CreatedSim.InteractionQueue.CancelAllInteractions();                        
+                        while (client.CreatedSim.CurrentInteraction != null)
+                        {
+                            Common.Sleep(0);
+                        }                              
+                        
+                        data.SetupAlarm();
+                        data.DisableAutonomy();                        
+
+                        client.CreatedSim.GreetSimOnMyLotIfPossible(sim);
+                        CommonWoohoo.WoohooStyle style = CommonWoohoo.WoohooStyle.Safe;
+                        if (!Woohooer.Settings.ReplaceWithRisky && TwoButtonDialog.Show(Woohooer.Localize("FriskyConfirm:Prompt", sim.IsFemale, new object[] { sim, client.CreatedSim }), Woohooer.Localize("FriskyConfirm:Yes", sim.IsFemale, new object[] { sim, client.CreatedSim }), Woohooer.Localize("FriskyConfirm:No", sim.IsFemale, new object[] { sim, client.CreatedSim })))
+                        {
+                            style = CommonWoohoo.WoohooStyle.Risky;
+                        }
+                        data.mStyle = style;
+                        KamaSimtra.Settings.SetServiceData(data.mRequester, data);
+
+                        new CommonWoohoo.PushWoohoo(sim, client.CreatedSim, false, style);
+
+                        StyledNotification.Format format = new StyledNotification.Format(Common.Localize("OrderServices:Arrived", sim.IsFemale), sim.ObjectId, client.CreatedSim.ObjectId, StyledNotification.NotificationStyle.kSimTalking);
+                        StyledNotification.Show(format);
+                    }
+                }
+            }        
+
             public void SetupAlarm()
             {
                 this.mPush = new Common.AlarmTask(5, TimeUnit.Minutes, CheckWoohoo, 10, TimeUnit.Minutes);
+            }
+
+            public void SetupPushAlarm()
+            {
+                this.mLotPush = new Common.AlarmTask(10, TimeUnit.Minutes, CheckArrival, 10, TimeUnit.Minutes);
             }
 
             public void SetupDisposeAlarm()
@@ -422,7 +533,7 @@ namespace NRaas.WoohooerSpace.Skills
                 if (this.mProfessional != 0)
                 {
                     SimDescription desc = SimDescription.Find(this.mProfessional);
-                    if (desc != null)
+                    if (desc != null && desc.CreatedSim != null)
                     {                        
                         VisitSituation.MakeSimExitToYard(desc.CreatedSim.LotCurrent, desc.CreatedSim);
                         Sim.MakeSimGoHome(desc.CreatedSim, false, new InteractionPriority(InteractionPriorityLevel.UserDirected));
@@ -440,6 +551,11 @@ namespace NRaas.WoohooerSpace.Skills
                 if (this.mPush != null && this.mPush.Valid)
                 {
                     this.mPush.Dispose();
+                }
+
+                if (this.mLotPush != null && this.mLotPush.Valid)
+                {
+                    this.mLotPush.Dispose();
                 }
 
                 if (this.mProfessional != 0)

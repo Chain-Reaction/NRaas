@@ -41,14 +41,6 @@ namespace NRaas.ErrorTrapSpace.Checks
 
                         roles.Value.RemoveAt(index);
                     }
-                    else if (role.mRoleGivingObject == null)
-                    {
-                        // EA fail in RoleLocationMerchant:EndRole
-                        if (role is RoleLocationMerchant)
-                        {
-                            roles.Value.RemoveAt(index);
-                        }
-                    }
                     else
                     {
                         index++;
