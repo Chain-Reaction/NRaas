@@ -36,7 +36,9 @@ namespace NRaas.WoohooerSpace.Interactions
         public void OnPreLoad()
         {
             InteractionTuning tuning = Tunings.Inject<Terrain, SwimHere.SnorkelDefinition, Definition>(false);
-            if (tuning != null)
+
+			//Unnecessary?
+            /*if (tuning != null)
             {
                 tuning.Availability.SetFlags(Availability.FlagField.DisallowedIfPregnant, false);
             }
@@ -45,7 +47,7 @@ namespace NRaas.WoohooerSpace.Interactions
             if (tuning != null)
             {
                 tuning.Availability.SetFlags(Availability.FlagField.DisallowedIfPregnant, false);
-            }
+            }*/
 
             sOldSingleton = SnorkelSingleton;
             SnorkelSingleton = new Definition();
@@ -88,20 +90,30 @@ namespace NRaas.WoohooerSpace.Interactions
 
             public override InteractionTestResult Test(ref InteractionInstanceParameters parameters, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
-                Sim actor = parameters.Actor as Sim;
-
-                if (actor.MoodManager.StressInteractionTest(ref greyedOutTooltipCallback) || actor.Motives.StressInteractionTest(ref greyedOutTooltipCallback, null))
-                {
-                    return InteractionTestResult.GenericFail;
-                }
-
                 SwimHere.SwimHereType type = mSwimHereType;
                 try
                 {
                     // Bypass some world restrictions encoded into the snorkel check
                     mSwimHereType = SwimHere.SwimHereType.None;
 
-                    return base.Test(ref parameters, ref greyedOutTooltipCallback);
+                    InteractionTestResult result = base.Test(ref parameters, ref greyedOutTooltipCallback);
+
+					//Bypass pregnancy check
+					if (result == InteractionTestResult.Tuning_Pregnant && greyedOutTooltipCallback != null)
+					{
+						result = InteractionTestResult.Pass;
+					}
+					if (result == InteractionTestResult.Pass)
+					{
+						//Stress test moved to the end
+						Sim actor = parameters.Actor as Sim;
+
+						if (actor.MoodManager.StressInteractionTest(ref greyedOutTooltipCallback) || actor.Motives.StressInteractionTest(ref greyedOutTooltipCallback, null))
+						{
+							result = InteractionTestResult.GenericFail;
+						}
+					}
+					return result;
                 }
                 finally
                 {
