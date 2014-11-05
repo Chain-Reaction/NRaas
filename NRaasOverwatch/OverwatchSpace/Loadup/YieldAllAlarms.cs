@@ -22,10 +22,8 @@ using System.Text;
 
 namespace NRaas.OverwatchSpace.Loadup
 {
-    public class YieldAllAlarms : ImmediateLoadupOption, Common.IWorldQuit
+    public class YieldAllAlarms : ImmediateLoadupOption
     {
-        private static bool sYieldRequired = true;
-
         public override string GetTitlePrefix()
         {
             return "YieldAllAlarms";
@@ -35,40 +33,21 @@ namespace NRaas.OverwatchSpace.Loadup
         {
             Overwatch.Log(GetTitlePrefix());
 
-            Sims3.Gameplay.Gameflow.GameSpeedChanged -= OnGameSpeedChanged;
-            Sims3.Gameplay.Gameflow.GameSpeedChanged += OnGameSpeedChanged;
-
             new Common.AlarmTask(1, TimeUnit.Minutes, OnYieldAll, 15, TimeUnit.Minutes);
-        }
-
-        public void OnWorldQuit()
-        {
-            Sims3.Gameplay.Gameflow.GameSpeedChanged -= OnGameSpeedChanged;
-        }
-
-        private static void OnGameSpeedChanged(Sims3.Gameplay.Gameflow.GameSpeed newSpeed, bool locked)
-        {
-            if (LoadingScreenController.IsLayoutLoaded())
-            {
-                return;
-            }
-
-            sYieldRequired = (newSpeed <= Sims3.Gameplay.Gameflow.GameSpeed.Normal);
-
-            OnYieldAll();
         }
 
         protected static void OnYieldAll()
         {
+            //if (LoadingScreenController.IsLayoutLoaded()) return;   >>>Originally included in the OnGameSpeedChanged callback which is no longer used. Is this still needed?
+
+            AlarmManager manager = AlarmManager.Global;
+
+            if (manager == null || manager.mTimerQueue == null) return;         
+
+            Sims3.Gameplay.Gameflow.GameSpeed currentGameSpeed = Sims3.Gameplay.Gameflow.CurrentGameSpeed;
+
             try
             {
-                AlarmManager manager = AlarmManager.Global;
-
-                if (manager == null || manager.mTimerQueue == null)
-                {
-                    return;
-                }
-
                 foreach (object item in manager.mTimerQueue)
                 {
                     if (item == null) continue;
@@ -76,7 +55,9 @@ namespace NRaas.OverwatchSpace.Loadup
                     AlarmManager.Timer timer = item as AlarmManager.Timer;
                     if (timer == null) continue;
 
-                    timer.YieldRequired = sYieldRequired;
+                    if (timer.Repeating && currentGameSpeed > Sims3.Gameplay.Gameflow.GameSpeed.Normal) continue;
+
+                    timer.YieldRequired = true;
                 }
             }
             catch (Exception e)
