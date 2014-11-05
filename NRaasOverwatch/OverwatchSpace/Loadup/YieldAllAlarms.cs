@@ -44,8 +44,6 @@ namespace NRaas.OverwatchSpace.Loadup
 
             if (manager == null || manager.mTimerQueue == null) return;         
 
-            Sims3.Gameplay.Gameflow.GameSpeed currentGameSpeed = Sims3.Gameplay.Gameflow.CurrentGameSpeed;
-
             try
             {
                 foreach (object item in manager.mTimerQueue)
@@ -55,7 +53,7 @@ namespace NRaas.OverwatchSpace.Loadup
                     AlarmManager.Timer timer = item as AlarmManager.Timer;
                     if (timer == null) continue;
 
-                    if (timer.Repeating && currentGameSpeed > Sims3.Gameplay.Gameflow.GameSpeed.Normal) continue;
+                    if (timer.Repeating) continue;
 
                     timer.YieldRequired = true;
                 }
