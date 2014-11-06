@@ -312,7 +312,6 @@
     <Compile Include="OverwatchSpace\Helpers\FilePersistenceEx.cs" />
     <Compile Include="OverwatchSpace\Helpers\ThumbnailHelperEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\AgeUpEx.cs" />
-    <Compile Include="OverwatchSpace\Interactions\Crib_ReadToSleepEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\GetMailEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\GetSmeltEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\HarvestEx.cs" />
