@@ -280,9 +280,9 @@ namespace NRaas.CommonSpace.Helpers
             }
             else
             {
-                AcceptCancelDialog.Show(Woohooer.Localize("InviteOverForWoohooFail:Prompt"));
+                AcceptCancelDialog.Show(Common.LocalizeEAString("Gameplay/Objects/Electronics/Phone/Call/InviteOver:TestFailed"));
+                //AcceptCancelDialog.Show(Woohooer.Localize("InviteOverForWoohooFail:Prompt"));
             }
-
             return false;
         }
     }

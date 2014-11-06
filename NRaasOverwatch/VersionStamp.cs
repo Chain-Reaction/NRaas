@@ -35,9 +35,9 @@ namespace NRaas
          */
 
         /* Changes:
-         *         
+         * 'YieldAllAlarms' has been changed to always set alarms to yield, except for Repeating ones        
          * 
          */
-        public static readonly int sVersion = 118;
+        public static readonly int sVersion = 119;
     }
 }
