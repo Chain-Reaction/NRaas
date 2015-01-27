@@ -762,6 +762,7 @@ namespace NRaas.StoryProgressionSpace.Managers
 
                 if (!RandomUtil.RandomChance(occultChance)) continue;
 
+                bool mutated = false;
                 if (RandomUtil.RandomChance(mutationChance) && possibleOccults.Count > 0)
                 {                    
                     while (possibleOccults.Count > 0)
@@ -775,11 +776,17 @@ namespace NRaas.StoryProgressionSpace.Managers
                                 possibleOccults.Remove(mutationType);
                                 stats.IncStat("Mutation Chance " + mutationType);
                                 occultsAdded++;
+                                mutated = true;
                                 break;
                             }
                         }
 
-                        possibleOccults.Remove(mutationType);
+                        possibleOccults.Remove(mutationType);                       
+                    }
+
+                    if (mutated)
+                    {
+                        continue;
                     }
                 }
 

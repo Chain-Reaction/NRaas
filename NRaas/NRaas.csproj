@@ -53,6 +53,7 @@
     <Compile Include="Converters\StringToMultiList.cs" />
     <Compile Include="Converters\ListToString.cs" />
     <Compile Include="Helpers\EnumInjection.cs" />
+    <Compile Include="Helpers\FilterHelper.cs" />
     <Compile Include="Helpers\OccultPlantSimEx.cs" />
     <Compile Include="Helpers\OccultGenieEx.cs" />
     <Compile Include="Helpers\OccultUnicornEx.cs" />

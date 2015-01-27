@@ -378,6 +378,7 @@
     <Compile Include="MasterControllerSpace\Households\AddRoommate.cs" />
     <Compile Include="MasterControllerSpace\Households\EndParty.cs" />
     <Compile Include="MasterControllerSpace\Households\InviteOver.cs" />
+    <Compile Include="MasterControllerSpace\Households\RegenImposter.cs" />
     <Compile Include="MasterControllerSpace\IApplyOptionItem.cs" />
     <Compile Include="MasterControllerSpace\CustomResets\ObjectsOnTopOfPotionDisplayCaseReset.cs" />
     <Compile Include="MasterControllerSpace\CustomResets\MetalMineralPotionDisplayCaseReset.cs" />

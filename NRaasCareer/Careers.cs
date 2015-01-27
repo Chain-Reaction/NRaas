@@ -80,8 +80,12 @@ namespace NRaas
                         }
                     }
                 }                
+            }            
+
+            foreach(KeyValuePair<OccupationNames, PersistedSettings.CareerSettings> settings in Careers.Settings.mCareerSettings)
+            {
+                Careers.Settings.SetCareerData(settings.Value);   
             }
-            
         }
 
         public static PersistedSettings Settings

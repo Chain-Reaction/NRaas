@@ -113,6 +113,14 @@ namespace NRaas.CareerSpace.Interactions
                         }
 
                         actor.Motives.SetMax(CommodityKind.VampireThirst);
+
+                        if (target.SimDescription.IsFairy)
+                        {
+                            actor.BuffManager.AddElement(BuffNames.DrankFromAFairy, Origin.FromReceivingVampireNutrients);
+                        }
+
+                        EventTracker.SendEvent(EventTypeId.kVampireDrankFromSim, actor, target);
+                        EventTracker.SendEvent(new VampireLifetimeEvent(EventTypeId.kVampireLifetimeEvent, actor.SimDescription, false, target.SimDescription.SimDescriptionId));
                     }
                 }
 

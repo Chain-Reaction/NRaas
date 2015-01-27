@@ -26,7 +26,7 @@ namespace NRaas.TaggerSpace.Options
 
                 if (value)
                 {
-                    Tagger.InitTags(true);
+                    Tagger.InitTags(false);
                 }
                 else
                 {

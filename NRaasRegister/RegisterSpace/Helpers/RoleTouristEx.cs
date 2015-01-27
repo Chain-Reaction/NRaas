@@ -155,6 +155,11 @@ namespace NRaas.RegisterSpace.Helpers
 
         public static void RestoreFutureTrait(SimDescription desc)
         {
+            if (desc == null)
+            {
+                return;
+            }
+
             if (Register.Settings.mFutureSims.Contains(desc.SimDescriptionId) && desc.TraitManager != null && !desc.HasTrait(TraitNames.FutureSim))
             {
                 Trait trait = TraitManager.GetTraitFromDictionary(TraitNames.FutureSim);
@@ -167,6 +172,11 @@ namespace NRaas.RegisterSpace.Helpers
 
         public static void StripFutureTrait(SimDescription simDescription)
         {
+            if (simDescription == null)
+            {
+                return;
+            }
+
             // Stops an issue in "GrantFutureObjects" regarding the use of sIsChangingWorlds=true                            
             if (simDescription.TraitManager != null)
             {

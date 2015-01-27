@@ -40,7 +40,7 @@ namespace NRaas.TempestSpace.Helpers
 
         public void OnDelayedWorldLoadFinished()
         {
-            if (!GameUtils.IsInstalled(ProductVersion.EP8)) return;
+            if (!GameUtils.IsInstalled(ProductVersion.EP8) || !SeasonsManager.Enabled) return;
 
             if (HolidayManager.sInstance == null) return;
 
@@ -233,7 +233,7 @@ namespace NRaas.TempestSpace.Helpers
                 uint actualDay = day.GetActualDay(season);                
                 if (actualDay == 0) continue;
 
-                days.Add(new Pair<Season, uint>(day.mSeason, actualDay - 1));
+                days.Add(new Pair<Season, uint>(day.mSeason, actualDay)); // was actualDay -1
             }
 
             days.Sort(SortByDay);

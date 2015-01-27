@@ -13,12 +13,14 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Roles;
+using Sims3.Gameplay.Seasons;
 using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
 using Sims3.UI;
 using Sims3.UI.CAS;
+using Sims3.UI.Hud;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -53,7 +55,26 @@ namespace NRaas.TaggerSpace
         protected static bool kSubtleTaggedSims = false;
 
         [Tunable, TunableComment("Whether to show the lot specific interactions")]
-        protected static bool kEnableLotInteractions = true; 
+        protected static bool kEnableLotInteractions = true;
+
+        [Tunable, TunableComment("Whether to show the sim specific interactions")]
+        protected static bool kEnableSimInteractions = true;
+        [Tunable, TunableComment("Whether to color Lot tags by available cash (minus due bills and (if installed) SP debt")]
+        protected static bool kColorLotTagsByCash = false;
+        [Tunable, TunableComment("Whether to color Sim tags by available cash (minus due bills and (if installed) SP debt")]
+        protected static bool kColorByCash = false;
+        [Tunable, TunableComment("Whether to color Sim tags by job performance")]
+        protected static bool kColorByJobPerformance = false;
+        [Tunable, TunableComment("Whether to color Sim tags by mood")]
+        protected static bool kColorByMood = false;
+        [Tunable, TunableComment("Whether to color Sim tags by a particular motive")]
+        protected static CommodityKind kColorByCommodity = CommodityKind.None;
+        [Tunable, TunableComment("Whether to scale the age in years tag data option to the total length of all seasons")]
+        protected static bool kAgeInYearsScalesToSeasons = true;
+        [Tunable, TunableComment("A custom year length to scale the age in years tag data option to when kAgeInYearsScalesToSeasons is false (or Seasons isn't installed")]
+        protected static int kAgeInYearsCustomLength = 28;
+        [Tunable, TunableComment("Whether to force a tag to match all filters or just one")]
+        protected static bool kMatchAllActiveFilters = false;
 
         public bool mEnableSimTags = kEnableSimTags;
         public bool mEnableLotTags = kEnableLotTags;
@@ -68,6 +89,17 @@ namespace NRaas.TaggerSpace
         public bool mSubtleTaggedSims = kSubtleTaggedSims;
 
         public bool mEnableLotInteractions = kEnableLotInteractions;
+
+        public bool mEnableSimInteractions = kEnableSimInteractions;
+        public bool mColorLotTagsByCash = kColorLotTagsByCash;
+        public bool mColorByCash = kColorByCash;
+        public bool mColorByJobPerformance = kColorByJobPerformance;
+        public bool mColorByMood = kColorByMood;
+        public CommodityKind mColorByCommodity = kColorByCommodity;
+        public bool mAgeInYearsScalesToSeasons = kAgeInYearsScalesToSeasons;
+        public int mAgeInYearsCustomLength = kAgeInYearsCustomLength;
+        public bool mMatchAllActiveFilters = kMatchAllActiveFilters;
+        public int mFilterCacheTime = FilterHelper.kFilterCacheTime;
 
         public Dictionary<uint, TagSettingKey> mCustomTagSettings = new Dictionary<uint, TagSettingKey>();
 
@@ -87,49 +119,79 @@ namespace NRaas.TaggerSpace
         public List<ulong> mTaggedSims = new List<ulong>();
 
         public Dictionary<ulong, string> mAddresses = new Dictionary<ulong, string>();
+        
+        public List<string> mCurrentLotFilters = new List<string>();
+        public List<string> mCurrentSimFilters = new List<string>();
 
-        //public List<SimFilter> filters = new List<SimFilter>();
+        public Dictionary<ulong, List<string>> mCustomSimTitles = new Dictionary<ulong, List<string>>();
 
-        protected bool mDebugging = false;
-
-        [Persistable(false)]
-        static SimFilters sFilters = null;
+        protected bool mDebugging = false;        
 
         public bool TypeHasCustomSettings(uint LotType)
         {
             return mCustomTagSettings.ContainsKey(LotType);
+        }            
+
+        public bool HasSimFilterActive()
+        {
+            return (mCurrentSimFilters.Count > 0);            
         }
 
-        // not implemented yet (and may be a bit yet :) )
-        [Persistable(false)]
-        public class SimFilters
+        public bool HasLotFilterActive()
         {
-            public bool Matches()
-            {
-                return true;
-            }
-
-            public bool Matches(List<SimDescription> sims)
-            {
-                return true;
-            }
-
-            public bool Matches(SimDescription sim)
-            {
-                return true;
-            }
+            return (mCurrentLotFilters.Count > 0);
         }
 
-        public SimFilters Filters
+        public bool DoesSimMatchSimFilters(ulong sim)
         {
-            get
+            if (PlumbBob.SelectedActor != null && PlumbBob.SelectedActor.SimDescription != null)
             {
-                if(sFilters == null)
+                if (Tagger.Settings.mMatchAllActiveFilters)
                 {
-                     return new SimFilters();
-                } 
+                    return FilterHelper.DoesSimMatchFilters(sim, PlumbBob.SelectedActor.SimDescription.SimDescriptionId, Tagger.Settings.mCurrentSimFilters, true);
+                }
+                else
+                {
+                    return FilterHelper.DoesSimMatchFilters(sim, PlumbBob.SelectedActor.SimDescription.SimDescriptionId, Tagger.Settings.mCurrentSimFilters, false);
+                }
+            }
 
-                return sFilters;
+            return false;
+        }
+
+        public bool DoesHouseholdMatchLotFilters(List<SimDescription> descs)
+        {
+            if (PlumbBob.SelectedActor != null && PlumbBob.SelectedActor.SimDescription != null)
+            {
+                if (Tagger.Settings.mMatchAllActiveFilters)
+                {
+                    return FilterHelper.DoesAnySimMatchFilters(PlumbBob.SelectedActor.SimDescription.SimDescriptionId, descs, Tagger.Settings.mCurrentLotFilters, true);
+                }
+                else
+                {
+                    return FilterHelper.DoesAnySimMatchFilters(PlumbBob.SelectedActor.SimDescription.SimDescriptionId, descs, Tagger.Settings.mCurrentLotFilters, false);
+                }
+            }
+
+            return false;
+        }
+
+        public void ValidateActiveFilters()
+        {
+            foreach (string filter in new List<string>(mCurrentLotFilters))
+            {
+                if (!FilterHelper.IsValidFilter(filter))
+                {
+                    mCurrentLotFilters.Remove(filter);                    
+                }
+            }
+
+            foreach (string filter in new List<string>(mCurrentSimFilters))
+            {
+                if (!FilterHelper.IsValidFilter(filter))
+                {
+                    mCurrentSimFilters.Remove(filter);
+                }
             }
         }
 
@@ -162,6 +224,79 @@ namespace NRaas.TaggerSpace
                 mAddresses[id] = address;
             else
                 mAddresses.Add(id, address);
+        }
+
+        public int TagDataAgeInYearsLength
+        {
+            get
+            {
+                if (Tagger.Settings.mAgeInYearsScalesToSeasons && GameUtils.IsInstalled(ProductVersion.EP8))
+                {
+                    return (int)SeasonsManager.GetYearLength();
+                }
+                else
+                {
+                    return Tagger.Settings.mAgeInYearsCustomLength;                    
+                }
+            }
+        }
+
+        public bool SimHasCustomTitles(ulong descId)
+        {
+            return Tagger.Settings.mCustomSimTitles.ContainsKey(descId);
+        }
+
+        public void SetCustomTitles(Sim sim)
+        {
+            if (sim != null)
+            {
+                List<string> titles;
+                Tagger.Settings.mCustomSimTitles.TryGetValue(sim.SimDescription.SimDescriptionId, out titles);
+
+                SimInfo info = Sims3.UI.Responder.Instance.HudModel.GetSimInfo(sim.ObjectId);
+                if (info != null && titles != null)
+                {
+                    if (titles.Count > 0)
+                    {
+                        string name = sim.FullName;
+                        foreach (string title in titles)
+                        {
+                            name = name + ", " + title;
+                        }
+
+                        info.mName = name;
+
+                        Sims3.Gameplay.UI.HudModel model = Sims3.Gameplay.UI.Responder.Instance.HudModel as Sims3.Gameplay.UI.HudModel;
+                        if (model != null)
+                        {
+                            foreach (SimInfo info2 in model.mSimList)
+                            {
+                                if (info2.mGuid == info.mGuid)
+                                {
+                                    model.mSimList.Remove(info2);
+                                    model.mSimList.Add(info);
+                                    model.SimNameChanged(info.mGuid);
+                                    break;
+                                }
+                            }
+                        }
+
+                        int index = 0;
+                        foreach (Skewer.SkewerItem item in Skewer.Instance.mHouseholdItems)
+                        {
+                            if (item.mSimInfo != null && item.mSimInfo.mGuid == info.mGuid)
+                            {
+                                item.mSimInfo.mName = name;
+                                Skewer.Instance.mHouseholdItems[index] = item;                               
+                            }
+                        }
+                    }
+                    else
+                    {
+                        info.mName = sim.FullName;
+                    }
+                }
+            }
         }
 
         public bool Debugging

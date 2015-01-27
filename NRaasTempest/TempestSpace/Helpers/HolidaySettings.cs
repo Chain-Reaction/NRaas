@@ -135,12 +135,12 @@ namespace NRaas.TempestSpace.Helpers
 
             public uint GetActualDay(Season season)
             {
-                return PersistedSettings.GetActualDay(mDay, season);
+                return PersistedSettings.GetActualDay(mDay, season); //- 2;
             }
 
             public string DisplayValue(Season season)
             {
-                return EAText.GetNumberString(GetActualDay(season)) + ": " + Common.LocalizeEAString("Ui/Tooltips/CareerPanel:" + mSeason + "Holiday");
+                return EAText.GetNumberString(GetActualDay(season) /*+ 2*/) + ": " + Common.LocalizeEAString("Ui/Tooltips/CareerPanel:" + mSeason + "Holiday");
             }
         }
     }

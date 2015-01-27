@@ -89,6 +89,7 @@
     <Compile Include="StoryProgressionSpace\Interactions\GetLoan.cs" />
     <Compile Include="StoryProgressionSpace\Interactions\GuitarWatch.cs" />
     <Compile Include="StoryProgressionSpace\Interactions\InvestInRabbithole.cs" />
+    <Compile Include="StoryProgressionSpace\Interactions\LaserHarpWatch.cs" />
     <Compile Include="StoryProgressionSpace\Interactions\MusicalInstrumentWatchBase.cs" />
     <Compile Include="StoryProgressionSpace\Interactions\PayLoan.cs" />
     <Compile Include="StoryProgressionSpace\Interactions\PianoWatch.cs" />

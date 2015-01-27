@@ -16,13 +16,26 @@ using System.Text;
 
 namespace NRaas.TaggerSpace.Interactions
 {
-    public class CityHallInteraction : ListedInteraction<IMapTagOption, GameObject>
+    public class CityHallInteraction : ListedInteraction<ICityHallOption, GameObject>
     {
         public static InteractionDefinition Singleton = new CommonDefinition<CityHallInteraction>(true, true);
 
         public override void AddInteraction(Common.InteractionInjectorList interactions)
         {
             interactions.Add<CityHall>(Singleton);
+            interactions.Add<ComboCityhallPoliceMilitary>(Singleton);
+            interactions.Add<AdminstrationCenter>(Singleton);
+            interactions.Add<Lot>(Singleton);
+        }
+
+        protected override bool Test(IActor actor, GameObject target, GameObjectHit hit, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+        {
+            if (target is Lot)
+            {
+                return Common.IsRootMenuObject(target);
+            }
+
+            return true;
         }
     }
 }

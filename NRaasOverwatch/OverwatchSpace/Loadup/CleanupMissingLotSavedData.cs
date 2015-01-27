@@ -79,6 +79,15 @@ namespace NRaas.OverwatchSpace.Loadup
 
                     lot.mSavedData.mLaundryManager = new LaundryManager();
                 }
+
+                if (lot.ResortManager != null)
+                {
+                    if (lot.ResortManager.mOwnerLot == null || LotManager.GetLot(lot.ResortManager.mOwnerLot.LotId) == null)
+                    {
+                        Overwatch.Log(lot.Name + " Fixed ResortManager");
+                        lot.ResortManager.mOwnerLot = lot;
+                    }
+                }
             }
         }
     }

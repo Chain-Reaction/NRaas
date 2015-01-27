@@ -68,7 +68,12 @@ namespace NRaas.MasterControllerSpace
 
         protected override bool Allow(IMiniSimDescription item)
         {
-            return mSimFromList.Test(item);
+            if (mSimFromList != null)
+            {
+                return mSimFromList.Test(item);
+            }
+
+            return true;
         }
 
         protected override IEnumerable<ICriteria> AlterCriteria(IEnumerable<ICriteria> allCriteria, bool manual, bool canceled)

@@ -625,8 +625,11 @@ namespace NRaas.StoryProgressionSpace.Helpers
 
             if ((!updateGenealogy) && (nameTake != null))
             {
-                bool wasEither;
-                newSim.LastName = Manager.Sims.HandleName(nameTake, mom, dad, out wasEither);
+                if (!Manager.GetValue<CustomNamesOnlyOption<TManager>, bool>())
+                {
+                    bool wasEither;
+                    newSim.LastName = Manager.Sims.HandleName(nameTake, mom, dad, out wasEither);
+                }
             }
             else if (mom != null)
             {
@@ -637,7 +640,7 @@ namespace NRaas.StoryProgressionSpace.Helpers
                 newSim.LastName = dad.LastName;
             }
 
-            if (!updateGenealogy && Manager.GetValue<CustomNamesOnlyOption<TManager>, bool>())
+            if (string.IsNullOrEmpty(newSim.LastName))
             {
                 newSim.LastName = LastNameListBooter.GetRandomName(!Manager.GetValue<CustomNamesOnlyOption<TManager>, bool>(), newSim.Species, newSim.IsFemale);
             }

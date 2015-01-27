@@ -208,17 +208,8 @@ namespace NRaas.WoohooerSpace.Interactions
                     EnsureForeignFather(pregnancy);
                 }
 
-                // ths.GetNewBorns();                
-                if (ths is MaleHaveBabyHomeEx)
-                {
-                    ths.GetNewBorns();
-                }
-                else
-                {
-                    bool isSelectable = ths.Actor.IsSelectable;
-                    Sims3.Gameplay.Gameflow.Singleton.DisableSave(ths, "Gameplay/ActorSystems/Pregnancy:DisableSave");
-                    ths.mNewborns = pregnancy.CreateNewborns(0f, isSelectable, true);
-                }
+                ths.GetNewBorns();             
+                
                 ths.AcquirePregnancyStateMachine();
 
                 ths.mCurrentStateMachine.SetActor("x", ths.Actor);
@@ -257,12 +248,13 @@ namespace NRaas.WoohooerSpace.Interactions
         {
             Pregnancy pregnancy = Actor.SimDescription.Pregnancy;
             bool isSelectable = Actor.IsSelectable;
-            if (isSelectable)
-            {
+            //if (isSelectable)
+           // {
                 Sims3.Gameplay.Gameflow.Singleton.DisableSave(this, "Gameplay/ActorSystems/Pregnancy:DisableSave");
                 // Custom
-                //mNewborns = HaveBabyHospitalEx.CreateNewborns(new PregnancyProxy(pregnancy), 0f, isSelectable, true);
+                //mNewborns = HaveBabyHospitalEx.CreateNewborns(new PregnancyProxy(pregnancy), 0f, isSelectable, true); -- was commented
                 mNewborns = new Proxies.PregnancyProxy(pregnancy).CreateNewborns(0f, isSelectable, true);
+            /*
             }
             else
             {
@@ -279,6 +271,7 @@ namespace NRaas.WoohooerSpace.Interactions
                     Simulator.YieldingDisabled = false;
                 }
             }
+             */
         }
 
         public new class Definition : Pregnancy.HaveBabyHome.Definition

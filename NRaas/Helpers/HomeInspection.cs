@@ -31,6 +31,7 @@ namespace NRaas.CommonSpace.Helpers
             TooFewCribs,
             TooFewStalls,
             TooFewPetBeds,
+            TooFewBotBeds,
         }
 
         int mDoubleBeds;
@@ -40,6 +41,7 @@ namespace NRaas.CommonSpace.Helpers
         int mStalls;
         int mPetBeds;
         int mFairyHouses;
+        int mBotBeds;
 
         bool mEmpty = true;
 
@@ -80,6 +82,10 @@ namespace NRaas.CommonSpace.Helpers
                 else if (obj is FairyHouse)
                 {
                     mFairyHouses++;
+                }
+                else if (obj is IBotBed)
+                {
+                    mBotBeds++;
                 }
                 else if ((obj is IMailbox) || (obj is IResidentialTrashCan))
                 {
@@ -123,13 +129,13 @@ namespace NRaas.CommonSpace.Helpers
 
             if (sims != null)
             {
-                int doubles = 0, singles = 0, fairySingles = 0, cribs = 0, stalls = 0, petBeds = 0;
+                int doubles = 0, singles = 0, fairySingles = 0, cribs = 0, stalls = 0, petBeds = 0, botbeds = 0;
 
                 Dictionary<SimDescription, bool> partnerLookup = new Dictionary<SimDescription, bool>();
 
                 foreach (SimDescription sim in sims)
                 {
-                    if (sim.IsHuman)
+                    if (sim.IsHuman && !sim.IsEP11Bot)
                     {
                         if ((sim.IsPregnant) &&
                             ((sim.Partner == null) || (!sims.Contains(sim.Partner))))
@@ -179,6 +185,13 @@ namespace NRaas.CommonSpace.Helpers
                             petBeds++;
                         }
                     }
+                    else if (sim.IsEP11Bot)
+                    {
+                        if (sim.TraitManager != null && !sim.TraitManager.HasElement(Sims3.Gameplay.ActorSystems.TraitNames.SolarPoweredChip))
+                        {
+                            botbeds++;
+                        }
+                    }
                 }
 
                 if (mDoubleBeds < doubles)
@@ -223,6 +236,11 @@ namespace NRaas.CommonSpace.Helpers
                 if (mPetBeds < petBeds)
                 {
                     results.Add(new Result(Reason.TooFewPetBeds, mPetBeds, petBeds));
+                }
+
+                if (mBotBeds < botbeds)
+                {
+                    results.Add(new Result(Reason.TooFewBotBeds, mBotBeds, botbeds));
                 }
             }
 

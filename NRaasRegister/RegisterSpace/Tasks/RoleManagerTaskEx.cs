@@ -475,13 +475,13 @@ namespace NRaas.RegisterSpace.Tasks
                                 s.mGenealogy.mMiniSim = s;
                             }                         
 
-                            simDescription = MiniSims.UnpackSimAndUpdateRel(s);
-
-                            RoleTouristEx.StripFutureTrait(simDescription);                          
+                            simDescription = MiniSims.UnpackSimAndUpdateRel(s);                                                     
 
                             //bool flag = ((data.Type == Role.RoleType.Proprietor) && (simDescription != null)) && simDescription.OccultManager.HasAnyOccultType();
                             if (simDescription != null)
                             {
+                                RoleTouristEx.StripFutureTrait(simDescription); 
+
                                 try
                                 {
                                     if (simDescription != null)

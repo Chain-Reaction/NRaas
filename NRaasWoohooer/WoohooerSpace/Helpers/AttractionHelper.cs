@@ -93,6 +93,9 @@ namespace NRaas.WoohooerSpace.Helpers
                     {
                         if ((!SimTypes.IsSelectable(relation.SimDescriptionA)) && (!SimTypes.IsSelectable(relation.SimDescriptionB))) continue;
 
+                        // don't blow up when one Sim is selectable but out of world (boinked parents vacation, boarding school)
+                        if ((relation.SimDescriptionA.CreatedSim == null) && (relation.SimDescriptionB.CreatedSim == null)) continue;
+
                         if (relation.AreAttracted)
                         {
                             if (TestEnableAttractionNPCController(relation))

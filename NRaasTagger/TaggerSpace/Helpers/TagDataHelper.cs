@@ -14,9 +14,11 @@ using Sims3.SimIFace.CAS;
 using Sims3.UI;
 using Sims3.UI.CAS;
 using Sims3.UI.Hud;
+using Sims3.SimIFace;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace NRaas.TaggerSpace.Helpers
 {
@@ -62,8 +64,11 @@ namespace NRaas.TaggerSpace.Helpers
             Debt,
             Mood,
             Job,
-            Orientation
+            Orientation,
+            AgeInYears
         }
+
+        public static Dictionary<ulong, int> moneyGraph = new Dictionary<ulong, int>();
 
         public static string GetRoleHours(SimDescription sim)
         {
@@ -198,7 +203,24 @@ namespace NRaas.TaggerSpace.Helpers
                 }
             }
 
-            if ((serviceOrRole) || (Tagger.Settings.mTagDataSettings[TagDataType.Orientation] && Tagger.Settings.mTagDataSettings[TagDataType.LifeStage] && (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || (Tagger.Settings.mTagDataSettings[TagDataType.DaysTillNextStage] && sim.AgingEnabled))))
+            List<string> customTitles;
+            if (Tagger.Settings.mCustomSimTitles.TryGetValue(sim.SimDescriptionId, out customTitles))
+            {                
+                int perline = serviceOrRole ? 1 : 2;
+                serviceOrRole = true;
+                foreach (string title in customTitles)
+                {
+                    if (perline == 0)
+                    {
+                        str += Common.NewLine;
+                        perline = 3;
+                    }
+                    str += ", " + title;
+                    perline--;
+                }
+            }
+
+            if ((serviceOrRole) || (Tagger.Settings.mTagDataSettings[TagDataType.Orientation] && Tagger.Settings.mTagDataSettings[TagDataType.LifeStage] && (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || Tagger.Settings.mTagDataSettings[TagDataType.AgeInYears] || (Tagger.Settings.mTagDataSettings[TagDataType.DaysTillNextStage] && sim.AgingEnabled))))
             {
                 str += Common.NewLine;
             }
@@ -222,14 +244,24 @@ namespace NRaas.TaggerSpace.Helpers
                 str += sim.AgeLocalizedText;
             }
 
-            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || Tagger.Settings.mTagDataSettings[TagDataType.DaysTillNextStage])
+            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || Tagger.Settings.mTagDataSettings[TagDataType.AgeInYears] || Tagger.Settings.mTagDataSettings[TagDataType.DaysTillNextStage])
             {
                 str += " (";
             }
 
-            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays])
+            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || Tagger.Settings.mTagDataSettings[TagDataType.AgeInYears])
             {
-                str += Common.Localize("TagData:Age", sim.IsFemale, new object[] { Math.Round(Aging.GetCurrentAgeInDays(sim as IMiniSimDescription)) });
+                str += Common.Localize("TagData:Age", sim.IsFemale);
+            }
+
+            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] && !Tagger.Settings.mTagDataSettings[TagDataType.AgeInYears])
+            {
+                str += " " + Common.Localize("TagData:Days", sim.IsFemale, new object[] { Math.Round(Aging.GetCurrentAgeInDays(sim as IMiniSimDescription)) });
+            }
+
+            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInYears])
+            {
+                str += " " + Common.Localize("TagData:Years", sim.IsFemale, new object[] { Math.Round(Aging.GetCurrentAgeInDays(sim as IMiniSimDescription) / Tagger.Settings.TagDataAgeInYearsLength) });
             }
 
             if (sim.AgingEnabled)
@@ -240,7 +272,7 @@ namespace NRaas.TaggerSpace.Helpers
                 }
             }
 
-            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || Tagger.Settings.mTagDataSettings[TagDataType.DaysTillNextStage])
+            if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInDays] || Tagger.Settings.mTagDataSettings[TagDataType.AgeInYears] || Tagger.Settings.mTagDataSettings[TagDataType.DaysTillNextStage])
             {
                 str += ")";
             }
@@ -351,6 +383,11 @@ namespace NRaas.TaggerSpace.Helpers
                         }
 
                         num++;
+                    }
+
+                    if (sim.CreatedSim.Motives.HasMotive(CommodityKind.Temperature))
+                    {
+                        motives += FetchMotiveLocalization(sim.Species, CommodityKind.Temperature) + ": " + "(" + sim.CreatedSim.Motives.GetValue(CommodityKind.Temperature).ToString("0.") + ") ";
                     }
 
                     str += Common.Localize("TagData:Motives", sim.IsFemale, new object[] { motives.Remove(0, 2) });
@@ -516,13 +553,106 @@ namespace NRaas.TaggerSpace.Helpers
                     if (flag == CASAgeGenderFlags.Horse) str = "Exercise";
                 break;
                 case CommodityKind.Fun:
-                if (flag == CASAgeGenderFlags.Horse) str = "Thirst";
+                    if (flag == CASAgeGenderFlags.Horse) str = "Thirst";
                 break;
+                case CommodityKind.Temperature:
+                    return Common.Localize("TagData:Temperature");                
                 default:
                 break;
             }
 
-            return Common.LocalizeEAString("Ui/Caption/HUD/MotivesPanel:Motive" + str + (flag == CASAgeGenderFlags.Human || str == "B" ? motive.ToString() : flag.ToString()));
+            return Common.LocalizeEAString("Ui/Caption/HUD/MotivesPanel:Motive" + str + (flag == CASAgeGenderFlags.Human ? motive.ToString() : flag.ToString()));
+        }
+
+        public static void GenerateMoneyGraphData()
+        {
+            moneyGraph.Clear();
+
+            int max = 0;
+            int min = 0;
+            Dictionary<ulong, int> cashInfo = new Dictionary<ulong, int>();
+
+            foreach (KeyValuePair<ulong, SimDescription> val in SimListing.GetResidents(false))
+            {                
+                if (!SimTypes.IsSpecial(val.Value) && val.Value.Household != null)
+                {
+                    Common.Notify("GenerateMoneyGraph: Working on " + val.Value.FullName + "(" + val.Value.SimDescriptionId + ")");                   
+                    int debtnum = 0;
+                    if (sGetDebtAndNetworth.Valid)
+                    {
+                        Common.Notify("Pulling debt");
+                        string debt = string.Empty;
+                        debt = sGetDebtAndNetworth.Invoke<string>(new object[] { val.Value, 1 });
+
+                        Common.Notify("Debt returned: " + debt);
+
+                        if (debt != string.Empty)
+                        {
+                            Match match = Regex.Match(debt, @"(\d+)");
+                            if (match.Success)
+                            {
+                                debtnum = int.Parse(match.Groups[1].Value);
+                                Common.Notify("Found debt: " + debtnum);
+                            }
+                        }
+                    }
+
+                    int cash = val.Value.Household.FamilyFunds - debtnum - val.Value.Household.UnpaidBills;
+                    Common.Notify("Cash: " + cash + "FF: " + val.Value.Household.FamilyFunds + " UB: " + val.Value.Household.UnpaidBills);
+                    cashInfo.Add(val.Value.SimDescriptionId, cash);
+
+                    if (cash > max)
+                    {                        
+                        max = cash;
+                    }
+                    
+                    if (cash < min || min == 0)
+                    {                        
+                        min = cash;
+                    }
+                }
+            }
+
+            foreach (KeyValuePair<ulong, int> vals in cashInfo)
+            {
+                int townWealthPercent = (vals.Value - min);
+                float twp = townWealthPercent / (max - min) * 100;
+                townWealthPercent = (int)Math.Floor(twp);
+
+                Common.Notify("TWP (" + vals.Key + "): " + townWealthPercent + " Value: " + vals.Value + " min: " + min + " max: " + max);
+                moneyGraph.Add(vals.Key, townWealthPercent);
+            }
+        }
+
+        public static Color ColorizePercent(int percent)
+        {
+            // this returns R/G/B for a percent. Only supports Red(0) Green(100) or Yellow(50) or in between such
+            /*
+             * n is in range 0 .. 100
+               R = (255 * n) / 100
+               G = (255 * (100 - n)) / 100 
+               B = 0
+             */
+
+            double r = 255 * Math.Sqrt(Math.Sin(percent * Math.PI / 200));
+            double g = 255 * Math.Sqrt(Math.Cos(percent * Math.PI / 200));
+            int b = 0;
+            
+            return new Color((int)r, (int)g, b);
+        }
+
+        public static Color ColorizePercentCustom(Color color1, Color color2, int percent)
+        {
+            // this returns R/G/B for a percent with custom colors.
+
+            int color1Ratio = (255 * percent) / 100;
+            int color2Ratio = 255 - color1Ratio;
+
+            int r = ((color1.Red * color1Ratio + color2.Red * color2Ratio) / 255);
+            int g = ((color1.Green * color1Ratio + color2.Green * color2Ratio) / 255);
+            int b = ((color1.Blue * color1Ratio + color2.Blue * color2Ratio) / 255);
+ 
+            return new Color(r, g, b);
         }
     }
 }

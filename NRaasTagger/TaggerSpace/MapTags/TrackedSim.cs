@@ -13,6 +13,7 @@ using Sims3.Gameplay.MapTags;
 using Sims3.Gameplay.Objects.Vehicles;
 using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Socializing;
+using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
@@ -318,7 +319,7 @@ namespace NRaas.TaggerSpace.MapTags
                         return new Color(4294916352);
                     }
 
-                    if (NRaas.Tagger.Settings.mColorTagsByAge)
+                    if (Tagger.Settings.mColorTagsByAge)
                     {
                         switch (target.SimDescription.Age)
                         {
@@ -330,7 +331,7 @@ namespace NRaas.TaggerSpace.MapTags
                                 // Orange
                                 //return new Color(255, 128, 0);
                                 return new Color(Tagger.Settings.mAgeColorSettings[CASAgeGenderFlags.Toddler]);
-                            case CASAgeGenderFlags.Child:                                
+                            case CASAgeGenderFlags.Child:
                                 return new Color(Tagger.Settings.mAgeColorSettings[CASAgeGenderFlags.Child]);
                             case CASAgeGenderFlags.Teen:
                                 // Red
@@ -351,7 +352,7 @@ namespace NRaas.TaggerSpace.MapTags
                         }
                     }
 
-                    if(NRaas.Tagger.Settings.mColorTagsByRelationship)
+                    if (Tagger.Settings.mColorTagsByRelationship)
                     {
                         if (Relationships.IsCloselyRelated(Sim.ActiveActor.SimDescription, target.SimDescription, false))
                         {
@@ -404,7 +405,7 @@ namespace NRaas.TaggerSpace.MapTags
                         }
                     }
 
-                    if (NRaas.Tagger.Settings.mColorTagsBySimType)
+                    if (Tagger.Settings.mColorTagsBySimType)
                     {
                         foreach (SimType flag in Enum.GetValues(typeof(SimType)))
                         {
@@ -442,7 +443,7 @@ namespace NRaas.TaggerSpace.MapTags
 
                     if (target.SimDescription.TeenOrAbove && !target.SimDescription.IsPet)
                     {
-                        if (NRaas.Tagger.Settings.mColorTagsByRelationshipStatus)
+                        if (Tagger.Settings.mColorTagsByRelationshipStatus)
                         {
                             if (target.SimDescription.IsPregnant && target.SimDescription.Pregnancy != null)
                             {
@@ -476,13 +477,88 @@ namespace NRaas.TaggerSpace.MapTags
                             }
                         }
 
-                        if (NRaas.Tagger.Settings.mColorTagsByOrientation)
+                        if (Tagger.Settings.mColorTagsByOrientation)
                         {
                             TagDataHelper.TagOrientationType type = TagDataHelper.GetOrientation(target.SimDescription);
                             if (Tagger.Settings.mSimOrientationColorSettings.ContainsKey(type))
                             {
                                 return new Color(Tagger.Settings.mSimOrientationColorSettings[type]);
                             }
+                        }
+
+                        if (Tagger.Settings.mColorByJobPerformance)
+                        {
+                            if (target.Occupation != null)
+                            {
+                                float performance = (target.Occupation.Performance - -100) / (100 - -100) * 100;
+                                
+                                int performance2 = (int)Math.Floor(performance);
+                                int inverted = (performance2 - 100) * -1;
+                                
+                                return TagDataHelper.ColorizePercent(inverted);
+                            }
+                        }
+
+                        if (Tagger.Settings.mColorByCash)
+                        {
+                            int wealthPercent = 0;
+                            if (TagDataHelper.moneyGraph.TryGetValue(target.SimDescription.SimDescriptionId, out wealthPercent))
+                            {                               
+                                int inverted = wealthPercent - 100 * -1;
+                                
+                                return TagDataHelper.ColorizePercent(inverted);
+                            }
+                        }
+                    }
+
+                    if (Tagger.Settings.mColorByMood)
+                    {                        
+                        if (target.MoodManager != null)
+                        {
+                            int mood = (target.MoodManager.MoodValue - -100);
+                            float m = (float)mood / (200 - -100) * 100;
+                            int mood2 = (int)Math.Ceiling(m);
+                            int mood3 = (mood2 - 100) * -1;
+                            
+                            return TagDataHelper.ColorizePercent(mood3);
+                        }
+                    }
+
+                    if (Tagger.Settings.mColorByCommodity != CommodityKind.None)
+                    {
+                        if (target.Autonomy != null && target.Autonomy.Motives.HasMotive(Tagger.Settings.mColorByCommodity))
+                        {
+                            float motive = (target.Autonomy.Motives.GetValue(Tagger.Settings.mColorByCommodity) - -100) / (100 - -100) * 100;
+                            int motive2 = (int)Math.Ceiling(motive);
+                            int motive3 = (motive2 - 100) * -1;
+                            
+                            // fanciness for vampires and temps
+                            if (Tagger.Settings.mColorByCommodity == CommodityKind.VampireThirst)
+                            {
+                                if (motive2 > 50)
+                                {
+                                    return TagDataHelper.ColorizePercentCustom(new Color(119, 17, 132), new Color(237, 237, 33), motive3);
+                                }
+                                else
+                                {
+                                    return TagDataHelper.ColorizePercentCustom(new Color(229, 29, 22), new Color(237, 237, 33), motive3);
+                                }
+                            }
+
+                            if (Tagger.Settings.mColorByCommodity == CommodityKind.Temperature)
+                            {
+                                if (motive2 > 50)
+                                {
+                                    return TagDataHelper.ColorizePercentCustom(new Color(229, 29, 22), new Color(237, 237, 33), motive3);
+                                }
+                                else
+                                {
+                                    // 24,  201, 24g
+                                    return TagDataHelper.ColorizePercentCustom(new Color(21, 82, 153), new Color(237, 237, 33), motive3);
+                                }
+                            }
+
+                            return TagDataHelper.ColorizePercent(motive3);
                         }
                     }
 

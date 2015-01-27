@@ -158,7 +158,7 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
       <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
@@ -235,6 +235,9 @@
     </Compile>
     <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
       <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ValueSettingOption.cs">
+      <Link>CommonSpace\Options\ValueSettingOption.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Options\ProtoVersion.cs">
       <Link>CommonSpace\Options\ProtoVersion.cs</Link>
@@ -385,6 +388,12 @@
     <Compile Include="CareerSpace\Options\Assassination\ResetSettings.cs" />
     <Compile Include="CareerSpace\Options\DebuggingSetting.cs" />
     <Compile Include="CareerSpace\Options\General\BuskerLevelToGetPaidForConcertsSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\Careers\CareerSettingOption.cs" />
+    <Compile Include="CareerSpace\Options\General\Careers\ICareerOption.cs" />
+    <Compile Include="CareerSpace\Options\General\Careers\MaxCoworkerSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\Careers\MinCoworkerSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\Careers\CareerSettingListingOption.cs" />
+    <Compile Include="CareerSpace\Options\General\HomeworldUniversityTermLengthSetting.cs" />
     <Compile Include="CareerSpace\Options\Sims\HomemakerDumpSetting.cs" />
     <Compile Include="CareerSpace\Options\Homemaker\HomemakerDiscountRateSetting.cs" />
     <Compile Include="CareerSpace\Options\Homemaker\HomemakerDiscountLevelSetting.cs" />
@@ -411,6 +420,7 @@
     <Compile Include="CareerSpace\Tasks\CareerPanelTask.cs" />
     <Compile Include="CareerSpace\Careers\Homemaker.cs" />
     <Compile Include="Gameplay\Careers\PartTimeJob.cs" />
+    <Compile Include="Gameplay\OmniSpace\Metrics\MetricReadingsPerformed.cs" />
     <Compile Include="Gameplay\OmniSpace\Metrics\MetricShakedown.cs" />
     <Compile Include="Gameplay\OmniSpace\Metrics\MetricLecturesGiven.cs" />
     <Compile Include="Gameplay\OmniSpace\Tones\GiveLecturesTone.cs" />

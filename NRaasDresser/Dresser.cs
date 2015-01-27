@@ -126,11 +126,9 @@ namespace NRaas
             [Tunable, TunableComment("Whether to change the outfits of the active sims during nightly rotation")]
             public static bool kRotationAffectActive = false;
             [Tunable, TunableComment("The percent chance a sim will consider switching outfits")]
-            public static int kChanceOfSwitch = 75;
-            [Tunable, TunableComment("Whether to rotate the martial arts outfit category")]
-            public static bool kRotateMartialOutfit = false;
-            [Tunable, TunableComment("Whether to check outfits on age-up")]
-            public static bool kCheckOutfits = true;
+            public static int kChanceOfSwitch = 75;            
+            [Tunable, TunableComment("Whether to enable the check outfits task")]
+            public static bool kCheckOutfits = false;
             [Tunable, TunableComment("Whether to display an notification whenever a sim's outfit is altered")]
             public static bool kNotifyOnCheckOutfits = true;
             [Tunable, TunableComment("Whether to force a sim to switch out of Sleepwear or Athletic upon entering the outdoors")]
@@ -263,12 +261,14 @@ namespace NRaas
             [Tunable, TunableComment("Wheather to check outfits on Sims who were reset")]
             public static bool kCheckOutfitsOnReset = false;
 
+            [Tunable, TunableComment("Wheather to allow certain outfits to rotate when the Sim is wearing them")]
+            public static OutfitCategories[] kAllowRotationOutfitCategories = new OutfitCategories[] { OutfitCategories.Athletic, OutfitCategories.Everyday, OutfitCategories.Formalwear, OutfitCategories.Outerwear, OutfitCategories.Sleepwear, OutfitCategories.Swimwear };
+
             private bool mNightlyRandomChangeOutfit = kNightlyRandomChangeOutfit;
             private float mNightlyChangeOutfitHour = kNightlyChangeOutfitHour;
             public bool mRotationAffectActive = kRotationAffectActive;
             public bool mRotationAffectInactive = kRotationAffectInactive;
-            private float mChanceOfSwitch = kChanceOfSwitch;
-            public bool mRotateMartialOutfit = kRotateMartialOutfit;
+            private float mChanceOfSwitch = kChanceOfSwitch;            
             public bool mCheckOutfits = kCheckOutfits;
             public bool mNotifyOnCheckOutfits = kNotifyOnCheckOutfits;
             public int mRandomBeardChance = kRandomBeardChance;
@@ -325,6 +325,8 @@ namespace NRaas
             public bool mIgnoreValidForRandomBodyHair = kIgnoreValidForRandomBodyHair;
 
             public bool mCheckOutfitsOnReset = kCheckOutfitsOnReset;
+
+            public List<OutfitCategories> mAllowRotationOutfitCategories = new List<OutfitCategories>(kAllowRotationOutfitCategories);
 
             public bool Debugging
             {

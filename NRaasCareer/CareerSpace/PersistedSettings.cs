@@ -2,6 +2,7 @@
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.CAS;
+using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
@@ -48,6 +49,9 @@ namespace NRaas.CareerSpace
         [Tunable, TunableComment("The amount of performance gained per Home Schooling homework submission")]
         protected static int kPerformancePerHomework = 20;
 
+        [Tunable, TunableComment("Length in Sim days of 1 term of homeworld University")]
+        protected static int kHomeworldUniversityTermLength = 7;
+
         public int mMaxShakedown = kMaxShakedown;
         public int mShakedownRelationChange = kShakedownRelationChange;
 
@@ -63,6 +67,10 @@ namespace NRaas.CareerSpace
 
         public int mPerformancePerHomework = kPerformancePerHomework;
 
+        public int mHomeworldUniversityTermLength = kHomeworldUniversityTermLength;
+
+        public Dictionary<OccupationNames, CareerSettings> mCareerSettings = new Dictionary<OccupationNames, CareerSettings>();
+
         protected bool mDebugging = Common.kDebugging;
 
         public bool Debugging
@@ -77,6 +85,78 @@ namespace NRaas.CareerSpace
 
                 Common.kDebugging = value;
             }
+        }
+
+        public void UpdateCareerSettings(CareerSettings settings)
+        {
+            if (mCareerSettings.ContainsKey(settings.mName))
+            {
+                mCareerSettings[settings.mName] = settings;
+            }
+            else
+            {
+                mCareerSettings.Add(settings.mName, settings);
+            }
+
+            SetCareerData(settings);
+        }
+
+        public void SetCareerData(CareerSettings settings)
+        {
+            if (settings != null)
+            {
+                if (settings.mName == OccupationNames.Any)
+                {
+                    foreach (Career career in CareerManager.CareerList)
+                    {
+                        career.SharedData.MinCoworkers = settings.minCoworkers;
+                        career.SharedData.MaxCoworkers = settings.maxCoworkers;
+                    }
+                }
+                else
+                {
+                    Career career = CareerManager.GetStaticCareer(settings.mName);
+                    if (career != null)
+                    {
+                        career.SharedData.MinCoworkers = settings.minCoworkers;
+                        career.SharedData.MaxCoworkers = settings.maxCoworkers;
+                    }
+                }
+            }
+        }
+
+        public CareerSettings GetCareerSettings(OccupationNames name, bool create)
+        {
+            CareerSettings result;
+            if (mCareerSettings.TryGetValue(name, out result))
+            {
+                return result;
+            }
+            else
+            {
+                if (create)
+                {
+                    return new CareerSettings(name);
+                }
+            }
+
+            return null;
+        }
+
+        [Persistable]
+        public class CareerSettings
+        {
+            public CareerSettings()
+            {
+            }
+            public CareerSettings(OccupationNames name)
+            {
+                mName = name;
+            }
+
+            public OccupationNames mName;
+            public int minCoworkers = 0;
+            public int maxCoworkers = 0;
         }
     }
 }

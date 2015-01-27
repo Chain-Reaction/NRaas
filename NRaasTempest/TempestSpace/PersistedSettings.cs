@@ -1,4 +1,4 @@
-﻿using NRaas.CommonSpace.Helpers;
+﻿ using NRaas.CommonSpace.Helpers;
 using NRaas.TempestSpace.Booters;
 using NRaas.TempestSpace.Helpers;
 using Sims3.Gameplay.Abstracts;
@@ -67,6 +67,8 @@ namespace NRaas.TempestSpace
 
         public bool mAutoLightFireplaces = kAutoLightFireplaces;
         public float mAutoLightFireplacesTemperature = kAutoLightFireplacesTemperature;
+
+        public bool mSprinklersSpawnPuddles = true;
 
 
         Dictionary<Season, HolidaySettings> mHolidaySettings = new Dictionary<Season, HolidaySettings>();
@@ -142,7 +144,7 @@ namespace NRaas.TempestSpace
             }
             else
             {
-                day = ((int)length + day);
+                day = ((int)length + day) + 1; // +1 fixes last day of season issue but breaks holidays again
 
                 if (day < 0) return 0;
             }
