@@ -41,14 +41,20 @@ namespace NRaas.TempestSpace.Helpers
 
                 try
                 {
-                    if ((fireplace.Upgradable != null || fireplace is FireplaceUltra) && fireplace.CanAutoLight && SeasonsManager.Temperature <= Tempest.Settings.mAutoLightFireplacesTemperature && lotCurrent.Household.IsActive && lotCurrent.Household.HasMemberOnLot(lotCurrent))
+                    if ((fireplace.Upgradable != null || fireplace is FireplaceUltra) && fireplace.CanAutoLight)
                     {
-                        fireplace.StartFire();
-                    }
-                    else
-                    {
-                        fireplace.UserControlled = true;
-                        fireplace.StopFire();
+                        if (SeasonsManager.Temperature <= Tempest.Settings.mAutoLightFireplacesTemperature)
+                        {
+                            if (!fireplace.IsLit && lotCurrent.Household.IsActive && lotCurrent.Household.HasMemberOnLot(lotCurrent))
+                            {
+                                fireplace.StartFire();
+                            }
+                        }
+                        else
+                        {
+                            fireplace.UserControlled = true;
+                            fireplace.StopFire();
+                        }
                     }
                 }
                 catch (Exception e)

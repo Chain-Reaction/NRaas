@@ -2,6 +2,7 @@
 using NRaas.CommonSpace.Options;
 using NRaas.CommonSpace.Tasks;
 using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
@@ -198,6 +199,16 @@ namespace NRaas.OverwatchSpace.Alarms
                         if (createdSim.Parent is IBed)
                         {
                             check = false;
+                        }
+
+                        if (createdSim.OccultManager != null)
+                        {
+                            OccultRobot bot = createdSim.OccultManager.GetOccultType(Sims3.UI.Hud.OccultTypes.Robot) as OccultRobot;
+
+                            if (bot != null && bot.IsShutdown)
+                            {
+                                check = false;
+                            }
                         }
 
                         if (check)

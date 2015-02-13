@@ -3,6 +3,8 @@ using NRaas.CommonSpace.Helpers;
 using NRaas.MasterControllerSpace;
 using NRaas.MasterControllerSpace.Helpers;
 using NRaas.MasterControllerSpace.Interactions;
+using NRaas.MasterControllerSpace.SelectionCriteria;
+using NRaas.MasterControllerSpace.Sims;
 using NRaas.MasterControllerSpace.Settings;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -93,6 +95,124 @@ namespace NRaas
             }
 
             return stamps;
+        }
+
+        public static SavedFilter GetFilter(string name)
+        {
+            // duplicated from FilterSettingOption but eh, didn't feel it best to make a method in there static
+            name = name.ToLower();
+
+            SavedFilter picked = null;
+            foreach (SavedFilter filter in MasterController.Settings.mFilters)
+            {
+                if (filter.Name.ToLower() == name)
+                {
+                    picked = filter;
+                    break;
+                }
+            }
+
+            return picked;
+        }        
+        
+        // Externalized to filterable mods
+        public static List<ulong> GetSimsMatchingFilter(List<object> filter)
+        {
+            List<ulong> results = new List<ulong>();
+
+            List<IMiniSimDescription> sims = GetSimsMatchingFilterAsMinis((string)filter[0], (ulong)filter[1]);
+
+            foreach (IMiniSimDescription desc in sims)
+            {
+                results.Add(desc.SimDescriptionId);
+            }
+
+            return results;
+        }       
+
+        public static List<IMiniSimDescription> GetSimsMatchingFilterAsMinis(string name, ulong sim)
+        {
+            List<IMiniSimDescription> results = new List<IMiniSimDescription>();            
+
+            SavedFilter filter = GetFilter(name);
+
+            if (sim == 0 && PlumbBob.SelectedActor != null)
+            {
+                sim = PlumbBob.SelectedActor.SimDescription.SimDescriptionId;
+            }
+
+            if (filter != null && sim != 0)
+            {
+                bool okayed;
+                IMiniSimDescription mini = SimDescription.Find(sim);
+                if (mini != null)
+                {
+                    List<SimSelection.ICriteria> crit = new List<SimSelection.ICriteria>();
+                    crit.Add(new SavedFilter.Item(filter));
+
+                    SimSelection selection = SimSelection.Create("", mini, null, crit, true, false, out okayed);
+                    if (selection.All != null && selection.All.Count > 0)
+                    {
+                        results.AddRange(selection.All);
+                    }
+                }
+            }
+
+            return results;
+        }        
+
+        // Externalized to filterable mods
+        public static Dictionary<string, bool> GetAllFilters(bool unused)
+        {
+            Dictionary<string, bool> results = new Dictionary<string, bool>();
+            
+            foreach (SavedFilter filter in MasterController.Settings.mFilters)
+            {
+                //Common.DebugNotify("GetAllFilters: " + filter.Name);
+                bool simSpecific = false;
+                foreach (SimSelection.ICriteria crit in filter.Elements)
+                {
+                   // Common.DebugNotify("crit is " + crit.GetType().ToString());
+                    if (crit is ActiveSim || crit is PriorCareer || crit is RelationBase || crit is LongTermRelationshipEx || crit is RelationListing)
+                    {
+                       // Common.DebugNotify("Filter is SimSpecific");
+                        simSpecific = true;
+                        break;
+                    }
+                }
+
+                results.Add(filter.Name, simSpecific);
+            }
+
+            return results;
+        }
+
+        public static Dictionary<string, bool> GetSingleFilter(string mFilter)
+        {
+            Dictionary<string, bool> result = new Dictionary<string, bool>();
+
+            foreach (SavedFilter filter in MasterController.Settings.mFilters)
+            {
+                if (filter.Name != mFilter) continue;
+
+               // Common.DebugNotify("GetSingleFilter: " + mFilter);
+
+                bool simSpecific = false;
+                foreach (SimSelection.ICriteria crit in filter.Elements)
+                {
+                    if (crit is ActiveSim || crit is PriorCareer || crit is RelationBase || crit is LongTermRelationshipEx || crit is RelationListing)
+                    {
+                       // Common.DebugNotify("Filter is SimSpecific");
+                        simSpecific = true;
+                        break;
+                    }
+                }
+
+                result.Add(filter.Name, simSpecific);
+                break;
+            }
+
+            return result;
         }
 
         protected static void OnStartup()

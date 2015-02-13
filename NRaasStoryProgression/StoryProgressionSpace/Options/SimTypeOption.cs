@@ -69,6 +69,9 @@ namespace NRaas.StoryProgressionSpace.Options
                     case SimType.TimeTraveler:
                     case SimType.Deer:
                     case SimType.Raccoon:
+                    case SimType.Local:
+                    case SimType.Foreign:
+                    case SimType.MiniSim:
                         continue;
                 }
 

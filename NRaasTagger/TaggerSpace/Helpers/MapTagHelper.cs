@@ -1,4 +1,5 @@
-﻿using NRaas.TaggerSpace.MapTags;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.TaggerSpace.MapTags;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
@@ -52,12 +53,12 @@ namespace NRaas.TaggerSpace.Helpers
             {
                 if (sim == null) return;
 
-                MapTag tag = mtm.GetTag(sim);
+                MapTag tag = mtm.GetTag(sim);                
 
-                if (((sim.Household == Household.ActiveHousehold) ||
+                if ((sim.Household == Household.ActiveHousehold) ||
                     (sim.SimDescription.AssignedRole is RoleSpecialMerchant) ||
                     (sim.SimDescription.AssignedRole is Proprietor) ||
-                    (Tagger.Settings.Filters.Matches(sim.SimDescription)) && (Tagger.Settings.mEnableSimTags || Tagger.Settings.mTaggedSims.Contains(sim.SimDescription.SimDescriptionId))))
+                    (Tagger.Settings.mEnableSimTags && (!Tagger.Settings.HasSimFilterActive() || Tagger.Settings.DoesSimMatchSimFilters(sim.SimDescription.SimDescriptionId) || Tagger.Settings.mTaggedSims.Contains(sim.SimDescription.SimDescriptionId))))
                 {
                     if (((tag is NPCSimMapTag) || (tag is SelectedSimMapTag)) || (tag is FamilySimMapTag))
                     {
@@ -92,7 +93,7 @@ namespace NRaas.TaggerSpace.Helpers
             {
                 MapTag tag = mtm.GetTag(lot);
 
-                if (Tagger.Settings.Filters.Matches(lot.Household.AllSimDescriptions) && Tagger.Settings.mEnableLotTags)
+                if ((!Tagger.Settings.HasLotFilterActive() || Tagger.Settings.DoesHouseholdMatchLotFilters(lot.Household.AllSimDescriptions)) && Tagger.Settings.mEnableLotTags)
                 {
                     if ((tag != null) && (!(tag is TrackedLot)) && (!(tag is HomeLotMapTag)))
                     {

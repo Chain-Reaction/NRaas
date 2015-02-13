@@ -23,6 +23,11 @@ namespace NRaas.TaggerSpace.Interactions
         public override void AddInteraction(Common.InteractionInjectorList interactions)
         {
             interactions.Add<Sim>(Singleton);
-        }        
+        }
+
+        protected override bool Test(IActor actor, GameObject target, GameObjectHit hit, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+        {
+            return Tagger.Settings.mEnableSimInteractions;
+        }
     }
 }

@@ -39,10 +39,12 @@ namespace NRaas.StoryProgressionSpace.Options
         {
             if (!GoToJailScenario.HasPushInteraction()) return false;
 
+            /*
             if ((!GetValue<AllowPushAtDayOption, bool>()) && (!GetValue<AllowPushAtNightOption, bool>()))
             {
                 return false;
             }
+             */
 
             return base.ShouldDisplay();
         }

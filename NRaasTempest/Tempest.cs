@@ -4,6 +4,8 @@ using NRaas.CommonSpace.Replacers;
 using NRaas.TempestSpace;
 using NRaas.TempestSpace.Booters;
 using NRaas.TempestSpace.Helpers;
+using Sims3.Gameplay.Autonomy;
+using Sims3.Gameplay.Objects.Environment;
 using Sims3.Gameplay.Seasons;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
@@ -68,6 +70,15 @@ namespace NRaas
         public void OnPreLoad()
         {
             BooterLogger.AddError(SocialRHSReplacer.Perform<CommonSocials>("Trick Or Treat", "OnTrickOrTreatAccept"));
+
+            InteractionTuning tuning = Tunings.GetTuning<Sprinkler, Sprinkler.PlayWithSprinkler.Definition>();
+
+            if (tuning != null)
+            {
+                CommodityChange change = new CommodityChange(CommodityKind.Temperature, 10, false, 20, OutputUpdateType.ContinuousFlow, false, false, UpdateAboveAndBelowZeroType.Either);
+                tuning.mTradeoff.mOutputs.Add(change);
+                //regenimposter
+            }
         }
 
         public void OnWorldLoadFinished()

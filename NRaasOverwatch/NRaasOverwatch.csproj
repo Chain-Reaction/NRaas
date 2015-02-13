@@ -315,6 +315,7 @@
     <Compile Include="OverwatchSpace\Interactions\GetMailEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\GetSmeltEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\HarvestEx.cs" />
+    <Compile Include="OverwatchSpace\Interactions\RobotScanEx.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupAging.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupAutonomy.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupBadPostures.cs" />

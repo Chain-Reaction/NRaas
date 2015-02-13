@@ -55,6 +55,13 @@ namespace NRaas.TaggerSpace.Options.TagData
 
             results.Add(new DataEnabled(mData));
 
+            // definitely need to rethink how this listing is coded
+            if (mData == TagDataHelper.TagDataType.AgeInYears)
+            {
+                results.Add(new AgeInYearsCustomLengthOption());
+                results.Add(new AgeInYearsScalesToSeasonsOption());
+            }
+
             return results;
         }
     }

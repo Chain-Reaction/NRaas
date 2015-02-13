@@ -104,35 +104,58 @@ namespace NRaas.RegisterSpace.Helpers
                         msg += Common.NewLine + "Count: " + pool.Count;
 
                         ResortWorker workerService = service as ResortWorker;
+                        List<ObjectGuid> objsToUnReg = new List<ObjectGuid>();
                         if (workerService != null)
                         {
                             if (workerService.mWorkerInfo != null)
                             {
-                                foreach (ResortWorker.WorkerInfo info in workerService.mWorkerInfo.Values)
+                                foreach (KeyValuePair<ObjectGuid, ResortWorker.WorkerInfo> info in workerService.mWorkerInfo)
                                 {
-                                    assigned[info.CurrentSimDescriptionID] = true;
-                                    assigned[info.DesiredSimDescriptionID] = true;
-                                }
-                            }
-                        } 
-                        else 
-                        {
-                            RandomUtil.RandomizeListOfObjects(pool);
+                                    bool objValid = false;
+                                    GameObject obj = GameObject.GetObject(info.Key);
+                                    if (obj != null && obj.InWorld)
+                                    {
+                                        Lot lotCurrent = obj.LotCurrent;
+                                        if (lotCurrent != null && lotCurrent.IsCommunityLotOfType(CommercialLotSubType.kEP10_Resort))
+                                        {
+                                            objValid = true;
+                                            assigned[info.Value.CurrentSimDescriptionID] = true;
+                                            assigned[info.Value.DesiredSimDescriptionID] = true;
+                                        }
+                                    }
 
-                            for (int j = pool.Count - 1; j >= 0; j--)
+                                    if (!objValid)
+                                    {
+                                        objsToUnReg.Add(info.Key);                                        
+                                    }
+                                }
+
+                                foreach (ObjectGuid guid in objsToUnReg)
+                                {
+                                    workerService.UnregisterObject(guid);
+                                }
+                                objsToUnReg.Clear();
+                            }
+                        }
+
+                        RandomUtil.RandomizeListOfObjects(pool);
+
+                        for (int j = pool.Count - 1; j >= 0; j--)
+                        {
+                            if (workerService == null)
                             {
                                 if (pool.Count <= maxSims) break;
-
-                                SimDescription choice = pool[j];
-
-                                if (service.IsSimAssignedTask(choice)) continue;
-
-                                if (assigned.ContainsKey(choice.SimDescriptionId)) continue;
-
-                                ServiceCleanup.AttemptServiceDisposal(choice, false, "Too Many " + service.ServiceType);
-
-                                pool.RemoveAt(j);
                             }
+
+                            SimDescription choice = pool[j];
+
+                            if (service.IsSimAssignedTask(choice)) continue;
+
+                            if (assigned.ContainsKey(choice.SimDescriptionId)) continue;
+
+                            ServiceCleanup.AttemptServiceDisposal(choice, false, "Too Many " + service.ServiceType);
+
+                            pool.RemoveAt(j);
                         }
 
                         List<SimDescription> serviceSims = new List<SimDescription>(service.Pool);

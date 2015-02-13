@@ -41,7 +41,7 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
             SimRoutingComponent component = sim.RoutingComponent as SimRoutingComponent;
             if (component == null) return;
 
-            if (component.mRouteActions.Contains(obj)) return;
+            if (component.mRouteActions.Contains(obj)) return;                        
 
             if (sSims == null)
             {
@@ -68,6 +68,16 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
                     if (pair.Key.Service != null && pair.Key.Service is Butler)
                     {
                         continue;
+                    }
+
+                    SimRoutingComponent component = pair.Key.SimRoutingComponent;
+                    if (component != null)
+                    {
+                        if (component.GetDistanceRemainingOnRoute() == 0f)
+                        {
+                            component.mRouteActions.Clear();
+                            continue;
+                        }
                     }
 
                     new DelayedResetTask(pair.Key, pair.Value);

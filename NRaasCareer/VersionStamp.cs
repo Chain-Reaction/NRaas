@@ -123,9 +123,6 @@ namespace NRaas
          * Issue with "Spar" interaction in Careers mod not working, dropping from queue ?
          * Issue with sculptor's recording twice as much in self-employed exp than actually made ?
          * 
-         * FortuneTeller.ReadingsPerformed metric
-         * 
-         * Update the "Drink" assassination interaction to fire the appropriate new [[Supernatural]] events
          * 
          * Store a kills name and type of death in Assassination
          * 
@@ -151,14 +148,11 @@ namespace NRaas
         /* Changes:
          * 
 ----
-         * 
-         * Fixed an error where it was not possible to Enroll in a school or any career using the rabbithole interactions, if the teen did not already have a school career
-         * Proper handling of the "AvailableInFuture" field
-         * Alterations to the Orientation
+         *          
          * 
     SpellCrafter = 0x494013358591e72L,
          * 
          */
-        public static readonly int sVersion = 86;
+        public static readonly int sVersion = 87;
     }
 }

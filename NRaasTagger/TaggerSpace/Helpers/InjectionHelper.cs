@@ -166,6 +166,13 @@ namespace NRaas.TaggerSpace.Helpers
                 data.WeeklyIncomes = list.ToArray();
                 data.UpgradeValues = list2.ToArray();
 
+                // needed because EA
+                data.UpgradeObjects = new List<Pair<string, int>>[3];
+                for (int i = 0; i < 3; i++)
+                {
+                    data.UpgradeObjects[i] = new List<Pair<string, int>>();
+                }
+
                 RealEstateData.sDictionary.Add(type, data);
             }
         }

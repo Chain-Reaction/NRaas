@@ -32,7 +32,7 @@ namespace NRaas.DresserSpace.Helpers
 
         static Dictionary<ulong, InteractionInstance> sLastInteractions = new Dictionary<ulong, InteractionInstance>();
 
-        static OutfitCategories[] sCategories = new OutfitCategories[] { OutfitCategories.Athletic, OutfitCategories.Everyday, OutfitCategories.Formalwear, OutfitCategories.MartialArts, OutfitCategories.Sleepwear, OutfitCategories.Swimwear, OutfitCategories.Outerwear };
+        public static OutfitCategories[] sCategories = new OutfitCategories[] { OutfitCategories.Athletic, OutfitCategories.Everyday, OutfitCategories.Formalwear, OutfitCategories.MartialArts, OutfitCategories.Sleepwear, OutfitCategories.Swimwear, OutfitCategories.Outerwear };
 
         public void OnWorldLoadFinished()
         {
@@ -285,9 +285,9 @@ namespace NRaas.DresserSpace.Helpers
 
                 foreach (OutfitCategories category in sCategories)
                 {
-                    if (!Dresser.Settings.mRotateMartialOutfit)
+                    if (!Dresser.Settings.mAllowRotationOutfitCategories.Contains(category))
                     {
-                        if (category == OutfitCategories.MartialArts) continue;
+                        continue;
                     }
 
                     int count = sim.SimDescription.GetOutfitCount(category);

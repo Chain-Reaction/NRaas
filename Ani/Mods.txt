@@ -1,0 +1,34 @@
+Some general notes
+1. These were done using vs 2008, I never upgraded for 2010. 
+2. The older ones are named without ani_ - 
+3. I All these mods are up to date with the latest patch and do compile and work.
+
+Known issues:
+Apartment mod:
+- This is not really a bug in the mod (or it could be) but when moving a family from one hood to another (in edit town where you save the household to the bin), it's good to de-activate the families (merge them back to one). The inactive family will be broken when the house is added to the new hood. This is good to put in the notes of the download. 
+
+SellFromInventory:
+- This has an issues with the seasons stand for example "buy take a way coffee" stopped working after some EA update and I couldn't figure out why. 
+- There were also some issues with not all food (I think Sandy mentioned ice-cream) showing up in the food register. 
+
+This is the presessor for the Savvier seller mod, some people still use it like Sandy from ATS3, but I don't think it's very popular any more. 
+
+Savvier Seller:
+- When selling any food that is in the jar (canning station) - the jar that is re-stocked, is broken. This happens at least when you try to restock from buy mode. 
+- When restocking potions from buy mode, the potion is not restocked correctly and is broken. Restocking from inventory works fine. 
+- Restocking items in upper shelves don't work, sims route fail. Buying works. 
+- I'm sure there are even more issues like these with special items, because I had to do individual code for many of the items to have them restock correctly. 
+- When restocking harvestables, the items sink to the shelves. This has something to do with them being restocked with the "harvest" mesh, not the one that you have when the item is in your sims inventory. I couldn't not figure out how to reset the mesh. 
+- EA's 3 am cleaning code is a pain with this mod as it makes food and books disappear. I "solved" this with having the Mod of Randomnes run a code that made the lot owned by the active family before 3 am and then releasing it back as it was after 3 am. Not the most perfect solution but it helped. Some people are still having issues with this though :( 
+
+Have Coffee with me:
+- The coffee tray looses the interactions when loading the game or dragging the item in live mode. It's somehow incompatible with Twallan's selector and gives a null pointer exception. It works fine if making the coffee and using it straight away. 
+
+This is pretty much it. 
+I did manage to get these mods to the point was happy with, the only one I wanted to expand was the Savvier Seller 
+- Make more items stockable with buy mode. 
+- Add a thought process into buying. Now sims do get a progress bar, but they will always buy the item. I wanted some type of thought process that some times sims would actually choose not to buy the item. But I never figured out what type of logic would be good as I didn't want it to be random. 
+- The proces bar was supposed to be green and I was supposed to fix this in the next update
+- Maybe add some buy interactions to the sims so the shop owner could "sell" the item like in TS2 but I think this would have been beyound my capabilities. 
+
+Also with the bistro mod, I always planned on having children also have drinking animations but couldn't get that to work for some reason.  

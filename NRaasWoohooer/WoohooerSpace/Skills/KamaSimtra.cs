@@ -1420,7 +1420,7 @@ namespace NRaas.WoohooerSpace.Skills
 
         public static void AddNotch(SimDescription actor, SimDescription target, Lot lot, CommonWoohoo.WoohooLocation location, CommonWoohoo.WoohooStyle style)
         {
-            if ((!SimTypes.IsSelectable(actor)) && (!SimTypes.IsSelectable(target)))
+            if ((!SimTypes.IsSelectable(actor)) || (!SimTypes.IsSelectable(target)))
             {
                 if (!Settings.mInactiveGain) return;
             }

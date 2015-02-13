@@ -371,7 +371,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
             return new AssignUniversityProfessorsScenario(this);
         }
 
-        public class Option : BooleanAlarmOptionItem<ManagerCareer, AssignUniversityProfessorsScenario>
+        public class Option : BooleanAlarmOptionItem<ManagerCareer, AssignUniversityProfessorsScenario>, ManagerCareer.IHomeworldUniversityOption
         {
             static AlarmHandle sMyHandle = AlarmHandle.kInvalidHandle;
 
@@ -385,7 +385,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
             }                     
         }
 
-        public class AllowQuitOccupation : BooleanManagerOptionItem<ManagerCareer>
+        public class AllowQuitOccupation : BooleanManagerOptionItem<ManagerCareer>, ManagerCareer.IHomeworldUniversityOption
         {
             public AllowQuitOccupation()
                 : base(false)
@@ -402,7 +402,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
             }
         }
 
-        public class AllowRetiredElder : BooleanManagerOptionItem<ManagerCareer>
+        public class AllowRetiredElder : BooleanManagerOptionItem<ManagerCareer>, ManagerCareer.IHomeworldUniversityOption
         {
             public AllowRetiredElder()
                 : base(false)

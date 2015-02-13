@@ -238,102 +238,37 @@ namespace NRaas.WoohooerSpace.Interactions
         }
 
         public void GetSimToLotEx(SimDescription simDesc, Lot actorHome, bool random)
-        {            
-            Sim createdSim = simDesc.CreatedSim;
-            if (createdSim == null)
-            {
-                createdSim = simDesc.Instantiate(actorHome);
-            }
-            if (createdSim != null)
-            {
-                bool flag = false;
-                if (createdSim.Household == base.Actor.Household)
-                {
-                    GoToLot entry = GoToLot.Singleton.CreateInstanceWithCallbacks(actorHome, createdSim, base.GetPriority(), false, true, null, new Sims3.Gameplay.Autonomy.Callback(this.GoToLotSuccessEx), null) as GoToLot;
-                    flag = createdSim.InteractionQueue.Add(entry);
-                }
-                else
-                {
-                    createdSim.SocialComponent.SetInvitedOver(actorHome);
-                    if (!actorHome.IsBaseCampLotType)
-                    {
-                        Sims3.Gameplay.Core.VisitLot lot2 = Sims3.Gameplay.Core.VisitLot.Singleton.CreateInstanceWithCallbacks(actorHome, createdSim, base.GetPriority(), false, true, null, new Sims3.Gameplay.Autonomy.Callback(this.GoToLotSuccessEx), null) as Sims3.Gameplay.Core.VisitLot;
-                        flag = createdSim.InteractionQueue.Add(lot2);
-                    }
-                    else
-                    {
-                        GoToLot lot3 = GoToLot.Singleton.CreateInstanceWithCallbacks(actorHome, createdSim, base.GetPriority(), false, true, null, new Sims3.Gameplay.Autonomy.Callback(this.GoToLotSuccessEx), null) as GoToLot;
-                        flag = createdSim.InteractionQueue.Add(lot3);
-                    }
-                }
-                if (flag)
-                {
-                    GroupingSituation situationOfType = createdSim.GetSituationOfType<GroupingSituation>();
-                    if (situationOfType != null)
-                    {
-                        Sim leader = situationOfType.Leader;
-                        if ((leader == null) || leader.IsNPC)
-                        {
-                            situationOfType.LeaveGroup(createdSim);
-                        }
-                    }
-                    EventTracker.SendEvent(EventTypeId.kInvitedSimOver, base.Actor, createdSim);
-
-                    if (random)
-                    {
-                        // someone will be over
-                        Common.Notify(Common.Localize("OrderServices:Success", Actor.IsFemale));
-                    }
-                    else
-                    {
-                        // selected sim will be over
-                        Common.Notify(Common.Localize("OrderServices:SuccessSpecific", Actor.IsFemale, new object[] { "\"" + KamaSimtra.Settings.GetAlias(simDesc) + "\"" }));
-                    }
-                }
-                else
-                {
-                    if (base.Actor.IsSelectable)
-                    {
-                        Phone.CallInviteOver.ShowInviteFailedDialog(this.GetInteractionName());
-                    }
-                    return;
-                }
-
-                KamaSimtraSettings.ServiceData data = KamaSimtra.Settings.GetServiceData(base.Actor.SimDescription.SimDescriptionId, true);
-                data.mRequester = base.Actor.SimDescription.SimDescriptionId;
-                data.mProfessional = simDesc.SimDescriptionId;
-                data.mWasRandom = random;
-                KamaSimtra.Settings.SetServiceData(base.Actor.SimDescription.SimDescriptionId, data);
-            }
-        }
-
-        public void GoToLotSuccessEx(Sim sim, float f)
         {
-            if (base.Actor != null && !base.Actor.HasBeenDestroyed)
+            bool success = SimEx.GetSimToSimHome(simDesc, base.Actor, new Callback(KamaSimtraSettings.ServiceData.GoToLotSuccessEx));
+
+            if (success)
             {
-                Relationship relationship = Relationship.Get(base.Actor.SimDescription, sim.SimDescription, true);
-                if (relationship != null)
+                if (random)
                 {
-                    relationship.STC.Set(base.Actor, sim, CommodityTypes.Amorous, 500f);
-                    base.Actor.InteractionQueue.CancelAllInteractions();
-                    while (base.Actor.CurrentInteraction != null)
-                    {
-                        Common.Sleep(10);
-                    }                    
-
-                    KamaSimtraSettings.ServiceData data = KamaSimtra.Settings.GetServiceData(base.Actor.SimDescription.SimDescriptionId, true);
-                    data.SetupAlarm();
-                    data.DisableAutonomy();
-                    KamaSimtra.Settings.SetServiceData(base.Actor.SimDescription.SimDescriptionId, data);
-
-                    base.Actor.GreetSimOnMyLotIfPossible(sim);
-                    new CommonWoohoo.PushWoohoo(sim, base.Actor, base.Autonomous, CommonWoohoo.WoohooStyle.Safe);                                        
-                   
-                    StyledNotification.Format format = new StyledNotification.Format(Common.Localize("OrderServices:Arrived", sim.IsFemale), sim.ObjectId, base.Actor.ObjectId, StyledNotification.NotificationStyle.kSimTalking);
-                    StyledNotification.Show(format);                    
+                    // someone will be over
+                    Common.Notify(Common.Localize("OrderServices:Success", Actor.IsFemale));
                 }
-            }            
-        }        
+                else
+                {
+                    // selected sim will be over
+                    Common.Notify(Common.Localize("OrderServices:SuccessSpecific", Actor.IsFemale, new object[] { "\"" + KamaSimtra.Settings.GetAlias(simDesc) + "\"" }));
+                }
+            }
+            else
+            {
+                if (base.Actor.IsSelectable)
+                {
+                    Phone.CallInviteOver.ShowInviteFailedDialog(this.GetInteractionName());
+                }
+                return;
+            }
+
+            KamaSimtraSettings.ServiceData data = KamaSimtra.Settings.GetServiceData(base.Actor.SimDescription.SimDescriptionId, true);
+            data.mRequester = base.Actor.SimDescription.SimDescriptionId;
+            data.mProfessional = simDesc.SimDescriptionId;
+            data.mWasRandom = random;
+            KamaSimtra.Settings.SetServiceData(base.Actor.SimDescription.SimDescriptionId, data);
+        }               
 
         public class Definition : InteractionDefinition<Sim, Computer, OrderServices>
         {

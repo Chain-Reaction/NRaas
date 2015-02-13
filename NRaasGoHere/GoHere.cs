@@ -1,4 +1,6 @@
-﻿using NRaas.GoHereSpace;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.GoHereSpace;
+using NRaas.GoHereSpace.Helpers;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -23,7 +25,7 @@ using System.Text;
 
 namespace NRaas
 {
-    public class GoHere : Common, Common.IPreLoad, Common.IWorldLoadFinished
+    public class GoHere : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished
     {
         static Common.MethodStore sStoryProgressionAllowPushToLot = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "AllowPushToLot", new Type[] { typeof(SimDescription), typeof(Lot) });
 
@@ -36,6 +38,11 @@ namespace NRaas
         static GoHere()
         {
             Bootstrap();
+        }
+
+        public void OnStartupApp()
+        {
+            //EnumInjection.InjectEnums<CommonDoor.tLock>(new string[] { "Filter", "DoorHours", "DoorCosts" }, new object[] { 7, 8, 9 }, false);
         }
 
         public void OnPreLoad()
@@ -65,6 +72,26 @@ namespace NRaas
         public void OnWorldLoadFinished()
         {
             kDebugging = Settings.Debugging;
+
+            DoorPortalComponentEx.DoorSettings.ValidateDoorSettings();
+
+            //Route.AboutToPlanCallback = (Route.AboutToPlanDelegate)Delegate.Combine(Route.AboutToPlanCallback, new Route.AboutToPlanDelegate(DoorPortalComponentEx.DoorSettings.AboutToPlanRouteCallback));
+
+            /*
+            foreach (KeyValuePair<ObjectGuid, DoorPortalComponentEx.DoorSettings> settings in Settings.mDoorSettings)
+            {
+                Door door = GameObject.GetObject(settings.Key) as Door;
+                if (door != null)
+                {
+                    if ((uint)door.LockType == 7)
+                    {
+                        settings.Value.RegisterRoomListeners();
+                    }
+                }
+            }
+             */
+
+            DoorPortalComponentEx.DoorSettings.RegisterRoomListeners();
         }
 
         public static bool ExternalAllowPush(SimDescription sim, Lot lot)

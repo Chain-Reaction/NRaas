@@ -230,5 +230,60 @@ namespace NRaas.CommonSpace.Helpers
             */
             return null;
         }
+
+        public static bool GetSimToSimHome(SimDescription simDesc, Sim requester, Callback success)
+        {
+            Sim createdSim = simDesc.CreatedSim;
+            if (createdSim == null)
+            {
+                createdSim = Instantiation.Perform(simDesc, null);
+            }
+            if (createdSim != null && createdSim.InteractionQueue != null)
+            {
+                createdSim.InteractionQueue.CancelAllInteractions();
+
+                bool flag = false;
+                if (createdSim.Household == requester.Household)
+                {
+                    GoToLot entry = GoToLot.Singleton.CreateInstanceWithCallbacks(requester.LotHome, createdSim, new InteractionPriority(InteractionPriorityLevel.UserDirected), false, true, null, success, null) as GoToLot;
+                    flag = createdSim.InteractionQueue.Add(entry);
+                }
+                else
+                {
+                    createdSim.SocialComponent.SetInvitedOver(requester.LotHome);
+                    if (!requester.LotHome.IsBaseCampLotType)
+                    {
+                        Sims3.Gameplay.Core.VisitLot lot2 = Sims3.Gameplay.Core.VisitLot.Singleton.CreateInstanceWithCallbacks(requester.LotHome, createdSim, new InteractionPriority(InteractionPriorityLevel.UserDirected), false, true, null, success, null) as Sims3.Gameplay.Core.VisitLot;
+                        flag = createdSim.InteractionQueue.Add(lot2);
+                    }
+                    else
+                    {
+                        GoToLot lot3 = GoToLot.Singleton.CreateInstanceWithCallbacks(requester.LotHome, createdSim, new InteractionPriority(InteractionPriorityLevel.UserDirected), false, true, null, success, null) as GoToLot;
+                        flag = createdSim.InteractionQueue.Add(lot3);
+                    }
+                }
+                if (flag)
+                {
+                    GroupingSituation situationOfType = createdSim.GetSituationOfType<GroupingSituation>();
+                    if (situationOfType != null)
+                    {
+                        Sim leader = situationOfType.Leader;
+                        if ((leader == null) || leader.IsNPC)
+                        {
+                            situationOfType.LeaveGroup(createdSim);
+                        }
+                    }
+                    EventTracker.SendEvent(EventTypeId.kInvitedSimOver, requester, createdSim);
+
+                    return true;
+                }
+            }
+            else
+            {
+                AcceptCancelDialog.Show(Common.LocalizeEAString("Gameplay/Objects/Electronics/Phone/Call/InviteOver:TestFailed"));
+            }
+
+            return false;
+        }
     }
 }

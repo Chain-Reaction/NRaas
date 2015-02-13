@@ -353,13 +353,23 @@ namespace NRaas.TaggerSpace.MapTags
                             //return new Color(255, 255, 0);
                             return new Color(Tagger.Settings.mRelationshipColorSettings[TagDataHelper.TagRelationshipType.Acquaintance]);
                         }
-
                     }
-                    else
+
+                    if (Tagger.Settings.mColorLotTagsByCash)
                     {
-                        return base.ShadeColor;
+                        int wealthPercent = 0;
+                        foreach(SimDescription member in target.Household.AllSimDescriptions)
+                        {
+                            if (TagDataHelper.moneyGraph.TryGetValue(member.SimDescriptionId, out wealthPercent))
+                            {
+                                break;
+                            }
+                        }
+                        int inverted = wealthPercent - 100 * -1;
+                        return TagDataHelper.ColorizePercent(inverted);
                     }
 
+                    return base.ShadeColor;
                 }
                 catch (Exception exception)
                 {

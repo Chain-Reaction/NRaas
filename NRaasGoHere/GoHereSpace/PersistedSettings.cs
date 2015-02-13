@@ -111,6 +111,8 @@ namespace NRaas.GoHereSpace
 
         public bool mAllowBoatRouting = !kDisallowBoatRouting;
 
+        public Dictionary<ObjectGuid, DoorPortalComponentEx.DoorSettings> mDoorSettings = new Dictionary<ObjectGuid, DoorPortalComponentEx.DoorSettings>();
+
         public bool AllowPush(Sim sim, Lot lot)
         {
             if (!GoHere.ExternalAllowPush(sim.SimDescription, lot)) return false;
@@ -135,6 +137,61 @@ namespace NRaas.GoHereSpace
             if (!SimTypes.IsSelectable(sim)) return false;
 
             return mDisallowAutoGroup;
+        }
+
+        public DoorPortalComponentEx.DoorSettings GetDoorSettings(ObjectGuid door)
+        {
+            DoorPortalComponentEx.DoorSettings settings;
+            if (mDoorSettings.TryGetValue(door, out settings))
+            {
+                return settings;
+            }
+
+            return new DoorPortalComponentEx.DoorSettings(door);
+        }
+
+        public void AddOrUpdateDoorSettings(ObjectGuid door, DoorPortalComponentEx.DoorSettings settings)
+        {
+            if (mDoorSettings.ContainsKey(door))
+            {
+                mDoorSettings[door] = settings;
+            }
+            else
+            {
+                mDoorSettings.Add(door, settings);
+            }
+
+            Door door2 = GameObject.GetObject(door) as Door;
+
+            if (door2 != null && door2.LotCurrent != null)
+            {
+                foreach (Sim sim in door2.LotCurrent.mSims)
+                {
+                    if (sim != null && sim.RoomId == door2.GetAdjoiningRoom(door2.RoomId))
+                    {
+                        if (!settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId))
+                        {
+                            Common.Notify("DoorFilter:WarningTrappedSims");
+                        }
+                    }
+                }
+
+                foreach (Sim sim in door2.LotCurrent.GetAllActors())
+                {
+                    sim.mAllowedRooms.Remove(door2.LotCurrent.LotId);
+                }
+            }            
+        }
+
+        public void ClearActiveDoorFilters(ObjectGuid guid)
+        {
+            DoorPortalComponentEx.DoorSettings settings = GetDoorSettings(guid);
+
+            if (settings != null)
+            {
+                settings.ClearFilters();
+                AddOrUpdateDoorSettings(guid, settings);
+            }
         }
 
         public bool Debugging

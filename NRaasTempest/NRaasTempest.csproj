@@ -225,6 +225,7 @@
     <Compile Include="TempestSpace\Helpers\WeatherWatch.cs" />
     <Compile Include="TempestSpace\Interactions\PlantObjectHereEx.cs" />
     <Compile Include="TempestSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="TempestSpace\Interactions\TurnOnEx.cs" />
     <Compile Include="TempestSpace\Options\AutoLightFireplaces.cs" />
     <Compile Include="TempestSpace\Options\AutoLightFireplacesTemperature.cs" />
     <Compile Include="TempestSpace\Options\ExportTuning.cs" />
@@ -245,6 +246,7 @@
     <Compile Include="TempestSpace\Options\AllSeasonListingOption.cs" />
     <Compile Include="TempestSpace\Options\RemoveLeavesInWinter.cs" />
     <Compile Include="TempestSpace\Options\SeasonListingOption.cs" />
+    <Compile Include="TempestSpace\Options\SprinklersSpawnPuddles.cs" />
     <Compile Include="TempestSpace\Options\SuppressInsectInWinter.cs" />
     <Compile Include="TempestSpace\Options\Plants\HailKillsPlants.cs" />
     <Compile Include="TempestSpace\Options\Plants\HailKillsHarvestables.cs" />

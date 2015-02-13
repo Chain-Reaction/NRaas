@@ -36,7 +36,7 @@ namespace NRaas.StoryProgressionSpace.Options
         {
             if (!StoryProgression.Main.Personalities.HasPersonalities) return false;
 
-            return base.ShouldDisplay();
+            return false; // base.ShouldDisplay();
         }        
     }
 }

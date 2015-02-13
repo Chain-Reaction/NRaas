@@ -5,6 +5,7 @@ using NRaas.StoryProgressionSpace.Scoring;
 using NRaas.StoryProgressionSpace.SimDataElement;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Academics;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
@@ -108,6 +109,15 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                 if (tone.InteractionTone.ToString() == mTone) continue;
 
                 if (!ManagerCareer.VerifyTone(tone.InteractionTone as CareerTone)) continue;
+
+                // can't put this in VerifyTone because ActiveCareer tones aren't inherited from CareerTone
+                // and that function needs that
+                AcademicCourse.SuckUpToProfessorTone professorTone = tone.InteractionTone as AcademicCourse.SuckUpToProfessorTone;
+                if (professorTone != null && work.Actor.CareerManager.DegreeManager != null)
+                {
+                    SimDescription sim = AcademicCareer.GetProfessorForMajor(work.Actor.CareerManager.DegreeManager.EnrollmentAcademicDegreeName);
+                    if (sim != null && sim.SimDescriptionId == work.Actor.SimDescription.SimDescriptionId) continue;
+                }
 
                 tones.Add(tone.InteractionTone);
             }

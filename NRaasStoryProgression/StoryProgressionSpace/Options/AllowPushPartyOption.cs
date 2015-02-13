@@ -27,10 +27,12 @@ namespace NRaas.StoryProgressionSpace.Options
 
         public override bool ShouldDisplay()
         {
+            /*
             if ((!GetValue<AllowPushAtDayOption, bool>()) && (!GetValue<AllowPushAtNightOption, bool>()))
             {
                 return false;
             }
+             */
 
             return base.ShouldDisplay();
         }

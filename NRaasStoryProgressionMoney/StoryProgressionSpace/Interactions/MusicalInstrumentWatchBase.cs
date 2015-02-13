@@ -406,7 +406,9 @@ namespace NRaas.StoryProgressionSpace.Interactions
                         return false;
                     }
 
-                    return CelebrityManager.CanSocialize(a, sim);
+                    return true;
+
+                    //return CelebrityManager.CanSocialize(a, sim);
                 }
                 catch (ResetException)
                 {

@@ -249,7 +249,7 @@ namespace NRaas.CareerSpace.Helpers
                     AddAcademic(cEvent.Career.OwnerDescription, AcademicCareer.GlobalTermLength);
                 }
             }
-            else if (cEvent.Career is XpBasedCareer)
+            else //if (cEvent.Career is XpBasedCareer)
             {
                 if (cEvent.Career.CareerLevel == 1)
                 {
@@ -304,7 +304,7 @@ namespace NRaas.CareerSpace.Helpers
                     // Set for possible use in sub-routines
                     AcademicCareer.GlobalTermLength = mLength;
 
-                    int length = (int)mLength * 7;
+                    int length = (int)mLength * NRaas.Careers.Settings.mHomeworldUniversityTermLength;
 
                     Common.DebugNotify("Increment One Day\n" + mCurrentDay + "\n" + length, sim);
 

@@ -100,6 +100,7 @@ namespace NRaas.WoohooerSpace.Interactions
                 if (WaitForBToEnterShower)
                 {
                     //Actor.RouteToObjectRadialRange(Shower, 1.5f, 4f);
+                    SpeedTrap.Sleep(0xa);
                     while (Shower.SimInShower != Target)
                     {
                         if ((Target.InteractionQueue.GetCurrentInteraction() != TakeShowerInst) || Target.HasExitReason(ExitReason.Canceled))

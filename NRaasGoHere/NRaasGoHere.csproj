@@ -83,14 +83,26 @@
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
       <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
+      <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\CASParts.cs">
       <Link>CommonSpace\Helpers\CASParts.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\Corrections.cs">
       <Link>CommonSpace\Helpers\Corrections.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\EnumInjection.cs">
+      <Link>CommonSpace\Helpers\EnumInjection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\FilterHelper.cs">
+      <Link>CommonSpace\Helpers\FilterHelper.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Households.cs">
       <Link>CommonSpace\Helpers\Households.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\Inventories.cs">
       <Link>CommonSpace\Helpers\Inventories.cs</Link>
@@ -103,6 +115,9 @@
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
@@ -131,8 +146,14 @@
     <Compile Include="..\NRaas\Helpers\StackTracer.cs">
       <Link>CommonSpace\Helpers\StackTracer.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
+      <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Tunings.cs">
       <Link>CommonSpace\Helpers\Tunings.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Urnstones.cs">
+      <Link>CommonSpace\Helpers\Urnstones.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
       <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
@@ -194,17 +215,25 @@
     <Compile Include="..\NRaas\SpeedTrap.cs">
       <Link>CommonSpace\SpeedTrap.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Stores\OpportunityStore.cs">
+      <Link>CommonSpace\Stores\OpportunityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
+    </Compile>
     <Compile Include="GoHere.cs" />
     <Compile Include="GoHereSpace\Helpers\CaregiverMonitorHelper.cs" />
     <Compile Include="GoHereSpace\Helpers\AncientPortalRoutingHelper.cs" />
     <Compile Include="GoHereSpace\Helpers\AncientPortalComponent.cs" />
     <Compile Include="GoHereSpace\Helpers\CarRoutingComponentEx.cs" />
+    <Compile Include="GoHereSpace\Helpers\DoorPortalComponentEx.cs" />
     <Compile Include="GoHereSpace\Helpers\ObstacleEncounteredRouteInterruptActionEx.cs" />
     <Compile Include="GoHereSpace\Helpers\RoutingComponentEx.cs" />
     <Compile Include="GoHereSpace\Helpers\GroupingSituationHelper.cs" />
     <Compile Include="GoHereSpace\Helpers\SimRoutingComponentEx.cs" />
     <Compile Include="GoHereSpace\Interactions\AskToBehaveEx.cs" />
     <Compile Include="GoHereSpace\Interactions\BoatHereEx.cs" />
+    <Compile Include="GoHereSpace\Interactions\LockDoorEx.cs" />
     <Compile Include="GoHereSpace\Interactions\RouteStrayToLot.cs" />
     <Compile Include="GoHereSpace\Interactions\StrayGoToLotEx.cs" />
     <Compile Include="GoHereSpace\Interactions\UseJetpackProxyEx.cs" />
@@ -245,6 +274,16 @@
     <Compile Include="GoHereSpace\Options\AllowCarRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\DetailedRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\DisallowInactiveLeaveActiveLotSetting.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\DoorCostOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\DoorFilterListingOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\DoorFilterTypeListingOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\DoorTimeOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\FilterBaseOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\FilterOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\FilterTypeOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\IFilterOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\IFilterRootOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\IFilterTypeOption.cs" />
     <Compile Include="GoHereSpace\Options\TestOption.cs" />
     <Compile Include="GoHereSpace\Options\RudeGuestLikingGateSetting.cs" />
     <Compile Include="GoHereSpace\Options\DebuggingSetting.cs" />

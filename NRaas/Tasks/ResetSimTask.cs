@@ -375,6 +375,34 @@ namespace NRaas.CommonSpace.Tasks
             }
         }
 
+        // EA is genius... fix for genius coding in Bed.RelinquishOwnershipOfBed
+        public static void HandleDoubleBed(Sim newOwner, Bed bed, BedData entryPart)
+        {
+            if (newOwner != null && bed != null && entryPart != null)
+            {
+                // from BedMultiPart:ClaimOwnership
+                bool flag = (newOwner.Service != null) && (newOwner.Service.ServiceType == ServiceType.Butler);
+                if (flag || ((newOwner.Household != null) && ((newOwner.Household.LotHome == bed.LotCurrent) || bed.IsTent)))
+                {
+                    bed.RelinquishOwnershipOfBeds(newOwner, false);
+                    entryPart.Owner = newOwner;
+                    if (!flag)
+                    {
+                        newOwner.Household.HouseholdSimsChanged += new Household.HouseholdSimsChangedCallback(bed.HouseholdSimsChanged);
+                    }
+                    if (flag)
+                    {
+                        BedData otherPart = bed.PartComponent.GetOtherPart(entryPart) as BedData;
+                        if ((otherPart != null) && (otherPart.Owner == null))
+                        {
+                            otherPart.Owner = newOwner;
+                        }
+                    }
+                    newOwner.Bed = bed;
+                }
+            }
+        }
+
         public static Sim Perform(Sim sim, bool fadeOut)
         {
             if (sim == null) return null;
@@ -541,9 +569,13 @@ namespace NRaas.CommonSpace.Tasks
 
                                 if ((myBed != null) && (myBedData != null))
                                 {
-                                    if ((sim.Partner != null) && (sim.Partner.CreatedSim != null))
+                                    if (!(myBed is BedMultiPart) || (myBed is BedMultiPart && ((sim.Partner != null) && (sim.Partner.CreatedSim != null))))
                                     {
                                         myBed.ClaimOwnership(sim, myBedData);
+                                    }
+                                    else
+                                    {
+                                        HandleDoubleBed(sim, myBed, myBedData);
                                     }
                                 }
                             }

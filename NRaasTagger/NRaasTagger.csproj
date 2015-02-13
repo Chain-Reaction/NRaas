@@ -57,6 +57,18 @@
     <Compile Include="..\NRaas\Common.cs">
       <Link>CommonSpace\Common.cs</Link>
     </Compile>
+    <Compile Include="..\nraas\converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToMultiList.cs">
+      <Link>CommonSpace\Converters\StringToMultiList.cs</Link>
+    </Compile>
+    <Compile Include="..\nraas\converters\StringToSpeciesList.cs">
+      <Link>CommonSpace\Converters\StringToSpeciesList.cs</Link>
+    </Compile>
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
       <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
     </Compile>
@@ -68,6 +80,9 @@
     </Compile>
     <Compile Include="..\NRaas\Helpers\EnumInjection.cs">
       <Link>CommonSpace\Helpers\EnumInjection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\FilterHelper.cs">
+      <Link>CommonSpace\Helpers\FilterHelper.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\Households.cs">
       <Link>CommonSpace\Helpers\Households.cs</Link>
@@ -141,6 +156,9 @@
     <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
       <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Options\ListedSettingOption.cs">
+      <Link>CommonSpace\Options\ListedSettingOption.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
       <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
     </Compile>
@@ -162,6 +180,9 @@
     <Compile Include="..\nraas\selection\ProtoSelection.cs">
       <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
     </Compile>
+    <Compile Include="..\nraas\selection\ProtoSimSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
+    </Compile>
     <Compile Include="Tagger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaggerSpace\Booters\LotTypeBooter.cs" />
@@ -178,19 +199,51 @@
     <Compile Include="TaggerSpace\MapTags\TrackedSim.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\AgeTagListingOption.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\ColorSetting.cs" />
+    <Compile Include="TaggerSpace\Options\ColorListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\IColorRootOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\LotTags\ILotTagColorOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\LotTags\LotTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsByJobPerformance.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsByMood.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\ListingOption.cs" />
-    <Compile Include="TaggerSpace\Options\ColorLotTagsByRelationship.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\LotTags\ColorLotTagsByCash.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\LotTags\ColorLotTagsByRelationship.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\CommodityListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\Commodity\CommodityBaseOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\Commodity\CommodityOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\Commodity\ISimTagCommodityColorOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ISimTagColorOption.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\SimTagListingOption.cs" />
     <Compile Include="TaggerSpace\Options\ColorSettingOption.cs" />
-    <Compile Include="TaggerSpace\Options\ColorTagsByAge.cs" />
-    <Compile Include="TaggerSpace\Options\ColorTagsByOrientation.cs" />
-    <Compile Include="TaggerSpace\Options\ColorTagsByRelationship.cs" />
-    <Compile Include="TaggerSpace\Options\ColorTagsByRelationshipStatus.cs" />
-    <Compile Include="TaggerSpace\Options\ColorTagsBySimType.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsByAge.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsByCash.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsByOrientation.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsByRelationship.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsByRelationshipStatus.cs" />
+    <Compile Include="TaggerSpace\Options\ColorOptions\SimTags\ColorTagsBySimType.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTitles\AddTitleOption.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTitles\ICustomTitleOption.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTitles\RemoveOption.cs" />
+    <Compile Include="TaggerSpace\Options\CustomTitles\RemoveTitleListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\DebuggingSetting.cs" />
+    <Compile Include="TaggerSpace\Options\FilterListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\FilterBaseOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\FilterCacheTimeOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\FilterOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\IFilterOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\IFilterRootOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\LotTags\LotTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\MatchAllActiveFiltersOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\SimTags\SimTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\UpdateFilterCacheOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterSetting.cs" />
     <Compile Include="TaggerSpace\Options\HotspotPersonalityTags.cs" />
     <Compile Include="TaggerSpace\Options\AgeTags\IAgeTagOption.cs" />
-    <Compile Include="TaggerSpace\Options\IMapTagOption.cs" />
+    <Compile Include="TaggerSpace\Options\ICityHallOption.cs" />
     <Compile Include="TaggerSpace\Options\ISimOption.cs" />
     <Compile Include="TaggerSpace\Options\LotTagsSetting.cs" />
+    <Compile Include="TaggerSpace\Options\ModifyCustomTitles.cs" />
+    <Compile Include="TaggerSpace\Options\OptionsListingOption.cs" />
     <Compile Include="TaggerSpace\Options\OrientationTags\ColorSetting.cs" />
     <Compile Include="TaggerSpace\Options\OrientationTags\IOrientationTagOption.cs" />
     <Compile Include="TaggerSpace\Options\OrientationTags\ListingOption.cs" />
@@ -204,13 +257,17 @@
     <Compile Include="TaggerSpace\Options\RelationshipTags\IRelationshipTagOption.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\ListingOption.cs" />
     <Compile Include="TaggerSpace\Options\RelationshipTags\RelationshipTagListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\RemoveTaggedOption.cs" />
     <Compile Include="TaggerSpace\Options\ShowLotInteractions.cs" />
+    <Compile Include="TaggerSpace\Options\ShowSimInteractions.cs" />
     <Compile Include="TaggerSpace\Options\SimTagsSetting.cs" />
     <Compile Include="TaggerSpace\Options\SimTypeTags\ColorSetting.cs" />
     <Compile Include="TaggerSpace\Options\SimTypeTags\ISimTypeTagOption.cs" />
     <Compile Include="TaggerSpace\Options\SimTypeTags\ListingOption.cs" />
     <Compile Include="TaggerSpace\Options\SimTypeTags\SimTypeTagListingOption.cs" />
     <Compile Include="TaggerSpace\Options\SubtleSimTagsOption.cs" />
+    <Compile Include="TaggerSpace\Options\TagData\AgeInYearsCustomLengthOption.cs" />
+    <Compile Include="TaggerSpace\Options\TagData\AgeInYearsScalesToSeasonsOption.cs" />
     <Compile Include="TaggerSpace\Options\TagData\DataEnabled.cs" />
     <Compile Include="TaggerSpace\Options\TagData\ITagDataOption.cs" />
     <Compile Include="TaggerSpace\Options\TagData\ListingOption.cs" />

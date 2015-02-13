@@ -115,7 +115,7 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
       <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
@@ -253,6 +253,7 @@
     <Compile Include="DresserSpace\Options\Settings\CheckOutfits\Makeup\RerollMakeup.cs" />
     <Compile Include="DresserSpace\Options\Settings\DebuggingSetting.cs" />
     <Compile Include="DresserSpace\Options\Settings\Rotation\AffectInactiveSetting.cs" />
+    <Compile Include="DresserSpace\Options\Settings\Rotation\RotateOutfitsSetting.cs" />
     <Compile Include="DresserSpace\Options\Sims\AddOutfit.cs" />
     <Compile Include="DresserSpace\Options\Sims\CheckOutfits.cs" />
     <Compile Include="DresserSpace\Options\Sims\Protected.cs" />
@@ -333,7 +334,6 @@
     <Compile Include="DresserSpace\Options\Settings\Rotation\IRotationOption.cs" />
     <Compile Include="DresserSpace\Options\Settings\Rotation\ListingOption.cs" />
     <Compile Include="DresserSpace\Options\Settings\Rotation\NightlyChangeOutfitHourSetting.cs" />
-    <Compile Include="DresserSpace\Options\Settings\Rotation\RotateMartialOutfitSetting.cs" />
     <Compile Include="DresserSpace\Options\Settings\Rotation\NightlyRandomChangedOutfitSetting.cs" />
     <Compile Include="DresserSpace\Options\Sims\ISimOption.cs" />
     <Compile Include="DresserSpace\Options\Sims\Remove\RemoveOutfit.cs" />

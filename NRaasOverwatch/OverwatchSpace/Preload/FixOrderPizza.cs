@@ -35,7 +35,7 @@ namespace NRaas.OverwatchSpace.Preload
         {
             Overwatch.Log(GetTitlePrefix());
 
-            Tunings.Inject<BarAdvanced, BarAdvanced.OrderFood.Definition, BarAdvanced.OrderPizza.Definition>(false);
+            Tunings.Inject<BarAdvanced, BarAdvanced.MakeFood.Definition, BarAdvanced.MakePizza.Definition>(false);
         }
     }
 }
