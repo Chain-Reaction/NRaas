@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "No Fridge Shopping", "No Fridge Shopping.csproj", "{F300EBA5-7B75-403D-9371-ADF9D60132DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Debug|x86.ActiveCfg = Debug|x86
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Debug|x86.Build.0 = Debug|x86
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Release|x86.ActiveCfg = Release|x86
+		{F300EBA5-7B75-403D-9371-ADF9D60132DA}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
