@@ -9,7 +9,9 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
+using Sims3.Gameplay.Objects.Island;
 using Sims3.Gameplay.Objects.Vehicles;
+using Sims3.Gameplay.Pools;
 using Sims3.Gameplay.Routing;
 using Sims3.Gameplay.Seasons;
 using Sims3.Gameplay.TuningValues;
@@ -214,13 +216,7 @@ namespace NRaas.GoHereSpace.Helpers
             {
                 r.SetOption(Route.RouteOption.EnablePlanningAsCar, false);
                 r.SetOption(Route.RouteOption.BeginAsCar, false);
-            }
-
-            if (!GoHere.Settings.mAllowBoatRouting)
-            {
-                r.SetOption2(Route.RouteOption2.EnablePlanningAsBoat, false);
-                r.SetOption2(Route.RouteOption2.BeginAsBoat, false);
-            }
+            }            
 
             Common.StringBuilder msg = new Common.StringBuilder("DoRoute");
 
@@ -231,6 +227,46 @@ namespace NRaas.GoHereSpace.Helpers
                     routeSim = r.Follower.Target as Sim;
                 }
 
+                if (!GoHere.Settings.mAllowBoatRouting)
+                {
+                    Houseboat boat;
+                    if (!Houseboat.IsPointOnHouseboat(mOwnerSim.Position, out boat))
+                    {
+                        r.SetOption2(Route.RouteOption2.EnablePlanningAsBoat, false);
+                        r.SetOption2(Route.RouteOption2.BeginAsBoat, false);
+                        r.SetOption2(Route.RouteOption2.EndAsBoat, false);
+
+                        bool water = false;
+                        if (mOwnerSim.InteractionQueue != null)
+                        {
+                            Terrain.GoHere interaction = mOwnerSim.InteractionQueue.GetHeadInteraction() as Terrain.GoHere;
+
+                            if (interaction != null && interaction.mDestinationType == Terrain.GoHere.DestinationType.OnSeaWater)
+                            {
+                                water = true;
+                            }
+                        }
+
+                        if (mOwnerSim.Posture is Ocean.PondAndOceanRoutingPosture || mOwnerSim.Posture is SwimmingInPool)
+                        {
+                            water = true;
+                        }
+
+                        if (water)
+                        {
+                            r.SetOption(Route.RouteOption.EnableWaterPlanning, true);
+                            r.SetOption(Route.RouteOption.DoNotEmitDegenerateRoutesForRadialRangeGoals, true);
+                            r.SetOption(Route.RouteOption.DisallowGoalsOnBridges, true);
+                        }
+                    }
+                }
+
+                if (!GoHere.Settings.mAllowMermaidRouting)
+                {
+                    r.SetOption2(Route.RouteOption2.RouteAsMermaid, false);
+                }
+
+                // why did he use routeSim here? It seems to always be null...
                 if ((routeSim != null) && (routeSim.Occupation != null))
                 {
                     if (routeSim.SimDescription.GetOutfitCount(OutfitCategories.Career) == 0)

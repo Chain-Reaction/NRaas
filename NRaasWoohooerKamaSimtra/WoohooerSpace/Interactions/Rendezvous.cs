@@ -85,7 +85,23 @@ namespace NRaas.WoohooerSpace.Interactions
                         return false;
                     }
 
-                    Dictionary<int, List<SimDescription>> potentials = KamaSimtra.GetPotentials(Woohooer.Settings.AllowTeen(true));
+                    CASAgeGenderFlags allow = CASAgeGenderFlags.None;
+                    if ((Actor.SimDescription.Teen && Woohooer.Settings.AllowTeen(true)) || (Actor.SimDescription.YoungAdultOrAbove && Woohooer.Settings.AllowTeenAdult(true)))
+                    {
+                        allow |= CASAgeGenderFlags.Teen;                        
+                    }
+
+                    if(Actor.SimDescription.Teen && Woohooer.Settings.AllowTeen(true) && Woohooer.Settings.AllowTeenAdult(true))
+                    {
+                        allow |= CASAgeGenderFlags.YoungAdult | CASAgeGenderFlags.Adult | CASAgeGenderFlags.Elder; 
+                    }
+
+                    if (Actor.SimDescription.YoungAdultOrAbove)
+                    {
+                        allow |= CASAgeGenderFlags.YoungAdult | CASAgeGenderFlags.Adult | CASAgeGenderFlags.Elder; 
+                    }
+
+                    Dictionary<int, List<SimDescription>> potentials = KamaSimtra.GetPotentials(allow, false);
 
                     List<SimDescription> choices = new List<SimDescription>();
                     for (int i = 1; i <= 10; i++)

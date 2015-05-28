@@ -10,31 +10,26 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NRaas.GoHereSpace.Options
+namespace NRaas.GoHereSpace.Options.DoorFiltersGlobal
 {
-    public class AllowBoatRoutingSetting : BooleanSettingOption<GameObject>, IPrimaryOption<GameObject>
+    public class ServiceSimsIgnoreAllDoorOptions : BooleanSettingOption<GameObject>, IDoorGlobalOption
     {
         protected override bool Value
         {
             get
             {
-                return GoHere.Settings.mAllowBoatRouting;
+                return GoHere.Settings.mServiceSimsIgnoreAllDoorOptions;
             }
             set
             {
-                GoHere.Settings.mAllowBoatRouting = value;
+                GoHere.Settings.mServiceSimsIgnoreAllDoorOptions = value;
             }
         }
 
         public override string GetTitlePrefix()
         {
-            return "AllowBoatRouting";
-        }
-
-        protected override bool Allow(GameHitParameters<GameObject> parameters)
-        {
-            return base.Allow(parameters);
-        }
+            return "ServiceSimsIgnoreAllDoorOptions";
+        }        
 
         public override ITitlePrefixOption ParentListingOption
         {

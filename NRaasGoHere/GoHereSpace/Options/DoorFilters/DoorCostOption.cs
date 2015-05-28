@@ -20,17 +20,28 @@ using System.Text;
 
 namespace NRaas.GoHereSpace.Options.DoorFilters
 {
-    public class DoorCostOption : OperationSettingOption<GameObject>
+    public class DoorCostOption : OperationSettingOption<GameObject>, IDoorOption
     {
+        GameObject mTarget;
+
         public override string GetTitlePrefix()
         {
             return "DoorCost";
+        }
+
+        protected override bool Allow(GameHitParameters<GameObject> parameters)
+        {
+            mTarget = parameters.mTarget;
+            return base.Allow(parameters);
         }
 
         public override string DisplayValue
         {
             get
             {
+                if (mTarget != null)
+                    return GoHere.Settings.GetDoorSettings(mTarget.ObjectId).mDoorCost.ToString();
+
                 return null;
             }
         }
@@ -58,7 +69,7 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
                 }
 
                 settings.mDoorCost = cost;                
-                GoHere.Settings.AddOrUpdateDoorSettings(parameters.mTarget.ObjectId, settings);
+                GoHere.Settings.AddOrUpdateDoorSettings(parameters.mTarget.ObjectId, settings, false);
 
                 Common.Notify(Common.Localize("Generic:Success"));
 

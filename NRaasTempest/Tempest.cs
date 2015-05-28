@@ -76,8 +76,7 @@ namespace NRaas
             if (tuning != null)
             {
                 CommodityChange change = new CommodityChange(CommodityKind.Temperature, 10, false, 20, OutputUpdateType.ContinuousFlow, false, false, UpdateAboveAndBelowZeroType.Either);
-                tuning.mTradeoff.mOutputs.Add(change);
-                //regenimposter
+                tuning.mTradeoff.mOutputs.Add(change);                
             }
         }
 

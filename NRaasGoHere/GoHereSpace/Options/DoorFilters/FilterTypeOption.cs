@@ -7,16 +7,9 @@ using System.Text;
 
 namespace NRaas.GoHereSpace.Options.DoorFilters
 {
-    public class FilterTypeOption : GenericSettingOption<DoorPortalComponentEx.DoorSettings.SettingType, GameObject>, IFilterTypeOption
+    public class FilterTypeOption : GenericSettingOption<DoorPortalComponentEx.DoorSettings.SettingType, GameObject>, IDoorOption
     {
         GameObject mTarget;
-        DoorPortalComponentEx.DoorSettings.SettingType mType;
-
-        public FilterTypeOption(DoorPortalComponentEx.DoorSettings.SettingType type, GameObject obj)
-        {
-            mTarget = obj;
-            mType = type;
-        }
 
         protected override DoorPortalComponentEx.DoorSettings.SettingType Value
         {
@@ -26,17 +19,29 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             }
             set
             {
-                DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(mTarget.ObjectId);
-                settings.mType = mType;
-                GoHere.Settings.AddOrUpdateDoorSettings(mTarget.ObjectId, settings);
+                if (mTarget != null)
+                {
+                    DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(mTarget.ObjectId);
+                    settings.mType = (settings.mType == DoorPortalComponentEx.DoorSettings.SettingType.Deny ? DoorPortalComponentEx.DoorSettings.SettingType.Allow : DoorPortalComponentEx.DoorSettings.SettingType.Deny);
+                    GoHere.Settings.AddOrUpdateDoorSettings(mTarget.ObjectId, settings, true);
+                }
             }
+        }
+
+        protected override bool Allow(GameHitParameters<GameObject> parameters)
+        {
+            mTarget = parameters.mTarget;
+            return base.Allow(parameters);
         }
 
         public override string DisplayValue
         {
             get
             {
-                return (GoHere.Settings.GetDoorSettings(mTarget.ObjectId).mType == mType ? Common.Localize("Boolean:True") : Common.Localize("Boolean:False"));
+                if(mTarget != null)
+                    return Common.Localize("DoorFilterType:" + GoHere.Settings.GetDoorSettings(mTarget.ObjectId).mType.ToString());
+
+                return null;
             }
         }
 
@@ -46,14 +51,12 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
 
         public override string GetTitlePrefix()
         {
-            return mType.ToString();
+            return "DoorFilterType";
         }
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
-            Value = Value;
-
-            //Tagger.InitTags(false);
+            Value = Value;            
 
             Common.Notify(ToString());            
 

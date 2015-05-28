@@ -2,7 +2,6 @@
 using NRaas.CommonSpace.ScoringMethods;
 using NRaas.WoohooerSpace;
 using NRaas.WoohooerSpace.Helpers;
-using NRaas.WoohooerSpace.Interactions;
 using NRaas.WoohooerSpace.Scoring;
 using NRaas.WoohooerSpace.Skills;
 using Sims3.Gameplay;
@@ -10,19 +9,14 @@ using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
-using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Controllers;
 using Sims3.Gameplay.Core;
-using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
-using Sims3.Gameplay.Moving;
 using Sims3.Gameplay.Objects.Electronics;
-using Sims3.Gameplay.Situations;
 using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.Utilities;
-using Sims3.Gameplay.UI;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
 using Sims3.SimIFace.Enums;
@@ -47,7 +41,23 @@ namespace NRaas.WoohooerSpace.Interactions
 
         protected static Dictionary<int, SimDescription> GetPotentials(Sim actor)
         {
-            Dictionary<int, List<SimDescription>> potentials = KamaSimtra.GetPotentials(Woohooer.Settings.AllowTeen(true), true);
+            CASAgeGenderFlags allow = CASAgeGenderFlags.None;
+            if ((actor.SimDescription.Teen && Woohooer.Settings.AllowTeen(true)) || (actor.SimDescription.YoungAdultOrAbove && Woohooer.Settings.AllowTeenAdult(true)))
+            {
+                allow |= CASAgeGenderFlags.Teen;
+            }
+
+            if (actor.SimDescription.Teen && Woohooer.Settings.AllowTeen(true) && Woohooer.Settings.AllowTeenAdult(true))
+            {
+                allow |= CASAgeGenderFlags.YoungAdult | CASAgeGenderFlags.Adult | CASAgeGenderFlags.Elder;
+            }
+
+            if (actor.SimDescription.YoungAdultOrAbove)
+            {
+                allow |= CASAgeGenderFlags.YoungAdult | CASAgeGenderFlags.Adult | CASAgeGenderFlags.Elder;
+            }
+
+            Dictionary<int, List<SimDescription>> potentials = KamaSimtra.GetPotentials(allow, true);
 
             Dictionary<int, SimDescription> choices = new Dictionary<int, SimDescription>();            
             for (int i = 1; i <= 10; i++)
@@ -152,23 +162,33 @@ namespace NRaas.WoohooerSpace.Interactions
                             }
                         }
                         else
-                        {                            
+                        {
                             int val = 0;
-                            string text = StringInputDialog.Show(Common.Localize("OrderServices:Title"), Common.Localize("OrderServices:Prompt"), val.ToString());
-                            if (string.IsNullOrEmpty(text))
+                            if (Actor.IsSelectable)
                             {
-                                succeeded = false;
+                                string text = StringInputDialog.Show(Common.Localize("OrderServices:Title"), Common.Localize("OrderServices:Prompt"), val.ToString());
+                                if (string.IsNullOrEmpty(text))
+                                {
+                                    succeeded = false;
+                                }
+
+                                if (!int.TryParse(text, out val))
+                                {
+                                    SimpleMessageDialog.Show(Common.Localize("OrderServices:Title"), Common.Localize("Numeric:Error"));
+                                    succeeded = false;
+                                }
+                            }
+                            else
+                            {
+                                val = Actor.FamilyFunds * 2 / 100;
                             }
 
-                            if (!int.TryParse(text, out val))
+                            if (val > Actor.FamilyFunds || val < Actor.FamilyFunds)
                             {
-                                SimpleMessageDialog.Show(Common.Localize("OrderServices:Title"), Common.Localize("Numeric:Error"));
-                                succeeded = false;
-                            }
-
-                            if (val > Actor.FamilyFunds)
-                            {
-                                Common.Notify(Common.Localize("OrderServices:NoFunds", Actor.IsFemale));
+                                if (Actor.IsSelectable)
+                                {
+                                    Common.Notify(Common.Localize("OrderServices:NoFunds", Actor.IsFemale));
+                                }
                                 succeeded = false;
                             }
 
@@ -197,13 +217,19 @@ namespace NRaas.WoohooerSpace.Interactions
                                 if (hooker == null)
                                 {
                                     if (!allAbove)
-                                    {                                        
-                                        Common.Notify(Common.Localize("OrderServices:StopBeingCheap"));
+                                    {
+                                        if (Actor.IsSelectable)
+                                        {
+                                            Common.Notify(Common.Localize("OrderServices:StopBeingCheap"));
+                                        }
                                         succeeded = false;
                                     }
                                     else
                                     {
-                                        Common.Notify(Common.Localize("OrderServices:NoFunds", Actor.IsFemale));
+                                        if (Actor.IsSelectable)
+                                        {
+                                            Common.Notify(Common.Localize("OrderServices:NoFunds", Actor.IsFemale));
+                                        }
                                         succeeded = false;
                                     }
                                 }
@@ -246,7 +272,10 @@ namespace NRaas.WoohooerSpace.Interactions
                 if (random)
                 {
                     // someone will be over
-                    Common.Notify(Common.Localize("OrderServices:Success", Actor.IsFemale));
+                    if (base.Actor.IsSelectable)
+                    {
+                        Common.Notify(Common.Localize("OrderServices:Success", Actor.IsFemale));
+                    }
                 }
                 else
                 {
@@ -267,6 +296,7 @@ namespace NRaas.WoohooerSpace.Interactions
             data.mRequester = base.Actor.SimDescription.SimDescriptionId;
             data.mProfessional = simDesc.SimDescriptionId;
             data.mWasRandom = random;
+            data.SetupPushAlarm();
             KamaSimtra.Settings.SetServiceData(base.Actor.SimDescription.SimDescriptionId, data);
         }               
 
@@ -320,6 +350,12 @@ namespace NRaas.WoohooerSpace.Interactions
                     if (!Woohooer.Settings.mAutonomousComputer)
                     {
                         greyedOutTooltipCallback = Common.DebugTooltip("No Autonomous");
+                        return false;
+                    }
+
+                    if (a.LotCurrent != a.LotHome)
+                    {
+                        greyedOutTooltipCallback = Common.DebugTooltip("Not at home");
                         return false;
                     }
 

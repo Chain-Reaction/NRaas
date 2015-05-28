@@ -71,6 +71,14 @@ namespace NRaas.GoHereSpace
         [Tunable, TunableComment("Whether to allow boats during routing operations")]
         protected static bool kDisallowBoatRouting = false;
 
+        [Tunable, TunableComment("Whether to allow mermaids to swim everywhere")]
+        protected static bool kDisallowMermaidRouting = false;
+
+        [Tunable, TunableComment("Whether to disable all door options for service sims")]
+        protected static bool kServiceSimsIgnoreAllDoorOptions = true;
+        [Tunable, TunableComment("Whether to disable all door options for role sims")]
+        protected static bool kRoleSimsIgnoreAllDoorOptions = true;   
+
         [Persistable(false)]
         public bool mIgnoreLogs = true;
 
@@ -111,7 +119,21 @@ namespace NRaas.GoHereSpace
 
         public bool mAllowBoatRouting = !kDisallowBoatRouting;
 
+        public bool mAllowMermaidRouting = !kDisallowMermaidRouting;
+
         public Dictionary<ObjectGuid, DoorPortalComponentEx.DoorSettings> mDoorSettings = new Dictionary<ObjectGuid, DoorPortalComponentEx.DoorSettings>();
+
+        public Dictionary<ulong, ulong> mLotBabysitters = new Dictionary<ulong, ulong>();
+
+        public bool mServiceSimsIgnoreAllDoorOptions = kServiceSimsIgnoreAllDoorOptions;
+        public bool mRoleSimsIgnoreAllDoorOptions = kRoleSimsIgnoreAllDoorOptions;
+
+        public List<string> mGlobalIgnoreDoorFiltersFilterOption = new List<string>();
+        public List<string> mGlobalIgnoreDoorCostFilterOption = new List<string>();
+        public List<string> mGlobalIgnoreDoorTimeLocksFilterOption = new List<string>();
+        public List<string> mGlobalIgnoreAllDoorOptionsFilterOption = new List<string>();
+
+        //public Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings> mDoorLotSettings = new Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings>();
 
         public bool AllowPush(Sim sim, Lot lot)
         {
@@ -144,13 +166,34 @@ namespace NRaas.GoHereSpace
             DoorPortalComponentEx.DoorSettings settings;
             if (mDoorSettings.TryGetValue(door, out settings))
             {
+                List<string> remove = new List<string>();
+                foreach (string filter in settings.ActiveFilters)
+                {
+                    if (!FilterHelper.IsValidFilter(filter))
+                    {
+                        remove.Add(filter);
+                    }
+                }
+
+                bool changed = false;
+                foreach (string invalid in remove)
+                {
+                    changed = true;
+                    settings.RemoveFilter(invalid);
+                }
+
+                if (changed)
+                {
+                    AddOrUpdateDoorSettings(door, settings, false);
+                }
+
                 return settings;
             }
 
             return new DoorPortalComponentEx.DoorSettings(door);
         }
 
-        public void AddOrUpdateDoorSettings(ObjectGuid door, DoorPortalComponentEx.DoorSettings settings)
+        public void AddOrUpdateDoorSettings(ObjectGuid door, DoorPortalComponentEx.DoorSettings settings, bool doSimValidation)
         {
             if (mDoorSettings.ContainsKey(door))
             {
@@ -161,26 +204,33 @@ namespace NRaas.GoHereSpace
                 mDoorSettings.Add(door, settings);
             }
 
-            Door door2 = GameObject.GetObject(door) as Door;
-
-            if (door2 != null && door2.LotCurrent != null)
+            if (doSimValidation)
             {
-                foreach (Sim sim in door2.LotCurrent.mSims)
+                Door door2 = GameObject.GetObject(door) as Door;
+
+                if (door2 != null && door2.LotCurrent != null)
                 {
-                    if (sim != null && sim.RoomId == door2.GetAdjoiningRoom(door2.RoomId))
+                    foreach (Sim sim in door2.LotCurrent.mSims)
                     {
-                        if (!settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId))
+                        if (sim != null && sim.RoomId == door2.GetAdjoiningRoom(door2.RoomId) && !LotManager.RoomIdIsOutside(sim.RoomId))
                         {
-                            Common.Notify("DoorFilter:WarningTrappedSims");
+                            if (!settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId))
+                            {
+                                StyledNotification.Format format = new StyledNotification.Format(Common.Localize("DoorFilter:WarningTrappedSims"), door2.ObjectId, ObjectGuid.InvalidObjectGuid, StyledNotification.NotificationStyle.kSystemMessage);
+                                format.mTNSCategory = NotificationManager.TNSCategory.Lessons;
+                                StyledNotification.Show(format);
+                            }
                         }
                     }
-                }
 
-                foreach (Sim sim in door2.LotCurrent.GetAllActors())
-                {
-                    sim.mAllowedRooms.Remove(door2.LotCurrent.LotId);
+                    foreach (Sim sim in LotManager.Actors)
+                    {
+                        if (sim == null) continue;
+
+                        sim.mAllowedRooms.Remove(door2.LotCurrent.LotId);
+                    }
                 }
-            }            
+            }
         }
 
         public void ClearActiveDoorFilters(ObjectGuid guid)
@@ -190,7 +240,7 @@ namespace NRaas.GoHereSpace
             if (settings != null)
             {
                 settings.ClearFilters();
-                AddOrUpdateDoorSettings(guid, settings);
+                AddOrUpdateDoorSettings(guid, settings, false);
             }
         }
 

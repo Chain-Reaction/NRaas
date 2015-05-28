@@ -77,6 +77,11 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Money
 
         protected override bool Test(Umbrella obj)
         {
+            if (obj is Parasol && Umbrella.kChanceGetParasolInsteadOfUmbrella == 0)
+            {
+                return false;
+            }
+
             return true;
         }
 

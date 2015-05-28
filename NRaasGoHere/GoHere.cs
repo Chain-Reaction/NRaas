@@ -12,7 +12,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
-using Sims3.Gameplay.Objects.Plumbing;
+using Sims3.Gameplay.ObjectComponents;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Situations;
 using Sims3.Gameplay.Utilities;
@@ -25,7 +25,7 @@ using System.Text;
 
 namespace NRaas
 {
-    public class GoHere : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished
+    public class GoHere : Common, Common.IPreLoad, Common.IWorldLoadFinished
     {
         static Common.MethodStore sStoryProgressionAllowPushToLot = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "AllowPushToLot", new Type[] { typeof(SimDescription), typeof(Lot) });
 
@@ -38,12 +38,7 @@ namespace NRaas
         static GoHere()
         {
             Bootstrap();
-        }
-
-        public void OnStartupApp()
-        {
-            //EnumInjection.InjectEnums<CommonDoor.tLock>(new string[] { "Filter", "DoorHours", "DoorCosts" }, new object[] { 7, 8, 9 }, false);
-        }
+        }        
 
         public void OnPreLoad()
         {
@@ -73,29 +68,46 @@ namespace NRaas
         {
             kDebugging = Settings.Debugging;
 
-            DoorPortalComponentEx.DoorSettings.ValidateDoorSettings();
+            DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
 
             //Route.AboutToPlanCallback = (Route.AboutToPlanDelegate)Delegate.Combine(Route.AboutToPlanCallback, new Route.AboutToPlanDelegate(DoorPortalComponentEx.DoorSettings.AboutToPlanRouteCallback));
-
-            /*
-            foreach (KeyValuePair<ObjectGuid, DoorPortalComponentEx.DoorSettings> settings in Settings.mDoorSettings)
-            {
-                Door door = GameObject.GetObject(settings.Key) as Door;
-                if (door != null)
-                {
-                    if ((uint)door.LockType == 7)
-                    {
-                        settings.Value.RegisterRoomListeners();
-                    }
-                }
-            }
-             */
-
-            DoorPortalComponentEx.DoorSettings.RegisterRoomListeners();
         }
 
         public static bool ExternalAllowPush(SimDescription sim, Lot lot)
         {
+            if (lot != null)
+            {
+                bool allowed = false;
+                if (!lot.IsResidentialLot)
+                {
+                    List<Door> portals = lot.GetObjectsInRoom<Door>(0);
+                    foreach (Door obj in portals)
+                    {
+                        DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId);
+                        if (settings.IsSimAllowedThrough(sim.SimDescriptionId))
+                        {
+                            allowed = true;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    Door door = lot.FindFrontDoor();
+                    if (door != null)
+                    {
+                        DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId);
+                        allowed = settings.IsSimAllowedThrough(sim.SimDescriptionId);
+                    }
+                    else
+                    {
+                        allowed = true;
+                    }
+                }
+
+                if (!allowed) return allowed;
+            }
+
             if (!sStoryProgressionAllowPushToLot.Valid) return true;
 
             return sStoryProgressionAllowPushToLot.Invoke<bool>(new object[] { sim, lot });

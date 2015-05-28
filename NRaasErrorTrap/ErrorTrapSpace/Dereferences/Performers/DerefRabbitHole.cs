@@ -4,6 +4,7 @@ using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Utilities;
+using Sims3.SimIFace;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -21,6 +22,16 @@ namespace NRaas.ErrorTrapSpace.Dereferences
                 {
                     try
                     {
+                        // I'm not sure why this is required but it's causing a build up of JIGS. Rather than killing it, let's destroy the JIGs and see
+                        // how that goes
+                        foreach(KeyValuePair<Slot, RabbitHole.SlotInfo> slots in reference.mSlotToSlotInfo)
+                        {
+                            if (slots.Value.Footprint != null && !slots.Value.Footprint.InUse)
+                            {
+                                slots.Value.Footprint.Destroy();
+                            }
+                        }
+
                         reference.mSlotToSlotInfo.Clear();
                     }
                     catch

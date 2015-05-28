@@ -18,9 +18,9 @@ using System.Text;
 
 namespace NRaas.GoHereSpace.Options.DoorFilters
 {
-    public class DoorFilterListingOption : InteractionOptionList<IFilterOption, GameObject>, IFilterRootOption
+    public class DoorFilterListingOption : InteractionOptionList<IFilterOption, GameObject>, IDoorOption
     {
-        public static GameObject target;
+        GameObject mTarget;
 
         public override string GetTitlePrefix()
         {
@@ -32,9 +32,22 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             get { return null; }
         }
 
+        public override string DisplayValue
+        {
+            get
+            {
+                if(mTarget != null)
+                    return GoHere.Settings.GetDoorSettings(mTarget.ObjectId).FiltersEnabled.ToString();
+
+                return null;
+            }
+        }
+
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
-            target = parameters.mTarget;
+            if (FilterHelper.GetFilters().Count == 0) return false;
+
+            mTarget = parameters.mTarget;
             return base.Allow(parameters);
         }
 
@@ -46,7 +59,7 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
 
             foreach (KeyValuePair<string, bool> value in filters)
             {
-                results.Add(new FilterOption(value.Key, target));
+                results.Add(new FilterOption(value.Key, mTarget));
             }
 
             return results;

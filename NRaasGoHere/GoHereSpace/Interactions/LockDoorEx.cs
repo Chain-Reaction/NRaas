@@ -11,10 +11,11 @@ using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay;
-using Sims3.Gameplay.Objects.Environment;
+using Sims3.Gameplay.Objects.Door;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
+using Sims3.Store.Objects;
 using Sims3.UI;
 using Sims3.UI.View;
 using System;
@@ -47,16 +48,8 @@ namespace NRaas.GoHereSpace.Interactions
                 // eh, probably need to mash these into one interaction...
                 if ((uint)interactionDefinition.LockType == 7)
                 {
-                    new InteractionOptionList<IFilterRootOption, GameObject>.AllList(GoHere.Localize("DoorLock:Title"), false).Perform(new GameHitParameters<GameObject>(this.Actor, this.Target, GameObjectHit.NoHit));
-                }
-                else if ((uint)interactionDefinition.LockType == 8)
-                {
-                    new DoorTimeOption().Perform(new GameHitParameters<GameObject>(this.Actor, this.Target, GameObjectHit.NoHit));
-                }
-                else if ((uint)interactionDefinition.LockType == 9)
-                {
-                    new DoorCostOption().Perform(new GameHitParameters<GameObject>(this.Actor, this.Target, GameObjectHit.NoHit));
-                }
+                    new InteractionOptionList<IDoorOption, GameObject>.AllList(GoHere.Localize("DoorOptions:MenuName"), false).Perform(new GameHitParameters<GameObject>(this.Actor, this.Target, GameObjectHit.NoHit));
+                }                
                 else
                 {
                     base.Target.SetLockTypeAndOwner(interactionDefinition.LockType, base.Actor.SimDescription);
@@ -154,25 +147,18 @@ namespace NRaas.GoHereSpace.Interactions
                     }
                 }
 
-                results.Add(new InteractionObjectPair(new LockDoorEx.Definition((CommonDoor.tLock)7), target));
-                results.Add(new InteractionObjectPair(new LockDoorEx.Definition((CommonDoor.tLock)8), target));
-                results.Add(new InteractionObjectPair(new LockDoorEx.Definition((CommonDoor.tLock)9), target));
+                if (!(target is Turnstile) && !(target is MysteriousDeviceDoor))
+                {
+                    results.Add(new InteractionObjectPair(new LockDoorEx.Definition((CommonDoor.tLock)7), target));                    
+                }
             }
 
             public override string GetInteractionName(Sim actor, CommonDoor target, InteractionObjectPair iop)
             {
                 if ((uint)this.mLockType == 7)
                 {
-                    return Common.Localize("Door:SetFilter");
-                }
-                else if ((uint)this.mLockType == 8)
-                {
-                    return Common.Localize("Door:SetOpenCloseHours");
-                }
-                else if ((uint)this.mLockType == 9)
-                {
-                    return Common.Localize("Door:SetCost");
-                }
+                    return Common.Localize("DoorOptions:MenuName");
+                }                
 
                 return base.GetInteractionName(actor, target, new InteractionObjectPair(sOldSingleton, target));
             }
@@ -206,11 +192,7 @@ namespace NRaas.GoHereSpace.Interactions
                 if ((this.mLockType == CommonDoor.tLock.Pets) && (!GameUtils.IsInstalled(ProductVersion.Undefined | ProductVersion.EP5) /*|| target.LotCurrent.IsOwned*/))
                 {
                     return false;
-                }
-                if ((uint)this.mLockType == 7 && FilterHelper.GetFilters().Count == 0)
-                {
-                    return false;
-                }
+                }                
                 /*
                 if (a.LotHome != target.LotCurrent)
                 {

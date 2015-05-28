@@ -258,6 +258,32 @@ namespace NRaas.CommonSpace.Helpers
                                     debugLog(name + " Inventory Object Reparented: " + item.Object.GetType());
                                 }
                             }
+
+                            GameObject obj = item.Object as GameObject;
+                            string str = string.Empty;
+                            try
+                            {                                
+                                str += obj.CatalogName;
+                                str = string.Empty;
+                            }
+                            catch
+                            {
+                                str = obj.GetType().ToString();
+                                if (str.Contains("JamJar"))
+                                {
+                                    try
+                                    {
+                                        obj.Dispose();
+                                        obj.Destroy();
+                                        stack.Value.List.RemoveAt(index);
+
+                                        debugLog("Corrupt JamJar deleted from inventory");
+                                    }
+                                    catch
+                                    {
+                                    }
+                                }
+                            }
                         }
                     }
 

@@ -7,10 +7,12 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.ObjectComponents;
+using Sims3.Gameplay.Objects.Door;
 using Sims3.Gameplay.RealEstate;
 using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
+using Sims3.Store.Objects;
 using Sims3.UI.CAS;
 using System;
 using System.Collections.Generic;
@@ -20,6 +22,8 @@ namespace NRaas.GoHereSpace.Helpers
 {
     public class DoorPortalComponentEx : Door.DoorPortalComponent
     {
+        public static List<ulong> mRegistered = new List<ulong>();
+
         public DoorPortalComponentEx()
         { }
         public DoorPortalComponentEx(GameObject obj)
@@ -59,27 +63,33 @@ namespace NRaas.GoHereSpace.Helpers
                 return;
             }
 
-            base.OnLaneLocked(sim, info);
-        }
-
-        public override bool OnPortalStart(Sim s)
-        {
-            DoorSettings settings = GoHere.Settings.GetDoorSettings(this.OwnerDoor.ObjectId);
-
-            if (settings != null)
+            if ((info.mLaneSlots[0] == Door.RoutingSlots.Door0_Front || info.mLaneSlots[0] == Door.RoutingSlots.Door1_Front) && settings.mDoorCost > 0 && !settings.WasSimRecentlyLetThrough(sim.SimDescription.SimDescriptionId))
             {
-                settings.HandleCost(s);
+                settings.AddRecentSim(sim.SimDescription.SimDescriptionId);
+                GoHere.Settings.AddOrUpdateDoorSettings(this.OwnerDoor.ObjectId, settings, false);
+
+                settings.HandleCost(sim);
             }
 
-            return base.OnPortalStart(s);
-        }
+            base.OnLaneLocked(sim, info);
+        }        
 
         [Persistable]
         public class DoorSettings
         {
+            public DoorSettings()
+            {
+            }
+
             public DoorSettings(ObjectGuid guid)
             {
                 mGUID = guid;
+
+                Door door = GameObject.GetObject(guid) as Door;
+                if (door != null)
+                {
+                    RegisterRoomListeners(door.LotCurrent);
+                }
             }
 
             public enum SettingType : uint
@@ -90,28 +100,56 @@ namespace NRaas.GoHereSpace.Helpers
             }
 
             private List<string> mActiveFilters = new List<string>();
+            private Dictionary<ulong, long> mSimsRecentlyLetThrough = new Dictionary<ulong, long>();
             public bool mMatchAllFilters = false;
             public SettingType mType = SettingType.Deny;
             ObjectGuid mGUID;            
             public int mDoorOpen = -1;
             public int mDoorClose = -1;
             public int mDoorCost = 0;
+            public int mDoorTicketDuration = 120;
 
-            public static void ValidateDoorSettings()
-            {
-                List<ObjectGuid> remove = new List<ObjectGuid>();
+            public static void ValidateAndSetupDoors()
+            {                
+                List<ulong> removeSim = new List<ulong>();
 
-                foreach(KeyValuePair<ObjectGuid, DoorSettings> settings in GoHere.Settings.mDoorSettings)
+                foreach(ObjectGuid guid in new List<ObjectGuid>(GoHere.Settings.mDoorSettings.Keys))
                 {
-                    if (Simulator.GetProxy(settings.Key) != null) continue;
+                    DoorSettings settings = GoHere.Settings.mDoorSettings[guid];
 
-                    remove.Add(settings.Key);
-                }
+                    if (Simulator.GetProxy(guid) != null && settings.SettingsValid)
+                    {
+                        foreach (KeyValuePair<ulong, long> sims in settings.mSimsRecentlyLetThrough)
+                        {
+                            if (!settings.WasSimRecentlyLetThrough(sims.Key))
+                            {
+                                removeSim.Add(sims.Key);
+                            }
+                            else if (MiniSimDescription.Find(sims.Key) == null)
+                            {
+                                removeSim.Add(sims.Key);
+                            }
+                        }
 
-                foreach (ObjectGuid r in remove)
-                {
-                    GoHere.Settings.mDoorSettings.Remove(r);
-                }
+                        foreach (ulong sim in removeSim)
+                        {
+                            settings.mSimsRecentlyLetThrough.Remove(sim);
+                        }
+
+                        GoHere.Settings.AddOrUpdateDoorSettings(guid, settings, false);
+
+                        Door door = GameObject.GetObject(guid) as Door;
+
+                        if (door != null)
+                        {
+                            RegisterRoomListeners(door.LotCurrent);
+                        }
+
+                        continue;
+                    }
+
+                    GoHere.Settings.mDoorSettings.Remove(guid);
+                }                         
             }
 
             public bool IsSimAllowedThrough(ulong descId)
@@ -133,7 +171,7 @@ namespace NRaas.GoHereSpace.Helpers
                         if (desc2.Service != null)
                         {
                             List<Sim> sims = desc2.Service.GetSimsAssignedToLot(door.LotCurrent);
-                            if (sims.Contains(desc2.CreatedSim))
+                            if (sims.Contains(desc2.CreatedSim) && GoHere.Settings.mServiceSimsIgnoreAllDoorOptions)
                             {
                                 return true;
                             }
@@ -145,12 +183,20 @@ namespace NRaas.GoHereSpace.Helpers
                             {
                                 if (desc2.AssignedRole.RoleGivingObject.InWorld && desc2.AssignedRole.RoleGivingObject.LotCurrent != null)
                                 {
-                                    if (desc2.AssignedRole.RoleGivingObject.LotCurrent == door.LotCurrent)
+                                    if (desc2.AssignedRole.RoleGivingObject.LotCurrent == door.LotCurrent && GoHere.Settings.mRoleSimsIgnoreAllDoorOptions)
                                     {
                                         return true;
                                     }
                                 }
                             }
+                        }
+                    }
+
+                    if (GoHere.Settings.mGlobalIgnoreAllDoorOptionsFilterOption.Count > 0)
+                    {
+                        if (FilterHelper.DoesSimMatchFilters(descId, GoHere.Settings.mGlobalIgnoreAllDoorOptionsFilterOption, false))
+                        {
+                            return true;
                         }
                     }
 
@@ -161,11 +207,17 @@ namespace NRaas.GoHereSpace.Helpers
                         {
                             allowed = false;
 
+                            if (GoHere.Settings.mGlobalIgnoreDoorTimeLocksFilterOption.Count > 0)
+                            {
+                                allowed = FilterHelper.DoesSimMatchFilters(descId, GoHere.Settings.mGlobalIgnoreDoorTimeLocksFilterOption, false);
+                            }
+
+                            /*
                             if (PlumbBob.SelectedActor != null && desc.HasSameHomeLot(PlumbBob.SelectedActor.SimDescription))
                             {
                                 allowed = true;
                             }
-
+                            
                             if (desc2 != null && desc2.CreatedSim != null)
                             {
                                 if (desc2.CareerManager != null)
@@ -187,6 +239,7 @@ namespace NRaas.GoHereSpace.Helpers
                                     }
                                 }
                             }
+                             */
                         }
 
                         if (!allowed) return allowed;
@@ -194,6 +247,14 @@ namespace NRaas.GoHereSpace.Helpers
 
                     if (FiltersEnabled > 0)
                     {
+                        if (GoHere.Settings.mGlobalIgnoreDoorFiltersFilterOption.Count > 0)
+                        {
+                            if (FilterHelper.DoesSimMatchFilters(descId, GoHere.Settings.mGlobalIgnoreDoorFiltersFilterOption, false))
+                            {
+                                return true;
+                            }
+                        }
+
                         if (mMatchAllFilters)
                         {
                             if (mType == SettingType.Allow)
@@ -247,17 +308,54 @@ namespace NRaas.GoHereSpace.Helpers
             public void ClearFilters()
             {
                 mActiveFilters.Clear();
-            }            
+            }
+
+            public List<string> ActiveFilters
+            {
+                get { return mActiveFilters; }
+            }
 
             public int FiltersEnabled
             {
                 get { return mActiveFilters.Count; }
             }
 
-            public void HandleCost(Sim sim)
+            public bool SettingsValid
             {
-                if (sim != null && mDoorCost > 0)
+                get { return (FiltersEnabled > 0 || mDoorCost > 0 || mDoorOpen > -1 || mDoorClose > -1); }
+            }
+
+            public void AddRecentSim(ulong sim)
+            {
+                if (sim != 0 && !mSimsRecentlyLetThrough.ContainsKey(sim))
                 {
+                    mSimsRecentlyLetThrough.Add(sim, SimClock.CurrentTicks);
+                }
+            }
+
+            public bool WasSimRecentlyLetThrough(ulong sim)
+            {
+                long time;
+                if (mSimsRecentlyLetThrough.TryGetValue(sim, out time) && ((time + (SimClock.kSimulatorTicksPerSimMinute * mDoorTicketDuration)) > SimClock.CurrentTicks))
+                {
+                    return true;
+                }
+                
+                return false;
+            }
+
+            public bool HandleCost(Sim sim)
+            {
+                if (sim != null && sim.SimDescription.ChildOrAbove && mDoorCost > 0)
+                {
+                    if (GoHere.Settings.mGlobalIgnoreDoorCostFilterOption.Count > 0)
+                    {
+                        if (FilterHelper.DoesSimMatchFilters(sim.SimDescription.SimDescriptionId, GoHere.Settings.mGlobalIgnoreDoorCostFilterOption, false))
+                        {
+                            return false;
+                        }
+                    }
+
                     Household owningHousehold = sim.LotCurrent.Household;
                     if (owningHousehold == null)
                     {
@@ -287,45 +385,47 @@ namespace NRaas.GoHereSpace.Helpers
                         {
                             owningHousehold.ModifyFamilyFunds(mDoorCost);
                         }
-                    }
 
+                        return true;
+                    }                    
                 }
+
+                return false;
             }
 
-            public static void RegisterRoomListeners()
+            public static void RegisterRoomListeners(Lot lot)
             {
-                foreach (Lot lot in LotManager.AllLots)
+                if (lot != null && !mRegistered.Contains(lot.LotId) && !lot.IsWorldLot)
                 {
-                    if (lot != null && !lot.IsWorldLot)
+                    LotDisplayLevelInfo info = World.LotGetDisplayLevelInfo(lot.LotId);
+
+                    for (int i = info.mMin; i <= info.mMax; i++)
                     {
-                        LotDisplayLevelInfo info = World.LotGetDisplayLevelInfo(lot.LotId);
-
-                        for (int i = info.mMin; i <= info.mMax; i++)
+                        foreach (int room in World.GetInsideRoomsAtLevel(lot.LotId, i, eRoomDefinition.LightBlocking))
                         {
-                            foreach (int room in World.GetInsideRoomsAtLevel(lot.LotId, i, eRoomDefinition.LightBlocking))
+                            List<Lot.OnAllowedInRoomCheck> list;
+                            if (!lot.mRoomRestrictionCheckCallbacks.TryGetValue(room, out list))
                             {
-                                List<Lot.OnAllowedInRoomCheck> list;
-                                if (!lot.mRoomRestrictionCheckCallbacks.TryGetValue(room, out list))
-                                {
-                                    list = new List<Lot.OnAllowedInRoomCheck>();
-                                    lot.mRoomRestrictionCheckCallbacks.Add(room, list);
-                                }
-                                if (!list.Contains(new Lot.OnAllowedInRoomCheck(OnAllowedInRoomCheck)))
-                                {                                    
-                                    list.Add(new Lot.OnAllowedInRoomCheck(OnAllowedInRoomCheck));
-                                }
+                                list = new List<Lot.OnAllowedInRoomCheck>();
+                                lot.mRoomRestrictionCheckCallbacks.Add(room, list);
                             }
-                        }                        
-
-                        foreach (Sim sim in lot.GetAllActors())
-                        {
-                            if (sim != null)
+                            if (!list.Contains(new Lot.OnAllowedInRoomCheck(OnAllowedInRoomCheck)))
                             {
-                                sim.mAllowedRooms.Remove(lot.LotId);
+                                list.Add(new Lot.OnAllowedInRoomCheck(OnAllowedInRoomCheck));
                             }
                         }
                     }
-                }                
+
+                    foreach (Sim sim in lot.GetAllActors())
+                    {
+                        if (sim != null)
+                        {
+                            sim.mAllowedRooms.Remove(lot.LotId);
+                        }
+                    }
+
+                    mRegistered.Add(lot.LotId);
+                }                             
             }
 
             public static bool OnAllowedInRoomCheck(int srcRoom, Sim sim)
@@ -360,8 +460,11 @@ namespace NRaas.GoHereSpace.Helpers
             {
                 if (door.GetComponent<DoorPortalComponentEx>() != null) return;
 
-                Door.DoorPortalComponent oldComponent = door.PortalComponent as Door.DoorPortalComponent;
+                if (door.GetComponent<Turnstile.TurnstileDoorPortalComponent>() != null) return;
+                if (door.GetComponent<MysteriousDeviceDoor.MysteriousDoorPortalComponent>() != null) return;
 
+                Door.DoorPortalComponent oldComponent = door.PortalComponent as Door.DoorPortalComponent;
+                
                 door.RemoveComponent<Door.DoorPortalComponent>();
 
                 ObjectComponents.AddComponent<DoorPortalComponentEx>(door, new object[0]);

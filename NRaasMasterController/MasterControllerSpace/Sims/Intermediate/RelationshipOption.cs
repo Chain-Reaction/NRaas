@@ -461,10 +461,38 @@ namespace NRaas.MasterControllerSpace.Sims.Intermediate
                     b.Fixup();
                 }
 
-                Relationships.SetPartner(a, b);
-            }
+                Relationships.SetPartner(a, b);               
+            }            
 
             ForceChangeState(relation, nextState);
+
+            if (romantic)
+            {
+                if (prompt && relation.RomanceVisibilityState != null)
+                {
+                    long time = 0;
+                    relation.TryGetActiveRomanceStartTime(out time);
+
+                    int days = 0;
+                    if (time != 0)
+                    {
+                        days = (int)SimClock.ElapsedTime(TimeUnit.Days, new DateAndTime(time));
+                    }
+
+                    string text = StringInputDialog.Show(Common.Localize("Romance:StartTime"), Common.Localize("Romance:StartPrompt", a.IsFemale, new object[] { a, b, SimClock.ElapsedCalendarDays() }), days.ToString());
+                    if (string.IsNullOrEmpty(text)) return false;
+
+                    int mValue = 0;                    
+                    if (!int.TryParse(text, out mValue) || mValue > SimClock.ElapsedCalendarDays())
+                    {                        
+                        SimpleMessageDialog.Show(Common.Localize("Romance:StartTime"), Common.Localize("Numeric:ErrorInputIgnored"));
+                    }
+                    else
+                    {
+                        relation.RomanceVisibilityState.mStartTime = SimClock.Subtract(SimClock.CurrentTime(), TimeUnit.Days, (float)mValue);
+                    }
+                }
+            }
 
             if (relation.LTR.CurrentLTR == LongTermRelationshipTypes.BestFriendsForever)
             {

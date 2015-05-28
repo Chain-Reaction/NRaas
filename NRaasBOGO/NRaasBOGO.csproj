@@ -57,6 +57,9 @@
     <Compile Include="..\NRaas\Helpers\Households.cs">
       <Link>CommonSpace\Helpers\Households.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\Instantiation.cs">
+      <Link>CommonSpace\Helpers\Instantiation.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Inventories.cs">
       <Link>CommonSpace\Helpers\Inventories.cs</Link>
     </Compile>
@@ -130,11 +133,34 @@
       <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
     </Compile>
     <Compile Include="BOGO.cs" />
+    <Compile Include="BOGOSpace\Helpers\BusinessController.cs" />
     <Compile Include="BOGOSpace\Helpers\CarryObjectPosture.cs" />
     <Compile Include="BOGOSpace\Helpers\CarryShoppingBagPosture.cs" />
     <Compile Include="BOGOSpace\Helpers\CarryShoppingBasketPosture.cs" />
+    <Compile Include="BOGOSpace\Helpers\CustomerController.cs" />
+    <Compile Include="BOGOSpace\Helpers\EmployeeController.cs" />
+    <Compile Include="BOGOSpace\Helpers\SupplyAndDemandController.cs" />
+    <Compile Include="BOGOSpace\Interactions\ApplyForCreditCard.cs" />
+    <Compile Include="BOGOSpace\Interactions\BeSalesClerk.cs" />
+    <Compile Include="BOGOSpace\Interactions\BuyAdvertising.cs" />
+    <Compile Include="BOGOSpace\Interactions\CantFindItem.cs" />
     <Compile Include="BOGOSpace\Interactions\CreateBasketOrBagAndWander.cs" />
+    <Compile Include="BOGOSpace\Interactions\HelpCustomer.cs" />
+    <Compile Include="BOGOSpace\Interactions\IdleInBreakRoom.cs" />
+    <Compile Include="BOGOSpace\Interactions\OpenCloseBusiness.cs" />
+    <Compile Include="BOGOSpace\Interactions\PlanSale.cs" />
     <Compile Include="BOGOSpace\Interactions\PutDownCarriedObject.cs" />
+    <Compile Include="BOGOSpace\Interactions\RingUpCustomer.cs" />
+    <Compile Include="BOGOSpace\Interactions\RingUpTheseCustomers.cs" />
+    <Compile Include="BOGOSpace\Interactions\SetItemPrice.cs" />
+    <Compile Include="BOGOSpace\Interactions\SetMarkup.cs" />
+    <Compile Include="BOGOSpace\Interactions\SetSaleMarkup.cs" />
+    <Compile Include="BOGOSpace\Interactions\SetSalePrice.cs" />
+    <Compile Include="BOGOSpace\Interactions\TakeABreak.cs" />
+    <Compile Include="BOGOSpace\Interactions\WaitInLine.cs" />
+    <Compile Include="Gameplay\Objects\NRaas\Display.cs" />
+    <Compile Include="Gameplay\Objects\NRaas\OFBRegister.cs" />
+    <Compile Include="Gameplay\Objects\NRaas\RestockItem.cs" />
     <Compile Include="Gameplay\Objects\NRaas\ShoppingBag.cs" />
     <Compile Include="Gameplay\Objects\NRaas\ShoppingBasket.cs" />
     <Compile Include="BOGOSpace\Interactions\BeCashier.cs" />

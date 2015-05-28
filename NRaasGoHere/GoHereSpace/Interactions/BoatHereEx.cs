@@ -82,6 +82,13 @@ namespace NRaas.GoHereSpace.Interactions
             {
                 return base.GetInteractionName(actor, target, new InteractionObjectPair(sOldSingleton, target));
             }
+
+            public override bool Test(Sim a, Terrain target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+            {
+                if (!GoHere.Settings.mAllowBoatRouting) return false;
+
+                return base.Test(a, target, isAutonomous, ref greyedOutTooltipCallback);
+            }
         }
     }
 }

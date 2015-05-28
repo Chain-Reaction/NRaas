@@ -283,11 +283,13 @@ namespace NRaas.TravelerSpace.Helpers
 
             Dictionary<string, Photography.SubjectRecord> mSubjectRecords;
 
+            List<Bartending.CustomDrinkData> mCustomDrinks;
+
             ResourceKey mSkinToneKey;
             float mSkinToneIndex = 0;
 
             SocialNetworkingSkill.BlogCreationFlags mBlogsCreated;
-            uint mNumberOfFollowers;
+            uint mNumberOfFollowers;            
 
             public CrossWorldData(SimDescription sim)
             {
@@ -390,10 +392,17 @@ namespace NRaas.TravelerSpace.Helpers
                     mJumpCompetitionsWon = new List<uint>(riding.mJumpCompetitionsWon);
                 }
 
+                // EA hosed the color, glass and drink picks
+                Bartending mixology = sim.SkillManager.GetSkill<Bartending>(SkillNames.Bartending);
+                if (mixology != null)
+                {
+                    mCustomDrinks = mixology.mUniqueDrinks;
+                }
+
                 if ((sim.OccultManager != null) && (sim.OccultManager.mOccultList != null))
                 {
                     mOccult = new List<OccultBaseClass>(sim.OccultManager.mOccultList);
-                }
+                }                
             }
 
             public void Restore(SimDescription sim)
@@ -488,6 +497,15 @@ namespace NRaas.TravelerSpace.Helpers
                         }
                     }
 
+                    Bartending mixology = sim.SkillManager.GetSkill<Bartending>(SkillNames.Bartending);
+                    if (mixology != null)
+                    {
+                        if (mCustomDrinks != null)
+                        {
+                            mixology.mUniqueDrinks = mCustomDrinks;
+                        }
+                    }
+
                     if (mOccult != null)
                     {
                         foreach (OccultBaseClass occult in mOccult)
@@ -549,6 +567,6 @@ namespace NRaas.TravelerSpace.Helpers
             {
                 return mName;
             }
-        }
+        }        
     }
 }

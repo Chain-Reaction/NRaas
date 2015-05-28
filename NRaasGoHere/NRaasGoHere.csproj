@@ -83,6 +83,9 @@
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
       <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\Apartments.cs">
+      <Link>CommonSpace\Helpers\Apartments.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\BaseWorldRevision.cs">
       <Link>CommonSpace\Helpers\BaseWorldRevision.cs</Link>
     </Compile>
@@ -212,6 +215,9 @@
     <Compile Include="..\nraas\selection\ProtoSelection.cs">
       <Link>CommonSpace\Selection\ProtoSelection.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Selection\ProtoSimSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\SpeedTrap.cs">
       <Link>CommonSpace\SpeedTrap.cs</Link>
     </Compile>
@@ -232,6 +238,7 @@
     <Compile Include="GoHereSpace\Helpers\GroupingSituationHelper.cs" />
     <Compile Include="GoHereSpace\Helpers\SimRoutingComponentEx.cs" />
     <Compile Include="GoHereSpace\Interactions\AskToBehaveEx.cs" />
+    <Compile Include="GoHereSpace\Interactions\AskToWatchChild.cs" />
     <Compile Include="GoHereSpace\Interactions\BoatHereEx.cs" />
     <Compile Include="GoHereSpace\Interactions\LockDoorEx.cs" />
     <Compile Include="GoHereSpace\Interactions\RouteStrayToLot.cs" />
@@ -263,6 +270,7 @@
     <Compile Include="GoHereSpace\Interactions\TeleportEx.cs" />
     <Compile Include="GoHereSpace\Options\AllowBoatRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\AllowGoHereStackSetting.cs" />
+    <Compile Include="GoHereSpace\Options\AllowMermaidRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\AllowNightVisitLotSetting.cs" />
     <Compile Include="GoHereSpace\Options\AllowVampireDayPushSetting.cs" />
     <Compile Include="GoHereSpace\Options\Caregivers\AllowActiveDayCareSetting.cs" />
@@ -274,16 +282,27 @@
     <Compile Include="GoHereSpace\Options\AllowCarRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\DetailedRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\DisallowInactiveLeaveActiveLotSetting.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\HideNonRelatedFilters.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\DoorCostOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\DoorFilterListingOption.cs" />
-    <Compile Include="GoHereSpace\Options\DoorFilters\DoorFilterTypeListingOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\DoorTicketDurationOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\DoorTimeOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\FilterBaseOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\FilterMatchAllOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\FilterOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\FilterTypeOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\IDoorGlobalOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\IFilterOption.cs" />
-    <Compile Include="GoHereSpace\Options\DoorFilters\IFilterRootOption.cs" />
-    <Compile Include="GoHereSpace\Options\DoorFilters\IFilterTypeOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\IDoorOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\IgnoreAllDoorOptionsFilterOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\IgnoreDoorCostFilterOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\IgnoreDoorFiltersFilterOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\IgnoreDoorTimeLocksFilterOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\ListingOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\ListSimsAllowedOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\ListSimsDeniedOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\RoleSimsIgnoreAllDoorOptions.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\ServiceSimsIgnoreAllDoorOptions.cs" />
     <Compile Include="GoHereSpace\Options\TestOption.cs" />
     <Compile Include="GoHereSpace\Options\RudeGuestLikingGateSetting.cs" />
     <Compile Include="GoHereSpace\Options\DebuggingSetting.cs" />
@@ -302,6 +321,10 @@
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0x0CAE1C361E05B2B3_Sims3StoreObjects">
+      <HintPath>..\Sims3\Compiler\0x0CAE1C361E05B2B3_Sims3StoreObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">

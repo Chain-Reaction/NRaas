@@ -504,6 +504,8 @@
     <Compile Include="WoohooerSpace\Interactions\AskToJoinSkinnyDippingEx.cs" />
     <Compile Include="WoohooerSpace\Interactions\AllInOneBathroomWoohoo.cs" />
     <Compile Include="WoohooerSpace\Interactions\BotMakerWooHoo.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CreateBabyWithEx.cs" />
+    <Compile Include="WoohooerSpace\Interactions\CustomizeBabyDNAEx.cs" />
     <Compile Include="WoohooerSpace\Interactions\SendWooHootyTextFromRelationPanelEx.cs" />
     <Compile Include="WoohooerSpace\Interactions\JetpackTryForBaby.cs" />
     <Compile Include="WoohooerSpace\Interactions\JetpackRisky.cs" />
@@ -712,7 +714,6 @@
     <Compile Include="WoohooerSpace\Options\OptionList.cs" />
     <Compile Include="WoohooerSpace\Options\IOptionItem.cs" />
     <Compile Include="WoohooerSpace\Options\OptionItem.cs" />
-    <Compile Include="WoohooerSpace\Options\General\TestSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Scoring\LikingGateForUserDirectedSetting.cs" />
     <Compile Include="WoohooerSpace\Options\Scoring\PrivacyBaseChanceScoringSetting.cs" />
     <Compile Include="WoohooerSpace\Options\SkinnyDip\EnforcePrivacySetting.cs" />

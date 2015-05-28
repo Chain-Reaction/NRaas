@@ -1120,7 +1120,7 @@ namespace NRaas.WoohooerSpace.Skills
                 types.Remove(SimDescription.DeathType.PetOldAgeBad);
                 types.Remove(SimDescription.DeathType.PetOldAgeGood);
             }
-            else if (SkillOwner.IsHorse)
+            else if (SkillOwner.IsHorse || SkillOwner.IsCat || SkillOwner.IsADogSpecies)
             {
                 types.Add(SimDescription.DeathType.PetOldAgeBad);
                 types.Add(SimDescription.DeathType.PetOldAgeGood);
@@ -1165,6 +1165,10 @@ namespace NRaas.WoohooerSpace.Skills
             else if (SkillOwner.IsHorse)
             {
                 allTypes.Add(OccultTypesEx.Unicorn);
+            }
+            else if (SkillOwner.IsADogSpecies || SkillOwner.IsCat)
+            {
+                allTypes.Add(OccultTypesEx.Ghost);
             }
 
             foreach (OccultTypesEx type in myTypes)
@@ -1718,14 +1722,9 @@ namespace NRaas.WoohooerSpace.Skills
                 }
                 
             }    
-        }
+        }       
 
-        public static Dictionary<int, List<SimDescription>> GetPotentials(bool allowTeen)
-        {
-            return GetPotentials(allowTeen, false);
-        }
-
-        public static Dictionary<int, List<SimDescription>> GetPotentials(bool allowTeen, bool professionals)
+        public static Dictionary<int, List<SimDescription>> GetPotentials(CASAgeGenderFlags allowAges, bool professionals)
         {
             Dictionary<int, List<SimDescription>> results = new Dictionary<int, List<SimDescription>>();
 
@@ -1733,9 +1732,9 @@ namespace NRaas.WoohooerSpace.Skills
 
             foreach (SimDescription sim in Household.EverySimDescription())
             {
-                if (!allowTeen)
+                if((sim.Age & allowAges) == CASAgeGenderFlags.None)
                 {
-                    if (sim.Teen) continue;
+                    continue;
                 }
 
                 if (!professionals)

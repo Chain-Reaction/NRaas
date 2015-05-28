@@ -58,6 +58,20 @@ namespace NRaas.MasterControllerSpace.Helpers
             List<SortObject> objs = new List<SortObject>();
             foreach (GameObject obj in Inventories.QuickFind<GameObject>(inventory))
             {
+                if (obj is Hoverboard)
+                {
+                    Hoverboard obj2 = obj as Hoverboard;
+                    if (obj2 != null)
+                    {
+                        bool usingHoverboardAlways = obj2.UsingHoverboardAlways;
+                        if (inventory.TryToRemove(obj))
+                        {
+                            objs.Add(new SortObject(obj, counts[obj.GetType()], usingHoverboardAlways));
+                        }
+                    }
+                    continue;
+                }
+
                 if (inventory.TryToRemove(obj))
                 {
                     objs.Add(new SortObject(obj, counts[obj.GetType()]));
@@ -79,10 +93,26 @@ namespace NRaas.MasterControllerSpace.Helpers
 
                 foreach (SortObject obj in objs)
                 {
+                    if (obj.mObj is Hoverboard)
+                    {
+                        Hoverboard obj2 = obj.mObj as Hoverboard;
+                        if (obj2 != null)
+                        {
+                            obj2.UsingHoverboardAlways = obj.mUsingHoverboardAlways;
+
+                            if (!Inventories.TryToMove(obj2, inventory))
+                            {
+                                obj2.Destroy();
+                            } 
+                        }
+
+                        continue;
+                    }
+
                     if (!Inventories.TryToMove(obj.mObj, inventory))
                     {
                         obj.mObj.Destroy();
-                    }
+                    }                   
                 }
             }
             finally
@@ -97,11 +127,20 @@ namespace NRaas.MasterControllerSpace.Helpers
         {
             public readonly IGameObject mObj;
             public readonly int mCount;
+            // hand holding for this cause removing it from inventory temporarily destroys the setting
+            public readonly bool mUsingHoverboardAlways;
 
             public SortObject(IGameObject obj, int count)
             {
                 mObj = obj;
                 mCount = count;
+            }
+
+            public SortObject(IGameObject obj, int count, bool usingHoverBoardAlways)
+            {
+                mObj = obj;
+                mCount = count;
+                mUsingHoverboardAlways = usingHoverBoardAlways;
             }
         }
 
@@ -143,7 +182,7 @@ namespace NRaas.MasterControllerSpace.Helpers
 
             public override int Compare(SortObject x, SortObject y)
             {
-                int result = x.mObj.GetType().Name.CompareTo(y.mObj.GetType().Name);
+                int result = x.mObj.GetType().BaseType.Name.CompareTo(y.mObj.GetType().BaseType.Name);
                 if (result != 0) return result;
 
                 return x.mObj.GetLocalizedName().CompareTo(y.mObj.GetLocalizedName());

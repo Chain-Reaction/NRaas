@@ -352,7 +352,8 @@ namespace NRaas.WoohooerSpace.Skills
         {
             sRequests[simDescId] = data;
         }
-        
+
+        [Persistable]        
         public class ServiceData
         {
             public bool mWasRandom;
@@ -383,7 +384,7 @@ namespace NRaas.WoohooerSpace.Skills
                     SimDescription desc = SimDescription.Find(this.mProfessional);
                     if (desc != null && desc.CreatedSim != null && desc.CreatedSim.Autonomy != null)
                     {
-                        if (desc.CreatedSim.Autonomy.mAutonomyDisabledCount > 0)
+                        if (desc.CreatedSim.Autonomy.AutonomyDisabled)
                         {
                             // already disabled by the user
                             this.autonomyWasDisabled = true;
@@ -397,7 +398,7 @@ namespace NRaas.WoohooerSpace.Skills
 
             public void CheckWoohoo()
             {                
-                if (this.mAttempts == 20 && this.mPush != null && this.mPush.Valid)
+                if (this.mAttempts == 10 && this.mPush != null && this.mPush.Valid)
                 {
                     this.Dispose();
                     return;
@@ -480,36 +481,49 @@ namespace NRaas.WoohooerSpace.Skills
                 }
 
                 ServiceData data = KamaSimtra.Settings.FindServiceDataInvolvingProfessionalAndLot(sim.SimDescription.SimDescriptionId, sim.LotCurrent.LotId);
-                SimDescription client = SimDescription.Find(data.mRequester);
-                if (data != null && client != null && client.CreatedSim != null)
+                bool proceed = false;
+                if (data != null)
                 {
-                    Relationship relationship = Relationship.Get(client, sim.SimDescription, true);
-                    if (relationship != null)
+                    SimDescription client = SimDescription.Find(data.mRequester);
+                    if (client != null && client.CreatedSim != null)
                     {
-                        relationship.STC.Set(client.CreatedSim, sim, CommodityTypes.Amorous, 500f);
-                        client.CreatedSim.InteractionQueue.CancelAllInteractions();                        
-                        while (client.CreatedSim.CurrentInteraction != null)
+                        Relationship relationship = Relationship.Get(client, sim.SimDescription, true);
+                        if (relationship != null)
                         {
-                            Common.Sleep(0);
-                        }                              
-                        
-                        data.SetupAlarm();
-                        data.DisableAutonomy();                        
+                            data.DisableAutonomy();
+                            relationship.STC.Set(client.CreatedSim, sim, CommodityTypes.Amorous, 500f);
+                            client.CreatedSim.InteractionQueue.CancelAllInteractions();
+                            while (client.CreatedSim.CurrentInteraction != null)
+                            {
+                                Common.Sleep(0);
+                            }
 
-                        client.CreatedSim.GreetSimOnMyLotIfPossible(sim);
-                        CommonWoohoo.WoohooStyle style = CommonWoohoo.WoohooStyle.Safe;
-                        if (!Woohooer.Settings.ReplaceWithRisky && TwoButtonDialog.Show(Woohooer.Localize("FriskyConfirm:Prompt", sim.IsFemale, new object[] { sim, client.CreatedSim }), Woohooer.Localize("FriskyConfirm:Yes", sim.IsFemale, new object[] { sim, client.CreatedSim }), Woohooer.Localize("FriskyConfirm:No", sim.IsFemale, new object[] { sim, client.CreatedSim })))
-                        {
-                            style = CommonWoohoo.WoohooStyle.Risky;
+                            data.SetupAlarm();                            
+
+                            client.CreatedSim.GreetSimOnMyLotIfPossible(sim);
+                            CommonWoohoo.WoohooStyle style = CommonWoohoo.WoohooStyle.Safe;
+                            if (!Woohooer.Settings.ReplaceWithRisky && client.CreatedSim.IsSelectable && TwoButtonDialog.Show(Woohooer.Localize("FriskyConfirm:Prompt", sim.IsFemale, new object[] { sim, client.CreatedSim }), Woohooer.Localize("FriskyConfirm:Yes", sim.IsFemale, new object[] { sim, client.CreatedSim }), Woohooer.Localize("FriskyConfirm:No", sim.IsFemale, new object[] { sim, client.CreatedSim })))
+                            {
+                                style = CommonWoohoo.WoohooStyle.Risky;
+                            }
+                            data.mStyle = style;
+                            KamaSimtra.Settings.SetServiceData(data.mRequester, data);
+
+                            new CommonWoohoo.PushWoohoo(sim, client.CreatedSim, false, style);
+                            proceed = true;
+
+                            if (client.CreatedSim.IsSelectable)
+                            {
+                                StyledNotification.Format format = new StyledNotification.Format(Common.Localize("OrderServices:Arrived", sim.IsFemale), sim.ObjectId, client.CreatedSim.ObjectId, StyledNotification.NotificationStyle.kSimTalking);
+                                StyledNotification.Show(format);
+                            }
                         }
-                        data.mStyle = style;
-                        KamaSimtra.Settings.SetServiceData(data.mRequester, data);
-
-                        new CommonWoohoo.PushWoohoo(sim, client.CreatedSim, false, style);
-
-                        StyledNotification.Format format = new StyledNotification.Format(Common.Localize("OrderServices:Arrived", sim.IsFemale), sim.ObjectId, client.CreatedSim.ObjectId, StyledNotification.NotificationStyle.kSimTalking);
-                        StyledNotification.Show(format);
                     }
+                }
+
+                if (!proceed && data != null)
+                {
+                    data.Dispose();
                 }
             }        
 

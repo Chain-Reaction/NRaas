@@ -67,7 +67,7 @@ namespace NRaas.CommonSpace.Helpers
                 {
                     mCribs++;
                 }
-                else if (obj is IFridge)
+                else if ((obj is IFridge) || (obj is IFutureFoodSynthesizer))
                 {
                     mFridges++;
                 }

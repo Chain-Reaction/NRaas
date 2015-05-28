@@ -12,23 +12,23 @@ using System.Text;
 
 namespace NRaas.GoHereSpace.Options
 {
-    public class AllowBoatRoutingSetting : BooleanSettingOption<GameObject>, IPrimaryOption<GameObject>
+    public class AllowMermaidRoutingSetting : BooleanSettingOption<GameObject>, IPrimaryOption<GameObject>
     {
         protected override bool Value
         {
             get
             {
-                return GoHere.Settings.mAllowBoatRouting;
+                return GoHere.Settings.mAllowMermaidRouting;
             }
             set
             {
-                GoHere.Settings.mAllowBoatRouting = value;
+                GoHere.Settings.mAllowMermaidRouting = value;
             }
         }
 
         public override string GetTitlePrefix()
         {
-            return "AllowBoatRouting";
+            return "AllowMermaidRouting";
         }
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)

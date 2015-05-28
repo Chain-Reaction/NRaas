@@ -407,9 +407,17 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Pregnancies
 
             foreach (SimDescription parent in immediateParents)
             {
+                if (parent.IsAlien)
+                {
+                    return;
+                }
+
                 foreach (SimDescription grand in Relationships.GetParents(parent))
                 {
-                    choices.Add(grand);
+                    if (!grand.IsAlien)
+                    {
+                        choices.Add(grand);
+                    }
                 }
             }
 

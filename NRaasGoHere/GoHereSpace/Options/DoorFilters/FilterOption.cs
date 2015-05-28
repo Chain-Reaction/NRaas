@@ -36,7 +36,7 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             }
             set
             {
-                GoHere.Settings.AddOrUpdateDoorSettings(mTarget.ObjectId, (!Value.IsFilterActive(mName) ? Value.AddFilter(mName) : Value.RemoveFilter(mName)));                
+                GoHere.Settings.AddOrUpdateDoorSettings(mTarget.ObjectId, (!Value.IsFilterActive(mName) ? Value.AddFilter(mName) : Value.RemoveFilter(mName)), true);                
             }
         }
 
@@ -47,14 +47,14 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
 
         public override string GetTitlePrefix()
         {
-            return (mName == "Default" ? "Default" : null);
+            return null;
         }
 
         public override string DisplayValue
         {
             get
             {
-                return (Value.IsFilterActive(mName) ? "True" : "False");
+                return (Value.IsFilterActive(mName) ? Common.Localize("Boolean:True") : Common.Localize("Boolean:False"));
             }
         }
     }

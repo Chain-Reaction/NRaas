@@ -20,13 +20,13 @@ using System.Text;
 
 namespace NRaas.GoHereSpace.Options.DoorFilters
 {
-    public class DoorTimeOption : OperationSettingOption<GameObject>, IDoorOption
+    public class DoorTicketDurationOption : OperationSettingOption<GameObject>, IDoorOption
     {
         GameObject mTarget;
 
         public override string GetTitlePrefix()
         {
-            return "OpenCloseTime";
+            return "DoorTicketDuration";
         }
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
@@ -40,14 +40,11 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             get
             {
                 if (mTarget != null)
-                {
-                    DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(mTarget.ObjectId);
-                    return settings.mDoorOpen.ToString() + " - " + settings.mDoorClose.ToString();
-                }
+                    return GoHere.Settings.GetDoorSettings(mTarget.ObjectId).mDoorTicketDuration.ToString();
 
                 return null;
             }
-        }        
+        }
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
@@ -55,34 +52,29 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             {
                 DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(parameters.mTarget.ObjectId);
 
-                string open = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix() + ":PromptOpen"), settings.mDoorOpen.ToString());
-                if (string.IsNullOrEmpty(open)) return OptionResult.Failure;
+                string sDuration = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix() + ":PromptCost"), settings.mDoorTicketDuration.ToString());
+                if (string.IsNullOrEmpty(sDuration)) return OptionResult.Failure;
 
-                string close = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix() + ":PromptClose"), settings.mDoorClose.ToString());
-                if (string.IsNullOrEmpty(close)) return OptionResult.Failure;
-
-                int openTime = -1;
-                int closeTime = -1;
-                if (!int.TryParse(open, out openTime) || !int.TryParse(close, out closeTime))
+                int duration = 0;
+                if (!int.TryParse(sDuration, out duration))
                 {
                     SimpleMessageDialog.Show(Name, Common.Localize("Numeric:Error"));
                     return OptionResult.Failure;
                 }
 
-                if ((openTime < 1 || openTime > 23) || (closeTime < 1 || closeTime > 23))
+                if (duration < 0 || duration > int.MaxValue)
                 {
                     SimpleMessageDialog.Show(Name, Common.Localize("Numeric:InvalidInput"));
                     return OptionResult.Failure;
                 }
 
-                settings.mDoorOpen = openTime;
-                settings.mDoorClose = closeTime;
+                settings.mDoorTicketDuration = duration;
                 GoHere.Settings.AddOrUpdateDoorSettings(parameters.mTarget.ObjectId, settings, false);
 
                 Common.Notify(Common.Localize("Generic:Success"));
 
                 return OptionResult.SuccessClose;
-            }            
+            }
 
             return OptionResult.Failure;
         }

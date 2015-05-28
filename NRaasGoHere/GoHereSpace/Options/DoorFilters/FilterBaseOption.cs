@@ -26,15 +26,13 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
 
         protected override OptionResult Run(GameHitParameters<TTarget> parameters)
         {
-            Value = Value;
-
-            //Tagger.InitTags(false);
+            Value = Value;           
 
             Common.Notify(ToString());
 
             if (!FilterHelper.FilterHasMatches(mName))
             {
-                Common.Notify("Filter has no matches");
+                Common.Notify(Common.Localize("DoorOptions:FilterHasNoMatches"));
             }
 
             return OptionResult.SuccessRetain;
