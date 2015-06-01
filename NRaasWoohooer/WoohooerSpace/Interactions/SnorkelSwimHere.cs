@@ -98,16 +98,15 @@ namespace NRaas.WoohooerSpace.Interactions
 
                     InteractionTestResult result = base.Test(ref parameters, ref greyedOutTooltipCallback);
 
+					IActor actor = parameters.Actor;
 					//Bypass pregnancy check
-					if (result == InteractionTestResult.Tuning_Pregnant && greyedOutTooltipCallback != null)
+					if (result == InteractionTestResult.Tuning_Pregnant && greyedOutTooltipCallback != null && actor.SimDescription.HasSpecialOutfit("SnorkelOutfit"))
 					{
 						result = InteractionTestResult.Pass;
 					}
 					if (result == InteractionTestResult.Pass)
 					{
 						//Stress test moved to the end
-						Sim actor = parameters.Actor as Sim;
-
 						if (actor.MoodManager.StressInteractionTest(ref greyedOutTooltipCallback) || actor.Motives.StressInteractionTest(ref greyedOutTooltipCallback, null))
 						{
 							result = InteractionTestResult.GenericFail;

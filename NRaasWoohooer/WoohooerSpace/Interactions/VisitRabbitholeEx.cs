@@ -151,7 +151,8 @@ namespace NRaas.WoohooerSpace.Interactions
 
                 if (IsGettingItOn)
                 {
-                    if (Actor == WooHooer)
+					GettingItOnInRabbitHole(this, WooHooer, WooHooee, RomanticType, definition.VisitTuning, mStyle, CommonWoohoo.WoohooLocation.RabbitHole, mImpregnate);
+                    /*if (Actor == WooHooer)
                     {
                         switch (RomanticType)
                         {
@@ -173,12 +174,13 @@ namespace NRaas.WoohooerSpace.Interactions
                         CommonPregnancy.Impregnate(WooHooer, WooHooee, Autonomous, mStyle);
                     }
 
-                    Target.RabbitHoleProxy.TurnOffWooHooEffect();
+                    Target.RabbitHoleProxy.TurnOffWooHooEffect();*/
                 }
 
                 if (Actor.HasExitReason(ExitReason.StageComplete) || (Actor.HasExitReason(ExitReason.Finished) && !IsGettingItOn))
                 {
-                    Career occupationAsCareer = Actor.OccupationAsCareer;
+					GiveVisitingBuffs(Actor, Target, definition.VisitTuning, definition.VisitBuffOrigin);
+                    /*Career occupationAsCareer = Actor.OccupationAsCareer;
                     if ((occupationAsCareer != null) && (occupationAsCareer.CareerLoc.Owner == Target))
                     {
                         Actor.BuffManager.AddElement(BuffNames.Bored, definition.VisitBuffOrigin);
@@ -202,7 +204,7 @@ namespace NRaas.WoohooerSpace.Interactions
                     }
 
                     BuffNames[] namesArray = new BuffNames[] { BuffNames.Excited, BuffNames.Fascinated, BuffNames.Intrigued, BuffNames.Impressed, BuffNames.Educated };
-                    Actor.BuffManager.AddElement(namesArray[RandomUtil.GetInt(0x4)], definition.VisitBuffOrigin);
+                    Actor.BuffManager.AddElement(namesArray[RandomUtil.GetInt(0x4)], definition.VisitBuffOrigin);*/
                 }
                 return succeeded;
             }
@@ -217,33 +219,130 @@ namespace NRaas.WoohooerSpace.Interactions
             }
         }
 
-        public class Definition : RabbitHole.VisitRabbitHoleBase<VisitRabbitHoleEx>.BaseDefinition, IWooHooDefinition
-        {
-            public bool IsGroupAddition;
+		public static void GettingItOnInRabbitHole(InteractionInstance instance, Sim wooHooer, Sim wooHooee, RabbitHoleRomanticType romanticType, RabbitHole.VisitRabbitHoleTuningClass visitTuning, CommonWoohoo.WoohooStyle style, CommonWoohoo.WoohooLocation location, bool impregnate)
+		{
+			RabbitHole target = instance.Target as RabbitHole;
 
-            public Definition()
-            { }
+			if (instance.InstanceActor == wooHooer)
+			{
+				switch (romanticType)
+				{
+				case RabbitHoleRomanticType.TryForBaby:
+				case RabbitHoleRomanticType.WooHoo:
+					CommonWoohoo.RunPostWoohoo(wooHooer, wooHooee, target, style, location, true);
+					break;
+				}
+
+				Relationship relationship = Relationship.Get(wooHooer, wooHooee, true);
+				if (relationship != null)
+				{
+					relationship.UpdateSTCFromOutsideConversation(wooHooer, wooHooee, visitTuning.WooHooingCommodity, visitTuning.WooHooingSTCIncrement);
+				}
+			}
+
+			if ((impregnate) && (CommonPregnancy.IsSuccess(wooHooer, wooHooee, instance.Autonomous, style)))
+			{
+				CommonPregnancy.Impregnate(wooHooer, wooHooee, instance.Autonomous, style);
+			}
+
+			target.RabbitHoleProxy.TurnOffWooHooEffect();
+		}
+
+		public static void GiveVisitingBuffs(Sim actor, RabbitHole target, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin)
+		{
+			Career occupationAsCareer = actor.OccupationAsCareer;
+			if ((occupationAsCareer != null) && (occupationAsCareer.CareerLoc.Owner == target))
+			{
+				actor.BuffManager.AddElement(BuffNames.Bored, visitBuffOrigin);
+				return;
+			}
+
+			float visitBoredomChanceAdult = visitTuning.VisitBoredomChanceAdult;
+			if (actor.SimDescription.Teen)
+			{
+				visitBoredomChanceAdult = visitTuning.VisitBoredomChanceTeen;
+			}
+			else if (actor.SimDescription.Child)
+			{
+				visitBoredomChanceAdult = visitTuning.VisitBoredomChanceChild;
+			}
+
+			if (RandomUtil.RandomChance(visitBoredomChanceAdult))
+			{
+				actor.BuffManager.AddElement(BuffNames.Bored, visitBuffOrigin);
+				return;
+			}
+
+			BuffNames[] namesArray = new BuffNames[] { BuffNames.Excited, BuffNames.Fascinated, BuffNames.Intrigued, BuffNames.Impressed, BuffNames.Educated };
+			actor.BuffManager.AddElement(namesArray[RandomUtil.GetInt(0x4)], visitBuffOrigin);
+		}
+
+		public abstract class BaseDefinition<TInteraction> : RabbitHole.VisitRabbitHoleBase<TInteraction>.BaseDefinition, IWooHooDefinition where TInteraction : InteractionInstance, new()
+		{
+			public bool IsGroupAddition;
+
+			public BaseDefinition(string interactionName, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin)
+				: base(interactionName, visitTuning, visitBuffOrigin, 0f)
+			{ }
+
+			public Sim ITarget(InteractionInstance paramInteraction)
+			{
+				RabbitHole.VisitRabbitHoleBase<TInteraction> interaction = paramInteraction as RabbitHole.VisitRabbitHoleBase<TInteraction>;
+				if (interaction == null) return null;
+
+				return interaction.WooHooee;
+			}
+
+			public abstract CommonWoohoo.WoohooLocation GetLocation (IGameObject obj);
+
+			public abstract CommonWoohoo.WoohooStyle GetStyle(InteractionInstance paramInteraction);
+
+			public int Attempts
+			{
+				set { }
+			}
+
+			public override bool Test(Sim a, RabbitHole target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+			{
+				if (isAutonomous && a.IsInGroupingSituation())
+				{
+					return false;
+				}
+
+				if (a.GetSituationOfType<GroupingSituation>() != null)
+				{
+					return IsGroupAddition;
+				}
+
+				if ((a.Posture != null) && (a.Posture.Container == target))
+				{
+					return false;
+				}
+
+				return true;
+			}
+
+			public InteractionDefinition ProxyClone(Sim target)
+			{
+				throw new NotImplementedException();
+			}
+		}
+
+		public class Definition : BaseDefinition<VisitRabbitHoleEx> //RabbitHole.VisitRabbitHoleBase<VisitRabbitHoleEx>.BaseDefinition, IWooHooDefinition
+        {
             public Definition(InteractionParameters parameters)
-                : base(parameters.mPrefix + parameters.mVisitName, parameters.mTuning, parameters.mOrigin, 0f)
+                : base(parameters.mPrefix + parameters.mVisitName, parameters.mTuning, parameters.mOrigin)
             { }
             public Definition(string interactionName, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin)
-                : base(interactionName, visitTuning, visitBuffOrigin, 0f)
+                : base(interactionName, visitTuning, visitBuffOrigin)
             { }
 
-            public Sim ITarget(InteractionInstance paramInteraction)
-            {
-                VisitRabbitHoleEx interaction = paramInteraction as VisitRabbitHoleEx;
-                if (interaction == null) return null;
-
-                return interaction.WooHooee;
-            }
-
-            public CommonWoohoo.WoohooLocation GetLocation(IGameObject obj)
+            public override CommonWoohoo.WoohooLocation GetLocation(IGameObject obj)
             {
                 return CommonWoohoo.WoohooLocation.RabbitHole;
             }
 
-            public CommonWoohoo.WoohooStyle GetStyle(InteractionInstance paramInteraction)
+            public override CommonWoohoo.WoohooStyle GetStyle(InteractionInstance paramInteraction)
             {
                 VisitRabbitHoleEx interaction = paramInteraction as VisitRabbitHoleEx;
                 if (interaction == null) return CommonWoohoo.WoohooStyle.Safe;
@@ -251,46 +350,16 @@ namespace NRaas.WoohooerSpace.Interactions
                 return interaction.mStyle;
             }
 
-            public int Attempts
-            {
-                set { }
-            }
-
             public override string GetInteractionName(Sim actor, RabbitHole target, InteractionObjectPair iop)
             {
                 if (InteractionName.StartsWith("VisitInteraction"))
                 {
-                    return Common.LocalizeEAString(actor.IsFemale, "Gameplay/Core/VisitCommunityLot:VisitNamedLot", new object[] { target.CatalogName });
+					return Common.LocalizeEAString(actor.IsFemale, "Gameplay/Core/VisitCommunityLot:VisitNamedLot", new object[] { target.GetLocalizedName() });
                 }
                 else
                 {
                     return base.GetInteractionName(actor, target, iop);
                 }
-            }
-
-            public override bool Test(Sim a, RabbitHole target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
-            {
-                if (isAutonomous && a.IsInGroupingSituation())
-                {
-                    return false;
-                }
-
-                if (a.GetSituationOfType<GroupingSituation>() != null)
-                {
-                    return IsGroupAddition;
-                }
-
-                if ((a.Posture != null) && (a.Posture.Container == target))
-                {
-                    return false;
-                }
-
-                return true;
-            }
-
-            public InteractionDefinition ProxyClone(Sim target)
-            {
-                throw new NotImplementedException();
             }
         }
 

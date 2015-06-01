@@ -18,7 +18,258 @@ using System.Collections.Generic;
 
 namespace NRaas.WoohooerSpace.Interactions
 {
-    public class WooHooInRabbitHoleWithEx : RabbitHole.WooHooInRabbitHoleWithBase<VisitRabbitHoleEx>, Common.IPreLoad, Common.IAddInteraction
+	public abstract class WooHooInRabbitHoleWithBaseEx<TVisitInteraction> : RabbitHole.WooHooInRabbitHoleWithBase<TVisitInteraction> where TVisitInteraction : RabbitHole.VisitRabbitHoleBase<TVisitInteraction>, new()
+	{
+		public abstract bool Makeout { get; }
+		public abstract void SetWooHooImpregnateAndStyle (InteractionInstance currentInteraction, bool impregnate, CommonWoohoo.WoohooStyle style);
+
+		public void ConfigureWooHooInteraction(TVisitInteraction currentInteraction, Sim selectedObject, RabbitHoleRomanticType romanticType, bool impregnate, CommonWoohoo.WoohooStyle style)
+		{
+			currentInteraction.IsGettingItOn = true;
+			currentInteraction.WooHooer = Actor;
+			currentInteraction.WooHooee = selectedObject;
+
+			currentInteraction.RomanticType = romanticType;
+
+			SetWooHooImpregnateAndStyle (currentInteraction, impregnate, style);
+			currentInteraction.ActiveStage = currentInteraction.GetStages()[0x1];
+		}
+
+		public override bool Run()
+		{
+			Common.StringBuilder msg = new Common.StringBuilder(GetType().FullName + ":Run");
+
+			try
+			{
+				msg += "A";
+
+				IWooHooDefinition interactionDefinition = InteractionDefinition as IWooHooDefinition;
+
+				Sim selectedObject = GetSelectedObject() as Sim; //interactionDefinition.GetTarget(Actor, Target, this);
+				if (selectedObject == null)
+				{
+					return false;
+				}
+
+				msg += "B";
+
+				bool impregnate = true;
+
+				RabbitHoleRomanticType romanticType = RabbitHoleRomanticType.WooHoo;
+				if (interactionDefinition.GetStyle(this) == CommonWoohoo.WoohooStyle.TryForBaby)
+				{
+					romanticType = RabbitHoleRomanticType.TryForBaby;
+				}
+				CommonWoohoo.WoohooStyle style = interactionDefinition.GetStyle(this);
+
+				TVisitInteraction currentInteraction = selectedObject.CurrentInteraction as TVisitInteraction;
+				if (currentInteraction != null)
+				{
+					msg += "C";
+
+					ConfigureWooHooInteraction(currentInteraction, selectedObject, romanticType, impregnate, style);
+					/*currentInteraction.IsGettingItOn = true;
+					currentInteraction.WooHooer = Actor;
+					currentInteraction.WooHooee = selectedObject;
+
+					if (interactionDefinition.GetStyle(this) == CommonWoohoo.WoohooStyle.TryForBaby)
+					{
+						currentInteraction.RomanticType = RabbitHoleRomanticType.TryForBaby;
+					}
+					else
+					{
+						currentInteraction.RomanticType = RabbitHoleRomanticType.WooHoo;
+					}
+
+					currentInteraction.mImpregnate = impregnate;
+					currentInteraction.mStyle = interactionDefinition.GetStyle(this);
+					currentInteraction.ActiveStage = currentInteraction.GetStages()[0x1];*/
+
+					impregnate = false;
+				}
+
+				currentInteraction = Actor.CurrentInteraction as TVisitInteraction;
+				if (currentInteraction != null)
+				{
+					msg += "D";
+
+					if (Makeout)
+					{
+						romanticType = RabbitHoleRomanticType.MakeOut;
+					}
+					ConfigureWooHooInteraction(currentInteraction, selectedObject, romanticType, impregnate, style);
+					/*currentInteraction.IsGettingItOn = true;
+					currentInteraction.WooHooer = Actor;
+					currentInteraction.WooHooee = selectedObject;
+
+					if (interactionDefinition.Makeout)
+					{
+						currentInteraction.RomanticType = RabbitHoleRomanticType.MakeOut;
+					}
+					else if (interactionDefinition.GetStyle(this) == CommonWoohoo.WoohooStyle.TryForBaby)
+					{
+						currentInteraction.RomanticType = RabbitHoleRomanticType.TryForBaby;
+					}
+					else
+					{
+						currentInteraction.RomanticType = RabbitHoleRomanticType.WooHoo;
+					}
+					currentInteraction.mImpregnate = impregnate;
+					currentInteraction.mStyle = interactionDefinition.GetStyle(this);
+					currentInteraction.ActiveStage = currentInteraction.GetStages()[0x1];*/
+				}
+
+				msg += "E";
+
+				Target.RabbitHoleProxy.TurnOnWooHooEffect();
+
+				CommonWoohoo.CheckForWitnessedCheating(Actor, selectedObject, true);
+
+				if (Makeout)
+				{
+					EventTracker.SendEvent(new WooHooEvent(EventTypeId.kMadeOut, Actor, selectedObject, Target));
+					EventTracker.SendEvent(new WooHooEvent(EventTypeId.kMadeOut, selectedObject, Actor, Target));
+
+					EventTracker.SendEvent(new SocialEvent(EventTypeId.kSocialInteraction, Actor, selectedObject, "Make Out", false, true, false, CommodityTypes.Undefined));
+					EventTracker.SendEvent(new SocialEvent(EventTypeId.kSocialInteraction, selectedObject, Actor, "Make Out", true, true, false, CommodityTypes.Undefined));
+				}
+
+				return true;
+			}
+			catch (ResetException)
+			{
+				throw;
+			}
+			catch (Exception e)
+			{
+				Common.Exception(Actor, Target, msg, e);
+				return false;
+			}
+			finally
+			{
+				Common.DebugNotify(msg);
+			}
+		}
+
+		public abstract class BaseDefinition<TInteraction> : CommonWoohoo.BaseDefinition<RabbitHole, TInteraction> where TInteraction : RabbitHole.WooHooInRabbitHoleWithBase<TVisitInteraction>, new()
+		{
+			protected string mPrefix;
+			public Origin VisitBuffOrigin;
+			public RabbitHole.VisitRabbitHoleTuningClass VisitTuning;
+
+			public BaseDefinition()
+			{ }
+			protected BaseDefinition(VisitRabbitHoleEx.InteractionParameters parameters)
+			{
+				mPrefix = parameters.mPrefix;
+				VisitBuffOrigin = parameters.mOrigin;
+				VisitTuning = parameters.mTuning;
+			}
+
+			public override Sim GetTarget(Sim actor, RabbitHole target, InteractionInstance paramInteraction)
+			{
+				TInteraction interaction = paramInteraction as TInteraction;
+				if (interaction == null) return null;
+
+				return interaction.GetSelectedObject() as Sim;
+			}
+
+			public override int Attempts
+			{
+				set { }
+			}
+
+			public override CommonWoohoo.WoohooLocation GetLocation(IGameObject obj)
+			{
+				return CommonWoohoo.WoohooLocation.RabbitHole;
+			}
+
+			public virtual bool RomanticSimTest (Sim actor, Sim sim, bool isAutonomous)
+			{
+				GreyedOutTooltipCallback greyedOutTooltipCallback = null;
+				switch (GetStyle(null))
+				{
+				case CommonWoohoo.WoohooStyle.Risky:
+					return CommonPregnancy.SatisfiesRisky (actor, sim, "RabbitholeRisky", isAutonomous, true, ref greyedOutTooltipCallback);
+				case CommonWoohoo.WoohooStyle.TryForBaby:
+					return CommonPregnancy.SatisfiesTryForBaby (actor, sim, "RabbitholeTryForBaby", isAutonomous, true, ref greyedOutTooltipCallback);
+				}
+				return CommonWoohoo.SatisfiesWoohoo (actor, sim, "RabbitholeWoohoo", isAutonomous, true, true, ref greyedOutTooltipCallback);
+			}
+
+			public List<Sim> GetRomanticSims(RabbitHole ths, Sim actor, bool isAutonomous, bool stopAtOne)
+			{
+				List<Sim> list = new List<Sim>();
+				foreach (Sim sim in ths.RabbitHoleProxy.ActorsUsingMe)
+				{
+					if (sim != actor && RomanticSimTest (actor, sim, isAutonomous))
+					{
+						list.Add(sim);
+						if (stopAtOne) break;
+					}
+				}
+				return list;
+			}
+
+			public override void PopulatePieMenuPicker(ref InteractionInstanceParameters parameters, out List<ObjectPicker.TabInfo> listObjs, out List<ObjectPicker.HeaderInfo> headers, out int NumSelectableRows)
+			{
+				NumSelectableRows = 0x1;
+				RabbitHole target = parameters.Target as RabbitHole;
+				Sim actor = parameters.Actor as Sim;
+				base.PopulateSimPicker(ref parameters, out listObjs, out headers, GetRomanticSims(target, actor, parameters.Autonomous, false), false);
+			}
+
+			public override bool Test(Sim a, RabbitHole target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+			{
+				try
+				{
+					if (a.Posture.Container != target.RabbitHoleProxy)
+					{
+						greyedOutTooltipCallback = Common.DebugTooltip("Not Container");
+						return false;
+
+					}
+
+					if (GetRomanticSims(target, a, isAutonomous, true).Count == 0x0)
+					{
+						greyedOutTooltipCallback = Common.DebugTooltip("No Other Sims");
+						return false;
+					}
+
+					RabbitHole.RabbitHoleInteraction<Sim, RabbitHole> currentInteraction = a.CurrentInteraction as RabbitHole.RabbitHoleInteraction<Sim, RabbitHole>;
+					if (currentInteraction == null)
+					{
+						greyedOutTooltipCallback = Common.DebugTooltip("Not Rabbithole Interaction");
+						return false;
+					}
+
+					if (!currentInteraction.CanWooHooDuringInteraction)
+					{
+						greyedOutTooltipCallback = Common.DebugTooltip("CanWooHooDuringInteraction Fail");
+						return false;
+					}
+
+					return true;
+				}
+				catch (ResetException)
+				{
+					throw;
+				}
+				catch (Exception e)
+				{
+					Common.Exception(a, target, e);
+					return false;
+				}
+			}
+
+			public override InteractionDefinition ProxyClone(Sim target)
+			{
+				throw new NotImplementedException();
+			}
+		}
+	}
+
+    public class WooHooInRabbitHoleWithEx : WooHooInRabbitHoleWithBaseEx<VisitRabbitHoleEx>, Common.IPreLoad, Common.IAddInteraction
     {
         public void AddInteraction(Common.InteractionInjectorList interactions)
         {
@@ -33,244 +284,22 @@ namespace NRaas.WoohooerSpace.Interactions
             Woohooer.InjectAndReset<RabbitHole, RabbitHole.WooHooInRabbitHoleWith.Definition, TryForBabyDefinition>(true);
         }
 
-        public override bool Run()
-        {
-            Common.StringBuilder msg = new Common.StringBuilder("WooHooInRabbitHoleWithEx:Run");
+		public override bool Makeout
+		{
+			get
+			{
+				return InteractionDefinition is MakeoutDefinition;
+			}
+		}
 
-            try
-            {
-                msg += "A";
+		public override void SetWooHooImpregnateAndStyle (InteractionInstance currentInteraction, bool impregnate, CommonWoohoo.WoohooStyle style)
+		{
+			VisitRabbitHoleEx visitRabbitHoleEx = currentInteraction as VisitRabbitHoleEx;
+			visitRabbitHoleEx.mImpregnate = impregnate;
+			visitRabbitHoleEx.mStyle = style;
+		}
 
-                BaseDefinition interactionDefinition = InteractionDefinition as BaseDefinition;
-
-                Sim selectedObject = interactionDefinition.GetTarget(Actor, Target, this);
-                if (selectedObject == null)
-                {
-                    return false;
-                }
-
-                msg += "B";
-
-                bool impregnate = true;
-
-                VisitRabbitHoleEx currentInteraction = selectedObject.CurrentInteraction as VisitRabbitHoleEx;
-                if (currentInteraction != null)
-                {
-                    msg += "C";
-
-                    currentInteraction.IsGettingItOn = true;
-                    currentInteraction.WooHooer = Actor;
-                    currentInteraction.WooHooee = selectedObject;
-
-                    if (interactionDefinition.GetStyle(this) == CommonWoohoo.WoohooStyle.TryForBaby)
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.TryForBaby;
-                    }
-                    else
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.WooHoo;
-                    }
-
-                    currentInteraction.mImpregnate = impregnate;
-                    currentInteraction.mStyle = interactionDefinition.GetStyle(this);
-                    currentInteraction.ActiveStage = currentInteraction.GetStages()[0x1];
-
-                    impregnate = false;
-                }
-
-                currentInteraction = Actor.CurrentInteraction as VisitRabbitHoleEx;
-                if (currentInteraction != null)
-                {
-                    msg += "D";
-
-                    currentInteraction.IsGettingItOn = true;
-                    currentInteraction.WooHooer = Actor;
-                    currentInteraction.WooHooee = selectedObject;
-
-                    if (interactionDefinition.Makeout)
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.MakeOut;
-                    }
-                    else if (interactionDefinition.GetStyle(this) == CommonWoohoo.WoohooStyle.TryForBaby)
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.TryForBaby;
-                    }
-                    else
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.WooHoo;
-                    }
-                    currentInteraction.mImpregnate = impregnate;
-                    currentInteraction.mStyle = interactionDefinition.GetStyle(this);
-                    currentInteraction.ActiveStage = currentInteraction.GetStages()[0x1];
-                }
-
-                msg += "E";
-
-                Target.RabbitHoleProxy.TurnOnWooHooEffect();
-
-                CommonWoohoo.CheckForWitnessedCheating(Actor, selectedObject, true);
-
-                if (interactionDefinition.Makeout)
-                {
-                    EventTracker.SendEvent(new WooHooEvent(EventTypeId.kMadeOut, Actor, selectedObject, Target));
-                    EventTracker.SendEvent(new WooHooEvent(EventTypeId.kMadeOut, selectedObject, Actor, Target));
-
-                    EventTracker.SendEvent(new SocialEvent(EventTypeId.kSocialInteraction, Actor, selectedObject, "Make Out", false, true, false, CommodityTypes.Undefined));
-                    EventTracker.SendEvent(new SocialEvent(EventTypeId.kSocialInteraction, selectedObject, Actor, "Make Out", true, true, false, CommodityTypes.Undefined));
-                }
-
-                return true;
-            }
-            catch (ResetException)
-            {
-                throw;
-            }
-            catch (Exception e)
-            {
-                Common.Exception(Actor, Target, msg, e);
-                return false;
-            }
-            finally
-            {
-                Common.DebugNotify(msg);
-            }
-        }
-
-        public new abstract class BaseDefinition : CommonWoohoo.BaseDefinition<RabbitHole, WooHooInRabbitHoleWithEx>
-        {
-            protected string mPrefix;
-            public Origin VisitBuffOrigin;
-            public RabbitHole.VisitRabbitHoleTuningClass VisitTuning;
-
-            public BaseDefinition()
-            { }
-            protected BaseDefinition(VisitRabbitHoleEx.InteractionParameters parameters)
-            {
-                mPrefix = parameters.mPrefix;
-                VisitBuffOrigin = parameters.mOrigin;
-                VisitTuning = parameters.mTuning;
-            }
-
-            public override Sim GetTarget(Sim actor, RabbitHole target, InteractionInstance paramInteraction)
-            {
-                WooHooInRabbitHoleWithEx interaction = paramInteraction as WooHooInRabbitHoleWithEx;
-                if (interaction == null) return null;
-
-                return interaction.GetSelectedObject() as Sim;
-            }
-
-            public override int Attempts
-            {
-                set { }
-            }
-
-            public override CommonWoohoo.WoohooLocation GetLocation(IGameObject obj)
-            {
-                return CommonWoohoo.WoohooLocation.RabbitHole;
-            }
-
-            public virtual bool Makeout
-            {
-                get { return false; }
-            }
-
-            protected static List<Sim> GetRomanticSims(RabbitHole ths, Sim actor, bool isAutonomous, CommonWoohoo.WoohooStyle style, bool makeout)
-            {
-                List<Sim> list = new List<Sim>();
-                GreyedOutTooltipCallback greyedOutTooltipCallback = null;
-                foreach (Sim sim in ths.RabbitHoleProxy.ActorsUsingMe)
-                {
-                    if (sim == actor) continue;
-
-                    if (makeout)
-                    {
-                        if (!CommonSocials.SatisfiesRomance(actor, sim, "RabbitholeRomance ", isAutonomous, ref greyedOutTooltipCallback)) continue;
-
-                        list.Add(sim);
-                    }
-                    else
-                    {
-                        switch (style)
-                        {
-                            case CommonWoohoo.WoohooStyle.Risky:
-                                if (!CommonPregnancy.SatisfiesRisky(actor, sim, "RabbitholeRisky", isAutonomous, true, ref greyedOutTooltipCallback)) continue;
-
-                                list.Add(sim);
-                                break;
-                            case CommonWoohoo.WoohooStyle.Safe:
-                                if (!CommonWoohoo.SatisfiesWoohoo(actor, sim, "RabbitholeWoohoo", isAutonomous, true, true, ref greyedOutTooltipCallback)) continue;
-
-                                list.Add(sim);
-                                break;
-                            case CommonWoohoo.WoohooStyle.TryForBaby:
-                                if (!CommonPregnancy.SatisfiesTryForBaby(actor, sim, "RabbitholeTryForBaby", isAutonomous, true, ref greyedOutTooltipCallback)) continue;
-
-                                list.Add(sim);
-                                break;
-                        }
-                    }
-                }
-                return list;
-            }
-
-            public override void PopulatePieMenuPicker(ref InteractionInstanceParameters parameters, out List<ObjectPicker.TabInfo> listObjs, out List<ObjectPicker.HeaderInfo> headers, out int NumSelectableRows)
-            {
-                NumSelectableRows = 0x1;
-                RabbitHole target = parameters.Target as RabbitHole;
-                Sim actor = parameters.Actor as Sim;
-                base.PopulateSimPicker(ref parameters, out listObjs, out headers, GetRomanticSims(target, actor, parameters.Autonomous, GetStyle(null), Makeout), false);
-            }
-
-            public override bool Test(Sim a, RabbitHole target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
-            {
-                try
-                {
-                    if (a.Posture.Container != target.RabbitHoleProxy)
-                    {
-                        greyedOutTooltipCallback = Common.DebugTooltip("Not Container");
-                        return false;
-
-                    }
-
-                    if (GetRomanticSims(target, a, isAutonomous, GetStyle(null), Makeout).Count == 0x0)
-                    {
-                        greyedOutTooltipCallback = Common.DebugTooltip("No Other Sims");
-                        return false;
-                    }
-
-                    RabbitHole.RabbitHoleInteraction<Sim, RabbitHole> currentInteraction = a.CurrentInteraction as RabbitHole.RabbitHoleInteraction<Sim, RabbitHole>;
-                    if (currentInteraction == null)
-                    {
-                        greyedOutTooltipCallback = Common.DebugTooltip("Not Rabbithole Interaction");
-                        return false;
-                    }
-
-                    if (!currentInteraction.CanWooHooDuringInteraction)
-                    {
-                        greyedOutTooltipCallback = Common.DebugTooltip("CanWooHooDuringInteraction Fail");
-                        return false;
-                    }
-
-                    return true;
-                }
-                catch (ResetException)
-                {
-                    throw;
-                }
-                catch (Exception e)
-                {
-                    Common.Exception(a, target, e);
-                    return false;
-                }
-            }
-
-            public override InteractionDefinition ProxyClone(Sim target)
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public class SafeDefinition : BaseDefinition
+        public class SafeDefinition : BaseDefinition<WooHooInRabbitHoleWithEx>
         {
             public SafeDefinition()
             { }
@@ -289,7 +318,7 @@ namespace NRaas.WoohooerSpace.Interactions
             }
         }
 
-        public class RiskyDefinition : BaseDefinition
+		public class RiskyDefinition : BaseDefinition<WooHooInRabbitHoleWithEx>
         {
             public RiskyDefinition()
             { }
@@ -308,7 +337,7 @@ namespace NRaas.WoohooerSpace.Interactions
             }
         }
 
-        public class TryForBabyDefinition : BaseDefinition
+		public class TryForBabyDefinition : BaseDefinition<WooHooInRabbitHoleWithEx>
         {
             public TryForBabyDefinition()
             { }
@@ -327,7 +356,7 @@ namespace NRaas.WoohooerSpace.Interactions
             }
         }
 
-        public class MakeoutDefinition : BaseDefinition
+		public class MakeoutDefinition : BaseDefinition<WooHooInRabbitHoleWithEx>
         {
             public MakeoutDefinition()
             { }
@@ -340,10 +369,11 @@ namespace NRaas.WoohooerSpace.Interactions
                 return CommonWoohoo.WoohooStyle.Safe;
             }
 
-            public override bool Makeout
-            {
-                get { return true; }
-            }
+			public override bool RomanticSimTest (Sim actor, Sim sim, bool isAutonomous)
+			{
+				GreyedOutTooltipCallback greyedOutTooltipCallback = null;
+				return CommonSocials.SatisfiesRomance (actor, sim, "RabbitholeRomance ", isAutonomous, ref greyedOutTooltipCallback);
+			}
 
             public override string GetInteractionName(Sim actor, RabbitHole target, InteractionObjectPair iop)
             {
