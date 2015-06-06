@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace NRaas.WoohooerSpace.Interactions
 {
-	public class WooHooInEiffelTowerWithEx : RabbitHole.WooHooInRabbitHoleWithBase<TakeElevatorToTopEx>, Common.IPreLoad, Common.IAddInteraction
+	public class WooHooInEiffelTowerWithEx : WooHooInRabbitHoleWithBaseEx<EiffelTower.TakeElevatorToTop>, Common.IPreLoad, Common.IAddInteraction
 	{
 		public void AddInteraction(Common.InteractionInjectorList interactions)
         {
@@ -33,122 +33,25 @@ namespace NRaas.WoohooerSpace.Interactions
 			Woohooer.InjectAndReset<EiffelTower, EiffelTower.WooHooInEiffelTowerWith.Definition, TryForBabyDefinition>(true);
         }
 
-		public override bool Run()
+		public override bool Makeout
+		{
+			get
+			{
+				return InteractionDefinition is MakeoutDefinition;
+			}
+		}
+
+		public override void SetWooHooImpregnateAndStyle (InteractionInstance currentInteraction, bool impregnate, CommonWoohoo.WoohooStyle style)
+		{
+			TakeElevatorToTopEx takeElevatorToTopEx = currentInteraction as TakeElevatorToTopEx;
+			takeElevatorToTopEx.mImpregnate = impregnate;
+			takeElevatorToTopEx.mStyle = style;
+		}
+
+		public new abstract class BaseDefinition : BaseDefinition<WooHooInEiffelTowerWithEx> //CommonWoohoo.BaseDefinition<RabbitHole, WooHooInEiffelTowerWithEx>
         {
-            Common.StringBuilder msg = new Common.StringBuilder("WooHooInRabbitHoleWithEx:Run");
-
-            try
+			protected BaseDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             {
-                msg += "A";
-
-                BaseDefinition interactionDefinition = InteractionDefinition as BaseDefinition;
-
-                Sim selectedObject = interactionDefinition.GetTarget(Actor, Target, this);
-                if (selectedObject == null)
-                {
-                    return false;
-                }
-
-                msg += "B";
-
-                bool impregnate = true;
-
-				TakeElevatorToTopEx currentInteraction = selectedObject.CurrentInteraction as TakeElevatorToTopEx;
-                if (currentInteraction != null)
-                {
-                    msg += "C";
-
-                    currentInteraction.IsGettingItOn = true;
-                    currentInteraction.WooHooer = Actor;
-                    currentInteraction.WooHooee = selectedObject;
-
-                    if (interactionDefinition.GetStyle(this) == CommonWoohoo.WoohooStyle.TryForBaby)
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.TryForBaby;
-                    }
-                    else
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.WooHoo;
-                    }
-
-                    currentInteraction.mImpregnate = impregnate;
-                    currentInteraction.mStyle = interactionDefinition.GetStyle(this);
-                    currentInteraction.ActiveStage = currentInteraction.GetStages()[0x1];
-
-                    impregnate = false;
-                }
-
-				currentInteraction = Actor.CurrentInteraction as TakeElevatorToTopEx;
-                if (currentInteraction != null)
-                {
-                    msg += "D";
-
-                    currentInteraction.IsGettingItOn = true;
-                    currentInteraction.WooHooer = Actor;
-                    currentInteraction.WooHooee = selectedObject;
-
-                    if (interactionDefinition.Makeout)
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.MakeOut;
-                    }
-                    else if (interactionDefinition.GetStyle(this) == CommonWoohoo.WoohooStyle.TryForBaby)
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.TryForBaby;
-                    }
-                    else
-                    {
-                        currentInteraction.RomanticType = RabbitHoleRomanticType.WooHoo;
-                    }
-                    currentInteraction.mImpregnate = impregnate;
-                    currentInteraction.mStyle = interactionDefinition.GetStyle(this);
-                    currentInteraction.ActiveStage = currentInteraction.GetStages()[0x1];
-                }
-
-                msg += "E";
-
-                Target.RabbitHoleProxy.TurnOnWooHooEffect();
-
-                CommonWoohoo.CheckForWitnessedCheating(Actor, selectedObject, true);
-
-                if (interactionDefinition.Makeout)
-                {
-                    EventTracker.SendEvent(new WooHooEvent(EventTypeId.kMadeOut, Actor, selectedObject, Target));
-                    EventTracker.SendEvent(new WooHooEvent(EventTypeId.kMadeOut, selectedObject, Actor, Target));
-
-                    EventTracker.SendEvent(new SocialEvent(EventTypeId.kSocialInteraction, Actor, selectedObject, "Make Out", false, true, false, CommodityTypes.Undefined));
-                    EventTracker.SendEvent(new SocialEvent(EventTypeId.kSocialInteraction, selectedObject, Actor, "Make Out", true, true, false, CommodityTypes.Undefined));
-                }
-
-                return true;
-            }
-            catch (ResetException)
-            {
-                throw;
-            }
-            catch (Exception e)
-            {
-                Common.Exception(Actor, Target, msg, e);
-                return false;
-            }
-            finally
-            {
-                Common.DebugNotify(msg);
-            }
-        }
-
-		public new abstract class BaseDefinition : CommonWoohoo.BaseDefinition<RabbitHole, WooHooInEiffelTowerWithEx>
-        {
-			protected string mPrefix;
-			public Origin VisitBuffOrigin;
-			public RabbitHole.VisitRabbitHoleTuningClass VisitTuning;
-
-            public BaseDefinition()
-            { }
-            protected BaseDefinition(VisitRabbitHoleEx.InteractionParameters parameters)
-            {
-                mPrefix = parameters.mPrefix;
-                VisitBuffOrigin = parameters.mOrigin;
-                VisitTuning = parameters.mTuning;
             }
 
 			public override Sim GetTarget(Sim actor, RabbitHole target, InteractionInstance paramInteraction)
@@ -159,86 +62,35 @@ namespace NRaas.WoohooerSpace.Interactions
                 return interaction.GetSelectedObject() as Sim;
             }
 
-			public override int Attempts
-            {
-                set { }
-            }
-
             public override CommonWoohoo.WoohooLocation GetLocation(IGameObject obj)
             {
 				return CommonWoohoo.WoohooLocation.EiffelTower;
             }
 
-			public virtual bool Makeout
-            {
-                get { return false; }
-            }
-
-            protected static List<Sim> GetRomanticSims(RabbitHole ths, Sim actor, bool isAutonomous, CommonWoohoo.WoohooStyle style, bool makeout)
-            {
-                List<Sim> list = new List<Sim>();
-                GreyedOutTooltipCallback greyedOutTooltipCallback = null;
-                foreach (Sim sim in ths.RabbitHoleProxy.ActorsUsingMe)
-                {
-                    if (sim == actor) continue;
-
-                    if (makeout)
-                    {
-                        if (!CommonSocials.SatisfiesRomance(actor, sim, "RabbitholeRomance ", isAutonomous, ref greyedOutTooltipCallback)) continue;
-
-                        list.Add(sim);
-                    }
-                    else
-                    {
-                        switch (style)
-                        {
-                            case CommonWoohoo.WoohooStyle.Risky:
-                                if (!CommonPregnancy.SatisfiesRisky(actor, sim, "RabbitholeRisky", isAutonomous, true, ref greyedOutTooltipCallback)) continue;
-
-                                list.Add(sim);
-                                break;
-                            case CommonWoohoo.WoohooStyle.Safe:
-                                if (!CommonWoohoo.SatisfiesWoohoo(actor, sim, "RabbitholeWoohoo", isAutonomous, true, true, ref greyedOutTooltipCallback)) continue;
-
-                                list.Add(sim);
-                                break;
-                            case CommonWoohoo.WoohooStyle.TryForBaby:
-                                if (!CommonPregnancy.SatisfiesTryForBaby(actor, sim, "RabbitholeTryForBaby", isAutonomous, true, ref greyedOutTooltipCallback)) continue;
-
-                                list.Add(sim);
-                                break;
-                        }
-                    }
-                }
-                return list;
-            }
-
-            public override void PopulatePieMenuPicker(ref InteractionInstanceParameters parameters, out List<ObjectPicker.TabInfo> listObjs, out List<ObjectPicker.HeaderInfo> headers, out int NumSelectableRows)
-            {
-                NumSelectableRows = 0x1;
-                RabbitHole target = parameters.Target as RabbitHole;
-                Sim actor = parameters.Actor as Sim;
-                base.PopulateSimPicker(ref parameters, out listObjs, out headers, GetRomanticSims(target, actor, parameters.Autonomous, GetStyle(null), Makeout), false);
-            }
+			public override bool RomanticSimTest (Sim actor, Sim sim, bool isAutonomous)
+			{
+				return actor.Position.y == sim.Position.y && base.RomanticSimTest (actor, sim, isAutonomous);
+			}
 
             public override bool Test(Sim a, RabbitHole target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
                 try
                 {
-                    if (a.Posture.Container != target.RabbitHoleProxy)
+                    /*if (a.Posture.Container != target.RabbitHoleProxy)
                     {
                         greyedOutTooltipCallback = Common.DebugTooltip("Not Container");
                         return false;
+                    }*/
 
-                    }
+					if (!base.Test(a, target, isAutonomous, ref greyedOutTooltipCallback)) return false;
 
-                    if (GetRomanticSims(target, a, isAutonomous, GetStyle(null), Makeout).Count == 0x0)
+                    /*if (GetRomanticSimsAtSameLevel(target, a, isAutonomous, GetStyle(null), Makeout, true).Count == 0x0)
                     {
                         greyedOutTooltipCallback = Common.DebugTooltip("No Other Sims");
                         return false;
-                    }
+                    }*/
 
-                    RabbitHole.RabbitHoleInteraction<Sim, RabbitHole> currentInteraction = a.CurrentInteraction as RabbitHole.RabbitHoleInteraction<Sim, RabbitHole>;
+                    /*RabbitHole.RabbitHoleInteraction<Sim, RabbitHole> currentInteraction = a.CurrentInteraction as RabbitHole.RabbitHoleInteraction<Sim, RabbitHole>;
                     if (currentInteraction == null)
                     {
                         greyedOutTooltipCallback = Common.DebugTooltip("Not Rabbithole Interaction");
@@ -249,9 +101,9 @@ namespace NRaas.WoohooerSpace.Interactions
                     {
                         greyedOutTooltipCallback = Common.DebugTooltip("CanWooHooDuringInteraction Fail");
                         return false;
-                    }
-
-                    return true;
+                    }*/
+					TimedStage currentStage = a.CurrentInteraction.ActiveStage as TimedStage;
+					return currentStage != null && currentStage.mbTimerActive;
                 }
                 catch (ResetException)
                 {
@@ -264,18 +116,15 @@ namespace NRaas.WoohooerSpace.Interactions
                 }
             }
 
-            public override InteractionDefinition ProxyClone(Sim target)
+            /*public override InteractionDefinition ProxyClone(Sim target)
             {
                 throw new NotImplementedException();
-            }
+            }*/
         }
 
         public class SafeDefinition : BaseDefinition
         {
-            public SafeDefinition()
-            { }
-            public SafeDefinition(VisitRabbitHoleEx.InteractionParameters parameters)
-                : base(parameters)
+            public SafeDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
             public override CommonWoohoo.WoohooStyle GetStyle(InteractionInstance paramInteraction)
@@ -291,10 +140,7 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public class RiskyDefinition : BaseDefinition
         {
-            public RiskyDefinition()
-            { }
-            public RiskyDefinition(VisitRabbitHoleEx.InteractionParameters parameters)
-                : base(parameters)
+            public RiskyDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
             public override CommonWoohoo.WoohooStyle GetStyle(InteractionInstance paramInteraction)
@@ -310,10 +156,7 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public class TryForBabyDefinition : BaseDefinition
         {
-            public TryForBabyDefinition()
-            { }
-            public TryForBabyDefinition(VisitRabbitHoleEx.InteractionParameters parameters)
-                : base(parameters)
+            public TryForBabyDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
             public override CommonWoohoo.WoohooStyle GetStyle(InteractionInstance paramInteraction)
@@ -329,10 +172,7 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public class MakeoutDefinition : BaseDefinition
         {
-            public MakeoutDefinition()
-            { }
-            public MakeoutDefinition(VisitRabbitHoleEx.InteractionParameters parameters)
-                : base(parameters)
+            public MakeoutDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
             public override CommonWoohoo.WoohooStyle GetStyle(InteractionInstance paramInteraction)
@@ -340,10 +180,13 @@ namespace NRaas.WoohooerSpace.Interactions
                 return CommonWoohoo.WoohooStyle.Safe;
             }
 
-            public override bool Makeout
-            {
-                get { return true; }
-            }
+            public override bool RomanticSimTest (Sim actor, Sim sim, bool isAutonomous)
+			{
+				if (actor.Position.y != sim.Position.y) return false;
+
+				GreyedOutTooltipCallback greyedOutTooltipCallback = null;
+				return CommonSocials.SatisfiesRomance (actor, sim, "RabbitholeRomance ", isAutonomous, ref greyedOutTooltipCallback);
+			}
 
             public override string GetInteractionName(Sim actor, RabbitHole target, InteractionObjectPair iop)
             {
@@ -353,35 +196,30 @@ namespace NRaas.WoohooerSpace.Interactions
 
 		public class CustomInjector : Common.InteractionInjector<EiffelTower>
         {
-            public CustomInjector()
-            { }
-
             protected override bool Perform(GameObject obj, InteractionDefinition definition, Dictionary<Type, bool> existing)
             {
 				EiffelTower tower = obj as EiffelTower;
 				if (tower == null) return false;
 
-				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.MakeoutDefinition>(obj);
-				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.SafeDefinition>(obj);
-				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.RiskyDefinition>(obj);
-				//Common.RemoveInteraction<WooHooInRabbitHoleWithEx.TryForBabyDefinition>(obj);
-				Common.RemoveInteraction<EiffelTower.WooHooInEiffelTowerWith.Definition>(obj);
+				for (int i = obj.Interactions.Count - 1; i >= 0; i--)
+				{
+					if (obj.Interactions[i].InteractionDefinition is RabbitHole.WooHooInRabbitHoleWithBase<EiffelTower.TakeElevatorToTop>.BaseDefinition)
+					{
+						obj.Interactions.RemoveAt (i);
+						break;
+					}
+				}
 
 				VisitRabbitHoleEx.InteractionParameters parameters = new VisitRabbitHoleEx.InteractionParameters("Gameplay/Objects/RabbitHoles/EiffelTower:", "TakeElevatorToTop", EiffelTower.kVisitRabbitHoleTuning, Origin.FromEiffelTower);
-				//if (VisitRabbitHoleEx.Parameters.TryGetValue(hole.Guid, out parameters))
-				//{
-                    base.Perform(obj, new MakeoutDefinition(parameters), existing);
-                    base.Perform(obj, new SafeDefinition(parameters), existing);
-                    base.Perform(obj, new RiskyDefinition(parameters), existing);
-                    base.Perform(obj, new TryForBabyDefinition(parameters), existing);
-                    return true;
-				//}
-
-				//return false;
+				base.Perform(obj, new MakeoutDefinition(parameters), existing);
+                base.Perform(obj, new SafeDefinition(parameters), existing);
+                base.Perform(obj, new RiskyDefinition(parameters), existing);
+                base.Perform(obj, new TryForBabyDefinition(parameters), existing);
+                return true;
             }
 		}
 
-		public class LocationControl : WoohooLocationControl
+		public class LocationControl : WooHooInRabbitHoleWithEx.LocationControl
         {
 			public override CommonWoohoo.WoohooLocation Location
             {
@@ -393,20 +231,20 @@ namespace NRaas.WoohooerSpace.Interactions
 				return obj is EiffelTower;
             }
 
-			public override bool HasWoohooableObject(Lot lot)
+			/*public override bool HasWoohooableObject(Lot lot)
             {
                 return false;
-            }
+            }*/
 
             public override bool HasLocation(Lot lot)
             {
 				return (lot.CountObjects<EiffelTower>() > 0);
             }
 
-			public override List<GameObject> GetAvailableObjects(Sim actor, Sim target, ItemTestFunction testFunc)
+			/*public override List<GameObject> GetAvailableObjects(Sim actor, Sim target, ItemTestFunction testFunc)
             {
                 return null;
-            }
+            }*/
 
             public override bool AllowLocation(SimDescription sim, bool testVersion)
             {
@@ -415,10 +253,10 @@ namespace NRaas.WoohooerSpace.Interactions
 				return Woohooer.Settings.mAutonomousEiffelTower;
             }
 
-            public override InteractionDefinition GetInteraction(Sim actor, Sim target, CommonWoohoo.WoohooStyle style)
+            /*public override InteractionDefinition GetInteraction(Sim actor, Sim target, CommonWoohoo.WoohooStyle style)
             {
                 return null;
-            }
+            }*/
         }
     }
 }
