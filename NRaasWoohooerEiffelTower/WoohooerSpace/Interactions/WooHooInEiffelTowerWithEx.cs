@@ -44,15 +44,19 @@ namespace NRaas.WoohooerSpace.Interactions
 		public override void SetWooHooImpregnateAndStyle (InteractionInstance currentInteraction, bool impregnate, CommonWoohoo.WoohooStyle style)
 		{
 			TakeElevatorToTopEx takeElevatorToTopEx = currentInteraction as TakeElevatorToTopEx;
-			takeElevatorToTopEx.mImpregnate = impregnate;
-			takeElevatorToTopEx.mStyle = style;
+			if (takeElevatorToTopEx != null)
+			{
+				takeElevatorToTopEx.mImpregnate = impregnate;
+				takeElevatorToTopEx.mStyle = style;
+			}
 		}
 
 		public new abstract class BaseDefinition : BaseDefinition<WooHooInEiffelTowerWithEx> //CommonWoohoo.BaseDefinition<RabbitHole, WooHooInEiffelTowerWithEx>
         {
+			public BaseDefinition()
+			{ }
 			protected BaseDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
-            {
-            }
+            { }
 
 			public override Sim GetTarget(Sim actor, RabbitHole target, InteractionInstance paramInteraction)
             {
@@ -124,6 +128,8 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public class SafeDefinition : BaseDefinition
         {
+			public SafeDefinition()
+			{ }
             public SafeDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
@@ -140,6 +146,8 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public class RiskyDefinition : BaseDefinition
         {
+			public RiskyDefinition()
+			{ }
             public RiskyDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
@@ -156,6 +164,8 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public class TryForBabyDefinition : BaseDefinition
         {
+			public TryForBabyDefinition()
+			{ }
             public TryForBabyDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
@@ -172,6 +182,8 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public class MakeoutDefinition : BaseDefinition
         {
+			public MakeoutDefinition()
+			{ }
             public MakeoutDefinition(VisitRabbitHoleEx.InteractionParameters parameters) : base(parameters)
             { }
 
