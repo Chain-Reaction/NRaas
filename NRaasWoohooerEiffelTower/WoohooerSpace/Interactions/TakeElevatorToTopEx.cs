@@ -180,34 +180,24 @@ namespace NRaas.WoohooerSpace.Interactions
 
 		public new class ElevatorDefinition : VisitRabbitHoleEx.BaseDefinition<EiffelTower.TakeElevatorToTop> //RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition, IWooHooDefinition
 		{
-			//public bool IsGroupAddition;
 			public RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition mBaseDefinition;
-			/*public int Attempts
-			{
-				set
-				{
-				}
-			}*/
+			public string mDisplayName;
+			public string[][] mPaths;
 
-
-			public ElevatorDefinition(string interactionName, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin) : base(interactionName, visitTuning, visitBuffOrigin)
+			public ElevatorDefinition()
 			{
-				IsGroupAddition = true;
 			}
 			public ElevatorDefinition(RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition baseDef) : base(baseDef.InteractionName, baseDef.VisitTuning, baseDef.VisitBuffOrigin)
-            {
+			{
 				mBaseDefinition = baseDef;
 			}
-
-			/*public Sim ITarget(InteractionInstance paramInteraction)
+			public ElevatorDefinition(string displayName, string[][] paths, bool isGroupAddition, string interactionName, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin) : base(interactionName, visitTuning, visitBuffOrigin)
 			{
-				TakeElevatorToTopEx takeElevatorToTopEx = paramInteraction as TakeElevatorToTopEx;
-				if (takeElevatorToTopEx == null)
-				{
-					return null;
-				}
-				return takeElevatorToTopEx.WooHooee;
-			}*/
+				mDisplayName = displayName;
+				mPaths = paths;
+				IsGroupAddition = isGroupAddition;
+			}
+
 			public override CommonWoohoo.WoohooLocation GetLocation(IGameObject obj)
 			{
 				return CommonWoohoo.WoohooLocation.EiffelTower;
@@ -221,14 +211,10 @@ namespace NRaas.WoohooerSpace.Interactions
 				}
 				return takeElevatorToTopEx.mStyle;
 			}
-			/*public InteractionDefinition ProxyClone(Sim target)
-			{
-				throw new NotImplementedException();
-			}*/
 
-			public virtual InteractionDefinition CreateDefinition (RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition baseDef)
+			public virtual InteractionDefinition CreateDefinition (RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition baseDef, string displayName)
 			{
-				return new ElevatorDefinition (baseDef);
+				return new ElevatorDefinition(displayName, new string[][]{ baseDef.GetPath(false), baseDef.GetPath(true) }, false, baseDef.InteractionName, baseDef.VisitTuning, baseDef.VisitBuffOrigin);
 			}
 
 			public override void AddInteractions (InteractionObjectPair iop, Sim actor, RabbitHole target, List<InteractionObjectPair> results)
@@ -237,7 +223,8 @@ namespace NRaas.WoohooerSpace.Interactions
 				mBaseDefinition.AddInteractions (iop, actor, target, iops);
 				foreach (InteractionObjectPair current in iops)
 				{
-					results.Add(new InteractionObjectPair(CreateDefinition(current.InteractionDefinition as RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition), iop.Target));
+					RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition baseDef = current.InteractionDefinition as RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition;
+					results.Add(new InteractionObjectPair(CreateDefinition(baseDef, baseDef.GetInteractionName(actor, target, iop)), iop.Target));
 				}
 			}
 			public override InteractionInstance CreateInstance (ref InteractionInstanceParameters parameters)
@@ -248,14 +235,14 @@ namespace NRaas.WoohooerSpace.Interactions
 			}
             public override string GetInteractionName(Sim actor, RabbitHole target, InteractionObjectPair iop)
             {
-				return mBaseDefinition != null ? mBaseDefinition.GetInteractionName (actor, target, iop) : Common.LocalizeEAString(actor.IsFemale, "Gameplay/Core/VisitCommunityLot:VisitNamedLot", new object[]
+				return mDisplayName ?? Common.LocalizeEAString(actor.IsFemale, "Gameplay/Core/VisitCommunityLot:VisitNamedLot", new object[]
 					{
 						target.GetLocalizedName()
 					});
 			}
 			public override string[] GetPath (bool isFemale)
 			{
-				return mBaseDefinition.GetPath (isFemale);
+				return mPaths[isFemale ? 1 : 0];
 			}
 			/*public override bool Test(Sim a, RabbitHole target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
 			{
@@ -273,15 +260,18 @@ namespace NRaas.WoohooerSpace.Interactions
 
 		public new class StairsDefinition : ElevatorDefinition
 		{
-			public StairsDefinition(string interactionName, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin) : base(interactionName, visitTuning, visitBuffOrigin)
+			public StairsDefinition()
 			{
 			}
 			public StairsDefinition(RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition baseDef) : base(baseDef)
 			{
 			}
-			public override InteractionDefinition CreateDefinition (RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition baseDef)
+			public StairsDefinition(string displayName, string[][] paths, bool isGroupAddition, string interactionName, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin) : base(displayName, paths, isGroupAddition, interactionName, visitTuning, visitBuffOrigin)
 			{
-				return new StairsDefinition (baseDef);
+			}
+			public override InteractionDefinition CreateDefinition (RabbitHole.VisitRabbitHoleBase<EiffelTower.TakeElevatorToTop>.BaseDefinition baseDef, string displayName)
+			{
+				return new StairsDefinition(displayName, new string[][]{ baseDef.GetPath(false), baseDef.GetPath(true) }, false, baseDef.InteractionName, baseDef.VisitTuning, baseDef.VisitBuffOrigin);
 			}
 		}
 

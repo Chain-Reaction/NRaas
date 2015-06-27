@@ -281,6 +281,8 @@ namespace NRaas.WoohooerSpace.Interactions
 		{
 			public bool IsGroupAddition;
 
+			public BaseDefinition()
+			{ }
 			public BaseDefinition(string interactionName, RabbitHole.VisitRabbitHoleTuningClass visitTuning, Origin visitBuffOrigin)
 				: base(interactionName, visitTuning, visitBuffOrigin, 0f)
 			{ }

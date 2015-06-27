@@ -93,33 +93,42 @@
   <ItemGroup>
     <Reference Include="Sims3GameplaySystems">
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sims3Metadata">
       <HintPath>..\Sims3\Compiler\0x600F9EA1DDC99FB1_Sims3MetaData.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Xml">
       <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ScriptCore">
       <HintPath>..\Sims3\Compiler\0x78CF6CF5304D0C4F_ScriptCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sims3GameplayObjects">
       <HintPath>..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="SimIFace">
       <HintPath>..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UI">
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="NRaasWoohooer">
       <HintPath>..\NRaasWoohooer\bin\NRaasWoohooer.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
