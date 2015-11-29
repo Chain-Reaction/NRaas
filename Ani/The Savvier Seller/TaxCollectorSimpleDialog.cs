@@ -1,6 +1,7 @@
 ﻿using Sims3.UI;
 using System.Collections.Generic;
 using Sims3.SimIFace;
+using ani_StoreSetRegister;
 
 namespace ani_StoreSetBase
 { 
@@ -40,7 +41,7 @@ namespace ani_StoreSetBase
         }
         public static List<ObjectPicker.RowInfo> Show(string title, int funds, List<ObjectPicker.TabInfo> listObjs, List<ObjectPicker.HeaderInfo> headers, bool viewTypeToggle, Vector2 position)
         {
-            return TaxCollectorSimpleDialog.Show(title, funds, listObjs, headers, viewTypeToggle, position, string.Empty);
+            return TaxCollectorSimpleDialog.Show(title, funds, listObjs, headers, viewTypeToggle, position, "OK");
         }
         public static List<ObjectPicker.RowInfo> Show(string title, int funds, List<ObjectPicker.TabInfo> listObjs, List<ObjectPicker.HeaderInfo> headers, bool viewTypeToggle, Vector2 position, string okayCaption)
         {
@@ -111,7 +112,7 @@ namespace ani_StoreSetBase
                 this.mModalDialogWindow.Visible = true;
             }
         }
-        protected override bool OnEnd(uint endID)
+        public override bool OnEnd(uint endID)
         {
             if (endID == base.OkayID)
             {

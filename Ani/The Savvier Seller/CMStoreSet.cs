@@ -17,9 +17,11 @@ using Sims3.SimIFace;
 using Sims3.Gameplay.Objects.FoodObjects;
 using Sims3.Store.Objects;
 using Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister;
+using ani_StoreSetBase;
+using Sims3.Gameplay.Objects.TombObjects.ani_StoreSetBase;
 
 
-namespace ani_StoreSetBase
+namespace ani_StoreSetRegister
 {
     public static class CMStoreSet
     {
@@ -34,7 +36,7 @@ namespace ani_StoreSetBase
         /// <returns></returns>
         public static string LocalizeString(string name, params object[] parameters)
         {
-            return Localization.LocalizeString("ani_OFBBistroSet:" + name, parameters);
+            return Localization.LocalizeString("ani_StoreSet:" + name, parameters);
         }
         #endregion Localization
 
@@ -279,20 +281,20 @@ namespace ani_StoreSetBase
 
         #endregion
 
-        #region Return Register
+        #region Return Register For Linking
 
-        public static ani_GalleryShopRegister ReturnRegister(ani_GalleryShopRegister[] objects)
+        public static StoreSetRegister ReturnRegisterForLinking(StoreSetRegister[] objects)
         {
             ThumbnailKey thumbnail = ThumbnailKey.kInvalidThumbnailKey;
             string text = string.Empty;
             List<ObjectPicker.RowInfo> list = new List<ObjectPicker.RowInfo>();
 
-            foreach (ani_GalleryShopRegister t in objects)
+            foreach (StoreSetRegister t in objects)
             {
                 List<ObjectPicker.ColumnInfo> list2 = new List<ObjectPicker.ColumnInfo>();
 
                 int num = 0;
-                thumbnail = t.GetThumbnailKey();             
+                thumbnail = t.GetThumbnailKey();
 
                 text = t.Info.RegisterName;
 
@@ -308,15 +310,96 @@ namespace ani_StoreSetBase
             List<ObjectPicker.TabInfo> list4 = new List<ObjectPicker.TabInfo>();
             list3.Add(new ObjectPicker.HeaderInfo(string.Empty, string.Empty, 200));
             list3.Add(new ObjectPicker.HeaderInfo("1", "2"));
-            list4.Add(new ObjectPicker.TabInfo("3", "4", list));
-            List<ObjectPicker.RowInfo> list5 = TaxCollectorSimpleDialog.Show("", 0, list4, list3, true);
+            list4.Add(new ObjectPicker.TabInfo("3", CMStoreSet.LocalizeString("LinkToRegister", new object[0]), list));
+            List<ObjectPicker.RowInfo> list5 = TaxCollectorSimpleDialog.Show(CMStoreSet.LocalizeString("LikToRegister", new object[0] { }), 0, list4, list3, true);
             if (list5 == null || list5.Count != 1)
             {
                 return null;
             }
-            return (list5[0].Item as ani_GalleryShopRegister);
+            return (list5[0].Item as StoreSetRegister);
+        }
+
+        #endregion
+
+        #region Return Register
+
+        public static StoreSetRegister ReturnRegister(ObjectGuid id, Lot lot)
+        {
+            StoreSetRegister register = null;
+            List<StoreSetRegister> registers = new List<StoreSetRegister>(Sims3.Gameplay.Queries.GetObjects<StoreSetRegister>(lot));
+
+            if (registers != null && registers.Count > 0)
+            {
+                register = registers.Find(delegate(StoreSetRegister r) { return r.ObjectId == id; });
+            }
+
+            return register;
+        }
+
+        #endregion Return Register
+
+        #region Return First Customer
+
+        public static SimDescription ReturnFirstCustomer(Dictionary<SimDescription, int> dct, Lot lot)
+        {
+            SimDescription sd = null;
+            foreach (SimDescription item in dct.Keys)
+            {
+                if (item.CreatedSim != null && !item.CreatedSim.IsActiveSim && item.CreatedSim.LotCurrent == lot)
+                {
+                    sd = item;
+                    break;
+                }
+
+            }
+            return sd;
+        }
+
+        #endregion
+
+        #region Pay Wages
+
+        public static void PayWages(Sim clerck, StoreSetRegister register, float startTime, float endTime)
+        {
+            int pay = register.Info.HourlyWage * ((int)(endTime - startTime));
+
+            //  CMStoreSet.PrintMessage(this.Actor.FullName + " pay : " + pay);
+
+            SimDescription owner = null;
+
+            if (register.Info.OwnerId != 0uL)
+                CMStoreSet.ReturnSim(register.Info.OwnerId);
+
+            if (owner == null)
+            {
+                if (!register.Info.PayWhenActive || (register.Info.PayWhenActive && clerck.Household.IsActive))
+                    clerck.ModifyFunds(pay);
+            }
+            else if (owner != null && clerck.Household.HouseholdId != owner.Household.HouseholdId)
+            {
+                if (!register.Info.PayWhenActive || (register.Info.PayWhenActive && clerck.Household.IsActive))
+                    clerck.ModifyFunds(pay);
+
+                if (!register.Info.PayWhenActive || (register.Info.PayWhenActive && owner.Household.IsActive))
+                    owner.ModifyFunds(-pay);
+            }
+        }
+
+        #endregion
+
+        #region Store Open
+        public static bool IsStoreOpen(StoreSetRegister register)
+        {
+            if (register == null)
+                return false;
+
+            if (!register.Info.Open || !SimClock.IsTimeBetweenTimes(register.mOvenHoursStart, register.mOvenHoursEnd))
+                return false;
+            else
+                return true;
         }
         #endregion
+
 
     }
 }
