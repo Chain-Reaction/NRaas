@@ -94,12 +94,6 @@
     <Compile Include="RestockItemHelperClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ani_StoreRestockItem">
-      <HintPath>ani_StoreRestockItem\bin\x86\Release\ani_StoreRestockItem.dll</HintPath>
-    </Reference>
-    <Reference Include="ani_StoreSetRegister">
-      <HintPath>ani_StoreSetRegister\bin\Release\ani_StoreSetRegister.dll</HintPath>
-    </Reference>
     <Reference Include="Sims3GameplaySystems">
       <HintPath>..\..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
       <Private>False</Private>
@@ -136,6 +130,15 @@
     <Reference Include="UI">
       <HintPath>..\..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="RealJam">
+      <HintPath>..\..\..\..\Desktop\StoreObjectsJamMakingStation.dll</HintPath>
+    </Reference>
+    <Reference Include="ani_StoreRestockItem">
+      <HintPath>..\..\..\..\Desktop\ani_StoreRestockItem.dll</HintPath>
+    </Reference>
+    <Reference Include="ani_StoreSetBase">
+      <HintPath>..\..\..\..\Desktop\ani_StoreSetBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

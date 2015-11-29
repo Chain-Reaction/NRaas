@@ -35,7 +35,8 @@ namespace ani_StoreRestockItem
         BookAlchemyRecipe_,
         AcademicTextBook_,
         BookComic_,
-        Flowers
+        Flowers,
+		JamJar
     }
     [Persistable]
     public class RestockInfo
@@ -88,6 +89,10 @@ namespace ani_StoreRestockItem
 
         //Flowers
         public Wildflower.WildflowerType TypeOfWildFlower;
+
+		//JamJar
+		public Quality JamQuality;
+		public bool JamIsPreserve;
 
         public RestockInfo()
         {
