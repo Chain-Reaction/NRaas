@@ -391,7 +391,7 @@ namespace ani_StoreRestockItem
 
 				break;
 			case ItemType.JamJar:
-				JamJar jamJar = GlobalFunctions.CreateObjectOutOfWorld ("canningJarJam") as JamJar;
+				JamJar jamJar = GlobalFunctions.CreateObjectOutOfWorld ("canningJarJam", ProductVersion.Store) as JamJar;
 
 				if (jamJar != null) {
 					Type tInfo = jamJar.GetType ();
