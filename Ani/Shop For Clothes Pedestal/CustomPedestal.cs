@@ -555,9 +555,7 @@ namespace Sims3.Gameplay.Objects.Miscellaneous.Shopping.ani_ClothingPedestal
                         throw new Exception("ChangeOutfit:  sim doesn't have a description!");
                     }
 
-                    Target.PedestalOutfitsSaveTo(simDesc);
-
-                    CMShopping.PrintMessage(Target.DisplayCategory.ToString());
+                    Target.PedestalOutfitsSaveTo(simDesc);                   
 
                     Household.CreateTouristHousehold();
                     Household.TouristHousehold.AddTemporary(simDesc);
@@ -1769,7 +1767,7 @@ namespace Sims3.Gameplay.Objects.Miscellaneous.Shopping.ani_ClothingPedestal
                     this.AddPedestalOutfit(simDesc.AgeGenderSpecies, category, outfit, j);
                 }
             }
-        }
+        }        
         public void ChangeOutfit()
         {
             if (this.Mannequin != null)
@@ -1784,10 +1782,9 @@ namespace Sims3.Gameplay.Objects.Miscellaneous.Shopping.ani_ClothingPedestal
                 SimOutfit displayOutfit = this.GetDisplayOutfit();
                 if (displayOutfit != null && displayOutfit.IsValid)
                 {
-                    VisualEffect.FireOneShotEffect(CustomPedestal.kObjectSwapEffectName, this, Slot.FXJoint_0, VisualEffect.TransitionType.SoftTransition);
-                    this.Mannequin.ApplyUniform(displayOutfit);
+                    VisualEffect.FireOneShotEffect(CustomPedestal.kObjectSwapEffectName, this, Slot.FXJoint_0, VisualEffect.TransitionType.SoftTransition);                   
+                    this.ApplyUniform(displayOutfit);                 
                     this.SetRandomPose();
-
                 }
             }
         }
@@ -1809,10 +1806,56 @@ namespace Sims3.Gameplay.Objects.Miscellaneous.Shopping.ani_ClothingPedestal
                 if (displayOutfit != null && displayOutfit.IsValid)
                 {
                     VisualEffect.FireOneShotEffect(CustomPedestal.kObjectSwapEffectName, this, Slot.FXJoint_0, VisualEffect.TransitionType.SoftTransition);
-                    this.Mannequin.ApplyUniform(displayOutfit);
+                    this.ApplyUniform(displayOutfit);
                     this.SetRandomPose();
                 }
             }
+        }
+        public void ApplyUniform(SimOutfit uniform)
+        {
+            if (this.Mannequin == null)
+            {
+                return;
+            }            
+
+            CASLogic.GetSingleton().IsEditingMannequin = true;
+            SimOutfit outfit = new SimOutfit(this.Mannequin.mBaseOutfit.Key);
+            SimBuilder builder = new SimBuilder
+            {
+                UseCompression = true,
+                Age = uniform.AgeGenderSpecies
+            };
+            OutfitUtils.SetAutomaticModifiers(builder);            
+            OutfitUtils.SetOutfit(builder, outfit, null);
+            OutfitUtils.SetOutfit(builder, uniform, null, ulong.MaxValue);
+
+            CASPart defaultHair = new CASPart();
+            foreach (CASPart part in outfit.Parts)
+            {
+                if (part.BodyType == BodyTypes.Hair)
+                {                    
+                    defaultHair = part;
+                    break;
+                }
+            }
+            bool dupeHair = false;
+            foreach (CASPart part in builder.mCASParts.Values)
+            {
+                if (part.BodyType == BodyTypes.Hair && part.Key != defaultHair.Key)
+                {                    
+                    dupeHair = true;
+                }
+            }
+            if (dupeHair)
+            {                
+                builder.RemovePart(defaultHair);
+            }
+
+            ResourceKey key = new ResourceKey(0x4ac87ccebdd2b1a2L, 0x354796a, 0);
+            builder.SkinTone = key;
+            builder.SkinToneIndex = 0.28f;
+            CASUtils.SetOutfitInGameObject(builder.CacheOutfit(string.Format("RebuiltMannequin_{0}_{1}", builder.SkinToneIndex, builder.SkinToneIndex)), this.Mannequin.Proxy.ObjectId);
+            CASLogic.GetSingleton().IsEditingMannequin = false;
         }
         public bool IsAvailableDisplayCategory(CASAgeGenderFlags ags, OutfitCategories category)
         {

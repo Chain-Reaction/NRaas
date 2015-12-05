@@ -52,6 +52,67 @@ namespace NRaas.WoohooerSpace.Interactions
             Singleton = new Definition();
         }
 
+        public override bool InRabbitHole()
+        {
+            base.Target.ClearAmbientSounds(base.Target);
+            if (GameUtils.IsFutureWorld())
+            {
+                base.Target.AddAmbientSound("rhole_hospital_future_lp");
+            }
+            else
+            {
+                base.Target.AddAmbientSound("rhole_hospital_loop");
+            }
+
+            base.Target.AddAmbientSound("rhole_hospital_future_oneshot");
+            base.Target.StartAmbientSounds(base.Actor, base.Target);
+            if (SimDescription.Find(this.mTargetDescription) != null)
+            {
+                Sim createdSim = SimDescription.Find(this.mTargetDescription).CreatedSim;
+                if (base.SelectedObjects.Count >= 1)
+                {
+                    while (!base.Actor.WaitForExitReason(Sim.kWaitForExitReasonDefaultTime, ExitReason.CancelExternal))
+                    {
+                        if (((createdSim != null) && (createdSim.CurrentInteraction is Hospital.BeForcedToMakeBabyWith)) && ((createdSim.SimInRabbitHolePosture && (base.SimFollowers != null)) && base.SimFollowers.Contains(createdSim)))
+                        {
+                            break;
+                        }
+                        if (((createdSim != null) && (createdSim.InteractionQueue != null)) && (createdSim.InteractionQueue.GetNumVisibleInteractions() == 0))
+                        {
+                            return false;
+                        }
+                    }
+                    if (base.Actor.HasExitReason(ExitReason.CancelExternal))
+                    {
+                        createdSim.AddExitReason(~(ExitReason.Replan | ExitReason.MidRoutePushRequested | ExitReason.ObjectStateChanged | ExitReason.PlayIdle | ExitReason.MaxSkillPointsReached));
+                        return false;
+                    }
+                    base.BeginCommodityUpdates();
+                    base.StartStages();
+                    Definition interactionDefinition = base.InteractionDefinition as Definition;
+                    Common.Notify("Customize: " + interactionDefinition.customize.ToString());
+                    if (interactionDefinition.customize && (!CustomizeBabyDNAModel.ShowCreateCustomizeBabyDNAUIDialog(base.Actor) || base.Actor.HasExitReason(ExitReason.CancelExternal)))
+                    {
+                        base.Actor.AddExitReason(~(ExitReason.Replan | ExitReason.MidRoutePushRequested | ExitReason.ObjectStateChanged | ExitReason.PlayIdle | ExitReason.MaxSkillPointsReached));
+                        createdSim.AddExitReason(~(ExitReason.Replan | ExitReason.MidRoutePushRequested | ExitReason.ObjectStateChanged | ExitReason.PlayIdle | ExitReason.MaxSkillPointsReached));
+                        return false;
+                    }
+                    bool succeeded = base.DoLoop(~(ExitReason.Replan | ExitReason.MidRoutePushRequested | ExitReason.ObjectStateChanged | ExitReason.PlayIdle | ExitReason.MaxSkillPointsReached));
+                    base.EndCommodityUpdates(succeeded);
+                    if (base.Actor.HasExitReason(ExitReason.CancelExternal))
+                    {
+                        createdSim.AddExitReason(~(ExitReason.Replan | ExitReason.MidRoutePushRequested | ExitReason.ObjectStateChanged | ExitReason.PlayIdle | ExitReason.MaxSkillPointsReached));
+                        return false;
+                    }
+                    this.MakeBaby(base.Actor.SimDescription, SimDescription.Find(this.mTargetDescription), interactionDefinition.customize);
+                    this.mBabyIsMade = true;
+                    base.Actor.Household.ModifyFamilyFunds(-kCostOfBabyMaking);
+                    return succeeded;
+                }
+            }
+            return false;
+        }
+
         public class Definition : Hospital.CreateBabyWith.CreateBabyWithDefinition
         {
             public new bool customize;

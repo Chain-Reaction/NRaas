@@ -56,6 +56,11 @@ namespace NRaas.WoohooerSpace.Interactions
 
         public new class Definition : Hospital.CustomizeBabyDNA.Definition
         {
+            public override string GetInteractionName(Sim actor, Hospital target, InteractionObjectPair iop)
+            {
+                return base.GetInteractionName(actor, target, iop);
+            }
+
             public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
             {
                 InteractionInstance result = new CustomizeBabyDNAEx();
