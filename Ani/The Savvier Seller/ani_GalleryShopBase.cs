@@ -1099,7 +1099,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetBase
                     if (target.Info.RegisterId != ObjectGuid.InvalidObjectGuid)
                         register = CMStoreSet.ReturnRegister(target.Info.RegisterId, target.LotCurrent);
 
-                    if (CMStoreSet.IsStoreOpen(register))
+                    if (!CMStoreSet.IsStoreOpen(register))
                     {
                         greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback("The Shop is Closed");
                         return false;
