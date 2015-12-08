@@ -16,7 +16,7 @@ namespace NRaas.MasterControllerSpace.Sims.Intermediate
 {
     public class MaxMotives : SimFromList, IIntermediateOption
     {
-        static CommodityKind[] sCommodities = new CommodityKind[] { CommodityKind.VampireThirst, CommodityKind.Hygiene, CommodityKind.Bladder, CommodityKind.Energy, CommodityKind.Fun, CommodityKind.Hunger, CommodityKind.Social, CommodityKind.HorseThirst, CommodityKind.HorseExercise, CommodityKind.CatScratch, CommodityKind.DogDestruction, CommodityKind.AlienBrainPower };
+        static CommodityKind[] sCommodities = new CommodityKind[] { CommodityKind.VampireThirst, CommodityKind.Hygiene, CommodityKind.Bladder, CommodityKind.Energy, CommodityKind.Fun, CommodityKind.Hunger, CommodityKind.Social, CommodityKind.HorseThirst, CommodityKind.HorseExercise, CommodityKind.CatScratch, CommodityKind.DogDestruction, CommodityKind.AlienBrainPower, CommodityKind.Maintenence, CommodityKind.BatteryPower };
 
         public override string GetTitlePrefix()
         {

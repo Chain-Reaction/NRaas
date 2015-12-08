@@ -55,8 +55,8 @@ namespace NRaas.WoohooerSpace.Interactions
             {
                 for (int i = obj.Interactions.Count - 1; i >= 0; i--)
                 {
-                    if (obj.Interactions[i].InteractionDefinition is YouShould.Definition)
-                    {
+                    if (obj.Interactions[i].InteractionDefinition.GetType() == typeof(YouShould.Definition))
+                    {                        
                         obj.Interactions.RemoveAt(i);
                     }
                 }

@@ -67,9 +67,13 @@ namespace NRaas.CommonSpace.Helpers
                 return;
             }
 
+            // MC adds swimwear for toddlers
             if (!ths.AcceptableClothingCategoryForAge(category))
             {
-                return;
+                if (ths.SimDescription.Toddler && category != OutfitCategories.Swimwear)
+                {
+                    return;
+                }                
             }
 
             if (ths.SimDescription.OccultManager.DisallowClothesChange())
@@ -95,7 +99,10 @@ namespace NRaas.CommonSpace.Helpers
         {
             if (!ths.AcceptableClothingCategoryForAge(category))
             {
-                return false;
+                if (ths.SimDescription.Toddler && category != OutfitCategories.Swimwear)
+                {
+                    return false;
+                }
             }
 
             if (!ths.SwitchToOutfitTraitTest(Sim.ClothesChangeReason.Force, ref category))
