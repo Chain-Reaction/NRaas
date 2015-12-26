@@ -78,7 +78,7 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             List<SimSelection.ICriteria> items = new List<SimSelection.ICriteria>();
             
             foreach(SavedFilter filter in NRaas.MasterController.Settings.mFilters)
-            {
+            {                
                 items.Add(new Item(filter));
             }
 
@@ -138,7 +138,7 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
                 }
 
                 return true;
-            }
+            }            
         }
     }
 }

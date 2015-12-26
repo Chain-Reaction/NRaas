@@ -73,14 +73,28 @@ namespace NRaas.CommonSpace.Selection
 
         public class CriteriaSelection : ProtoSelection<ICriteria>
         {
+            string mNamespace = string.Empty;
+
             public CriteriaSelection(string title, ICollection<ICriteria> criteria)
                 : base(Common.Localize("SimSelection:CriteriaTitle"), title, criteria)
             {
+                AddColumn(new NameColumn());                
+            }
+            public CriteriaSelection(string title, ICollection<ICriteria> criteria, string callingMod)
+                : base(Common.Localize("SimSelection:CriteriaTitle"), title, criteria)
+            {
                 AddColumn(new NameColumn());
+                mNamespace = callingMod;
             }
 
             protected override bool AllowRow(ICriteria item)
-            {
+            {                
+                // remove filters set for mods from MC listing
+                if (mNamespace == string.Empty && item.Name.StartsWith("nraas") && !Common.kDebugging) return false;
+
+                // remove filters from mods that didn't create them
+                if (((item.Name.StartsWith("nraas") && !item.Name.Contains(mNamespace)) || (mNamespace != string.Empty && !item.Name.StartsWith("nraas") && item.GetType().ToString().Contains("SavedFilter"))) && !Common.kDebugging) return false;                
+
                 return item.AllowCriteria();
             }
 

@@ -1,4 +1,5 @@
-﻿using NRaas.CommonSpace.Options;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Options;
 using NRaas.TaggerSpace.Helpers;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -28,6 +29,11 @@ namespace NRaas.TaggerSpace.Options.FilterOptions
 
                 Tagger.InitTags(false);
             }
+        }
+
+        protected override bool Allow(GameHitParameters<GameObject> parameters)
+        {
+            return FilterHelper.GetFilters().Count > 0;
         }
 
         public override string GetTitlePrefix()

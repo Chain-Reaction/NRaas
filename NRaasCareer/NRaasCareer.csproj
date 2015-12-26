@@ -305,6 +305,7 @@
     <Compile Include="CareerSpace\Interactions\AttendBudgetClassEx.cs" />
     <Compile Include="CareerSpace\Interactions\AttendResumeWritingAndInterviewTechniquesClassEx.cs" />
     <Compile Include="CareerSpace\Interactions\GoToOrientationEx.cs" />
+    <Compile Include="CareerSpace\Interactions\SolicitGigEx.cs" />
     <Compile Include="CareerSpace\Interactions\UseLaptopHereEx.cs" />
     <Compile Include="CareerSpace\Interactions\UseBusinessPlannerEx.cs" />
     <Compile Include="CareerSpace\Interactions\EnrollInUniversityEx.cs" />
@@ -333,7 +334,6 @@
     <Compile Include="CareerSpace\Interfaces\ICoworkerPool.cs" />
     <Compile Include="CareerSpace\Interactions\CallToQuitWorkEx.cs" />
     <Compile Include="CareerSpace\Interactions\Enroll.cs" />
-    <Compile Include="CareerSpace\Interactions\Test.cs" />
     <Compile Include="CareerSpace\Interactions\GiveLectureInAtRabbitHole.cs" />
     <Compile Include="CareerSpace\Metrics\MetricMusicSkill.cs" />
     <Compile Include="CareerSpace\Options\Assassination\Aggression\AggressionPerUnconfirmedSetting.cs" />

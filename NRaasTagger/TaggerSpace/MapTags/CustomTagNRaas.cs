@@ -123,15 +123,7 @@ namespace NRaas.TaggerSpace.MapTags
         {
             get
             {
-                return this.LotAddress;
-                /*
-                Lot target = this.Target as Lot;
-                if (target != null)
-                {
-                    return target.Name;
-                }
-                return string.Empty;
-                 */
+                return this.LotAddress;                
             }
         }
 

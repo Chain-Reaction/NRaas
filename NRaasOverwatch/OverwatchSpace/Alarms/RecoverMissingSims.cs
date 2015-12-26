@@ -17,7 +17,7 @@ using System.Text;
 namespace NRaas.OverwatchSpace.Alarms
 {
     public class RecoverMissingSims : AlarmOption
-    {
+    {        
         public RecoverMissingSims()
         { }
 
@@ -134,7 +134,7 @@ namespace NRaas.OverwatchSpace.Alarms
                 foreach (Household house in houses)
                 {
                     msg += Perform(house, prompt);
-                }
+                }                
 
                 if ((msg != null) && (msg != ""))
                 {
@@ -145,6 +145,6 @@ namespace NRaas.OverwatchSpace.Alarms
             {
                 Common.Exception(Name, exception);
             }
-        }
+        }        
     }
 }

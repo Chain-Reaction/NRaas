@@ -110,11 +110,17 @@ namespace NRaas.TaggerSpace
 
         public Dictionary<SimType, uint> mSimTypeColorSettings = new Dictionary<SimType, uint>() { { SimType.Service, 4282270546 }, { SimType.Dead, 4282400567 }, { SimType.Tourist, 4293974031 }, { SimType.Mummy, 4279965975 }, { SimType.SimBot, 4288241419 }, { SimType.Human, 4292334804 }, { SimType.Vampire, 4289400598 }, { SimType.ImaginaryFriend, 4288661481 }, { SimType.Genie, 4284752566 }, { SimType.Fairy, 4280464996 }, { SimType.Werewolf, 4286404647 }, { SimType.Witch, 4289439532 }, { SimType.Zombie, 4279251225 }, { SimType.BoneHilda, 4281809464 }, { SimType.Alien, 4285119617 }, { SimType.Hybrid, 4291420956 }, { SimType.Plantsim, 4279602504 }, { SimType.Mermaid, 4278412238 }, { SimType.Plumbot, 4287466119 }, { SimType.Deer, 4288706379 }, { SimType.WildHorse, 4284736678 }, { SimType.Role, 4293157852 }, { SimType.Dog, 4283519310 }, { SimType.Cat, 4292137620 }, { SimType.Stray, 4285889909 }, { SimType.Horse, 4287986488 }, { SimType.Raccoon, 4291216054 } };
 
+        // I can't figure out why EA won't save these blasted things...
+        public Dictionary<string, uint> mSimTypeColorSettingsSave = new Dictionary<string, uint>();
+
         public Dictionary<TagDataHelper.TagOrientationType, uint> mSimOrientationColorSettings = new Dictionary<TagDataHelper.TagOrientationType, uint>() { { TagDataHelper.TagOrientationType.Asexual, 4288914339 }, { TagDataHelper.TagOrientationType.Bicurious, 4294954048 }, { TagDataHelper.TagOrientationType.Bisexual, 4288368534 }, { TagDataHelper.TagOrientationType.Gay, 4294937600 }, { TagDataHelper.TagOrientationType.Straight, 4278219973 }, { TagDataHelper.TagOrientationType.Undecided, 4291216054 } };
 
         public Dictionary<SimType, uint> mSimStatusColorSettings = new Dictionary<SimType, uint>() { { SimType.Pregnant, 4278647006 }, { SimType.Single, 4294444578 }, { SimType.Partnered, 4293621778 }, { SimType.Married, 4294636052 } };
 
-        public Dictionary<TagDataHelper.TagDataType, bool> mTagDataSettings = new Dictionary<TagDataHelper.TagDataType, bool>() { { TagDataHelper.TagDataType.LifeStage, true }, { TagDataHelper.TagDataType.AgeInDays, true }, { TagDataHelper.TagDataType.Orientation, true }, { TagDataHelper.TagDataType.Mood, true }, { TagDataHelper.TagDataType.Cash, true }, { TagDataHelper.TagDataType.Debt, true }, { TagDataHelper.TagDataType.NetWorth, true }, { TagDataHelper.TagDataType.CurrentInteraction, true }, { TagDataHelper.TagDataType.DaysTillNextStage, false }, { TagDataHelper.TagDataType.Job, false }, { TagDataHelper.TagDataType.MotiveInfo, false }, { TagDataHelper.TagDataType.Occult, false }, { TagDataHelper.TagDataType.PartnerInfo, false }, { TagDataHelper.TagDataType.PersonalityInfo, true }, { TagDataHelper.TagDataType .PregnancyInfo, false } };
+        // I can't figure out why EA won't save these blasted things...
+        public Dictionary<string, uint> mSimStatusColorSettingsSave = new Dictionary<string, uint>();
+
+        public Dictionary<TagDataHelper.TagDataType, bool> mTagDataSettings = new Dictionary<TagDataHelper.TagDataType, bool>() { { TagDataHelper.TagDataType.LifeStage, true }, { TagDataHelper.TagDataType.AgeInDays, true }, { TagDataHelper.TagDataType.Orientation, true }, { TagDataHelper.TagDataType.Mood, true }, { TagDataHelper.TagDataType.Cash, true }, { TagDataHelper.TagDataType.Debt, true }, { TagDataHelper.TagDataType.NetWorth, true }, { TagDataHelper.TagDataType.CurrentInteraction, true }, { TagDataHelper.TagDataType.DaysTillNextStage, false }, { TagDataHelper.TagDataType.Job, false }, { TagDataHelper.TagDataType.MotiveInfo, false }, { TagDataHelper.TagDataType.Occult, false }, { TagDataHelper.TagDataType.PartnerInfo, false }, { TagDataHelper.TagDataType.PersonalityInfo, true }, { TagDataHelper.TagDataType .PregnancyInfo, false }, { TagDataHelper.TagDataType.LifetimeHappiness, false }, { TagDataHelper.TagDataType.LifetimeWant, false }, { TagDataHelper.TagDataType.Zodiac, false } };
 
         public List<ulong> mTaggedSims = new List<ulong>();
 
@@ -125,7 +131,13 @@ namespace NRaas.TaggerSpace
 
         public Dictionary<ulong, List<string>> mCustomSimTitles = new Dictionary<ulong, List<string>>();
 
-        protected bool mDebugging = false;        
+        public Dictionary<Lot.MetaAutonomyType, MetaAutonomySettingKey> mMetaAutonomySettings = new Dictionary<Lot.MetaAutonomyType, MetaAutonomySettingKey>();        
+
+        protected bool mDebugging = false;
+
+        public PersistedSettings()
+        {            
+        }
 
         public bool TypeHasCustomSettings(uint LotType)
         {
@@ -176,7 +188,7 @@ namespace NRaas.TaggerSpace
             return false;
         }
 
-        public void ValidateActiveFilters()
+        public void ValidateActiveFilters(bool worldLoad)
         {
             foreach (string filter in new List<string>(mCurrentLotFilters))
             {
@@ -191,6 +203,32 @@ namespace NRaas.TaggerSpace
                 if (!FilterHelper.IsValidFilter(filter))
                 {
                     mCurrentSimFilters.Remove(filter);
+                }
+            }
+
+            if (worldLoad)
+            {
+                // I still have no idea why EA eats these but we'll use this hacky work around for now
+                foreach (KeyValuePair<string, uint> pair in Tagger.Settings.mSimTypeColorSettingsSave)
+                {
+                    SimType newValue;
+                    ParserFunctions.TryParseEnum<SimType>(pair.Key, out newValue, SimType.None);
+
+                    if (newValue != SimType.None)
+                    {
+                        Tagger.Settings.mSimTypeColorSettings[newValue] = pair.Value;
+                    }
+                }
+
+                foreach (KeyValuePair<string, uint> pair in Tagger.Settings.mSimStatusColorSettingsSave)
+                {
+                    SimType newValue;
+                    ParserFunctions.TryParseEnum<SimType>(pair.Key, out newValue, SimType.None);
+
+                    if (newValue != SimType.None)
+                    {
+                        Tagger.Settings.mSimStatusColorSettings[newValue] = pair.Value;
+                    }
                 }
             }
         }
@@ -298,6 +336,109 @@ namespace NRaas.TaggerSpace
                 }
             }
         }
+
+        public MetaAutonomySettingKey GetMASettings(Lot.MetaAutonomyType type)
+        {
+            return GetMASettings(type, true);
+        }
+
+        public MetaAutonomySettingKey GetMASettings(Lot.MetaAutonomyType type, bool returnDefault)
+        {
+            MetaAutonomySettingKey key;
+            if (mMetaAutonomySettings.TryGetValue(type, out key))
+            {
+                return key;
+            }
+
+            if (returnDefault)
+            {
+                return new MetaAutonomySettingKey(type).PopulateWithDefaults();
+            }
+
+            return null;
+        }        
+
+        public void AddOrUpdateMASettings(Lot.MetaAutonomyType type, MetaAutonomySettingKey settings)
+        {
+            if (GetMASettings(type, false) != null)
+            {
+                mMetaAutonomySettings[type] = settings;
+            }
+            else
+            {
+                mMetaAutonomySettings.Add(type, settings);
+            }            
+        }
+
+        /*
+        public MetaAutonomySettingKey GetMASettings(MetaAutonomyVenueType type, uint customType)
+        {
+            if (type == MetaAutonomyVenueType.None)
+            {
+                return GetMASettingsForCustomType(customType, true);
+            }
+
+            return GetMASettingsForEAType(type, true);
+        }
+
+        public MetaAutonomySettingKey GetMASettingsForEAType(MetaAutonomyVenueType type, bool returnDefault)
+        {
+            MetaAutonomySettingKey key;
+            if (mEAMetaAutonomySettings.TryGetValue(type, out key))
+            {
+                return key;
+            }
+
+            if (returnDefault)
+            {
+                return new MetaAutonomySettingKey(type).PopulateWithDefaults();
+            }
+
+            return null;
+        }
+
+        public MetaAutonomySettingKey GetMASettingsForCustomType(uint type, bool returnDefault)
+        {
+            MetaAutonomySettingKey key;
+            if (mCustomMetaAutonomySettings.TryGetValue(type, out key))
+            {
+                return key;
+            }
+
+            if (returnDefault)
+            {
+                return new MetaAutonomySettingKey(type).PopulateWithDefaults();
+            }
+
+            return null;
+        }
+
+        public void AddOrUpdateMASettings(MetaAutonomyVenueType type, uint customType, MetaAutonomySettingKey settings)
+        {
+            if (type != MetaAutonomyVenueType.None)
+            {
+                if (GetMASettingsForEAType(type, false) != null)
+                {
+                    mEAMetaAutonomySettings[type] = settings;
+                }
+                else
+                {
+                    mEAMetaAutonomySettings.Add(type, settings);
+                }
+            }
+            else
+            {
+                if (GetMASettingsForCustomType(customType, false) != null)
+                {
+                    mCustomMetaAutonomySettings[customType] = settings;
+                }
+                else
+                {
+                    mCustomMetaAutonomySettings.Add(customType, settings);
+                }
+            }
+        }
+         */
 
         public bool Debugging
         {

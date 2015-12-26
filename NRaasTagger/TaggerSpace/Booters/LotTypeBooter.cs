@@ -5,6 +5,7 @@ using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Academics;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
+using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
@@ -36,7 +37,9 @@ namespace NRaas.TaggerSpace.Booters
             string name = row.GetString("TypeName");
             string icon = row.GetString("Icon");
             string color = row.GetString("ColorHEX");
-            bool business = row.GetBool("isBusinessType");            
+            bool business = row.GetBool("isBusinessType");
+            int openHour = row.GetInt("OpenHour");
+            int closeHour = row.GetInt("CloseHour");
 
             try
             {
@@ -55,12 +58,16 @@ namespace NRaas.TaggerSpace.Booters
             data.name = name;
             data.icon = icon;
             data.isBusinessType = business;
+            data.openHour = openHour;
+            data.closeHour = closeHour;
             data.SetColorHex(color);
 
             if (!Tagger.staticData.ContainsKey(data.GUID))
             {                
                 Tagger.staticData.Add(data.GUID, data);
                 EnumInjection.InjectEnums<CommercialLotSubType>(new string[] { name }, new object[] { data.GUID }, false);
+                EnumInjection.InjectEnums<Lot.MetaAutonomyType>(new string[] { name }, new object[] { data.GUID }, false);
+                EnumInjection.InjectEnums<MetaAutonomyVenueType>(new string[] { name }, new object[] { data.GUID }, false); 
             }
         }
     }

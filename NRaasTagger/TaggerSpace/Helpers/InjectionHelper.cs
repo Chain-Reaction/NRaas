@@ -1,9 +1,11 @@
 ﻿using NRaas.CommonSpace.Helpers;
+using NRaas.TaggerSpace.Options;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.MapTags;
 using Sims3.Gameplay.RealEstate;
+using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
@@ -63,6 +65,9 @@ namespace NRaas.TaggerSpace.Helpers
 
         // This isn't used currently because EA hard coded the function that matches this type to the lot type...
         // but it's here in case I have a lightbulb moment
+        // At this time this still isn't used because of the above but I inject bar data cause the code still
+        // honors the hours with that. The other mechnisms (like pushing sims to the lots) is handled via GoHere and a replacement
+        // of the CalculateScore on VisitCommunityLot
         public static void InjectMetaAutonomyVenueType(string str, string icon, string maptag)
         {
             MetaAutonomyVenueType type;
@@ -174,6 +179,29 @@ namespace NRaas.TaggerSpace.Helpers
                 }
 
                 RealEstateData.sDictionary.Add(type, data);
+            }
+        }
+
+        // this is injected even for lots that aren't a bar to take advantage of the core and make the game honor
+        // open/close times for roles and such
+        public static void InjectBarData(string varname, TagStaticData tData)
+        {
+            Lot.MetaAutonomyType type;
+            if (ParserFunctions.TryParseEnum<Lot.MetaAutonomyType>(varname, out type, Lot.MetaAutonomyType.None))
+            {
+                XmlDbTable table;
+                XmlDbData data = XmlDbData.ReadData("Bars");
+                if (data.Tables.TryGetValue("Venues", out table))
+                {
+                    XmlDbRow row = table.Rows[1];
+                    Bartending.BarData rowData = new Bartending.BarData(row);
+                    rowData.mHourOpen = tData.openHour;
+                    rowData.mHourClose = tData.closeHour;
+                    if (!Bartending.sData.ContainsKey(type))
+                    {
+                        Bartending.sData[type] = rowData;
+                    }
+                }                
             }
         }
     }

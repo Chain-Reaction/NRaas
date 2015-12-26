@@ -1,4 +1,6 @@
 ﻿using NRaas.CommonSpace;
+using NRaas.CommonSpace.Options;
+using NRaas.CommonSpace.Selection;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.CAS;
@@ -15,8 +17,11 @@ namespace NRaas.CommonSpace.Helpers
     public class FilterHelper : Common.IWorldLoadFinished
     {
         static Common.MethodStore sGetFilters = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetAllFilters", new Type[] { typeof(bool) });
+        static Common.MethodStore sGetFiltersAsCriteria = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetAllFiltersAsCriteria", new Type[] { typeof(bool) });
         static Common.MethodStore sGetSimsMatchingFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSimsMatchingFilter", new Type[] { typeof(List<object>) });
         static Common.MethodStore sGetSingleFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSingleFilter", new Type[] { typeof(string) });
+        static Common.MethodStore sSpawnCreateFilterDialog = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "CreateFilter", new Type[] { typeof(string) });
+        static Common.MethodStore sSpawnDeleteFilterDialog = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "DeleteFilter", new Type[] { typeof(string) });
 
         [Tunable, TunableComment("How long a filter should have it's results cached (in Sim minutes)")]
         public static int kFilterCacheTime = 120;
@@ -109,6 +114,49 @@ namespace NRaas.CommonSpace.Helpers
             }
 
             return results;
+        }
+
+        // an idea for another time
+        public static Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria> GetFiltersAsCriteria()
+        {
+            Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria> results = new Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria>();
+            if (sGetFilters.Valid)
+            {
+                results = sGetFilters.Invoke<Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria>>(new object[] { true });
+            }
+
+            return results;
+        }
+
+        public static OptionResult CreateFilter()
+        {
+            OptionResult result = OptionResult.Unset;
+            if (sSpawnCreateFilterDialog.Valid)
+            {
+                // will never return a successful result due to dialog weirdness described in MasterController.cs
+                string mNamespace = VersionStamp.sNamespace.ToLower().Replace(".", "");                
+                result = sSpawnCreateFilterDialog.Invoke<OptionResult>(new object[] { mNamespace });
+            }
+
+            return result;
+        }
+
+        public static OptionResult DeleteFilter()
+        {
+            OptionResult result = OptionResult.Unset;
+            if (sSpawnDeleteFilterDialog.Valid)
+            {
+                string mNamespace = VersionStamp.sNamespace.ToLower().Replace(".", "");
+                result = sSpawnDeleteFilterDialog.Invoke<OptionResult>(new object[] { mNamespace });
+            }
+
+            if (result != OptionResult.Failure)
+            {
+                // delayed to let the user complete the exchange via the alarm on the other end
+                new Common.AlarmTask(5, TimeUnit.Minutes, UpdateFilters); 
+            }
+
+            return result;
         }
 
         public static List<ulong> GetSimMatchingFilter(string filter)
@@ -410,6 +458,11 @@ namespace NRaas.CommonSpace.Helpers
             }
         }
 
+        public static string StripNamespace(string filter)
+        {            
+            return filter.StartsWith("nraas") && filter.Contains(".") ? filter.Substring(filter.IndexOf('.') + 1) : filter;
+        }
+
         [Persistable]
         public class SimFilter
         {
@@ -467,6 +520,14 @@ namespace NRaas.CommonSpace.Helpers
                     {
                         sims.Remove(sim);
                     }
+                }
+            }
+
+            public string DisplayName
+            {
+                get
+                {
+                    return StripNamespace(name);
                 }
             }
         }

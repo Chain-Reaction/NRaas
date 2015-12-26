@@ -31,11 +31,11 @@ namespace NRaas.CommonSpace.Booters
         readonly static BooterLogger sLogger = new BooterLogger();
 
         public static void AddTrace(string msg)
-        {
+        {            
             sLogger.PrivateAddTrace(msg);
         }
         public static void AddError(string msg)
-        {
+        {            
             sLogger.PrivateAddError(msg);
         }
 

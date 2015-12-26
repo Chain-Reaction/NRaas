@@ -29,12 +29,13 @@ namespace NRaas.TaggerSpace.Options
 
         public override void SetImportValue(string value)
         {
+            //Common.Notify("Set import value");
             Value = uint.Parse(value, System.Globalization.NumberStyles.HexNumber);
         }
 
         protected override OptionResult Run(GameHitParameters<TTarget> parameters)
         {
-            string text = StringInputDialog.Show(Name, GetPrompt(), Value.ToString("X"));
+            string text = StringInputDialog.Show(Name, GetPrompt(), this.DisplayValue);
             if (string.IsNullOrEmpty(text)) return OptionResult.Failure;
 
             uint value = 0;
@@ -51,7 +52,7 @@ namespace NRaas.TaggerSpace.Options
                 return OptionResult.Failure;
             }
 
-            Value = Validate(value);
+            Value = Validate(value);            
 
             Tagger.InitTags(false);
 

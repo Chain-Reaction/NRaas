@@ -18,6 +18,8 @@ namespace NRaas.MasterControllerSpace.Settings
 {
     public class DeleteFilterSetting : FilterSettingOption
     {
+        string callingMod = string.Empty;
+
         public override string GetTitlePrefix()
         {
             return "DeleteFilterSetting";
@@ -26,6 +28,12 @@ namespace NRaas.MasterControllerSpace.Settings
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
             return (NRaas.MasterController.Settings.mFilters.Count > 0);
+        }
+
+        public OptionResult RunExternal(string mNamespace)
+        {
+            callingMod = mNamespace;
+            return this.Run(null);
         }
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
@@ -37,7 +45,7 @@ namespace NRaas.MasterControllerSpace.Settings
                 filters.Add(new SavedFilter.Item(filter));
             }
 
-            SimSelection.ICriteria selection = new SimSelection.CriteriaSelection(Name, filters).SelectSingle();
+            SimSelection.ICriteria selection = new SimSelection.CriteriaSelection(Name, filters, callingMod).SelectSingle();
             if (selection == null) return OptionResult.Failure;
 
             Delete(selection.Name);

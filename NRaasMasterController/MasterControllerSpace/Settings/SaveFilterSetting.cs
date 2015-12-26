@@ -20,6 +20,8 @@ namespace NRaas.MasterControllerSpace.Settings
 {
     public class SaveFilterSetting : FilterSettingOption, IPersistence
     {
+        string callingMod = string.Empty;
+
         public override string GetTitlePrefix()
         {
             return "SaveFilterSetting";
@@ -38,6 +40,13 @@ namespace NRaas.MasterControllerSpace.Settings
         public string PersistencePrefix
         {
             get { return GetTitlePrefix(); }
+        }
+
+        public OptionResult RunExternal(string callingMod)
+        {
+            this.callingMod = callingMod;
+            if (Sim.ActiveActor == null) return OptionResult.Failure;
+            return this.Run(new GameHitParameters<GameObject>(Sim.ActiveActor, Sim.ActiveActor, GameObjectHit.NoHit));
         }
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
@@ -98,6 +107,11 @@ namespace NRaas.MasterControllerSpace.Settings
                 if (string.IsNullOrEmpty(name))
                 {
                     return OptionResult.Failure;
+                }
+
+                if (callingMod != string.Empty)
+                {
+                    name = callingMod + "." + name;
                 }
 
                 if (Find(name) == null)

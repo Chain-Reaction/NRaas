@@ -188,6 +188,7 @@
     <Compile Include="TaggerSpace\Booters\LotTypeBooter.cs" />
     <Compile Include="TaggerSpace\Helpers\InjectionHelper.cs" />
     <Compile Include="TaggerSpace\Helpers\MapTagHelper.cs" />
+    <Compile Include="TaggerSpace\Helpers\MetaAutonomyHelper.cs" />
     <Compile Include="TaggerSpace\Helpers\TagDataHelper.cs" />
     <Compile Include="TaggerSpace\Interactions\CityHallInteraction.cs" />
     <Compile Include="TaggerSpace\Interactions\PrimaryInteraction.cs" />
@@ -227,6 +228,8 @@
     <Compile Include="TaggerSpace\Options\CustomTitles\RemoveTitleListingOption.cs" />
     <Compile Include="TaggerSpace\Options\DebuggingSetting.cs" />
     <Compile Include="TaggerSpace\Options\FilterListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\CreateFilterOption.cs" />
+    <Compile Include="TaggerSpace\Options\FilterOptions\DeleteFilterOption.cs" />
     <Compile Include="TaggerSpace\Options\FilterOptions\FilterBaseOption.cs" />
     <Compile Include="TaggerSpace\Options\FilterOptions\FilterCacheTimeOption.cs" />
     <Compile Include="TaggerSpace\Options\FilterOptions\FilterOption.cs" />
@@ -242,6 +245,12 @@
     <Compile Include="TaggerSpace\Options\ICityHallOption.cs" />
     <Compile Include="TaggerSpace\Options\ISimOption.cs" />
     <Compile Include="TaggerSpace\Options\LotTagsSetting.cs" />
+    <Compile Include="TaggerSpace\Options\MetaAutonomyOptions\HourCloseOption.cs" />
+    <Compile Include="TaggerSpace\Options\MetaAutonomyOptions\HourOpenOption.cs" />
+    <Compile Include="TaggerSpace\Options\MetaAutonomyOptions\IMATuningOption.cs" />
+    <Compile Include="TaggerSpace\Options\MetaAutonomyOptions\ListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\MetaAutonomyOptions\MetaAutonomyTuningListingOption.cs" />
+    <Compile Include="TaggerSpace\Options\MetaAutonomySettingKey.cs" />
     <Compile Include="TaggerSpace\Options\ModifyCustomTitles.cs" />
     <Compile Include="TaggerSpace\Options\OptionsListingOption.cs" />
     <Compile Include="TaggerSpace\Options\OrientationTags\ColorSetting.cs" />

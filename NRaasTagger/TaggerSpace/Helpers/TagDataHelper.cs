@@ -4,6 +4,7 @@ using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
+using Sims3.Gameplay.DreamsAndPromises;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Objects.Register;
 using Sims3.Gameplay.Situations;
@@ -65,7 +66,10 @@ namespace NRaas.TaggerSpace.Helpers
             Mood,
             Job,
             Orientation,
-            AgeInYears
+            AgeInYears,
+            LifetimeHappiness,
+            LifetimeWant,
+            Zodiac
         }
 
         public static Dictionary<ulong, int> moneyGraph = new Dictionary<ulong, int>();
@@ -229,14 +233,27 @@ namespace NRaas.TaggerSpace.Helpers
                 str += " - ";
             }
 
-            if (sim.TeenOrAbove && !sim.IsPet && Tagger.Settings.mTagDataSettings[TagDataType.Orientation])
+            if (!sim.IsPet)
             {
-                str += Common.Localize("SimType:" + TagDataHelper.GetOrientation(sim).ToString());
+                if (sim.TeenOrAbove && Tagger.Settings.mTagDataSettings[TagDataType.Orientation])
+                {
+                    str += Common.Localize("SimType:" + TagDataHelper.GetOrientation(sim).ToString());
+                }
+
+                if (Tagger.Settings.mTagDataSettings[TagDataType.Zodiac] && sim.Zodiac != Zodiac.Unset)
+                {
+                    if (Tagger.Settings.mTagDataSettings[TagDataType.Orientation])
+                    {
+                        str += " ";
+                    }
+
+                    str += Common.LocalizeEAString("Ui/Caption/HUD/KnownInfoDialog:" + sim.Zodiac.ToString());
+                }
             }
 
             if (Tagger.Settings.mTagDataSettings[TagDataType.LifeStage])
             {
-                if (Tagger.Settings.mTagDataSettings[TagDataType.Orientation])
+                if (!sim.IsPet && Tagger.Settings.mTagDataSettings[TagDataType.Orientation] || (Tagger.Settings.mTagDataSettings[TagDataType.Zodiac] && sim.Zodiac != Zodiac.Unset))
                 {
                     str += " ";
                 }
@@ -261,7 +278,7 @@ namespace NRaas.TaggerSpace.Helpers
 
             if (Tagger.Settings.mTagDataSettings[TagDataType.AgeInYears])
             {
-                str += " " + Common.Localize("TagData:Years", sim.IsFemale, new object[] { Math.Round(Aging.GetCurrentAgeInDays(sim as IMiniSimDescription) / Tagger.Settings.TagDataAgeInYearsLength) });
+                str += " " + Common.Localize("TagData:Years", sim.IsFemale, new object[] { Math.Round(Aging.GetCurrentAgeInDays(sim as IMiniSimDescription) / Tagger.Settings.TagDataAgeInYearsLength) +1 });
             }
 
             if (sim.AgingEnabled)
@@ -458,6 +475,37 @@ namespace NRaas.TaggerSpace.Helpers
                     str += sGetDebtAndNetworth.Invoke<string>(new object[] { sim, bit });
                 }
 
+                if (Tagger.Settings.mTagDataSettings[TagDataType.LifetimeWant] && sim.HasLifetimeWish)
+                {
+                    IInitialMajorWish wish = DreamsAndPromisesManager.GetMajorDream(sim.LifetimeWish);
+
+                    string completed = string.Empty;
+                    if (sim.CreatedSim != null && sim.CreatedSim.DreamsAndPromisesManager != null)
+                    {
+                        ActiveDreamNode node = sim.CreatedSim.DreamsAndPromisesManager.LifetimeWishNode;
+                        completed = " " + node.AmountCompleted;
+                    }
+
+                    if(wish != null)
+                    {
+                        str += Common.NewLine + Common.Localize("TagData:LifetimeWantTag", sim.IsFemale, new object[] { wish.GetMajorWishName(sim) }) + completed;
+                    }
+                }
+
+                if(Tagger.Settings.mTagDataSettings[TagDataType.LifetimeHappiness] && sim.LifetimeHappiness > 0)
+                {
+                    if (!Tagger.Settings.mTagDataSettings[TagDataType.LifetimeWant] || (Tagger.Settings.mTagDataSettings[TagDataType.LifetimeWant] && !sim.HasLifetimeWish))
+                    {
+                        str += Common.NewLine;
+                    }
+                    else
+                    {
+                        str += " ";
+                    }
+
+                    str += Common.Localize("TagData:LifetimeHappinessSpendable", sim.IsFemale, new object[] { sim.LifetimeHappiness, sim.SpendableHappiness});
+                }
+
                 if (Tagger.Settings.mTagDataSettings[TagDataType.Job])
                 {
                     if (sim.Occupation != null)
@@ -576,15 +624,15 @@ namespace NRaas.TaggerSpace.Helpers
             {                
                 if (!SimTypes.IsSpecial(val.Value) && val.Value.Household != null)
                 {
-                    Common.Notify("GenerateMoneyGraph: Working on " + val.Value.FullName + "(" + val.Value.SimDescriptionId + ")");                   
+                    //Common.Notify("GenerateMoneyGraph: Working on " + val.Value.FullName + "(" + val.Value.SimDescriptionId + ")");                   
                     int debtnum = 0;
                     if (sGetDebtAndNetworth.Valid)
                     {
-                        Common.Notify("Pulling debt");
+                        //Common.Notify("Pulling debt");
                         string debt = string.Empty;
                         debt = sGetDebtAndNetworth.Invoke<string>(new object[] { val.Value, 1 });
 
-                        Common.Notify("Debt returned: " + debt);
+                        //Common.Notify("Debt returned: " + debt);
 
                         if (debt != string.Empty)
                         {
@@ -592,13 +640,13 @@ namespace NRaas.TaggerSpace.Helpers
                             if (match.Success)
                             {
                                 debtnum = int.Parse(match.Groups[1].Value);
-                                Common.Notify("Found debt: " + debtnum);
+                                //Common.Notify("Found debt: " + debtnum);
                             }
                         }
                     }
 
                     int cash = val.Value.Household.FamilyFunds - debtnum - val.Value.Household.UnpaidBills;
-                    Common.Notify("Cash: " + cash + "FF: " + val.Value.Household.FamilyFunds + " UB: " + val.Value.Household.UnpaidBills);
+                    //Common.Notify("Cash: " + cash + "FF: " + val.Value.Household.FamilyFunds + " UB: " + val.Value.Household.UnpaidBills);
                     cashInfo.Add(val.Value.SimDescriptionId, cash);
 
                     if (cash > max)
@@ -619,7 +667,7 @@ namespace NRaas.TaggerSpace.Helpers
                 float twp = townWealthPercent / (max - min) * 100;
                 townWealthPercent = (int)Math.Floor(twp);
 
-                Common.Notify("TWP (" + vals.Key + "): " + townWealthPercent + " Value: " + vals.Value + " min: " + min + " max: " + max);
+                //Common.Notify("TWP (" + vals.Key + "): " + townWealthPercent + " Value: " + vals.Value + " min: " + min + " max: " + max);
                 moneyGraph.Add(vals.Key, townWealthPercent);
             }
         }

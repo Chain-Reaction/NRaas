@@ -49,6 +49,8 @@ namespace NRaas.CareerSpace.Interactions
                 List<GameObject> repairable = new List<GameObject>();
                 foreach (GameObject obj in Sims3.Gameplay.Queries.GetObjects<GameObject>())
                 {
+                    if (!obj.InWorld) continue;
+
                     if (obj.InUse) continue;
 
                     if (!obj.IsRepairable) continue;
@@ -60,6 +62,8 @@ namespace NRaas.CareerSpace.Interactions
                     if (obj.LotCurrent == null) continue;
 
                     if (obj.LotCurrent.Household == null) continue;
+
+                    if (obj.IsInHiddenResidentialRoom) continue;
 
                     RepairableComponent component = obj.Repairable;
                     if (component == null) continue;

@@ -33,8 +33,7 @@ namespace NRaas.TaggerSpace.Helpers
                     if (lot != null && ShouldReplace(lot))
                     {                        
                         CustomTagNRaas customTag = new CustomTagNRaas(lot, mTag.Owner);
-                        manager.RemoveTag(tag.ObjectGuid);
-                        Tagger.sReplaced.Add(lot.LotId);
+                        manager.RemoveTag(tag.ObjectGuid);                        
                         manager.AddTag(customTag);
                     }
                 }
@@ -63,11 +62,15 @@ namespace NRaas.TaggerSpace.Helpers
                     if (((tag is NPCSimMapTag) || (tag is SelectedSimMapTag)) || (tag is FamilySimMapTag))
                     {
                         mtm.RemoveTag(tag);
-                    }                   
+                    }
 
                     if (!mtm.HasTag(sim))
                     {
-                        mtm.AddTag(new TrackedSim(sim, mtm.Actor));                        
+                        mtm.AddTag(new TrackedSim(sim, mtm.Actor));
+                    }
+                    else
+                    {
+                        mtm.RefreshTag(tag);
                     }
                 }
                 else if (tag is TrackedSim)
@@ -101,7 +104,11 @@ namespace NRaas.TaggerSpace.Helpers
                     }
                     if (!mtm.HasTag(lot))
                     {
-                        mtm.AddTag(new TrackedLot(lot, mtm.Actor));                        
+                        mtm.AddTag(new TrackedLot(lot, mtm.Actor));
+                    }
+                    else
+                    {
+                        mtm.RefreshTag(tag);
                     }
                 }
                 else if (tag is TrackedLot)
@@ -117,9 +124,16 @@ namespace NRaas.TaggerSpace.Helpers
 
         public static bool ShouldReplace(Lot lot)
         {
-            if (lot != null && !Tagger.sReplaced.Contains(lot.LotId))
+            if (lot != null)
             {
-                return Tagger.staticData.ContainsKey((uint)lot.CommercialLotSubType);
+                if (MapTagManager.ActiveMapTagManager == null)
+                {
+                    return false;
+                }
+
+                MapTag tag = MapTagManager.ActiveMapTagManager.GetTag(lot);
+
+                return (Tagger.staticData.ContainsKey((uint)lot.CommercialLotSubType) && !(tag is CustomTagNRaas));
             }
 
             return false;

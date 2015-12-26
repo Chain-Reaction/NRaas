@@ -1,5 +1,6 @@
 ﻿using NRaas.CommonSpace.Booters;
 using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Options;
 using NRaas.MasterControllerSpace;
 using NRaas.MasterControllerSpace.Helpers;
 using NRaas.MasterControllerSpace.Interactions;
@@ -26,6 +27,7 @@ using Sims3.UI.CAS;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace NRaas
@@ -37,6 +39,8 @@ namespace NRaas
 
         [PersistableStatic]
         protected static PersistedSettings sSettings = null;
+
+        protected static string mNamespace = string.Empty;
 
         static MasterController()
         {
@@ -96,20 +100,19 @@ namespace NRaas
 
             return stamps;
         }
-
+        
         public static SavedFilter GetFilter(string name)
-        {
-            // duplicated from FilterSettingOption but eh, didn't feel it best to make a method in there static
+        {            
             name = name.ToLower();
 
-            SavedFilter picked = null;
+            SavedFilter picked = null;            
             foreach (SavedFilter filter in MasterController.Settings.mFilters)
             {
-                if (filter.Name.ToLower() == name)
+                if (filter.Name.ToLower() == name)                    
                 {
                     picked = filter;
                     break;
-                }
+                }                
             }
 
             return picked;
@@ -167,21 +170,18 @@ namespace NRaas
             Dictionary<string, bool> results = new Dictionary<string, bool>();
             
             foreach (SavedFilter filter in MasterController.Settings.mFilters)
-            {
-                //Common.DebugNotify("GetAllFilters: " + filter.Name);
+            {               
                 bool simSpecific = false;
                 foreach (SimSelection.ICriteria crit in filter.Elements)
-                {
-                   // Common.DebugNotify("crit is " + crit.GetType().ToString());
+                {                   
                     if (crit is ActiveSim || crit is PriorCareer || crit is RelationBase || crit is LongTermRelationshipEx || crit is RelationListing)
-                    {
-                       // Common.DebugNotify("Filter is SimSpecific");
+                    {                       
                         simSpecific = true;
                         break;
                     }
                 }
 
-                results.Add(filter.Name, simSpecific);
+                results.Add(filter.Name, simSpecific);                
             }
 
             return results;
@@ -193,26 +193,50 @@ namespace NRaas
 
             foreach (SavedFilter filter in MasterController.Settings.mFilters)
             {
-                if (filter.Name != mFilter) continue;
-
-               // Common.DebugNotify("GetSingleFilter: " + mFilter);
+                if (filter.Name != mFilter) continue;               
 
                 bool simSpecific = false;
                 foreach (SimSelection.ICriteria crit in filter.Elements)
                 {
                     if (crit is ActiveSim || crit is PriorCareer || crit is RelationBase || crit is LongTermRelationshipEx || crit is RelationListing)
-                    {
-                       // Common.DebugNotify("Filter is SimSpecific");
+                    {                       
                         simSpecific = true;
                         break;
                     }
-                }
+                }                
 
                 result.Add(filter.Name, simSpecific);
                 break;
             }
 
             return result;
+        }
+
+        public static void OnMenuAlarmCreate()
+        {
+            new MasterControllerSpace.Settings.SaveFilterSetting().RunExternal(mNamespace);
+        }
+
+        public static void OnMenuAlarmDelete()
+        {
+            new MasterControllerSpace.Settings.DeleteFilterSetting().RunExternal(mNamespace); 
+        }
+
+        // this is like this because the dialog system apparently doesn't like being called via invocation. It throws a attempting to yield in an unyielding context error when the second dialog is displayed to select the critera (due to the call to pause the game which all twallan dialogs are set to do and I don't want to touch that). I don't know why but, although hacky, this works.
+        public static OptionResult CreateFilter(string mCallingNamespace)
+        {
+            mNamespace = mCallingNamespace;
+            new AlarmTask(1, TimeUnit.Seconds, OnMenuAlarmCreate);            
+
+            return OptionResult.Unset;
+        }
+
+        public static OptionResult DeleteFilter(string mCallingNamespace)
+        {
+            mNamespace = mCallingNamespace;
+            new AlarmTask(1, TimeUnit.Seconds, OnMenuAlarmDelete);
+
+            return OptionResult.Unset;
         }
 
         protected static void OnStartup()

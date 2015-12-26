@@ -33,7 +33,7 @@ namespace NRaas.TaggerSpace.Options.FilterOptions.LotTags
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
-            return base.Allow(parameters);
+            return FilterHelper.GetFilters().Count > 0;
         }
 
         public override List<IFilterOption> GetOptions()

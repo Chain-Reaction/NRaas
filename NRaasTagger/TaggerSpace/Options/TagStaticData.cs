@@ -14,7 +14,9 @@ namespace NRaas.TaggerSpace.Options
         public string name;
         public bool isBusinessType;
         public string color;        
-        public string icon;        
+        public string icon;
+        public int openHour;
+        public int closeHour;
 
         public TagStaticData()
         { }

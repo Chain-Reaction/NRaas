@@ -32,8 +32,8 @@ namespace NRaas.TaggerSpace.Options
         }
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
-        {            
-            return FilterHelper.GetFilters().Count > 0 && (Tagger.Settings.mEnableLotTags || Tagger.Settings.mEnableSimTags);
+        {
+            return FilterHelper.FiltersEnabled();
         }
     }
 }

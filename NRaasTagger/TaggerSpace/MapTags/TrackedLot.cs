@@ -367,9 +367,7 @@ namespace NRaas.TaggerSpace.MapTags
                         }
                         int inverted = wealthPercent - 100 * -1;
                         return TagDataHelper.ColorizePercent(inverted);
-                    }
-
-                    return base.ShadeColor;
+                    }                    
                 }
                 catch (Exception exception)
                 {

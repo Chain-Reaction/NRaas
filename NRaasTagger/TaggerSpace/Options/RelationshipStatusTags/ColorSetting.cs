@@ -37,13 +37,15 @@ namespace NRaas.TaggerSpace.Options.RelationshipStatusTags
             set
             {
                 if (!Tagger.Settings.mSimStatusColorSettings.ContainsKey(mData))
-                {
+                {                    
                     Tagger.Settings.mSimStatusColorSettings.Add(mData, value);
+                    Tagger.Settings.mSimStatusColorSettingsSave.Add(mData.ToString(), value);
                 }
                 else
-                {
+                {                    
                     Tagger.Settings.mSimStatusColorSettings[mData] = value;
-                }
+                    Tagger.Settings.mSimStatusColorSettingsSave[mData.ToString()] = value;
+                }                
             }
         }
 
@@ -55,6 +57,6 @@ namespace NRaas.TaggerSpace.Options.RelationshipStatusTags
         public override string GetTitlePrefix()
         {
             return "TagColor";
-        }
+        }        
     }
 }

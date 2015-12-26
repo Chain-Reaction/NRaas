@@ -295,13 +295,13 @@ namespace NRaas.TaggerSpace.MapTags
                 try
                 {
                     Sim target = Target as Sim;
-                    if ((target == null) || (Sim.ActiveActor == null) || (target == Sim.ActiveActor))
+                    if ((target == null) || (Sim.ActiveActor == null) || (target == Sim.ActiveActor) || (target.SimDescription == null) || (target.HasBeenDestroyed))
                     {
                         return base.ShadeColor;
                     }
 
                     if (Sim.ActiveActor.Household == target.Household)
-                    {
+                    {                        
                         return base.ShadeColor;
                     }
 
@@ -414,11 +414,21 @@ namespace NRaas.TaggerSpace.MapTags
                                 continue;
                             }
 
+                            if (flag == SimType.Horse && target.SimDescription.IsWildAnimal)
+                            {
+                                continue;
+                            }
+
+                            if (flag == SimType.Human && (target.SimDescription.IsAlien || (target.SimDescription.OccultManager != null && target.SimDescription.OccultManager.mOccultList.Count > 0)))
+                            {
+                                continue;
+                            }
+
                             if (SimTypes.Matches(target.SimDescription, flag) && Tagger.Settings.mSimTypeColorSettings.ContainsKey(flag))
                             {
                                 return new Color(Tagger.Settings.mSimTypeColorSettings[flag]);
                             }
-                        }
+                        }                        
                     }
 
                     /*
@@ -560,9 +570,7 @@ namespace NRaas.TaggerSpace.MapTags
 
                             return TagDataHelper.ColorizePercent(motive3);
                         }
-                    }
-
-                    return base.ShadeColor;
+                    }                  
                 }
                 catch (Exception exception)
                 {

@@ -38,12 +38,14 @@ namespace NRaas.TaggerSpace.Options.SimTypeTags
             {
                 if (!Tagger.Settings.mSimTypeColorSettings.ContainsKey(mData))
                 {
-                    Tagger.Settings.mSimTypeColorSettings.Add(mData, value);
+                   Tagger.Settings.mSimTypeColorSettings.Add(mData, value);
+                   Tagger.Settings.mSimTypeColorSettingsSave.Add(mData.ToString(), value);
                 }
                 else
-                {
+                {                    
                     Tagger.Settings.mSimTypeColorSettings[mData] = value;
-                }
+                    Tagger.Settings.mSimTypeColorSettingsSave[mData.ToString()] = value;
+                }                
             }
         }
 

@@ -486,9 +486,28 @@ namespace NRaas.CommonSpace.Helpers
                 case SimType.Unemployed:
                     return (sim.CareerManager != null && sim.CareerManager.mJob == null);
                 case SimType.HasDegree:
-                    return (sim.CareerManager != null && sim.CareerManager.DegreeManager != null && sim.CareerManager.DegreeManager.GetCompletedDegreeEntries().Count > 0);
+                    try
+                    {
+                        // Error regarding (I believe) custom degrees and AcademicDegreeStaticData call in IsDegreeCompleted
+                        if (sim.CareerManager != null && sim.CareerManager.DegreeManager != null && sim.CareerManager.DegreeManager.GetCompletedDegreeEntries().Count > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch
+                    { }
+                    return false;
                 case SimType.Degreeless:
-                    return (sim.CareerManager != null && sim.CareerManager.DegreeManager != null && sim.CareerManager.DegreeManager.GetCompletedDegreeEntries().Count == 0);
+                    try
+                    {
+                        if (sim.CareerManager != null && sim.CareerManager.DegreeManager != null && sim.CareerManager.DegreeManager.GetCompletedDegreeEntries().Count == 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch
+                    { }
+                    return false;
             }
 
             return false;

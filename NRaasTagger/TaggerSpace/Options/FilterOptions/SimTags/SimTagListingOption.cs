@@ -33,7 +33,7 @@ namespace NRaas.TaggerSpace.Options.FilterOptions.SimTags
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
-            return base.Allow(parameters);
+            return FilterHelper.GetFilters().Count > 0;
         }
 
         public override List<IFilterOption> GetOptions()

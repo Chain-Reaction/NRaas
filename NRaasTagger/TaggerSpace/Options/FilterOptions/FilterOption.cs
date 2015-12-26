@@ -1,4 +1,5 @@
-﻿using NRaas.CommonSpace.Options;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Options;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
@@ -74,8 +75,8 @@ namespace NRaas.TaggerSpace.Options.FilterOptions
         }
 
         public override string GetTitlePrefix()
-        {            
-            return (mName == "Default" ? "Default" : null);
+        {
+            return null;
         }
 
         public override string DisplayValue
@@ -84,6 +85,14 @@ namespace NRaas.TaggerSpace.Options.FilterOptions
             {
                 return (Value.Contains(mName) ? "True" : "False");
             }
-        }   
+        }
+
+        public override string Name
+        {
+            get
+            {
+                return FilterHelper.StripNamespace(mName);
+            }
+        }
     }
 }

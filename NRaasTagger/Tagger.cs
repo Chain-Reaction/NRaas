@@ -13,6 +13,7 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.MapTags;
 using Sims3.Gameplay.UI;
+using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
 using Sims3.UI.Hud;
@@ -30,9 +31,7 @@ namespace NRaas
         [PersistableStatic]
         static PersistedSettings sSettings = null;
 
-        public static Dictionary<uint, TagStaticData> staticData = new Dictionary<uint, TagStaticData>();
-
-        public static List<ulong> sReplaced = new List<ulong>();
+        public static Dictionary<uint, TagStaticData> staticData = new Dictionary<uint, TagStaticData>();        
 
         static Tagger()
         {
@@ -120,6 +119,11 @@ namespace NRaas
             SetupMapTags(false);            
         }
 
+        public static void SetupMapTags()
+        {
+            SetupMapTags(false, false);
+        }
+
         public static void SetupMapTags(bool initial)
         {
             SetupMapTags(initial, false);
@@ -133,7 +137,7 @@ namespace NRaas
                 if (initial)
                 {                    
                     Sims3.UI.Responder.Instance.MapTagsModel.MapTagAdded += new MapTagChangedDelegate(MapTagHelper.OnMapTagAdded);
-                    Sims3.UI.Responder.Instance.MapTagsModel.MapTagRefreshAll += OnRefreshed; //causes an infinite loop
+                    Sims3.UI.Responder.Instance.MapTagsModel.MapTagRefreshAll += OnRefreshed;
                     CameraController.OnCameraMapViewEnabledCallback += OnMapView;
                     new Common.ImmediateEventListener(EventTypeId.kEventSimSelected, OnSimSelected);
                     new Common.ImmediateEventListener(EventTypeId.kLotChosenForActiveHousehold, OnActiveHouseholdMoved);
@@ -150,10 +154,9 @@ namespace NRaas
             {
                 if (CameraController.IsMapViewModeEnabled())
                 {
+                    Tagger.Settings.ValidateActiveFilters(false);
                     if (!lotOnly)
                     {
-                        Tagger.sReplaced.Clear();
-
                         if (Tagger.staticData.Count > 0)
                         {
                             foreach (IMapTag tag in model.GetCurrentMapTags())
@@ -193,9 +196,7 @@ namespace NRaas
                                 MapTagHelper.SetupLotTag(lot);
                             }
                         }
-                    }
-
-                    //model.FireMapTagRefreshAll();
+                    }                    
                 }
                 else
                 {                    
@@ -323,6 +324,11 @@ namespace NRaas
                     }
                 }
             }
+
+            foreach (KeyValuePair<Lot.MetaAutonomyType, MetaAutonomySettingKey> key in Tagger.Settings.mMetaAutonomySettings)
+            {
+                key.Value.InjectTuning();
+            }
         }
 
         public void OnWorldLoadFinished()
@@ -383,7 +389,7 @@ namespace NRaas
                 }
             }
 
-            Tagger.Settings.ValidateActiveFilters();
+            Tagger.Settings.ValidateActiveFilters(true);           
         }
 
         // Externalized to GoHere
