@@ -29,7 +29,7 @@ namespace NRaas.CupcakeSpace.Interactions
 {
     public class BrowseEx : CraftersConsignment.Browse, Common.IPreLoad
     {
-        static InteractionDefinition sOldSingleton;
+        //static InteractionDefinition sOldSingleton;
 
         public void OnPreLoad()
         {
@@ -37,7 +37,7 @@ namespace NRaas.CupcakeSpace.Interactions
 
             if (Common.AssemblyCheck.IsInstalled("NRaasBOGO")) return;
 
-            sOldSingleton = Singleton;
+            //sOldSingleton = Singleton;
             Singleton = new Definition();
         }
 
@@ -45,7 +45,8 @@ namespace NRaas.CupcakeSpace.Interactions
         {
             if (!base.Actor.RouteToObjectRadialRange(base.Target, 0f, base.Target.MaxProximityBeforeSwiping()))
             {
-                base.Actor.PlayRouteFailure();
+                //Honestly just plain annoying to watch, especially since sims love this interaction so much
+                //base.Actor.PlayRouteFailure();
                 return false;
             }
             base.Actor.RouteTurnToFace(base.Target.Position);
@@ -95,7 +96,19 @@ namespace NRaas.CupcakeSpace.Interactions
                         ObjectGuid randomObjectFromList = RandomUtil.GetRandomObjectFromList<ObjectGuid>(randomList);
                         if (randomObjectFromList != ObjectGuid.InvalidObjectGuid)
                         {
-                            PurchaseItemEx.Definition continuationDefinition = new PurchaseItemEx.Definition(randomObjectFromList, DisplayHelper.ComputeFinalPriceOnObject(randomObjectFromList), false);
+                            PurchaseItemEx.Definition continuationDefinition = null;
+                            if (Actor.Motives.IsHungry())
+                            {
+                                PreparedFood food = GlobalFunctions.ConvertGuidToObject<PreparedFood>(randomObjectFromList);
+                                if (food != null)
+                                {
+                                    continuationDefinition = new PurchaseItemEx.BuyFoodDefinition(food);
+                                }
+                            }
+                            if (continuationDefinition == null)
+                            {
+                                continuationDefinition = new PurchaseItemEx.Definition(randomObjectFromList, false);
+                            }
                             base.TryPushAsContinuation(continuationDefinition);
                         }
                     }
@@ -135,10 +148,10 @@ namespace NRaas.CupcakeSpace.Interactions
 
         public new class Definition : CraftersConsignment.Browse.Definition
         {
-            public override string GetInteractionName(Sim actor, CraftersConsignment target, InteractionObjectPair iop)
+            /*public override string GetInteractionName(Sim actor, CraftersConsignment target, InteractionObjectPair iop)
             {
                 return base.GetInteractionName(actor, target, new InteractionObjectPair(sOldSingleton, target));
-            }
+            }*/
 
             public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
             {

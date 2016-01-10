@@ -95,7 +95,7 @@ namespace NRaas.CupcakeSpace.Helpers
             GameObject containedObject = display.GetContainedObject(slot) as GameObject;
             if (containedObject != null)
             {
-                if (containedObject is IFoodContainer || containedObject is ServingContainer)
+                if (containedObject is IFoodContainer) //|| containedObject is ServingContainer)
                 {
                     ServingContainer container = containedObject as ServingContainer;
                     if (container != null)
@@ -150,28 +150,44 @@ namespace NRaas.CupcakeSpace.Helpers
             return list;
         }
 
-        public static bool TestIfObjectCanBeBoughtByActor(GameObject obj, Sim actor)
+        public static bool TestIfObjectCanBeBoughtByActor(IGameObject obj, Sim actor)
         {
-            ServingContainer container = obj as ServingContainer;
+            /*ServingContainer container = obj as ServingContainer;
             if (container != null)
             {                
                 return container.AmountLeft == AmountLeftState.Full;
             }
-
+ 
             Snack snackContainer = obj as Snack;            
-            return ((snackContainer != null) && (snackContainer.HasFoodLeft()));
+            return ((snackContainer != null) && (snackContainer.HasFoodLeft()));*/
+			PreparedFood food = obj as PreparedFood;
+			return food != null && food.HasFoodLeft ();
         }
 
         public static int ComputeFinalPriceOnObject(ObjectGuid targetGuid)
         {
-            int finalPrice = 0;
+            return ComputeFinalPriceOnObject(targetGuid, false);
+        }
+
+        public static int ComputeFinalPriceOnObject(ObjectGuid targetGuid, bool singleServingOnly)
+        {
+            /*int finalPrice = 0;
             int basePrice = 0;
             GameObject obj2 = GlobalFunctions.ConvertGuidToObject<GameObject>(targetGuid);
-            BasePriceFinalPriceDiff(obj2, out finalPrice, out basePrice);
+            BasePriceFinalPriceDiff(obj2, singleServingOnly, out finalPrice, out basePrice);
+            return finalPrice;*/
+            return ComputeFinalPriceOnObject(GlobalFunctions.ConvertGuidToObject<GameObject>(targetGuid), singleServingOnly);
+        }
+
+        public static int ComputeFinalPriceOnObject(GameObject obj, bool singleServingOnly)
+        {
+            int finalPrice;
+            int basePrice;
+            BasePriceFinalPriceDiff(obj, singleServingOnly, out finalPrice, out basePrice);
             return finalPrice;
         }
 
-        public static int BasePriceFinalPriceDiff(GameObject obj, out int FinalPrice, out int BasePrice)
+        public static int BasePriceFinalPriceDiff(GameObject obj, bool singleServingOnly, out int FinalPrice, out int BasePrice)
         {
             CraftersConsignment display = obj.Parent as CraftersConsignment;
 
@@ -189,7 +205,7 @@ namespace NRaas.CupcakeSpace.Helpers
                 if (container != null)
                 {
                     float kSingleServingBasePrice = 0f;
-                    if (container is ISingleServingContainer)
+                    if (singleServingOnly || container is ISingleServingContainer)
                     {
                         kSingleServingBasePrice = CraftersConsignment.kSingleServingBasePrice;
                     }

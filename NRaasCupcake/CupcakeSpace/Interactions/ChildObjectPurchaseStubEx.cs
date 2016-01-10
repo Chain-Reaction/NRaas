@@ -28,13 +28,13 @@ namespace NRaas.CupcakeSpace.Interactions
 {
     public class ChildObjectPurchaseStubEx : CraftersConsignment.ChildObjectPurchaseStub, Common.IPreLoad
     {
-        static InteractionDefinition sOldSingleton;
+        //static InteractionDefinition sOldSingleton;
 
         public void OnPreLoad()
         {
             if (Common.AssemblyCheck.IsInstalled("NRaasBOGO")) return;
 
-            sOldSingleton = Singleton;
+            //sOldSingleton = Singleton;
             Singleton = new Definition();
         }        
 
@@ -64,13 +64,20 @@ namespace NRaas.CupcakeSpace.Interactions
                 {
                     targetObject = obj2 as CraftersConsignment;
                 }
-                if ((targetObject != null) && DisplayHelper.GetObjectsICanBuyInDisplay(actor, targetObject).Contains(target.ObjectId))
+                if ((targetObject != null) && DisplayHelper.TestIfObjectCanBeBoughtByActor(target, actor)) //DisplayHelper.GetObjectsICanBuyInDisplay(actor, targetObject).Contains(target.ObjectId))
                 {
-                    results.Add(new InteractionObjectPair(new PurchaseItemEx.Definition(target.ObjectId, DisplayHelper.ComputeFinalPriceOnObject(target.ObjectId), false), targetObject));
+                    ServingContainerGroup groupServing = target as ServingContainerGroup;
+                    if (groupServing != null)
+                    {
+                        results.Add(new InteractionObjectPair(new PurchaseItemEx.Definition(groupServing, true), targetObject));
+                        results.Add(new InteractionObjectPair(new PurchaseItemEx.Definition(groupServing, false), targetObject));
+                        return;
+                    }
+                    results.Add(new InteractionObjectPair(new PurchaseItemEx.Definition(target.ObjectId, false), targetObject));
                 }
             }
 
-            public override string GetInteractionName(Sim actor, IGameObject target, InteractionObjectPair iop)
+            /*public override string GetInteractionName(Sim actor, IGameObject target, InteractionObjectPair iop)
             {
                 return base.GetInteractionName(actor, target, new InteractionObjectPair(sOldSingleton, target));
             }
@@ -80,7 +87,7 @@ namespace NRaas.CupcakeSpace.Interactions
                 InteractionInstance na = new ChildObjectPurchaseStubEx();
                 na.Init(ref parameters);
                 return na;
-            }
+            }*/
         }
     }
 }
