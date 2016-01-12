@@ -400,11 +400,13 @@ namespace ani_StoreRestockItem
 					FieldInfo ingredientKeyField = tInfo.GetField ("mIngredientKey", flags);
 					FieldInfo qualityField = tInfo.GetField ("mQuality", flags);
 					FieldInfo preservesField = tInfo.GetField ("mIsPreserves", flags);
+					MethodInfo materialStateMethod = tInfo.GetMethod ("SetMaterialState", flags);
 
 					ingredientDataField.SetValue (jamJar, rItem.info.IngData);
 					ingredientKeyField.SetValue (jamJar, rItem.info.IngredientKey);
 					qualityField.SetValue (jamJar, rItem.info.JamQuality);
 					preservesField.SetValue (jamJar, rItem.info.JamIsPreserve);
+					materialStateMethod.Invoke (jamJar, null);
 				}
 				o = (GameObject)jamJar;
 				break;
