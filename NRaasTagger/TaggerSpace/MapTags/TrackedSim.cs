@@ -419,7 +419,7 @@ namespace NRaas.TaggerSpace.MapTags
                                 continue;
                             }
 
-                            if (flag == SimType.Human && (target.SimDescription.IsAlien || (target.SimDescription.OccultManager != null && target.SimDescription.OccultManager.mOccultList.Count > 0)))
+                            if (flag == SimType.Human && (target.SimDescription.IsAlien || (target.SimDescription.OccultManager != null && target.SimDescription.OccultManager.mOccultList != null && target.SimDescription.OccultManager.mOccultList.Count > 0)))
                             {
                                 continue;
                             }
