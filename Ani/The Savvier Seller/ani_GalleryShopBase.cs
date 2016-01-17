@@ -1534,6 +1534,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetBase
             {
                 //Clear all interactins
                 gameObject.RemoveAllInteractions();
+				gameObject.RemoveAllInventoryInteractions ();
                 gameObject.OnStartup();
 
                 //gameObject.RemoveInteractionByType(StoreSetBase.ChildObjectPurchaseStub.Singleton);
