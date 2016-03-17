@@ -13,7 +13,7 @@ namespace ani_GroceryShopping
 {
     internal class OverridedMicrowave_Have : Interaction<Sim, Microwave>
     {
-        private sealed class Definition : OverridedFoodMenuInteractionDefinition<Microwave, OverridedMicrowave_Have>
+        public sealed class Definition : Microwave_Have.Definition //OverridedFoodMenuInteractionDefinition<Microwave, OverridedMicrowave_Have>
         {
             public Definition()
             {
@@ -22,50 +22,53 @@ namespace ani_GroceryShopping
                 : base(menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost)
             {
             }
-            protected override OverridedFoodMenuInteractionDefinition<Microwave, OverridedMicrowave_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
+            public override FoodMenuInteractionDefinition<Microwave, Microwave_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
             {
-                return new OverridedMicrowave_Have.Definition(menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost);
+                if (cost > 0)
+                {
+                    cost = -2147483648;
+                }
+                return new Definition (menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost);
             }
+
             public override void AddInteractions(InteractionObjectPair iop, Sim sim, Microwave microwave, List<InteractionObjectPair> results)
             {
                 base.AddFoodPrepInteractions(iop, sim, results, iop.Target as GameObject);
+
                 string[] menuPath = new string[]
-				{
-					Food.GetString(Food.StringIndices.HaveSnack) + Localization.Ellipsis
-				};
+                    {
+                        Food.GetString(Food.StringIndices.HaveSnack) + Localization.Ellipsis
+                    };
+                List<Ingredient> simIngredients = Recipe.GetCookableIngredients(sim.Inventory);
+                List<Ingredient> lotIngredients = sim.Household != null && sim.Household.SharedFridgeInventory != null ? Recipe.GetCookableIngredients(sim.Household.SharedFridgeInventory.Inventory) : new List<Ingredient>();
+                List<Ingredient> list = null;
                 foreach (Recipe current in Recipe.Snacks)
                 {
                     if (current.CookingProcessData.UsesAMicrowave)
                     {
-                        InteractionObjectPair item = new InteractionObjectPair(this.Create(current.GenericName, current, menuPath, null, Recipe.MealDestination.SurfaceOrEat, Recipe.MealQuantity.Single, Recipe.MealRepetition.MakeOne, false, 0), iop.Target);
-                        results.Add(item);
+                        int cost = current.BuildIngredientList(simIngredients, lotIngredients, ref list, ref list).Count > 0 ? -2147483648 : 0;
+                        results.Add(new InteractionObjectPair(Create(current.GenericName, current, menuPath, null, Recipe.MealDestination.SurfaceOrEat, Recipe.MealQuantity.Single, Recipe.MealRepetition.MakeOne, false, cost), iop.Target));
                     }
                 }
             }
-            protected override bool SpecificTest(Sim a, Microwave target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+            public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
             {
-                if (!target.MakeSomethingStandardTests())
-                {
-                    return false;
-                }
-                if (this.ChosenRecipe != null && !this.ChosenRecipe.IsSnack)
-                {
-                    Recipe.CanMakeFoodTestResult result = Food.CanMake(this.ChosenRecipe, true, true, Recipe.MealTime.DO_NOT_CHECK, this.Repetition, target.LotCurrent, a, this.Quantity, this.Cost, this.ObjectClickedOn);
-                    return Food.PrepareTestResultCheckAndGrayedOutPieMenuSet(a, this.ChosenRecipe, result, ref greyedOutTooltipCallback);
-                }
-
-                if (this.ChosenRecipe != null && this.ChosenRecipe.IsSnack)
-                {
-                    return CommonMethods.PrepareTestResultCheckAndGrayedOutPieMenuSet(this.ChosenRecipe, a, ref greyedOutTooltipCallback);
-                }
-                return true;
+                return CommonMethods.CreateInstance<OverridedMicrowave_Have>(ref parameters);
             }
         }
         public static readonly InteractionDefinition Singleton = new OverridedMicrowave_Have.Definition();
         public override bool Run()
         {
-            OverridedMicrowave_Have.Definition definition = base.InteractionDefinition as OverridedMicrowave_Have.Definition;
-            return Fridge.ForcePushFridgeHave(this.Actor, this.Target, definition.ChosenRecipe, definition.MenuText, definition.MenuPath, definition.ObjectClickedOn, definition.Destination, definition.Quantity, definition.Repetition, false, definition.Cost);
+            Microwave_Have.Definition definition = base.InteractionDefinition as Microwave_Have.Definition;
+            if (definition.ChosenRecipe.RecipeClassName == "MicrowaveOnlyMeal")
+            {
+                if (!AniRecipe.HasRequiredIngredients(definition.ChosenRecipe, Actor))
+                {
+                    return false;
+                }
+                return Microwave.CreateRecipeObjectAndPutInMicrowave(Actor, Target, definition.ChosenRecipe, null, null, Target, definition.Destination, definition.Quantity, definition.Repetition, false, 0);
+            }
+            return AniRecipe.ForcePushFridgeHave(Actor, Target, definition.ChosenRecipe, definition.Destination, definition.Quantity, definition.Repetition);
         }
     }
 }

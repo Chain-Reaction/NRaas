@@ -231,13 +231,13 @@ namespace ani_GroceryShopping
 
             //if Recipe is snack, replace it with a snack recipe
             bool isSnack = recipe.IsSnack;
-            if (recipe.IsSnack)
+            /*if (recipe.IsSnack)
             {
                 recipe = AniRecipe.ReturnSnackIngredientRecipe(sim, recipe);
 
                 if (recipe == null)
                     return false;
-            }
+            }*/
 
             Inventory inventory = sim.Household.SharedFridgeInventory.Inventory;
             Inventory inventory2 = sim.Inventory;

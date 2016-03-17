@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="No Fridge Shopping.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HaveInteractions\AniMicro.cs">
+    <Files>
+      <File FileName="AddMenuItem.cs" Line="159" Column="96" />
+      <File FileName="HaveInteractions\AniFridge.cs" Line="430" Column="112" />
+      <File FileName="HaveInteractions\AniStove.cs" Line="16" Column="15" />
+      <File FileName="HaveInteractions\AniFoodProcessor.cs" Line="16" Column="15" />
+      <File FileName="HaveInteractions\AniGrill.cs" Line="111" Column="66" />
+      <File FileName="HaveInteractions\AniMicro.cs" Line="69" Column="60" />
+      <File FileName="Misc\AniRecipe.cs" Line="226" Column="15" />
+      <File FileName="Misc\CommonMethods.cs" Line="115" Column="21" />
+      <File FileName="HaveInteractions\StoreObjectInteractions.cs" Line="48" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

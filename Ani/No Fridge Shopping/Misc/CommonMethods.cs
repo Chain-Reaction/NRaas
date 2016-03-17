@@ -1,9 +1,10 @@
 ﻿
-
+using System;
 using Sims3.Gameplay.Objects.FoodObjects;
 using System.Collections.Generic;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.Interactions;
 using Sims3.SimIFace;
 using Sims3.Gameplay.Objects.CookingObjects;
 using Sims3.Gameplay.Utilities;
@@ -24,7 +25,14 @@ namespace ani_GroceryShopping
         }
         #endregion
 
-        #region Recipe CanMakeFoodTestResult
+        public static InteractionInstance CreateInstance<INTERACTION>(ref InteractionInstanceParameters parameters) where INTERACTION : InteractionInstance
+        {
+            InteractionInstance instance = Activator.CreateInstance<INTERACTION>();
+            instance.Init(ref parameters);
+            return instance;
+        }
+
+        /*#region Recipe CanMakeFoodTestResult
         public static bool PrepareTestResultCheckAndGrayedOutPieMenuSet(Recipe recipe, Sim sim, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
         {
             List<Ingredient> lotIngredients = null;
@@ -104,6 +112,6 @@ namespace ani_GroceryShopping
             }
             return sb.ToString();
         }
-        #endregion
+        #endregion*/
     }
 }

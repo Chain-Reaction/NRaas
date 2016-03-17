@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
 using Sims3.Gameplay.Objects.FoodObjects;
 using System;
+using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.Interactions;
+using Sims3.Gameplay.Objects.Appliances;
 using Sims3.Gameplay.Objects.CookingObjects;
 using Sims3.Gameplay;
 using Sims3.Gameplay.CAS;
@@ -16,7 +20,7 @@ namespace ani_GroceryShopping
 {
     public class AniRecipe
     {
-        public static Recipe ReturnSnackIngredientRecipe(Sim sim, Recipe recipe)
+        /*public static Recipe ReturnSnackIngredientRecipe(Sim sim, Recipe recipe)
         {
             Recipe chosenRecipe = null;
 
@@ -150,11 +154,14 @@ namespace ani_GroceryShopping
                 }
             }
             return true;
-        }
+        }*/
 
-        public static bool UseUpIngredientsForOneServing(Recipe recipe, Sim sim, ref List<Ingredient> chosenIngredients, bool isSnack)
+        public static bool UseUpIngredientsFrom(Recipe recipe, Sim sim, ref List<Ingredient> chosenIngredients) // bool isSnack)
         {
-
+            if (sim.IsNPC)
+            {
+                return true;
+            }
             if (sim.Household == null || sim.Household.SharedFridgeInventory == null)
             {
                 return false;
@@ -163,7 +170,7 @@ namespace ani_GroceryShopping
             Inventory inventory2 = sim.Inventory;
             List<Ingredient> list = new List<Ingredient>();
             List<Ingredient> list2 = new List<Ingredient>();
-            List<IngredientData> list3;
+            /*List<IngredientData> list3;
 
             //If recipe is a snack, repalce recipe. 
             if (recipe.IsSnack)
@@ -178,10 +185,30 @@ namespace ani_GroceryShopping
             if (num == -2147483648)
             {
                 return false;
+            }*/
+
+            List<Ingredient> simIngredients = Recipe.GetCookableIngredients(inventory2);
+            List<Ingredient> lotIngredients = Recipe.GetCookableIngredients(inventory);
+            if (GameUtils.IsInstalled(ProductVersion.EP3) && !sim.SimDescription.IsVampire && recipe.IngredientsAll.Exists(i => i.Key == "Fruit" || i.Key == "Ingredient"))
+            {
+                Predicate<Ingredient> vampireFruit = (i => i.Key == "VampireFruit");
+                List<Ingredient> simIngredients2 = new List<Ingredient>(simIngredients);
+                List<Ingredient> lotIngredients2 = new List<Ingredient>(lotIngredients);
+                int plasmaFruitCount = simIngredients2.RemoveAll(vampireFruit) + lotIngredients.RemoveAll(vampireFruit);
+                if (recipe.BuildIngredientList(simIngredients2, lotIngredients2, ref list2, ref list).Count > 0 && plasmaFruitCount == 0)
+                {
+                    return false;
+                }
+                list.Clear();
+                list2.Clear();
+            }
+            if (recipe.BuildIngredientList(simIngredients, lotIngredients, ref list2, ref list).Count > 0)
+            {
+                return false;
             }
 
-            if(!sim.IsNPC)            
-            {
+            //if (!sim.IsNPC)            
+            //{
                 foreach (Ingredient current in list2)
                 {
                     inventory2.RemoveByForce(current);
@@ -192,15 +219,38 @@ namespace ani_GroceryShopping
                 }
                 chosenIngredients.AddRange(list2);
                 chosenIngredients.AddRange(list);
-
-
-                if (num > 0)
+                /*if (num > 0)
                 {
                     return false;
-                }
-            }
+                }*/
+            //}
             return true;
         }
 
+        public static bool ForcePushFridgeHave(Sim sim, GameObject objectToFindFridgeRelativeTo, Recipe chosenRecipe, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition)
+        {
+            Fridge closestObject = GlobalFunctions.GetClosestObject<Fridge>(objectToFindFridgeRelativeTo, false, true, null, null);
+            if (closestObject == null)
+            {
+                return false;
+            }
+            InteractionObjectPair iop = new InteractionObjectPair(new OverridedFridge_Have.Definition(null, chosenRecipe, null, objectToFindFridgeRelativeTo, destination, quantity, repetition, false, 0), closestObject);
+            InteractionInstanceParameters interactionInstanceParameters = new InteractionInstanceParameters(iop, sim, sim.InheritedPriority(), false, true);
+            return sim.InteractionQueue.AddNext(OverridedFridge_Have.Singleton.CreateInstanceFromParameters(ref interactionInstanceParameters));
+        }
+
+        public static bool HasRequiredIngredients (Recipe recipe, Sim sim)
+        {
+            if (sim.IsNPC)
+            {
+                return true;
+            }
+            if (sim.Household == null || sim.Household.SharedFridgeInventory == null)
+            {
+                return false;
+            }
+            List<Ingredient> list = null;
+            return recipe.BuildIngredientList(Recipe.GetCookableIngredients(sim.Inventory), Recipe.GetCookableIngredients(sim.Household.SharedFridgeInventory.Inventory), ref list, ref list).Count == 0;
+        }
     }
 }

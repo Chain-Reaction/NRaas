@@ -15,6 +15,7 @@ using Sims3.Gameplay.Objects.CookingObjects;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Socializing;
 using Sims3.SimIFace;
+using Sims3.SimIFace.CAS;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Autonomy;
@@ -24,9 +25,9 @@ using Sims3.Gameplay.ObjectComponents;
 namespace ani_GroceryShopping
 {
     #region OverridedFridge_Have
-    public class OverridedFridge_Have : Interaction<Sim, Fridge>, ICookingInteraction, IPetWatchableFoodInteraction
+    public class OverridedFridge_Have : Fridge_Have //Interaction<Sim, Fridge>, ICookingInteraction, IPetWatchableFoodInteraction
     {
-        public class Definition : OverridedFoodMenuInteractionDefinition<Fridge, OverridedFridge_Have>
+        public new class Definition : Fridge_Have.Definition //OverridedFoodMenuInteractionDefinition<Fridge, OverridedFridge_Have>
         {
             public Definition()
             {
@@ -35,13 +36,17 @@ namespace ani_GroceryShopping
                 : base(menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost)
             {
             }
-            protected override OverridedFoodMenuInteractionDefinition<Fridge, OverridedFridge_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
+            public override FoodMenuInteractionDefinition<Fridge, Fridge_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
             {
-                return new OverridedFridge_Have.Definition(menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost);
+                if (cost > 0)
+                {
+                    cost = -2147483648;
+                }
+                return new Definition(menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost);
             }
             public override void AddInteractions(InteractionObjectPair iop, Sim sim, Fridge fridge, List<InteractionObjectPair> results)
             {
-                if (sim == null)
+                /*if (sim == null)
                 {
                     return;
                 }
@@ -101,14 +106,30 @@ namespace ani_GroceryShopping
                 {
                     if ((!current.CookingProcessData.UsesAMicrowave || !sim.SimDescription.ChildOrBelow) && (!(current.Key == "VampireJuice") || sim.SimDescription.IsVampire) && current.DoesLotHaveRightTech(lotHasCounter, lotHasStove, lotHasMicrowave, lotHasGrill, Recipe.MealQuantity.Single) == Recipe.CanMakeFoodTestResult.Pass)
                     {
-                        InteractionObjectPair item = new InteractionObjectPair(this.Create(current.GenericName, current, menuPath, null, Recipe.MealDestination.SurfaceOrEat, Recipe.MealQuantity.Single, Recipe.MealRepetition.MakeOne, false, 0), iop.Target);
+                        InteractionObjectPair item = new InteractionObjectPair(Create(current.GenericName, current, menuPath, null, Recipe.MealDestination.SurfaceOrEat, Recipe.MealQuantity.Single, Recipe.MealRepetition.MakeOne, false, 0), iop.Target);
                         results.Add(item);
+                    }
+                }*/
+                base.AddInteractions(iop, sim, fridge, results);
+                List<Ingredient> simIngredients = Recipe.GetCookableIngredients(sim.Inventory);
+                List<Ingredient> lotIngredients = sim.Household != null && sim.Household.SharedFridgeInventory != null ? Recipe.GetCookableIngredients(sim.Household.SharedFridgeInventory.Inventory) : new List<Ingredient>();
+                List<Ingredient> list = null;
+                for (int i = results.Count - 1; i >= 0; i--)
+                {
+                    Fridge_Have.Definition definition = results[i].InteractionDefinition as Fridge_Have.Definition;
+                    if (definition == null || definition.ChosenRecipe == null || !definition.ChosenRecipe.IsSnack)
+                    {
+                        return;
+                    }
+                    if (definition.ChosenRecipe.BuildIngredientList(simIngredients, lotIngredients, ref list, ref list).Count > 0)
+                    {
+                        definition.Cost = -2147483648;
                     }
                 }
             }
-            protected override bool SpecificTest(Sim a, Fridge target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+            public override bool SpecificTest(Sim a, Fridge target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
-                if (target.FridgeInventory == null && target.LotCurrent != null && !target.LotCurrent.IsCommunityLot)
+                /*if (target.FridgeInventory == null && target.LotCurrent != null && !target.LotCurrent.IsCommunityLot)
                 {
                     return false;
                 }
@@ -116,223 +137,89 @@ namespace ani_GroceryShopping
                 {
                     return false;
                 }
+                if (ChosenRecipe != null && !ChosenRecipe.IsSnack)
+                {
+                    Recipe.CanMakeFoodTestResult result = Food.CanMake(ChosenRecipe, true, true, Recipe.MealTime.DO_NOT_CHECK, Repetition, target.LotCurrent, a, Quantity, Cost, ObjectClickedOn);
+                    return Food.PrepareTestResultCheckAndGrayedOutPieMenuSet(a, ChosenRecipe, result, ref greyedOutTooltipCallback);
+                }
+                if (ChosenRecipe != null && ChosenRecipe.IsSnack)
+                {
+                    return CommonMethods.PrepareTestResultCheckAndGrayedOutPieMenuSet(ChosenRecipe, a, ref greyedOutTooltipCallback);
+                }
+                return !target.InUse;*/
+                return base.SpecificTest(a, target, isAutonomous, ref greyedOutTooltipCallback) && (ChosenRecipe != null || a.IsNPC || ChooseRecipeRandomly(target.LotCurrent, a, Quantity, true) != null);
+            }
+            public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
+            {
+                return CommonMethods.CreateInstance<OverridedFridge_Have>(ref parameters);
+            }
+        }
 
-                if (this.ChosenRecipe != null && !this.ChosenRecipe.IsSnack)
-                {
-                    Recipe.CanMakeFoodTestResult result = Food.CanMake(this.ChosenRecipe, true, true, Recipe.MealTime.DO_NOT_CHECK, this.Repetition, target.LotCurrent, a, this.Quantity, this.Cost, this.ObjectClickedOn);
-                    return Food.PrepareTestResultCheckAndGrayedOutPieMenuSet(a, this.ChosenRecipe, result, ref greyedOutTooltipCallback);
-                }
+        public new static InteractionDefinition Singleton = new Definition();
 
-                if (this.ChosenRecipe != null && this.ChosenRecipe.IsSnack)
-                {
-                    return CommonMethods.PrepareTestResultCheckAndGrayedOutPieMenuSet(this.ChosenRecipe, a, ref greyedOutTooltipCallback);
-                }
-
-                return !target.InUse;
-            }
-            static Definition()
-            {
-                Maid.AddInappropriateAction(new Maid.ActionFinder(OverridedFridge_Have.Definition.TryFindSnack), false);
-            }
-            private static InteractionObjectPair TryFindSnack(MaidSituation situation)
-            {
-                Fridge[] objects = Sims3.Gameplay.Queries.GetObjects<Fridge>(situation.Lot);
-                if (objects == null || objects.Length == 0)
-                {
-                    return null;
-                }
-                List<InteractionObjectPair> list = new List<InteractionObjectPair>();
-                Fridge randomObjectFromList = RandomUtil.GetRandomObjectFromList<Fridge>(objects);
-                if (randomObjectFromList != null)
-                {
-                    bool lotHasCounter = Food.LotHasUsableCounter(randomObjectFromList.LotCurrent);
-                    bool lotHasStove = Food.LotHasUsableStove(randomObjectFromList.LotCurrent);
-                    bool lotHasMicrowave = Food.LotHasUsableMicrowave(randomObjectFromList.LotCurrent);
-                    bool lotHasGrill = Food.LotHasUsableGrill(randomObjectFromList.LotCurrent);
-                    foreach (Recipe current in Recipe.Snacks)
-                    {
-                        if ((!current.CookingProcessData.UsesAMicrowave || !situation.Worker.SimDescription.ChildOrBelow) && current.DoesLotHaveRightTech(lotHasCounter, lotHasStove, lotHasMicrowave, lotHasGrill, Recipe.MealQuantity.Single) == Recipe.CanMakeFoodTestResult.Pass)
-                        {
-                            InteractionObjectPair item = new InteractionObjectPair((OverridedFridge_Have.Singleton as OverridedFridge_Have.Definition).Create(current.GenericName, current, null, null, Recipe.MealDestination.SurfaceOrEat, Recipe.MealQuantity.Single, Recipe.MealRepetition.MakeOne, false, 0), randomObjectFromList);
-                            list.Add(item);
-                        }
-                    }
-                }
-                if (list.Count == 0)
-                {
-                    return null;
-                }
-                return RandomUtil.GetRandomObjectFromList<InteractionObjectPair>(list);
-            }
-        }
-        private const string sLocalizationKey = "Gameplay/Objects/Appliances/Fridge_Have";
-        public Recipe ChosenRecipe;
-        public GameObject ObjectClickedOn;
-        public Recipe.MealDestination Destination;
-        public Recipe.MealQuantity Quantity = Recipe.MealQuantity.Single;
-        public Recipe.MealRepetition Repetition;
-        public string MenuText;
-        public string[] MenuPath;
-        protected ImpassableRegion mImpassableRegion = new ImpassableRegion();
-        protected bool mbWasHaveSomething;
-        private IPartOfCookingProcess mThingToPrepareOrEat;
-        public static readonly InteractionDefinition Singleton = new OverridedFridge_Have.Definition();
-        public bool IsPreparingGroupServing
+        public override void Initialize(ref InteractionInstanceParameters parameters)
         {
-            get
+            Fridge_Have.Definition definition = parameters.InteractionDefinition as Fridge_Have.Definition;
+            if (definition.ChosenRecipe != null || Actor.IsNPC)
             {
-                return this.Quantity == Recipe.MealQuantity.Group;
-            }
-        }
-        public bool Watchable
-        {
-            get
-            {
-                PetWatchableFoodInteractionHelper petWatchableCookingHelper = this.GetPetWatchableCookingHelper();
-                return petWatchableCookingHelper != null && petWatchableCookingHelper.Watchable;
-            }
-        }
-        public bool AllowsThrowScrap
-        {
-            get
-            {
-                return false;
-            }
-        }
-        public bool IsCooking
-        {
-            get
-            {
-                return true;
-            }
-        }
-        public int NumWatchingPets
-        {
-            get
-            {
-                PetWatchableFoodInteractionHelper petWatchableCookingHelper = this.GetPetWatchableCookingHelper();
-                if (petWatchableCookingHelper != null)
-                {
-                    return petWatchableCookingHelper.NumWatchingPets;
-                }
-                return 0;
-            }
-        }
-        private static string LocalizeString(string name, params object[] parameters)
-        {
-            return Localization.LocalizeString("Gameplay/Objects/Appliances/Fridge_Have:" + name, parameters);
-        }
-        private bool ShouldCookFor(Sim sim)
-        {
-            return sim.Household == this.Actor.Household || sim.IsGreetedOnLot(this.Actor.LotHome);
-        }
-        protected virtual void Initialize(ref InteractionInstanceParameters parameters)
-        {
-            OverridedFridge_Have.Definition definition = parameters.InteractionDefinition as OverridedFridge_Have.Definition;
-            this.MenuText = definition.MenuText;
-            this.MenuPath = definition.MenuPath;
-            this.mbWasHaveSomething = definition.WasHaveSomething;
-            this.Destination = definition.Destination;
-            this.Quantity = definition.Quantity;
-            if (definition.ChosenRecipe == null)
-            {
-                if (base.Autonomous && this.Actor.SimDescription.IsVampire)
-                {
-                    this.ChosenRecipe = Recipe.NameToRecipeHash["VampireJuice"];
-                }
-                else
-                {
-                    Lot lotCurrent = parameters.Actor.LotCurrent;
-                    if (lotCurrent != null && lotCurrent.GetSims(new Predicate<Sim>(this.ShouldCookFor)).Count > 1)
-                    {
-                        this.Quantity = Recipe.MealQuantity.Group;
-                    }
-                    this.ChosenRecipe = Food.ChooseRecipeRandomly(parameters.Target.LotCurrent, parameters.Actor as Sim, parameters.Autonomous, null, this.Quantity);
-                    if (!this.ChosenRecipe.CanMakeGroupServing && this.Quantity == Recipe.MealQuantity.Group)
-                    {
-                        this.Quantity = Recipe.MealQuantity.Single;
-                    }
-                }
-                this.ObjectClickedOn = (parameters.Target as GameObject);
+                base.Initialize(ref parameters);
                 return;
             }
-            this.ChosenRecipe = definition.ChosenRecipe;
-            this.ObjectClickedOn = definition.ObjectClickedOn;
-            this.Repetition = definition.Repetition;
-        }
-        public override void Init(ref InteractionInstanceParameters parameters)
-        {
-            base.Init(ref parameters);
-            this.Initialize(ref parameters);
-        }
-        public override bool OnLoadFixup()
-        {
-            bool flag = base.OnLoadFixup();
-            if (flag && this.ChosenRecipe != null)
+            Lot lotCurrent = Actor.LotCurrent;
+            if (lotCurrent.GetSims(new Predicate<Sim>(ShouldCookFor)).Count > 1)
             {
-                flag = this.ChosenRecipe.OnLoadFixup();
+                Quantity = Recipe.MealQuantity.Group;
             }
-            return flag;
-        }
-        public override string GetInteractionName()
-        {
-            return OverridedFridge_Have.LocalizeString("HaveInteractionName", new object[]
-			{
-				this.Actor.HasTrait(TraitNames.Vegetarian) ? this.ChosenRecipe.GenericVegetarianName : this.ChosenRecipe.GenericName
-			});
-        }
-        public override void CleanupAfterExitReason()
-        {
-            if (this.Actor.IsHoldingAnything())
+            ChosenRecipe = ChooseRecipeRandomly(lotCurrent, Actor, Quantity, false);
+            if (ChosenRecipe != null)
             {
-                if (this.Actor.CarryStateMachine == null)
+                if (!ChosenRecipe.CanMakeSingleServing)
                 {
-                    CarrySystem.EnterWhileHolding(this.Actor, this.Actor.GetObjectInRightHand() as ICarryable);
+                    Quantity = Recipe.MealQuantity.Group;
                 }
-                Food.PutHeldObjectDownOnCounterTableOrFloor(this.Actor, SurfaceType.Normal);
+                if (!ChosenRecipe.CanMakeGroupServing)
+                {
+                    Quantity = Recipe.MealQuantity.Single;
+                }
+                ObjectClickedOn = Target;
             }
-            base.CleanupAfterExitReason();
         }
-        public override void Cleanup()
-        {
-            this.mImpassableRegion.Cleanup();
-            this.mImpassableRegion = null;
-            base.Cleanup();
-        }
+
         public override bool Run()
         {
             try
             {
-                if (this.CheckForCancelAndCleanup())
+                if (CheckForCancelAndCleanup())
                 {
                     return false;
                 }
-                if (!this.Target.RouteToOpen(this, true))
+                if (!Target.RouteToOpen(this, true))
                 {
                     return false;
                 }
-                if (this.Target.InUse)
+                if (Target.InUse)
                 {
-                    this.Actor.AddExitReason(ExitReason.RouteFailed);
+                    Actor.AddExitReason(ExitReason.RouteFailed);
                     return false;
                 }
-                this.mImpassableRegion.AddMember(this.Actor);
-                this.mImpassableRegion.AddMember(this.Target);
-                this.mImpassableRegion.UpdateFootprint();
+                mImpassableRegion.AddMember(Actor);
+                mImpassableRegion.AddMember(Target);
+                mImpassableRegion.UpdateFootprint();
                 base.StandardEntry();
-                if (this.Actor.SimDescription.TeenOrAbove && !this.ChosenRecipe.IsSnack)
+                if (Actor.SimDescription.TeenOrAbove && !ChosenRecipe.IsSnack)
                 {
-                    this.Actor.SkillManager.AddElement(SkillNames.Cooking);
+                    Actor.SkillManager.AddElement(SkillNames.Cooking);
                 }
                 bool flag = true;
                 List<Ingredient> ingredientsUsed = new List<Ingredient>();
 
-                if (AniRecipe.UseUpIngredientsFrom(this.ChosenRecipe, this.Actor, ref ingredientsUsed, this.Quantity, this.ChosenRecipe.IsSnack) || this.Actor.IsNPC)
+                //if (AniRecipe.UseUpIngredientsFrom(ChosenRecipe, Actor, ref ingredientsUsed, Quantity, ChosenRecipe.IsSnack) || Actor.IsNPC)
+                if (AniRecipe.UseUpIngredientsFrom(ChosenRecipe, Actor, ref ingredientsUsed))
                 {
                     //If the food is a snack, remove ingredient 
-                    if (this.ChosenRecipe.IsSnack && !this.Actor.IsNPC)
+                    /*if (ChosenRecipe.IsSnack && !Actor.IsNPC)
                     {
-                        Recipe snack = AniRecipe.ReturnSnackIngredientRecipe(this.Actor, this.ChosenRecipe);
+                        Recipe snack = AniRecipe.ReturnSnackIngredientRecipe(Actor, ChosenRecipe);
                         if (snack != null)
                         {
                             //Create new temp ingredient list  
@@ -342,28 +229,28 @@ namespace ani_GroceryShopping
                             }
                             ingredientsUsed.Clear();
                         }
-                    }
+                    }*/
 
-                    //CommonMethods.PrintMessage("Snack: " + this.ChosenRecipe.IsSnack + " / " + ingredientsUsed.Count.ToString());
+                    //CommonMethods.PrintMessage("Snack: " + ChosenRecipe.IsSnack + " / " + ingredientsUsed.Count.ToString());
 
                     Fridge.EnterStateMachine(this);
-                    IRemovableFromFridgeAsInitialRecipeStep removableFromFridgeAsInitialRecipeStep = GlobalFunctions.CreateObjectOutOfWorld(this.ChosenRecipe.ObjectToCreateInFridge, this.ChosenRecipe.ModelCodeVersion) as IRemovableFromFridgeAsInitialRecipeStep;
+                    IRemovableFromFridgeAsInitialRecipeStep removableFromFridgeAsInitialRecipeStep = GlobalFunctions.CreateObjectOutOfWorld(ChosenRecipe.ObjectToCreateInFridge, ChosenRecipe.ModelCodeVersion) as IRemovableFromFridgeAsInitialRecipeStep;
                     GameObject gameObject = removableFromFridgeAsInitialRecipeStep as GameObject;
-                    gameObject.AddToUseList(this.Actor);
+                    gameObject.AddToUseList(Actor);
                     try
                     {
-                        this.Target.PutOnFridgeShelf(gameObject);
-                        this.mThingToPrepareOrEat = (removableFromFridgeAsInitialRecipeStep as IPartOfCookingProcess);
-                        this.mThingToPrepareOrEat.CookingProcess = new CookingProcess(this.ChosenRecipe, ingredientsUsed, this.ObjectClickedOn, this.Target.LotCurrent, this.Destination, this.Quantity, this.Repetition, this.MenuText, this.MenuPath, removableFromFridgeAsInitialRecipeStep as IPartOfCookingProcess, this.Actor);
-                        removableFromFridgeAsInitialRecipeStep.InitializeForRecipe(this.ChosenRecipe, false);
-                        CookingProcess.MoveToNextStep(removableFromFridgeAsInitialRecipeStep as IPartOfCookingProcess, this.Actor);
+                        Target.PutOnFridgeShelf(gameObject);
+                        mThingToPrepareOrEat = (removableFromFridgeAsInitialRecipeStep as IPartOfCookingProcess);
+                        mThingToPrepareOrEat.CookingProcess = new CookingProcess(ChosenRecipe, ingredientsUsed, ObjectClickedOn, Target.LotCurrent, Destination, Quantity, Repetition, MenuText, MenuPath, removableFromFridgeAsInitialRecipeStep as IPartOfCookingProcess, Actor);
+                        removableFromFridgeAsInitialRecipeStep.InitializeForRecipe(ChosenRecipe, false);
+                        CookingProcess.MoveToNextStep(removableFromFridgeAsInitialRecipeStep as IPartOfCookingProcess, Actor);
                         base.SetActor(removableFromFridgeAsInitialRecipeStep.ActorNameForFridge, gameObject);
-                        if (this.mbWasHaveSomething)
+                        if (mbWasHaveSomething)
                         {
                             base.AnimateSim("Ponder");
                         }
                         base.AnimateSim("Remove - " + removableFromFridgeAsInitialRecipeStep.ActorNameForFridge);
-                        this.TriggerWatchCookingReactionBroadcaster();
+                        TriggerWatchCookingReactionBroadcaster();
                     }
                     catch (Exception ex)
                     {
@@ -373,20 +260,20 @@ namespace ani_GroceryShopping
                         gameObject.Destroy();
                         throw;
                     }
-                    CarrySystem.EnterWhileHolding(this.Actor, removableFromFridgeAsInitialRecipeStep, false);
-                    if (this.CheckForCancelAndCleanup())
+                    CarrySystem.EnterWhileHolding(Actor, removableFromFridgeAsInitialRecipeStep, false);
+                    if (CheckForCancelAndCleanup())
                     {
                         return false;
                     }
-                    if (this.Actor.HasTrait(TraitNames.NaturalCook))
+                    /*if (Actor.HasTrait(TraitNames.NaturalCook))
                     {
-                        TraitTipsManager.ShowTraitTip(13271263770231522448uL, this.Actor, TraitTipsManager.TraitTipCounterIndex.NaturalCook, TraitTipsManager.kNaturalCookCountOfMealsCooked);
+                        TraitTipsManager.ShowTraitTip(13271263770231522448uL, Actor, TraitTipsManager.TraitTipCounterIndex.NaturalCook, TraitTipsManager.kNaturalCookCountOfMealsCooked);
                     }
-                    if (this.Actor.HasTrait(TraitNames.Vegetarian))
+                    if (Actor.HasTrait(TraitNames.Vegetarian))
                     {
-                        TraitTipsManager.ShowTraitTip(13271263770231522928uL, this.Actor, TraitTipsManager.TraitTipCounterIndex.Vegetarian, TraitTipsManager.kVegetarianCountOfMealsCooked);
-                    }
-                    this.PushNextInteraction(removableFromFridgeAsInitialRecipeStep, gameObject);
+                        TraitTipsManager.ShowTraitTip(13271263770231522928uL, Actor, TraitTipsManager.TraitTipCounterIndex.Vegetarian, TraitTipsManager.kVegetarianCountOfMealsCooked);
+                    }*/
+                    PushNextInteraction(removableFromFridgeAsInitialRecipeStep, gameObject);
                     base.AnimateSim("Exit - Standing");
                 }
                 else
@@ -397,7 +284,7 @@ namespace ani_GroceryShopping
                 base.StandardExit();
                 if (flag)
                 {
-                    ActiveTopic.AddToSim(this.Actor, "Has Made Food");
+                    ActiveTopic.AddToSim(Actor, "Has Made Food");
                 }
                 return flag;
             }
@@ -406,60 +293,155 @@ namespace ani_GroceryShopping
                 CommonMethods.PrintMessage("Fridge: " + ex.Message);
                 return false;
             }
-           
         }
-        private PetWatchableFoodInteractionHelper GetPetWatchableCookingHelper()
+
+        public static Recipe ChooseRecipeRandomly(Lot lotToCookOn, Sim sim, Recipe.MealQuantity quantity, bool forTesting)
         {
-            if (this.mThingToPrepareOrEat != null && this.mThingToPrepareOrEat.CookingProcess != null)
+            if (lotToCookOn == null)
             {
-                return this.mThingToPrepareOrEat.CookingProcess.PetWatchableCookingHelper;
+                return null;
+            }
+            List<Ingredient> simIngredients = Recipe.GetCookableIngredients(sim.Inventory);
+            List<Ingredient> lotIngredients = sim.Household != null && sim.Household.SharedFridgeInventory != null ? Recipe.GetCookableIngredients(sim.Household.SharedFridgeInventory.Inventory) : new List<Ingredient>();
+            if (GameUtils.IsInstalled(ProductVersion.EP3) && !sim.SimDescription.IsVampire)
+            {
+                Predicate<Ingredient> vampireFruit = (i => i.Key == "VampireFruit");
+                simIngredients.RemoveAll(vampireFruit);
+                lotIngredients.RemoveAll(vampireFruit);
+            }
+            if (simIngredients.Count + lotIngredients.Count == 0)
+            {
+                return null;
+            }
+
+            List<Ingredient> list = null;
+            Predicate<Recipe> p = (r => r.BuildIngredientList(simIngredients, lotIngredients, ref list, ref list).Count == 0);
+
+            Recipe recipe = null;
+            if (sim.SimDescription.IsVampire)
+            {
+                recipe = Recipe.NameToRecipeHash[GameUtils.IsInstalled(ProductVersion.EP7) ? "VampireJuiceEP7" : "VampireJuice"];
+            }
+            else if (sim.SimDescription.IsZombie)
+            {
+                recipe = Recipe.NameToRecipeHash["BrainFreeze"];
+            }
+            if (recipe != null)
+            {
+                return p(recipe) ? recipe : null;
+            }
+
+            bool lotHasCounter = Food.LotHasUsableCounter(lotToCookOn);
+            bool lotHasMicrowave = Food.LotHasUsableMicrowave(lotToCookOn);
+            //For testing purposes quicker to test snacks first since they only require 1 ingredient.
+            if (forTesting)
+            {
+                recipe = ChooseRandomSnack(sim, lotHasCounter, lotHasMicrowave, p, true);
+                if (recipe != null)
+                {
+                    return recipe;
+                }
+            }
+            if (!lotToCookOn.IsCommunityLot)
+            {
+                List<Recipe> availableRecipes = new List<Recipe>();
+                bool lotHasStove = Food.LotHasUsableStove(lotToCookOn);
+                bool lotHasGrill = Food.LotHasUsableGrill(lotToCookOn);
+                Recipe.MealTime mealTime = Food.GetCurrentMealTime();
+
+                bool flag = sim.HasTrait(TraitNames.Vegetarian);
+                Cooking cooking = sim.SkillManager.GetSkill<Cooking>(SkillNames.Cooking);
+                if (cooking != null && cooking.IsHiddenSkill() && cooking.SkillLevel >= 1)
+                {
+                    foreach (string current in cooking.KnownRecipes)
+                    {
+                        Recipe r;
+                        if (Recipe.NameToRecipeHash.TryGetValue(current, out r) && !r.IsPetFood && (!flag || r.IsVegetarian) && Food.CanMake(r, false, true, mealTime, Recipe.MealRepetition.MakeOne, lotToCookOn, sim, Recipe.MealQuantity.DoNotCheck, lotHasCounter, lotHasStove, lotHasMicrowave, lotHasGrill, 0) == Recipe.CanMakeFoodTestResult.Pass
+                            && p(r))
+                        {
+                            if (forTesting)
+                            {
+                                return r;
+                            }
+                            availableRecipes.Add(r);
+                        }
+                    }
+                }
+                else if (sim.SimDescription.TeenOrAbove && quantity == Recipe.MealQuantity.Group)
+                {
+                    foreach (Recipe current2 in Recipe.IntroRecipes)
+                    {
+                        if ((!flag || current2.IsVegetarian) && Food.CanMake(current2, false, true, mealTime, Recipe.MealRepetition.MakeOne, lotToCookOn, sim, Recipe.MealQuantity.DoNotCheck, lotHasCounter, lotHasStove, lotHasMicrowave, lotHasGrill, 0) == Recipe.CanMakeFoodTestResult.Pass
+                            && p(current2))
+                        {
+                            if (forTesting)
+                            {
+                                return current2;
+                            }
+                            availableRecipes.Add(current2);
+                        }
+                    }
+                }
+                if (availableRecipes.Count > 0)
+                {
+                    if (RandomUtil.RandomChance(Food.kChanceOfChoosingFavoriteFood))
+                    {
+                        FavoriteFoodType favoriteFood = sim.SimDescription.FavoriteFood;
+                        if (favoriteFood != FavoriteFoodType.None)
+                        {
+                            foreach (Recipe current3 in availableRecipes)
+                            {
+                                if (current3.Favorite == favoriteFood)
+                                {
+                                    return current3;
+                                }
+                            }
+                        }
+                    }
+                    if (quantity == Recipe.MealQuantity.Group)
+                    {
+                        p = (r => r.CanMakeGroupServing);
+                    }
+                    else
+                    {
+                        p = (r => r.CanMakeSingleServing);
+                    }
+                    List<Recipe> limitedRecipes = availableRecipes.FindAll(p);
+                    return RandomUtil.GetRandomObjectFromList<Recipe>(limitedRecipes.Count > 0 ? limitedRecipes : availableRecipes);
+                }
+            }
+            if (!forTesting)
+            {
+                return ChooseRandomSnack(sim, lotHasCounter, lotHasMicrowave, p, false);
             }
             return null;
         }
-        public void RegisterPetWatching(Sim pet)
+
+        public static Recipe ChooseRandomSnack(Sim sim, bool lotHasCounter, bool lotHasMicrowave, Predicate<Recipe> condition, bool forTesting)
         {
-            PetWatchableFoodInteractionHelper petWatchableCookingHelper = this.GetPetWatchableCookingHelper();
-            if (petWatchableCookingHelper != null)
+            List<Recipe> availableSnacks = new List<Recipe>();
+            foreach (Recipe current in Recipe.Snacks)
             {
-                petWatchableCookingHelper.RegisterPetWatching(pet);
+                string key;
+                if ((key = current.Key) == null || key == "VampireJuice" || key == "VampireJuiceEP7" || key == "PineappleJuice" || key == "VirginPineappleJuice" || key == "CoconutJuice" || key == "VirginCoconutJuice")
+                {
+                    continue;
+                }
+                if ((!current.AdultOnly || (!sim.SimDescription.TeenOrBelow && !sim.SimDescription.IsPregnant)) && !Fridge.sExcludeList.Contains(key) && (!current.CookingProcessData.UsesAMicrowave || !sim.SimDescription.ChildOrBelow) 
+                    && current.DoesLotHaveRightTech(lotHasCounter, false, lotHasMicrowave, false, Recipe.MealQuantity.Single) == Recipe.CanMakeFoodTestResult.Pass && condition(current))
+                {
+                    if (forTesting)
+                    {
+                        return current;
+                    }
+                    availableSnacks.Add(current);
+                }
             }
-        }
-        public void UnregisterPetWatching(Sim pet)
-        {
-            PetWatchableFoodInteractionHelper petWatchableCookingHelper = this.GetPetWatchableCookingHelper();
-            if (petWatchableCookingHelper != null)
+            if (availableSnacks.Count == 0)
             {
-                petWatchableCookingHelper.UnregisterPetWatching(pet);
+                return null;
             }
-        }
-        protected void TriggerWatchCookingReactionBroadcaster()
-        {
-            PetWatchableFoodInteractionHelper petWatchableCookingHelper = this.GetPetWatchableCookingHelper();
-            if (petWatchableCookingHelper != null)
-            {
-                petWatchableCookingHelper.TriggerReactionBroadcaster(this.Actor);
-            }
-        }
-        public void RegisterUserDirectedThrowScrap(Sim pet)
-        {
-            PetWatchableFoodInteractionHelper petWatchableCookingHelper = this.GetPetWatchableCookingHelper();
-            if (petWatchableCookingHelper != null)
-            {
-                petWatchableCookingHelper.RegisterUserDirectedThrowScrap(pet);
-            }
-        }
-        public List<Sim> GetWatchingPets()
-        {
-            PetWatchableFoodInteractionHelper petWatchableCookingHelper = this.GetPetWatchableCookingHelper();
-            if (petWatchableCookingHelper != null)
-            {
-                return petWatchableCookingHelper.GetWatchingPets();
-            }
-            return new List<Sim>();
-        }
-        protected virtual void PushNextInteraction(IRemovableFromFridgeAsInitialRecipeStep thingToEatOrPrepare, GameObject thingToEatOrPrepareAsScriptObject)
-        {
-            this.Actor.InteractionQueue.PushAsContinuation(thingToEatOrPrepare.FollowupInteraction, thingToEatOrPrepareAsScriptObject, true);
+            return RandomUtil.GetRandomObjectFromList<Recipe>(availableSnacks);
         }
     }
 
@@ -482,20 +464,36 @@ namespace ani_GroceryShopping
             {
                 return Party.IsHostAtAParty(a) && (!isAutonomous || target.LotCurrent.CountObjects<IPreparedFood>() <= 0u) && base.Test(a, target, isAutonomous, ref greyedOutTooltipCallback);
             }
-            protected override OverridedFoodMenuInteractionDefinition<Fridge, OverridedFridge_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
+            public override FoodMenuInteractionDefinition<Fridge, Fridge_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
             {
                 menuPath = new string[]
 				{
 					Localization.LocalizeString("Gameplay/Objects/FoodObjects:PrepareMenuPath", new object[0])
 				};
+                if (cost > 0)
+                {
+                    cost = -2147483648;
+                }
                 return new OverridedFridge_Prepare.PrepareDefinition(menuText, recipe, menuPath, objectClickedOn, Recipe.MealDestination.SurfaceOnly, Recipe.MealQuantity.Group, repetition, bWasHaveSomething, cost);
+            }
+
+            public override void AddInteractions(InteractionObjectPair iop, Sim sim, Fridge fridge, List<InteractionObjectPair> results)
+            {
+                if (sim != null && Party.IsHostAtAParty(sim))
+                {
+                    Lot lotCurrent = fridge.LotCurrent;
+                    if (lotCurrent == sim.LotHome || (lotCurrent.IsResidentialLot && sim.Household.IsGreetedOnLot(lotCurrent, ObjectGuid.InvalidObjectGuid)))
+                    {
+                        base.AddFoodPrepInteractions(iop, sim, results, null);
+                    }
+                }
             }
         }
         public static readonly InteractionDefinition PrepareSingleton = new OverridedFridge_Prepare.PrepareDefinition();
-        public override bool Run()
+        /*public override bool Run()
         {
             return base.Run();
-        }
+        }*/
     }
     #endregion
 

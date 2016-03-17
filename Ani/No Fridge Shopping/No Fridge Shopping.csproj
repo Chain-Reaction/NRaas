@@ -69,8 +69,8 @@
     <Compile Include="Misc\AniRecipe.cs" />
     <Compile Include="HaveInteractions\AniStove.cs" />
     <Compile Include="Misc\CommonMethods.cs" />
-    <Compile Include="HaveInteractions\OverridedInteractions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HaveInteractions\StoreObjectInteractions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -78,33 +78,43 @@
   <ItemGroup>
     <Reference Include="mscorlib">
       <HintPath>..\..\..\Desktop\Sims3Stuff\mscorlib.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\Desktop\Sims3Stuff\System.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sims3Metadata">
       <HintPath>..\..\..\Desktop\Sims3Stuff\Sims3Metadata.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Xml">
       <HintPath>..\..\..\Desktop\Sims3Stuff\System.Xml.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ScriptCore">
       <HintPath>..\..\..\Desktop\Sims3Stuff\ScriptCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sims3GameplayObjects">
       <HintPath>..\..\..\Desktop\Sims3Stuff\Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sims3StoreObjects">
       <HintPath>..\..\..\Desktop\Sims3Stuff\Sims3StoreObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="SimIFace">
       <HintPath>..\..\..\Desktop\Sims3Stuff\SimIFace.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UI">
       <HintPath>..\..\..\Desktop\Sims3Stuff\UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sims3GameplaySystems">
       <HintPath>..\..\..\Desktop\Sims3Stuff\Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -115,4 +125,14 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentSwitchBody="True" IndentBlocksInsideExpressions="True" AnonymousMethodBraceStyle="NextLine" PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ElseNewLinePlacement="NewLine" CatchNewLinePlacement="NewLine" FinallyNewLinePlacement="NewLine" WhileNewLinePlacement="DoNotCare" ArrayInitializerWrapping="DoNotChange" ArrayInitializerBraceStyle="NextLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" NewLineBeforeConstructorInitializerColon="NewLine" NewLineAfterConstructorInitializerColon="SameLine" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" SpacesBeforeBrackets="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>

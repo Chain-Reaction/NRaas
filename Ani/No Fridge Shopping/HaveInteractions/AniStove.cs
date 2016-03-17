@@ -13,7 +13,7 @@ namespace ani_GroceryShopping
 {
     internal class OverridedStove_Have : Interaction<Sim, Stove>
     {
-        private sealed class Definition : OverridedFoodMenuInteractionDefinition<Stove, OverridedStove_Have>
+        public sealed class Definition : Stove_Have.Definition //OverridedFoodMenuInteractionDefinition<Stove, OverridedStove_Have>
         {
             public Definition()
             {
@@ -22,30 +22,25 @@ namespace ani_GroceryShopping
                 : base(menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost)
             {
             }
-            protected override OverridedFoodMenuInteractionDefinition<Stove, OverridedStove_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
+            public override FoodMenuInteractionDefinition<Stove, Stove_Have> Create(string menuText, Recipe recipe, string[] menuPath, GameObject objectClickedOn, Recipe.MealDestination destination, Recipe.MealQuantity quantity, Recipe.MealRepetition repetition, bool bWasHaveSomething, int cost)
             {
-                return new OverridedStove_Have.Definition(menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost);
-            }
-            public override void AddInteractions(InteractionObjectPair iop, Sim sim, Stove stove, List<InteractionObjectPair> results)
-            {
-                base.AddFoodPrepInteractions(iop, sim, results, iop.Target as GameObject);
-            }
-            protected override bool SpecificTest(Sim a, Stove target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
-            {
-                if (!target.CommonMakeTest(a) || target.HasGasLeak)
+                if (cost > 0)
                 {
-                    return false;
+                    cost = -2147483648;
                 }
-                Recipe.CanMakeFoodTestResult result = Food.CanMake(this.ChosenRecipe, true, true, Recipe.MealTime.DO_NOT_CHECK, this.Repetition, target.LotCurrent, a, this.Quantity, this.Cost, this.ObjectClickedOn);
-                return Food.PrepareTestResultCheckAndGrayedOutPieMenuSet(a, this.ChosenRecipe, result, ref greyedOutTooltipCallback);
+                return new Definition (menuText, recipe, menuPath, objectClickedOn, destination, quantity, repetition, bWasHaveSomething, cost);
+            }
+            public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
+            {
+                return CommonMethods.CreateInstance<OverridedStove_Have>(ref parameters);
             }
         }
         public static readonly InteractionDefinition Singleton = new OverridedStove_Have.Definition();
         public override bool Run()
         {
-            OverridedStove_Have.Definition definition = base.InteractionDefinition as OverridedStove_Have.Definition;
-            TraitFunctions.CheckForNeuroticAnxiety(this.Actor, TraitFunctions.NeuroticTraitAnxietyType.Stove);
-            return Fridge.ForcePushFridgeHave(this.Actor, this.Target, definition.ChosenRecipe, definition.MenuText, definition.MenuPath, definition.ObjectClickedOn, definition.Destination, definition.Quantity, definition.Repetition, false, definition.Cost);
+            Stove_Have.Definition definition = base.InteractionDefinition as Stove_Have.Definition;
+            TraitFunctions.CheckForNeuroticAnxiety(Actor, TraitFunctions.NeuroticTraitAnxietyType.Stove);
+            return AniRecipe.ForcePushFridgeHave(Actor, Target, definition.ChosenRecipe, definition.Destination, definition.Quantity, definition.Repetition);
         }
     }
 }
