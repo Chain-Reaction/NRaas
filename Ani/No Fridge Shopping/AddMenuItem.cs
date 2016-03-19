@@ -2,11 +2,15 @@
 using System;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Autonomy;
+using Sims3.Gameplay.Core;
+using Sims3.Gameplay.Interactions;
+using Sims3.Gameplay.Objects.FoodObjects;
 using Sims3.Gameplay.Objects.Register;
 using Sims3.Gameplay.EventSystem;
 using System.Collections.Generic;
 using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.Gameplay.Objects.Appliances;
+using Sims3.Store.Objects;
 
 namespace ani_GroceryShopping
 {
@@ -15,17 +19,20 @@ namespace ani_GroceryShopping
         [Tunable]
         protected static bool ShoppailuNuuttis;
 
-        [Tunable]
-        public static string FruitRecipe;
+        //[Tunable]
+        //public static string FruitRecipe;
+
+        //[Tunable]
+        //public static string CheeseRecipe;
+
+        //[Tunable]
+        //public static string VegetableRecipe;
+
+        //[Tunable]
+        //public static string VampireRecipe;
 
         [Tunable]
-        public static string CheeseRecipe;
-
-        [Tunable]
-        public static string VegetableRecipe;
-
-        [Tunable]
-        public static string VampireRecipe;
+        public static string[] SnackRequirements = new string[0];
 
         //[Tunable]
         //protected static int Profit;
@@ -35,125 +42,163 @@ namespace ani_GroceryShopping
         //    return Profit;
         //}
 
+        private static bool PreLoaded = false;
+
+        private static ulong BuildBuyLotId;
+
+        public static List<Type> ApplianceTypes = new List<Type>{ typeof(Fridge), typeof(Stove), typeof(Microwave), typeof(FoodProcessor), typeof(Grill) };
+
         // Methods
         static AddMenuItem()
         {
+            LoadSaveManager.ObjectGroupsPreLoad += new ObjectGroupsPreLoadHandler(OnPreLoad);
             World.OnWorldLoadFinishedEventHandler += new EventHandler(World_OnWorldLoadFinishedEventHandler);
-            World.OnLotAddedEventHandler += new EventHandler(World_OnWorldLoadFinishedEventHandler);
-            World.OnObjectPlacedInLotEventHandler += new EventHandler(World_OnWorldLoadFinishedEventHandler);
+            //World.OnLotAddedEventHandler += new EventHandler(World_OnWorldLoadFinishedEventHandler);
+            //World.OnObjectPlacedInLotEventHandler += new EventHandler(World_OnWorldLoadFinishedEventHandler);
+            LotManager.EnteringBuildBuyMode += () => BuildBuyLotId = LotManager.sActiveBuildBuyLot.LotId;
+            LotManager.ExitingBuildBuyMode += new VoidEventHandler (OnExitBuildBuyMode);
         }
 
         static void World_OnWorldLoadFinishedEventHandler(object sender, EventArgs e)
         {
-            //List<Fridge> fList = new List<Fridge>(Sims3.Gameplay.Queries.GetObjects<Fridge>());
-			foreach (Fridge f in Sims3.Gameplay.Queries.GetObjects<Fridge>())
+            foreach (Type type in ApplianceTypes)
             {
-                AddInteractions(f);
-            }
-
-            //List<Microwave> mList = new List<Microwave>(Sims3.Gameplay.Queries.GetObjects<Microwave>());
-			foreach (Microwave m in Sims3.Gameplay.Queries.GetObjects<Microwave>())
-            {
-                AddInteractions(m);
-            }
-
-            //List<FoodProcessor> fpList = new List<FoodProcessor>(Sims3.Gameplay.Queries.GetObjects<FoodProcessor>());
-			foreach (FoodProcessor fp in Sims3.Gameplay.Queries.GetObjects<FoodProcessor>())
-            {
-                AddInteractions(fp);
-            }
-
-            //List<Stove> sList = new List<Stove>(Sims3.Gameplay.Queries.GetObjects<Stove>());
-			foreach (Stove s in Sims3.Gameplay.Queries.GetObjects<Stove>())
-            {
-                AddInteractions(s);
-            }
-
-            //List<Grill> gList = new List<Grill>(Sims3.Gameplay.Queries.GetObjects<Grill>());
-			foreach (Grill g in Sims3.Gameplay.Queries.GetObjects<Grill>())
-            {
-                AddInteractions(g);
+                AddInteractionsToObjects(type, null);
             }
 
             //Add the interaction when buying a new object 
-            EventTracker.AddListener(EventTypeId.kBoughtObject, new ProcessEventDelegate(AddMenuItem.OnNewObject));
+            //EventTracker.AddListener(EventTypeId.kBoughtObject, new ProcessEventDelegate(AddMenuItem.OnNewObject));
         }
 
 
-        protected static ListenerAction OnNewObject(Event e)
+        /*protected static ListenerAction OnNewObject(Event e)
         {
             GameObject o = e.TargetObject as GameObject;
 
-            //if (o != null)
-                AddInteractions(o);
+            AddInteractions(o);
             
             return ListenerAction.Keep;
-        }
+        }*/
 
-        public static void AddInteractions(GameObject obj)
+        public static void OnExitBuildBuyMode()
         {
-            //Grill grill = obj as Grill;
-            //Stove stove = obj as Stove;
-            //Fridge fridge = obj as Fridge;
-            //Microwave micro = obj as Microwave;            
-            //FoodProcessor processor = obj as FoodProcessor;
-
-            if (obj != null && obj.Interactions != null)
+            Lot lot = LotManager.GetLot(BuildBuyLotId);
+            if (lot != null)
             {
-				if (obj is Fridge) //(fridge != null)
+                foreach (Type type in ApplianceTypes)
                 {
-                    //InteractionObjectPair i2 = new InteractionObjectPair(OverridedFridge_Have.Singleton, obj);
-                    //if (!obj.Interactions.Contains(i2))
-                   // {
-						obj.RemoveInteractionByType(typeof(Fridge_Have.Definition));
-						obj.RemoveInteractionByType (typeof(Fridge_Prepare.PrepareDefinition));
-                       // obj.Interactions.RemoveAt(0);
-                        obj.AddInteraction(OverridedFridge_Have.Singleton, true);
-                        obj.AddInteraction(OverridedFridge_Prepare.PrepareSingleton, true);
-                        
-                    //}
+                    AddInteractionsToObjects(type, lot);
                 }
-				else if (obj is Microwave)//(micro != null)
-                {
-                    //InteractionObjectPair i2 = new InteractionObjectPair(OverridedMicrowave_Have.Singleton, obj);
-                    //if (!obj.Interactions.Contains(i2))
-                    //{
-						obj.RemoveInteractionByType (typeof(Microwave_Have.Definition));
-                        obj.AddInteraction(OverridedMicrowave_Have.Singleton, true);
-
-                    //}
-                }
-				else if (obj is FoodProcessor)//(processor != null)
-                {
-                    //InteractionObjectPair i2 = new InteractionObjectPair(OverridedFoodProcessor_Have.Singleton, obj);
-                    //if (!obj.Interactions.Contains(i2))
-                    //{
-						obj.RemoveInteractionByType (typeof(FoodProcessor.FoodProcessor_Have.Definition));
-                        obj.AddInteraction(OverridedFoodProcessor_Have.Singleton, true);
-                    //}
-                }
-				else if (obj is Stove)//(stove != null)
-                {
-                    //InteractionObjectPair i2 = new InteractionObjectPair(OverridedStove_Have.Singleton, obj);
-                    //if (!obj.Interactions.Contains(i2))
-                    //{
-						obj.RemoveInteractionByType (typeof(Stove_Have.Definition));
-                        obj.AddInteraction(OverridedStove_Have.Singleton, true);
-                    //}
-                }
-				else if (obj is Grill)//(grill != null)
-                {
-                    //InteractionObjectPair i2 = new InteractionObjectPair(OverridedGrill_Have.Singleton, obj);
-                    //if (!obj.Interactions.Contains(i2))
-                    //{
-						obj.RemoveInteractionByType (typeof(Grill_Have.Definition));
-                        obj.AddInteraction(OverridedGrill_Have.Singleton, true);
-                    //}
-                }
-
             }
         }
 
+        private static void OnPreLoad()
+        {
+            if (!PreLoaded)
+            {
+                PreLoaded = true;
+                InjectTuning<Fridge, Fridge_Have.Definition, OverridedFridge_Have.Definition>();
+                InjectTuning<Fridge, Fridge_Prepare.PrepareDefinition, OverridedFridge_Prepare.PrepareDefinition>();
+                InjectTuning<Stove, Stove_Have.Definition, OverridedStove_Have.Definition>();
+                InjectTuning<Microwave, Microwave_Have.Definition, OverridedMicrowave_Have.Definition>();
+                InjectTuning<Grill, Grill_Have.Definition, OverridedGrill_Have.Definition>();
+                InjectTuning<FoodProcessor, FoodProcessor.FoodProcessor_Have.Definition, OverridedFoodProcessor_Have.Definition>();
+                if (GameUtils.IsInstalled(ProductVersion.EP5))
+                {
+                    InteractionTuning tuning = AutonomyTuning.GetTuning (typeof(MakeGourmetFoodForPet.Definition), "Sims3.Gameplay.Objects.Appliances.MakeGourmetFoodForPet+Definition", typeof(Fridge));
+                    if (tuning != null)
+                    {
+                        tuning.LoadFieldDisallowAutonomous(true);
+                    }
+                }
 
+                if (Recipe.NameToRecipeHash.ContainsKey("WOBakeBreadCountry"))
+                {
+                    ApplianceTypes.Add(typeof(WoodFireOven));
+                    InjectTuning<WoodFireOven, WoodFireOven.WOBake.Definition, OverridedWOBakeDefinition>();
+                }
+                if (Recipe.NameToRecipeHash.ContainsKey("TGCookTeppanyakiSalmon"))
+                {
+                    ApplianceTypes.Add(typeof(TeppanyakiGrill));
+                    InjectTuning<TeppanyakiGrill, TeppanyakiGrill.TGCook.Definition, OverridedTGCookDefinition>();
+                }
+
+                char[] separator = new char[]{ ':' };
+                foreach (string current in SnackRequirements)
+                {
+                    string[] array = current.Split (separator, 2);
+                    string key = array [0].Trim ();
+                    Recipe recipe;
+                    if (Recipe.NameToRecipeHash.TryGetValue(key, out recipe) && recipe.Ingredient1 == null)
+                    {
+                        recipe.mNonPersistableData.mIngredient1 = recipe.InitIngredient(array[1].Trim());
+                    }
+                }
+            }
+        }
+
+        public static void AddInteractionsToObjects(Type type, Lot lot)
+        {
+            bool onLoadup = lot == null;
+            Array array = onLoadup ? Sims3.SimIFace.Queries.GetObjects(type) : Sims3.Gameplay.Queries.GetObjects(type, lot);
+            if (array != null)
+            {
+                foreach (object obj in array)
+                {
+                    AddInteractions(obj as GameObject, !onLoadup);
+                }
+            }
+        }
+
+        public static void AddInteractions(GameObject obj, bool checkForDup)
+        {
+            if (obj != null && obj.Interactions != null)
+            {
+                if (obj is Fridge)
+                {
+                    ReplaceInteraction<Fridge_Have.Definition>(obj, OverridedFridge_Have.Singleton, checkForDup);
+                    ReplaceInteraction<Fridge_Prepare.PrepareDefinition>(obj, OverridedFridge_Prepare.PrepareSingleton, checkForDup);
+                }
+                else if (obj is Microwave)
+                {
+                    ReplaceInteraction<Microwave_Have.Definition>(obj, OverridedMicrowave_Have.Singleton, checkForDup);
+                }
+                else if (obj is FoodProcessor)
+                {
+                    ReplaceInteraction<FoodProcessor.FoodProcessor_Have.Definition>(obj, OverridedFoodProcessor_Have.Singleton, checkForDup);
+                }
+                else if (obj is Stove)
+                {
+                    ReplaceInteraction<Stove_Have.Definition>(obj, OverridedStove_Have.Singleton, checkForDup);
+                }
+                else if (obj is Grill)
+                {
+                    ReplaceInteraction<Grill_Have.Definition>(obj, OverridedGrill_Have.Singleton, checkForDup);
+                }
+                else if (obj is WoodFireOven)
+                {
+                    ReplaceInteraction<WoodFireOven.WOBake.Definition>(obj, OverridedWOBakeDefinition.Singleton, checkForDup);
+                }
+                else if (obj is TeppanyakiGrill)
+                {
+                    ReplaceInteraction<TeppanyakiGrill.TGCook.Definition>(obj, OverridedTGCookDefinition.Singleton, checkForDup);
+                }
+            }
+        }
+
+        public static void ReplaceInteraction<DEF>(GameObject obj, InteractionDefinition newDef, bool checkForDup) where DEF : InteractionDefinition
+        {
+            obj.RemoveInteractionByType(typeof(DEF));
+            obj.AddInteraction(newDef, checkForDup);
+        }
+
+        public static void InjectTuning<Target, OldType, NewType>() where Target : GameObject where OldType : InteractionDefinition where NewType : InteractionDefinition
+        {
+            InteractionTuning interactionTuning = AutonomyTuning.GetTuning (typeof(OldType), typeof(OldType).FullName, typeof(Target));
+            if (interactionTuning != null) 
+            {
+                AutonomyTuning.AddTuning (typeof(NewType).FullName, typeof(Target).FullName, interactionTuning);
+            }
+        }
     }
 }
