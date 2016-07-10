@@ -39,6 +39,16 @@ namespace NRaas.TravelerSpace.Helpers
             return FutureDescendantService.GetInstance();
         }
 
+        public static bool ActiveHouseholdHasDescendants()
+        {
+            if (Household.ActiveHousehold == null)
+            {
+                return false;
+            }
+
+            return GetInstance().getDescendantHouseHolds(Household.ActiveHousehold.SimDescriptions[0]).Count > 0;
+        }
+
         private static SimDescription GetPotentialMate(SimDescription me, List<SimDescription> testAgainst, bool testRelation)
         {
             List<SimDescription> choices = new List<SimDescription>();
@@ -841,8 +851,11 @@ namespace NRaas.TravelerSpace.Helpers
             {
                 ths.PostWorldLoadFixupOfHouseholds();
 
+                if (!Traveler.Settings.mDisableDescendantModification || (Traveler.Settings.mDisableDescendantModification && !ActiveHouseholdHasDescendants()))
+                {
                 // Custom
                 ProcessDescendantHouseholds(ths);
+                }
 
                 ths.BuildAvailableLotLists();
 

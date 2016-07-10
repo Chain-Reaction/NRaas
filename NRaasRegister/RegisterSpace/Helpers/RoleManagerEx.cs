@@ -68,7 +68,7 @@ namespace NRaas.RegisterSpace.Helpers
                 switch(data.Type)
                 {
                     case Role.RoleType.Paparazzi:
-                        if (!Register.Settings.mAllowPaparazzi) continue;
+                        if (!Register.Settings.mAllowPaparazzi || Register.Settings.mMaximumPaparazzi <= 0) continue;
                         break;
                     case Role.RoleType.Explorer:
                         if (!sVacationWorlds.Contains(GameUtils.GetCurrentWorld())) continue;

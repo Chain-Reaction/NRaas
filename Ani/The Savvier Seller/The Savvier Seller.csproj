@@ -101,6 +101,9 @@
     <Reference Include="mscorlib">
       <HintPath>..\..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
     </Reference>
+    <Reference Include="StoreObjectsJamMakingStation">
+      <HintPath>..\..\Sims3\Compiler\StoreObjectsJamMakingStation.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
     </Reference>
@@ -130,15 +133,6 @@
     <Reference Include="UI">
       <HintPath>..\..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="RealJam">
-      <HintPath>..\..\..\..\Desktop\StoreObjectsJamMakingStation.dll</HintPath>
-    </Reference>
-    <Reference Include="ani_StoreRestockItem">
-      <HintPath>..\..\..\..\Desktop\ani_StoreRestockItem.dll</HintPath>
-    </Reference>
-    <Reference Include="ani_StoreSetBase">
-      <HintPath>..\..\..\..\Desktop\ani_StoreSetBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

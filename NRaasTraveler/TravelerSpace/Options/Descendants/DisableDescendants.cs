@@ -28,7 +28,7 @@ namespace NRaas.TravelerSpace.Options.Descendants
             {
                 Traveler.Settings.mDisableDescendants = value;
 
-                HandleDescendants(false);
+                Traveler.Settings.HandleDescendants(false);
             }
         }
 
@@ -39,12 +39,7 @@ namespace NRaas.TravelerSpace.Options.Descendants
 
         public void OnWorldLoadFinished()
         {
-            HandleDescendants(true);
-        }
-
-        protected override OptionResult Run(GameHitParameters<GameObject> parameters)
-        {            
-            return base.Run(parameters);
+            Traveler.Settings.HandleDescendants(true);
         }
 
         public override ITitlePrefixOption ParentListingOption
@@ -58,28 +53,6 @@ namespace NRaas.TravelerSpace.Options.Descendants
             if (GameUtils.IsFutureWorld()) return false;
 
             return base.Allow(parameters);
-        }
-
-        private void HandleDescendants(bool fromWorldLoadFinished)
-        {
-            bool disabled = Traveler.Settings.mDisableDescendants;
-
-            if (!disabled && !fromWorldLoadFinished && !GameUtils.IsFutureWorld())
-            {
-                // originally had this GameUtils.IsFutureWorld and a call to RegenerateDescendants here but it
-                // creates problems when all the progninators don't travel to the future. It's a solvable issue
-                // but not right now
-                FutureDescendantServiceEx.AddListeners();
-            }
-            else if (disabled && !fromWorldLoadFinished)
-            {
-                FutureDescendantServiceEx.WipeDescendants();
-                FutureDescendantServiceEx.ClearListeners();
-            }
-            else if (disabled && fromWorldLoadFinished)
-            {
-                FutureDescendantServiceEx.ClearListeners();
-            }
         }
     }
 }

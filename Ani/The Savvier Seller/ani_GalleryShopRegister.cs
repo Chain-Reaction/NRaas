@@ -94,7 +94,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
             {
                 get
                 {
-                    return CMStoreSet.LocalizeString("CustomerPosture", new object[0] { });
+                    return CMStoreSet.LocalizeString("CustomerPosture");
                 }
             }
             public DoingCustomerStuffPosture()
@@ -250,7 +250,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 }
                 public override string GetInteractionName(Sim actor, StoreSetRegister target, InteractionObjectPair iop)
                 {
-                    return CMStoreSet.LocalizeString("WaitForTurn", new object[0] { });
+                    return CMStoreSet.LocalizeString("WaitForTurn");
                 }
             }
             public static InteractionDefinition Singleton = new StoreSetRegister.WaitForTurn.Definition();
@@ -356,7 +356,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                     if (target.Info.ShoppingData != null && target.Info.ShoppingData.ContainsKey(actor.SimDescription))
                         return CMStoreSet.LocalizeString("PayForItems", new object[] { target.Info.ShoppingData[actor.SimDescription] });
                     else
-                        return CMStoreSet.LocalizeString("PayForItems", new object[0] { });
+                        return CMStoreSet.LocalizeString("PayForItems");
                 }
             }
             public static readonly InteractionDefinition Singleton = new StoreSetRegister.PayForItems.Definition();
@@ -430,7 +430,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
 
         #endregion
 
-        #region Clerck Interactions
+        #region Clerk Interactions
 
         public class DoingShopkeeperStuffPosture : Posture
         {
@@ -454,7 +454,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
             {
                 get
                 {
-                    return CMStoreSet.LocalizeString("TendShop", new object[0] { });
+                    return CMStoreSet.LocalizeString("TendShop");
                 }
             }
             public DoingShopkeeperStuffPosture()
@@ -684,6 +684,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
 
         public sealed class CheckSalesRecords : ImmediateInteraction<IActor, StoreSetRegister>
         {
+            // not implemented
             [DoesntRequireTuning]
             public sealed class Definition : ActorlessInteractionDefinition<IActor, StoreSetRegister, StoreSetRegister.CheckSalesRecords>
             {
@@ -750,7 +751,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 }
                 public override string GetInteractionName(Sim actor, StoreSetRegister target, InteractionObjectPair iop)
                 {
-                    return CMStoreSet.LocalizeString("TendRegister", new object[] //GalleryShopRegister.LocalizeString(actor.IsFemale, "TendRegister", new object[]
+                    return CMStoreSet.LocalizeString("TendRegister", new object[]
                     {
                         actor
                     });
@@ -818,7 +819,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                     this.Actor.Posture = posture;
                 }
                 this.Actor.GreetSimOnLot(this.Target.LotCurrent);
-                if (this.Actor.LotCurrent != this.Target.LotCurrent && CMStoreSet.IsStoreOpen(this.Target))//&& SimClock.IsTimeBetweenTimes(this.Target.mOvenHoursStart + StoreSetRegister.kChefHoursBeforeWorkToHeadToWork, this.Target.mOvenHoursEnd))
+                if (this.Actor.LotCurrent != this.Target.LotCurrent && CMStoreSet.IsStoreOpen(this.Target))
                 {
                     World.FindGoodLocationParams fglParams = new World.FindGoodLocationParams(this.Target.Position);
                     Vector3 destination;
@@ -892,7 +893,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 {
                     if (target.mManualyTendingRegister == 0uL)
                     {
-                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback("No sim tending register");
+                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback(CMStoreSet.LocalizeString("NoSimTendingRegister"));
                         return false;
                     }
 
@@ -900,7 +901,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 }
                 public override string GetInteractionName(Sim actor, StoreSetRegister target, InteractionObjectPair iop)
                 {
-                    return CMStoreSet.LocalizeString("CancelBeingClerck", new object[0] { });
+                    return CMStoreSet.LocalizeString("CancelBeingClerck");
                 }
             }
             public static readonly InteractionDefinition Singleton = new StoreSetRegister.CancelBeingAClerk.Definition();
@@ -938,7 +939,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 }
                 public override string GetInteractionName(Sim actor, StoreSetRegister target, InteractionObjectPair iop)
                 {
-                    return "Tend Shop";
+                    return CMStoreSet.LocalizeString("TendShop");
                 }
             }
             public static readonly InteractionDefinition Singleton = new StoreSetRegister.WalkAroundStore.Definition();
@@ -957,7 +958,13 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                         objectsInThisRoom.Add(objects[i]);
                 }
 
-                StoreSetBase randomObjectFromList = RandomUtil.GetRandomObjectFromList<StoreSetBase>(objectsInThisRoom);
+                StoreSetBase randomObjectFromList;
+                if (objectsInThisRoom.Count == 0)
+                {
+                    return false;
+                }
+
+                randomObjectFromList = RandomUtil.GetRandomObjectFromList<StoreSetBase>(objectsInThisRoom);
                 if (randomObjectFromList == null)
                 {
                     return false;
@@ -966,7 +973,6 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 base.BeginCommodityUpdates();
                 if (!this.Actor.RouteToObjectRadialRange(randomObjectFromList, 0f, UniversityWelcomeKit.kMaxRouteDistance))
                 {
-                    // CMStoreSet.PrintMessage("can't route");
                     return false;
                 }
                 this.Actor.RouteTurnToFace(randomObjectFromList.Position);
@@ -1038,7 +1044,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
 
                     if (target.mManualyTendingRegister != 0uL || (target.mPreferredClerk != 0uL))// SimClock.IsTimeBetweenTimes(target.mOvenHoursStart, target.mOvenHoursEnd)))
                     {
-                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback("Cleark already tending.");
+                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback(CMStoreSet.LocalizeString("ClerkTending"));
                         return false;
                     }
                     return true;
@@ -1143,7 +1149,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 {
                     if (target.mManualyTendingRegister == 0uL)
                     {
-                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback("No sim tending register");
+                        greyedOutTooltipCallback = InteractionInstance.CreateTooltipCallback(CMStoreSet.LocalizeString("NoClerk"));
                         return false;
                     }
 
@@ -1151,7 +1157,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 }
                 public override string GetInteractionName(Sim actor, StoreSetRegister target, InteractionObjectPair iop)
                 {
-                    return CMStoreSet.LocalizeString("CancelTendingRegister", new object[0] { });
+                    return CMStoreSet.LocalizeString("CancelTendingRegister");
                 }
             }
             public static readonly InteractionDefinition Singleton = new StoreSetRegister.CancelTendingRegister.Definition();
@@ -1212,9 +1218,9 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 public override string GetInteractionName(IActor a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
                     if (target.Info.Open)
-                        return "Close Shop"; // CMStoreSet.LocalizeString("ToggleOpenClose", new object[0] { });
+                        return CMStoreSet.LocalizeString("CloseShop");
                     else
-                        return "Open Shop";// CMStoreSet.LocalizeString("ToggleOpenClose", new object[0] { });
+                        return CMStoreSet.LocalizeString("OpenShop");
                 }
                 public override bool Test(IActor a, StoreSetRegister target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
                 {
@@ -1260,15 +1266,9 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
             [DoesntRequireTuning]
             public sealed class Definition : InteractionDefinition<IActor, StoreSetRegister, StoreSetRegister.HireClerk>
             {
-                public override string[] GetPath(bool isFemale)
-                {
-                    return new string[]{
-                    CMStoreSet.LocalizeString(CMStoreSet.MenuSettingsPath, new object[0])
-                };
-                }
                 public override string GetInteractionName(IActor a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
-                    return "Hire Clerck";// GalleryShopRegister.LocalizeString(false, "HireNewClerk", new object[0]);
+                    return CMStoreSet.LocalizeString("HireClerk");
                 }
                 public override bool Test(IActor a, StoreSetRegister target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
                 {
@@ -1287,7 +1287,10 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                     if (CMStoreSet.IsStoreOpen(this.Target))
                         this.Target.SummonClerk();
 
-                    StyledNotification.Format format = new StyledNotification.Format("Clerck Hired: " + simDescription.FullName, StyledNotification.NotificationStyle.kGameMessagePositive);
+                    StyledNotification.Format format = new StyledNotification.Format(CMStoreSet.LocalizeString("ClerkHired", new object[]
+                    {
+                        simDescription.GetNameProxy()
+                    }), StyledNotification.NotificationStyle.kGameMessagePositive);
                     StyledNotification.Show(format);
                 }
 
@@ -1300,23 +1303,17 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
             [DoesntRequireTuning]
             public sealed class Definition : ActorlessInteractionDefinition<IActor, StoreSetRegister, StoreSetRegister.FireClerk>
             {
-                public override string[] GetPath(bool isFemale)
-                {
-                    return new string[]{
-                    CMStoreSet.LocalizeString(CMStoreSet.MenuSettingsPath, new object[0])
-                };
-                }
                 public override string GetInteractionName(IActor a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
                     SimDescription simDescription = SimDescription.Find(target.mPreferredClerk);
                     if (simDescription == null)
                     {
-                        return "Fire Clerck";//  GalleryShopRegister.LocalizeString(false, "FireClerkNoName", new object[0]);
+                        return CMStoreSet.LocalizeString("FireClerkNoName", new object[0] { });
                     }
-                    return "Fire Clerck: " + simDescription.FullName;// GalleryShopRegister.LocalizeString(simDescription.IsFemale, "FireClerk", new object[]
-                    //{
-                    //    simDescription.GetNameProxy()
-                    //});
+                    return CMStoreSet.LocalizeString("FireClerk", new object[]
+                    {
+                        simDescription.GetNameProxy()
+                    });
                 }
                 public override bool Test(IActor a, StoreSetRegister target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
                 {
@@ -1347,11 +1344,14 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 StyledNotification.Format format;
                 if (simDescription == null)
                 {
-                    format = new StyledNotification.Format("Fire Clerk", this.Target.ObjectId, StyledNotification.NotificationStyle.kGameMessagePositive);
+                    format = new StyledNotification.Format(CMStoreSet.LocalizeString("ClerkFiredNoName"), this.Target.ObjectId, StyledNotification.NotificationStyle.kGameMessagePositive);
                 }
                 else
                 {
-                    format = new StyledNotification.Format("Fire Clerk: " + simDescription.FullName, this.Target.ObjectId, StyledNotification.NotificationStyle.kGameMessagePositive);
+                    format = new StyledNotification.Format(CMStoreSet.LocalizeString("ClerkFired", new object[]
+                    {
+                        simDescription.GetNameProxy()
+                    }), this.Target.ObjectId, StyledNotification.NotificationStyle.kGameMessagePositive);
                 }
                 StyledNotification.Show(format);
                 return true;
@@ -1366,12 +1366,12 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 public override string[] GetPath(bool isFemale)
                 {
                     return new string[]{
-                    CMStoreSet.LocalizeString(CMStoreSet.MenuSettingsPath, new object[0])
+                    CMStoreSet.LocalizeString(CMStoreSet.MenuSettingsPath)
                 };
                 }
                 public override string GetInteractionName(IActor a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
-                    return CMStoreSet.LocalizeString("SetWorkingHours", new object[0] { });
+                    return CMStoreSet.LocalizeString("SetWorkingHours");
                 }
                 public override bool Test(IActor a, StoreSetRegister target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
                 {
@@ -1487,10 +1487,10 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 }
                 public override string GetInteractionName(Sim a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
-                    if (target.Info.ChangeToWorkOutfit)
-                        return CMStoreSet.LocalizeString("DisablePayWhenActive", new object[0] { });
+                    if (target.Info.PayWhenActive)
+                        return CMStoreSet.LocalizeString("DisablePayWhenActive");
                     else
-                        return CMStoreSet.LocalizeString("EnablePayWhenActive", new object[0] { });
+                        return CMStoreSet.LocalizeString("EnablePayWhenActive");
                 }
 
                 public override bool Test(Sim a, StoreSetRegister target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
@@ -1521,11 +1521,6 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
         {
             public class Definition : ImmediateInteractionDefinition<Sim, StoreSetRegister, StandOpenWithoutAnimation>
             {
-                public override string[] GetPath(bool isFemale)
-                {
-                    return new string[]{
-                    CMStoreSet.LocalizeString(CMStoreSet.MenuSettingsPath, new object[0])};
-                }
                 public override string GetInteractionName(Sim a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
                     return CMStoreSet.LocalizeString("OpenInventory", new object[0] { });
@@ -1696,82 +1691,6 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                     CMStoreSet.LocalizeString("SetServingPriceDescription", new object[0] { }),
                     this.Target.Info.ServingPrice.ToString()), out this.Target.Info.ServingPrice);
 
-                return true;
-            }
-        }
-
-        public sealed class UnSpoil : ImmediateInteraction<IActor, StoreSetRegister>
-        {
-            public sealed class Definition : ActorlessInteractionDefinition<IActor, StoreSetRegister, StoreSetRegister.UnSpoil>
-            {
-                public override string[] GetPath(bool isFemale)
-                {
-                    return new string[]{
-                    CMStoreSet.LocalizeString(CMStoreSet.MenuSettingsPath, new object[0])
-                };
-                }
-                public override string GetInteractionName(IActor a, StoreSetRegister target, InteractionObjectPair interaction)
-                {
-                    return CMStoreSet.LocalizeString("UnSpoil", new object[0] { });
-                }
-                public override bool Test(IActor a, StoreSetRegister target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
-                {
-                    return true;
-                }
-            }
-            public static readonly InteractionDefinition Singleton = new StoreSetRegister.UnSpoil.Definition();
-            public override bool Run()
-            {
-
-                //All registers
-                StoreSetRegister[] registers = Sims3.Gameplay.Queries.GetObjects<StoreSetRegister>(this.Target.LotCurrent);
-
-                for (int i = 0; i < registers.Length; i++)
-                {
-                    StoreHelperClass.UnSpoil(registers[i], null, null, registers[i].Info.ServingPrice);
-                }
-
-                ////All rugs
-                //ani_StoreRug[] rugs = Sims3.Gameplay.Queries.GetObjects<ani_StoreRug>(this.Target.LotCurrent);
-                //for (int i = 0; i < rugs.Length; i++)
-                //{
-                //    int servingPrice = 25;
-                //    if(rugs[i].Info.RegisterId != ObjectGuid.InvalidObjectGuid)
-                //    {
-                //        StoreSetRegister register = CMStoreSet.ReturnRegister(rugs[i].Info.RegisterId, this.Target.LotCurrent);
-                //        if (register != null)
-                //            servingPrice = register.Info.ServingPrice;
-                //    }
-                //    StoreHelperClass.UnSpoil(null, null, rugs[i], servingPrice);
-                //}
-
-                ////All Pedestals
-                //ani_StoreSetPedestal[] pedestals = Sims3.Gameplay.Queries.GetObjects<ani_StoreSetPedestal>(this.Target.LotCurrent);
-                //for (int i = 0; i < pedestals.Length; i++)
-                //{
-                //    int servingPrice = 25;
-                //    if (pedestals[i].Info.RegisterId != ObjectGuid.InvalidObjectGuid)
-                //    {
-                //        StoreSetRegister register = CMStoreSet.ReturnRegister(pedestals[i].Info.RegisterId, this.Target.LotCurrent);
-                //        if (register != null)
-                //            servingPrice = register.Info.ServingPrice;
-                //    }
-                //  //  StoreHelperClass.UnSpoil(null, null, rugs[i], servingPrice);
-                //}
-
-                ////All Shelves
-                //ani_StoreShelf[] shelfs = Sims3.Gameplay.Queries.GetObjects<ani_StoreShelf>(this.Target.LotCurrent);
-                //for (int i = 0; i < shelfs.Length; i++)
-                //{
-                //    int servingPrice = 25;
-                //    if (shelfs[i].Info.RegisterId != ObjectGuid.InvalidObjectGuid)
-                //    {
-                //        StoreSetRegister register = CMStoreSet.ReturnRegister(shelfs[i].Info.RegisterId, this.Target.LotCurrent);
-                //        if (register != null)
-                //            servingPrice = register.Info.ServingPrice;
-                //    }
-                //    //  StoreHelperClass.UnSpoil(null, null, rugs[i], servingPrice);
-                //}
                 return true;
             }
         }
@@ -1991,7 +1910,6 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
             base.AddInteraction(StoreSetRegister.SetName.Singleton);
             base.AddInteraction(StoreSetRegister.SetOwner.Singleton);
             base.AddInteraction(StoreSetRegister.SetServingPrice.Singleton);
-            base.AddInteraction(StoreSetRegister.UnSpoil.Singleton);
             base.AddInteraction(StoreSetRegister.ToggleOpenClose.Singleton);
             base.AddInteraction(StoreSetRegister.StandOpenWithoutAnimation.Singleton);
 
@@ -2074,7 +1992,6 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
             }
             this.mClerkJobAlarmEarly = base.AddAlarm(num2, TimeUnit.Hours, new AlarmTimerCallback(this.SummonClerk), "Gallery clerk-summon alarm", AlarmType.AlwaysPersisted);
             this.mClerkJobAlarmLate = base.AddAlarm(num3, TimeUnit.Hours, new AlarmTimerCallback(this.SummonClerk), "Gallery clerk-summon alarm", AlarmType.AlwaysPersisted);
-            //if (SimClock.IsTimeBetweenTimes(this.mOvenHoursStart, this.mOvenHoursEnd))
             if (CMStoreSet.IsStoreOpen(this))
             {
                 this.mClerkJobFetchMidJobAlarm = base.AddAlarm(StoreSetRegister.kChefAlarmContinuousSummonFrequncy, TimeUnit.Minutes, new AlarmTimerCallback(this.SummonClerk), "Gallery clerk-summon alarm", AlarmType.AlwaysPersisted);

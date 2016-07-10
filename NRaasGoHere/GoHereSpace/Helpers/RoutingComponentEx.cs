@@ -105,6 +105,17 @@ namespace NRaas.GoHereSpace.Helpers
 
             ths.mRouteActions.Clear();
             bool routeSuccess = true;
+
+            if (!GoHere.Settings.mAllowBoatRouting)
+            {
+                r.SetOption2(Route.RouteOption2.EnablePlanningAsBoat, false);
+                r.SetOption2(Route.RouteOption2.BeginAsBoat, false);
+                r.SetOption(Route.RouteOption.EnableWaterPlanning, true);
+                r.SetOption(Route.RouteOption.DoNotEmitDegenerateRoutesForRadialRangeGoals, true);
+                r.SetOption(Route.RouteOption.DisallowGoalsOnBridges, true);
+                r.Replan();
+            }
+
             try
             {
                 RouteAction.FailureExplanation explanation = RouteAction.FailureExplanation.None;

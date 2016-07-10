@@ -187,6 +187,7 @@
       <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
     </Compile>
     <Compile Include="CommonSpace\Helpers\Households.cs" />
+    <Compile Include="CommonSpace\Helpers\OccultUnicornEx.cs" />
     <Compile Include="Selector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectorSpace\Helpers\GameObjectEx.cs" />

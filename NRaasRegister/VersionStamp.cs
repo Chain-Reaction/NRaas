@@ -99,6 +99,6 @@ namespace NRaas
         /* Changes
          *          
          */
-        public static readonly int sVersion = 80;
+        public static readonly int sVersion = 81;
     }
 }

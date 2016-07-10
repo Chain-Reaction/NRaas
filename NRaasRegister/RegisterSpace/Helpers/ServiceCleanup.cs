@@ -12,6 +12,7 @@ using Sims3.Gameplay.Objects.Miscellaneous;
 using Sims3.Gameplay.Objects.Rewards;
 using Sims3.Gameplay.Objects.Vehicles;
 using Sims3.Gameplay.PetSystems;
+using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.StoryProgression;
@@ -60,6 +61,7 @@ namespace NRaas.RegisterSpace.Helpers
             public static void Perform()
             {
                 Dictionary<ulong, bool> taxiDrivers = new Dictionary<ulong, bool>();
+                List<ulong> paps = new List<ulong>();
 
                 if ((CarNpcManager.Singleton != null) && (CarNpcManager.Singleton.NpcDriversManager != null))
                 {
@@ -124,8 +126,6 @@ namespace NRaas.RegisterSpace.Helpers
 
                         CommonCorrections(sim);
 
-                        if (sim.AssignedRole != null) continue;
-
                         if (SimTypes.InServicePool(sim, ServiceType.GrimReaper)) continue;
 
                         if (statueSims.ContainsKey(sim.SimDescriptionId)) continue;
@@ -143,9 +143,21 @@ namespace NRaas.RegisterSpace.Helpers
 
                         if (AgingManager.Singleton.GetCurrentAgeInDays(sim) > averageElderAge)
                         {
-                            AttemptServiceDisposal(sim, true, "Too Old " + type);
+                            if (sim.LotHome == null)
+                            {
+                                bool isRole = sim.AssignedRole != null;
+                                AttemptServiceDisposal(sim, true, "Too Old " + (!isRole ? type.ToString() : sim.AssignedRole.Type.ToString()));
+                            }                            
                         }
-                        else if (SimTypes.IsOccult(sim, OccultTypes.ImaginaryFriend))
+
+                        if (sim.AssignedRole != null && sim.AssignedRole is RolePaparazzi)
+                        {
+                            paps.Add(sim.SimDescriptionId);
+                        }
+
+                        if (sim.AssignedRole != null) continue;                        
+                        
+                        if (SimTypes.IsOccult(sim, OccultTypes.ImaginaryFriend))
                         {
                             bool found = false;
                             foreach (ImaginaryDoll doll in Sims3.Gameplay.Queries.GetObjects<ImaginaryDoll>())
@@ -209,6 +221,23 @@ namespace NRaas.RegisterSpace.Helpers
                     catch (Exception e)
                     {
                         Common.Exception(sim, e);
+                    }
+                }
+
+                // kill extra paps
+                if (paps.Count > Register.Settings.mMaximumPaparazzi)
+                {
+                    int count = paps.Count;
+                    while (count > Register.Settings.mMaximumPaparazzi && count > 0)
+                    {
+                        SimDescription sim = SimDescription.Find(paps[0]);
+                        if (sim != null)
+                        {
+                            AttemptServiceDisposal(sim, false, "Too many Paparazzi");
+                        }
+
+                        paps.Remove(paps[0]);
+                        count = count - 1;
                     }
                 }
 

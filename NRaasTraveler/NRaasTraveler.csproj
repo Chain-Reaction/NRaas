@@ -331,6 +331,7 @@
     <Compile Include="TravelerSpace\Interactions\PrimaryInteraction.cs" />
     <Compile Include="TravelerSpace\Options\Descendants\ChanceOfOccultHybrid.cs" />
     <Compile Include="TravelerSpace\Options\Descendants\ChanceOfOccultMutation.cs" />
+    <Compile Include="TravelerSpace\Options\Descendants\DisableDescendantModification.cs" />
     <Compile Include="TravelerSpace\Options\Descendants\DisableDescendants.cs" />
     <Compile Include="TravelerSpace\Options\Descendants\IDescendantOption.cs" />
     <Compile Include="TravelerSpace\Options\Descendants\ListingOption.cs" />

@@ -34,6 +34,10 @@ namespace ani_StoreSetRegister
         /// <param name="name"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
+        public static string LocalizeString(string name)
+        {
+            return LocalizeString(name, new object[0]);
+        }
         public static string LocalizeString(string name, params object[] parameters)
         {
             return Localization.LocalizeString("ani_StoreSet:" + name, parameters);

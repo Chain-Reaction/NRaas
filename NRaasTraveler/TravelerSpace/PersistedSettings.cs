@@ -66,6 +66,9 @@ namespace NRaas.TravelerSpace
         [Tunable, TunableComment("Maximum occults a descendant can have")]
         public static int kMaxOccult = 2;
 
+        [Tunable, TunableComment("Disable alteration of descendants")]
+        public static bool kDisableDescendantModification = false;
+
         public bool mPauseTravel = kPauseTravel;
 
         public bool mTreatAsVacation = kTreatAsVacation;
@@ -106,6 +109,8 @@ namespace NRaas.TravelerSpace
 
         public int mMaxOccult = kMaxOccult;
 
+        public bool mDisableDescendantModification = kDisableDescendantModification;
+
         public void StoreHouseholds(Dictionary<ulong, ulong> sims)
         {
             mTravelerHouseholds = new Dictionary<ulong, ulong>(sims);
@@ -144,6 +149,31 @@ namespace NRaas.TravelerSpace
         public bool GetHiddenWorlds(WorldName world)
         {
             return mHiddenWorlds.ContainsKey(world);
+        }
+
+        public void HandleDescendants(bool fromWorldLoadFinished)
+        {
+            bool disabled = (Traveler.Settings.mDisableDescendants || (Traveler.Settings.mDisableDescendantModification && FutureDescendantServiceEx.ActiveHouseholdHasDescendants()));
+
+            if (!disabled && !fromWorldLoadFinished && !GameUtils.IsFutureWorld())
+            {
+                // originally had this GameUtils.IsFutureWorld and a call to RegenerateDescendants here but it
+                // creates problems when all the progninators don't travel to the future. It's a solvable issue
+                // but not right now
+                FutureDescendantServiceEx.AddListeners();
+            }
+            else if (disabled && !fromWorldLoadFinished)
+            {
+                if (Traveler.Settings.mDisableDescendants)
+                {
+                    FutureDescendantServiceEx.WipeDescendants();
+                }
+                FutureDescendantServiceEx.ClearListeners();
+            }
+            else if (disabled && fromWorldLoadFinished)
+            {
+                FutureDescendantServiceEx.ClearListeners();
+            }
         }
 
         public bool Debugging

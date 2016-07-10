@@ -35,7 +35,7 @@ using System.Text;
 
 namespace NRaas
 {
-    public class Register : Common, Common.IPreLoad, Common.IWorldLoadFinished
+    public class Register : Common, Common.IPreLoad, Common.IWorldLoadFinished, Common.IWorldQuit
     {
         [Tunable, TunableComment("Scripting Mod Instantiator, value does not matter, only its existence")]
         protected static bool kInstantiator = false;
@@ -160,6 +160,21 @@ namespace NRaas
 
             // Must be performed after CleanupBadRole
             new RoleManagerTaskEx.StartupTask();
+        }
+
+        public void OnWorldQuit()
+        {
+            foreach (Service service in Services.AllServices)
+            {
+                ServiceSettingKey key;
+                if (Register.Settings.serviceSettings.TryGetValue(service.ServiceType, out key))
+                {
+                    if (key.tuningDefault != null)
+                    {
+                        SetServiceTuningFromKey(service, key.tuningDefault);
+                    }
+                }
+            }       
         }
 
         public static void FixFutureSims()

@@ -217,7 +217,7 @@ namespace NRaas.DresserSpace.Helpers
                                 case OutfitCategories.Naked:
                                     if (Dresser.Settings.mSwitchSleepwear)
                                     {
-                                        if (SkinnyDipClothingPile.FindClothingPile(sim) == null)
+                                        if (SkinnyDipClothingPile.FindClothingPile(sim) == null && !(sim.CurrentInteraction is Streak))
                                         {
                                             needsChange = true;
                                         }
