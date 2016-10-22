@@ -52,11 +52,13 @@
     <Compile Include="Converters\StringToSpeciesList.cs" />
     <Compile Include="Converters\StringToMultiList.cs" />
     <Compile Include="Converters\ListToString.cs" />
+    <Compile Include="Helpers\Apartments.cs" />
     <Compile Include="Helpers\EnumInjection.cs" />
     <Compile Include="Helpers\FilterHelper.cs" />
     <Compile Include="Helpers\OccultPlantSimEx.cs" />
     <Compile Include="Helpers\OccultGenieEx.cs" />
     <Compile Include="Helpers\OccultUnicornEx.cs" />
+    <Compile Include="Helpers\TooltipHelper.cs" />
     <Compile Include="Options\OperationSettingNestledOption.cs" />
     <Compile Include="Replacers\ActionAvailabilityReplacer.cs" />
     <Compile Include="SpeedTrap.cs" />

@@ -70,7 +70,8 @@ namespace NRaas
 
             DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
 
-            //Route.AboutToPlanCallback = (Route.AboutToPlanDelegate)Delegate.Combine(Route.AboutToPlanCallback, new Route.AboutToPlanDelegate(DoorPortalComponentEx.DoorSettings.AboutToPlanRouteCallback));
+           // Route.AboutToPlanCallback = (Route.AboutToPlanDelegate)Delegate.Combine(Route.AboutToPlanCallback, new Route.AboutToPlanDelegate(DoorPortalComponentEx.AboutToPlanRouteCallback));
+            //Route.PostPlanCallback += DoorPortalComponentEx.OnPostPlan;
         }
 
         public static bool ExternalAllowPush(SimDescription sim, Lot lot)
@@ -83,8 +84,8 @@ namespace NRaas
                     List<Door> portals = lot.GetObjectsInRoom<Door>(0);
                     foreach (Door obj in portals)
                     {
-                        DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId);
-                        if (settings.IsSimAllowedThrough(sim.SimDescriptionId))
+                        DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId, false);
+                        if (settings != null && settings.IsSimAllowedThrough(sim.SimDescriptionId))
                         {
                             allowed = true;
                             break;
@@ -96,8 +97,11 @@ namespace NRaas
                     Door door = lot.FindFrontDoor();
                     if (door != null)
                     {
-                        DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId);
-                        allowed = settings.IsSimAllowedThrough(sim.SimDescriptionId);
+                        DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId, false);
+                        if (settings != null)
+                        {
+                            allowed = settings.IsSimAllowedThrough(sim.SimDescriptionId);
+                        }
                     }
                     else
                     {

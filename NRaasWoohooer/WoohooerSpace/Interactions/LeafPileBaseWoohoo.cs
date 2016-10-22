@@ -113,6 +113,9 @@ namespace NRaas.WoohooerSpace.Interactions
                 StandardEntry();
                 WoohooObject.AddToUseList(Actor);
                 WoohooObject.AddToUseList(Target);
+                MotiveDelta[] deltaArray = new MotiveDelta[2];
+                deltaArray[0] = AddMotiveDelta(CommodityKind.Fun, 1500f);
+                deltaArray[1] = AddMotiveDelta(CommodityKind.Social, 50f);
                 BeginCommodityUpdates();
                 EnterStateMachine(WoohooObject.JazzFileName, "Enter", "x");
                 AddOneShotScriptEventHandler(0x65, PlayEffectsHandlerX);
@@ -130,6 +133,8 @@ namespace NRaas.WoohooerSpace.Interactions
                     Animate("x", "Exit");
                     WoohooObject.RemoveFromUseList(Actor);
                     WoohooObject.RemoveFromUseList(Target);
+                    RemoveMotiveDelta(deltaArray[0x0]);
+                    RemoveMotiveDelta(deltaArray[0x1]);
                     EndCommodityUpdates(false);
                     StandardExit();
                     return false;
@@ -195,6 +200,8 @@ namespace NRaas.WoohooerSpace.Interactions
 
                 WoohooObject.RemoveFromUseList(Actor);
                 WoohooObject.RemoveFromUseList(Target);
+                RemoveMotiveDelta(deltaArray[0x0]);
+                RemoveMotiveDelta(deltaArray[0x1]);
                 EndCommodityUpdates(true);
                 StandardExit();
 

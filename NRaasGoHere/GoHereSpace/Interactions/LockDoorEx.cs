@@ -147,7 +147,7 @@ namespace NRaas.GoHereSpace.Interactions
                     }
                 }
 
-                if (!(target is Turnstile) && !(target is MysteriousDeviceDoor))
+                if (!(target is Turnstile) && !(target is MysteriousDeviceDoor) && !(target is SecretDoor))
                 {
                     results.Add(new InteractionObjectPair(new LockDoorEx.Definition((CommonDoor.tLock)7), target));                    
                 }
@@ -177,6 +177,10 @@ namespace NRaas.GoHereSpace.Interactions
                     return false;
                 }
                 if (target.GetContainedObject(unchecked((Slot)(-1474234202))) is IVelvetRopes)
+                {
+                    return false;
+                }
+                if (target is SecretDoor)
                 {
                     return false;
                 }

@@ -80,6 +80,12 @@
     <Compile Include="..\NRaas\Common.cs">
       <Link>CommonSpace\Common.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Converters\ListToString.cs">
+      <Link>CommonSpace\Converters\ListToString.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Converters\StringToList.cs">
+      <Link>CommonSpace\Converters\StringToList.cs</Link>
+    </Compile>
     <Compile Include="..\nraas\dialogs\ObjectPickerDialogEx.cs">
       <Link>CommonSpace\Dialogs\ObjectPickerDialogEx.cs</Link>
     </Compile>
@@ -152,6 +158,9 @@
     <Compile Include="..\NRaas\Helpers\StoryProgressionServiceEx.cs">
       <Link>CommonSpace\Helpers\StoryProgressionServiceEx.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\TooltipHelper.cs">
+      <Link>CommonSpace\Helpers\TooltipHelper.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Tunings.cs">
       <Link>CommonSpace\Helpers\Tunings.cs</Link>
     </Compile>
@@ -193,6 +202,9 @@
     </Compile>
     <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
       <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\ListedSettingOption.cs">
+      <Link>CommonSpace\Options\ListedSettingOption.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
       <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
@@ -280,11 +292,15 @@
     <Compile Include="GoHereSpace\Options\Caregivers\InactiveChildrenAsActiveSetting.cs" />
     <Compile Include="GoHereSpace\Options\Caregivers\ListingOption.cs" />
     <Compile Include="GoHereSpace\Options\AllowCarRoutingSetting.cs" />
+    <Compile Include="GoHereSpace\Options\CreateFilterOption.cs" />
+    <Compile Include="GoHereSpace\Options\DeleteFilterOption.cs" />
     <Compile Include="GoHereSpace\Options\DetailedRoutingSetting.cs" />
     <Compile Include="GoHereSpace\Options\DisallowInactiveLeaveActiveLotSetting.cs" />
-    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\HideNonRelatedFilters.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\EnableDoorTooltips.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFiltersGlobal\FilterListingOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\DoorCostOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\DoorFilterListingOption.cs" />
+    <Compile Include="GoHereSpace\Options\DoorFilters\DoorOneWayOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\DoorTicketDurationOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\DoorTimeOption.cs" />
     <Compile Include="GoHereSpace\Options\DoorFilters\FilterBaseOption.cs" />

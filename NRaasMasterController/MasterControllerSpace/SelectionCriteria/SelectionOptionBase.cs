@@ -31,6 +31,12 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             : base(name, count)
         { }
 
+        public string OptionName
+        {
+            get;
+            set;
+        }
+
         public bool Enabled
         {
             get

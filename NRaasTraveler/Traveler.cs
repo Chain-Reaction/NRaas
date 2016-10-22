@@ -271,9 +271,9 @@ namespace NRaas
                 {
                     if (miniSim == null) continue;
 
-                    miniSim.mbAgingEnabled = !Settings.GetAgelessForeign(miniSim.HomeWorld);
+                    miniSim.mbAgingEnabled = !Settings.GetAgelessForeign(miniSim);
                 }
-            }
+            }    
         }
 
         public class TravelerTask : RepeatingTask

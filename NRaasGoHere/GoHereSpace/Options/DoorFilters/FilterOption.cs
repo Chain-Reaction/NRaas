@@ -13,9 +13,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-//check computerlistingoption in mc and removefilter
-// can acc the disable blacklist in PROXIES/CASMODELPROXY
-
 namespace NRaas.GoHereSpace.Options.DoorFilters
 {
     public class FilterOption : FilterBaseOption<GameObject>, IFilterOption

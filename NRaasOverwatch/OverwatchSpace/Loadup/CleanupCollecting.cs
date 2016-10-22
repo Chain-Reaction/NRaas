@@ -178,6 +178,12 @@ namespace NRaas.OverwatchSpace.Loadup
 
             Overwatch.Log("CleanupCollecting");
 
+            if (SeashellData.sTotalNumberSeashells > 8)
+            {
+                SeashellData.sTotalNumberSeashells = 8;
+                Overwatch.Log("Fixed seashell count");
+            }
+
             foreach (SimDescription sim in Household.AllSimsLivingInWorld())
             {
                 Collecting skill = sim.SkillManager.GetSkill<Collecting>(SkillNames.Collecting);

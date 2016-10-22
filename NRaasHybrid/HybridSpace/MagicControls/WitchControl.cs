@@ -57,13 +57,13 @@ namespace NRaas.HybridSpace.MagicControls
             if (wand != null)
             {
                 fail = RandomUtil.RandomChance(wand.SuccessChance(actor, GetMinSkillLevel(definition), spellcasting.SkillLevel));
-                if (!fail)
+                if (fail)
                 {
                     epicFailure = RandomUtil.RandomChance(wand.EpicFailChance(actor));
                 }
             }
 
-            return fail;
+            return !fail;
         }
 
         protected override bool IsAvailable(Sim sim, IMagicalDefinition definition)

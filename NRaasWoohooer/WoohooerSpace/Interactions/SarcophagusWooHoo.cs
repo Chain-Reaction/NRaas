@@ -103,6 +103,9 @@ namespace NRaas.WoohooerSpace.Interactions
                 AnimateSim("WooHooWait");
                 if (StartSync(mIsMaster))
                 {
+                    MotiveDelta[] deltaArray = new MotiveDelta[2];
+                    deltaArray[0] = AddMotiveDelta(CommodityKind.Fun, 1500f);
+                    deltaArray[1] = AddMotiveDelta(CommodityKind.Social, 50f);
                     BeginCommodityUpdates();
 
                     try
@@ -124,6 +127,8 @@ namespace NRaas.WoohooerSpace.Interactions
                     }
                     finally
                     {
+                        RemoveMotiveDelta(deltaArray[0x0]);
+                        RemoveMotiveDelta(deltaArray[0x1]);
                         EndCommodityUpdates(true);
                     }
 

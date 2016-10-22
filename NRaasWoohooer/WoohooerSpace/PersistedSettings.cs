@@ -1,4 +1,6 @@
-﻿using NRaas.CommonSpace.ScoringMethods;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.ScoringMethods;
+using NRaas.WoohooerSpace.Helpers;
 using NRaas.WoohooerSpace.Options.Romance;
 using NRaas.WoohooerSpace.Options.TryForBaby;
 using NRaas.WoohooerSpace.Scoring;
@@ -162,7 +164,7 @@ namespace NRaas.WoohooerSpace
         public bool mAutonomousBotMaker = WoohooerTuning.kAutonomousBotMaker;
         public bool mAutonomousTimePortal = WoohooerTuning.kAutonomousTimePortal;
 		public bool mAutonomousEiffelTower = WoohooerTuning.kAutonomousEiffelTower;
-		public bool mAutonomousToiletStall = WoohooerTuning.kAutonomousToiletStall;
+        public bool mAutonomousToiletStall = WoohooerTuning.kAutonomousToiletStall;
 
         public bool mNakedOutfitHotTub = WoohooerTuning.kNakedOutfitHotTub;
         public bool mNakedOutfitElevator = WoohooerTuning.kNakedOutfitElevator;
@@ -190,6 +192,8 @@ namespace NRaas.WoohooerSpace
         public bool mStoryProgressionForUserDirected = WoohooerTuning.kStoryProgressionForUserDirected;
         public bool mRemoveRomanceOnKiss = WoohooerTuning.kRemoveRomanceOnKiss;
         public bool mAllowZombie = WoohooerTuning.kAllowZombie;
+
+        public bool mEnableCustomAttraction = WoohooerTuning.kEnableCustomAttraction;
 
         public bool mVerboseDebugging = false;
 

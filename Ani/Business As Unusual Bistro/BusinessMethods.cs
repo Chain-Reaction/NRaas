@@ -251,6 +251,7 @@ namespace ani_BistroSet
             //    sim.SimDescription.AddOutfit(sim.CurrentOutfit, OutfitCategories.Career);
             //}
             //else
+            if((sim.SimDescription.OccultManager != null && !sim.SimDescription.OccultManager.DisallowClothesChange()) && (sim.BuffManager != null && !sim.BuffManager.DisallowClothesChange()))
             {
                 sim.SwitchToOutfitWithoutSpin(OutfitCategories.Career);
             }

@@ -10,32 +10,25 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NRaas.TaggerSpace.Options
+namespace NRaas.GoHereSpace.Options.DoorFiltersGlobal
 {
-    public class ColorLotTagsByCash : BooleanSettingOption<GameObject>, IPrimaryOption<GameObject>
+    public class EnableDoorTooltips : BooleanSettingOption<GameObject>, IDoorGlobalOption
     {
         protected override bool Value
         {
             get
             {
-                return Tagger.Settings.mColorLotTagsByRelationship;
+                return GoHere.Settings.mEnableDoorTooltips;
             }
             set
             {
-                Tagger.Settings.mColorLotTagsByRelationship = value;
-
-                Tagger.InitTags(true);
+                GoHere.Settings.mEnableDoorTooltips = value;
             }
         }
 
         public override string GetTitlePrefix()
         {
-            return "ColorLotTagsByCash";
-        }
-
-        protected override bool Allow(GameHitParameters<GameObject> parameters)
-        {
-            return base.Allow(parameters);
+            return "EnableDoorTooltips";
         }
 
         public override ITitlePrefixOption ParentListingOption

@@ -39,7 +39,12 @@ namespace NRaas
             {
                 if (sSettings == null)
                 {
-                    sSettings = new PersistedSettings();                    
+                    sSettings = new PersistedSettings();
+
+                    if (GameUtils.GetCurrentWorldType() == WorldType.Downtown && sSettings.mAlarmHour == 3f)
+                    {
+                        sSettings.mAlarmHour = 5f;
+                    }
                 }
 
                 return sSettings;

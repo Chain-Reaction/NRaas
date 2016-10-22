@@ -101,11 +101,7 @@ namespace NRaas.WoohooerSpace.Interactions
                     string reason;
                     GreyedOutTooltipCallback callback = null;
                     if (!CommonSocials.CanGetRomantic(actor.SimDescription, sim, false, true, true, ref callback, out reason))
-                    {
-                        if (callback != null)
-                        {
-                            Common.Notify(sim.FullName + Common.NewLine + callback());
-                        }                        
+                    {                                              
                         continue;
                     }                    
 
@@ -183,7 +179,7 @@ namespace NRaas.WoohooerSpace.Interactions
                                 val = Actor.FamilyFunds * 2 / 100;
                             }
 
-                            if (val > Actor.FamilyFunds || val < Actor.FamilyFunds)
+                            if (val > Actor.FamilyFunds)
                             {
                                 if (Actor.IsSelectable)
                                 {

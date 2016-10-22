@@ -28,5 +28,10 @@ namespace NRaas.HybridSpace.Options.SkillLevel
         {
             get { return null; }
         }
+
+        protected override bool Allow(GameHitParameters<GameObject> parameters)
+        {
+            return false;
+        }
     }
 }

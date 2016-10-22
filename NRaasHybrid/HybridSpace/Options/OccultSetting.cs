@@ -26,6 +26,7 @@ namespace NRaas.HybridSpace.Options
 
         protected override bool Allow(OccultTypes value)
         {
+            /*
             switch (value)
             {
                 case OccultTypes.Witch:
@@ -33,6 +34,7 @@ namespace NRaas.HybridSpace.Options
                 case OccultTypes.Fairy:
                     return true;
             }
+             */
 
             return false;
         }

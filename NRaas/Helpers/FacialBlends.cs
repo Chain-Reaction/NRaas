@@ -27,6 +27,8 @@ namespace NRaas.CommonSpace.Helpers
         static List<FacialBlend> sFaceBlends = null;
         static List<FacialBlend> sFurBlends = null;
 
+        static Dictionary<ResourceKey, BlendUnit> sBlendUnitsByKey = null;
+
         public static List<BlendUnit> BlendUnits
         {
             get
@@ -47,6 +49,27 @@ namespace NRaas.CommonSpace.Helpers
                 }
 
                 return sBlendUnits;
+            }
+        }
+
+        public static Dictionary<ResourceKey, BlendUnit> BlendUnitsByKey
+        {
+            get
+            {
+                if (sBlendUnitsByKey == null)
+                {
+                    sBlendUnitsByKey = new Dictionary<ResourceKey, BlendUnit>();
+
+                    KeySearch search = new KeySearch(0xb52f5055);
+                    foreach (ResourceKey key in search)
+                    {
+                        sBlendUnitsByKey.Add(key, new BlendUnit(key));
+                    }
+
+                    search.Reset();
+                }
+
+                return sBlendUnitsByKey;
             }
         }
 

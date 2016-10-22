@@ -48,6 +48,8 @@ namespace NRaas.OverwatchSpace.Loadup
                 {
                     foreach (Sim sim in LotManager.Actors)
                     {
+                        if (sim == null || sim.Autonomy == null) continue;
+
                         if (sim.Autonomy.Motives.HasMotive(CommodityKind.Juiced))
                         {
                             sim.mMotiveTuning[(int)CommodityKind.Juiced] = mTuning;
@@ -56,7 +58,6 @@ namespace NRaas.OverwatchSpace.Loadup
                         }
                     }
                 }
-
 
                 Overwatch.Log("Banished autosatisfy of Juiced motive");
             }

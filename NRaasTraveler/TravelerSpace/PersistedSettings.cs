@@ -141,9 +141,34 @@ namespace NRaas.TravelerSpace
             }
         }
 
-        public bool GetAgelessForeign(WorldName world)
+        public bool GetAgelessForeign(MiniSimDescription desc)
         {
-            return mAgelessForeign.ContainsKey(world);
+            if (desc.HomeWorld != WorldName.Undefined && desc.HomeWorld != WorldName.UserCreated)
+            {
+                return mAgelessForeign.ContainsKey(desc.HomeWorld);
+            }
+
+            if (mWorldForSims.ContainsKey(desc.SimDescriptionId))
+            {
+                string world = mWorldForSims[desc.SimDescriptionId];
+
+                string name = world.Replace(".world", "");
+
+                WorldName worldName = WorldName.Undefined;
+
+                try
+                {
+                    worldName = unchecked((WorldName)ResourceUtils.HashString32(name.Replace(" ", "")));
+                }
+                catch
+                {                    
+                    return true;
+                }                
+
+                return mAgelessForeign.ContainsKey(worldName);
+            }            
+
+            return true;
         }
 
         public bool GetHiddenWorlds(WorldName world)

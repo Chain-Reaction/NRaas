@@ -41,50 +41,8 @@ namespace NRaas.HybridSpace.Interactions
 
         private bool CalculateIfActorIsOccultSkaterEx()
         {
-            return CalculateIfActorIsOccultSkaterEx(Actor);
-        }
-
-        public static bool CalculateIfActorIsOccultSkaterEx(Sim sim)
-        {
-            OccultImaginaryFriend friend;
-            SimDescription simDescription = sim.SimDescription;
-
-            if (!Hybrid.Settings.mAllowOccultSkating)
-            {
-                if ((simDescription.IsGenie) || (simDescription.IsFairy)) return true;
-            }
-
-            if ((simDescription.IsFrankenstein) || (simDescription.IsMummy) || (simDescription.IsZombie))
-            {
-                return true;
-            }
-
-            if (OccultImaginaryFriend.TryGetOccultFromSim(sim, out friend) && friend.IsWearingSpecialOutfit)
-            {
-                return true;
-            }
-
-            BuffManager buffManager = sim.BuffManager;
-            if (buffManager.HasTransformBuff()) return true;
-
-            if (!Hybrid.Settings.mAllowOccultSkating)
-            {
-                if (simDescription.IsVampire)
-                {
-                    if (!buffManager.HasAnyElement(new BuffNames[] { BuffNames.Exhausted, BuffNames.Sleepy, BuffNames.Tired, BuffNames.TooMuchSun }))
-                    {
-                        return true;
-                    }
-                }
-
-                if (sim.IsGhostOrHasGhostBuff)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
+            return SkateHelper.CalculateIfActorIsOccultSkaterEx(Actor);
+        }        
 
         public override bool Run()
         {

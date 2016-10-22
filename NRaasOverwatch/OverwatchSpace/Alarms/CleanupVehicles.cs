@@ -79,6 +79,7 @@ namespace NRaas.OverwatchSpace.Alarms
                     if ((ownable == sim.GetReservedVehicle()) || (ownable == sim.GetPreferredVehicle()) || (ownable.Driver == sim))
                     {
                         Inventories.TryToMove(ownable, sim);
+                        space.UnReserveSpot(ownable);
                     }
                 }
 
@@ -92,6 +93,7 @@ namespace NRaas.OverwatchSpace.Alarms
                     if ((ownable == sim.GetReservedVehicle()) || (ownable == sim.GetPreferredVehicle()) || (ownable.Driver == sim))
                     {
                         Inventories.TryToMove(ownable, sim);
+                        post.UnReserveSpot(ownable);
                     }
                 }
             }
@@ -131,6 +133,11 @@ namespace NRaas.OverwatchSpace.Alarms
             foreach (ParkingSpace space in Sims3.Gameplay.Queries.GetObjects<ParkingSpace>())
             {
                 Vehicle vehicle = space.GetContainedVehicle();
+                if (vehicle == null && space.ReservedVehicle != null)
+                {
+                    space.mReservedVehicle = null;
+                }
+
                 if (vehicle == null) continue;
 
                 if (!RetainOnLot(space)) continue;

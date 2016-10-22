@@ -11,6 +11,6 @@ namespace NRaas
     {
         public static readonly string sNamespace = "NRaas.WoohooerKamaSimtra";
 
-        public static readonly int sVersion = 129;
+        public static readonly int sVersion = 130;
     }
 }

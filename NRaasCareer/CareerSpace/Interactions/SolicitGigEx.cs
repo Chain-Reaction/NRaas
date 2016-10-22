@@ -38,19 +38,15 @@ namespace NRaas.CareerSpace.Interactions
 
         public new class Definition : Sim.SolicitGig.Definition
         {
-            public new string[] MenuPath;
-            public new string MenuText;
-
             public Definition()
             {
-                this.MenuText = string.Empty;
+                base.MenuText = string.Empty;
             }
 
             public Definition(string text, string[] path, bool accessingNeeds)
             {
-                this.MenuText = string.Empty;
-                this.MenuText = text;
-                this.MenuPath = path;
+                base.MenuText = text;
+                base.MenuPath = path;
             }
 
             public override void AddInteractions(InteractionObjectPair iop, Sim actor, Sim target, List<InteractionObjectPair> results)
@@ -69,7 +65,7 @@ namespace NRaas.CareerSpace.Interactions
 
             public override string[] GetPath(bool isFemale)
             {
-                return this.MenuPath;
+                return base.MenuPath;
             }
 
             public override bool Test(Sim a, Sim target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)

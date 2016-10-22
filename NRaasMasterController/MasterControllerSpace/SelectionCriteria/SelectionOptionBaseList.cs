@@ -34,6 +34,25 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             mOptions = options;
         }
 
+        public string OptionName
+        {
+            get
+            {
+                IEnumerable<TOption> options = GetOptions();
+                if (options == null) return string.Empty;
+
+                string result = string.Empty;
+
+                foreach (TOption option in options)
+                {
+                    result += option.Name + Common.NewLine;
+                }
+
+                return result;
+            }
+            set { }
+        }
+
         public bool Enabled
         {
             get

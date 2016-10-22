@@ -72,6 +72,8 @@ namespace NRaas.TravelerSpace.Options
 
         public static void ToggleSeasons()
         {
+            if (!GameUtils.IsInstalled(ProductVersion.EP8)) return;
+
             bool enable = Traveler.Settings.mEnableSeasons;
             
             if (enable)

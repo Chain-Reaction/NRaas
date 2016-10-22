@@ -13,6 +13,7 @@ using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.Store.Objects;
+using Sims3.UI;
 using Sims3.UI.CAS;
 using System;
 using System.Collections.Generic;
@@ -32,14 +33,23 @@ namespace NRaas.GoHereSpace.Helpers
             this.OwnerDoor = obj as Door;
         }
 
-        // this is just an extra safety measure
         public override bool OnApproachingPortalObject(Sim sim)
         {
-            DoorSettings settings = GoHere.Settings.GetDoorSettings(this.OwnerDoor.ObjectId);
+            DoorSettings settings = GoHere.Settings.GetDoorSettings(this.OwnerDoor.ObjectId, false);
             bool allowed = true;
             if (settings != null)
             {
                 allowed = settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId);
+
+                if (settings.mIsOneWayDoor)
+                {
+                    CommonDoor.tSide sideInRoom = CommonDoor.tSide.Front;
+                    this.OwnerDoor.GetSideOfDoorInRoom(sim.RoomId, out sideInRoom);
+                    if (sideInRoom != CommonDoor.tSide.Back)
+                    {
+                        return false;
+                    }
+                }
             }
 
             return (!allowed ? allowed : base.OnApproachingPortalObject(sim));
@@ -51,7 +61,12 @@ namespace NRaas.GoHereSpace.Helpers
             bool allowed = true;
             if (settings != null)
             {
-                allowed = settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId);
+                if (settings.mIsOneWayDoor && (info.mLaneSlots[0] != Door.RoutingSlots.Door1_Rear && info.mLaneSlots[0] != Door.RoutingSlots.Door0_Rear))
+                {
+                    allowed = false;
+                }
+
+                allowed = allowed && settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId);
             }
 
             if (!allowed)
@@ -63,7 +78,7 @@ namespace NRaas.GoHereSpace.Helpers
                 return;
             }
 
-            if ((info.mLaneSlots[0] == Door.RoutingSlots.Door0_Front || info.mLaneSlots[0] == Door.RoutingSlots.Door1_Front) && settings.mDoorCost > 0 && !settings.WasSimRecentlyLetThrough(sim.SimDescription.SimDescriptionId))
+            if ((info.mLaneSlots[0] == Door.RoutingSlots.Door0_Rear || info.mLaneSlots[0] == Door.RoutingSlots.Door1_Rear) && settings.mDoorCost > 0 && !settings.WasSimRecentlyLetThrough(sim.SimDescription.SimDescriptionId))
             {
                 settings.AddRecentSim(sim.SimDescription.SimDescriptionId);
                 GoHere.Settings.AddOrUpdateDoorSettings(this.OwnerDoor.ObjectId, settings, false);
@@ -72,7 +87,73 @@ namespace NRaas.GoHereSpace.Helpers
             }
 
             base.OnLaneLocked(sim, info);
-        }        
+        }
+
+        public static string SceneWindow_Hover(IScriptProxy o, ScenePickArgs args)
+        {
+            DoorSettings settings = GoHere.Settings.GetDoorSettings(o.ObjectId, false);
+
+            if (settings == null) return string.Empty;
+
+            string tooltip = string.Empty;
+
+            if (settings.ActiveFilters.Count > 0)
+            {
+                string critera = FilterHelper.GetFilterAsLocalizedCriteria(settings.ActiveFilters);
+                if (critera.Length > 3)
+                {
+                    tooltip = GoHere.Localize("DoorCriteria:ToolTip") + " (" + GoHere.Localize("DoorFilterType:" + settings.mType.ToString()) + ")" + Common.NewLine + critera;
+                }
+            }
+
+            if (settings.mDoorOpen > -1 && settings.mDoorClose > -1)
+            {
+                if (tooltip != string.Empty)
+                {
+                    tooltip = tooltip + Common.NewLine;
+                }
+
+                tooltip = tooltip + GoHere.Localize("OpenCloseTime:MenuName") + ": " + settings.mDoorOpen.ToString() + " - " + settings.mDoorClose.ToString();
+            }
+
+            if (settings.mDoorCost > 0)
+            {
+                if (tooltip != string.Empty)
+                {
+                    tooltip = tooltip + Common.NewLine;
+                }
+
+                tooltip = tooltip + GoHere.Localize("DoorCost:MenuName") + ": " + settings.mDoorCost.ToString();
+            }
+
+            return tooltip;
+        }
+        
+        /*
+        public static void AboutToPlanRouteCallback(Route r, string routeType, Vector3 point)
+        {
+            Sim router = r.Follower.Target as Sim;
+            if(router == null) return;
+
+            Lot lot = router.LotCurrent;
+            if (lot == null) return;
+
+            foreach (CommonDoor door in lot.GetObjects<CommonDoor>())
+            {
+                if (door != null)
+                {
+                    DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId, false);
+                    if (settings != null)
+                    {
+                        if (!settings.IsSimAllowedThrough(router.SimDescription.SimDescriptionId))
+                        {
+                            r.AddObjectToForbiddenPortalList(door.ObjectId);
+                        }
+                    }
+                }
+            }
+        }    
+         */
 
         [Persistable]
         public class DoorSettings
@@ -102,6 +183,7 @@ namespace NRaas.GoHereSpace.Helpers
             private List<string> mActiveFilters = new List<string>();
             private Dictionary<ulong, long> mSimsRecentlyLetThrough = new Dictionary<ulong, long>();
             public bool mMatchAllFilters = false;
+            public bool mIsOneWayDoor = false;
             public SettingType mType = SettingType.Deny;
             ObjectGuid mGUID;            
             public int mDoorOpen = -1;
@@ -149,8 +231,10 @@ namespace NRaas.GoHereSpace.Helpers
                     }
 
                     GoHere.Settings.mDoorSettings.Remove(guid);
-                }                         
-            }
+                }
+
+                TooltipHelper.AddListener(typeof(Door), Type.GetType("NRaas.GoHereSpace.Helpers.DoorPortalComponentEx,NRaasGoHere").GetMethod("SceneWindow_Hover"));
+            }            
 
             public bool IsSimAllowedThrough(ulong descId)
             {
@@ -432,21 +516,110 @@ namespace NRaas.GoHereSpace.Helpers
             {
                 if (sim != null && sim.LotCurrent != null)
                 {
+                    if (sim.RoomId == srcRoom) return true;
+
                     bool allowed = false;
-                    foreach (RoomConnectionObject obj in sim.LotCurrent.GetObjectsInRoom<RoomConnectionObject>(srcRoom))
+                    bool adjoiningAllowed = false;
+                    bool allNull = true;
+                    foreach (CommonDoor obj in sim.LotCurrent.GetObjectsInRoom<CommonDoor>(srcRoom))
                     {
-                        DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId);
+                        if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
+                        {
+                            //Common.Notify("Testing " + obj.CatalogName + " in " + srcRoom);
+                        }
+
+                        CommonDoor.tSide sideInRoom = CommonDoor.tSide.Front;
+                        obj.GetSideOfDoorInRoom(srcRoom, out sideInRoom);
+
+                        DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId, false);
+
+                        if (settings != null && settings.mIsOneWayDoor)
+                        {
+                            // if it's a one way door, you can only pass through the front so a back isn't in room anywhere, you're not allowed in
+                            if (sideInRoom != CommonDoor.tSide.Front)
+                            {
+                                allNull = false;
+                                continue;
+                            }
+                        }
+
+                        // if front of door isn't in room, we don't care about it's filters
+                        if (sideInRoom != CommonDoor.tSide.Front)
+                        {
+                            //Common.Notify("Skipping " + obj.CatalogName + " because front tile is in other room");
+                            continue;
+                        }
+
                         if (settings != null)
                         {
+                            allNull = false;
                             allowed = settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId);
                             if (allowed)
                             {
-                                break;
+                                if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
+                                {
+                                    //Common.Notify(sim.FullName + " initially allowed in " + srcRoom);
+                                }
                             }
-                        }                        
+                            else
+                            {
+                                if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
+                                {
+                                    //Common.Notify(sim.FullName + " NOT initially allowed in " + srcRoom);
+                                }
+                            }
+                        }
+
+                        if (allowed && !adjoiningAllowed)
+                        {
+                            //Common.Notify("Testing adjoining");
+                            // eh...
+                            int adjoining = obj.GetAdjoiningRoom(srcRoom);
+                            //Common.Notify("Testing adjoining... adjoining to " + srcRoom + " is " + adjoining);
+                            foreach (CommonDoor obj2 in obj.LotCurrent.GetObjectsInRoom<CommonDoor>(adjoining))
+                            {
+                                if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
+                                {
+                                    //Common.Notify("Testing adjoining " + obj2.CatalogName + " in " + adjoining);
+                                }
+
+                                sideInRoom = CommonDoor.tSide.Front;
+                                obj2.GetSideOfDoorInRoom(adjoining, out sideInRoom);
+                                if (sideInRoom != CommonDoor.tSide.Front)
+                                {
+                                    //Common.Notify("Skipping " + obj2.CatalogName + " because front tile is in other room");
+                                    continue;
+                                }
+
+                                DoorSettings settings2 = GoHere.Settings.GetDoorSettings(obj.ObjectId, false);
+                                if (settings != null)
+                                {
+                                    allNull = false;
+                                    adjoiningAllowed = settings2.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId);
+                                    if (adjoiningAllowed)
+                                    {
+                                        if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
+                                        {
+                                            //Common.Notify(sim.FullName + " allowed in adjoining " + adjoining);
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (allowed && adjoiningAllowed) break;
                     }
 
-                    //Common.Notify(sim.FullName + " allowed: " + allowed.ToString() + " to room " + srcRoom);
+                    if (allNull)
+                    {
+                        allowed = true;
+                    }
+
+                    if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
+                    {
+                        //Common.Notify(sim.FullName + " is in " + sim.RoomId + " allowed: " + allowed.ToString() + " to room " + srcRoom);
+                    }
 
                     return allowed;
                 }

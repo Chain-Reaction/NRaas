@@ -6,8 +6,10 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
+using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.SimIFace;
 using System;
+using System.Reflection;
 
 namespace NRaas.OverwatchSpace.Loadup
 {
@@ -41,7 +43,46 @@ namespace NRaas.OverwatchSpace.Loadup
 				rH.AddToWorld ();
 				comboRH.MetaAds.AddRange (rH.MetaAds);
 				rH.MetaAds.Clear ();
+
+                if (rH is ITheatre)
+                {
+                    MetaAutonomyTuning tuning = MetaAutonomyManager.GetTuning(MetaAutonomyVenueType.Theatre);
+                    if (tuning != null)
+                    {
+                        MethodInfo info = Type.GetType("NRaas.OverwatchSpace.Loadup.FixComboRabbitHoleMetaAds,NRaasOverwatch").GetMethod("IsShowing");
+                        tuning.DesiredSimFunction = info;
+                    }
+                }
 			}
 		}
+
+        public static bool IsShowing(RabbitHole venue, float hours24)
+        {
+            Theatre theatre = venue as Theatre;
+            if (theatre == null)
+            {
+                ComboCriminalTheater theatre2 = venue as ComboCriminalTheater;
+                if (theatre2 == null)
+                {
+                    ComboStadiumTheatre theatre3 = venue as ComboStadiumTheatre;
+
+                    if (theatre3 == null)
+                    {
+                        return false;
+                    }
+
+                    theatre = theatre3.GetTheatre();
+                }
+
+                theatre = theatre2.GetTheatre();
+            }
+
+            if (theatre == null)
+            {
+                return false;
+            }            
+
+            return theatre.IsOpenAt(hours24);
+        }
 	}
 }

@@ -17,7 +17,7 @@ namespace NRaas.CommonSpace.Helpers
     public class FilterHelper : Common.IWorldLoadFinished
     {
         static Common.MethodStore sGetFilters = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetAllFilters", new Type[] { typeof(bool) });
-        static Common.MethodStore sGetFiltersAsCriteria = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetAllFiltersAsCriteria", new Type[] { typeof(bool) });
+        static Common.MethodStore sGetFilterAsCriteria = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetLocalizedFilterCriteria", new Type[] { typeof(List<string>) });
         static Common.MethodStore sGetSimsMatchingFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSimsMatchingFilter", new Type[] { typeof(List<object>) });
         static Common.MethodStore sGetSingleFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSingleFilter", new Type[] { typeof(string) });
         static Common.MethodStore sSpawnCreateFilterDialog = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "CreateFilter", new Type[] { typeof(string) });
@@ -116,16 +116,16 @@ namespace NRaas.CommonSpace.Helpers
             return results;
         }
 
-        // an idea for another time
-        public static Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria> GetFiltersAsCriteria()
+        // supports more than one filter for less calls        
+        public static string GetFilterAsLocalizedCriteria(List<string> filter)
         {
-            Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria> results = new Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria>();
-            if (sGetFilters.Valid)
+            string result = string.Empty;
+            if (sGetFilterAsCriteria.Valid)
             {
-                results = sGetFilters.Invoke<Dictionary<string, ProtoSimSelection<IMiniSimDescription>.ICriteria>>(new object[] { true });
+                result = sGetFilterAsCriteria.Invoke<string>(new object[] { filter });
             }
 
-            return results;
+            return result;
         }
 
         public static OptionResult CreateFilter()

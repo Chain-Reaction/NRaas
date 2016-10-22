@@ -58,14 +58,14 @@ namespace NRaas.HybridSpace.MagicControls
         public abstract float GetMana(Sim sim);
 
         protected virtual bool IsAvailable(Sim sim, IMagicalDefinition definition)
-        {
-            if ((Occult & definition.SpellSettings.mValidTypes) != OccultTypes.None) return false;
+        {            
+            if ((Occult & definition.SpellSettings.mValidTypes) == OccultTypes.None) return false;
 
             if (!OccultTypeHelper.HasType(sim, Occult)) return false;
-
+            
             if (GetSkillLevel(sim.SimDescription) < GetMinSkillLevel(definition)) return false;
-
-            if (GetMana(sim) < definition.SpellSettings.mMinMana) return false;
+            
+            if (GetMana(sim) + definition.SpellSettings.mMinMana >= 100) return false;                      
 
             return true;
         }

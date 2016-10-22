@@ -339,6 +339,7 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupGroupScienceStation.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupHarvestPlant.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupHomework.cs" />
+    <Compile Include="OverwatchSpace\Loadup\CleanupInvalidEarlyDepatures.cs" />
     <Compile Include="OverwatchSpace\Loadup\ClearInvalidSocialWorkerServiceRequests.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupJigs.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupKnownRecipes.cs" />
@@ -374,6 +375,7 @@
     <Compile Include="OverwatchSpace\Loadup\FixComboRabbitHoleMetaAds.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixComboRabbitHoleOpportunities.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixLushEpidemic.cs" />
+    <Compile Include="OverwatchSpace\Loadup\FixPreEP10Bars.cs" />
     <Compile Include="OverwatchSpace\Loadup\ReplaceEP11BaseCampString.cs" />
     <Compile Include="OverwatchSpace\Loadup\YieldAllAlarms.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixToddlerChat.cs" />

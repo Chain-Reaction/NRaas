@@ -106,6 +106,10 @@ namespace NRaas.WoohooerSpace.Interactions
                     return false;
                 }
 
+                MotiveDelta[] deltaArray = new MotiveDelta[2];
+                deltaArray[0] = AddMotiveDelta(CommodityKind.Fun, 1500f);
+                deltaArray[1] = AddMotiveDelta(CommodityKind.Social, 50f);
+
                 BeginCommodityUpdates();
                 Target.LockDoor = true;
                 if (isMaster)
@@ -176,6 +180,8 @@ namespace NRaas.WoohooerSpace.Interactions
                 }
 
                 EndCommodityUpdates(true);
+                RemoveMotiveDelta(deltaArray[0x0]);
+                RemoveMotiveDelta(deltaArray[0x1]);
                 StandardExit(false, false);
 
                 if (isMaster && flag)

@@ -253,6 +253,12 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
                 mFinal = final;
             }
 
+            public string OptionName
+            {
+                get;
+                set;
+            }
+
             public bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor)
             {
                 SimDescription trueSim = me as SimDescription;

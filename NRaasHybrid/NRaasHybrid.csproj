@@ -114,7 +114,7 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
       <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
@@ -204,11 +204,16 @@
     <Compile Include="Hybrid.cs" />
     <Compile Include="HybridSpace\Helpers\CastSpellEx.cs" />
     <Compile Include="HybridSpace\Helpers\CommonSocials.cs" />
+    <Compile Include="HybridSpace\Helpers\SkateHelper.cs" />
     <Compile Include="HybridSpace\Interactions\CastUpgradeEx.cs" />
     <Compile Include="HybridSpace\Interactions\BloomEx.cs" />
     <Compile Include="HybridSpace\Interactions\FairyRepairEx.cs" />
     <Compile Include="HybridSpace\Interactions\PutOutFireInteractionEx.cs" />
     <Compile Include="HybridSpace\Interactions\LightFireEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SoloSpinEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SpinEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SpinWithEx.cs" />
+    <Compile Include="HybridSpace\Interactions\SpinWithSimToSimEx.cs" />
     <Compile Include="HybridSpace\Interactions\SpellcastingDuelEx.cs" />
     <Compile Include="HybridSpace\Interfaces\IMagicalSubInteraction.cs" />
     <Compile Include="HybridSpace\Interfaces\IMagicalInteraction.cs" />

@@ -16,7 +16,6 @@ using System.Reflection;
 
 namespace NRaas.TravelerSpace.Helpers
 {
-    /*
     public class MiniSimsControl : Common.IWorldLoadFinished
     {
         public void OnWorldLoadFinished()
@@ -122,5 +121,5 @@ namespace NRaas.TravelerSpace.Helpers
                 }
             }
         }
-    }*/
+    }
 }

@@ -1145,6 +1145,9 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_OFBStand
                     if (isAutonomous && a.BuffManager.HasElement(Sims3.Gameplay.ActorSystems.BuffNames.NewStuff))
                         return false;
 
+                    if (isAutonomous && (a.Household != null && target.info.Owner != null && target.info.Owner.Household == a.Household))
+                        return false;
+
                     if (!isAutonomous && target.info.AlwayCanBuy)
                         return true;
 

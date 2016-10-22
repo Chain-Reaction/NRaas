@@ -19,7 +19,8 @@ namespace NRaas.MasterControllerSpace
 {
     public interface ITestableOption
     {
-        bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor);
+        string OptionName { get; set; }
+        bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor);        
     }
 
     public abstract class TestableOption<TDataType, TStoreType> : ValueSettingOption<TStoreType>, IPersistence, ITestableOption
@@ -35,6 +36,12 @@ namespace NRaas.MasterControllerSpace
         public TestableOption(TStoreType value, string name, int count, ThumbnailKey key)
             : base(value, name, count, key)
         { }
+
+        public string OptionName
+        {
+            get { return mName; }
+            set { }
+        }
 
         public abstract bool Get(SimDescription me, IMiniSimDescription actor, Dictionary<TStoreType, TDataType> results);
 

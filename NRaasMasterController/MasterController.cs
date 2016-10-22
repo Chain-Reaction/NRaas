@@ -212,8 +212,33 @@ namespace NRaas
             return result;
         }
 
-        public static void OnMenuAlarmCreate()
+        public static string GetLocalizedFilterCriteria(List<string> filters)
         {
+            string result = string.Empty;
+
+            foreach (string filter in filters)
+            {
+                SavedFilter filter2 = GetFilter(filter);
+
+                if (filter2 != null)
+                {
+                    foreach (SimSelection.ICriteria crit in filter2.Elements)
+                    {
+                        ITestableOption option = crit as ITestableOption;
+                        result += crit.Name + Common.NewLine;
+                        if (option != null)
+                        {
+                            result += option.OptionName + Common.NewLine;
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public static void OnMenuAlarmCreate()
+        {            
             new MasterControllerSpace.Settings.SaveFilterSetting().RunExternal(mNamespace);
         }
 

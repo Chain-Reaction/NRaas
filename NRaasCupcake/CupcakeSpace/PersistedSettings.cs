@@ -186,7 +186,7 @@ namespace NRaas.CupcakeSpace
         {
             if (!mExemptDisplays.Contains(guid))
             {
-                mExemptDisplays.Remove(guid);
+                mExemptDisplays.Add(guid);
             }
         }
 

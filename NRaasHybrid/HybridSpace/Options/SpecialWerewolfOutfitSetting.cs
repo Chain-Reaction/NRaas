@@ -35,5 +35,10 @@ namespace NRaas.HybridSpace.Options
         {
             get { return null; }
         }
+
+        protected override bool Allow(GameHitParameters<GameObject> parameters)
+        {
+            return base.Allow(parameters);
+        }
     }
 }

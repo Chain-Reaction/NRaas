@@ -23,8 +23,6 @@ namespace NRaas.HybridSpace.Interactions
 
         protected override bool Test(IActor actor, GameObject target, GameObjectHit hit, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
         {
-            if (!Common.kDebugging) return false;
-
             return base.Test(actor, target, hit, ref greyedOutTooltipCallback);
         }
 

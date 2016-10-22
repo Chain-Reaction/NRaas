@@ -77,7 +77,10 @@ namespace NRaas.GoHereSpace
         [Tunable, TunableComment("Whether to disable all door options for service sims")]
         protected static bool kServiceSimsIgnoreAllDoorOptions = true;
         [Tunable, TunableComment("Whether to disable all door options for role sims")]
-        protected static bool kRoleSimsIgnoreAllDoorOptions = true;   
+        protected static bool kRoleSimsIgnoreAllDoorOptions = true;
+
+        [Tunable, TunableComment("Whether to enable criteria tooltips on doors")]
+        protected static bool kEnableDoorTooltips = true;
 
         [Persistable(false)]
         public bool mIgnoreLogs = true;
@@ -133,6 +136,8 @@ namespace NRaas.GoHereSpace
         public List<string> mGlobalIgnoreDoorTimeLocksFilterOption = new List<string>();
         public List<string> mGlobalIgnoreAllDoorOptionsFilterOption = new List<string>();
 
+        public bool mEnableDoorTooltips = kEnableDoorTooltips;
+
         //public Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings> mDoorLotSettings = new Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings>();
 
         public bool AllowPush(Sim sim, Lot lot)
@@ -163,6 +168,11 @@ namespace NRaas.GoHereSpace
 
         public DoorPortalComponentEx.DoorSettings GetDoorSettings(ObjectGuid door)
         {
+            return GetDoorSettings(door, true);
+        }
+
+        public DoorPortalComponentEx.DoorSettings GetDoorSettings(ObjectGuid door, bool create)
+        {
             DoorPortalComponentEx.DoorSettings settings;
             if (mDoorSettings.TryGetValue(door, out settings))
             {
@@ -190,7 +200,14 @@ namespace NRaas.GoHereSpace
                 return settings;
             }
 
-            return new DoorPortalComponentEx.DoorSettings(door);
+            if (create)
+            {
+                return new DoorPortalComponentEx.DoorSettings(door);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void AddOrUpdateDoorSettings(ObjectGuid door, DoorPortalComponentEx.DoorSettings settings, bool doSimValidation)
@@ -212,7 +229,7 @@ namespace NRaas.GoHereSpace
                 {
                     foreach (Sim sim in door2.LotCurrent.mSims)
                     {
-                        if (sim != null && sim.RoomId == door2.GetAdjoiningRoom(door2.RoomId) && !LotManager.RoomIdIsOutside(sim.RoomId))
+                        if (sim != null && sim.SimDescription != null && sim.RoomId == door2.GetAdjoiningRoom(door2.RoomId) && !LotManager.RoomIdIsOutside(sim.RoomId))
                         {
                             if (!settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId))
                             {
@@ -225,7 +242,7 @@ namespace NRaas.GoHereSpace
 
                     foreach (Sim sim in LotManager.Actors)
                     {
-                        if (sim == null) continue;
+                        if (sim == null || sim.mAllowedRooms == null) continue;
 
                         sim.mAllowedRooms.Remove(door2.LotCurrent.LotId);
                     }

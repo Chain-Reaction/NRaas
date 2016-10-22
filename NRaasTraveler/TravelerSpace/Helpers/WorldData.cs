@@ -12,6 +12,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Objects.Insect;
+using Sims3.Gameplay.Objects.Miscellaneous;
 using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.Gameplay.Opportunities;
 using Sims3.Gameplay.PetSystems;
@@ -429,6 +430,14 @@ namespace NRaas.TravelerSpace.Helpers
                         break;
                 }
 
+                if (info.mWorldType == WorldType.Future)
+                {
+                    if (!TimePortal.sTimeTravelerHasBeenSummoned)
+                    {
+                        continue;
+                    }
+                }
+
                 if (!VisaManager.sDictionary.ContainsKey((ulong)worldName))
                 {
                     Visa defaultVisa = new Visa();
@@ -672,6 +681,19 @@ namespace NRaas.TravelerSpace.Helpers
                             GameUtils.WorldNameToType[data.Key] = WorldType.Base;
                         }
                     }
+                }
+
+                if (originalType != WorldType.Future)
+                {
+                    // handle custom and pre sunlit tides snafu's
+                    if (GameUtils.WorldNameToType.ContainsKey(WorldName.UserCreated))
+                    {
+                        GameUtils.WorldNameToType[WorldName.UserCreated] = WorldType.Vacation;
+                    }
+                    else
+                    {
+                        GameUtils.WorldNameToType.Add(WorldName.UserCreated, WorldType.Vacation);
+                    }                    
                 }
 
                 msg += "B";

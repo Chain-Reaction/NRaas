@@ -1,4 +1,5 @@
 ﻿using NRaas.CommonSpace.Options;
+using NRaas.CommonSpace.Tasks;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -55,6 +56,21 @@ namespace NRaas.OverwatchSpace.Alarms
 
             foreach (ElevatorDoors obj in Sims3.Gameplay.Queries.GetObjects<ElevatorDoors>())
             {
+                ElevatorInterior.ElevatorPortalComponent comp = obj.InteriorObj.ElevatorPortal as ElevatorInterior.ElevatorPortalComponent;
+                if (comp != null)
+                {
+                    if (comp.mAssignedSims != null)
+                    {
+                        foreach (SimDescription sim in new List<SimDescription>(comp.mAssignedSims.Keys))
+                        {
+                            if (sim.CreatedSim != null)
+                            {
+                                ResetSimTask.Perform(sim.CreatedSim, true);
+                            }
+                        }
+                    }
+                }
+
                 obj.SetObjectToReset();
                 count++;
             }

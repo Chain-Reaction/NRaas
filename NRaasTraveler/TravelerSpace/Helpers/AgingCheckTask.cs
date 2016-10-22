@@ -1,3 +1,4 @@
+using NRaas.CommonSpace;
 using NRaas.CommonSpace.Booters;
 using NRaas.TravelerSpace.CareerMergers;
 using Sims3.Gameplay;
@@ -28,7 +29,7 @@ using System.Reflection;
 
 namespace NRaas.TravelerSpace.Helpers
 {
-    public class AgingCheckTask : Common.FunctionTask
+    public class AgingCheckTask : Common.FunctionTask, Common.IWorldQuit
     {
         static List<Check> sChecks = new List<Check>();
 
@@ -60,20 +61,26 @@ namespace NRaas.TravelerSpace.Helpers
                 try
                 {
                     while (AgingManager.Singleton == null)
-                    {
+                    {                       
                         SpeedTrap.Sleep(0);
                     }
 
                     if (check.mSim.AgingState != null)
                     {
                         check.mSim.AgingState.MergeTravelInformation(check.mMiniSim);
-                    }
+                    }                    
                 }
                 catch (Exception e)
                 {
                     Common.Exception(check.mSim, e);
                 }
             }
+        }
+
+        public void OnWorldQuit()
+        {
+            sTask = null;
+            sChecks.Clear();
         }
 
         public class Check

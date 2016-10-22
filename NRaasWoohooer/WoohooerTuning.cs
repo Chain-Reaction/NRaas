@@ -391,10 +391,10 @@ namespace NRaas
         public static bool kAutonomousHotAirBalloon = true;
 
         [Tunable, TunableComment("Whether to access settings in [StoryProgression] when testing interaction availability")]
-        public static bool kLinkToStoryProgression = true;
+        public static bool kLinkToStoryProgression = false;
 
         [Tunable, TunableComment("Whether to use settings in [StoryProgression] for user-directed interactions")]
-        public static bool kStoryProgressionForUserDirected = true;
+        public static bool kStoryProgressionForUserDirected = false;
 
         [Tunable, TunableComment("Whether to unlock certain non-tunable interactions for teenagers")]
         public static bool kUnlockTeenActions = false;
@@ -453,7 +453,10 @@ namespace NRaas
 		[Tunable, TunableComment("Whether to allow autonomous woohoos in the Eiffel Tower")]
 		public static bool kAutonomousEiffelTower = true;
 
-		[Tunable, TunableComment("Whether to allow autonomous woohoos in Toilet Stalls")]
-		public static bool kAutonomousToiletStall = true;
+        [Tunable, TunableComment("Whether to allow autonomous woohoos in Toilet Stalls")]
+        public static bool kAutonomousToiletStall = true;
+
+        [Tunable, TunableComment("Whether to enable this mod's custom attraction system or use EA's")]
+        public static bool kEnableCustomAttraction = false;
     }
 }
