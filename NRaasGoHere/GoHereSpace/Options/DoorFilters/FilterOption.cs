@@ -1,4 +1,5 @@
-﻿using NRaas.CommonSpace.Options;
+﻿using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Options;
 using NRaas.GoHereSpace.Helpers;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -52,6 +53,14 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             get
             {
                 return (Value.IsFilterActive(mName) ? Common.Localize("Boolean:True") : Common.Localize("Boolean:False"));
+            }
+        }
+
+        public override string Name
+        {
+            get
+            {
+                return FilterHelper.StripNamespace(mName);
             }
         }
     }

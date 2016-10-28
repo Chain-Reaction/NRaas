@@ -138,6 +138,8 @@ namespace NRaas.GoHereSpace
 
         public bool mEnableDoorTooltips = kEnableDoorTooltips;
 
+        public int mFilterCacheTime = FilterHelper.kFilterCacheTime;
+
         //public Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings> mDoorLotSettings = new Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings>();
 
         public bool AllowPush(Sim sim, Lot lot)
@@ -188,6 +190,7 @@ namespace NRaas.GoHereSpace
                 bool changed = false;
                 foreach (string invalid in remove)
                 {
+                    Common.DebugNotify("Removed invalid door filter: " + invalid);
                     changed = true;
                     settings.RemoveFilter(invalid);
                 }
@@ -207,6 +210,46 @@ namespace NRaas.GoHereSpace
             else
             {
                 return null;
+            }
+        }
+
+        public void ValidateFilters()
+        {
+            foreach (KeyValuePair<ObjectGuid, DoorPortalComponentEx.DoorSettings> mSettings in mDoorSettings)
+            {
+                GoHere.Settings.GetDoorSettings(mSettings.Key); // validates filters on pull                
+            }
+
+            foreach (string mFilter in new List<string>(mGlobalIgnoreAllDoorOptionsFilterOption))
+            {
+                if (!FilterHelper.IsValidFilter(mFilter))
+                {
+                    mGlobalIgnoreAllDoorOptionsFilterOption.Remove(mFilter);
+                }
+            }
+
+            foreach (string mFilter in new List<string>(mGlobalIgnoreDoorCostFilterOption))
+            {
+                if (!FilterHelper.IsValidFilter(mFilter))
+                {
+                    mGlobalIgnoreDoorCostFilterOption.Remove(mFilter);
+                }
+            }
+
+            foreach (string mFilter in new List<string>(mGlobalIgnoreDoorFiltersFilterOption))
+            {
+                if (!FilterHelper.IsValidFilter(mFilter))
+                {
+                    mGlobalIgnoreDoorFiltersFilterOption.Remove(mFilter);
+                }
+            }
+
+            foreach (string mFilter in new List<string>(mGlobalIgnoreDoorTimeLocksFilterOption))
+            {
+                if (!FilterHelper.IsValidFilter(mFilter))
+                {
+                    mGlobalIgnoreDoorTimeLocksFilterOption.Remove(mFilter);
+                }
             }
         }
 

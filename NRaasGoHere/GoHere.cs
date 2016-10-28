@@ -67,6 +67,7 @@ namespace NRaas
         public void OnWorldLoadFinished()
         {
             kDebugging = Settings.Debugging;
+            FilterHelper.kFilterCacheTime = GoHere.Settings.mFilterCacheTime;
 
             DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
 

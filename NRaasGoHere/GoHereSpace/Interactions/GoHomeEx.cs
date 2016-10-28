@@ -105,6 +105,7 @@ namespace NRaas.GoHereSpace.Interactions
                 AddTest("NRaas.StoryProgressionSpace.Scenarios.Sims.MoodCheckScenario", "Void PrivatePerform", OnIgnoreActive);
                 AddTest("NRaas.StoryProgressionSpace.Scenarios.Pregnancies.AdoptionBaseScenario", "Boolean Push()", OnIgnoreActive);
                 AddTest("NRaas.StoryProgressionSpace.Situations.HousePartySituation", "Void CheckIfGuestsNeedToGoHome", OnIgnoreActive);
+                AddTest("NRaas.WoohooerSpace.Skills.KamaSimtraSettings.ServiceData", "Void Cleanup", OnIgnoreActive);
 
                 AddTest(typeof(Sims3.Gameplay.Actors.Sim.GoInside), "Boolean Run", OnIgnore);
                 AddTest(typeof(Sims3.Gameplay.Roles.RoleSpecialMerchant), "Void EndRole", OnIgnore);

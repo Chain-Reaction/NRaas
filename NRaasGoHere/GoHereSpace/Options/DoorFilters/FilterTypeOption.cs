@@ -15,7 +15,13 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
         {
             get
             {
-                return GoHere.Settings.GetDoorSettings(mTarget.ObjectId).mType;
+                DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(mTarget.ObjectId);
+                if (settings != null)
+                {
+                    return settings.mType;
+                }
+
+                return DoorPortalComponentEx.DoorSettings.SettingType.Allow;
             }
             set
             {

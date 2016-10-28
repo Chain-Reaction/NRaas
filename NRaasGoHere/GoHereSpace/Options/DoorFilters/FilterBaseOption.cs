@@ -30,6 +30,8 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
 
             Common.Notify(ToString());
 
+            FilterHelper.FlushCache(mName);
+
             if (!FilterHelper.FilterHasMatches(mName))
             {
                 Common.Notify(Common.Localize("DoorOptions:FilterHasNoMatches"));

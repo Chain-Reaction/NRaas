@@ -46,6 +46,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\NRaas\Common.cs">
@@ -176,6 +177,7 @@
   <ItemGroup>
     <Folder Include="BOGOSpace\Careers\" />
     <Folder Include="BOGOSpace\Options\" />
+    <Folder Include="StringTables\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems">

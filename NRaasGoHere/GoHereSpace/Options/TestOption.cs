@@ -25,6 +25,11 @@ namespace NRaas.GoHereSpace.Options
             return "Test";
         }
 
+        protected override bool Allow(GameHitParameters<GameObject> parameters)
+        {
+            return GoHere.Settings.Debugging;
+        }
+
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
             Common.StringBuilder msg = new Common.StringBuilder("TestOption");

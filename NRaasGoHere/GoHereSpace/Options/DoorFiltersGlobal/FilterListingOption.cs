@@ -26,6 +26,13 @@ namespace NRaas.GoHereSpace.Options.DoorFiltersGlobal
             return value.ToString();
         }
 
+        protected override bool Allow(GameHitParameters<TObject> parameters)
+        {
+            if (FilterHelper.GetFilters().Count == 0) return false;
+
+            return base.Allow(parameters);
+        }
+
         protected override List<ListedSettingOption<string, TObject>.Item> GetOptions()
         {
             List<Item> results = new List<Item>();

@@ -14,7 +14,7 @@ using System.Text;
 
 namespace NRaas.CommonSpace.Helpers
 {
-    public class FilterHelper : Common.IWorldLoadFinished
+    public class FilterHelper : Common.IWorldLoadFinished, Common.IWorldQuit
     {
         static Common.MethodStore sGetFilters = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetAllFilters", new Type[] { typeof(bool) });
         static Common.MethodStore sGetFilterAsCriteria = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetLocalizedFilterCriteria", new Type[] { typeof(List<string>) });
@@ -26,7 +26,6 @@ namespace NRaas.CommonSpace.Helpers
         [Tunable, TunableComment("How long a filter should have it's results cached (in Sim minutes)")]
         public static int kFilterCacheTime = 120;
 
-        [PersistableStatic(false)]
         public static Dictionary<string, Dictionary<ulong, SimFilter>> filters = new Dictionary<string, Dictionary<ulong, SimFilter>>();
 
         public static SimFilter GetFilter(string filter)
@@ -292,7 +291,7 @@ namespace NRaas.CommonSpace.Helpers
         {
             Common.DebugNotify("UpdateFilterInternal: " + filter + " cacheSim: " + cacheSim);
 
-            Dictionary<ulong, SimFilter> mCache;            
+            Dictionary<ulong, SimFilter> mCache = null;            
             filters.TryGetValue(filter, out mCache);
 
             if (mCache != null)
@@ -336,13 +335,17 @@ namespace NRaas.CommonSpace.Helpers
             {
                 if (cacheSim != 0)
                 {
+                    Common.DebugNotify("Filter SimSpecific, cacheSim not 0");
                     return Cache(filter, cacheSim, GetSimsMatchingFilter(filter, cacheSim));
                 }
             }
             else
             {
+                Common.DebugNotify("Filter not SimSpecific");
                 return Cache(filter, GetSimsMatchingFilter(filter, cacheSim));
             }
+
+            Common.DebugNotify("Filter SimSpecific, cacheSim 0, return blank");
 
             // invalid, will return a blank result
             return UpdateFilter("", 0);
@@ -351,6 +354,8 @@ namespace NRaas.CommonSpace.Helpers
         public static void UpdateFilters()
         {
             FlushCache();
+
+            Common.DebugNotify("Flush Cache and Update Filters");
 
             Dictionary<string, bool> liveFilters = GetFilters();
             foreach (KeyValuePair<string, bool> filter in liveFilters)
@@ -456,6 +461,11 @@ namespace NRaas.CommonSpace.Helpers
             {
                 ValidateFilters();
             }
+        }
+
+        public void OnWorldQuit()
+        {
+            filters.Clear();
         }
 
         public static string StripNamespace(string filter)

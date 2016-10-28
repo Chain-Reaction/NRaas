@@ -1,4 +1,5 @@
 ﻿using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
 using Sims3.UI.Hud;
@@ -39,6 +40,7 @@ namespace NRaas.CommonSpace.Helpers
 
         public void OnWorldQuit()
         {
+            sListeners.Clear();
             HideCurrentTooltip();
         }
 
@@ -67,8 +69,6 @@ namespace NRaas.CommonSpace.Helpers
                 sListeners.Add(type, new List<MethodInfo>());
             }
 
-            //Common.Notify("AddListener: " + type.ToString() + " - " + method.Name);
-
             sListeners[type].Add(method);
         }
 
@@ -86,19 +86,20 @@ namespace NRaas.CommonSpace.Helpers
 
         public static bool SceneWindow_Hover(WindowBase w, ref ScenePickArgs args)
         {
-            /*
-            if (UIManager.mCurrentWindowBaseTooltip != null) //|| sCurrentTip != null)
+            if (Sims3.Gameplay.Gameflow.CurrentGameSpeed == Sims3.Gameplay.Gameflow.GameSpeed.Pause && !Sims3.Gameplay.GameStates.IsBuildBuyLikeState)
             {
-                Common.Notify("Null check");
                 return false;
             }
-             */
+
+            if (!UIUtils.IsOkayToStartModalDialog(true))
+            {
+                return false;
+            }
 
             if (args.mObjectType == ScenePickObjectType.Object)
             {
                 if (args.mObjectId == sLastObjectId && sCurrentTip != null)
                 {
-                   // Common.Notify("Restarting");
                     RestartAlarm();
                     return true;
                 }
@@ -117,7 +118,6 @@ namespace NRaas.CommonSpace.Helpers
 
                 if (proxy != null && proxy.Target != null)
                 {
-                    //Type type = proxy.GetType();
                     Type type = proxy.Target.GetType();
 
                     if (type == null)
@@ -172,8 +172,6 @@ namespace NRaas.CommonSpace.Helpers
                         sTipObject = args.mObjectId;
                     }
                 }
-
-                //sLastObjectId = args.mObjectId;
             }
 
             return true;
@@ -188,12 +186,17 @@ namespace NRaas.CommonSpace.Helpers
             return tooltip;
         }
 
-        public static void RestartAlarm()
+        public static void KillAlarm()
         {
-            if (sCurrentAlarm != null)
+            if (sCurrentAlarm != null && UIUtils.IsOkayToStartModalDialog(true)) // stops the game from breaking on travel or loading when paused
             {
                 sCurrentAlarm.Dispose();
             }
+        }
+
+        public static void RestartAlarm()
+        {
+            KillAlarm();
 
             SetAlarm();          
         }
@@ -205,22 +208,18 @@ namespace NRaas.CommonSpace.Helpers
 
         public static void HideCurrentTooltip()
         {
-            if (sLastObjectId == sTipObject)
+            if (sLastObjectId == sTipObject && sLastObjectId != 0)
             {
                 RestartAlarm();
             }
 
             if (sCurrentTip != null)
             {
-                //Common.Notify("Hiding...");
                 sCurrentTip.TooltipWindow.Visible = false;
                 // because...EA
                 sCurrentTip.TooltipWindow.ShadeColor = new Color(sCurrentTip.TooltipWindow.ShadeColor.ARGB & 0xffffff);
                 Simulator.AddObject(new TooltipManager.DisposeTooltipTask(sCurrentTip));
-                if (sCurrentAlarm != null)
-                {
-                    sCurrentAlarm.Dispose();
-                }
+                KillAlarm();
                 sCurrentTip = null;
                 sTipObject = 0L;
             }

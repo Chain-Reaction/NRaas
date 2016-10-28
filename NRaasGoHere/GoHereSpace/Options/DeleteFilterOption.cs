@@ -34,46 +34,7 @@ namespace NRaas.GoHereSpace.Options
         {
             FilterHelper.DeleteFilter();
 
-            /*
-             * Need to see what to do with this because no easy way to make sure the user is done before doing this
-             * Maybe set an alarm that checks if a dialog is up?
-            foreach(KeyValuePair<ObjectGuid, DoorPortalComponentEx.DoorSettings> mSettings in GoHere.Settings.mDoorSettings)
-            {
-                GoHere.Settings.GetDoorSettings(mSettings.Key); // validates filters on pull                
-            }
-
-            foreach (string mFilter in new List<string>(GoHere.Settings.mGlobalIgnoreAllDoorOptionsFilterOption))
-            {
-                if (!FilterHelper.IsValidFilter(mFilter))
-                {
-                    GoHere.Settings.mGlobalIgnoreAllDoorOptionsFilterOption.Remove(mFilter);
-                }
-            }
-
-            foreach (string mFilter in new List<string>(GoHere.Settings.mGlobalIgnoreDoorCostFilterOption))
-            {
-                if (!FilterHelper.IsValidFilter(mFilter))
-                {
-                    GoHere.Settings.mGlobalIgnoreDoorCostFilterOption.Remove(mFilter);
-                }
-            }
-
-            foreach (string mFilter in new List<string>(GoHere.Settings.mGlobalIgnoreDoorFiltersFilterOption))
-            {
-                if (!FilterHelper.IsValidFilter(mFilter))
-                {
-                    GoHere.Settings.mGlobalIgnoreDoorFiltersFilterOption.Remove(mFilter);
-                }
-            }
-
-            foreach (string mFilter in new List<string>(GoHere.Settings.mGlobalIgnoreDoorTimeLocksFilterOption))
-            {
-                if (!FilterHelper.IsValidFilter(mFilter))
-                {
-                    GoHere.Settings.mGlobalIgnoreDoorTimeLocksFilterOption.Remove(mFilter);
-                }
-            }
-             */
+            new Common.AlarmTask(3, TimeUnit.Minutes, GoHere.Settings.ValidateFilters); 
 
             return OptionResult.SuccessClose;
         }
