@@ -345,8 +345,13 @@ namespace NRaas.StoryProgressionSpace.Interactions
             {
                 GoToSchoolInRabbitHoleHelper.PreRouteNearEntranceAndIntoBuilding(this, canUseCar, routeMetaType, OnChangeOutfit);
 
-                //return Target.RouteNearEntranceAndEnterRabbitHole(Actor, this, BeforeEnteringRabbitHole, canUseCar, routeMetaType, true);
-                return RouteNearEntranceAndEnterRabbitHole(Actor, this, BeforeEnteringRabbitHole, canUseCar, routeMetaType, true);
+                //LoganDownUnder_03Mar2017 -- only branch to slot reassignment if target is actual school rabbithole
+                if (Target is ISchoolRabbitHole)
+                {
+                    return RouteNearEntranceAndEnterRabbitHole(Actor, this, BeforeEnteringRabbitHole, canUseCar, routeMetaType, true);
+                }
+                // otherwise use original method
+                return Target.RouteNearEntranceAndEnterRabbitHole(Actor, this, BeforeEnteringRabbitHole, canUseCar, routeMetaType, true);
             }
             catch (ResetException)
             {
