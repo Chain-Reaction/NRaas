@@ -153,6 +153,6 @@ namespace NRaas
     SpellCrafter = 0x494013358591e72L,
          * 
          */
-        public static readonly int sVersion = 87;
+        public static readonly int sVersion = 88;
     }
 }
