@@ -14,6 +14,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
+using Sims3.Gameplay.Objects.Miscellaneous;
 using Sims3.Gameplay.Passport;
 using Sims3.Gameplay.RealEstate;
 using Sims3.Gameplay.Services;
@@ -405,6 +406,24 @@ namespace NRaas.TravelerSpace.Helpers
 
                         TravelUtil.TriggerTutorial(household);
                         TravelUtil.PlaceSimsOnSafeSpots(household, ref simToSelect);
+
+                        // core block in pusharriveinteraction on ITimePortal preventing teens who travel alone from getting the arrive interaction thus
+                        // appearing invisible
+                        bool flag = true;
+                        foreach (SimDescription desc in household.SimDescriptions)
+                        {
+                            if (desc.YoungAdultOrAbove)
+                            {
+                                flag = false;
+                                break;
+                            }
+                        }
+
+                        ITimePortal[] portalArray;
+                        if (flag && ArriveHomeBehaviorInVacationWorld.ShouldArriveByTimePortal(household.LotHome, out portalArray))
+                        {
+                            new Common.AlarmTask(3f, TimeUnit.Minutes, PushArriveHomeInteractionEx);
+                        }
                     }
                 }
             }
@@ -418,6 +437,42 @@ namespace NRaas.TravelerSpace.Helpers
             }
 
             return results;
+        }
+
+        public static void PushArriveHomeInteractionEx()
+        {
+            Household travelHousehold = GameStates.TravelHousehold;
+            if (travelHousehold != null)
+            {
+                ITimePortal[] portalArray;
+                ArriveHomeBehaviorInVacationWorld.ShouldArriveByTimePortal(travelHousehold.LotHome, out portalArray);
+
+                if(portalArray == null || portalArray.Length == 0) return;
+
+                Sim actor = null;
+                TimePortal.Arrive arrive = null;
+                foreach (Sim sim in travelHousehold.Sims)
+                {
+                    if (sim == null) continue;
+
+                    if (actor == null)
+                    {
+                        arrive = TimePortal.Arrive.Singleton.CreateInstance(portalArray[0], sim, new InteractionPriority(InteractionPriorityLevel.High), false, false) as TimePortal.Arrive;
+                        actor = sim;
+                        continue;
+                    }
+
+                    if (arrive == null) continue;
+
+                    arrive.SelectedObjects.Add(sim);
+                }
+
+                if (actor != null && actor.InteractionQueue != null && arrive != null)
+                {
+                    Common.Notify("Pushing arrive");
+                    actor.InteractionQueue.AddNext(arrive);
+                }
+            }
         }
 
         private static int[] GetPartnershipBonuses(SimDescription simDesc)
@@ -463,6 +518,8 @@ namespace NRaas.TravelerSpace.Helpers
                 if (worldFile == WorldData.GetWorldFile(TravelUtil.kVacationWorldNames[i])) continue;
 
                 if (Traveler.Settings.GetHiddenWorlds(TravelUtil.kVacationWorldNames[i])) continue;
+
+                if (TravelUtil.kVacationWorldNames[i] == WorldName.FutureWorld && !TimePortal.sTimeTravelerHasBeenSummoned) continue;
 
                 if (GameStates.sTravelData != null)
                 {

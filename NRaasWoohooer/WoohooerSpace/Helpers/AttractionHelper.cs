@@ -5,21 +5,16 @@ using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
-using Sims3.Gameplay.Autonomy;
-using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Controllers;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
-using Sims3.Gameplay.Objects.Beds;
-using Sims3.Gameplay.Objects.Misc;
 using Sims3.Gameplay.Opportunities;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Situations;
 using Sims3.Gameplay.Socializing;
-using Sims3.Gameplay.StoryProgression;
 using Sims3.Gameplay.Utilities;
 using Sims3.Gameplay.UI;
 using Sims3.SimIFace;
@@ -38,15 +33,15 @@ namespace NRaas.WoohooerSpace.Helpers
         [PersistableStatic]
         static Dictionary<ulong, Dictionary<ulong, LastCheck>> sLastCheck = new Dictionary<ulong, Dictionary<ulong, LastCheck>>();
 
-        static Household sOldHousehold;
+        static Household sOldHousehold;        
 
         public void OnWorldLoadFinished()
         {
             new Common.DelayedEventListener(EventTypeId.kSocialInteraction, OnSocialEvent);
             new Common.DelayedEventListener(EventTypeId.kHouseholdSelected, OnHouseSelected);
 
-            sOldHousehold = Household.ActiveHousehold;
-        }
+            sOldHousehold = Household.ActiveHousehold;           
+        }        
 
         protected static void SetLastCheck(ulong simA, ulong simB, LastCheck check)
         {
@@ -67,6 +62,8 @@ namespace NRaas.WoohooerSpace.Helpers
         protected static void UpdateAttractionControllers(Household newHouse, Household oldHouse)
         {
             Dictionary<Relationship, bool> toDispose = new Dictionary<Relationship, bool>();
+
+            //if (Common.AssemblyCheck.IsInstalled("NRaasChemistry")) return;
 
             if (oldHouse != null)
             {
@@ -167,6 +164,8 @@ namespace NRaas.WoohooerSpace.Helpers
         {
             using (Common.TestSpan span = new Common.TestSpan(ScoringLookup.Stats, "Duration AttractionHelper:OnSocialEvent"))
             {
+                if (Common.AssemblyCheck.IsInstalled("NRaasChemistry")) return;
+
                 SocialEvent socialEvent = e as SocialEvent;
                 if ((socialEvent != null) && (socialEvent.WasAccepted))
                 {

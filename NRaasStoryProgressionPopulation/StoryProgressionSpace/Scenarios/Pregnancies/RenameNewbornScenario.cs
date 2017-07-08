@@ -91,12 +91,21 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Pregnancies
             Relationships.GetParents(Sim, out mom, out dad);
 
             bool wasEither;
-            string lastName = GetData(mom).HandleName<BabyLastNameOption>(Sims, dad, out wasEither);
+            string lastName = null;
+            if (mom != null)
+            {
+                lastName = GetData(mom).HandleName<BabyLastNameOption>(Sims, dad, out wasEither);
+            }
+            else if (dad != null)
+            {
+                lastName = GetData(dad).HandleName<BabyLastNameOption>(Sims, mom, out wasEither);
+            }
+
             if (lastName != null)
             {
                 Sim.LastName = lastName;
             }
-            else if ((dad != null) && (RandomUtil.CoinFlip()))
+            else if (((dad != null) && (RandomUtil.CoinFlip())) || (mom == null))
             {
                 Sim.LastName = dad.LastName;
             }

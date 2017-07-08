@@ -9,6 +9,7 @@ using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.SimIFace;
 using System;
+using System.Collections;
 using System.Reflection;
 
 namespace NRaas.OverwatchSpace.Loadup
@@ -33,6 +34,10 @@ namespace NRaas.OverwatchSpace.Loadup
 
 		public static void AddContainedRabbitHolesToLot (ComboRabbitHole comboRH)
 		{
+            if (comboRH == null) return;
+            if (comboRH.ContainedRabbitholes == null) return;
+            if (comboRH.LotCurrent == null) return;
+
 			foreach(RabbitHole rH in comboRH.ContainedRabbitholes.Keys)
 			{
 				if (rH.LotCurrent == comboRH.LotCurrent)
@@ -41,6 +46,10 @@ namespace NRaas.OverwatchSpace.Loadup
 				}
 				LotManager.AddObjectToLot (rH, rH.ObjectId, comboRH.LotCurrent.LotId, 0, 0, null);
 				rH.AddToWorld ();
+                if (comboRH.MetaAds == null)
+                {
+                    comboRH.mMetaAds = new ArrayList();
+                }
 				comboRH.MetaAds.AddRange (rH.MetaAds);
 				rH.MetaAds.Clear ();
 

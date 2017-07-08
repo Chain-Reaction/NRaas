@@ -193,7 +193,13 @@ namespace NRaas.WoohooerSpace
         public bool mRemoveRomanceOnKiss = WoohooerTuning.kRemoveRomanceOnKiss;
         public bool mAllowZombie = WoohooerTuning.kAllowZombie;
 
-        public bool mEnableCustomAttraction = WoohooerTuning.kEnableCustomAttraction;
+        // find way to turn convo akward when confidence levels aren't met, reject when attraction levels aren't met
+        // sims with low confidence will not care too much about attraction level
+        // sims who haven't woohoo'd in a while and are of medium or lower confidence level won't either
+        public float[] mAttractionLevelForAutonmousFlirting = WoohooerTuning.kAttractionLevelForAutonmousFlirting;
+        public float[] mAttractionLevelForAutonmousWoohoo = WoohooerTuning.kAttractionLevelForAutonmousWoohoo;
+        public float[] mConfidenceLevelForAutonmousFlirting = WoohooerTuning.kConfidenceLevelForAutonmousFlirting;
+        public float[] mConfidenceLevelForAutonmousWoohoo = WoohooerTuning.kConfidenceLevelForAutonmousWoohoo;
 
         public bool mVerboseDebugging = false;
 

@@ -141,15 +141,19 @@ namespace NRaas.TravelerSpace
             }
         }
 
-        public bool GetAgelessForeign(MiniSimDescription desc)
+        public static int mNotice = 0;
+
+        public WorldName GetHomeWorld(IMiniSimDescription desc)
         {
+            if (desc == null) return WorldName.Undefined;
+
             if (desc.HomeWorld != WorldName.Undefined && desc.HomeWorld != WorldName.UserCreated)
             {
-                return mAgelessForeign.ContainsKey(desc.HomeWorld);
+                return desc.HomeWorld;
             }
 
-            if (mWorldForSims.ContainsKey(desc.SimDescriptionId))
-            {
+            if (!mWorldForSims.ContainsKey(desc.SimDescriptionId)) return WorldName.Undefined;
+
                 string world = mWorldForSims[desc.SimDescriptionId];
 
                 string name = world.Replace(".world", "");
@@ -162,10 +166,18 @@ namespace NRaas.TravelerSpace
                 }
                 catch
                 {                    
-                    return true;
+                return WorldName.Undefined;
                 }                
 
-                return mAgelessForeign.ContainsKey(worldName);
+            return worldName;
+        }
+
+        public bool GetAgelessForeign(MiniSimDescription desc)
+        {
+            WorldName name = GetHomeWorld(desc as IMiniSimDescription);
+            if (name != WorldName.Undefined)
+            {
+                return mAgelessForeign.ContainsKey(name);
             }            
 
             return true;

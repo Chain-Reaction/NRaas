@@ -556,7 +556,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAnySkillOfLevel(SimDescription sim, Dictionary<SkillNames, List<int>> skills)
             {
-                if (skills.Count == 0)
+                if (sim.SkillManager == null || skills.Count == 0)
                 {
                     return false;
                 }
@@ -570,7 +570,7 @@ namespace NRaas.StoryProgressionSpace
                         continue;
                     }
 
-                    if (entry.Value.Contains(sim.SkillManager.GetElement(entry.Key).SkillLevel)) return true;                    
+                    if (sim.SkillManager.GetElement(entry.Key) != null && entry.Value.Contains(sim.SkillManager.GetElement(entry.Key).SkillLevel)) return true;                    
                 }
 
                 return false;
@@ -578,7 +578,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAllSkillsOfLevel(SimDescription sim, Dictionary<SkillNames, List<int>> skills)
             {
-                if (skills.Count == 0)
+                if (sim.SkillManager == null || skills.Count == 0)
                 {
                     return false;
                 }
@@ -592,7 +592,7 @@ namespace NRaas.StoryProgressionSpace
                         continue;
                     }
 
-                    if (!entry.Value.Contains(sim.SkillManager.GetElement(entry.Key).SkillLevel)) return false;
+                    if (sim.SkillManager.GetElement(entry.Key) != null && !entry.Value.Contains(sim.SkillManager.GetElement(entry.Key).SkillLevel)) return false;
                 }
 
                 return true;

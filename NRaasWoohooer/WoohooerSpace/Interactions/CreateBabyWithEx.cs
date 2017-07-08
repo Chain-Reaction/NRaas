@@ -48,6 +48,9 @@ namespace NRaas.WoohooerSpace.Interactions
 
             Tunings.Inject<Hospital, Hospital.CreateBabyWith.CreateBabyWithDefinition, Definition>(false);            
 
+            // romantic interests are blocked by the default 30
+            Hospital.CreateBabyWith.kLTRForBabyMaking = 20;
+
             sOldSingleton = Singleton;
             Singleton = new Definition();
         }

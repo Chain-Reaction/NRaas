@@ -24,6 +24,10 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         [Persistable(false)]
         protected bool mEnabled = false;
 
+        protected bool mRandomCriteria = false;
+
+        protected bool mRandomValue = false;
+
         public SelectionOptionBase()
             : base(null, 0)
         { }
@@ -33,8 +37,30 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
         public string OptionName
         {
-            get;
-            set;
+            get { return string.Empty; }
+        }
+
+        public string OptionValue
+        {
+            get { return string.Empty; }
+        }
+
+        public bool CanBeRandomValue
+        {
+            get { return false; }
+            set { }
+        }
+
+        public int OptionHitValue
+        {
+            get { return 0; }
+            set { }
+        }
+
+        public int OptionMissValue
+        {
+            get { return 0; }
+            set { }
         }
 
         public bool Enabled
@@ -46,6 +72,30 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             set
             {
                 mEnabled = value;
+            }
+        }
+
+        public bool CanBeRandomCriteria
+        {
+            get
+            {
+                return mRandomCriteria;
+            }
+            set
+            {
+                mRandomCriteria = value;
+            }
+        }
+
+        public bool CanHaveRandomValue
+        {
+            get
+            {
+                return mRandomValue;
+            }
+            set
+            {
+                mRandomValue = value;
             }
         }
 
@@ -67,8 +117,28 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         public override void Reset()
         {
             mEnabled = true;
+            mRandomCriteria = false;
 
             base.Reset();
+        }
+
+        public List<ICommonOptionItem> GetOptions(IMiniSimDescription actor, IEnumerable<SimSelection.ICriteria> criteria, List<IMiniSimDescription> sims)
+        {
+            return null;
+        }
+
+        public void SetOptions(List<ICommonOptionItem> opts)
+        {
+        }
+
+        public int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int divisior)
+        {
+            return 0;
+        }
+
+        public bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor, bool testRandom)
+        {
+            return Test(me, fullFamily, actor);
         }
 
         public bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor)
@@ -116,6 +186,11 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         protected virtual bool Allow(MiniSimDescription me, IMiniSimDescription actor)
         {
             return false;
+        }
+
+        public SimSelection.UpdateResult Update(IMiniSimDescription actor, IEnumerable<SimSelection.ICriteria> criteria, List<IMiniSimDescription> allSims, bool secondStage, bool silent, bool promptForMatchAll)
+        {
+            return Update(actor, criteria, allSims, secondStage);
         }
 
         public virtual SimSelection.UpdateResult Update(IMiniSimDescription actor, IEnumerable<SimSelection.ICriteria> criteria, List<IMiniSimDescription> allSims, bool secondStage)

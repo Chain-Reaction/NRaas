@@ -57,6 +57,10 @@ namespace NRaas.MasterControllerSpace.Sims.Basic.Party
             {
                 return false;
             }
+            else if (SimTypes.IsOccult(simDescription, Sims3.UI.Hud.OccultTypes.ImaginaryFriend) && !simDescription.IsContactable)
+            {
+                return false;
+            }
             if (((host != null) && needToCheckWhetherSimWantsToCome) && !WillSimComeToParty(simDescription, host, fMaxLTR, bHostIsLegendary))
             {
                 return false;

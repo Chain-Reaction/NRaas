@@ -1,4 +1,5 @@
 ﻿using NRaas.CommonSpace.Helpers;
+using NRaas.MasterControllerSpace.Settings;
 using NRaas.MasterControllerSpace.Sims;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
@@ -110,6 +111,8 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
                 foreach (SimSelection.ICriteria item in mFilter.mElements)
                 {
+                    if (item.CanBeRandomCriteria && RandomUtil.CoinFlip()) continue;
+
                     ITestableOption testable = item as ITestableOption;
                     if (testable == null) continue;
 
@@ -128,6 +131,8 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
                 foreach (SimSelection.ICriteria item in mFilter.mElements)
                 {
+                    if (item.CanBeRandomCriteria && RandomUtil.CoinFlip()) continue;
+
                     ITestableOption testable = item as ITestableOption;
                     if (testable == null) continue;
 

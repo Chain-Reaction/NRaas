@@ -61,7 +61,7 @@ namespace NRaas.TravelerSpace.Interactions
 
             public static bool CanPurchaseLocationHome(Sim sim, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
-                if (!GameUtils.IsOnVacation())
+                if (!GameUtils.IsOnVacation() && !GameUtils.IsFutureWorld())
                 {
                     greyedOutTooltipCallback = Common.DebugTooltip("Not On Vacation");
                     return false;
@@ -70,8 +70,7 @@ namespace NRaas.TravelerSpace.Interactions
                 {
                     greyedOutTooltipCallback = Common.DebugTooltip("Not HasBeenFixedupInHomeworld");
                     return false;                    
-                }
-                else if (sim.VisaManager.GetVisaLevel(GameUtils.GetCurrentWorld()) < RealEstateManager.kVisaLevelRequiredToPurchaseVacationHome)
+                } else if (GameUtils.IsOnVacation() && sim.VisaManager.GetVisaLevel(GameUtils.GetCurrentWorld()) < RealEstateManager.kVisaLevelRequiredToPurchaseVacationHome)
                 {
                     greyedOutTooltipCallback = Common.DebugTooltip("GetVisaLevel <= " + RealEstateManager.kVisaLevelRequiredToPurchaseVacationHome);
                     return false;                    

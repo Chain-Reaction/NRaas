@@ -1432,10 +1432,17 @@ namespace NRaas.TravelerSpace.Helpers
                 msg += "A";
                 Traveler.InsanityWriteLog(msg);
 
+                if (GameStates.TravellingHome)
+                {
                 sResidentIds.Clear();
+                }
+
+                if (sResidentIds.Count == 0 && !GameStates.TravellingHome)
+                {
                 foreach (KeyValuePair<ulong, SimDescription> sim in SimListing.GetResidents(false))
                 {
                     sResidentIds[sim.Key] = true;
+                    }
                 }
 
                 if (!LoadingScreenController.IsLayoutLoaded())

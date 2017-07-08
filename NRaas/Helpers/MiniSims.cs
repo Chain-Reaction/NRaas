@@ -273,7 +273,8 @@ namespace NRaas.CommonSpace.Helpers
 
         public static void FixUpForeignPregnantSims(SimDescription desc)
         {
-            if ((GameUtils.GetWorldType(desc.HomeWorld) == WorldType.Vacation) && (desc.Pregnancy != null))
+            //if ((GameUtils.GetWorldType(desc.HomeWorld) == WorldType.Vacation) && (desc.Pregnancy != null))
+            if((desc.HomeWorld == WorldName.Egypt || desc.HomeWorld == WorldName.France || desc.HomeWorld == WorldName.China || desc.HomeWorld == WorldName.University) && (desc.Pregnancy != null))
             {
                 if (SimTypes.IsTourist(desc)) return;
 

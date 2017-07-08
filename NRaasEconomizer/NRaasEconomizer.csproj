@@ -8,8 +8,8 @@
     <ProjectGuid>{3DCEE31B-124E-4548-919A-6CC4B6103ECB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NRaasBOGO</RootNamespace>
-    <AssemblyName>NRaasBOGO</AssemblyName>
+    <RootNamespace>NRaasEconomizer</RootNamespace>
+    <AssemblyName>NRaasEconomizer</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -133,50 +133,50 @@
     <Compile Include="..\nraas\selection\ProtoSimSelection.cs">
       <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
     </Compile>
-    <Compile Include="BOGO.cs" />
-    <Compile Include="BOGOSpace\Helpers\BusinessController.cs" />
-    <Compile Include="BOGOSpace\Helpers\CarryObjectPosture.cs" />
-    <Compile Include="BOGOSpace\Helpers\CarryShoppingBagPosture.cs" />
-    <Compile Include="BOGOSpace\Helpers\CarryShoppingBasketPosture.cs" />
-    <Compile Include="BOGOSpace\Helpers\CustomerController.cs" />
-    <Compile Include="BOGOSpace\Helpers\EmployeeController.cs" />
-    <Compile Include="BOGOSpace\Helpers\SupplyAndDemandController.cs" />
-    <Compile Include="BOGOSpace\Interactions\ApplyForCreditCard.cs" />
-    <Compile Include="BOGOSpace\Interactions\BeSalesClerk.cs" />
-    <Compile Include="BOGOSpace\Interactions\BuyAdvertising.cs" />
-    <Compile Include="BOGOSpace\Interactions\CantFindItem.cs" />
-    <Compile Include="BOGOSpace\Interactions\CreateBasketOrBagAndWander.cs" />
-    <Compile Include="BOGOSpace\Interactions\HelpCustomer.cs" />
-    <Compile Include="BOGOSpace\Interactions\IdleInBreakRoom.cs" />
-    <Compile Include="BOGOSpace\Interactions\OpenCloseBusiness.cs" />
-    <Compile Include="BOGOSpace\Interactions\PlanSale.cs" />
-    <Compile Include="BOGOSpace\Interactions\PutDownCarriedObject.cs" />
-    <Compile Include="BOGOSpace\Interactions\RingUpCustomer.cs" />
-    <Compile Include="BOGOSpace\Interactions\RingUpTheseCustomers.cs" />
-    <Compile Include="BOGOSpace\Interactions\SetItemPrice.cs" />
-    <Compile Include="BOGOSpace\Interactions\SetMarkup.cs" />
-    <Compile Include="BOGOSpace\Interactions\SetSaleMarkup.cs" />
-    <Compile Include="BOGOSpace\Interactions\SetSalePrice.cs" />
-    <Compile Include="BOGOSpace\Interactions\TakeABreak.cs" />
-    <Compile Include="BOGOSpace\Interactions\WaitInLine.cs" />
+    <Compile Include="Economizer.cs" />
+    <Compile Include="EconomizerSpace\Helpers\BusinessController.cs" />
+    <Compile Include="EconomizerSpace\Helpers\CarryObjectPosture.cs" />
+    <Compile Include="EconomizerSpace\Helpers\CarryShoppingBagPosture.cs" />
+    <Compile Include="EconomizerSpace\Helpers\CarryShoppingBasketPosture.cs" />
+    <Compile Include="EconomizerSpace\Helpers\CustomerController.cs" />
+    <Compile Include="EconomizerSpace\Helpers\EmployeeController.cs" />
+    <Compile Include="EconomizerSpace\Helpers\SupplyAndDemandController.cs" />
+    <Compile Include="EconomizerSpace\Interactions\ApplyForCreditCard.cs" />
+    <Compile Include="EconomizerSpace\Interactions\BeSalesClerk.cs" />
+    <Compile Include="EconomizerSpace\Interactions\BuyAdvertising.cs" />
+    <Compile Include="EconomizerSpace\Interactions\CantFindItem.cs" />
+    <Compile Include="EconomizerSpace\Interactions\CreateBasketOrBagAndWander.cs" />
+    <Compile Include="EconomizerSpace\Interactions\HelpCustomer.cs" />
+    <Compile Include="EconomizerSpace\Interactions\IdleInBreakRoom.cs" />
+    <Compile Include="EconomizerSpace\Interactions\OpenCloseBusiness.cs" />
+    <Compile Include="EconomizerSpace\Interactions\PlanSale.cs" />
+    <Compile Include="EconomizerSpace\Interactions\PutDownCarriedObject.cs" />
+    <Compile Include="EconomizerSpace\Interactions\RingUpCustomer.cs" />
+    <Compile Include="EconomizerSpace\Interactions\RingUpTheseCustomers.cs" />
+    <Compile Include="EconomizerSpace\Interactions\SetItemPrice.cs" />
+    <Compile Include="EconomizerSpace\Interactions\SetMarkup.cs" />
+    <Compile Include="EconomizerSpace\Interactions\SetSaleMarkup.cs" />
+    <Compile Include="EconomizerSpace\Interactions\SetSalePrice.cs" />
+    <Compile Include="EconomizerSpace\Interactions\TakeABreak.cs" />
+    <Compile Include="EconomizerSpace\Interactions\WaitInLine.cs" />
     <Compile Include="Gameplay\Objects\NRaas\Display.cs" />
     <Compile Include="Gameplay\Objects\NRaas\OFBRegister.cs" />
     <Compile Include="Gameplay\Objects\NRaas\RestockItem.cs" />
     <Compile Include="Gameplay\Objects\NRaas\ShoppingBag.cs" />
     <Compile Include="Gameplay\Objects\NRaas\ShoppingBasket.cs" />
-    <Compile Include="BOGOSpace\Interactions\BeCashier.cs" />
-    <Compile Include="BOGOSpace\Interactions\Browse.cs" />
-    <Compile Include="BOGOSpace\Interactions\Checkout.cs" />
-    <Compile Include="BOGOSpace\Interactions\PrimaryInteraction.cs" />
-    <Compile Include="BOGOSpace\Interactions\PurchaseItem.cs" />
-    <Compile Include="BOGOSpace\Interactions\Restock.cs" />
-    <Compile Include="BOGOSpace\PersistedSettings.cs" />
+    <Compile Include="EconomizerSpace\Interactions\BeCashier.cs" />
+    <Compile Include="EconomizerSpace\Interactions\Browse.cs" />
+    <Compile Include="EconomizerSpace\Interactions\Checkout.cs" />
+    <Compile Include="EconomizerSpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="EconomizerSpace\Interactions\PurchaseItem.cs" />
+    <Compile Include="EconomizerSpace\Interactions\Restock.cs" />
+    <Compile Include="EconomizerSpace\PersistedSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VersionStamp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BOGOSpace\Careers\" />
-    <Folder Include="BOGOSpace\Options\" />
+    <Folder Include="EconomizerSpace\Careers\" />
+    <Folder Include="EconomizerSpace\Options\" />
     <Folder Include="StringTables\" />
   </ItemGroup>
   <ItemGroup>

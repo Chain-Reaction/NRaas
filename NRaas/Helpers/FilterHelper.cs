@@ -14,10 +14,11 @@ using System.Text;
 
 namespace NRaas.CommonSpace.Helpers
 {
-    public class FilterHelper : Common.IWorldLoadFinished, Common.IWorldQuit
+    public class FilterHelper : Common.IDelayedWorldLoadFinished, Common.IWorldQuit
     {
         static Common.MethodStore sGetFilters = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetAllFilters", new Type[] { typeof(bool) });
         static Common.MethodStore sGetFilterAsCriteria = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetLocalizedFilterCriteria", new Type[] { typeof(List<string>) });
+        static Common.MethodStore sCreateFilterWithRandomCriteria = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "CreateAndReturnRandomFilter", new Type[] { typeof(string), typeof(IMiniSimDescription), typeof(List<string>), typeof(Dictionary<string, string>), typeof(int[]), typeof(Dictionary<string, int[]>) });
         static Common.MethodStore sGetSimsMatchingFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSimsMatchingFilter", new Type[] { typeof(List<object>) });
         static Common.MethodStore sGetSingleFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSingleFilter", new Type[] { typeof(string) });
         static Common.MethodStore sSpawnCreateFilterDialog = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "CreateFilter", new Type[] { typeof(string) });
@@ -40,6 +41,7 @@ namespace NRaas.CommonSpace.Helpers
 
         public static SimFilter GetFilter(string filter, ulong cacheSim, bool forceLive)
         {
+            /*
             if (!filters.ContainsKey(filter))
             {
                 Common.DebugNotify("Doesn't contain " + filter);
@@ -78,6 +80,7 @@ namespace NRaas.CommonSpace.Helpers
                     }
                 }
             }
+             */
 
             if (filters.ContainsKey(filter))
             {
@@ -94,6 +97,8 @@ namespace NRaas.CommonSpace.Helpers
                     return filters[filter][0];
                 }
             }
+
+            if (filter.Contains("Attraction")) return null;
 
             return UpdateFilter(filter, cacheSim);
         }
@@ -127,14 +132,26 @@ namespace NRaas.CommonSpace.Helpers
             return result;
         }
 
+        public static string CreateFilterWithRandomCriteria(IMiniSimDescription actor, List<string> forbiddenCrit, Dictionary<string, string> forbiddenOptions, int[] minMaxCrit, Dictionary<string, int[]> minMaxOptions)
+        {
+            string createdFilter = string.Empty;
+            if (sCreateFilterWithRandomCriteria.Valid)
+            {
+                createdFilter = sCreateFilterWithRandomCriteria.Invoke<string>(new object[] { GetCallingNamespace, actor, forbiddenCrit, forbiddenOptions, minMaxCrit, minMaxOptions });
+            }
+
+            Common.Notify("Got back " + createdFilter);
+
+            return createdFilter;
+        }
+
         public static OptionResult CreateFilter()
         {
             OptionResult result = OptionResult.Unset;
             if (sSpawnCreateFilterDialog.Valid)
             {
                 // will never return a successful result due to dialog weirdness described in MasterController.cs
-                string mNamespace = VersionStamp.sNamespace.ToLower().Replace(".", "");                
-                result = sSpawnCreateFilterDialog.Invoke<OptionResult>(new object[] { mNamespace });
+                result = sSpawnCreateFilterDialog.Invoke<OptionResult>(new object[] { GetCallingNamespace });
             }
 
             return result;
@@ -145,8 +162,7 @@ namespace NRaas.CommonSpace.Helpers
             OptionResult result = OptionResult.Unset;
             if (sSpawnDeleteFilterDialog.Valid)
             {
-                string mNamespace = VersionStamp.sNamespace.ToLower().Replace(".", "");
-                result = sSpawnDeleteFilterDialog.Invoke<OptionResult>(new object[] { mNamespace });
+                result = sSpawnDeleteFilterDialog.Invoke<OptionResult>(new object[] { GetCallingNamespace});
             }
 
             if (result != OptionResult.Failure)
@@ -171,6 +187,7 @@ namespace NRaas.CommonSpace.Helpers
             if (sGetSimsMatchingFilter.Valid)
             {
                 results = sGetSimsMatchingFilter.Invoke<List<ulong>>(new object[] { new List<object>() { filter, cacheSim } });
+                
                 Common.DebugNotify("GSMF Hot: " + results.Count);
             }            
 
@@ -291,6 +308,9 @@ namespace NRaas.CommonSpace.Helpers
         {
             Common.DebugNotify("UpdateFilterInternal: " + filter + " cacheSim: " + cacheSim);
 
+            // updated live
+            if(filter.Contains("Attraction")) return new SimFilter(filter, 0);
+
             Dictionary<ulong, SimFilter> mCache = null;            
             filters.TryGetValue(filter, out mCache);
 
@@ -330,6 +350,9 @@ namespace NRaas.CommonSpace.Helpers
         // this one should only be called from UpdateFilters
         public static SimFilter UpdateFilter(string filter, ulong cacheSim, bool simSpecific)
         {
+            // updated live
+            if (filter.Contains("Attraction")) return new SimFilter(filter, 0);
+
             Common.DebugNotify("Updating filter: " + filter + " SimSpecific: " + simSpecific + " CacheSim: " + cacheSim);
             if (simSpecific)
             {
@@ -371,7 +394,7 @@ namespace NRaas.CommonSpace.Helpers
 
         public static SimFilter Cache(string filter, ulong cacheSim, List<ulong> sims)
         {
-            Common.DebugNotify("Cache: " + filter + " Count: " + sims.Count + " cacheSim: " + cacheSim);
+            //Common.DebugNotify("Cache: " + filter + " Count: " + sims.Count + " cacheSim: " + cacheSim);
             SimFilter cFilter = new SimFilter(filter, cacheSim);
             cFilter.Sims = sims;
 
@@ -455,7 +478,7 @@ namespace NRaas.CommonSpace.Helpers
             }
         }
 
-        public void OnWorldLoadFinished()
+        public void OnDelayedWorldLoadFinished()
         {
             if (FiltersEnabled())
             {
@@ -471,6 +494,11 @@ namespace NRaas.CommonSpace.Helpers
         public static string StripNamespace(string filter)
         {            
             return filter.StartsWith("nraas") && filter.Contains(".") ? filter.Substring(filter.IndexOf('.') + 1) : filter;
+        }
+
+        public static string GetCallingNamespace
+        {
+            get { return VersionStamp.sNamespace.ToLower().Replace(".", ""); }
         }
 
         [Persistable]

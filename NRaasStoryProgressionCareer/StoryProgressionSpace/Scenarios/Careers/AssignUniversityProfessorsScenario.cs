@@ -72,12 +72,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                 IncStat("No Active Lot");
                 return false;
             }
-            else if (GameUtils.IsUniversityWorld())
-            {
-                IncStat("University World");
-                return false;
-            }
-            else if (!Careers.AllowHomeworldUniversity(null))
+            else if (!GameUtils.IsUniversityWorld() && !Careers.AllowHomeworldUniversity(null))
             {
                 IncStat("Homeworld University Fail");
                 return false;

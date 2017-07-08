@@ -1,5 +1,5 @@
 ﻿using NRaas.CommonSpace;
-using NRaas.BOGOSpace;
+using NRaas.EconomizerSpace;
 using Sims3.SimIFace;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 
 namespace NRaas
 {
-    public class BOGO : Common
+    public class Economizer : Common
     {
         [Tunable, TunableComment("Scripting Mod Instantiator, value does not matter, only its existence")]
         protected static bool kInstantiator = false;
@@ -15,7 +15,7 @@ namespace NRaas
         [PersistableStatic]
         static PersistedSettings sSettings = null;        
 
-        static BOGO()
+        static Economizer()
         {
             Bootstrap();            
         }

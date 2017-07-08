@@ -46,7 +46,7 @@
     <OutputPath>bin\x86\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -54,17 +54,56 @@
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\NRaas\Booters\BooterHelper.cs">
+      <Link>CommonSpace\Booters\BooterHelper.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Common.cs">
       <Link>CommonSpace\Common.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\CASParts.cs">
-      <Link>ChemistrySpace\Helpers\CASParts.cs</Link>
+      <Link>CommonSpace\Helpers\CASParts.cs</Link>
     </Compile>
-    <Compile Include="..\NRaas\Helpers\Households.cs">
-      <Link>CommonSpace\Helpers\Households.cs</Link>
+    <Compile Include="..\NRaas\Helpers\EnumInjection.cs">
+      <Link>CommonSpace\Helpers\EnumInjection.cs</Link>
     </Compile>
-    <Compile Include="..\NRaas\Helpers\SimTypes.cs">
-      <Link>CommonSpace\Helpers\SimTypes.cs</Link>
+    <Compile Include="..\NRaas\Helpers\FilterHelper.cs">
+      <Link>CommonSpace\Helpers\FilterHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Helpers\Persistence.cs">
+      <Link>CommonSpace\Helpers\Persistence.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\BaseInteraction.cs">
+      <Link>CommonSpace\Interactions\BaseInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\CommonInteraction.cs">
+      <Link>CommonSpace\Interactions\CommonInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Interactions\ListedInteraction.cs">
+      <Link>CommonSpace\Interactions\ListedInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\BooleanSettingOption.cs">
+      <Link>CommonSpace\Options\BooleanSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\CommonOptionList.cs">
+      <Link>CommonSpace\Options\CommonOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
+      <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOption.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionDefinitionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionDefinitionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\InteractionOptionList.cs">
+      <Link>CommonSpace\Options\InteractionOptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
+      <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Options\PopupOptionList.cs">
+      <Link>CommonSpace\Options\PopupOptionList.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Options\ProtoResetSettings.cs">
       <Link>CommonSpace\Options\ProtoResetSettings.cs</Link>
@@ -72,18 +111,70 @@
     <Compile Include="..\NRaas\Options\ProtoVersion.cs">
       <Link>CommonSpace\Options\ProtoVersion.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\DualSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\DualSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\GenericSimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\GenericSimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\ScoringMethods\ListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\ListedScoringMethod.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\ScoringMethods\ScoringLookup.cs">
       <Link>CommonSpace\ScoringMethods\ScoringLookup.cs</Link>
     </Compile>
-    <Compile Include="..\NRaas\Tasks\RepeatingTask.cs">
-      <Link>CommonSpace\Tasks\RepeatingTask.cs</Link>
+    <Compile Include="..\NRaas\ScoringMethods\SimListedScoringMethod.cs">
+      <Link>CommonSpace\ScoringMethods\SimListedScoringMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\CombinedScoring.cs">
+      <Link>CommonSpace\Scoring\CombinedScoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Scoring\Scoring.cs">
+      <Link>CommonSpace\Scoring\Scoring.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Selection\CommonSelection.cs">
+      <Link>CommonSpace\Selection\CommonSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Selection\ProtoSimSelection.cs">
+      <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
     </Compile>
     <Compile Include="Chemistry.cs" />
+    <Compile Include="ChemistrySpace\Booters\BlendProfileBooter.cs" />
+    <Compile Include="ChemistrySpace\Booters\FilterValueAcquirementBooter.cs" />
+    <Compile Include="ChemistrySpace\Booters\ProfileTemplateBooter.cs" />
+    <Compile Include="ChemistrySpace\Booters\ResourceClassificationBooter.cs" />
+    <Compile Include="ChemistrySpace\Helpers\AttractionFilterHelper.cs" />
     <Compile Include="ChemistrySpace\Helpers\AttractionHelper.cs" />
     <Compile Include="ChemistrySpace\Helpers\AttractionOutfitHelper.cs" />
     <Compile Include="ChemistrySpace\Helpers\AttractionProfileHelper.cs" />
+    <Compile Include="ChemistrySpace\Helpers\AttractionProfileBuilderHelper.cs" />
+    <Compile Include="ChemistrySpace\Helpers\ConfidenceHelper.cs" />
+    <Compile Include="ChemistrySpace\Helpers\Events\kGotBuff.cs" />
+    <Compile Include="ChemistrySpace\Helpers\Events\SimEventBase.cs" />
+    <Compile Include="ChemistrySpace\Helpers\TNS\HairColor.cs" />
+    <Compile Include="ChemistrySpace\Helpers\TNS\TNSBase.cs" />
+    <Compile Include="ChemistrySpace\Interactions\PrimaryInteraction.cs" />
+    <Compile Include="ChemistrySpace\Interactions\ReactionTest.cs" />
+    <Compile Include="ChemistrySpace\Interactions\SimInteraction.cs" />
+    <Compile Include="ChemistrySpace\Options\DebuggingLevel\DebuggingLevelSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\DebuggingLevel\IOverallDebuggingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\DebuggingLevel\OverallDebuggingLevelOption.cs" />
+    <Compile Include="ChemistrySpace\Options\DebuggingLevel\ListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\DebuggingSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\RunSyncProfilesSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\ISimOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\ViewAttractionBreakdown.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\ViewAttractionValues.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\ViewBaseProfilesUsed.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\ViewCurrentOutfitData.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\ViewSimHairColor.cs" />
     <Compile Include="ChemistrySpace\PersistedSettings.cs" />
+    <Compile Include="ChemistrySpace\SelectionCriteria\HairColor.cs" />
+    <Compile Include="ChemistrySpace\SimAttractionRecord.cs" />
+    <Compile Include="ChemistrySpace\SimProfileData.cs" />
+    <Compile Include="ChemistrySpace\Tasks\AttractionCoreTask.cs" />
     <Compile Include="ChemistrySpace\Tasks\RelationshipPanelTask.cs" />
+    <Compile Include="MasterControllerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VersionStamp.cs" />
   </ItemGroup>
@@ -121,9 +212,13 @@
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="NRaasMasterController">
+      <HintPath>..\NRaasMasterController\bin\x86\Release\NRaasMasterController.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CommonSpace\Tasks\" />
     <Folder Include="StringTables\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

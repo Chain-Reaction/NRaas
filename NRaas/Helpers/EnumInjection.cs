@@ -26,7 +26,13 @@ namespace NRaas.CommonSpace.Helpers
             }
 
             for (int i = 0; i < names.Length; i++)
-                parser.mLookup.Add(names[i].ToLowerInvariant(), convert ? Convert.ToUInt32(values[i]) : values[i]);
+            {
+                string key = names[i].ToLowerInvariant();
+                if (!parser.mLookup.ContainsKey(key))
+                {
+                    parser.mLookup.Add(key, convert ? Convert.ToUInt32(values[i]) : values[i]);
+                }
+            }
 
             if (!dictionary_c.TryGetValue(typeof(T), out parser))
             {
@@ -34,7 +40,12 @@ namespace NRaas.CommonSpace.Helpers
                 dictionary_c.Add(typeof(T), parser);
             }
             for (int i = 0; i < names.Length; i++)
-                parser.mLookup.Add(names[i], convert ? Convert.ToUInt32(values[i]) : values[i]);
+            {
+                if (!parser.mLookup.ContainsKey(names[i]))
+                {
+                    parser.mLookup.Add(names[i], convert ? Convert.ToUInt32(values[i]) : values[i]);
+                }
+            }
         }
     }
 }

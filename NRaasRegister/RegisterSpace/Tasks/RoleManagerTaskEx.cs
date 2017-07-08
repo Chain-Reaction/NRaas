@@ -37,6 +37,7 @@ namespace NRaas.RegisterSpace.Tasks
 
         static Common.MethodStore sActiveFamilyCheck = new Common.MethodStore("NRaasTraveler", "NRaas.TravelerSpace.Helpers.GameStatesEx", "WasActiveFamilyMember", new Type[] { typeof(ulong) });
         static Common.MethodStore sHomeworldCheck = new Common.MethodStore("NRaasTraveler", "NRaas.TravelerSpace.Helpers.GameStatesEx", "IsHomeworldResident", new Type[] { typeof(ulong) });
+        static Common.MethodStore sGetHomeworld = new Common.MethodStore("NRaasTraveler", "NRaas.Traveler", "GetSimHomeworld", new Type[] { typeof(ulong) });
 
         static bool sInitial = true;
 
@@ -434,7 +435,17 @@ namespace NRaas.RegisterSpace.Tasks
                 if (sHomeworldCheck.Invoke<bool>(new object[] { sim.SimDescriptionId })) return false;
             }
 
-            if (Register.Settings.mDisabledTouristWorlds.ContainsKey(sim.HomeWorld))
+            WorldName homeWorld = WorldName.Undefined;
+            if (sGetHomeworld.Valid)
+            {
+                homeWorld = sGetHomeworld.Invoke<WorldName>(new object[] { sim.SimDescriptionId });
+            }
+            else
+            {
+                homeWorld = sim.HomeWorld;
+            }
+
+            if (homeWorld != WorldName.Undefined && Register.Settings.mDisabledTouristWorlds.ContainsKey(homeWorld))
             {
                 return false;
             }
@@ -891,11 +902,17 @@ namespace NRaas.RegisterSpace.Tasks
                                     SkillManager manager = townie.SkillManager;
                                     if (manager == null) continue;
 
+                                    if (GameUtils.IsInstalled(ProductVersion.EP3))
+                                    {
                                     if (manager.AddElement(SkillNames.Bartending) == null) continue;
+                                    }
 
+                                    if (GameUtils.IsInstalled(ProductVersion.EP2))
+                                    {
                                     if (manager.AddElement(SkillNames.Styling) == null) continue;
 
                                     if (manager.AddElement(SkillNames.Tattooing) == null) continue;
+                                    }
                                 }
 
                                 townies.Add(townie);

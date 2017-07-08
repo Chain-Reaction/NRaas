@@ -88,6 +88,8 @@ namespace NRaas.WoohooerSpace.Helpers
 
         public static void CalculateAttractionScore(Relationship ths, bool displayNotice)
         {
+            if (Common.AssemblyCheck.IsInstalled("NRaasChemistry")) return;
+
             if (ths == null) return;
 
             ths.AttractionScore = 0;

@@ -9,7 +9,7 @@ namespace NRaas
 {
     public class VersionStamp : Common.ProtoVersionStamp
     {
-        public static readonly string sNamespace = "NRaas.BOGO";
+        public static readonly string sNamespace = "NRaas.Economizer";
 
         public class Version : ProtoVersion<GameObject>
         { }
@@ -19,7 +19,7 @@ namespace NRaas
 
         public static void ResetSettings()
         {
-            BOGO.ResetSettings();
+            Economizer.ResetSettings();
         }
 
         /* TODO

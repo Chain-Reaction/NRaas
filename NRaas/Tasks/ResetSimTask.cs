@@ -770,7 +770,10 @@ namespace NRaas.CommonSpace.Tasks
 
                             foreach (BuffInstance buff in createdSim.BuffManager.List)
                             {
+                                if (!(buff is BuffCustomizable.BuffInstanceCustomizable))
+                                {
                                 mBuffs.Add(buff);
+                                }
                             }
                         }
 

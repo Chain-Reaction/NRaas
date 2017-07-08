@@ -125,7 +125,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NRaasCupcake", "NRaasCupcak
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NRaasTagger", "NRaasTagger\NRaasTagger.csproj", "{C9E97B33-AA02-4680-88DE-27E07865D426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NRaasBOGO", "NRaasBOGO\NRaasBOGO.csproj", "{3DCEE31B-124E-4548-919A-6CC4B6103ECB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NRaasEconomizer", "NRaasEconomizer\NRaasEconomizer.csproj", "{3DCEE31B-124E-4548-919A-6CC4B6103ECB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NRaasWoohooerEiffelTower", "NRaasWoohooerEiffelTower\NRaasWoohooerEiffelTower.csproj", "{8757167D-80D4-40B0-9008-B1F3AB064337}"
 EndProject

@@ -59,6 +59,12 @@ namespace NRaas.MasterControllerSpace.Sims.Advanced
                 }
             }
 
+            // Intergration using EA Edit in CAS will bring the bot into the human CAS
+            if (sim.IsEP11Bot)
+            {
+                return CASMode.EditABot;
+            }
+
             return CASMode.Full;
         }
     }

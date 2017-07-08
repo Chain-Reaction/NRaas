@@ -407,9 +407,25 @@ namespace NRaas.TaggerSpace.MapTags
 
                     if (Tagger.Settings.mColorTagsBySimType)
                     {
+                        if (SimTypes.Matches(target.SimDescription, SimType.Occult) && SimTypes.Matches(target.SimDescription, SimType.Hybrid))
+                        {
+                            return new Color(Tagger.Settings.mSimTypeColorSettings[SimType.Hybrid]);
+                        }
+
+                        // IsDead returns false on playable ghosts
+                        if (target.SimDescription.IsPlayableGhost)
+                        {
+                            return new Color(Tagger.Settings.mSimTypeColorSettings[SimType.Dead]);
+                        }
+
                         foreach (SimType flag in Enum.GetValues(typeof(SimType)))
                         {
                             if (flag == SimType.Service && target.SimDescription.IsWildAnimal)
+                            {
+                                continue;
+                            }
+
+                            if (flag == SimType.Service && target.SimDescription.HasActiveRole)
                             {
                                 continue;
                             }
@@ -419,7 +435,7 @@ namespace NRaas.TaggerSpace.MapTags
                                 continue;
                             }
 
-                            if (flag == SimType.Human && (target.SimDescription.IsAlien || (target.SimDescription.OccultManager != null && target.SimDescription.OccultManager.mOccultList != null && target.SimDescription.OccultManager.mOccultList.Count > 0)))
+                            if (flag == SimType.Human)
                             {
                                 continue;
                             }
@@ -428,7 +444,9 @@ namespace NRaas.TaggerSpace.MapTags
                             {
                                 return new Color(Tagger.Settings.mSimTypeColorSettings[flag]);
                             }
-                        }                        
+                        }
+
+                        return new Color(Tagger.Settings.mSimTypeColorSettings[SimType.Human]);
                     }
 
                     /*

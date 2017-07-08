@@ -283,6 +283,11 @@ namespace NRaas.CommonSpace.Helpers
             return ancestors;
         }
 
+        public static void ClearAncestorData(Genealogy a)
+        {
+            sAncestors.Remove(a);
+        }
+
         public static bool CanHaveRomanceWith(Logger log, SimDescription ths, SimDescription other, bool testAge, bool allowAdultTeen, bool testRelation, bool thoroughCheck)
         {
             if (!SimTypes.IsEquivalentSpecies(ths, other))
@@ -359,6 +364,16 @@ namespace NRaas.CommonSpace.Helpers
             return true;
         }
 
+        public static bool IsStepRelated(Genealogy a, Genealogy b)
+        {
+            if (a == null || b == null) return false;
+
+            AncestorData aData = GetAncestorData(a);
+            AncestorData bData = GetAncestorData(b);
+
+            return aData.IsStepRelated(a, b);
+        }
+
         public static bool IsBloodRelated(Genealogy a, Genealogy b, bool thoroughCheck)
         {
             if (a == b) return true;
@@ -419,7 +434,7 @@ namespace NRaas.CommonSpace.Helpers
             if (b.IMiniSimDescription.IsRobot) return false;
             */
 
-            return (IsBloodRelated(a, b, thoroughCheck) || a.IsStepRelated(b));
+            return (IsBloodRelated(a, b, thoroughCheck) || IsStepRelated(a, b));
         }
         public static bool IsCloselyRelated(SimDescription a, SimDescription b, bool thoroughCheck)
         {
@@ -873,6 +888,7 @@ namespace NRaas.CommonSpace.Helpers
         {
             Dictionary<Genealogy, bool> mDirectAncestors = new Dictionary<Genealogy, bool>();
             Dictionary<Genealogy, bool> mSiblingAncestors = new Dictionary<Genealogy, bool>();
+            Dictionary<Genealogy, bool> mStepAncestors = new Dictionary<Genealogy, bool>();
 
             public AncestorData(Genealogy sim)
             {
@@ -899,6 +915,23 @@ namespace NRaas.CommonSpace.Helpers
             public bool IsSibling(Genealogy sim)
             {
                 return mSiblingAncestors.ContainsKey(sim);
+            }
+
+            public bool IsStepRelated(Genealogy a, Genealogy b)
+            {
+                if(mStepAncestors.ContainsKey(b))
+                {
+                    return mStepAncestors[b];
+                }
+
+                if(a.IsStepRelated(b))
+                {
+                    mStepAncestors.Add(b, true);
+                } else {
+                    mStepAncestors.Add(b, false);
+                }
+
+                return mStepAncestors[b];
             }
 
             public bool Overlaps(AncestorData data)

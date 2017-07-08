@@ -111,6 +111,9 @@ namespace NRaas.TravelerSpace.Interactions
                     {
                         SpeedTrap.Sleep(0x1);
 
+                        mTimeTraveler = CauseEffectService.GetInstance().GetTimeTraveler();
+
+                        /*
                         // Custom
                         SimDescription simDesc = SimDescription.Find(CauseEffectService.sPersistableData.TimeTravelerSimID);
                         if (simDesc == null)
@@ -122,6 +125,7 @@ namespace NRaas.TravelerSpace.Interactions
                         {                            
                             mTimeTraveler = Instantiation.PerformOffLot(simDesc, Target.LotCurrent, null);
                         }
+                         */
                     }
 
                     Common.DebugNotify("B");

@@ -130,7 +130,7 @@ namespace NRaas.MasterControllerSpace.Sims.Intermediate
 
                         if (newBaby.IsHuman)
                         {
-                            new SocialWorkerAdoptionSituation.InstantiateNewKid().GiveImaginaryFriendDoll(newBaby);
+                            OccultImaginaryFriend.DeliverDollToHousehold(new List<Sim> { newBaby.CreatedSim });
                         }
                     }
                 }

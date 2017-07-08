@@ -1,5 +1,7 @@
 using NRaas.CommonSpace.Helpers;
 using Sims3.Gameplay;
+using Sims3.Gameplay.ActiveCareer;
+using Sims3.Gameplay.ActiveCareer.ActiveCareers;
 using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Roles;
@@ -138,7 +140,37 @@ namespace NRaas.CommonSpace.Stores
                             {
                                 using (StoryProgressionServiceEx.SuppressCreateHousehold suppress = new StoryProgressionServiceEx.SuppressCreateHousehold())
                                 {
+                                    // fix for script error in GhostHunter:ApplyCareerSpecificModifiersToXp where
+                                    // ownersim is not null checked and breaks when this is ran during age up.
+                                    ActiveCareerLevelStaticData data = null;
+                                    int experience = 0;
+                                    GhostHunter hunter = null;
+                                    try
+                                    {
+                                        hunter = mSim.Occupation as GhostHunter;
+                                        if (hunter != null)
+                                        {
+                                            data = hunter.GetCurrentLevelStaticDataForActiveCareer();
+                                            if (data != null)
+                                            {
+                                                experience = data.DailyPerfectJobBonusExperience;
+                                                data.DailyPerfectJobBonusExperience = 0;
+                                            }
+                                        }
+
                                     mSim.Occupation.OnOwnerBecameUnselectable();
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Common.Exception(mSim, e);
+                                    }
+                                    finally
+                                    {
+                                        if (hunter != null && data != null)
+                                        {
+                                            data.DailyPerfectJobBonusExperience = experience;
+                                        }
+                                    }
                                 }
                             }
                         }

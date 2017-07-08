@@ -255,8 +255,40 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
             public string OptionName
             {
-                get;
-                set;
+                get { return string.Empty; }
+            }
+
+            public string OptionValue
+            {
+                get { return string.Empty; }
+            }
+
+            public bool CanBeRandomValue
+            {
+                get { return false; }
+                set { }
+            }
+
+            public int OptionHitValue
+            {
+                get { return 0; }
+                set { }
+            }
+
+            public int OptionMissValue
+            {
+                get { return 0; }
+                set { }
+            }
+
+            public int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int divisior)
+            {
+                return 0;
+            }
+
+            public bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor, bool testRandom)
+            {
+                return Test(me, fullFamily, actor);
             }
 
             public bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor)

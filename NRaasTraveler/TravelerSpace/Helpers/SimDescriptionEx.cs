@@ -74,7 +74,7 @@ namespace NRaas.TravelerSpace.Helpers
             msg += "B";
             Traveler.InsanityWriteLog(msg);
 
-            ths.CASGenealogy = msd.CASGenealogy;
+            ths.CASGenealogy = msd.CASGenealogy;            
 
             AgingCheckTask.Add(ths, msd);
 
@@ -193,6 +193,16 @@ namespace NRaas.TravelerSpace.Helpers
                         destDogSkill.mNumFragmentedItemsCompelted = sourceDogSkill.mNumFragmentedItemsCompelted;
                         destDogSkill.mNumUniqueCollectablesFound = sourceDogSkill.mNumUniqueCollectablesFound;
                         destDogSkill.mNumRGMFound = sourceDogSkill.mNumRGMFound;
+                    }
+                }
+
+                FutureSkill sourceFutureSkill = source.SkillManager.GetSkill<FutureSkill>(SkillNames.Future);
+                if(sourceFutureSkill != null)
+                {
+                    FutureSkill destFutureSkill = dest.SkillManager.AddElement(SkillNames.Future) as FutureSkill;
+                    if(destFutureSkill != null)
+                    {
+                        destFutureSkill.mFoodSynthesized = sourceFutureSkill.mFoodSynthesized;
                     }
                 }
 

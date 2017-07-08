@@ -222,7 +222,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Money
                 BuyProductList list = null;
                 try
                 {
-                    list = new BuyProductList(Manager, BuildBuyProduct.eBuyCategory.kBuyCategoryVehicles, BuildBuyProduct.eBuySubCategory.kBuySubCategoryCars | BuildBuyProduct.eBuySubCategory.kBuySubCategoryMiscellaneousVehicles, 0, int.MaxValue);
+                    list = new BuyProductList(Manager, BuildBuyProduct.eBuyCategory.kBuyCategoryVehicles, BuildBuyProduct.eBuySubCategory.kBuySubCategoryCars | BuildBuyProduct.eBuySubCategory.kBuySubCategoryBicycles | BuildBuyProduct.eBuySubCategory.kBuySubCategoryMiscellaneousVehicles, 0, int.MaxValue);
                 }
                 catch (Exception e)
                 {
@@ -231,7 +231,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Money
 
                 foreach (BuildBuyProduct product in list.GetProducts())
                 {
-                    if (product.IsWallObject || !product.IsStealable) continue;
+                    if (product.IsWallObject || !product.IsStealable || product.Price < 500.0f) continue;
                     results.Add(new ListItem(this, product.CatalogName, product.ProductResourceKey.ToString()));
                 }
 

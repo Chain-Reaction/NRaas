@@ -48,6 +48,9 @@ namespace NRaas.WoohooerSpace.Helpers
         static Common.MethodStore sStoryProgressionCanRomanticInteract = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "CanRomanticInteract", new Type[] { typeof(SimDescription), typeof(SimDescription), typeof(bool) });
         static Common.MethodStore sStoryProgressionCanFriendInteract = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "CanFriendInteract", new Type[] { typeof(SimDescription), typeof(SimDescription), typeof(bool) });
 
+        static Common.MethodStore sChemistryFetchAttractionLevel = new Common.MethodStore("NRaasChemistry", "NRaas.Chemistry", "GetAttractionLevel", new Type[] { typeof(SimDescription), typeof(SimDescription) });
+        static Common.MethodStore sChemistryFetchConfidenceLevel = new Common.MethodStore("NRaasChemistry", "NRaas.Chemistry", "GetConfidenceLevel", new Type[] { typeof(SimDescription), typeof(SimDescription) });
+
         static Dictionary<string, JealousyLevel> sRomanticSocials = new Dictionary<string, JealousyLevel>();
 
         static List<SocialRuleRHS> sKissRules = new List<SocialRuleRHS>();
@@ -1380,7 +1383,7 @@ namespace NRaas.WoohooerSpace.Helpers
                 }
 
                 TraitManager traitManager = actor.TraitManager;
-                if ((isDate && (traitManager != null)) && !traitManager.HasElement(TraitNames.HopelessRomantic))
+                if ((isDate && (traitManager != null)) && (!traitManager.HasElement(TraitNames.HopelessRomantic) && !actor.BuffManager.HasElement(BuffNames.RaspberryRomance)))
                 {
                     Relationship relationship = Relationship.Get(actor, target, false);
                     if ((relationship != null) && (SimClock.ElapsedTime(TimeUnit.Hours, relationship.WhenLastHadBadDate) < GroupingSituation.kBadDateCooldownTime))
@@ -1496,7 +1499,44 @@ namespace NRaas.WoohooerSpace.Helpers
                 }
             }
 
-            if ((autonomous) || (NRaas.Woohooer.Settings.mGenderPreferenceForUserDirectedV2))
+            if((autonomous || (Woohooer.Settings.TraitScoringForUserDirected)))
+            {
+                if (sChemistryFetchAttractionLevel.Valid && sChemistryFetchConfidenceLevel.Valid)
+                {
+                    int attrLevel = sChemistryFetchAttractionLevel.Invoke<int>(new object[] { me, target });
+
+                    if (tryingToWooHoo && !RandomUtil.RandomChance(Woohooer.Settings.mAttractionLevelForAutonmousWoohoo[attrLevel]))
+                    {
+                        greyedOutTooltipCallback = Common.DebugTooltip("Attraction Level Fail");
+                        reason = "Attraction Level Fail";
+                        return false;
+                    }
+
+                    if (!tryingToWooHoo && !RandomUtil.RandomChance(Woohooer.Settings.mAttractionLevelForAutonmousFlirting[attrLevel]))
+                    {
+                        greyedOutTooltipCallback = Common.DebugTooltip("Attraction Level Fail");
+                        reason = "Attraction Level Fail";
+                        return false;
+                    }
+
+                    int confidenceLevel = sChemistryFetchConfidenceLevel.Invoke<int>(new object[] { me, target });
+                    if (tryingToWooHoo && !RandomUtil.RandomChance(Woohooer.Settings.mConfidenceLevelForAutonmousWoohoo[confidenceLevel]))
+                    {
+                        greyedOutTooltipCallback = Common.DebugTooltip("Confidence Level Fail");
+                        reason = "Confidence Level Fail";
+                        return false;
+                    }
+
+                    if (!tryingToWooHoo && !RandomUtil.RandomChance(Woohooer.Settings.mConfidenceLevelForAutonmousFlirting[confidenceLevel]))
+                    {
+                        greyedOutTooltipCallback = Common.DebugTooltip("Confidence Level Fail");
+                        reason = "Confidence Level Fail";
+                        return false;
+                    }
+                }
+            }
+
+            if ((autonomous) || (Woohooer.Settings.mGenderPreferenceForUserDirectedV2))
             {
                 if (!CheckAutonomousGenderPreference(me, target))
                 {
@@ -2943,8 +2983,15 @@ namespace NRaas.WoohooerSpace.Helpers
                     return false;
                 }
 
+                if (!Woohooer.Settings.mInteractionsUnderRomance)
+                {
                 // A result of "True" means failure in OnTestAttraction
                 if (OnTestAttraction(actor, target, topic, isAutonomous, ref greyedOutTooltipCallback)) return false;
+                }
+                else
+                {
+                    if (!OnDefaultTest(actor, target, topic, isAutonomous, ref greyedOutTooltipCallback)) return false;
+                }
 
                 if (!SimClock.IsNightTime())
                 {

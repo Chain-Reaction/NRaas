@@ -98,7 +98,7 @@ namespace NRaas.OverwatchSpace.Loadup
                             }
                             else
                             {
-                                if (Inventories.TryToMove(obj, ownerSim.Household.SharedFamilyInventory.Inventory))
+                                if (owner.Household != null && Inventories.TryToMove(obj, owner.Household.SharedFamilyInventory.Inventory))
                                 {
                                     Overwatch.Log("Imaginary Friend Doll Added To Family Inventory");
                                 }

@@ -20,7 +20,8 @@ namespace NRaas.MasterControllerSpace.Settings
 {
     public class SaveFilterSetting : FilterSettingOption, IPersistence
     {
-        string callingMod = string.Empty;
+        string mCallingMod = string.Empty;
+        List<string> mForbiddenCrit = new List<string>();
 
         public override string GetTitlePrefix()
         {
@@ -42,16 +43,34 @@ namespace NRaas.MasterControllerSpace.Settings
             get { return GetTitlePrefix(); }
         }
 
-        public OptionResult RunExternal(string callingMod)
+        public OptionResult RunExternal(string callingMod, List<string> forbiddenCrit)
         {
-            this.callingMod = callingMod;
+            this.mCallingMod = callingMod;
+            this.mForbiddenCrit = forbiddenCrit;
+
             if (Sim.ActiveActor == null) return OptionResult.Failure;
             return this.Run(new GameHitParameters<GameObject>(Sim.ActiveActor, Sim.ActiveActor, GameObjectHit.NoHit));
         }
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
-            SimSelection.CriteriaSelection.Results uncheckedCriteria = new SimSelection.CriteriaSelection(Name, SelectionCriteria.SelectionOption.List).SelectMultiple(20);
+            List<SimSelection.ICriteria> selCrit = new List<SimSelection.ICriteria>();
+            if (mForbiddenCrit.Count > 0)
+            {
+                foreach (SimSelection.ICriteria critItem in SelectionCriteria.SelectionOption.List)
+                {
+                    if (!mForbiddenCrit.Contains(critItem.Name))
+                    {
+                        selCrit.Add(critItem);
+                    }
+                }
+            }
+            else
+            {
+                selCrit = SelectionCriteria.SelectionOption.List;
+            }
+
+            SimSelection.CriteriaSelection.Results uncheckedCriteria = new SimSelection.CriteriaSelection(Name, selCrit).SelectMultiple(20);
             if (uncheckedCriteria.Count == 0)
             {
                 if (uncheckedCriteria.mOkayed)
@@ -93,7 +112,7 @@ namespace NRaas.MasterControllerSpace.Settings
             {
                 // Update changes the sims list, so we need a new copy for each call
                 List<IMiniSimDescription> newList = new List<IMiniSimDescription>(simsList);
-                if (crit.Update(sim.SimDescription, uncheckedCriteria, newList, false) != SimSelection.UpdateResult.Failure)
+                if (crit.Update(sim.SimDescription, uncheckedCriteria, newList, false, false, true) != SimSelection.UpdateResult.Failure)
                 {
                     criteria.Add(crit);
                 }
@@ -109,9 +128,9 @@ namespace NRaas.MasterControllerSpace.Settings
                     return OptionResult.Failure;
                 }
 
-                if (callingMod != string.Empty)
+                if (mCallingMod != string.Empty)
                 {
-                    name = callingMod + "." + name;
+                    name = mCallingMod + "." + name;
                 }
 
                 if (Find(name) == null)

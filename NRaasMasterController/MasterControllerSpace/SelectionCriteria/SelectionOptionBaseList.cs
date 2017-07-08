@@ -26,6 +26,9 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         bool mEnabled = false;
 
         List<TOption> mOptions = null;
+        bool mMatchAll = false;
+        bool mRandomCriteria = false;
+        bool mRandomValue = false;
 
         public SelectionOptionBaseList()
         { }
@@ -50,7 +53,11 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
                 return result;
             }
-            set { }
+        }
+
+        public string OptionValue
+        {
+            get { return string.Empty; }
         }
 
         public bool Enabled
@@ -63,6 +70,48 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             {
                 mEnabled = value;
             }
+        }
+
+        public bool CanBeRandomCriteria
+        {
+            get
+            {
+                return mRandomCriteria;
+            }
+            set
+            {
+                mRandomCriteria = value;
+            }
+        }
+
+        public bool CanHaveRandomValue
+        {
+            get
+            {
+                return mRandomValue;
+            }
+            set
+            {
+                mRandomValue = value;
+            }
+        }
+
+        public bool CanBeRandomValue
+        {
+            get { return false; }
+            set { }
+        }
+
+        public int OptionHitValue
+        {
+            get { return 0; }
+            set { }
+        }
+
+        public int OptionMissValue
+        {
+            get { return 0; }
+            set { }
         }
 
         public abstract string GetTitlePrefix();
@@ -94,6 +143,7 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         {
             mEnabled = true;
             mOptions = null;
+            mMatchAll = false;
 
             base.Reset();
         }
@@ -118,6 +168,47 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             return mOptions;
         }
 
+        public List<ICommonOptionItem> GetOptions(IMiniSimDescription actor, IEnumerable<SimSelection.ICriteria> criteria, List<IMiniSimDescription> sims)
+        {
+            if (mOptions == null)
+            {
+                Update(actor, criteria, sims, false, true, false);
+            }
+
+            List<ICommonOptionItem> mOpts = new List<ICommonOptionItem>();
+
+            if (mOptions == null) return mOpts;
+
+            foreach (TOption opt in mOptions)
+            {
+                mOpts.Add(opt as ICommonOptionItem);
+            }
+
+            return mOpts;
+        }
+
+        public void SetOptions(List<ICommonOptionItem> options)
+        {
+            if (mOptions != null)
+            {
+                mOptions.Clear();
+            }
+            else
+            {
+                mOptions = new List<TOption>();
+            }
+
+            foreach (ICommonOptionItem opt in options)
+            {
+                TOption test = opt as TOption;
+                if (opt == null)
+                {
+                    Common.Notify("Opt null");
+                }
+                mOptions.Add(opt as TOption);
+            }
+        }
+
         protected virtual ObjectPickerDialogEx.CommonHeaderInfo<TOption> Auxillary
         {
             get { return null; }
@@ -128,6 +219,16 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         public virtual bool AllowCriteria()
         {
             return true;
+        }
+
+        public int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int divisior)
+        {
+            return 0;
+        }
+
+        public bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor, bool testRandom)
+        {
+            return Test(me, fullFamily, actor);
         }
 
         public bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor)
@@ -172,7 +273,7 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
         protected virtual bool MatchAll
         {
-            get { return false; }
+            get { return mMatchAll; }
         }
 
         protected virtual bool Allow(SimDescription me, IMiniSimDescription actor)
@@ -226,6 +327,11 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
         public SimSelection.UpdateResult Update(IMiniSimDescription actor, IEnumerable<SimSelection.ICriteria> criteria, List<IMiniSimDescription> allSims, bool secondStage)
         {
+            return Update(actor, criteria, allSims, secondStage, false, false);
+        }
+
+        public SimSelection.UpdateResult Update(IMiniSimDescription actor, IEnumerable<SimSelection.ICriteria> criteria, List<IMiniSimDescription> allSims, bool secondStage, bool silent, bool promptForMatchAll)
+        {
             if (secondStage) return SimSelection.UpdateResult.Success;
 
             bool fullFamily = false;
@@ -263,7 +369,7 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
                 if (allOptions.Count == 0) return SimSelection.UpdateResult.Failure;
 
-                if (allOptions.Count == 1)
+                if (allOptions.Count == 1 || silent)
                 {
                     mOptions = allOptions;
                 }
@@ -280,6 +386,14 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
                     if (!Test(allSims[i], fullFamily, actor))
                     {
                         allSims.RemoveAt(i);
+                    }
+                }
+
+                if (promptForMatchAll)
+                {
+                    if (TwoButtonDialog.Show(MasterController.Localize("CriteriaMatchAll:Prompt"), MasterController.Localize("CriteriaMatchAll:Yes"), MasterController.Localize("CriteriaMatchAll:No")))
+                    {
+                        mMatchAll = true;
                     }
                 }
 

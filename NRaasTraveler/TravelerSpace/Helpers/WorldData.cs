@@ -428,15 +428,7 @@ namespace NRaas.TravelerSpace.Helpers
                         break;
                     default:
                         break;
-                }
-
-                if (info.mWorldType == WorldType.Future)
-                {
-                    if (!TimePortal.sTimeTravelerHasBeenSummoned)
-                    {
-                        continue;
-                    }
-                }
+                }                
 
                 if (!VisaManager.sDictionary.ContainsKey((ulong)worldName))
                 {

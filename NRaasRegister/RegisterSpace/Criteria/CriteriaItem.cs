@@ -67,12 +67,29 @@ namespace NRaas.RegisterSpace.Criteria
             get { return false; }
         }
 
+        public bool CanBeRandomCriteria
+        {
+            get { return false; }
+            set { }
+        }
+
+        public bool CanHaveRandomValue
+        {
+            get { return false; }
+            set { }
+        }
+
         public bool AllowCriteria()
         {
             return true;
         }
 
         public abstract bool Test(SimDescription sim, SimDescription me);
+
+        public ProtoSimSelection<SimDescription>.UpdateResult Update(SimDescription sim, IEnumerable<ProtoSimSelection<SimDescription>.ICriteria> criteria, List<SimDescription> sims, bool secondStage, bool silent, bool promptForMatchAll)
+        {
+            return Update(sim, criteria, sims, secondStage);
+        }
 
         public ProtoSimSelection<SimDescription>.UpdateResult Update(SimDescription sim, IEnumerable<ProtoSimSelection<SimDescription>.ICriteria> criteria, List<SimDescription> sims, bool secondStage)
         {
@@ -118,6 +135,15 @@ namespace NRaas.RegisterSpace.Criteria
         public override string DisplayValue
         {
             get { return null; }
+        }
+
+        public List<ICommonOptionItem> GetOptions(SimDescription sim, IEnumerable<ProtoSimSelection<SimDescription>.ICriteria> criteria, List<SimDescription> sims)
+        {
+            return null;
+        }
+
+        public void SetOptions(List<ICommonOptionItem> opts)
+        {
         }
     }
 }

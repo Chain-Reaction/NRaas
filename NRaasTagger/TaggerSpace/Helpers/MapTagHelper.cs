@@ -57,7 +57,8 @@ namespace NRaas.TaggerSpace.Helpers
                 if ((sim.Household == Household.ActiveHousehold) ||
                     (sim.SimDescription.AssignedRole is RoleSpecialMerchant) ||
                     (sim.SimDescription.AssignedRole is Proprietor) ||
-                    (Tagger.Settings.mEnableSimTags && (!Tagger.Settings.HasSimFilterActive() || Tagger.Settings.DoesSimMatchSimFilters(sim.SimDescription.SimDescriptionId) || Tagger.Settings.mTaggedSims.Contains(sim.SimDescription.SimDescriptionId))))
+                    (Tagger.Settings.mTaggedSims.Contains(sim.SimDescription.SimDescriptionId)) ||
+                    (Tagger.Settings.mEnableSimTags && (!Tagger.Settings.HasSimFilterActive() || Tagger.Settings.DoesSimMatchSimFilters(sim.SimDescription.SimDescriptionId))))
                 {
                     if (((tag is NPCSimMapTag) || (tag is SelectedSimMapTag)) || (tag is FamilySimMapTag))
                     {

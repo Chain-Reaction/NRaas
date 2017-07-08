@@ -456,7 +456,16 @@ namespace NRaas
         [Tunable, TunableComment("Whether to allow autonomous woohoos in Toilet Stalls")]
         public static bool kAutonomousToiletStall = true;
 
-        [Tunable, TunableComment("Whether to enable this mod's custom attraction system or use EA's")]
-        public static bool kEnableCustomAttraction = false;
+        [Tunable, TunableComment("Chances per attraction level that autonmous flirting will happen")]
+        public static float[] kAttractionLevelForAutonmousFlirting = new float[] { 0f, 0f, 0f, 0.15f, 0.3f, 0.6f };
+
+        [Tunable, TunableComment("Chances per attraction level that autonmous woohoo will happen")]
+        public static float[] kAttractionLevelForAutonmousWoohoo = new float[] { 0f, 0f, 0f, 0.10f, 0.25f, 0.50f };
+
+        [Tunable, TunableComment("Chances per confidence level that autonmous flirting will happen")]
+        public static float[] kConfidenceLevelForAutonmousFlirting = new float[] { 0.05f, 0.1f, 0.30f, 0.45f, 0.65f};
+
+        [Tunable, TunableComment("Chances per confidence level that autonmous woohoo will happen")]
+        public static float[] kConfidenceLevelForAutonmousWoohoo = new float[] { 0.25f, 0.1f, 0.2f, 0.4f, 0.6f };
     }
 }

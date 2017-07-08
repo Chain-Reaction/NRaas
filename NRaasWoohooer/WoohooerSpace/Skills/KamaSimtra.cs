@@ -531,6 +531,14 @@ namespace NRaas.WoohooerSpace.Skills
                 sDeathTypes.Remove(SimDescription.DeathType.Freeze);
             }
 
+            if (!GameUtils.IsInstalled(ProductVersion.EP9))
+            {
+                sOccultTypes.Remove(OccultTypesEx.PlantSim);
+
+                sDeathTypes.Remove(SimDescription.DeathType.BluntForceTrauma);
+                sDeathTypes.Remove(SimDescription.DeathType.Ranting);
+            }
+
             if (!GameUtils.IsInstalled(ProductVersion.EP10))
             {
                 sOccultTypes.Remove(OccultTypesEx.Mermaid);

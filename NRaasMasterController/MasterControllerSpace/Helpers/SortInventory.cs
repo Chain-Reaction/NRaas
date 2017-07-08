@@ -182,7 +182,9 @@ namespace NRaas.MasterControllerSpace.Helpers
 
             public override int Compare(SortObject x, SortObject y)
             {
-                int result = x.mObj.GetType().BaseType.Name.CompareTo(y.mObj.GetType().BaseType.Name);
+                string xName = x.mObj.GetType().BaseType.Name.Contains("GameObject") ? x.mObj.GetType().Name : x.mObj.GetType().BaseType.Name;
+                string yName = y.mObj.GetType().BaseType.Name.Contains("GameObject") ? y.mObj.GetType().Name : y.mObj.GetType().BaseType.Name;
+                int result = xName.CompareTo(yName);
                 if (result != 0) return result;
 
                 return x.mObj.GetLocalizedName().CompareTo(y.mObj.GetLocalizedName());

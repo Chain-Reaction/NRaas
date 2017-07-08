@@ -6,6 +6,7 @@ using NRaas.TaggerSpace.Booters;
 using NRaas.TaggerSpace.Helpers;
 using NRaas.TaggerSpace.MapTags;
 using NRaas.TaggerSpace.Options;
+using Sims3.Gameplay;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.CAS;
@@ -132,7 +133,7 @@ namespace NRaas
         public static void SetupMapTags(bool initial, bool lotOnly)
         {
             MapTagsModel model = MapTagsModel.Singleton;
-            if (model != null)
+            if (model != null && !GameStates.IsGameShuttingDown)
             {
                 if (initial)
                 {                    

@@ -272,8 +272,28 @@ namespace NRaas
                     if (miniSim == null) continue;
 
                     miniSim.mbAgingEnabled = !Settings.GetAgelessForeign(miniSim);
+                    }
                 }
             }    
+        
+        // externalized to Register and MasterController
+        public static WorldName GetSimHomeworld(ulong sim)
+            {
+            MiniSimDescription desc = MiniSims.Find(sim);
+
+                if (desc != null)
+                {
+                return Traveler.Settings.GetHomeWorld(desc);
+                }
+
+            SimDescription desc2 = SimDescription.Find(sim);
+
+            if (desc2 != null)
+            {
+                return Traveler.Settings.GetHomeWorld(desc2 as IMiniSimDescription);
+            }
+
+            return WorldName.Undefined;
         }
 
         public class TravelerTask : RepeatingTask

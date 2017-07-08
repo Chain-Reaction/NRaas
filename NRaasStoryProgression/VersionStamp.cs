@@ -446,7 +446,7 @@ namespace NRaas
          *          
          * 
          */
-        public static readonly int sVersion = 267;
+        public static readonly int sVersion = 269;
 
         void TraitTest()
         {

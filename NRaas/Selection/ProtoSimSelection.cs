@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace NRaas.CommonSpace.Selection
 {
     public abstract class ProtoSimSelection<T> : ProtoSelection<T>
-            where T : class, IMiniSimDescription
+            where T : class, IMiniSimDescription  
     {
         bool mLastFirst;
 
@@ -475,6 +475,18 @@ namespace NRaas.CommonSpace.Selection
                 get;
             }
 
+            bool CanBeRandomCriteria
+            {
+                get;
+                set;
+            }
+
+            bool CanHaveRandomValue
+            {
+                get;
+                set;
+            }
+
             void Reset();
 
             ICommonOptionItem Clone();
@@ -482,6 +494,50 @@ namespace NRaas.CommonSpace.Selection
             bool AllowCriteria();
 
             UpdateResult Update(T sim, IEnumerable<ICriteria> criteria, List<T> sims, bool secondStage);
+
+            UpdateResult Update(T sim, IEnumerable<ICriteria> criteria, List<T> sims, bool secondStage, bool silent, bool promptForMatchAll);
+
+            List<ICommonOptionItem> GetOptions(T sim, IEnumerable<ICriteria> criteria, List<T> sims);
+
+            void SetOptions(List<ICommonOptionItem> opts);
+        }
+
+        public interface ICriteriaCreation
+        {
+            string CriteriaName
+            {
+                get;
+            }
+
+            List<string> CriteriaOptions
+            {
+                get;
+            }
+
+            bool RandomCriteria
+            {
+                get;
+            }
+
+            bool RandomOptions
+            {
+                get;
+            }
+
+            int[] MinMaxRandomOptions
+            {
+                get;
+            }
+
+            List<string> ForbiddenRandomCriteria
+            {
+                get;
+            }
+
+            List<string> ForbiddenRandomOptions
+            {
+                get;
+            }            
         }
     }
 }

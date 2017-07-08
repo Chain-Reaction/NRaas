@@ -11,6 +11,6 @@ namespace NRaas
     {
         public static readonly string sNamespace = "NRaas.MasterControllerProgression";
 
-        public static readonly int sVersion = 128;
+        public static readonly int sVersion = 134;
     }
 }

@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NRaas.BOGOSpace.Interactions
+namespace NRaas.EconomizerSpace.Interactions
 {
     public class PrimaryInteraction : ListedInteraction<IPrimaryOption<GameObject>, GameObject>
     {

@@ -19,8 +19,14 @@ namespace NRaas.MasterControllerSpace
 {
     public interface ITestableOption
     {
-        string OptionName { get; set; }
-        bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor);        
+        string OptionName { get; }
+        string OptionValue { get; }
+        bool CanBeRandomValue { get; set; }
+        int OptionHitValue { get; set; }
+        int OptionMissValue { get; set; }
+        bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor);
+        bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor, bool randomize);
+        int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int divisior);
     }
 
     public abstract class TestableOption<TDataType, TStoreType> : ValueSettingOption<TStoreType>, IPersistence, ITestableOption
@@ -37,10 +43,37 @@ namespace NRaas.MasterControllerSpace
             : base(value, name, count, key)
         { }
 
+        public int mOptionHitValue;
+        public int mOptionMissValue;
+
+        public bool mCanBeRandomValue;
+
         public string OptionName
         {
             get { return mName; }
-            set { }
+        }
+
+        public string OptionValue
+        {
+            get { return Value.ToString(); }
+        }
+
+        public bool CanBeRandomValue
+        {
+            get { return mCanBeRandomValue; }
+            set { mCanBeRandomValue = value; }
+        }
+
+        public int OptionHitValue
+        {
+            get { return mOptionHitValue; }
+            set { mOptionHitValue = value; }
+        }
+
+        public int OptionMissValue
+        {
+            get { return mOptionMissValue; }
+            set { mOptionMissValue = value; }
         }
 
         public abstract bool Get(SimDescription me, IMiniSimDescription actor, Dictionary<TStoreType, TDataType> results);
@@ -52,7 +85,31 @@ namespace NRaas.MasterControllerSpace
 
         public abstract void SetValue(TDataType dataType, TStoreType storeType);
 
+        public virtual int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int missDivisor)
+        {
+            if (Test(me, false, actor, false) && satisfies)
+            {
+                return mOptionHitValue;
+            }
+            else
+            {
+                if (mOptionMissValue != 0 || !satisfies || missDivisor == 0)
+                {
+                    return mOptionMissValue;
+                }
+
+                int val = mOptionHitValue / missDivisor;
+
+                return -1 * val;
+            }
+        }
+
         public virtual bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor)
+        {
+            return Test(me, fullFamily, actor, false);
+        }
+
+        public virtual bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor, bool testRandom)
         {
             Dictionary<TStoreType, TDataType> results = new Dictionary<TStoreType, TDataType>();
 
@@ -78,6 +135,21 @@ namespace NRaas.MasterControllerSpace
                 {
                     if (!Get(miniSim, actor, results)) return false;
                 }
+            }
+
+            if (testRandom && mCanBeRandomValue)
+            {
+                if (RandomUtil.CoinFlip())
+                {
+                    return results.ContainsKey(Value);
+                }
+                else
+                {
+                    return false;
+                }
+                // don't have to worry about new criteria being added to a filter... if it is we can flush Sims matching that filter
+                // once filter with random criteria has been applied it won't be altered on the sim or removed unless the random criteria applied is no longer valid
+                // if random criteria is applied, create new filter with it so it can be tested
             }
 
             return results.ContainsKey(Value);

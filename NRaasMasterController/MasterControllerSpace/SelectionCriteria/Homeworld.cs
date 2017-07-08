@@ -15,8 +15,13 @@ using System.Text;
 
 namespace NRaas.MasterControllerSpace.SelectionCriteria
 {
-    public class Homeworld : SelectionTestableOptionList<Homeworld.Item, WorldName, WorldName>
+    public class Homeworld : SelectionTestableOptionList<Homeworld.Item, WorldName, WorldName>, Common.IDelayedWorldLoadFinished
     {
+        static Common.MethodStore sGetHomeworld = new Common.MethodStore("NRaasTraveler", "NRaas.Traveler", "GetSimHomeworld", new Type[] { typeof(ulong) });
+        static Common.MethodStore sGetWorlds = new Common.MethodStore("NRaasTraveler", "NRaas.TravelerSpace.Helpers.WorldData", "GetWorlds", new Type[] { typeof(Dictionary<WorldName, string>) });
+
+        static Dictionary<WorldName, string> sWorlds = new Dictionary<WorldName, string>();
+
         public override string GetTitlePrefix()
         {
             return "Criteria.Homeworld";
@@ -27,15 +32,45 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             get { return true; }
         }
 
+        public void OnDelayedWorldLoadFinished()
+        {
+            if (sGetWorlds.Valid)
+            {
+                sGetWorlds.Invoke<Dictionary<WorldName, string>>(new object[] { sWorlds });
+            }
+        }
+
         public class Item : TestableOption<WorldName, WorldName>
         {
             public override bool Get(SimDescription me, IMiniSimDescription actor, Dictionary<WorldName, WorldName> results)
             {
+                if (sGetHomeworld.Valid)
+                {
+                    WorldName name = sGetHomeworld.Invoke<WorldName>(new object[] { me.SimDescriptionId });
+
+                    if (name != WorldName.Undefined)
+                    {
+                        results[name] = name;
+                        return true;
+                    }
+                }
+
                 results[me.HomeWorld] = me.HomeWorld;
                 return true;
             }
             public override bool Get(MiniSimDescription me, IMiniSimDescription actor, Dictionary<WorldName, WorldName> results)
             {
+                if (sGetHomeworld.Valid)
+                {
+                    WorldName name = sGetHomeworld.Invoke<WorldName>(new object[] { me.SimDescriptionId });
+
+                    if (name != WorldName.Undefined)
+                    {
+                        results[name] = name;
+                        return true;
+                    }
+                }
+
                 results[me.HomeWorld] = me.HomeWorld;
                 return true;
             }
@@ -47,9 +82,25 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
                 mName = GetName(value);
             }
 
+            public static string GetWorldName(WorldName value)
+            {
+                string result;
+                if (sWorlds.TryGetValue(value, out result))
+                {
+                    return result;
+                }
+
+                return value.ToString();
+            }
+
             public static string GetName(WorldName world)
             {
-                string homeWorld = Common.LocalizeEAString("Ui/Caption/Global/WorldName/EP01:" + world.ToString());
+                if (sGetWorlds.Valid)
+                {
+                    return GetWorldName(world);
+                }
+
+                string homeWorld = Common.LocalizeEAString("Gameplay/Visa/TravelUtil:" + world + "Full");
                 if (!homeWorld.Contains("****"))
                 {
                     return homeWorld;

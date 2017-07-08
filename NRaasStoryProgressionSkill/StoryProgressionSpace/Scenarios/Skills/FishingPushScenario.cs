@@ -167,7 +167,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Skills
             return new FishingPushScenario(this);
         }
 
-        public class Option : BooleanScenarioOptionItem<ManagerSkill, FishingPushScenario>, IDebuggingOption
+        public class Option : BooleanScenarioOptionItem<ManagerSkill, FishingPushScenario>
         {
             public Option()
                 : base(true)

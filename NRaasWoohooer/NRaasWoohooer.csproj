@@ -129,6 +129,9 @@
     <Compile Include="..\NRaas\Helpers\FacialBlends.cs">
       <Link>CommonSpace\Helpers\FacialBlends.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\FilterHelper.cs">
+      <Link>CommonSpace\Helpers\FilterHelper.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Households.cs">
       <Link>CommonSpace\Helpers\Households.cs</Link>
     </Compile>
@@ -489,7 +492,6 @@
     <Compile Include="..\nraas\stores\SafeStore.cs">
       <Link>CommonSpace\Stores\SafeStore.cs</Link>
     </Compile>
-    <Compile Include="CommonSpace\Helpers\FilterHelper.cs" />
     <Compile Include="WoohooerSpace\Helpers\AttractionHelper.cs" />
     <Compile Include="WoohooerSpace\Helpers\WoohooTuningControl.cs" />
     <Compile Include="WoohooerSpace\Helpers\PoolEx.cs" />

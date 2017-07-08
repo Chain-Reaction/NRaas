@@ -159,7 +159,7 @@
     <Compile Include="..\NRaas\Helpers\OccultPlantSimEx.cs">
       <Link>CommonSpace\Helpers\OccultPlantSimEx.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
       <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
     </Compile>
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
@@ -240,7 +240,7 @@
     <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
       <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
     </Compile>
-	<Compile Include="..\NRaas\Options\OperationSettingNestledOption.cs">
+    <Compile Include="..\NRaas\Options\OperationSettingNestledOption.cs">
       <Link>CommonSpace\Options\OperationSettingNestledOption.cs</Link>
     </Compile>
     <Compile Include="..\nraas\options\PopupOptionList.cs">
