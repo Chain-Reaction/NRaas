@@ -926,10 +926,12 @@ namespace NRaas.CareerSpace.Booters
                                 case RewardType.CareerFired:
                                 case RewardType.CareerPromotion:
                                 case RewardType.UnknownRecipe:
-                                case RewardType.UnlearnedComposition:
                                 case RewardType.CompedMeal:
                                 case RewardType.BookQualityIncrease:
                                 case RewardType.ConcertsPerformed:
+                                case RewardType.RandomInvention:
+                                case RewardType.AgeUp:
+                                case RewardType.AgeDown:
                                     info = new RewardInfo();
                                     info.mType = type;
                                     flag = true;
@@ -975,6 +977,11 @@ namespace NRaas.CareerSpace.Booters
                                     flag = info != null;
                                     break;
 
+                                case RewardType.UnlearnedComposition:
+                                    info = RewardsManager.ParseUnlearnedCompositionInfo(entry);
+                                    flag = info != null;
+                                    break;
+
                                 case RewardType.GroupMeal:
                                     info = RewardsManager.ParseGroupMealReward(entry);
                                     flag = info != null;
@@ -1007,6 +1014,149 @@ namespace NRaas.CareerSpace.Booters
 
                                 case RewardType.TreasureComponentRow:
                                     info = RewardsManager.ParseTreasureComponentRow(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.ActiveCareerPerformance:
+                                    info = RewardsManager.ParseActiveCareerPerformance(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.MedatorInstance:
+                                    info = RewardsManager.ParseMedatorInstance(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.Scrap:
+                                    info = RewardsManager.ParseScrapInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.CelebrityPoints:
+                                case RewardType.CelebrityPointsFromGig:
+                                    if (GameUtils.IsInstalled(ProductVersion.EP3))
+                                    {
+                                        info = RewardsManager.ParseCelebrityPointsInfo(type, entry);
+                                        flag = info != null;
+                                    }
+                                    else
+                                    {
+                                        flag = false;
+                                    }
+                                    break;
+
+                                case RewardType.RockBandGigPay:
+                                    info = RewardsManager.ParseRockBandGigPayRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.PetSkillPercentage:
+                                    info = RewardsManager.ParsePetSkillPercentageRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.RemoveBuff:
+                                    info = RewardsManager.ParseRemoveBuffRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.CommodityDecayModifier:
+                                    info = RewardsManager.ParseCommodityDecayModifierRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.SetCommodity:
+                                    info = RewardsManager.ParseSetCommodityRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.AddToCommodity:
+                                    info = RewardsManager.ParseAddToCommodityRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.AddOccult:
+                                    info = RewardsManager.ParseAddOccultRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.RemoveOccult:
+                                    info = RewardsManager.ParseRemoveOccultRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.SetBodyShapeFitness:
+                                    info = RewardsManager.ParseSetBodyShapeFitnessRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.SetBodyShapeWeight:
+                                    info = RewardsManager.ParseSetBodyShapeWeightRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.Trait:
+                                    info = RewardsManager.ParseTraitRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.RandomizeTraits:
+                                    info = RewardsManager.ParseRandomizeTraitsRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.OppositeTraits:
+                                    info = RewardsManager.ParseOppositeTraitsRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.IncreaseToSkillLevel:
+                                    info = RewardsManager.ParseIncreaseToSkillLevelRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.BookGeneral:
+                                    info = RewardsManager.ParseBookGeneralRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.RandomAlchemyPotion:
+                                    info = RewardsManager.ParseRandomAlchemyPotionRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.UnchartedIslandDiscovery:
+                                    info = RewardsManager.ParseUnchartedIslandDiscoveryRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.RequestCauseEffectWorldType:
+                                    info = RewardsManager.ParseRequestCauseEffectWorldTypeRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.TemporaryTrait:
+                                    info = RewardsManager.ParseTemporaryTraitRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.SkillMultiplier:
+                                    info = RewardsManager.ParseSkillMultiplierRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.RandomBuff:
+                                    info = RewardsManager.ParseRandomBuffRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.RemoveBuffs:
+                                    info = RewardsManager.ParseRemoveBuffsRewardInfo(entry);
+                                    flag = info != null;
+                                    break;
+
+                                case RewardType.TraitChip:
+                                    info = RewardsManager.ParseTraitChipRewardInfo(entry);
                                     flag = info != null;
                                     break;
 

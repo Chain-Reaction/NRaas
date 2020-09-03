@@ -241,9 +241,10 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             }
         }
 
-        public class Item : ValueSettingOption<Vector2>, ITestableOption, IPersistence
+        public class Item : ValueSettingOption<Vector2>, ITestableOption, IPersistence, IScorableOption
         {
             bool mFinal;
+            public OptionScoreData mOptionScoreData;
 
             public Item()
             { }
@@ -265,20 +266,67 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
             public bool CanBeRandomValue
             {
-                get { return false; }
-                set { }
+                get { return OptionScoreData.CanBeRandomValue; }
+                set { OptionScoreData.CanBeRandomValue = value; }
+            }
+
+            public int MinHitValue
+            {
+                get { return OptionScoreData.MinHitValue; }
+                set { OptionScoreData.MinHitValue = value; }
+            }
+
+            public int MaxHitValue
+            {
+                get { return OptionScoreData.MaxHitValue; }
+                set { OptionScoreData.MaxHitValue = value; }
+            }
+
+            public int MinMissValue
+            {
+                get { return OptionScoreData.MinMissValue; }
+                set { OptionScoreData.MinMissValue = value; }
+            }
+
+            public int MaxMissValue
+            {
+                get { return OptionScoreData.MaxMissValue; }
+                set { OptionScoreData.MaxMissValue = value; }
             }
 
             public int OptionHitValue
             {
-                get { return 0; }
-                set { }
+                get { return OptionScoreData.OptionHitValue; }
+                set { OptionScoreData.OptionHitValue = value; }
             }
 
             public int OptionMissValue
             {
-                get { return 0; }
-                set { }
+                get { return OptionScoreData.OptionMissValue; }
+                set { OptionScoreData.OptionMissValue = value; }
+            }
+
+            public Dictionary<int, float> ChanceAtOptionLevel
+            {
+                get { return OptionScoreData.ChanceAtOptionLevel; }
+                set { OptionScoreData.ChanceAtOptionLevel = value; }
+            }
+
+            public OptionScoreData OptionScoreData
+            {
+                get
+                {
+                    if (mOptionScoreData == null)
+                    {
+                        mOptionScoreData = new OptionScoreData();
+                    }
+
+                    return mOptionScoreData;
+                }
+                set
+                {
+                    mOptionScoreData = value;
+                }
             }
 
             public int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int divisior)

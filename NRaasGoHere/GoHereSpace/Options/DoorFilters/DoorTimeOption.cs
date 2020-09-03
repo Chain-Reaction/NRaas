@@ -69,7 +69,7 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
                     return OptionResult.Failure;
                 }
 
-                if ((openTime < 1 || openTime > 23) || (closeTime < 1 || closeTime > 23))
+                if ((openTime < -1 || openTime == 0 || openTime > 23) || (closeTime < -1 || closeTime == 0 || closeTime > 23))
                 {
                     SimpleMessageDialog.Show(Name, Common.Localize("Numeric:InvalidInput"));
                     return OptionResult.Failure;

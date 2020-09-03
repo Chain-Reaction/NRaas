@@ -9,6 +9,7 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
+using Sims3.Gameplay.Objects.Vehicles;
 using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Services;
 using Sims3.Gameplay.Utilities;
@@ -140,6 +141,8 @@ namespace NRaas.GoHereSpace
 
         public int mFilterCacheTime = FilterHelper.kFilterCacheTime;
 
+        public float mOrigBoatRoutingDistance = Boat.kDistanceToDestinationSoSimWillBoat;
+
         //public Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings> mDoorLotSettings = new Dictionary<ulong, DoorPortalComponentEx.DoorLotSettings>();
 
         public bool AllowPush(Sim sim, Lot lot)
@@ -187,15 +190,13 @@ namespace NRaas.GoHereSpace
                     }
                 }
 
-                bool changed = false;
                 foreach (string invalid in remove)
                 {
                     Common.DebugNotify("Removed invalid door filter: " + invalid);
-                    changed = true;
                     settings.RemoveFilter(invalid);
                 }
 
-                if (changed)
+                if (remove.Count > 0)
                 {
                     AddOrUpdateDoorSettings(door, settings, false);
                 }
@@ -272,7 +273,8 @@ namespace NRaas.GoHereSpace
                 {
                     foreach (Sim sim in door2.LotCurrent.mSims)
                     {
-                        if (sim != null && sim.SimDescription != null && sim.RoomId == door2.GetAdjoiningRoom(door2.RoomId) && !LotManager.RoomIdIsOutside(sim.RoomId))
+                        //door2.GetAdjoiningRoom(door2.RoomId)
+                        if (sim != null && sim.SimDescription != null && sim.RoomId == door2.RoomId && !LotManager.RoomIdIsOutside(sim.RoomId))
                         {
                             if (!settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId))
                             {

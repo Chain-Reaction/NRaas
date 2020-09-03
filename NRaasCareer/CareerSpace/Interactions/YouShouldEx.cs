@@ -56,7 +56,7 @@ namespace NRaas.CareerSpace.Interactions
                 Sim selectedObject = GetSelectedObject() as Sim;
                 if (selectedObject != null)
                 {
-                    Run();
+                    base.Run();
                     if (mResultCode != SocialInteraction.SocialResultCode.Succeeded)
                     {
                         return false;
@@ -77,7 +77,13 @@ namespace NRaas.CareerSpace.Interactions
                         {
                             return false;
                         }
-                        InteractionInstance instance = definition2.CreateInstance(selectedObject, Target, priority, false, true);
+
+                        // Never could figure out why adding routing pushes here just does nothing...
+
+                        Kill instance = Kill.Singleton.CreateInstance(selectedObject, Target, priority, false, true) as Kill;
+                        Kill.Definition def = instance.InteractionDefinition as Kill.Definition;
+                        def.mType = interactionDefinition.mType;
+                        def.mDirect = false;
                         if (!Target.InteractionQueue.PushAsContinuation(instance, true))
                         {
                             return false;
@@ -112,7 +118,7 @@ namespace NRaas.CareerSpace.Interactions
             {
                 foreach (SimDescription.DeathType type in Assassination.Types.Keys)
                 {
-                    base.Perform(obj, new Definition("NRaas Assassin " + type, "Gameplay/Excel/Socializing/Action:NRaasAssassin" + type), existing);
+                    base.Perform(obj, new Definition("NRaas Assassin " + type, "Gameplay/Excel/Socializing/Action:NRaasAssassin" + type, type), existing);
                 }
 
                 return true;
@@ -123,9 +129,13 @@ namespace NRaas.CareerSpace.Interactions
         {
             public Definition()
             { }
-            public Definition(string pushedSocialActionKey, string interactionNameLocalizationKey)
+            public Definition(string pushedSocialActionKey, string interactionNameLocalizationKey, SimDescription.DeathType type)
                 : base(pushedSocialActionKey, interactionNameLocalizationKey)
-            { }
+            {
+                mType = type;            
+            }
+
+            public SimDescription.DeathType mType;
 
             public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
             {
@@ -152,6 +162,12 @@ namespace NRaas.CareerSpace.Interactions
                     {
                         continue;
                     }
+
+                    GreyedOutTooltipCallback callback = null;
+                    if (!Assassination.CanBeKilled(sim, ref callback))
+                    {
+                        continue;
+                    }
                     
                     list.Add(sim);
                 }
@@ -160,20 +176,37 @@ namespace NRaas.CareerSpace.Interactions
             }
 
             public override bool Test(Sim a, Sim target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
-            {
-                if (Assassination.GetSkillLevel(target) <= 0)
-                {
-                    greyedOutTooltipCallback = Common.DebugTooltip("Skill Fail");
-                    return false;
-                }
-
+            {          
                 if (a.FamilyFunds < Assassination.Settings.mHiringCost)
-                {
+                {                    
                     greyedOutTooltipCallback = Common.DebugTooltip("Funds Fail");
                     return false;
                 }
 
+                if (!Assassination.Allow(a, target, mType, isAutonomous, true, false, ref greyedOutTooltipCallback))
+                {
+                    return false;
+                }
+
                 return base.Test(a, target, isAutonomous, ref greyedOutTooltipCallback);
+            }
+           
+            public override InteractionTestResult Test(ref InteractionInstanceParameters parameters, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+            {
+                InteractionTestResult r = base.Test(ref parameters, ref greyedOutTooltipCallback);
+                
+                // EA, GENIUS!
+                if (r == InteractionTestResult.Def_TestFailed && this.Test(parameters.Actor as Sim, parameters.Target as Sim, parameters.Autonomous, ref greyedOutTooltipCallback))
+                {
+                    r = InteractionTestResult.Pass;
+                }
+
+                if (r == InteractionTestResult.Social_TargetCannotBeSocializedWith)
+                {
+                    r = InteractionTestResult.Pass;
+                }
+
+                return r;
             }
         }
     }

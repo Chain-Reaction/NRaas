@@ -12,6 +12,7 @@ using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
+using Sims3.Gameplay.Objects.Vehicles;
 using Sims3.Gameplay.ObjectComponents;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Situations;
@@ -69,10 +70,21 @@ namespace NRaas
             kDebugging = Settings.Debugging;
             FilterHelper.kFilterCacheTime = GoHere.Settings.mFilterCacheTime;
 
+            FilterHelper.UpdateFilters();
+
             DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
 
-           // Route.AboutToPlanCallback = (Route.AboutToPlanDelegate)Delegate.Combine(Route.AboutToPlanCallback, new Route.AboutToPlanDelegate(DoorPortalComponentEx.AboutToPlanRouteCallback));
+            Route.AboutToPlanCallback = (Route.AboutToPlanDelegate)Delegate.Combine(Route.AboutToPlanCallback, new Route.AboutToPlanDelegate(DoorPortalComponentEx.AboutToPlanRouteCallback));
             //Route.PostPlanCallback += DoorPortalComponentEx.OnPostPlan;
+
+            if (!GoHere.Settings.mAllowBoatRouting)
+            {
+                Boat.kDistanceToDestinationSoSimWillBoat = 20000f;
+            }
+            else
+            {
+                GoHere.Settings.mOrigBoatRoutingDistance = Boat.kDistanceToDestinationSoSimWillBoat;
+            }
         }
 
         public static bool ExternalAllowPush(SimDescription sim, Lot lot)
@@ -86,7 +98,15 @@ namespace NRaas
                     foreach (Door obj in portals)
                     {
                         DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId, false);
-                        if (settings != null && settings.IsSimAllowedThrough(sim.SimDescriptionId))
+                        if (settings != null)
+                        {
+                            if (settings.IsSimAllowedThrough(sim.SimDescriptionId))
+                            {
+                                allowed = true;
+                                break;
+                            }
+                        }
+                        else
                         {
                             allowed = true;
                             break;
@@ -101,7 +121,14 @@ namespace NRaas
                         DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId, false);
                         if (settings != null)
                         {
-                            allowed = settings.IsSimAllowedThrough(sim.SimDescriptionId);
+                            if (settings.IsSimAllowedThrough(sim.SimDescriptionId))
+                            {
+                                allowed = true;
+                            }
+                        }
+                        else
+                        {
+                            allowed = true;
                         }
                     }
                     else

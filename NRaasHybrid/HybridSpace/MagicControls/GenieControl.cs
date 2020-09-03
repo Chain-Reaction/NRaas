@@ -53,6 +53,8 @@ namespace NRaas.HybridSpace.MagicControls
 
             if (!genie.MagicPoints.HasPoints()) return false;
 
+            if (GetMana(sim) - definition.SpellSettings.mMinMana <= 0) return false;  
+
             return true;
         }
 

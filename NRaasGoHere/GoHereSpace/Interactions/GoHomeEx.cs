@@ -119,6 +119,7 @@ namespace NRaas.GoHereSpace.Interactions
                 AddTest(typeof(Sims3.Gameplay.ActorSystems.BuffHeatingUp), "Void OnAddition", OnIgnore);
                 AddTest(typeof(BuffTransformationCallback), "Void OnRemovalOfZombification", OnIgnore);
                 AddTest(typeof(BuffTerrified.BuffInstanceTerrified), "Void RandomReactions", OnIgnore);
+                AddTest("NRaas.GoHereSpace.DoorPortalComponentEx.DoorSettings", "Boolean IsAllowedThrough", OnIgnore);
             }
 
             public override void Reset()

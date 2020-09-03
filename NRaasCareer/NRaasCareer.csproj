@@ -388,6 +388,11 @@
     <Compile Include="CareerSpace\Options\Assassination\ResetSettings.cs" />
     <Compile Include="CareerSpace\Options\DebuggingSetting.cs" />
     <Compile Include="CareerSpace\Options\General\BuskerLevelToGetPaidForConcertsSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\CareerLevel\CarpoolTypeSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\CareerLevel\PayPerHourBaseSetting.cs" />
+    <Compile Include="CareerSpace\Options\General\CareerLevel\CareerLevelSettingListingOption.cs" />
+    <Compile Include="CareerSpace\Options\General\CareerLevel\CareerLevelSettingOption.cs" />
+    <Compile Include="CareerSpace\Options\General\CareerLevel\ICareerLevelOption.cs" />
     <Compile Include="CareerSpace\Options\General\Careers\CareerSettingOption.cs" />
     <Compile Include="CareerSpace\Options\General\Careers\ICareerOption.cs" />
     <Compile Include="CareerSpace\Options\General\Careers\MaxCoworkerSetting.cs" />

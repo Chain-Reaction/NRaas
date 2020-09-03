@@ -6,21 +6,9 @@ using NRaas.TravelerSpace.States;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
-using Sims3.Gameplay.ActorSystems;
-using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Controllers;
-using Sims3.Gameplay.Core;
-using Sims3.Gameplay.EventSystem;
-using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
-using Sims3.Gameplay.Objects;
-using Sims3.Gameplay.Objects.ChildrenObjects;
-using Sims3.Gameplay.Objects.Plumbing;
-using Sims3.Gameplay.Objects.RabbitHoles;
-using Sims3.Gameplay.Objects.Register;
-using Sims3.Gameplay.Roles;
-using Sims3.Gameplay.Socializing;
+using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.TimeTravel;
 using Sims3.Gameplay.Utilities;
 using Sims3.Gameplay.UI;
@@ -44,7 +32,7 @@ namespace NRaas
         public static bool kForceInsanity = false;
     }
 
-    public class Traveler : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished
+    public class Traveler : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished, Common.IDelayedWorldLoadFinished
     {
         [Tunable, TunableComment("Scripting Mod Instantiator, value does not matter, only its existence")]
         protected static bool kInstantiator = false;
@@ -132,6 +120,26 @@ namespace NRaas
             }
         }
 
+        public void OnDelayedWorldLoadFinished()
+        {
+            Household house = Household.ActiveHousehold;
+
+            if (house != null)
+            {
+                foreach (SimDescription desc in house.SimDescriptions)
+                {
+                    if (desc == null) continue;
+
+                    Photography pho = desc.SkillManager.GetSkill<Photography>(SkillNames.Photography);
+
+                    if (pho != null)
+                    {
+                        pho.mCollectionsCompleted = uint.MaxValue;
+                    }
+                }
+            }
+        }
+
         public void OnWorldLoadFinished()
         {
             kDebugging = Settings.Debugging;
@@ -139,7 +147,7 @@ namespace NRaas
             if (!GameUtils.IsOnVacation())
             {
                 WorldData.ForceTreasureSpawn();
-            }
+            }            
 
             UpdateAgeForeign();
 

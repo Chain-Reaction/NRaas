@@ -70,6 +70,8 @@ namespace NRaas.HybridSpace.MagicControls
         {
             if (!base.IsAvailable(sim, definition)) return false;
 
+            if (GetMana(sim) + definition.SpellSettings.mMinMana >= 100) return false;
+
             return (!sim.BuffManager.HasElement(BuffNames.DepletedMagic));
         }
 

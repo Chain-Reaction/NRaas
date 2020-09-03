@@ -1,3 +1,4 @@
+using NRaas.CommonSpace.Helpers;
 using NRaas.TravelerSpace.Helpers;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Actors;
@@ -104,7 +105,7 @@ namespace NRaas.TravelerSpace.Dialogs
 
                 foreach (KeyValuePair<CommercialLotSubType, string> pair in list)
                 {
-                    mCombo.ValueList.Add(pair.Value, pair.Key);
+                    mCombo.ValueList.Add((pair.Key == CommercialLotSubType.kEP11_BaseCampFuture ? pair.Value + " (" + ProductVersions.GetLocalizedName(ProductVersion.EP11) + ")" : pair.Value), pair.Key);
                     if (pair.Key == mCurrentCommercialSubType)
                     {
                         mCombo.CurrentSelection = (uint)(mCombo.ValueList.Count - 1);

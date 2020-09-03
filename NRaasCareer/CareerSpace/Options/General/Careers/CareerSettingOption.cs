@@ -47,7 +47,7 @@ namespace NRaas.CareerSpace.Options.General.Careers
         {
             List<Item> results = new List<Item>();
 
-            results.Add(new Item(OccupationNames.Any, Common.Localize("Option:All"), ThumbnailKey.kInvalidThumbnailKey));
+            results.Add(new Item(OccupationNames.Any, Common.Localize("Selection:All"), ThumbnailKey.kInvalidThumbnailKey));
 
             foreach (Career career in CareerManager.CareerList)
             {

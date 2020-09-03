@@ -7,14 +7,12 @@ using NRaas.Gameplay.Careers;
 using NRaas.Gameplay.OmniSpace.Metrics;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
+using Sims3.Gameplay.Academics;
 using Sims3.Gameplay.ActiveCareer.ActiveCareers;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
-using Sims3.Gameplay.ActorSystems.Children;
 using Sims3.Gameplay.Autonomy;
-using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Controllers;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
@@ -22,16 +20,13 @@ using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.ObjectComponents;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Objects.Environment;
-using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.Gameplay.Roles;
-using Sims3.Gameplay.Routing;
-using Sims3.Gameplay.Services;
-using Sims3.Gameplay.Skills;
+using Sims3.Gameplay.Seasons;
 using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
-using Sims3.SimIFace.RouteDestinations;
+using Sims3.SimIFace.Enums;
 using Sims3.UI;
 using Sims3.UI.Controller;
 using Sims3.UI.Hud;
@@ -217,6 +212,21 @@ namespace NRaas.CareerSpace.Interactions
                 {
                     SimDescription target = Target.SimDescription;
 
+                    if (Actor.GetDistanceToObject(Target) > 1f)
+                    {
+                        Actor.RequestWalkStyle(Sim.WalkStyle.Walk);
+                        Actor.PlayReaction(ReactionTypes.EvilLaugh, ReactionSpeed.Immediate);
+
+                        Route r = Actor.CreateRoute();
+                        r.SetOption(Route.RouteOption.MakeDynamicObjectAdjustments, true);
+                        r.PlanToPointRadialRange(Target, Target.Position, 3.5f, 5f, RouteDistancePreference.PreferFurthestFromRouteDestination, RouteOrientationPreference.TowardsObject, Target.LotCurrent.LotId, new int[] { Target.RoomId });
+                        if (!r.PlanResult.Succeeded() || !Actor.DoRoute(r))
+                        {
+                            Actor.PlayRouteFailure();
+                            return false;
+                        }
+                    }
+
                     if (PrivateKill(Actor, Target, definition.DeathType))
                     {
                         Assassination skill = Assassination.EnsureSkill(Actor);
@@ -365,6 +375,27 @@ namespace NRaas.CareerSpace.Interactions
                 }
             }
 
+            public static bool GiveSeasonalGnome(Season season, Lot lot)
+            {
+                if (!GameUtils.IsInstalled(ProductVersion.EP8) || lot == null) return false;
+
+                if (!SeasonsManager.Enabled) return false;
+
+                switch(season)
+                {
+                    case Season.Summer:
+                        return SeasonsManager.CurrentSeason == Season.Summer && SeasonsManager.CurrentWeather == Weather.Sunny && (lot.IsCommunityLotOfType(CommercialLotSubType.kBeach) || RandomUtil.RandomChance(25));
+                    case Season.Spring:
+                        return SeasonsManager.CurrentSeason == Season.Spring && lot.IsCommunityLotOfType(CommercialLotSubType.kEP8_Festival) && lot.CurrEggHuntController != null && lot.CurrEggHuntController.NumEggsLeft > 0;
+                    case Season.Winter:
+                        return SeasonsManager.CurrentSeason == Season.Winter && SeasonsManager.CurrentSnowLevel == SnowLevel.Deep && RandomUtil.RandomChance(50);
+                    case Season.Fall:
+                        return SeasonsManager.CurrentSeason == Season.Fall && SeasonsManager.CurrentWeather == Weather.Rain && SeasonsManager.PrecipitationIntensityValue >= 1f;
+                    default:
+                        return false;
+                }
+            }
+
             protected override void OnPerform()
             {
                 int roomId = 0;
@@ -391,7 +422,7 @@ namespace NRaas.CareerSpace.Interactions
                     {
                         gnomes.Add(new GnomeData (0x000000000098977E, ProductVersion.EP1));
                     }
-                    else if (mTarget.IsVampire)
+                    else if (mTarget.IsVampire && GameUtils.IsInstalled(ProductVersion.EP3))
                     {
                         gnomes.Add(new GnomeData (0x000000000098A1C2, ProductVersion.EP3));
                     }
@@ -422,6 +453,50 @@ namespace NRaas.CareerSpace.Interactions
                     else if (mTarget.IsHorse)
                     {
                         gnomes.Add(new GnomeData(0x000000000098AAD4, ProductVersion.EP5)); // Pet Horse
+                    }
+                    else if(mTarget.HasTrait(TraitNames.Evil) && GameUtils.IsInstalled(ProductVersion.EP8))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B012, ProductVersion.EP8)); // Evil
+                    }
+                    else if(mTarget.IsWitch && GameUtils.IsInstalled(ProductVersion.EP8))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B0F5, ProductVersion.EP8)); // Fall
+                    }
+                    else if (mTarget.Occupation is AcademicCareer && RandomUtil.RandomChance(75))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098DBC8, ProductVersion.EP9)); // Graduate
+                    }
+                    else if (mTarget.Occupation is Lifeguard)
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B418, ProductVersion.EP10)); // Scuba
+                    }
+                    else if (mTarget.IsEP11Bot || mTarget.HasTrait(TraitNames.BotFan))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098DF9A, ProductVersion.EP11)); // Mech
+                    }
+                    else if (GameUtils.IsInstalled(ProductVersion.EP7) && lot != null && lot.IsCommunityLotOfType(CommercialLotSubType.kGraveyard))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098D809, ProductVersion.EP7)); // Ghost
+                    }
+                    else if (GiveSeasonalGnome(Season.Summer, lot))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B0F3, ProductVersion.EP8)); // Summer
+                    }
+                    else if (GiveSeasonalGnome(Season.Fall, lot))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B0F5, ProductVersion.EP8)); // Fall
+                    }
+                    else if (GiveSeasonalGnome(Season.Winter, lot))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B0F4, ProductVersion.EP8)); // Winter
+                    }
+                    else if (GiveSeasonalGnome(Season.Spring, lot))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B0F6, ProductVersion.EP8)); // Spring
+                    }
+                    else if (GameUtils.IsInstalled(ProductVersion.EP10) && lot != null && lot.IsCommunityLotOfType(CommercialLotSubType.kBeach) && RandomUtil.RandomChance(50))
+                    {
+                        gnomes.Add(new GnomeData(0x000000000098B418, ProductVersion.EP10)); // Diving
                     }
                     else
                     {
@@ -460,6 +535,35 @@ namespace NRaas.CareerSpace.Interactions
                         {
                             gnomes.Add(new GnomeData(0x000000000098D215, ProductVersion.EP6)); // Magician
                             gnomes.Add(new GnomeData(0x000000000098D214, ProductVersion.EP6)); // Singer
+                        }
+
+                        if (GameUtils.IsInstalled(ProductVersion.EP7))
+                        {
+                            gnomes.Add(new GnomeData(0x000000000098D809, ProductVersion.EP7)); // Ghost
+                        }
+
+                        if (GameUtils.IsInstalled(ProductVersion.EP8))
+                        {
+                            gnomes.Add(new GnomeData(0x000000000098B012, ProductVersion.EP8)); // Evil
+                            gnomes.Add(new GnomeData(0x000000000098B0F3, ProductVersion.EP8)); // Summer
+                            gnomes.Add(new GnomeData(0x000000000098B0F4, ProductVersion.EP8)); // Winter
+                            gnomes.Add(new GnomeData(0x000000000098B0F5, ProductVersion.EP8)); // Fall
+                            gnomes.Add(new GnomeData(0x000000000098B0F6, ProductVersion.EP8)); // Spring
+                        }
+
+                        if (GameUtils.IsInstalled(ProductVersion.EP9))
+                        {
+                            gnomes.Add(new GnomeData(0x000000000098DBC8, ProductVersion.EP9)); // Graduate
+                        }
+
+                        if (GameUtils.IsInstalled(ProductVersion.EP10))
+                        {
+                            gnomes.Add(new GnomeData(0x000000000098B418, ProductVersion.EP10)); // Scuba
+                        }
+
+                        if (GameUtils.IsInstalled(ProductVersion.EP11))
+                        {
+                            gnomes.Add(new GnomeData(0x000000000098DF9A, ProductVersion.EP11)); // Mech
                         }
                     }
 
@@ -547,9 +651,9 @@ namespace NRaas.CareerSpace.Interactions
         {
             bool mMassDeath;
 
-            bool mDirect;
+            public bool mDirect;
 
-            SimDescription.DeathType mType;
+            public SimDescription.DeathType mType;
 
             public Definition(bool massDeath, bool direct)
             {
@@ -588,7 +692,7 @@ namespace NRaas.CareerSpace.Interactions
             {
                 foreach (SimDescription.DeathType type in Assassination.Types.Keys)
                 {
-                    results.Add(new InteractionObjectPair(new Definition(mMassDeath, mDirect, type), target));
+                    results.Add(new InteractionObjectPair(new Definition(mMassDeath, false, type), target));
                 }
             }
 
@@ -596,16 +700,6 @@ namespace NRaas.CareerSpace.Interactions
             {
                 return LocalizeString(actor.IsFemale, "Assassin" + mType, new object[0]);
             }
-            /*
-            public override InteractionTestResult Test(ref InteractionInstanceParameters parameters, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
-            {
-                InteractionTestResult result = base.Test(ref parameters, ref greyedOutTooltipCallback);
-
-                Common.Notify(result.ToString());
-
-                return result;
-            }
-            */
             public override bool Test(Sim actor, Sim target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
                 if ((mDirect) || (mMassDeath))

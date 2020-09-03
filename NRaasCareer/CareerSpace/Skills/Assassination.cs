@@ -717,7 +717,17 @@ namespace NRaas.CareerSpace.Skills
                 }
             }
 
-            Assassination skill = actor.SkillManager.GetSkill<Assassination>(Assassination.StaticGuid);
+            Assassination skill;
+            if (!direct)
+            {
+                skill = actor.SkillManager.GetSkill<Assassination>(Assassination.StaticGuid);
+            }
+            else
+            {
+                // for hiring someone to do the kill for you
+                skill = target.SkillManager.GetSkill<Assassination>(Assassination.StaticGuid);
+            }
+
             if (skill == null)
             {
                 greyedOutTooltipCallback = Common.DebugTooltip("No Skill");
@@ -742,7 +752,7 @@ namespace NRaas.CareerSpace.Skills
                 }
             }
 
-            if ((target.LotCurrent != actor.LotCurrent) || (direct))
+            if ((target.LotCurrent != actor.LotCurrent) /*|| (direct)*/)
             {
                 if (!skill.IsReaper())
                 {

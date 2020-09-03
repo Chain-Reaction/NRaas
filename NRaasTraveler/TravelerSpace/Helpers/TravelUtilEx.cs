@@ -464,12 +464,16 @@ namespace NRaas.TravelerSpace.Helpers
 
                     if (arrive == null) continue;
 
+                    if(arrive.SelectedObjects == null)
+                    {
+                        arrive.SelectedObjects = new List<object>();
+                    }
+
                     arrive.SelectedObjects.Add(sim);
                 }
 
                 if (actor != null && actor.InteractionQueue != null && arrive != null)
                 {
-                    Common.Notify("Pushing arrive");
                     actor.InteractionQueue.AddNext(arrive);
                 }
             }

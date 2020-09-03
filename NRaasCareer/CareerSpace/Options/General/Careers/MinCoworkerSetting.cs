@@ -1,4 +1,5 @@
-﻿using NRaas.CommonSpace.Options;
+﻿using NRaas.CareerSpace;
+using NRaas.CommonSpace.Options;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
@@ -23,7 +24,7 @@ namespace NRaas.CareerSpace.Options.General.Careers
         public override string GetTitlePrefix()
         {
             return "MinCoworkers";
-        }               
+        }
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
@@ -37,25 +38,52 @@ namespace NRaas.CareerSpace.Options.General.Careers
 
             if (result != OptionResult.Failure)
             {
-                string text = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix() + ":Prompt", false), ""); // def
-
-                if (string.IsNullOrEmpty(text)) return OptionResult.Failure;
-
-                int value;
-                if (!int.TryParse(text, out value))
-                {
-                    SimpleMessageDialog.Show(Name, Common.Localize("Numeric:Error"));
-                    return OptionResult.Failure;
-                }
-
                 foreach (OccupationNames name in base.mPicks)
                 {
-                    NRaas.CareerSpace.PersistedSettings.CareerSettings settings = NRaas.Careers.Settings.GetCareerSettings(name, true);
-                    settings.minCoworkers = value;
-                    NRaas.Careers.Settings.UpdateCareerSettings(settings);
+                    string defaultText = string.Empty;
+                    if (name != OccupationNames.Any)
+                    {
+                        NRaas.CareerSpace.PersistedSettings.CareerSettings settings = NRaas.Careers.Settings.GetCareerSettings(name, true);
+
+                        defaultText = settings.mMaxCoworkers.ToString();
+                    }
+
+                    string text = StringInputDialog.Show(Name, Common.Localize(GetTitlePrefix() + ":Prompt", false), defaultText);
+
+                    if (string.IsNullOrEmpty(text)) return OptionResult.Failure;
+
+                    int value;
+                    if (!int.TryParse(text, out value))
+                    {
+                        SimpleMessageDialog.Show(Name, Common.Localize("InputError:Numeric"));
+                        return OptionResult.Failure;
+                    }
+
+                    if (name == OccupationNames.Any)
+                    {
+                        foreach (Career career in CareerManager.CareerList)
+                        {
+                            PersistedSettings.CareerSettings settings = NRaas.Careers.Settings.GetCareerSettings(career.Guid, true);
+
+                            settings.mMaxCoworkers = value;
+
+                            NRaas.Careers.Settings.SetCareerData(settings);
+                        }
+
+                        Common.Notify(GetTitlePrefix() + " " + Common.Localize("Selection:All") + " " + value);
+                    }
+                    else
+                    {
+                        PersistedSettings.CareerSettings settings = NRaas.Careers.Settings.GetCareerSettings(name, true);
+                        settings.mMaxCoworkers = value;
+
+                        NRaas.Careers.Settings.SetCareerData(settings);
+
+                        Common.Notify(GetTitlePrefix() + " " + CareerManager.GetStaticCareer(name).Name + " " + value);
+                    }
                 }
 
-                Common.Notify("Generic:Success");
+                Common.Notify(Common.Localize("Generic:Success"));
                 return OptionResult.SuccessLevelDown;
             }
 

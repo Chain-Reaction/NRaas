@@ -25,7 +25,7 @@ namespace NRaas.GoHereSpace.Options
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
-            FilterHelper.CreateFilter();
+            FilterHelper.CreateFilter(new List<string>());
 
             return OptionResult.SuccessClose;
         }

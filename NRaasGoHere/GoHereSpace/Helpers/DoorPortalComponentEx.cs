@@ -5,6 +5,7 @@ using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
+using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.ObjectComponents;
 using Sims3.Gameplay.Objects.Door;
@@ -58,6 +59,7 @@ namespace NRaas.GoHereSpace.Helpers
         public override void OnLaneLocked(Sim sim, LaneInfo info)
         {
             DoorSettings settings = GoHere.Settings.GetDoorSettings(this.OwnerDoor.ObjectId);
+
             bool allowed = true;
             if (settings != null)
             {
@@ -126,34 +128,129 @@ namespace NRaas.GoHereSpace.Helpers
                 tooltip = tooltip + GoHere.Localize("DoorCost:MenuName") + ": " + settings.mDoorCost.ToString();
             }
 
+            if (settings.mIsOneWayDoor)
+            {
+                if (tooltip != string.Empty)
+                {
+                    tooltip = tooltip + Common.NewLine;
+                }
+
+                tooltip = tooltip + GoHere.Localize("OneWayDoor:MenuName");
+            }
+
             return tooltip;
         }
         
-        /*
         public static void AboutToPlanRouteCallback(Route r, string routeType, Vector3 point)
         {
+            if (r == null || r.Follower == null) return;
+
             Sim router = r.Follower.Target as Sim;
-            if(router == null) return;
+            if (router == null) return;
 
             Lot lot = router.LotCurrent;
             if (lot == null) return;
 
-            foreach (CommonDoor door in lot.GetObjects<CommonDoor>())
+            InteractionInstance instance = router.CurrentInteraction;
+
+            int destRoom = -1;
+            if (instance != null && instance.Target != null)
+            {
+                destRoom = instance.Target.RoomId;
+            }
+
+            if (destRoom == -1) return;
+
+            if (instance.Autonomous) return;
+
+            //Common.Notify(router.FullName + " trying to route to " + destRoom);
+
+            /*
+            int depth = 5;
+            int currentRoom = 0;            
+            while (depth < 5)
+            {
+                if (currentRoom == 0) currentRoom = destRoom;
+                bool allow = false;
+                foreach (CommonDoor door in lot.GetObjectsInRoom<CommonDoor>(currentRoom))
+            {
+                if (door != null)
+                {
+                        CommonDoor.tSide side;
+                        door.GetSideOfDoorInRoom(currentRoom, out side);
+                        if (side != CommonDoor.tSide.Front) continue;
+
+                    DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId, false);
+                    if (settings != null)
+                    {
+                            if (!DoorSettings.TestPortalObject(router, currentRoom, door))
+                            {
+                               // r.AddObjectToForbiddenPortalList(door.ObjectId);
+                                //r.DoRouteFail = false;
+                                continue;
+                            }
+                        }
+
+                        allow = true;
+                        break;
+                    }
+                }
+
+                if (!allow) router.AddExitReason(ExitReason.CancelExternal);
+                depth++;
+            }
+             */
+
+            //bool allow = false;
+            foreach (CommonDoor door in lot.GetObjects<CommonDoor>()) // lot.GetObjectsInRoom<CommonDoor>(destRoom)
             {
                 if (door != null)
                 {
                     DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId, false);
                     if (settings != null)
                     {
-                        if (!settings.IsSimAllowedThrough(router.SimDescription.SimDescriptionId))
+                        if (!DoorSettings.TestPortalObject(router, door.RoomId, door))
                         {
+                            if (r == null) return;
+
                             r.AddObjectToForbiddenPortalList(door.ObjectId);
+                            r.DoRouteFail = false; // this seems to be ignored...
+
+                            // for minor zerbu compatability, stops route fail
+                            /*
+                            if (destRoom == door.RoomId)
+                            {
+                                Common.Notify(router.FullName + ": denied");
+                                router.AddExitReason(ExitReason.CancelExternal);
+                                router.InteractionQueue.CancelAllInteractions();
                         }
+                             */ 
+                            //router.AddExitReason(ExitReason.CancelExternal);
+                            continue;
                     }
                 }
+
+                    //allow = true;
+                    //break;
+                }
+            }
+
+            //if (allow) { }
+
+            /*
+
+            if (instance != null && Sims3.SimIFace.Route.IsRouteToObjectUnobstructed(router.ObjectId, instance.Target.Position, router.GetRouteOptions(), instance.Target.ObjectId, router.SimDescription.AgeGenderSpecies) != BlockedStatus.Unobstructed)
+            {
+                //Common.Notify("Route obstructructed: " + router.SimDescription.FullName + " going to " + instance.Target.GetLocalizedName() + " in " + destRoom);
+                router.AddExitReason(ExitReason.CanceledByScript);
+                if (!router.IsInActiveHousehold)
+                {
+                    router.InteractionQueue.CancelAllInteractions();
             }
         }    
          */
+        }
+
 
         [Persistable]
         public class DoorSettings
@@ -195,7 +292,7 @@ namespace NRaas.GoHereSpace.Helpers
             {                
                 List<ulong> removeSim = new List<ulong>();
 
-                foreach(ObjectGuid guid in new List<ObjectGuid>(GoHere.Settings.mDoorSettings.Keys))
+                foreach (ObjectGuid guid in new List<ObjectGuid>(GoHere.Settings.mDoorSettings.Keys))
                 {
                     DoorSettings settings = GoHere.Settings.mDoorSettings[guid];
 
@@ -240,7 +337,7 @@ namespace NRaas.GoHereSpace.Helpers
             {
                 IMiniSimDescription desc = SimDescription.Find(descId);
 
-                if(desc == null)
+                if (desc == null)
                 {
                     desc = MiniSimDescription.Find(descId) as MiniSimDescription;
                 }
@@ -295,6 +392,32 @@ namespace NRaas.GoHereSpace.Helpers
                             {
                                 allowed = FilterHelper.DoesSimMatchFilters(descId, GoHere.Settings.mGlobalIgnoreDoorTimeLocksFilterOption, false);
                             }
+
+                            /*
+                             * Needs more thought, crashes game due to routing system being confused as to whether sim can route despite it being closed.
+                            if (!allowed && desc2 != null && desc2.CreatedSim != null && desc2.CreatedSim.LotCurrent != null && !desc2.CreatedSim.IsRouting)
+                            {
+                                if (VenueFlowUtility.IsSimInsideVenue(desc2.CreatedSim, desc2.CreatedSim.LotCurrent))
+                                {
+                                    if (desc2.CreatedSim.LotCurrent == door.LotCurrent && desc2.CreatedSim.RoomId == door.RoomId)
+                                    {
+                                        //Sims3.Gameplay.Situations.PrivacySituation.RouteToAdjacentRoom(desc2.CreatedSim);
+                                        CommonDoor.tSide side;
+                                        door.GetSideOfDoorInRoom(desc2.CreatedSim.RoomId, out side);
+                                        if (side == CommonDoor.tSide.Front)
+                                        {
+                                            allowed = true;
+                                            door.RouteThroughDoor(desc2.CreatedSim);
+                                        }                                        
+                                    }
+                                }
+                                     * Nice to have but need to think about performance implications first
+                                else
+                                {
+                                    Sim.MakeSimGoHome(desc2.CreatedSim, false);
+                            }
+                            }
+                        */
 
                             /*
                             if (PlumbBob.SelectedActor != null && desc.HasSameHomeLot(PlumbBob.SelectedActor.SimDescription))
@@ -406,7 +529,7 @@ namespace NRaas.GoHereSpace.Helpers
 
             public bool SettingsValid
             {
-                get { return (FiltersEnabled > 0 || mDoorCost > 0 || mDoorOpen > -1 || mDoorClose > -1); }
+                get { return (FiltersEnabled > 0 || mDoorCost > 0 || mDoorOpen > -1 || mDoorClose > -1 || mIsOneWayDoor); }
             }
 
             public void AddRecentSim(ulong sim)
@@ -500,6 +623,15 @@ namespace NRaas.GoHereSpace.Helpers
                         }
                     }
 
+
+                    if (lot.mOnPortalPathPlanHandler == null)
+                    {
+                        Route.SetPortalLockStatus(lot.mLotId, true);
+                    }
+
+                    lot.mOnPortalPathPlanHandler = (PortalPathPlanHandler)Delegate.Combine(lot.mOnPortalPathPlanHandler, new PortalPathPlanHandler(OnPortalPathPlan));
+
+
                     foreach (Sim sim in lot.GetAllActors())
                     {
                         if (sim != null)
@@ -512,20 +644,125 @@ namespace NRaas.GoHereSpace.Helpers
                 }                             
             }
 
+            public static void OnPortalPathPlan(PortalPlanEventArgs args)
+            {
+                if (args.Actor != null && args.PortalObject != null)
+                {
+                    CommonDoor portalObject = args.PortalObject as CommonDoor;
+                    if (portalObject != null)
+                    {                        
+                        if (!TestPortalObject(args.Actor, args.RoomTo, portalObject))
+                        {
+                            if (portalObject.LotCurrent == LotManager.ActiveLot)
+                            {
+                                //Common.Notify(args.Actor.FirstName + " currently in " + args.Actor.RoomId + " routing from " + args.RoomFrom + " to " + args.RoomTo + " not allowed. Locking " + portalObject.CatalogName);
+                            }
+                            args.Locked = true;
+                            args.Actor.SimRoutingComponent.LockedDoorsDuringPlan.Add(args.PortalObject as Door);
+                        }
+                    }
+                }
+            }
+
+            public static bool TestPortalObject(Sim sim, int dest, CommonDoor obj)
+            {
+                if (obj == null || sim == null) return true;
+
+                CommonDoor.tSide sideInRoom = CommonDoor.tSide.Front;
+                obj.GetSideOfDoorInRoom(dest, out sideInRoom);
+
+                DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId, false);
+
+                if (settings != null)
+                {
+                    if (settings.mIsOneWayDoor && sideInRoom != CommonDoor.tSide.Front)
+                    {
+                        return false;
+                    }
+
+                    return settings.IsSimAllowedThrough(sim.SimDescription.SimDescriptionId);
+                }
+
+                return true;
+            }
+
+            public static bool CheckRoomDoors(int room, Sim sim, out int level)
+            {
+                foreach (CommonDoor obj in sim.LotCurrent.GetObjectsInRoom<CommonDoor>(room))
+                {
+                    level = obj.Level;
+                    if (!TestPortalObject(sim, obj.RoomId, obj))
+                    {
+                        return false;
+                    }
+                }
+
+                level = -1;
+
+                return true;
+            }
+
             public static bool OnAllowedInRoomCheck(int srcRoom, Sim sim)
             {
+                //if (sim.LotCurrent != LotManager.ActiveLot) return true;
+
                 if (sim != null && sim.LotCurrent != null)
                 {
                     if (sim.RoomId == srcRoom) return true;
+                    //bool allowed = false;
+                    //bool adjoiningAllowed = false;
+                    //bool allNull = true;
 
-                    bool allowed = false;
-                    bool adjoiningAllowed = false;
-                    bool allNull = true;
-                    foreach (CommonDoor obj in sim.LotCurrent.GetObjectsInRoom<CommonDoor>(srcRoom))
+                    // lets try the simple methods first... is sim allowed to exit the room they are in?
+                    int level;
+                    if (!CheckRoomDoors(sim.RoomId, sim, out level))
+                    {
+                        return false;
+                    }
+
+                    // is sim allowed in room they are going to?
+                    level = 0;
+                    if (!CheckRoomDoors(srcRoom, sim, out level))
+                    {
+                        return false;
+                    }
+
+                    /*
+                    // not doing the transversal level dance, let the portal plan code deal with it
+                    if(level != sim.Level) return true;
+
+                    // good so far, now try to find the rooms in between this one
+                    int room = sim.RoomId;
+                    List<int> roomLayers = new List<int>();
+                    List<int> doneRooms = new List<int>();
+                    int loops = 0;
+                    while(true)
+                    {
+                        if(loops >= 10) break;
+                        loops++;
+                        foreach (CommonDoor obj in sim.LotCurrent.GetObjectsInRoom<CommonDoor>(room))
                     {
                         if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
                         {
-                            //Common.Notify("Testing " + obj.CatalogName + " in " + srcRoom);
+                                Common.Notify("Testing " + obj.CatalogName + " in " + srcRoom);
+                            }
+
+                            int adjRoom = obj.GetAdjoiningRoom(room);
+
+                            if (adjRoom != 0 && !doneRooms.Contains(room))
+                            {
+                                roomLayers.Add(room);
+                                room = adjRoom;
+                                continue;
+                            }
+                        }
+
+
+
+                        
+                        if (room != sim.RoomId && !CheckRoomDoors(room, sim))
+                        {
+
                         }
 
                         CommonDoor.tSide sideInRoom = CommonDoor.tSide.Front;
@@ -542,14 +779,18 @@ namespace NRaas.GoHereSpace.Helpers
                                 continue;
                             }
                         }
+                     */
 
+                    /*
                         // if front of door isn't in room, we don't care about it's filters
                         if (sideInRoom != CommonDoor.tSide.Front)
                         {
-                            //Common.Notify("Skipping " + obj.CatalogName + " because front tile is in other room");
+                        Common.Notify("Skipping " + obj.CatalogName + " because front tile is in other room");
                             continue;
                         }
+                     */
 
+                    /*
                         if (settings != null)
                         {
                             allNull = false;
@@ -558,16 +799,21 @@ namespace NRaas.GoHereSpace.Helpers
                             {
                                 if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
                                 {
-                                    //Common.Notify(sim.FullName + " initially allowed in " + srcRoom);
+                                    Common.Notify(sim.FullName + " initially allowed in " + srcRoom);
                                 }
                             }
                             else
                             {
                                 if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
                                 {
-                                    //Common.Notify(sim.FullName + " NOT initially allowed in " + srcRoom);
+                                    Common.Notify(sim.FullName + " NOT initially allowed in " + srcRoom);
                                 }
                             }
+                        }
+                        else
+                        {
+                            Common.Notify(sim.FullName + " allowed in " + srcRoom + " due to null settings on " + obj.CatalogName);
+                            allowed = true;
                         }
 
                         if (allowed && !adjoiningAllowed)
@@ -608,7 +854,9 @@ namespace NRaas.GoHereSpace.Helpers
                             }
                         }
 
+
                         if (allowed && adjoiningAllowed) break;
+                        //if (allowed) break;
                     }
 
                     if (allNull)
@@ -618,13 +866,15 @@ namespace NRaas.GoHereSpace.Helpers
 
                     if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
                     {
-                        //Common.Notify(sim.FullName + " is in " + sim.RoomId + " allowed: " + allowed.ToString() + " to room " + srcRoom);
+                        Common.Notify(sim.FullName + " is in " + sim.RoomId + " allowed: " + allowed.ToString() + " to room " + srcRoom);
                     }
 
                     return allowed;
                 }
+                */
                 return true;
             }       
+                return true;
         }        
 
         public class Loader : Common.IWorldLoadFinished, Common.IExitBuildBuy
@@ -667,7 +917,16 @@ namespace NRaas.GoHereSpace.Helpers
                 {
                     ReplaceComponent(door);
                 }
+
+                foreach (Sim sim in LotManager.Actors)
+                {
+                    if (sim != null && sim.mAllowedRooms != null)
+                    {
+                        sim.mAllowedRooms.Remove(lot.mLotId);
+                    }
+                }
             }
         }
+    }
     }
 }

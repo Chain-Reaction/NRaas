@@ -19,8 +19,8 @@ using System.Text;
 
 namespace NRaas.MasterControllerSpace.SelectionCriteria
 {
-    public abstract class SelectionOptionBaseList<TOption> : CommonOptionList<TOption>, SimSelection.ICriteria, ITestableOption
-        where TOption : CommonOptionItem, IPersistence, ITestableOption
+    public abstract class SelectionOptionBaseList<TOption> : CommonOptionList<TOption>, SimSelection.ICriteria, ITestableOption, IScorableOption
+        where TOption : CommonOptionItem, IPersistence, ITestableOption, IScorableOption
     {
         [Persistable(false)]
         bool mEnabled = false;
@@ -28,7 +28,9 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         List<TOption> mOptions = null;
         bool mMatchAll = false;
         bool mRandomCriteria = false;
-        bool mRandomValue = false;
+        int mMinRandOpts = 0;
+        int mMaxRandOpts = 0;
+        OptionScoreData mOptionScoreData;
 
         public SelectionOptionBaseList()
         { }
@@ -84,34 +86,93 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             }
         }
 
-        public bool CanHaveRandomValue
+        public int MinRandomOptions
         {
             get
             {
-                return mRandomValue;
+                return mMinRandOpts;
             }
             set
             {
-                mRandomValue = value;
+                mMinRandOpts = value;
+            }
+        }
+
+        public int MaxRandomOptions
+        {
+            get
+            {
+                return mMaxRandOpts;
+            }
+            set
+            {
+                mMaxRandOpts = value;
+            }
+        }
+
+        public OptionScoreData OptionScoreData
+        {
+            get
+            {
+                if (mOptionScoreData == null)
+                {
+                    mOptionScoreData = new OptionScoreData();
+                }
+
+                return mOptionScoreData;
+            }
+            set
+            {
+                mOptionScoreData = value;
             }
         }
 
         public bool CanBeRandomValue
         {
-            get { return false; }
-            set { }
+            get { return OptionScoreData.CanBeRandomValue; }
+            set { OptionScoreData.CanBeRandomValue = value; }
+        }
+
+        public int MinHitValue
+        {
+            get { return OptionScoreData.MinHitValue; }
+            set { OptionScoreData.MinHitValue = value; }
+        }
+
+        public int MaxHitValue
+        {
+            get { return OptionScoreData.MaxHitValue; }
+            set { OptionScoreData.MaxHitValue = value; }
+        }
+
+        public int MinMissValue
+        {
+            get { return OptionScoreData.MinMissValue; }
+            set { OptionScoreData.MinMissValue = value; }
+        }
+
+        public int MaxMissValue
+        {
+            get { return OptionScoreData.MaxMissValue; }
+            set { OptionScoreData.MaxMissValue = value; }
         }
 
         public int OptionHitValue
         {
-            get { return 0; }
-            set { }
+            get { return OptionScoreData.OptionHitValue; }
+            set { OptionScoreData.OptionHitValue = value; }
         }
 
         public int OptionMissValue
         {
-            get { return 0; }
-            set { }
+            get { return OptionScoreData.OptionMissValue; }
+            set { OptionScoreData.OptionMissValue = value; }
+        }
+
+        public Dictionary<int, float> ChanceAtOptionLevel
+        {
+            get { return OptionScoreData.ChanceAtOptionLevel; }
+            set { OptionScoreData.ChanceAtOptionLevel = value; }
         }
 
         public abstract string GetTitlePrefix();
@@ -144,6 +205,10 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             mEnabled = true;
             mOptions = null;
             mMatchAll = false;
+            mRandomCriteria = false;
+            mMaxRandOpts = 0;
+            mMinRandOpts = 0;
+
 
             base.Reset();
         }
@@ -201,10 +266,6 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             foreach (ICommonOptionItem opt in options)
             {
                 TOption test = opt as TOption;
-                if (opt == null)
-                {
-                    Common.Notify("Opt null");
-                }
                 mOptions.Add(opt as TOption);
             }
         }

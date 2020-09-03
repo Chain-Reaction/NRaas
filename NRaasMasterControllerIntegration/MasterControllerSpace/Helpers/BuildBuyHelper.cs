@@ -12,7 +12,7 @@ namespace NRaas.MasterControllerSpace.Helpers
     {
         public void OnWorldLoadFinished()
         {
-            LotManager.EnteringBuildBuyMode += new VoidEventHandler(OnEnterBuildBuy);
+            //LotManager.EnteringBuildBuyMode += new VoidEventHandler(OnEnterBuildBuy);
         }
 
         public static void OnEnterBuildBuy()

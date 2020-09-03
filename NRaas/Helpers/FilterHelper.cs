@@ -21,7 +21,7 @@ namespace NRaas.CommonSpace.Helpers
         static Common.MethodStore sCreateFilterWithRandomCriteria = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "CreateAndReturnRandomFilter", new Type[] { typeof(string), typeof(IMiniSimDescription), typeof(List<string>), typeof(Dictionary<string, string>), typeof(int[]), typeof(Dictionary<string, int[]>) });
         static Common.MethodStore sGetSimsMatchingFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSimsMatchingFilter", new Type[] { typeof(List<object>) });
         static Common.MethodStore sGetSingleFilter = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "GetSingleFilter", new Type[] { typeof(string) });
-        static Common.MethodStore sSpawnCreateFilterDialog = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "CreateFilter", new Type[] { typeof(string) });
+        static Common.MethodStore sSpawnCreateFilterDialog = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "CreateFilter", new Type[] { typeof(string), typeof(List<string>) });
         static Common.MethodStore sSpawnDeleteFilterDialog = new Common.MethodStore("NRaasMasterController", "NRaas.MasterController", "DeleteFilter", new Type[] { typeof(string) });
 
         [Tunable, TunableComment("How long a filter should have it's results cached (in Sim minutes)")]
@@ -145,13 +145,13 @@ namespace NRaas.CommonSpace.Helpers
             return createdFilter;
         }
 
-        public static OptionResult CreateFilter()
+        public static OptionResult CreateFilter(List<string> invalidCriteria)
         {
             OptionResult result = OptionResult.Unset;
             if (sSpawnCreateFilterDialog.Valid)
             {
                 // will never return a successful result due to dialog weirdness described in MasterController.cs
-                result = sSpawnCreateFilterDialog.Invoke<OptionResult>(new object[] { GetCallingNamespace });
+                result = sSpawnCreateFilterDialog.Invoke<OptionResult>(new object[] { GetCallingNamespace, invalidCriteria });
             }
 
             return result;

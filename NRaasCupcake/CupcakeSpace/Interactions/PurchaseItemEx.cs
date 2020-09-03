@@ -36,7 +36,7 @@ namespace NRaas.CupcakeSpace.Interactions
         {
             Tunings.Inject<CraftersConsignment, CraftersConsignment.PurchaseItem.Definition, Definition>(false);
 
-            if (Common.AssemblyCheck.IsInstalled("NRaasBOGO")) return;
+            if (Common.AssemblyCheck.IsInstalled("NRaasEconomizer")) return;
 
             //sOldSingleton = Singleton;
             Singleton = new Definition();
@@ -82,13 +82,13 @@ namespace NRaas.CupcakeSpace.Interactions
                 }
                 else
                 {
-                    RandomUtil.RandomizeListOfObjects<ObjectGuid>(objectsICanBuyInDisplay);
-                    int familyFunds = base.Actor.FamilyFunds;
-                    for (int i = 0; i < objectsICanBuyInDisplay.Count; i++)
+                RandomUtil.RandomizeListOfObjects<ObjectGuid>(objectsICanBuyInDisplay);
+                int familyFunds = base.Actor.FamilyFunds;
+                for (int i = 0; i < objectsICanBuyInDisplay.Count; i++)
+                {
+                    int cost = DisplayHelper.ComputeFinalPriceOnObject(objectsICanBuyInDisplay[i]);
+                    if (cost <= familyFunds)
                     {
-                        int cost = DisplayHelper.ComputeFinalPriceOnObject(objectsICanBuyInDisplay[i]);
-                        if (cost <= familyFunds)
-                        {
                             //Definition continuationDefinition = new Definition(objectsICanBuyInDisplay[i], cost, false);
                             //base.TryPushAsContinuation(continuationDefinition);                       
                             //return true;
@@ -96,9 +96,9 @@ namespace NRaas.CupcakeSpace.Interactions
                             mCost = cost;
                             break;
                         }
-                    }                
+                    }
                     //return false;
-                }
+                }                
             }
             if (mObject == ObjectGuid.InvalidObjectGuid)
             {                
@@ -188,7 +188,7 @@ namespace NRaas.CupcakeSpace.Interactions
                     }
                 }
                 else if (groupServing != null && target != null)
-                {
+            {
                     target.Destroy();
                 }
             }
@@ -272,7 +272,7 @@ namespace NRaas.CupcakeSpace.Interactions
                 {
                     ServingContainerGroup groupServing = GlobalFunctions.ConvertGuidToObject<ServingContainerGroup>(objectGuid);
                     if (groupServing != null)
-                    {
+                {
                         results.Add(new InteractionObjectPair(new Definition(groupServing, true), iop.Target, iop.Tuning));
                         results.Add(new InteractionObjectPair(new Definition(groupServing, false), iop.Target, iop.Tuning));
                         continue;

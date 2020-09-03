@@ -14,12 +14,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+// legacy, remove once all filterable mods have been updated
 namespace NRaas.MasterControllerSpace.Settings
 {
     public class DeleteFilterSetting : FilterSettingOption
     {
-        string callingMod = string.Empty;
-
         public override string GetTitlePrefix()
         {
             return "DeleteFilterSetting";
@@ -27,29 +26,17 @@ namespace NRaas.MasterControllerSpace.Settings
 
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
-            return (NRaas.MasterController.Settings.mFilters.Count > 0);
+            return false;
         }
 
         public OptionResult RunExternal(string mNamespace)
         {
-            callingMod = mNamespace;
-            return this.Run(null);
+            return new Filters.DeleteFilterSetting().RunExternal(mNamespace);
         }
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
-            List<SimSelection.ICriteria> filters = new List<SimSelection.ICriteria>();
-
-            foreach (SavedFilter filter in NRaas.MasterController.Settings.mFilters)
-            {
-                filters.Add(new SavedFilter.Item(filter));
-            }
-
-            SimSelection.ICriteria selection = new SimSelection.CriteriaSelection(Name, filters, callingMod).SelectSingle();
-            if (selection == null) return OptionResult.Failure;
-
-            Delete(selection.Name);
-            return OptionResult.SuccessRetain;
+            return OptionResult.Failure;
         }
     }
 }

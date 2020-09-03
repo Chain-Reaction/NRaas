@@ -360,10 +360,12 @@ namespace NRaas.GoHereSpace.Helpers
                     if (simDesc.CreatedSim != null)
                     {
                         simDesc.CreatedSim.InteractionQueue.CancelAllInteractions();
+                        /*
                         while (simDesc.CreatedSim.InteractionQueue.GetCurrentInteraction() != null)
                         {
-                            Simulator.Sleep(5);
+                            Common.Sleep(5);
                         }
+                        */
 
                         GoHereEx.Teleport.Perform(simDesc.CreatedSim, simDesc.LotHome, false);
                     }

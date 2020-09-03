@@ -60,6 +60,7 @@
     <Compile Include="Helpers\OccultUnicornEx.cs" />
     <Compile Include="Helpers\TooltipHelper.cs" />
     <Compile Include="Options\OperationSettingNestledOption.cs" />
+    <Compile Include="Options\OptionScoringSetting.cs" />
     <Compile Include="Replacers\ActionAvailabilityReplacer.cs" />
     <Compile Include="SpeedTrap.cs" />
     <Compile Include="Dialogs\EnrollmentDialogEx.cs" />

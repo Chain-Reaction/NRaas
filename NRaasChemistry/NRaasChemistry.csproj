@@ -87,6 +87,9 @@
     <Compile Include="..\NRaas\Options\CommonOptionList.cs">
       <Link>CommonSpace\Options\CommonOptionList.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Options\FloatSettingOption.cs">
+      <Link>CommonSpace\Options\FloatSettingOption.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Options\GenericSettingOption.cs">
       <Link>CommonSpace\Options\GenericSettingOption.cs</Link>
     </Compile>
@@ -156,12 +159,65 @@
     <Compile Include="ChemistrySpace\Interactions\PrimaryInteraction.cs" />
     <Compile Include="ChemistrySpace\Interactions\ReactionTest.cs" />
     <Compile Include="ChemistrySpace\Interactions\SimInteraction.cs" />
+    <Compile Include="ChemistrySpace\Options\AdvancedModeSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\AttractionImportanceLevelListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\AttractionImportanceLevelOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\AttractionLevelListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\AttractionLevelOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\IAttractionOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\ListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\ModifyAutoProfileLockingFilter.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\PreserveAllFilterValuesOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Attraction\PreserveRandomFilterValues.cs" />
     <Compile Include="ChemistrySpace\Options\DebuggingLevel\DebuggingLevelSetting.cs" />
     <Compile Include="ChemistrySpace\Options\DebuggingLevel\IOverallDebuggingOption.cs" />
     <Compile Include="ChemistrySpace\Options\DebuggingLevel\OverallDebuggingLevelOption.cs" />
     <Compile Include="ChemistrySpace\Options\DebuggingLevel\ListingOption.cs" />
     <Compile Include="ChemistrySpace\Options\DebuggingSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\EnabledSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Performance\AttractionCalculationLevelSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Performance\AttractionControllerIntervalSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Performance\AttractionFilterCacheLengthSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Performance\AttractionLevelBaseSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Performance\IPerformanceOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Performance\ListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Performance\OutfitDataCacheLengthSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\AddNewProfileOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\BaseAttractionStacksOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\BaseAttractionOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\BaseConfidenceOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\BaseConfidenceStacksOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\AttractionImportanceChanceListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\AttractionImportanceChanceOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\AttractionImportanceLevelListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\AttractionImportanceLevelOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\IProfileRootMenuOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\EditSteppedProfileOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\EnabledOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\AddCriteriaOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Criteria\CanBeRandomCriteriaOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Criteria\MaxRandomOptionsOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Criteria\MinRandomOptionsOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Criteria\AddOptionOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Criteria\FilterCriteriaOptionsListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\FilterCriteriaRootListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\CanBeRandomValueOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\FilterOptionSettingListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Criteria\ICriteriaSettingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Criteria\IFilterCriteriaOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\IOptionSettingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\MaxHitValueOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\MaxMissValueOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\MinHitValueOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\MinMissValueOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\OptionHitValueOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\Filters\Options\OptionMissValueOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\IProfileOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\ListingOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\PriorityOption.cs" />
+    <Compile Include="ChemistrySpace\Options\Profiles\ProfileSettingListingOption.cs" />
     <Compile Include="ChemistrySpace\Options\RunSyncProfilesSetting.cs" />
+    <Compile Include="ChemistrySpace\Options\Sims\EditAttractionProfile.cs" />
     <Compile Include="ChemistrySpace\Options\Sims\ISimOption.cs" />
     <Compile Include="ChemistrySpace\Options\Sims\ViewAttractionBreakdown.cs" />
     <Compile Include="ChemistrySpace\Options\Sims\ViewAttractionValues.cs" />
@@ -169,6 +225,7 @@
     <Compile Include="ChemistrySpace\Options\Sims\ViewCurrentOutfitData.cs" />
     <Compile Include="ChemistrySpace\Options\Sims\ViewSimHairColor.cs" />
     <Compile Include="ChemistrySpace\PersistedSettings.cs" />
+    <Compile Include="ChemistrySpace\SelectionCriteria\Any.cs" />
     <Compile Include="ChemistrySpace\SelectionCriteria\HairColor.cs" />
     <Compile Include="ChemistrySpace\SimAttractionRecord.cs" />
     <Compile Include="ChemistrySpace\SimProfileData.cs" />
@@ -215,7 +272,6 @@
     <Reference Include="NRaasMasterController">
       <HintPath>..\NRaasMasterController\bin\x86\Release\NRaasMasterController.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CommonSpace\Tasks\" />

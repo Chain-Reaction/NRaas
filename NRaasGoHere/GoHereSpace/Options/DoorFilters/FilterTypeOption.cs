@@ -15,6 +15,8 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
         {
             get
             {
+                if (mTarget == null) return DoorPortalComponentEx.DoorSettings.SettingType.Allow;
+
                 DoorPortalComponentEx.DoorSettings settings = GoHere.Settings.GetDoorSettings(mTarget.ObjectId);
                 if (settings != null)
                 {
@@ -49,6 +51,11 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
 
                 return null;
             }
+        }
+
+        public override void Export(CommonSpace.Helpers.Persistence.Lookup settings)
+        {
+            return;
         }
 
         public override void SetImportValue(string value)

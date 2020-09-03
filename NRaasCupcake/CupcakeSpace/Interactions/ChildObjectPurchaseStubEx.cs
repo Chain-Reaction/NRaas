@@ -32,7 +32,7 @@ namespace NRaas.CupcakeSpace.Interactions
 
         public void OnPreLoad()
         {
-            if (Common.AssemblyCheck.IsInstalled("NRaasBOGO")) return;
+            if (Common.AssemblyCheck.IsInstalled("NRaasEconomizer")) return;
 
             //sOldSingleton = Singleton;
             Singleton = new Definition();

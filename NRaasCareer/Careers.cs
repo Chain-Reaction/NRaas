@@ -103,6 +103,11 @@ namespace NRaas
 
         public static void ResetSettings()
         {
+            foreach (KeyValuePair<OccupationNames, PersistedSettings.CareerSettings> settings in Careers.Settings.mCareerSettings)
+            {
+                settings.Value.RevertToDefault();
+            }
+
             sSettings = null;
         }
 

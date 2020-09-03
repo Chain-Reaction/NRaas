@@ -295,7 +295,7 @@ namespace NRaas.OverwatchSpace.Alarms
                 if (vehicle.Parent != null)
                 {
                     parentSpace = vehicle.Parent.GetType().ToString();
-                    if (parentSpace.Contains("GalleryShopParkingSpace"))
+                    if (parentSpace.Contains("GalleryShopParkingSpace") || parentSpace.Contains("StoreSetParkingSpace"))
                     {
                         continue;
                     }

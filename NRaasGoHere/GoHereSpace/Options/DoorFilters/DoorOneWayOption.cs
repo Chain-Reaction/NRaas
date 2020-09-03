@@ -37,6 +37,11 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             }
         }
 
+        public override void Export(CommonSpace.Helpers.Persistence.Lookup settings)
+        {
+            return;
+        }
+
         protected override bool Allow(GameHitParameters<GameObject> parameters)
         {
             mTarget = parameters.mTarget;

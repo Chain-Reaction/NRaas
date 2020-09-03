@@ -103,20 +103,10 @@ namespace NRaas
         }
         
         public static SavedFilter GetFilter(string name)
-        {            
-            name = name.ToLower();
+        {
+            SaveFilterSetting setting = new SaveFilterSetting();
 
-            SavedFilter picked = null;            
-            foreach (SavedFilter filter in MasterController.Settings.mFilters)
-            {
-                if (filter.Name.ToLower() == name)                    
-                {
-                    picked = filter;
-                    break;
-                }                
-            }
-
-            return picked;
+            return setting.Find(name);
         }        
         
         // Externalized to filterable mods
@@ -246,14 +236,7 @@ namespace NRaas
 
         public static List<string> GetAllCriteria(bool unUsed)
         {
-            List<string> results = new List<string>();
-
-            foreach (SimSelection.ICriteria crit in SelectionOption.List)
-            {
-                results.Add(crit.Name);
-            }
-
-            return results;
+            return new List<string>(SelectionOption.StringList.Keys);
         }
 
         public static List<string> GetAllCriteriaOptions(string criteria, IMiniSimDescription actor)
@@ -262,14 +245,12 @@ namespace NRaas
 
             SimSelection.ICriteria pick = null;
 
-            foreach (SimSelection.ICriteria crit in SelectionOption.List)
+            if (!SelectionOption.StringList.ContainsKey(criteria))
             {
-                if (crit.Name == criteria)
-                {
-                    pick = crit;
-                    break;
-                }
+                return results;
             }
+
+            pick = SelectionOption.StringList[criteria];
 
             if (pick != null)
             {

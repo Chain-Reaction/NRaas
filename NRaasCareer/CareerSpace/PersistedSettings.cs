@@ -6,6 +6,7 @@ using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
+using Sims3.Gameplay.Objects.Vehicles;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
@@ -109,8 +110,8 @@ namespace NRaas.CareerSpace
                 {
                     foreach (Career career in CareerManager.CareerList)
                     {
-                        career.SharedData.MinCoworkers = settings.minCoworkers;
-                        career.SharedData.MaxCoworkers = settings.maxCoworkers;
+                        career.SharedData.MinCoworkers = settings.mMinCoworkers;
+                        career.SharedData.MaxCoworkers = settings.mMaxCoworkers;
                     }
                 }
                 else
@@ -118,8 +119,30 @@ namespace NRaas.CareerSpace
                     Career career = CareerManager.GetStaticCareer(settings.mName);
                     if (career != null)
                     {
-                        career.SharedData.MinCoworkers = settings.minCoworkers;
-                        career.SharedData.MaxCoworkers = settings.maxCoworkers;
+                        career.SharedData.MinCoworkers = settings.mMinCoworkers;
+                        career.SharedData.MaxCoworkers = settings.mMaxCoworkers;
+
+                        foreach (string branch in career.CareerLevels.Keys)
+                        {
+                            foreach (KeyValuePair<int, Sims3.Gameplay.Careers.CareerLevel> levelData in career.CareerLevels[branch])
+                            {
+                                CareerLevelSettings levelSettings = settings.GetSettingsForLevel(branch, levelData.Key, false);
+
+                                if (levelSettings != null)
+                                {
+                                    levelData.Value.PayPerHourBase = levelSettings.mPayPerHourBase;
+                                    levelData.Value.CarpoolType = levelSettings.mCarpoolType;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                foreach (Sim sim in LotManager.Actors)
+                {
+                    if (sim.Occupation != null)
+                    {
+                        sim.Occupation.RescheduleCarpool();
                     }
                 }
             }
@@ -136,7 +159,10 @@ namespace NRaas.CareerSpace
             {
                 if (create)
                 {
-                    return new CareerSettings(name);
+                    CareerSettings settings = new CareerSettings(name);
+                    CareerSettings cloned = settings.mDefaults.Clone();
+                    cloned.SetDefaults();
+                    return cloned;
                 }
             }
 
@@ -146,17 +172,164 @@ namespace NRaas.CareerSpace
         [Persistable]
         public class CareerSettings
         {
+            public OccupationNames mName;
+
+            public int mMinCoworkers = 0;
+            public int mMaxCoworkers = 0;
+
+            public CareerSettings mDefaults = null;
+
+            Dictionary<string, Dictionary<int, CareerLevelSettings>> mLevelSettings = new Dictionary<string, Dictionary<int, CareerLevelSettings>>();
+
             public CareerSettings()
             {
             }
             public CareerSettings(OccupationNames name)
             {
-                mName = name;
+                mName = name;                
+                SetDefaults();
             }
 
-            public OccupationNames mName;
-            public int minCoworkers = 0;
-            public int maxCoworkers = 0;
+            public void SetDefaults()
+            {
+                Career career = CareerManager.GetStaticCareer(mName);
+                if (career != null)
+                {
+                    CareerSettings settings = new CareerSettings();
+                    settings.mName = mName;
+
+                    settings.mMinCoworkers = career.SharedData.MinCoworkers;
+                    settings.mMaxCoworkers = career.SharedData.MaxCoworkers;
+
+                    mDefaults = settings;
+                }
+            }
+
+            public void RevertToDefault()
+            {
+                if (mDefaults != null)
+                {
+                    Career career = CareerManager.GetStaticCareer(mName);
+                    if (career != null)
+                    {
+                        career.SharedData.MinCoworkers = mDefaults.mMinCoworkers;
+                        career.SharedData.MaxCoworkers = mDefaults.mMaxCoworkers;
+                    }
+
+                    foreach (KeyValuePair<string, Dictionary<int, CareerLevelSettings>> settings in mLevelSettings)
+                    {
+                        foreach (KeyValuePair<int, CareerLevelSettings> settings2 in settings.Value)
+                        {
+                            settings2.Value.RevertToDefaults(mName);
+                        }
+                    }
+                }
+            }
+
+            public CareerLevelSettings GetSettingsForLevel(string branch, int level, bool create)
+            {
+                if (!mLevelSettings.ContainsKey(branch))
+                {
+                    mLevelSettings.Add(branch, new Dictionary<int, CareerLevelSettings>());
+                }
+
+                if (!mLevelSettings[branch].ContainsKey(level))
+                {
+                    if (create)
+                    {
+                        CareerLevelSettings settings = new CareerLevelSettings(mName, branch, level);
+                        CareerLevelSettings cloned = settings.mDefaults.Clone();
+                        cloned.SetDefaults(mName);
+                        mLevelSettings[branch].Add(level, cloned);
+                        return cloned;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+
+                return mLevelSettings[branch][level];
+            }
+
+            public CareerSettings Clone()
+            {
+                return this.MemberwiseClone() as CareerSettings;
+            }
+        }
+
+        [Persistable]
+        public class CareerLevelSettings
+        {
+            public string mBranch;
+            public int mLevel;
+
+            public float mPayPerHourBase;
+            public CarNpcManager.NpcCars mCarpoolType;
+
+            public CareerLevelSettings mDefaults = null;
+
+            public CareerLevelSettings()
+            {
+            }
+            public CareerLevelSettings(OccupationNames career, string branchName, int level)
+            {
+                mBranch = branchName;
+                mLevel = level;
+                SetDefaults(career);
+            }
+
+            public void SetDefaults(OccupationNames name)
+            {
+                Career career = CareerManager.GetStaticCareer(name);
+                if (career != null)
+                {
+                    foreach (string branch in career.CareerLevels.Keys)
+                    {
+                        if (branch != mBranch) continue;
+
+                        foreach (KeyValuePair<int, CareerLevel> level in career.CareerLevels[branch])
+                        {
+                            if (level.Key == mLevel)
+                            {
+                                CareerLevelSettings settings = new CareerLevelSettings();
+                                settings.mBranch = mBranch;
+                                settings.mLevel = mLevel;
+                                settings.mPayPerHourBase = level.Value.PayPerHourBase;
+                                settings.mCarpoolType = level.Value.CarpoolType;
+
+                                mDefaults = settings;
+                            }
+                        }
+                    }
+                }
+            }
+
+            public void RevertToDefaults(OccupationNames name)
+            {
+                Career career = CareerManager.GetStaticCareer(name);
+                if (career != null && mDefaults != null)
+                {
+                    foreach (string branch in career.CareerLevels.Keys)
+                    {
+                        if (branch != mBranch) continue;
+
+                        foreach (KeyValuePair<int, CareerLevel> level in career.CareerLevels[branch])
+                        {
+                            if (level.Key == mLevel)
+                            {
+                                level.Value.PayPerHourBase = mDefaults.mPayPerHourBase;
+                                level.Value.CarpoolType = mDefaults.mCarpoolType;
+                            }
+                        }
+                    }
+                }
+            }
+
+            public CareerLevelSettings Clone()
+            {
+                return this.MemberwiseClone() as CareerLevelSettings;
+            }
         }
     }
 }

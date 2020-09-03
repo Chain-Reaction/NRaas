@@ -290,6 +290,9 @@
     <Compile Include="..\NRaas\Options\OperationSettingOption.cs">
       <Link>CommonSpace\Options\OperationSettingOption.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Options\OptionScoringSetting.cs">
+      <Link>CommonSpace\Options\OptionScoringSetting.cs</Link>
+    </Compile>
     <Compile Include="..\nraas\options\PopupOptionList.cs">
       <Link>CommonSpace\Options\PopupOptionList.cs</Link>
     </Compile>
@@ -499,6 +502,14 @@
     <Compile Include="MasterControllerSpace\Settings\CAS\SliderMaxSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\CheckForNoDoubleBedSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\CommunityAddSimSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\DeleteCriteriaSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\DeleteFilterSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\DeleteOptionsSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\AddCriteriaSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\AddOptionsSetting.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\IFilterOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\ListingOption.cs" />
+    <Compile Include="MasterControllerSpace\Settings\Filters\SaveFilterSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\PartyAgeFilterSetting.cs" />
     <Compile Include="MasterControllerSpace\Settings\ExportSettings.cs" />
     <Compile Include="MasterControllerSpace\Settings\ImportSettings.cs" />

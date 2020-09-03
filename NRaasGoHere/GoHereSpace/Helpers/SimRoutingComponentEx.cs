@@ -227,6 +227,7 @@ namespace NRaas.GoHereSpace.Helpers
                     routeSim = r.Follower.Target as Sim;
                 }
 
+                /*
                 if (!GoHere.Settings.mAllowBoatRouting)
                 {
                     Houseboat boat;
@@ -260,6 +261,7 @@ namespace NRaas.GoHereSpace.Helpers
                         }
                     }
                 }
+                 */
 
                 if (!GoHere.Settings.mAllowMermaidRouting)
                 {
@@ -278,6 +280,11 @@ namespace NRaas.GoHereSpace.Helpers
                 if (!r.PlanResult.Succeeded())
                 {
                     msg += Common.NewLine + "A: " + r.PlanResult + " False";
+
+                    if (r.PlanResult.mType == RoutePlanResultType.FailedBecauseDestinationPortalLocked)
+                    {
+                        r.DoRouteFail = false;
+                    }
 
                     DoRouteFailureBehavior(r);
                     mOwnerSim.AddExitReason(ExitReason.RouteFailed);

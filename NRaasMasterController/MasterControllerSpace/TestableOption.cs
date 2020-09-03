@@ -21,15 +21,11 @@ namespace NRaas.MasterControllerSpace
     {
         string OptionName { get; }
         string OptionValue { get; }
-        bool CanBeRandomValue { get; set; }
-        int OptionHitValue { get; set; }
-        int OptionMissValue { get; set; }
         bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor);
-        bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor, bool randomize);
-        int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int divisior);
+        bool Test(IMiniSimDescription me, bool fullFamily, IMiniSimDescription actor, bool testRandom);        
     }
 
-    public abstract class TestableOption<TDataType, TStoreType> : ValueSettingOption<TStoreType>, IPersistence, ITestableOption
+    public abstract class TestableOption<TDataType, TStoreType> : ValueSettingOption<TStoreType>, IPersistence, ITestableOption, IScorableOption
     {
         public TestableOption()
         { }
@@ -43,10 +39,7 @@ namespace NRaas.MasterControllerSpace
             : base(value, name, count, key)
         { }
 
-        public int mOptionHitValue;
-        public int mOptionMissValue;
-
-        public bool mCanBeRandomValue;
+        public OptionScoreData mOptionScoreData;
 
         public string OptionName
         {
@@ -58,22 +51,69 @@ namespace NRaas.MasterControllerSpace
             get { return Value.ToString(); }
         }
 
+        public OptionScoreData OptionScoreData
+        {
+            get
+            {
+                if (mOptionScoreData == null)
+                {
+                    mOptionScoreData = new OptionScoreData();
+                }
+
+                return mOptionScoreData;
+            }
+            set
+            {
+                mOptionScoreData = value;
+            }
+        }
+
         public bool CanBeRandomValue
         {
-            get { return mCanBeRandomValue; }
-            set { mCanBeRandomValue = value; }
+            get { return OptionScoreData.CanBeRandomValue; }
+            set { OptionScoreData.CanBeRandomValue = value; }
+        }
+
+        public int MinHitValue
+        {
+            get { return OptionScoreData.MinHitValue; }
+            set { OptionScoreData.MinHitValue = value; }
+        }
+
+        public int MaxHitValue
+        {
+            get { return OptionScoreData.MaxHitValue; }
+            set { OptionScoreData.MaxHitValue = value; }
+        }
+
+        public int MinMissValue
+        {
+            get { return OptionScoreData.MinMissValue; }
+            set { OptionScoreData.MinMissValue = value; }
+        }
+
+        public int MaxMissValue
+        {
+            get { return OptionScoreData.MaxMissValue; }
+            set { OptionScoreData.MaxMissValue = value; }
         }
 
         public int OptionHitValue
         {
-            get { return mOptionHitValue; }
-            set { mOptionHitValue = value; }
+            get { return OptionScoreData.OptionHitValue; }
+            set { OptionScoreData.OptionHitValue = value; }
         }
 
         public int OptionMissValue
         {
-            get { return mOptionMissValue; }
-            set { mOptionMissValue = value; }
+            get { return OptionScoreData.OptionMissValue; }
+            set { OptionScoreData.OptionMissValue = value; }
+        }
+
+        public Dictionary<int, float> ChanceAtOptionLevel
+        {
+            get { return OptionScoreData.ChanceAtOptionLevel; }
+            set { OptionScoreData.ChanceAtOptionLevel = value; }
         }
 
         public abstract bool Get(SimDescription me, IMiniSimDescription actor, Dictionary<TStoreType, TDataType> results);
@@ -85,22 +125,33 @@ namespace NRaas.MasterControllerSpace
 
         public abstract void SetValue(TDataType dataType, TStoreType storeType);
 
-        public virtual int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int missDivisor)
+        public int GetScoreValue(IMiniSimDescription me, IMiniSimDescription actor, bool satisfies, int missDivisor)
         {
             if (Test(me, false, actor, false) && satisfies)
             {
-                return mOptionHitValue;
+                return OptionScoreData.mOptionHitValue;
             }
             else
             {
-                if (mOptionMissValue != 0 || !satisfies || missDivisor == 0)
+                if (OptionScoreData.mOptionMissValue != 0 || !satisfies || missDivisor == 0)
                 {
-                    return mOptionMissValue;
+                    return OptionScoreData.mOptionMissValue;
                 }
 
-                int val = mOptionHitValue / missDivisor;
+                /*
+                int val = OptionScoreData.mOptionHitValue / missDivisor;
 
-                return -1 * val;
+                if (val > 0)
+                {
+                    return -1 * val;
+                }
+                else
+                {
+                    return val;
+                }
+                 */
+
+                return 0;
             }
         }
 
@@ -137,7 +188,7 @@ namespace NRaas.MasterControllerSpace
                 }
             }
 
-            if (testRandom && mCanBeRandomValue)
+            if (testRandom && OptionScoreData.mCanBeRandomValue)
             {
                 if (RandomUtil.CoinFlip())
                 {

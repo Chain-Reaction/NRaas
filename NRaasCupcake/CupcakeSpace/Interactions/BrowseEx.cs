@@ -35,7 +35,7 @@ namespace NRaas.CupcakeSpace.Interactions
         {
             Tunings.Inject<CraftersConsignment, CraftersConsignment.Browse.Definition, Definition>(false);
 
-            if (Common.AssemblyCheck.IsInstalled("NRaasBOGO")) return;
+            if (Common.AssemblyCheck.IsInstalled("NRaasEconomizer")) return;
 
             //sOldSingleton = Singleton;
             Singleton = new Definition();

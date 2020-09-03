@@ -281,7 +281,10 @@ namespace NRaas.TravelerSpace.Helpers
             List<uint> mCrossCountryCompetitionsWon = null;
             List<uint> mJumpCompetitionsWon = null;
 
+            uint mCollectionsCompleted;
             Dictionary<string, Photography.SubjectRecord> mSubjectRecords;
+            Dictionary<PhotographSize, Photography.SubjectRecord> mSizeRecords;
+            Dictionary<PaintingStyle, Photography.SubjectRecord> mStyleRecords;
 
             List<Bartending.CustomDrinkData> mCustomDrinks;
 
@@ -381,7 +384,10 @@ namespace NRaas.TravelerSpace.Helpers
                 Photography photography = sim.SkillManager.GetSkill<Photography>(SkillNames.Photography);
                 if (photography != null)
                 {
+                    mCollectionsCompleted = photography.mCollectionsCompleted;
                     mSubjectRecords = photography.mSubjectRecords;
+                    mStyleRecords = photography.mStyleRecords;
+                    mSizeRecords = photography.mSizeRecords;
                 }
 
                 RidingSkill riding = sim.SkillManager.GetSkill<RidingSkill>(SkillNames.Riding);
@@ -475,11 +481,22 @@ namespace NRaas.TravelerSpace.Helpers
                     if (photography != null)
                     {
                         // Forces a recalculation of the completion count
-                        photography.mCollectionsCompleted = uint.MaxValue;
+                        // photography.mCollectionsCompleted = uint.MaxValue;
+						photography.mCollectionsCompleted = mCollectionsCompleted;
 
                         if (mSubjectRecords != null)
                         {
                             photography.mSubjectRecords = mSubjectRecords;
+                        }
+
+                        if (mStyleRecords != null)
+                        {
+                            photography.mStyleRecords = mStyleRecords;
+                        }
+
+                        if (mSizeRecords != null)
+                        {
+                            photography.mSizeRecords = mSizeRecords;
                         }
                     }
 

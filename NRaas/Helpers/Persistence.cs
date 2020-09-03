@@ -405,7 +405,8 @@ namespace NRaas.CommonSpace.Helpers
                         }
                         else
                         {
-                            MethodInfo tryParse = field.FieldType.GetMethod("TryParse", BindingFlags.Public | BindingFlags.Static);
+                            Type[] argTypes = { typeof(string), field.FieldType.MakeByRefType() };
+                            MethodInfo tryParse = field.FieldType.GetMethod("TryParse", argTypes);
                             if (tryParse != null)
                             {
                                 object[] args = new object[] { value, null };

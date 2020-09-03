@@ -2517,6 +2517,17 @@ namespace NRaas
             }             
         }
 
+        public class ThreadedFunctionTask : FunctionTask
+        {
+            public override ScriptExecuteType ExecuteType
+            {
+                get
+                {
+                    return ScriptExecuteType.Threaded;
+                }
+            }
+        }
+
         public class DerivativeSearch
         {
             public enum Caching

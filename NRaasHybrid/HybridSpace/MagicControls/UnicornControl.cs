@@ -60,6 +60,8 @@ namespace NRaas.HybridSpace.MagicControls
 
             if (!unicorn.MagicPoints.HasPoints()) return false;
 
+            if (GetMana(sim) - definition.SpellSettings.mMinMana <= 0) return false; 
+
             return true;
         }
 

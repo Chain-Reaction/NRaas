@@ -97,6 +97,33 @@ namespace NRaas.MasterControllerSpace
                         results.AddRange(MasterController.Settings.mMostRecentFilter.Elements);
                     }
 
+                    // handles adding random criteria to manual user selection
+                    /*
+                    if (criteria is Any)
+                    {
+                        List<ICriteria> available = new List<ICriteria>(SelectionOptionBase.List);
+                        int num = 0;
+                        int max = 0;
+                        if (criteria.MinRandomOptions > 0 || criteria.MaxRandomOptions > 0)
+                        {
+                            max = RandomUtil.GetInt(criteria.MinRandomOptions, criteria.MaxRandomOptions);
+                        }
+                        else
+                        {
+                            max = 1;
+                        }
+
+                        while (num < max && available.Count > 0)
+                        {
+                            ICriteria crit = RandomUtil.GetRandomObjectFromList<ICriteria>(available);
+
+                            available.Remove(crit);
+                            results.Add(crit);
+                            num ++;
+                        }
+                    }
+                     */
+
                     if (criteria is IDoesNotNeedSpeciesFilter)
                     {
                         speciesFound = true;

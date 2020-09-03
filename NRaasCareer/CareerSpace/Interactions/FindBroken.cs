@@ -66,7 +66,7 @@ namespace NRaas.CareerSpace.Interactions
                     if (obj.IsInHiddenResidentialRoom) continue;
 
                     RepairableComponent component = obj.Repairable;
-                    if (component == null) continue;
+                    if (component == null || component is ScratchableRepairable) continue;
 
                     bool found = false;
                     foreach (Sim sim in obj.LotCurrent.Household.Sims)

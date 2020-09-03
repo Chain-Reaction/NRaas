@@ -114,6 +114,6 @@ namespace NRaas
          * Added "Allow Occult Skating" default: True
          * 
          */
-        public static readonly int sVersion = 10;
+        public static readonly int sVersion = 11;
     }
 }

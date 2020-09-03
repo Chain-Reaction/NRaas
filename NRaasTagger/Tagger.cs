@@ -105,12 +105,11 @@ namespace NRaas
         }
 
         public static void OnSimSelected(Event e)
-        {            
-            SetupMapTags(false);
-
+        {
             Sim sim = e.Actor as Sim;
             if (sim != null)
             {
+                SetupMapTags(false);
                 Tagger.Settings.SetCustomTitles(sim);
             }            
         }

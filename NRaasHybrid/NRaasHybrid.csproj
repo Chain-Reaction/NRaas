@@ -309,10 +309,12 @@
     <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x28EE9D383A73463E_mscorlib.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x342EE04373CF1E1C_System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x342EE04373CF1E1C_System.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x600F9EA1DDC99FB1_Sims3MetaData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -322,6 +324,7 @@
     <Reference Include="0x6AC101133051BEF1_System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x6AC101133051BEF1_System.Xml.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0x78CF6CF5304D0C4F_ScriptCore, Version=1.0.3491.32933, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

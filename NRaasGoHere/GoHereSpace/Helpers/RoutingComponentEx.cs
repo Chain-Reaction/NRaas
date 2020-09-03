@@ -106,6 +106,7 @@ namespace NRaas.GoHereSpace.Helpers
             ths.mRouteActions.Clear();
             bool routeSuccess = true;
 
+            /*
             if (!GoHere.Settings.mAllowBoatRouting)
             {
                 r.SetOption2(Route.RouteOption2.EnablePlanningAsBoat, false);
@@ -115,6 +116,7 @@ namespace NRaas.GoHereSpace.Helpers
                 r.SetOption(Route.RouteOption.DisallowGoalsOnBridges, true);
                 r.Replan();
             }
+             */
 
             try
             {

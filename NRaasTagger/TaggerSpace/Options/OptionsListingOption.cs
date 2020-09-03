@@ -58,6 +58,11 @@ namespace NRaas.TaggerSpace.Options
             return null;
         }
 
+        public override void Export(Persistence.Lookup settings)
+        {
+            return;
+        }
+
         public override string ConvertToString(IPrimaryOption<GameObject> value)
         {
             return "";

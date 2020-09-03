@@ -19,14 +19,18 @@ using System.Text;
 
 namespace NRaas.MasterControllerSpace.SelectionCriteria
 {
-    public abstract class SelectionOptionBase : InteractionOptionItem<IMiniSimDescription, IMiniSimDescription, MiniSimDescriptionParameters>, ITestableOption, IPersistence
+    public abstract class SelectionOptionBase : InteractionOptionItem<IMiniSimDescription, IMiniSimDescription, MiniSimDescriptionParameters>, ITestableOption, IPersistence, IScorableOption
     {
         [Persistable(false)]
         protected bool mEnabled = false;
 
         protected bool mRandomCriteria = false;
 
-        protected bool mRandomValue = false;
+        protected int mMinRandOptions = 0;
+
+        protected int mMaxRandOptions = 0;
+
+        protected OptionScoreData mOptionScoreData;
 
         public SelectionOptionBase()
             : base(null, 0)
@@ -43,24 +47,6 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         public string OptionValue
         {
             get { return string.Empty; }
-        }
-
-        public bool CanBeRandomValue
-        {
-            get { return false; }
-            set { }
-        }
-
-        public int OptionHitValue
-        {
-            get { return 0; }
-            set { }
-        }
-
-        public int OptionMissValue
-        {
-            get { return 0; }
-            set { }
         }
 
         public bool Enabled
@@ -87,16 +73,93 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
             }
         }
 
-        public bool CanHaveRandomValue
+        public int MaxRandomOptions
         {
             get
             {
-                return mRandomValue;
+                return mMaxRandOptions;
             }
             set
             {
-                mRandomValue = value;
+                mMaxRandOptions = value; 
             }
+        }
+
+        public int MinRandomOptions
+        {
+            get
+            {
+                return mMinRandOptions;
+            }
+            set
+            { 
+                mMinRandOptions = value; 
+            }
+        }
+
+        public OptionScoreData OptionScoreData
+        {
+            get
+            {
+                if (mOptionScoreData == null)
+                {
+                    mOptionScoreData = new OptionScoreData();
+                }
+
+                return mOptionScoreData;
+            }
+            set
+            {
+                mOptionScoreData = value;
+            }
+        }
+
+        public bool CanBeRandomValue
+        {
+            get { return OptionScoreData.CanBeRandomValue; }
+            set { OptionScoreData.CanBeRandomValue = value; }
+        }
+
+        public int MinHitValue
+        {
+            get { return OptionScoreData.MinHitValue; }
+            set { OptionScoreData.MinHitValue = value; }
+        }
+
+        public int MaxHitValue
+        {
+            get { return OptionScoreData.MaxHitValue; }
+            set { OptionScoreData.MaxHitValue = value; }
+        }
+
+        public int MinMissValue
+        {
+            get { return OptionScoreData.MinMissValue; }
+            set { OptionScoreData.MinMissValue = value; }
+        }
+
+        public int MaxMissValue
+        {
+            get { return OptionScoreData.MaxMissValue; }
+            set { OptionScoreData.MaxMissValue = value; }
+        }
+
+        public int OptionHitValue
+        {
+            get { return OptionScoreData.OptionHitValue; }
+            set { OptionScoreData.OptionHitValue = value; }
+        }
+
+        public int OptionMissValue
+        {
+            get { return OptionScoreData.OptionMissValue; }
+            set { OptionScoreData.OptionMissValue = value; }
+        }
+
+        public Dictionary<int, float> ChanceAtOptionLevel
+        {
+            get { return OptionScoreData.ChanceAtOptionLevel; }
+            set { OptionScoreData.ChanceAtOptionLevel = value; }
         }
 
         public virtual bool IsSpecial
@@ -118,6 +181,9 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
         {
             mEnabled = true;
             mRandomCriteria = false;
+            mMinRandOptions = 0;
+            mMaxRandOptions = 0;
+            mOptionScoreData = null;
 
             base.Reset();
         }
@@ -236,6 +302,24 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
                     crit.Reset();
 
                     criteria.Add(crit);
+                }
+
+                return criteria;
+            }
+        }
+
+        public static Dictionary<string, SimSelection.ICriteria> StringList
+        {
+            get
+            {
+                Dictionary<string, SimSelection.ICriteria> criteria = new Dictionary<string, SimSelection.ICriteria>();
+
+                foreach (SimSelection.ICriteria crit in Common.DerivativeSearch.Find<SimSelection.ICriteria>())
+                {
+                    if (string.IsNullOrEmpty(crit.Name)) continue;
+
+                    crit.Reset();
+                    criteria.Add(crit.GetType().Name, crit);
                 }
 
                 return criteria;

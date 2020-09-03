@@ -624,9 +624,19 @@ namespace NRaas.CommonSpace.Tasks
                 }
                 else if (simDesc.Service is Butler)
                 {
-                    if (Instantiation.AttemptToPutInSafeLocation(sim, true))
+                    ButlerSituation sit = sim.GetSituationOfType<ButlerSituation>();
+
+                    Lot workingLot = sit != null ? sit.Lot : null;
+
+                    if (Instantiation.AttemptToPutInSafeLocation(sim, Instantiation.AttemptToFindSafeLocation(workingLot, false), true))
                     {
                         sim.Motives.RecreateMotives(sim);
+
+                        if (sit != null)
+                        {
+                            sit.SetMotivesAndCommodities();
+                        }
+
                         sim.SetObjectToReset();
                     }
 
@@ -772,7 +782,7 @@ namespace NRaas.CommonSpace.Tasks
                             {
                                 if (!(buff is BuffCustomizable.BuffInstanceCustomizable))
                                 {
-                                mBuffs.Add(buff);
+                                    mBuffs.Add(buff);
                                 }
                             }
                         }

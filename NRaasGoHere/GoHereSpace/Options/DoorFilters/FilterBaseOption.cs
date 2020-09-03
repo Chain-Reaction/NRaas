@@ -24,6 +24,11 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             //Value = value;
         }
 
+        public override void Export(Persistence.Lookup settings)
+        {
+            return;
+        }
+
         protected override OptionResult Run(GameHitParameters<TTarget> parameters)
         {
             Value = Value;           

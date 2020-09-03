@@ -1,4 +1,5 @@
 ﻿using NRaas.CommonSpace.Options;
+using NRaas.ChemistrySpace.Booters;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Interfaces;
 using System;
@@ -15,11 +16,23 @@ namespace NRaas
         { }
 
         public class TotalReset : ProtoResetSettings<GameObject>
-        { }
+        {
+            public override string GetTitlePrefix()
+            {
+                return "ResetSettings";
+            }
+        }
 
         public static void ResetSettings()
         {
             Chemistry.ResetSettings();
+
+            Chemistry.Init();
+
+            BlendProfileBooter.Init();
+            FilterValueAcquirementBooter.Init();
+            ProfileTemplateBooter.Init();
+            ResourceClassificationBooter.Init();
         }
 
         /* TODO
