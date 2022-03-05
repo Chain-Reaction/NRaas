@@ -22,7 +22,7 @@ namespace NRaas.TaggerSpace.Options.FilterOptions
         {
             foreach(KeyValuePair<string, bool> pair in FilterHelper.GetFilters())
             {
-                if (pair.Key.StartsWith("nraas")) return true;
+                if (pair.Key.StartsWith("nraastagger")) return true;
             }
 
             return false;

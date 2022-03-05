@@ -48,10 +48,23 @@ namespace NRaas.StoryProgressionSpace.Helpers
                 if (product.Price > maximumPrice) continue;
 
                 // 319e4f1d:00000000:00000000000f5f40
-                if(product.ObjectInstanceName == "RCcart") continue;
+                if (product.ObjectInstanceName == "RCcart") continue;
 
-                // 319e4f1d:00000000:00000000000f5e5a
+                if (product.ObjectInstanceName == "Tractor") continue;
+
+                if (product.ObjectInstanceName == "Gondola") continue;
+
+                // These are just in case the above fails since I can't confirm the instance names without the packages.
+
+                // Tractor decrapped
                 if (product.ProductResourceKey != ResourceKey.kInvalidResourceKey && product.ProductResourceKey.ToString() == "319e4f1d:00000000:00000000000f5e5a") continue;
+                // Tractor EA
+                if (product.ProductResourceKey != ResourceKey.kInvalidResourceKey && product.ProductResourceKey.ToString() == "319e4f1d:01000000:00000000000f5e5a") continue;
+
+                // Gondola EA
+                if (product.ProductResourceKey != ResourceKey.kInvalidResourceKey && product.ProductResourceKey.ToString() == "319e4f1d:01000000:00000000000f6172") continue;
+                // Gondola decrapped
+                if (product.ProductResourceKey != ResourceKey.kInvalidResourceKey && product.ProductResourceKey.ToString() == "319e4f1d:00000000:00000000000f6172") continue;
 
                 // Common.WriteLog("Product: " + product.CatalogName + " ResKey: " + product.ProductResourceKey + " Instance: " + product.ObjectInstanceName);                
 

@@ -22,27 +22,35 @@ using System.Text;
 
 namespace NRaas.OverwatchSpace.Loadup
 {
-    public class ClearInvalidSocialWorkerServiceRequests : ImmediateLoadupOption
+    public class ClearInvalidBurgularServiceRequests : ImmediateLoadupOption
     {
         public override string GetTitlePrefix()
         {
-            return "ClearInvalidSocialWorkerServiceRequests";
+            return "ClearInvalidBurgularServiceRequests";
         }
 
         public override void OnWorldLoadFinished()
         {
             Overwatch.Log(GetTitlePrefix());
 
-            SocialWorkerChildAbuse service = SocialWorkerChildAbuse.Instance;
+            Burglar service = Burglar.Instance;
             List<ulong> remove = new List<ulong>();
             if (service != null)
             {
                 foreach (KeyValuePair<ulong, Service.ServiceRequest> pair in service.mLotsRequested)
                 {
                     Lot lot = LotManager.GetLot(pair.Key);
-                    if (lot == null || (lot != Household.ActiveHouseholdLot))
+
+                    if (lot == null)
                     {
                         remove.Add(pair.Key);
+                    }
+                    else
+                    {
+                        if (lot != Household.ActiveHouseholdLot)
+                        {
+                            remove.Add(pair.Key);
+                        }
                     }
                 }
 
@@ -56,7 +64,7 @@ namespace NRaas.OverwatchSpace.Loadup
                     else
                     {
                         service.mLotsRequested.Remove(num);
-                    }
+                    }                    
                 }
 
                 if (remove.Count > 0)

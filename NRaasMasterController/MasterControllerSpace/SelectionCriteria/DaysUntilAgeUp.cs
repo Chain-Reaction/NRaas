@@ -17,7 +17,7 @@ using System.Text;
 
 namespace NRaas.MasterControllerSpace.SelectionCriteria
 {
-    public class DaysUntilAgeUp : SelectionTestableOptionList<Enemies.Item, int, int>
+    public class DaysUntilAgeUp : SelectionTestableOptionList<DaysUntilAgeUp.Item, int, int>
     {
         public override string GetTitlePrefix()
         {

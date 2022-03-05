@@ -409,7 +409,7 @@ namespace NRaas.StoryProgressionSpace.Managers
         {
             if (sim == null) return false;
 
-            if (!lot.IsOpenVenue()) 
+            if (lot.IsCommunityLot && !lot.IsOpenVenue()) 
             {
                 stats.IncStat("Not Open Venue");
                 return false;
@@ -451,9 +451,15 @@ namespace NRaas.StoryProgressionSpace.Managers
                 case CommercialLotSubType.kEP3_DanceClubPool:
                 case CommercialLotSubType.kPool:
                 case CommercialLotSubType.kFishingSpot:
-                    if (sim.TraitManager.HasElement(TraitNames.CantStandArt))
+                case CommercialLotSubType.kSmallPark:
+                case CommercialLotSubType.kEP5_DogPark:
+                case CommercialLotSubType.kEP5_CatJungle:
+                case CommercialLotSubType.kEP1_ChineseGarden:
+                case CommercialLotSubType.kEP10_Diving:
+                case CommercialLotSubType.kBigPark:
+                    if (sim.TraitManager.HasElement(TraitNames.HatesOutdoors))
                     {
-                        stats.IncStat("CantStandArt");
+                        stats.IncStat("HatesOutdoors");
                         return false;
                     }
                     break;

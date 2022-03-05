@@ -8,6 +8,7 @@ using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
+using Sims3.Gameplay.Objects.Electronics;
 using Sims3.Gameplay.Objects.RabbitHoles;
 using Sims3.SimIFace;
 using System;
@@ -26,6 +27,7 @@ namespace NRaas.TaggerSpace.Interactions
             interactions.Add<ComboCityhallPoliceMilitary>(Singleton);
             interactions.Add<AdminstrationCenter>(Singleton);
             interactions.Add<Lot>(Singleton);
+            interactions.Add<Computer>(Singleton);
         }
 
         protected override bool Test(IActor actor, GameObject target, GameObjectHit hit, ref GreyedOutTooltipCallback greyedOutTooltipCallback)

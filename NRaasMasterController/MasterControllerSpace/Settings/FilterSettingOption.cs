@@ -1,5 +1,6 @@
 ﻿using NRaas.CommonSpace.Helpers;
 using NRaas.CommonSpace.Options;
+using NRaas.CommonSpace.Selection;
 using NRaas.MasterControllerSpace.Settings.Filters;
 using NRaas.MasterControllerSpace.SelectionCriteria;
 using Sims3.Gameplay.Abstracts;
@@ -108,6 +109,21 @@ namespace NRaas.MasterControllerSpace.Settings
             }
 
             SimSelection.ICriteria selection = new SimSelection.CriteriaSelection(Name, filters, callingMod).SelectSingle();
+            if (selection == null) return null;
+
+            return selection;
+        }
+
+        public virtual CommonSelection<SavedFilter.Item>.Results RunMultipleFilterSelection(string callingMod)
+        {
+            List<SavedFilter.Item> filters = new List<SavedFilter.Item>();
+
+            foreach (SavedFilter filter in NRaas.MasterController.Settings.mFilters)
+            {
+                filters.Add(new SavedFilter.Item(filter));
+            }
+
+            CommonSelection<SavedFilter.Item>.Results selection = new CommonSelection<SavedFilter.Item>(Name, filters).SelectMultiple();
             if (selection == null) return null;
 
             return selection;

@@ -1,4 +1,5 @@
 ﻿using NRaas.CommonSpace.Options;
+using NRaas.CommonSpace.Selection;
 using NRaas.MasterControllerSpace.SelectionCriteria;
 using NRaas.MasterControllerSpace.Sims;
 using Sims3.Gameplay.Abstracts;
@@ -38,10 +39,14 @@ namespace NRaas.MasterControllerSpace.Settings.Filters
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
-            SimSelection.ICriteria selection = base.RunFilterSelection(callingMod);
-            if (selection == null) return OptionResult.Failure;
+            CommonSelection<SavedFilter.Item>.Results selection = base.RunMultipleFilterSelection(callingMod);
+            if (selection == null || selection.Count == 0) return OptionResult.Failure;
 
-            Delete(selection.Name);
+            foreach (SavedFilter.Item item in selection)
+            {
+                Delete(item.Name);
+            }
+
             return OptionResult.SuccessRetain;
         }
     }

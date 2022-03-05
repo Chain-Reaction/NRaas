@@ -23,7 +23,8 @@ namespace NRaas.TaggerSpace.Interactions
 
         public override void AddInteraction(Common.InteractionInjectorList interactions)
         {
-            interactions.AddRoot(Singleton);
+            // This breaks the tagger menu on the new compiler. I have NO idea why.
+            //interactions.AddRoot(Singleton);
         }
     }
 }

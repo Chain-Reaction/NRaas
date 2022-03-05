@@ -140,7 +140,7 @@ namespace NRaas.GoHereSpace.Helpers
 
             return tooltip;
         }
-        
+
         public static void AboutToPlanRouteCallback(Route r, string routeType, Vector3 point)
         {
             if (r == null || r.Follower == null) return;
@@ -173,16 +173,16 @@ namespace NRaas.GoHereSpace.Helpers
                 if (currentRoom == 0) currentRoom = destRoom;
                 bool allow = false;
                 foreach (CommonDoor door in lot.GetObjectsInRoom<CommonDoor>(currentRoom))
-            {
-                if (door != null)
                 {
+                    if (door != null)
+                    {
                         CommonDoor.tSide side;
                         door.GetSideOfDoorInRoom(currentRoom, out side);
                         if (side != CommonDoor.tSide.Front) continue;
 
-                    DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId, false);
-                    if (settings != null)
-                    {
+                        DoorSettings settings = GoHere.Settings.GetDoorSettings(door.ObjectId, false);
+                        if (settings != null)
+                        {
                             if (!DoorSettings.TestPortalObject(router, currentRoom, door))
                             {
                                // r.AddObjectToForbiddenPortalList(door.ObjectId);
@@ -223,12 +223,12 @@ namespace NRaas.GoHereSpace.Helpers
                                 Common.Notify(router.FullName + ": denied");
                                 router.AddExitReason(ExitReason.CancelExternal);
                                 router.InteractionQueue.CancelAllInteractions();
-                        }
+                            }
                              */ 
                             //router.AddExitReason(ExitReason.CancelExternal);
                             continue;
+                        }
                     }
-                }
 
                     //allow = true;
                     //break;
@@ -246,9 +246,9 @@ namespace NRaas.GoHereSpace.Helpers
                 if (!router.IsInActiveHousehold)
                 {
                     router.InteractionQueue.CancelAllInteractions();
+                }
             }
-        }    
-         */
+             */ 
         }
 
 
@@ -282,14 +282,14 @@ namespace NRaas.GoHereSpace.Helpers
             public bool mMatchAllFilters = false;
             public bool mIsOneWayDoor = false;
             public SettingType mType = SettingType.Deny;
-            ObjectGuid mGUID;            
+            ObjectGuid mGUID;
             public int mDoorOpen = -1;
             public int mDoorClose = -1;
             public int mDoorCost = 0;
             public int mDoorTicketDuration = 120;
 
             public static void ValidateAndSetupDoors()
-            {                
+            {
                 List<ulong> removeSim = new List<ulong>();
 
                 foreach (ObjectGuid guid in new List<ObjectGuid>(GoHere.Settings.mDoorSettings.Keys))
@@ -331,7 +331,7 @@ namespace NRaas.GoHereSpace.Helpers
                 }
 
                 TooltipHelper.AddListener(typeof(Door), Type.GetType("NRaas.GoHereSpace.Helpers.DoorPortalComponentEx,NRaasGoHere").GetMethod("SceneWindow_Hover"));
-            }            
+            }
 
             public bool IsSimAllowedThrough(ulong descId)
             {
@@ -398,7 +398,7 @@ namespace NRaas.GoHereSpace.Helpers
                             if (!allowed && desc2 != null && desc2.CreatedSim != null && desc2.CreatedSim.LotCurrent != null && !desc2.CreatedSim.IsRouting)
                             {
                                 if (VenueFlowUtility.IsSimInsideVenue(desc2.CreatedSim, desc2.CreatedSim.LotCurrent))
-                                {
+                                {                                    
                                     if (desc2.CreatedSim.LotCurrent == door.LotCurrent && desc2.CreatedSim.RoomId == door.RoomId)
                                     {
                                         //Sims3.Gameplay.Situations.PrivacySituation.RouteToAdjacentRoom(desc2.CreatedSim);
@@ -415,7 +415,7 @@ namespace NRaas.GoHereSpace.Helpers
                                 else
                                 {
                                     Sim.MakeSimGoHome(desc2.CreatedSim, false);
-                            }
+                                }
                             }
                         */
 
@@ -547,7 +547,7 @@ namespace NRaas.GoHereSpace.Helpers
                 {
                     return true;
                 }
-                
+
                 return false;
             }
 
@@ -594,7 +594,7 @@ namespace NRaas.GoHereSpace.Helpers
                         }
 
                         return true;
-                    }                    
+                    }
                 }
 
                 return false;
@@ -641,7 +641,7 @@ namespace NRaas.GoHereSpace.Helpers
                     }
 
                     mRegistered.Add(lot.LotId);
-                }                             
+                }
             }
 
             public static void OnPortalPathPlan(PortalPlanEventArgs args)
@@ -650,7 +650,7 @@ namespace NRaas.GoHereSpace.Helpers
                 {
                     CommonDoor portalObject = args.PortalObject as CommonDoor;
                     if (portalObject != null)
-                    {                        
+                    {
                         if (!TestPortalObject(args.Actor, args.RoomTo, portalObject))
                         {
                             if (portalObject.LotCurrent == LotManager.ActiveLot)
@@ -741,9 +741,9 @@ namespace NRaas.GoHereSpace.Helpers
                         if(loops >= 10) break;
                         loops++;
                         foreach (CommonDoor obj in sim.LotCurrent.GetObjectsInRoom<CommonDoor>(room))
-                    {
-                        if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
                         {
+                            if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
+                            {
                                 Common.Notify("Testing " + obj.CatalogName + " in " + srcRoom);
                             }
 
@@ -782,12 +782,12 @@ namespace NRaas.GoHereSpace.Helpers
                      */
 
                     /*
-                        // if front of door isn't in room, we don't care about it's filters
-                        if (sideInRoom != CommonDoor.tSide.Front)
-                        {
+                    // if front of door isn't in room, we don't care about it's filters
+                    if (sideInRoom != CommonDoor.tSide.Front)
+                    {
                         Common.Notify("Skipping " + obj.CatalogName + " because front tile is in other room");
-                            continue;
-                        }
+                        continue;
+                    }
                      */
 
                     /*
@@ -853,16 +853,16 @@ namespace NRaas.GoHereSpace.Helpers
                                 }
                             }
                         }
-
+                        
 
                         if (allowed && adjoiningAllowed) break;
                         //if (allowed) break;
-                    }
-
+                    }                         
+                    
                     if (allNull)
                     {
                         allowed = true;
-                    }
+                    }                    
 
                     if (sim.SimDescription.Gender == Sims3.SimIFace.CAS.CASAgeGenderFlags.Male)
                     {
@@ -872,61 +872,61 @@ namespace NRaas.GoHereSpace.Helpers
                     return allowed;
                 }
                 */
+                    return true;
+                }
                 return true;
-            }       
-                return true;
-        }        
-
-        public class Loader : Common.IWorldLoadFinished, Common.IExitBuildBuy
-        {
-            protected static void ReplaceComponent(Door door)
-            {
-                if (door.GetComponent<DoorPortalComponentEx>() != null) return;
-
-                if (door.GetComponent<Turnstile.TurnstileDoorPortalComponent>() != null) return;
-                if (door.GetComponent<MysteriousDeviceDoor.MysteriousDoorPortalComponent>() != null) return;
-
-                Door.DoorPortalComponent oldComponent = door.PortalComponent as Door.DoorPortalComponent;
-                
-                door.RemoveComponent<Door.DoorPortalComponent>();
-
-                ObjectComponents.AddComponent<DoorPortalComponentEx>(door, new object[0]);
-                
-                if (oldComponent != null)
-                {
-                    Door.DoorPortalComponent newComponent = door.PortalComponent as Door.DoorPortalComponent;
-                    if (newComponent != null)
-                    {
-                        newComponent.OwnerDoor = oldComponent.OwnerDoor;
-                    }
-                }               
             }
 
-            public void OnWorldLoadFinished()
+            public class Loader : Common.IWorldLoadFinished, Common.IExitBuildBuy
             {
-                foreach (Door door in Sims3.Gameplay.Queries.GetObjects<Door>())
+                protected static void ReplaceComponent(Door door)
                 {
-                    ReplaceComponent(door);
-                }
-            }     
-       
-            public void OnExitBuildBuy(Lot lot)
-            {
-                Door[] doors = lot.GetObjects<Door>();
-                foreach (Door door in doors)
-                {
-                    ReplaceComponent(door);
+                    if (door.GetComponent<DoorPortalComponentEx>() != null) return;
+
+                    if (door.GetComponent<Turnstile.TurnstileDoorPortalComponent>() != null) return;
+                    if (door.GetComponent<MysteriousDeviceDoor.MysteriousDoorPortalComponent>() != null) return;
+
+                    Door.DoorPortalComponent oldComponent = door.PortalComponent as Door.DoorPortalComponent;
+
+                    door.RemoveComponent<Door.DoorPortalComponent>();
+
+                    ObjectComponents.AddComponent<DoorPortalComponentEx>(door, new object[0]);
+
+                    if (oldComponent != null)
+                    {
+                        Door.DoorPortalComponent newComponent = door.PortalComponent as Door.DoorPortalComponent;
+                        if (newComponent != null)
+                        {
+                            newComponent.OwnerDoor = oldComponent.OwnerDoor;
+                        }
+                    }
                 }
 
-                foreach (Sim sim in LotManager.Actors)
+                public void OnWorldLoadFinished()
                 {
-                    if (sim != null && sim.mAllowedRooms != null)
+                    foreach (Door door in Sims3.Gameplay.Queries.GetObjects<Door>())
                     {
-                        sim.mAllowedRooms.Remove(lot.mLotId);
+                        ReplaceComponent(door);
+                    }
+                }
+
+                public void OnExitBuildBuy(Lot lot)
+                {
+                    Door[] doors = lot.GetObjects<Door>();
+                    foreach (Door door in doors)
+                    {
+                        ReplaceComponent(door);
+                    }
+
+                    foreach (Sim sim in LotManager.Actors)
+                    {
+                        if (sim != null && sim.mAllowedRooms != null)
+                        {
+                            sim.mAllowedRooms.Remove(lot.mLotId);
+                        }
                     }
                 }
             }
         }
-    }
     }
 }

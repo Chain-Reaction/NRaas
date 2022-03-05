@@ -164,6 +164,19 @@ namespace NRaas.OverwatchSpace.Loadup
                                             Overwatch.Log(" Invalid Meteor Shower Alarm");
                                             removed = true;
                                         }
+                                    } else
+                                    {
+                                        info = typeof(TrickOrTreatSituation).GetMethod("SendNPCTrickOrTreaters", BindingFlags.Static | BindingFlags.Public);
+                                        if (callback.Method == info)
+                                        {
+                                            if (TrickOrTreatSituation.NPCTrickOrTreatAlarm != timer.Handle)
+                                            {
+                                                remove[list.Key] = manager;
+
+                                                Overwatch.Log(" Invalid Trick or Treat Alarm");
+                                                removed = true;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -207,7 +220,7 @@ namespace NRaas.OverwatchSpace.Loadup
                 handle.Value.RemoveAlarm(handle.Key);
             }
 
-            // cleanup trick or treating fail
+            // additional cleanup for trick or treating fail
             HolidayManager instance = HolidayManager.Instance;
             if (instance != null && AlarmManager.Global != null)
             {

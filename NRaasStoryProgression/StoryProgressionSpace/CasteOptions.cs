@@ -482,7 +482,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAnyCareerOfLevel(SimDescription sim, Dictionary<OccupationNames, List<int>> careers)
             {
-                if (careers.Count == 0)
+                if (sim == null || sim.CareerManager == null || sim.CareerManager.Occupation == null || careers.Count == 0)
                 {                    
                     return false;
                 }
@@ -491,7 +491,7 @@ namespace NRaas.StoryProgressionSpace
 
                 foreach (KeyValuePair<OccupationNames, List<int>> entry in careers)
                 {
-                    if (entry.Value.Count == 0)
+                    if (entry.Value == null || entry.Value.Count == 0)
                     {                        
                         continue;
                     }                   
@@ -504,7 +504,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAllCareersOfLevel(SimDescription sim, Dictionary<OccupationNames, List<int>> careers)
             {
-                if (careers.Count == 0)
+                if (sim == null || sim.CareerManager == null || sim.CareerManager.Occupation == null || careers.Count == 0)
                 {
                     return false;
                 }
@@ -513,7 +513,7 @@ namespace NRaas.StoryProgressionSpace
 
                 foreach (KeyValuePair<OccupationNames, List<int>> entry in careers)
                 {
-                    if (entry.Value.Count == 0)
+                    if (entry.Value == null || entry.Value.Count == 0)
                     {
                         continue;
                     }
@@ -541,7 +541,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAnySkill(SimDescription sim, List<SkillNames> skills)
             {
-                if (sim.SkillManager == null || skills.Count == 0)
+                if (sim == null || sim.SkillManager == null || skills == null || skills.Count == 0)
                 {
                     return false;
                 }
@@ -556,7 +556,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAnySkillOfLevel(SimDescription sim, Dictionary<SkillNames, List<int>> skills)
             {
-                if (sim.SkillManager == null || skills.Count == 0)
+                if (sim == null || sim.SkillManager == null || skills == null || skills.Count == 0)
                 {
                     return false;
                 }
@@ -565,7 +565,7 @@ namespace NRaas.StoryProgressionSpace
 
                 foreach (KeyValuePair<SkillNames, List<int>> entry in skills)
                 {
-                    if (entry.Value.Count == 0)
+                    if (entry.Value == null || entry.Value.Count == 0)
                     {
                         continue;
                     }
@@ -578,7 +578,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAllSkillsOfLevel(SimDescription sim, Dictionary<SkillNames, List<int>> skills)
             {
-                if (sim.SkillManager == null || skills.Count == 0)
+                if (sim == null || sim.SkillManager == null || skills == null || skills.Count == 0)
                 {
                     return false;
                 }
@@ -587,7 +587,7 @@ namespace NRaas.StoryProgressionSpace
 
                 foreach (KeyValuePair<SkillNames, List<int>> entry in skills)
                 {
-                    if (entry.Value.Count == 0)
+                    if (entry.Value == null || entry.Value.Count == 0)
                     {
                         continue;
                     }
@@ -600,7 +600,7 @@ namespace NRaas.StoryProgressionSpace
 
             public bool HasAnyZodiac(SimDescription sim, List<Zodiac> zodiacs)
             {
-                if (zodiacs.Count == 0)
+                if (sim == null || zodiacs.Count == 0)
                 {
                     return false;
                 }
@@ -613,7 +613,7 @@ namespace NRaas.StoryProgressionSpace
             public bool HasAllZodiacs(SimDescription sim, List<Zodiac> zodiacs)
             {
                 // same case as the careers
-                if (zodiacs.Count == 0)
+                if (sim == null || zodiacs.Count == 0)
                 {
                     return false;
                 }

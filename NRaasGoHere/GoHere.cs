@@ -26,7 +26,7 @@ using System.Text;
 
 namespace NRaas
 {
-    public class GoHere : Common, Common.IPreLoad, Common.IWorldLoadFinished
+    public class GoHere : Common, Common.IPreLoad, Common.IWorldLoadFinished, Common.IDelayedWorldLoadFinished
     {
         static Common.MethodStore sStoryProgressionAllowPushToLot = new Common.MethodStore("NRaasStoryProgression", "NRaas.StoryProgression", "AllowPushToLot", new Type[] { typeof(SimDescription), typeof(Lot) });
 
@@ -70,9 +70,9 @@ namespace NRaas
             kDebugging = Settings.Debugging;
             FilterHelper.kFilterCacheTime = GoHere.Settings.mFilterCacheTime;
 
-            FilterHelper.UpdateFilters();
+            //FilterHelper.UpdateFilters();
 
-            DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
+            //DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
 
             Route.AboutToPlanCallback = (Route.AboutToPlanDelegate)Delegate.Combine(Route.AboutToPlanCallback, new Route.AboutToPlanDelegate(DoorPortalComponentEx.AboutToPlanRouteCallback));
             //Route.PostPlanCallback += DoorPortalComponentEx.OnPostPlan;
@@ -85,6 +85,11 @@ namespace NRaas
             {
                 GoHere.Settings.mOrigBoatRoutingDistance = Boat.kDistanceToDestinationSoSimWillBoat;
             }
+        }
+
+        public void OnDelayedWorldLoadFinished()
+        {
+            DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
         }
 
         public static bool ExternalAllowPush(SimDescription sim, Lot lot)

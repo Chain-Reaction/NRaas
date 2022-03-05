@@ -56,7 +56,12 @@ namespace NRaas.OverwatchSpace.Loadup
                     {
                         service.mLotsRequested.Remove(num);
                     }
-                    Overwatch.Log("Removed invalid Time Traveler service request");
+                }
+
+                if(remove.Count > 0)
+                {
+                    Overwatch.Log("Removed " + remove.Count + " invalid Time Traveler service request");
+                    remove.Clear();
                 }
             }
         }

@@ -18,7 +18,7 @@ namespace NRaas.MasterControllerSpace.Sims.Intermediate.Careers.AfterschoolActiv
 {
     public class AddAfterSchoolActivities : SimFromList, IAfterschoolActivitiesOption
     {
-        static Common.MethodStore sCareerAfterschoolActivityList = new Common.MethodStore("NRaasCareer", "Careers", "GetAfterSchoolActivityList", new Type[] { typeof (SimDescription) });
+        static Common.MethodStore sCareerAfterschoolActivityList = new Common.MethodStore("NRaasCareer", "NRaas.Careers", "GetAfterSchoolActivityList", new Type[] { typeof (SimDescription) });
 
         IEnumerable<AfterSchoolActivityCriteria.Item> mSelection = null;
 
