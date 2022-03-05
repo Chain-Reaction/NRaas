@@ -1,24 +1,5 @@
-using Sims3.Gameplay;
-using Sims3.Gameplay.Abstracts;
-using Sims3.Gameplay.Actors;
-using Sims3.Gameplay.ActorSystems;
-using Sims3.Gameplay.ActorSystems.Children;
-using Sims3.Gameplay.Autonomy;
-using Sims3.Gameplay.Careers;
-using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Core;
-using Sims3.Gameplay.ObjectComponents;
-using Sims3.Gameplay.Services;
-using Sims3.Gameplay.Skills;
-using Sims3.Gameplay.Situations;
-using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
-using Sims3.SimIFace.CAS;
-using Sims3.UI;
-using Sims3.UI.GameEntry;
-using Sims3.UI.Hud;
 using System;
-using System.Collections.Generic;
 
 namespace NRaas.CommonSpace.Tasks
 {

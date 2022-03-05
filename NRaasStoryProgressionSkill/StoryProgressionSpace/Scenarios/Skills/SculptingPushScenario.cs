@@ -35,7 +35,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Skills
         public SculptingPushScenario()
         { }
         protected SculptingPushScenario(SculptingPushScenario scenario)
-            : base (scenario)
+            : base(scenario)
         { }
 
         public override string GetTitlePrefix(PrefixType type)

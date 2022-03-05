@@ -13,41 +13,41 @@ using System;
 
 namespace NRaas.StoryProgressionSpace.Interactions
 {
-	public class CreateSculptureEx : SculptingStation.CreateSculpture, Common.IPreLoad //Common.IAddInteraction
-	{
-		//public static new readonly InteractionDefinition Singleton = new Definition ();
+    public class CreateSculptureEx : SculptingStation.CreateSculpture, Common.IPreLoad //Common.IAddInteraction
+    {
+        //public static new readonly InteractionDefinition Singleton = new Definition ();
 
-		public void OnPreLoad()
-		{
-			Tunings.Inject<SculptingStation, SculptingStation.CreateSculpture.Definition, Definition>(false);
-		}
+        public void OnPreLoad()
+        {
+            Tunings.Inject<SculptingStation, SculptingStation.CreateSculpture.Definition, Definition>(false);
+        }
 
-		/*public void AddInteraction(Common.InteractionInjectorList interactions)
-		{
-			interactions.Replace<SculptingStation, SculptingStation.CreateSculpture.Definition>(Singleton);
-		}*/
+        /*public void AddInteraction(Common.InteractionInjectorList interactions)
+        {
+            interactions.Replace<SculptingStation, SculptingStation.CreateSculpture.Definition>(Singleton);
+        }*/
 
-		public new class Definition : SculptingStation.CreateSculpture.Definition
-		{
+        public new class Definition : SculptingStation.CreateSculpture.Definition
+        {
 			public Definition(string menuText, SculptingSkill.SkillSculptureData sculpture, SculptureComponent.SculptureMaterial material, string[] path) : base(menuText, sculpture, material, path)
-			{
-			}
-			public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
-			{
-				InteractionInstance na = new CreateSculptureEx();
-				na.Init(ref parameters);
-				return na;
-			}
-		}
-		public override void Cleanup ()
-		{
-			base.Cleanup ();
-			if (mCurrentStateMachine != null)
-			{
-				//mCurrentStateMachine.RequestState ("x", "Exit Sculpt");
-				mCurrentStateMachine.Dispose ();
-				mCurrentStateMachine = null;
-			}
-		}
-	}
+            {
+            }
+            public override InteractionInstance CreateInstance(ref InteractionInstanceParameters parameters)
+            {
+                InteractionInstance na = new CreateSculptureEx();
+                na.Init(ref parameters);
+                return na;
+            }
+        }
+        public override void Cleanup()
+        {
+            base.Cleanup();
+            if (mCurrentStateMachine != null)
+            {
+                //mCurrentStateMachine.RequestState ("x", "Exit Sculpt");
+                mCurrentStateMachine.Dispose();
+                mCurrentStateMachine = null;
+            }
+        }
+    }
 }
