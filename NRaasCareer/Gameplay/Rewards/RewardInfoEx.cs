@@ -1,9 +1,5 @@
-﻿using NRaas.Gameplay.Opportunities;
-using Sims3.Gameplay.Actors;
-using System;
+﻿using Sims3.Gameplay.Actors;
 using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NRaas.Gameplay.Rewards
 {

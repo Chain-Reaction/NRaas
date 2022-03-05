@@ -1,17 +1,14 @@
-﻿using NRaas.CareerSpace;
-using NRaas.CareerSpace.Booters;
-using NRaas.Gameplay.Careers;
+﻿using NRaas.Gameplay.Careers;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Careers;
-using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Interactions;
+using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI.Hud;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NRaas.Gameplay.Tones
 {

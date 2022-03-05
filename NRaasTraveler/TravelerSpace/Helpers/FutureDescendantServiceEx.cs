@@ -853,8 +853,8 @@ namespace NRaas.TravelerSpace.Helpers
 
                 if (!Traveler.Settings.mDisableDescendantModification || (Traveler.Settings.mDisableDescendantModification && !ActiveHouseholdHasDescendants()))
                 {
-                // Custom
-                ProcessDescendantHouseholds(ths);
+                    // Custom
+                    ProcessDescendantHouseholds(ths);
                 }
 
                 ths.BuildAvailableLotLists();

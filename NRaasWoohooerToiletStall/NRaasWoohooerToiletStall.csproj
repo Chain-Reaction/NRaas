@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{974E90C8-935D-43DD-A840-EE036C1C3A80}</ProjectGuid>
+    <ProjectGuid>{72EFD71C-2F81-400C-B170-B6CD1DE8A2E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NRaas</RootNamespace>
@@ -82,6 +82,9 @@
     <WarningLevel>4</WarningLevel>
     <AssemblyName>NRaasWoohooerShowerOutdoor</AssemblyName>
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>NRaasWoohooerToiletStall</AssemblyName>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VersionStamp.cs" />
@@ -89,6 +92,9 @@
     <Compile Include="WoohooerSpace\Interactions\ToiletStallWooHoo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="NRaasWoohooer">
+      <HintPath>..\NRaasWoohooer\bin\x86\Release\NRaasWoohooer.dll</HintPath>
+    </Reference>
     <Reference Include="Sims3GameplaySystems">
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
     </Reference>
@@ -118,9 +124,6 @@
     </Reference>
     <Reference Include="UI">
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
-    </Reference>
-    <Reference Include="NRaasWoohooer">
-      <HintPath>..\NRaasWoohooer\bin\NRaasWoohooer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -159,8 +162,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="WoohooerSpace\Helpers\" />
-    <Folder Include="WoohooerSpace\Interactions\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

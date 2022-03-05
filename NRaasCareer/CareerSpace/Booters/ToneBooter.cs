@@ -1,32 +1,9 @@
-﻿using NRaas.CareerSpace.Interactions;
-using NRaas.CareerSpace.Interfaces;
-using NRaas.CareerSpace.Skills;
-using NRaas.CommonSpace.Booters;
-using NRaas.Gameplay.Careers;
-using NRaas.Gameplay.OmniSpace;
-using NRaas.Gameplay.OmniSpace.Metrics;
+﻿using NRaas.CommonSpace.Booters;
 using NRaas.Gameplay.Tones;
-using Sims3.Gameplay.Abstracts;
-using Sims3.Gameplay.Actors;
-using Sims3.Gameplay.ActorSystems;
-using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Careers;
-using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.EventSystem;
-using Sims3.Gameplay.Objects;
-using Sims3.Gameplay.Objects.Electronics;
-using Sims3.Gameplay.Objects.RabbitHoles;
-using Sims3.Gameplay.Opportunities;
-using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
-using Sims3.UI;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using System.Xml;
 
 namespace NRaas.CareerSpace.Booters
 {

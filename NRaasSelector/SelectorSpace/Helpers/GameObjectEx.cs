@@ -131,7 +131,8 @@ namespace NRaas.SelectorSpace.Tasks
                     }
                     else if ((activeActor != null) && activeActor.InteractionQueue.CanPlayerQueue())
                     {
-                        List<InteractionObjectPair> allInteractions = null;
+                        List<InteractionObjectPair> allInteractions = null;                        
+
                         if (ths.Charred)
                         {
                             allInteractions = ths.GetCharredInteractions(activeActor);

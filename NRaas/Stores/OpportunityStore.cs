@@ -1,16 +1,7 @@
-using NRaas.CommonSpace.Helpers;
-using Sims3.Gameplay.Actors;
-using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Opportunities;
-using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Utilities;
-using Sims3.SimIFace;
 using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Xml;
 
 namespace NRaas.CommonSpace.Stores
 {

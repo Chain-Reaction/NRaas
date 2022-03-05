@@ -1,14 +1,9 @@
-﻿using NRaas.CommonSpace.Booters;
-using NRaas.CommonSpace.Helpers;
-using NRaas.CareerSpace;
-using NRaas.CareerSpace.Booters;
-using NRaas.CareerSpace.Interactions;
+﻿using NRaas.CareerSpace.Interactions;
 using NRaas.CareerSpace.Interfaces;
 using NRaas.CareerSpace.OmniSpace;
-using NRaas.Gameplay.OmniSpace;
+using NRaas.CommonSpace.Helpers;
 using NRaas.Gameplay.OmniSpace.Metrics;
 using Sims3.CareerSpace.OmniSpace;
-using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
@@ -18,19 +13,16 @@ using Sims3.Gameplay.CelebritySystem;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
-using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Objects;
 using Sims3.Gameplay.Objects.Vehicles;
-using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Situations;
+using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
 using Sims3.UI;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NRaas.Gameplay.Careers
 {

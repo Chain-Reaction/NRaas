@@ -157,7 +157,7 @@ namespace NRaas.CupcakeSpace.Helpers
             {                
                 return container.AmountLeft == AmountLeftState.Full;
             }
- 
+
             Snack snackContainer = obj as Snack;            
             return ((snackContainer != null) && (snackContainer.HasFoodLeft()));*/
 			PreparedFood food = obj as PreparedFood;

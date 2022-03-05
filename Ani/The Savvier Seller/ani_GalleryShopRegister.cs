@@ -972,7 +972,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 base.StandardEntry(false);
                 base.BeginCommodityUpdates();
                 if (!this.Actor.RouteToObjectRadialRange(randomObjectFromList, 0f, UniversityWelcomeKit.kMaxRouteDistance))
-                {
+                {                    
                     return false;
                 }
                 this.Actor.RouteTurnToFace(randomObjectFromList.Position);
@@ -1265,7 +1265,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
         {
             [DoesntRequireTuning]
             public sealed class Definition : InteractionDefinition<IActor, StoreSetRegister, StoreSetRegister.HireClerk>
-            {
+            {                
                 public override string GetInteractionName(IActor a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
                     return CMStoreSet.LocalizeString("HireClerk");
@@ -1302,14 +1302,14 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
         {
             [DoesntRequireTuning]
             public sealed class Definition : ActorlessInteractionDefinition<IActor, StoreSetRegister, StoreSetRegister.FireClerk>
-            {
+            {                
                 public override string GetInteractionName(IActor a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
                     SimDescription simDescription = SimDescription.Find(target.mPreferredClerk);
                     if (simDescription == null)
                     {
                         return CMStoreSet.LocalizeString("FireClerkNoName", new object[0] { });
-                    }
+                    }                    
                     return CMStoreSet.LocalizeString("FireClerk", new object[]
                     {
                         simDescription.GetNameProxy()
@@ -1520,7 +1520,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
         public class StandOpenWithoutAnimation : ImmediateInteraction<Sim, StoreSetRegister>
         {
             public class Definition : ImmediateInteractionDefinition<Sim, StoreSetRegister, StandOpenWithoutAnimation>
-            {
+            {                
                 public override string GetInteractionName(Sim a, StoreSetRegister target, InteractionObjectPair interaction)
                 {
                     return CMStoreSet.LocalizeString("OpenInventory", new object[0] { });
@@ -1693,7 +1693,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
 
                 return true;
             }
-        }
+        }        
 
         #endregion Interactions
 
@@ -1909,7 +1909,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
             //Settings            
             base.AddInteraction(StoreSetRegister.SetName.Singleton);
             base.AddInteraction(StoreSetRegister.SetOwner.Singleton);
-            base.AddInteraction(StoreSetRegister.SetServingPrice.Singleton);
+            base.AddInteraction(StoreSetRegister.SetServingPrice.Singleton);            
             base.AddInteraction(StoreSetRegister.ToggleOpenClose.Singleton);
             base.AddInteraction(StoreSetRegister.StandOpenWithoutAnimation.Singleton);
 
@@ -1991,7 +1991,7 @@ namespace Sims3.Gameplay.Objects.TombObjects.ani_StoreSetRegister
                 num3 += 24f;
             }
             this.mClerkJobAlarmEarly = base.AddAlarm(num2, TimeUnit.Hours, new AlarmTimerCallback(this.SummonClerk), "Gallery clerk-summon alarm", AlarmType.AlwaysPersisted);
-            this.mClerkJobAlarmLate = base.AddAlarm(num3, TimeUnit.Hours, new AlarmTimerCallback(this.SummonClerk), "Gallery clerk-summon alarm", AlarmType.AlwaysPersisted);
+            this.mClerkJobAlarmLate = base.AddAlarm(num3, TimeUnit.Hours, new AlarmTimerCallback(this.SummonClerk), "Gallery clerk-summon alarm", AlarmType.AlwaysPersisted);           
             if (CMStoreSet.IsStoreOpen(this))
             {
                 this.mClerkJobFetchMidJobAlarm = base.AddAlarm(StoreSetRegister.kChefAlarmContinuousSummonFrequncy, TimeUnit.Minutes, new AlarmTimerCallback(this.SummonClerk), "Gallery clerk-summon alarm", AlarmType.AlwaysPersisted);

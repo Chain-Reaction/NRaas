@@ -1,14 +1,7 @@
-using NRaas.CommonSpace.Helpers;
 using Sims3.Gameplay.Academics;
-using Sims3.Gameplay.Actors;
-using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Interactions;
-using Sims3.Gameplay.Interfaces;
-using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
-using Sims3.UI.CAS;
 using Sims3.UI.Hud;
 using Sims3.UI.View;
 using System;

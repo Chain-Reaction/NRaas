@@ -40,7 +40,7 @@ namespace NRaas.TravelerSpace.Options.Descendants
         public void OnWorldLoadFinished()
         {
             Traveler.Settings.HandleDescendants(true);
-        }
+        }        
 
         public override ITitlePrefixOption ParentListingOption
         {
@@ -53,6 +53,6 @@ namespace NRaas.TravelerSpace.Options.Descendants
             if (GameUtils.IsFutureWorld()) return false;
 
             return base.Allow(parameters);
-        }
+        }        
     }
 }

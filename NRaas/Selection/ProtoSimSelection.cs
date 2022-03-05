@@ -93,7 +93,7 @@ namespace NRaas.CommonSpace.Selection
                 if (mNamespace == string.Empty && item.Name.StartsWith("nraas") && !Common.kDebugging) return false;
 
                 // remove filters from mods that didn't create them
-                if (((item.Name.StartsWith("nraas") && !item.Name.Contains(mNamespace)) || (mNamespace != string.Empty && !item.Name.StartsWith("nraas") && item.GetType().ToString().Contains("SavedFilter"))) && !Common.kDebugging) return false;
+                if (((item.Name.StartsWith("nraas") && !item.Name.Contains(mNamespace)) || (mNamespace != string.Empty && !item.Name.StartsWith("nraas") && item.GetType().ToString().Contains("SavedFilter"))) && !Common.kDebugging) return false;                
 
                 if (item.GetType().ToString().Contains("Any") && !mNamespace.Contains("Chemistry")) return false;
 

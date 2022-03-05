@@ -55,7 +55,6 @@ namespace NRaas.TravelerSpace.Helpers
             {
                 Check check = sChecks[0];
                 sChecks.RemoveAt(0);
-
                 SpeedTrap.Sleep();
 
                 try

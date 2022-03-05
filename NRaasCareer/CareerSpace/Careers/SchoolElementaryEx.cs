@@ -1,18 +1,11 @@
-﻿using NRaas.CommonSpace.Booters;
-using NRaas.CareerSpace.Interfaces;
+﻿using NRaas.CareerSpace.Interfaces;
 using NRaas.Gameplay.Careers;
-using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Core;
-using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
-using Sims3.UI;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NRaas.CareerSpace.Careers
 {

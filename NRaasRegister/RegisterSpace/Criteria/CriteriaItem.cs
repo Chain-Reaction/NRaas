@@ -79,6 +79,17 @@ namespace NRaas.RegisterSpace.Criteria
             set { }
         }
 
+        public int MinRandomOptions 
+        {
+            get { return 0; }
+            set { }
+        }
+        public int MaxRandomOptions 
+        {
+            get { return 0; }
+            set { } 
+        }
+
         public bool AllowCriteria()
         {
             return true;

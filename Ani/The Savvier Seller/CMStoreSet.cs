@@ -41,7 +41,7 @@ namespace ani_StoreSetRegister
         public static string LocalizeString(string name, params object[] parameters)
         {
             return Localization.LocalizeString("ani_StoreSet:" + name, parameters);
-        }
+        }       
         #endregion Localization
 
         #region PrintMessage

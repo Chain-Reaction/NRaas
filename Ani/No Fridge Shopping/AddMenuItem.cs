@@ -68,11 +68,11 @@ namespace ani_GroceryShopping
 
             //Add the interaction when buying a new object 
             //EventTracker.AddListener(EventTypeId.kBoughtObject, new ProcessEventDelegate(AddMenuItem.OnNewObject));
-        }
+            }
 
 
         /*protected static ListenerAction OnNewObject(Event e)
-        {
+            {
             GameObject o = e.TargetObject as GameObject;
 
             AddInteractions(o);
@@ -90,7 +90,7 @@ namespace ani_GroceryShopping
                     AddInteractionsToObjects(type, lot);
                 }
             }
-        }
+            }
 
         private static void OnPreLoad()
         {
@@ -104,16 +104,16 @@ namespace ani_GroceryShopping
                 InjectTuning<Grill, Grill_Have.Definition, OverridedGrill_Have.Definition>();
                 InjectTuning<FoodProcessor, FoodProcessor.FoodProcessor_Have.Definition, OverridedFoodProcessor_Have.Definition>();
                 if (GameUtils.IsInstalled(ProductVersion.EP5))
-                {
+            {
                     InteractionTuning tuning = AutonomyTuning.GetTuning (typeof(MakeGourmetFoodForPet.Definition), "Sims3.Gameplay.Objects.Appliances.MakeGourmetFoodForPet+Definition", typeof(Fridge));
                     if (tuning != null)
                     {
                         tuning.LoadFieldDisallowAutonomous(true);
                     }
-                }
+            }
 
                 if (Recipe.NameToRecipeHash.ContainsKey("WOBakeBreadCountry"))
-                {
+            {
                     ApplianceTypes.Add(typeof(WoodFireOven));
                     InjectTuning<WoodFireOven, WoodFireOven.WOBake.Definition, OverridedWOBakeDefinition>();
                 }
@@ -121,7 +121,7 @@ namespace ani_GroceryShopping
                 {
                     ApplianceTypes.Add(typeof(TeppanyakiGrill));
                     InjectTuning<TeppanyakiGrill, TeppanyakiGrill.TGCook.Definition, OverridedTGCookDefinition>();
-                }
+            }
 
                 char[] separator = new char[]{ ':' };
                 foreach (string current in SnackRequirements)
@@ -130,7 +130,7 @@ namespace ani_GroceryShopping
                     string key = array [0].Trim ();
                     Recipe recipe;
                     if (Recipe.NameToRecipeHash.TryGetValue(key, out recipe) && recipe.Ingredient1 == null)
-                    {
+            {
                         recipe.mNonPersistableData.mIngredient1 = recipe.InitIngredient(array[1].Trim());
                     }
                 }
@@ -144,7 +144,7 @@ namespace ani_GroceryShopping
             if (array != null)
             {
                 foreach (object obj in array)
-                {
+        {
                     AddInteractions(obj as GameObject, !onLoadup);
                 }
             }
@@ -152,26 +152,26 @@ namespace ani_GroceryShopping
 
         public static void AddInteractions(GameObject obj, bool checkForDup)
         {
-            if (obj != null && obj.Interactions != null)
+			if (obj != null && obj.Interactions != null)
             {
-                if (obj is Fridge)
+				if (obj is Fridge)
                 {
                     ReplaceInteraction<Fridge_Have.Definition>(obj, OverridedFridge_Have.Singleton, checkForDup);
                     ReplaceInteraction<Fridge_Prepare.PrepareDefinition>(obj, OverridedFridge_Prepare.PrepareSingleton, checkForDup);
                 }
-                else if (obj is Microwave)
+				else if (obj is Microwave)
                 {
                     ReplaceInteraction<Microwave_Have.Definition>(obj, OverridedMicrowave_Have.Singleton, checkForDup);
                 }
-                else if (obj is FoodProcessor)
+				else if (obj is FoodProcessor)
                 {
                     ReplaceInteraction<FoodProcessor.FoodProcessor_Have.Definition>(obj, OverridedFoodProcessor_Have.Singleton, checkForDup);
                 }
-                else if (obj is Stove)
+				else if (obj is Stove)
                 {
                     ReplaceInteraction<Stove_Have.Definition>(obj, OverridedStove_Have.Singleton, checkForDup);
                 }
-                else if (obj is Grill)
+				else if (obj is Grill)
                 {
                     ReplaceInteraction<Grill_Have.Definition>(obj, OverridedGrill_Have.Singleton, checkForDup);
                 }
@@ -183,6 +183,7 @@ namespace ani_GroceryShopping
                 {
                     ReplaceInteraction<TeppanyakiGrill.TGCook.Definition>(obj, OverridedTGCookDefinition.Singleton, checkForDup);
                 }
+
             }
         }
 

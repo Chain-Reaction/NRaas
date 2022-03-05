@@ -124,7 +124,7 @@ namespace NRaas.RegisterSpace.Helpers
 
                         if (taxiDrivers.ContainsKey(sim.SimDescriptionId)) continue;
 
-                        CommonCorrections(sim);
+                        CommonCorrections(sim);                                            
 
                         if (SimTypes.InServicePool(sim, ServiceType.GrimReaper)) continue;
 
@@ -153,7 +153,7 @@ namespace NRaas.RegisterSpace.Helpers
                         if (sim.AssignedRole != null && sim.AssignedRole is RolePaparazzi)
                         {
                             paps.Add(sim.SimDescriptionId);
-                        }
+                        }    
 
                         if (sim.AssignedRole != null) continue;                        
                         

@@ -480,9 +480,9 @@ namespace NRaas.TravelerSpace.Helpers
                     Photography photography = sim.SkillManager.GetSkill<Photography>(SkillNames.Photography);
                     if (photography != null)
                     {
-                        // Forces a recalculation of the completion count
-                        // photography.mCollectionsCompleted = uint.MaxValue;
-						photography.mCollectionsCompleted = mCollectionsCompleted;
+						// Forces a recalculation of the completion count
+						// photography.mCollectionsCompleted = uint.MaxValue;
+                        photography.mCollectionsCompleted = mCollectionsCompleted;
 
                         if (mSubjectRecords != null)
                         {

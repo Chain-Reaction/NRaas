@@ -93,7 +93,7 @@ namespace NRaas.TravelerSpace.Dialogs
 
                         OnTriggerOk();
                         return;
-                    }
+                    }                    
                 }
 
                 OnOKClick(sender, eventArgs);

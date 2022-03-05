@@ -47,6 +47,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <NoStdLib>true</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\NRaas\Common.cs">
@@ -132,6 +133,9 @@
     </Compile>
     <Compile Include="..\nraas\selection\ProtoSimSelection.cs">
       <Link>CommonSpace\Selection\ProtoSimSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\NRaas\Stores\SafeStore.cs">
+      <Link>CommonSpace\Stores\SafeStore.cs</Link>
     </Compile>
     <Compile Include="Economizer.cs" />
     <Compile Include="EconomizerSpace\Helpers\BusinessController.cs" />

@@ -1,11 +1,8 @@
 ﻿using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
-using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
-using System;
 
 namespace NRaas.CommonSpace.Helpers
 {

@@ -1,22 +1,15 @@
-﻿using NRaas.CommonSpace.Booters;
-using NRaas.CommonSpace.Helpers;
-using NRaas.CommonSpace.Stores;
-using NRaas.CareerSpace;
+﻿using NRaas.CareerSpace;
 using NRaas.CareerSpace.Booters;
 using NRaas.CareerSpace.Helpers;
+using NRaas.CommonSpace.Booters;
+using NRaas.CommonSpace.Stores;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Interactions;
-using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
-using Sims3.SimIFace.CAS;
-using Sims3.UI;
-using Sims3.UI.GameEntry;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 
 namespace NRaas
 {

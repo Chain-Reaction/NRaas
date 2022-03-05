@@ -127,6 +127,9 @@
     <Compile Include="..\NRaas\Helpers\OccultTypeHelper.cs">
       <Link>CommonSpace\Helpers\OccultTypeHelper.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\OccultUnicornEx.cs">
+      <Link>CommonSpace\Helpers\OccultUnicornEx.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\Persistence.cs">
       <Link>CommonSpace\Helpers\Persistence.cs</Link>
     </Compile>

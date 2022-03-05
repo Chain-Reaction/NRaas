@@ -7,11 +7,11 @@ namespace NRaas.CommonSpace.Helpers
 {
     public class Apartments
     {
-        static Common.MethodStore sGetApartmentDescriptionsBySimID = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentDescriptionsBySimID", new Type[] { typeof(ulong) }); // List<SimDescription>
-        static Common.MethodStore sGetApartmentDescriptionsByAptID = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentDescriptionsByAptID", new Type[] { typeof(ulong) }); // List<SimDescription>
-        static Common.MethodStore sGetApartmentIDForSim = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentIDForSim", new Type[] { typeof(ulong) }); // ulong
-        static Common.MethodStore sGetApartmentIDsForLot = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentIDsForLot", new Type[] { typeof(ulong) }); // List<ulong>
-        static Common.MethodStore sGetApartmentLotID = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetLotIDByAptID", new Type[] { typeof(ulong) }); // ulong
+        public static Common.MethodStore sGetApartmentDescriptionsBySimID = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentDescriptionsBySimID", new Type[] { typeof(ulong) }); // List<SimDescription>
+        public static Common.MethodStore sGetApartmentDescriptionsByAptID = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentDescriptionsByAptID", new Type[] { typeof(ulong) }); // List<SimDescription>
+        public static Common.MethodStore sGetApartmentIDForSim = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentIDForSim", new Type[] { typeof(ulong) }); // ulong
+        public static Common.MethodStore sGetApartmentIDsForLot = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetApartmentIDsForLot", new Type[] { typeof(ulong) }); // List<ulong>
+        public static Common.MethodStore sGetApartmentLotID = new Common.MethodStore("AniApartmentMod", "Ani.ApartmentMod", "GetLotIDByAptID", new Type[] { typeof(ulong) }); // ulong
 
         public static ulong GetLotIDByAptID(ulong id)
         {

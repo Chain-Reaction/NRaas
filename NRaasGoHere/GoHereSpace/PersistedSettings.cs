@@ -189,7 +189,7 @@ namespace NRaas.GoHereSpace
                         remove.Add(filter);
                     }
                 }
-
+                
                 foreach (string invalid in remove)
                 {
                     Common.DebugNotify("Removed invalid door filter: " + invalid);

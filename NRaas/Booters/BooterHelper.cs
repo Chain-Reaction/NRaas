@@ -1,6 +1,3 @@
-using NRaas.CommonSpace.Booters;
-using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using System;

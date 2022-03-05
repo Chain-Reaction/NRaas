@@ -1,14 +1,11 @@
-﻿using NRaas.CommonSpace.Helpers;
-using NRaas.CommonSpace.Skills;
-using NRaas.CareerSpace.Booters;
-using NRaas.CareerSpace.Interactions;
-using NRaas.CareerSpace.Interfaces;
+﻿using NRaas.CareerSpace.Interactions;
 using NRaas.CareerSpace.Situations;
+using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Skills;
 using NRaas.Gameplay.Opportunities;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.ActorSystems;
-using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Careers;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.CelebritySystem;
@@ -25,10 +22,8 @@ using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.UI;
-using Sims3.UI.Hud;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NRaas.CareerSpace.Skills
 {
@@ -719,7 +714,7 @@ namespace NRaas.CareerSpace.Skills
 
             Assassination skill;
             if (!direct)
-            {
+            {                
                 skill = actor.SkillManager.GetSkill<Assassination>(Assassination.StaticGuid);
             }
             else

@@ -269,13 +269,16 @@
       <HintPath>..\Sims3\Compiler\0xF7C3ADE896D4E765_UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NRaasMasterController">
-      <HintPath>..\NRaasMasterController\bin\x86\Release\NRaasMasterController.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CommonSpace\Tasks\" />
     <Folder Include="StringTables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NRaasMasterController\NRaasMasterController.csproj">
+      <Project>{05f375f2-3c0d-4dcc-972a-79bdaba88c47}</Project>
+      <Name>NRaasMasterController</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

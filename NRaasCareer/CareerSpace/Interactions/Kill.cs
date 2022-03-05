@@ -1,10 +1,5 @@
-﻿using NRaas.CommonSpace.Helpers;
-using NRaas.CareerSpace.Booters;
-using NRaas.CareerSpace.Helpers;
-using NRaas.CareerSpace.Interfaces;
-using NRaas.CareerSpace.Skills;
-using NRaas.Gameplay.Careers;
-using NRaas.Gameplay.OmniSpace.Metrics;
+﻿using NRaas.CareerSpace.Skills;
+using NRaas.CommonSpace.Helpers;
 using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Academics;
@@ -23,16 +18,11 @@ using Sims3.Gameplay.Objects.Environment;
 using Sims3.Gameplay.Roles;
 using Sims3.Gameplay.Seasons;
 using Sims3.Gameplay.Socializing;
-using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
 using Sims3.SimIFace.Enums;
-using Sims3.UI;
-using Sims3.UI.Controller;
-using Sims3.UI.Hud;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NRaas.CareerSpace.Interactions
 {
