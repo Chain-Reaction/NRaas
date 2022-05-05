@@ -8,8 +8,8 @@
     <ProjectGuid>{197070E8-E58C-4AD5-AF12-B140BE42A815}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AniSimsDrinks</RootNamespace>
-    <AssemblyName>AniSimsDrinks</AssemblyName>
+    <RootNamespace>Alcohol</RootNamespace>
+    <AssemblyName>Alcohol</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -96,9 +96,9 @@
       <HintPath>..\..\Sims3\Compiler\0xB9C90FDC6793BC0A_Sims3GameplayObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="0x0CAE1C361E05B2B3_Sims3StoreObjects">
+    <Reference Include="0x0CAE1C361E05B2B3_Sims3StoreObjects">
       <HintPath>..\..\Sims3\Compiler\0x0CAE1C361E05B2B3_Sims3StoreObjects.dll</HintPath>
-	  <Private>False</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0xC356DF69B70ADD42_SimIFace">
       <HintPath>..\..\Sims3\Compiler\0xC356DF69B70ADD42_SimIFace.dll</HintPath>
