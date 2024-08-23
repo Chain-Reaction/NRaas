@@ -1,4 +1,4 @@
-﻿using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Helpers;
 using NRaas.CommonSpace.ScoringMethods;
 using NRaas.WoohooerSpace.Helpers;
 using NRaas.WoohooerSpace.Interactions;
@@ -597,57 +597,73 @@ namespace NRaas.WoohooerSpace.Helpers
             {
                 choice = Woohooer.Settings.mRiskyPregnancyChoice;
                 playChimes = false;
-            }            
+            }
+
+            Sim impregnated;
+            Sim inseminator;
+            bool switchIfFail;
 
             if (actor.SimDescription.Gender == target.SimDescription.Gender)
             {
                 switch (choice)
                 {
                     case PregnancyChoice.Initiator:
-                        return StartPregnancy(actor, target, isAutonomous, playChimes);
+                        impregnated = actor;
+                        inseminator = target;
+                        switchIfFail = false;
+                        break;
                     case PregnancyChoice.Target:
-                        return StartPregnancy(target, actor, isAutonomous, playChimes);
+                        impregnated = target;
+                        inseminator = actor;
+                        switchIfFail = false;
+                        break;
                     default:
-                        Sim a = actor;
-                        Sim b = target;
-
-                        switch(choice)
+                    case PregnancyChoice.Either:
+                        impregnated = actor;
+                        inseminator = target;
+                        switchIfFail = true;
+                        break;
+                    case PregnancyChoice.Random:
+                        if (RandomUtil.CoinFlip())
                         {
-                            case PregnancyChoice.Random:
-                                if (RandomUtil.CoinFlip())
-                                {
-                                    b = actor;
-                                    a = target;
-                                }
-                                break;
-                            case PregnancyChoice.TargetThenInitiator:
-                                b = actor;
-                                a = target;
-                                break;
-                        }
-
-                        Pregnancy pregnancy = StartPregnancy(a, b, isAutonomous, playChimes);
-                        if (pregnancy != null)
-                        {
-                            return pregnancy;
+                            impregnated = actor;
+                            inseminator = target;
                         }
                         else
                         {
-                            return StartPregnancy(b, a, isAutonomous, playChimes);
+                            impregnated = target;
+                            inseminator = actor;
                         }
+                        switchIfFail = true;
+                        break;
+                    case PregnancyChoice.TargetThenInitiator:
+                        impregnated = target;
+                        inseminator = actor;
+                        switchIfFail = true;
+                        break;
                 }
             }
             else
             {
+                switchIfFail = false;
                 if (actor.IsFemale)
                 {
-                    return StartPregnancy(actor, target, isAutonomous, playChimes);
+                    impregnated = actor;
+                    inseminator = target;
                 }
                 else
                 {
-                    return StartPregnancy(target, actor, isAutonomous, playChimes);
+                    impregnated = target;
+                    inseminator = actor;
                 }
             }
+
+            Pregnancy pregnancy = StartPregnancy(impregnated, inseminator, isAutonomous, playChimes);
+            if (pregnancy == null && switchIfFail)
+            {
+                pregnancy = StartPregnancy(inseminator, impregnated, isAutonomous, playChimes);
+            }
+            return pregnancy;
         }
 
         private static Pregnancy StartPregnancy(Sim woman, Sim man, bool isAutonomous, bool playChimes)
