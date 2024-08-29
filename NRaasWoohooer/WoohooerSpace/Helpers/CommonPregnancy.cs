@@ -118,7 +118,7 @@ namespace NRaas.WoohooerSpace.Helpers
 
                 int speciesIndex = PersistedSettings.GetSpeciesIndex(a);
 
-                PregnancyChoice pregnancyChoice = PregnancyChoice.Either;
+                PregnancyChoice pregnancyChoice = PregnancyChoice.InitiatorThenTarget;
 
                 switch (style)
                 {
@@ -223,7 +223,7 @@ namespace NRaas.WoohooerSpace.Helpers
                         return false;
                     }
 
-                    if ((a.SimDescription.Gender != target.SimDescription.Gender) || (pregnancyChoice != PregnancyChoice.Either))
+                    if ((a.SimDescription.Gender != target.SimDescription.Gender) || (pregnancyChoice != PregnancyChoice.InitiatorThenTarget))
                     {
                         if (autonomous)
                         {
@@ -616,7 +616,7 @@ namespace NRaas.WoohooerSpace.Helpers
                         inseminator = actor;
                         break;
                     default:
-                    case PregnancyChoice.Either:
+                    case PregnancyChoice.InitiatorThenTarget:
                         impregnated = actor;
                         inseminator = target;
                         switchIfFail = true;

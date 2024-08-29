@@ -204,8 +204,8 @@ namespace NRaas
         [Tunable, TunableComment("Defines when the Woohoo Interactions are available for romantic sims.  Choices: Default, Partner, Spouse, AnyRomantic")]
         public static MyLoveBuffLevel kWoohooInteractionLevel = MyLoveBuffLevel.Default;
 
-        [Tunable, TunableComment("Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, Either, Random, TargetThenInitiator (Either meaning the initiator then the target)")]
-        public static PregnancyChoice kTryForBabyPregnancyChoice = PregnancyChoice.Either;
+        [Tunable, TunableComment("Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, InitiatorThenTarget, TargetThenInitiator, Random")]
+        public static PregnancyChoice kTryForBabyPregnancyChoice = PregnancyChoice.InitiatorThenTarget;
 
         [Tunable, TunableComment("How much a trip to the matchmaker costs")]
         public static int kMatchmakerCost = 500;
@@ -270,8 +270,8 @@ namespace NRaas
         [Tunable, TunableComment("Whether to display the chance for Risky Woohoo on the menu interaction")]
         public static bool kShowRiskyChance = true;
 
-        [Tunable, TunableComment("Defines which sim is the first choice for pregnancy during a Risky Woohoo.  Choices: Initiator, Target, Either, Random, TargetThenInitiator (Either meaning the initiator then the target)")]
-        public static PregnancyChoice kRiskyPregnancyChoice = PregnancyChoice.Either;
+        [Tunable, TunableComment("Defines which sim is the first choice for pregnancy during a Risky Woohoo.  Choices: Initiator, Target, InitiatorThenTarget, TargetThenInitiator, Random")]
+        public static PregnancyChoice kRiskyPregnancyChoice = PregnancyChoice.InitiatorThenTarget;
 
         [Tunable, TunableComment("Whether to allow autonomous romantic interactions for actives on community lots")]
         public static bool kAllowAutonomousRomanceCommLot = true;
