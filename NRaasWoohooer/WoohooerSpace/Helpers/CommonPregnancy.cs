@@ -522,7 +522,7 @@ namespace NRaas.WoohooerSpace.Helpers
             {
                 if (a.IsHuman)
                 {
-                    if ((a.BuffManager != null) && a.BuffManager.HasTransformBuff()) 
+                    if ((a.BuffManager != null) && a.BuffManager.HasTransformBuff())
                     {
                         return 0;
                     }
@@ -601,7 +601,7 @@ namespace NRaas.WoohooerSpace.Helpers
 
             Sim impregnated;
             Sim inseminator;
-            bool switchIfFail;
+            bool switchIfFail = false;
 
             if (actor.SimDescription.Gender == target.SimDescription.Gender)
             {
@@ -610,12 +610,10 @@ namespace NRaas.WoohooerSpace.Helpers
                     case PregnancyChoice.Initiator:
                         impregnated = actor;
                         inseminator = target;
-                        switchIfFail = false;
                         break;
                     case PregnancyChoice.Target:
                         impregnated = target;
                         inseminator = actor;
-                        switchIfFail = false;
                         break;
                     default:
                     case PregnancyChoice.Either:
@@ -645,7 +643,6 @@ namespace NRaas.WoohooerSpace.Helpers
             }
             else
             {
-                switchIfFail = false;
                 if (actor.IsFemale)
                 {
                     impregnated = actor;
