@@ -92,9 +92,6 @@
     <Compile Include="WoohooerSpace\Interactions\ToiletStallWooHoo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="NRaasWoohooer">
-      <HintPath>..\NRaasWoohooer\bin\x86\Release\NRaasWoohooer.dll</HintPath>
-    </Reference>
     <Reference Include="Sims3GameplaySystems">
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
     </Reference>
@@ -152,10 +149,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NRaasWoohooer\NRaasWoohooer.csproj">
+      <Project>{4A218736-F50C-4D1F-A032-33C58624B64C}</Project>
+      <Name>NRaasWoohooer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="String Tables\StringTableEnglish.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
