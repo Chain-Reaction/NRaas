@@ -1,424 +1,442 @@
 <?xml version="1.0" encoding="utf-8"?>
 <base>
   <Current_Tuning>
-    <kLikingGatingForAutonomousWoohoo value="40">
-      <!--Minimum liking gate for performing autonomous woohoo actions-->
-    </kLikingGatingForAutonomousWoohoo>
-    <kLikingGatingForAutonomousRomance value="0">
-      <!--Minimum liking gate for performing autonomous romance actions-->
-    </kLikingGatingForAutonomousRomance>
-    <kRiskyBabyMadeChance value="10">
-      <!--Range: 0-100. Chance of Sim getting Pregnant on RiskyWoohoo.-->
-    </kRiskyBabyMadeChance>
-    <kWoohooAutonomous value="False">
-      <!--Whether regular woohoo is autonomous-->
-    </kWoohooAutonomous>
-    <kRiskyAutonomous value="False">
-      <!--Whether risky woohoo is autonomous-->
-    </kRiskyAutonomous>
-    <kTeenRiskyAutonomous value="False">
-      <!--Whether risky woohoo is autonomous for teens-->
-    </kTeenRiskyAutonomous>
-    <kTryForBabyAutonomous value="False">
-      <!--Whether Try For Baby is autonomous-->
-    </kTryForBabyAutonomous>
-    <kTeenTryForBabyAutonomous value="False">
-      <!--Whether Try For Baby is autonomous for teens-->
-    </kTeenTryForBabyAutonomous>
-    <kMustBeRomanticForAutonomous value="True">
-      <!--Whether a couple must be flagged as romantic before considering woohoo-->
-    </kMustBeRomanticForAutonomous>
-    <kAllowTeenWoohoo value="False">
-      <!--Whether teens are allowed to woohoo-->
-    </kAllowTeenWoohoo>
-    <kAllowTeenAdultWoohoo value="False">
-      <!--Whether to allow teens and adults to woohoo together-->
-    </kAllowTeenAdultWoohoo>
-    <kAllowNearRelationWoohoo value="False">
-      <!--Whether to allow near relations to woohoo-->
-    </kAllowNearRelationWoohoo>
-    <kAllowNearRelationWoohooAutonomous value="False">
-      <!--Whether to allow near relations to autonomously woohoo-->
-    </kAllowNearRelationWoohooAutonomous>
-    <kAutonomousMaleMaleTryForBaby value="False">
-      <!--Whether to allow try for baby between male couples-->
-    </kAutonomousMaleMaleTryForBaby>
-    <kAutonomousFemaleFemaleTryForBaby value="True">
-      <!--Whether to allow try for baby between female couples-->
-    </kAutonomousFemaleFemaleTryForBaby>
-    <kHideWoohoo value="False">
-      <!--Whether to hide woohoo entirely-->
-    </kHideWoohoo>
-    <kAllowSameSexTryForBaby value="True">
-      <!--Whether to display try for baby for same-sex couples-->
-    </kAllowSameSexTryForBaby>
-    <kMaximumHouseholdSizeForAutonomous value="8">
-      <!--Maximum number of sims per household for autonomous pregnancy-->
-    </kMaximumHouseholdSizeForAutonomous>
-    <kUseNakedOutfit value="False">
-      <!--Whether to use the Naked Outfit during Woohoo-->
-    </kUseNakedOutfit>
-    <kEnforcePrivacy value="False">
-      <!--Whether to enforce privacy during Woohoo-->
-    </kEnforcePrivacy>
-    <kDebugging value="False">
-      <!--Whether to enable debugging notifications -->
-    </kDebugging>
-    <kUseTraitScoring value="True">
-      <!--Whether to use trait scoring in general-->
-    </kUseTraitScoring>
-    <kTraitScoringForUserDirected value="False">
-      <!--Whether to use trait scoring during manual interactions-->
-    </kTraitScoringForUserDirected>
-    <kWoohooBaseChanceScoring value="25">
-      <!--Range: -200 to 200. The base chance of a sim considering a Woohoo interaction-->
-    </kWoohooBaseChanceScoring>
-    <kRiskyBaseChanceScoring value="25">
-      <!--Range: -200 to 200. The base chance of a sim considering a Risky Woohoo interaction-->
-    </kRiskyBaseChanceScoring>
-    <kTryForBabyBaseChanceScoring value="10">
-      <!--Range: -200 to 200. The base chance of a sim considering a Try For Baby interaction-->
-    </kTryForBabyBaseChanceScoring>
-    <kUseMoodInScoring value="True">
-      <!--Whether to use a sims mood during scoring-->
-    </kUseMoodInScoring>
-    <kReactToJealousyBaseChanceScoring value="25">
-      <!--Range: -200 to 200. The base chance of a sim reacting to a woohoo jealousy incident-->
-    </kReactToJealousyBaseChanceScoring>
-    <kSneakinessBaseChanceScoring value="25">
-      <!--Range: -200 to 200. The base chance of a sim noticing another lover is in the room-->
-    </kSneakinessBaseChanceScoring>
-    <kTraitScoredPrivacy value="True">
-      <!--Whether to use trait scoring to determine woohoo privacy-->
-    </kTraitScoredPrivacy>
-    <kAllowTeenAdultRomance value="True">
-      <!--Whether to allow teen-adult romantic socials-->
-    </kAllowTeenAdultRomance>
-    <kAllowNearRelationRomance value="False">
-      <!--Whether to allow near-relation romantic socials-->
-    </kAllowNearRelationRomance>
-    <kAllowNearRelationRomanceAutonomous value="False">
-      <!--Whether to allow autonomous near-relation romantic socials-->
-    </kAllowNearRelationRomanceAutonomous>
-    <kWoohooRechargeRate value="5">
-      <!--How many woohoo events are wiped from a sim's count each night-->
-    </kWoohooRechargeRate>
-    <kRomanceBaseChanceScoring value="25">
-      <!--Range: -200 to 200. The base chance of a sim being interested in a romantic interaction-->
-    </kRomanceBaseChanceScoring>
-    <kAttractionBaseChanceScoring value="0">
-      <!--Range: -200 to 200. The base attraction of a sim to another-->
-    </kAttractionBaseChanceScoring>
-    <kTryForBabyMadeChance value="75">
-      <!--Range: 0-100. Chance of Sim getting Pregnant on Try For Baby.-->
-    </kTryForBabyMadeChance>
-    <kPolyamorousWoohooJealousy value="False">
-      <!--When enabled, sims who are romantic with both woohooers do not get jealous.-->
-    </kPolyamorousWoohooJealousy>
-    <kSimMenuVisibility value="True">
-      <!--Whether to display the Woohooer interaction in the Sim Menu.-->
-    </kSimMenuVisibility>
-    <kAllowStrideOfPride value="True">
-      <!--Whether to apply the Stride Of Pride moodlet upon woohoo.-->
-    </kAllowStrideOfPride>
-    <kAllowTeenSkinnyDip value="False">
-      <!--Whether to allow teens to skinny dip-->
-    </kAllowTeenSkinnyDip>
-    <kEnforceSkinnyDipPrivacy value="True">
-      <!--Whether to enforce age privacy restrictions for skinny dips-->
-    </kEnforceSkinnyDipPrivacy>
-    <kPrivacyBaseChanceScoring value="0">
-      <!--Range: -200 to 200. The base chance of a sim enforcing privacy during woohoo-->
-    </kPrivacyBaseChanceScoring>
-    <kLikingGateForUserDirected value="False">
-      <!--Whether to apply the romantic liking gate to user-directed interactions-->
-    </kLikingGateForUserDirected>
-    <kApplyBuffs value="True">
-      <!--Whether to apply woohoo buffs after a successful romp-->
-    </kApplyBuffs>
-    <kMatchmakerCost value="500">
-      <!--How much a trip to the matchmaker costs-->
-    </kMatchmakerCost>
-    <kReplaceWithRisky value="False">
-      <!--Whether to replace regular Woohoo with Risky-->
-    </kReplaceWithRisky>
-    <kAllowForeplay value="True">
-      <!--Whether to perform the Make Out interaction prior to all woohoos-->
-    </kAllowForeplay>
-    <kGenderPreferenceForUserDirected value="False">
-      <!--Whether to test gender preference during user-directed interactions-->
-    </kGenderPreferenceForUserDirected>
-    <kAutonomousHotTub value="True">
-      <!--Whether to allow autonomous woohoos in the Hot Tub-->
-    </kAutonomousHotTub>
-    <kAutonomousElevator value="True">
-      <!--Whether to allow autonomous woohoos in the Elevator-->
-    </kAutonomousElevator>
-    <kAutonomousSarcophagus value="True">
-      <!--Whether to allow autonomous woohoos in the Sarcophagus-->
-    </kAutonomousSarcophagus>
-    <kAutonomousTimeMachine value="True">
-      <!--Whether to allow autonomous woohoos in the Time Machine-->
-    </kAutonomousTimeMachine>
-    <kAutonomousActorTrailer value="True">
-      <!--Whether to allow autonomous woohoos in the Actor Trailer-->
-    </kAutonomousActorTrailer>
-    <kAutonomousBed value="True">
-      <!--Whether to allow autonomous woohoos in Bed-->
-    </kAutonomousBed>
-    <kAutonomousTent value="True">
-      <!--Whether to allow autonomous woohoos in Tent-->
-    </kAutonomousTent>
-    <kAutonomousTreehouse value="True">
-      <!--Whether to allow autonomous woohoos in Treehouse-->
-    </kAutonomousTreehouse>
-    <kAutonomousShower value="True">
-      <!--Whether to allow autonomous woohoos in Shower-->
-    </kAutonomousShower>
-    <kNakedOutfitHotTub value="False">
-      <!--Whether to allow naked woohoos in the Hot Tub-->
-    </kNakedOutfitHotTub>
-    <kNakedOutfitElevator value="False">
-      <!--Whether to allow naked woohoos in the Elevator-->
-    </kNakedOutfitElevator>
-    <kNakedOutfitSarcophagus value="False">
-      <!--Whether to allow naked woohoos in the Sarcophagus-->
-    </kNakedOutfitSarcophagus>
-    <kNakedOutfitTimeMachine value="False">
-      <!--Whether to allow naked woohoos in the Time Machine-->
-    </kNakedOutfitTimeMachine>
-    <kNakedOutfitActorTrailer value="False">
-      <!--Whether to allow naked woohoos in the Actor Trailer-->
-    </kNakedOutfitActorTrailer>
-    <kNakedOutfitBed value="False">
-      <!--Whether to allow naked woohoos in Bed-->
-    </kNakedOutfitBed>
-    <kDisallowAutonomousServiceTypes value="">
-      <!--A comma separated list of service types that are not allowed to be interacted with autonomously-->
-    </kDisallowAutonomousServiceTypes>
-    <kDisallowAutonomousRoleTypes value="">
-      <!--A comma separated list of role types that are not allowed to be interacted with autonomously-->
-    </kDisallowAutonomousRoleTypes>
-    
-    <kWoohooInteractionLevel value="Default">
-      <!--Defines when the Woohoo Interactions are available for romantic sims.  Choices: Default, Partner, Spouse, AnyRomantic-->
-    </kWoohooInteractionLevel>
-    <kPregnancyChoice value="Either">
-      <!--Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, Both-->
-    </kPregnancyChoice>
-    <kDisallowAutonomousServiceTypes value="">
-      <!--A comma separated list of service types that are not allowed to be interacted with autonomously-->
-    </kDisallowAutonomousServiceTypes>
-    <kDisallowAutonomousRoleTypes value="">
-      <!--A comma separated list of role types that are not allowed to be interacted with autonomously-->
-    </kDisallowAutonomousRoleTypes>
+    <!-- Range: 0-100. Minimum liking gate for performing autonomous actions -->
+    <kLikingGatingForAutonomousWoohoo value="40"/>
 
-    <kRiskyFertility value="True">
-      <!--Whether to use fertility treatment in the chance of pregnancy during Risky Woohoo-->
-    </kRiskyFertility>
-    <kTryForBabyFertility value="True">
-      <!--Whether to use fertility treatment in the chance of pregnancy during Try For Baby-->
-    </kTryForBabyFertility>
-    <kLikingGatingForAutonomousRomance value="0">
-      <!--Range: 0-100. Minimum liking gate for performing autonomous romance actions-->
-    </kLikingGatingForAutonomousRomance>
-    <kTestAllConditionsForUserDirected value="False">
-      <!--Whether to test all the standard conditions that normally restrict Try For Baby-->
-    </kTestAllConditionsForUserDirected>
-    <kWoohooCountScoreFactor value="-20">
-      <!--Scoring factor applied for each woohoo performed during the day-->
-    </kWoohooCountScoreFactor>
-    <kShowRiskyChance value="True">
-      <!--Whether to display the chance for Risky Woohoo on the menu interaction-->
-    </kShowRiskyChance>
-    <kRiskyPregnancyChoice value="Either">
-      <!--Defines which sim is the first choice for pregnancy during a Risky Woohoo.  Choices: Initiator, Target, Either, Random, TargetThenInitiator-->
-    </kRiskyPregnancyChoice>
-    <kAllowAutonomousRomanceCommLot value="True">
-      <!--Whether to allow autonomous romantic interactions for actives on community lots-->
-    </kAllowAutonomousRomanceCommLot>
-    <kSwitchToEverydayAfterNakedWoohoo value="False">
-      <!--Whether to switch into Everyday after Naked Woohoo-->
-    </kSwitchToEverydayAfterNakedWoohoo>
-    <kAllowOffLotRiskyAutonomous value="True">
-      <!--Whether to allow sims to engage in autonomous Risky while not on the active lot-->
-    </kAllowOffLotRiskyAutonomous>
-    <kAllowOffLotTryForBabyAutonomous value="True">
-      <!--Whether to allow sims to engage in autonomous Try For Baby while not on the active lot-->
-    </kAllowOffLotTryForBabyAutonomous>
-    <kPartneringInteractionLevel value="Default">
-      <!--Defines when to provide the 'Go Steady' and 'Propose Marriage' interactions for sims.  Choices: Default, Partner, Spouse, AnyRomantic-->
-    </kPartneringInteractionLevel>
-    <kRestrictTeenMarriage value="False">
-      <!--Whether to restrict teen marriage to only those sims who already have offspring-->
-    </kRestrictTeenMarriage>
+    <!-- Range: 0-100. Chance of Sim getting Pregnant on RiskyWoohoo. -->
+    <kRiskyBabyMadeChance value="10"/>
 
-    <kAutonomousPhotoBooth value="True">
-      <!--Whether to allow autonomous woohoos in the Photobooth-->
-    </kAutonomousPhotoBooth>
-    <kNakedOutfitPhotoBooth value="False">
-      <!--Whether to allow naked woohoos in Photobooth-->
-    </kNakedOutfitPhotoBooth>
+    <!-- Whether risky woohoo is autonomous -->
+    <kRiskyAutonomous value="False"/>
 
-    <kAutonomousBoxOfMystery value="True">
-      <!--Whether to allow autonomous woohoos in the Box of Mystery-->
-    </kAutonomousBoxOfMystery>
-    <kAutonomousSauna value="True">
-      <!--Whether to allow autonomous woohoos in the Sauna-->
-    </kAutonomousSauna>
-    <kNakedOutfitSaunaWoohoo value="False">
-      <!--Whether to allow naked woohoos in the Sauna-->
-    </kNakedOutfitSaunaWoohoo>
-    <kNakedOutfitSaunaGeneral value="False">
-      <!--Whether to allow naked sitting in the Sauna-->
-    </kNakedOutfitSaunaGeneral>
-    <kAutonomousGypsyCaravan value="True">
-      <!--Whether to allow autonomous woohoos in the Gypsy Caravan-->
-    </kAutonomousGypsyCaravan>
-    <kNakedOutfitGypsyCaravan value="True">
-      <!--Whether to allow naked woohoos in the Gypsy Caravan-->
-    </kNakedOutfitGypsyCaravan>
-    <kAutonomousWardrobe value="True">
-      <!--Whether to allow autonomous woohoos in the Wardrobe-->
-    </kAutonomousWardrobe>
-    <kNakedOutfitWardrobe value="True">
-      <!--Whether to allow naked woohoos in the Wardrobe-->
-    </kNakedOutfitWardrobe>
-    <kAutonomousFairyHouse value="True">
-      <!--Whether to allow autonomous woohoos in the Fairy House-->
-    </kAutonomousFairyHouse>
-    <kChanceOfQuads value="0.0001">
-      <!--The chance of a human having quads-->
-    </kChanceOfQuads>
-    <kRiskyTeenBabyMadeChance value="10">
-      <!--Range: 0-100. Chance of a Teen sim getting Pregnant on RiskyWoohoo.-->
-    </kRiskyTeenBabyMadeChance>
-    <kTryForBabyTeenBabyMadeChance value="75">
-      <!--Range: 0-100. Chance of a Teen sim getting Pregnant on Try For Baby.-->
-    </kTryForBabyTeenBabyMadeChance>
-    <kWoohooTeenBaseChanceScoring value="50">
-      <!--Range: -200 to 200. The base chance of a teen considering a Woohoo interaction-->
-    </kWoohooTeenBaseChanceScoring>
-    <kRiskyTeenBaseChanceScoring value="25">
-      <!--Range: -200 to 200. The base chance of a teen considering a Risky Woohoo interaction-->
-    </kRiskyTeenBaseChanceScoring>
-    <kTryForBabyTeenBaseChanceScoring value="0">
-      <!--Range: -200 to 200. The base chance of a teen considering a Try For Baby interaction-->
-    </kTryForBabyTeenBaseChanceScoring>
-    <kOnlyResidentMatchmaker value="False">
-      <!--Whether to restrict the matchmaker list to only residents-->
-    </kOnlyResidentMatchmaker>
-    <kRomanceJealousyLevel value="Medium">
-      <!--The level of jealousy incurred for getting caught romancing (None, Low, Medium, High)-->
-    </kRomanceJealousyLevel>
-    <kWoohooJealousyLevel value="High">
-      <!--The level of jealousy incurred for getting caught woohooing (None, Low, Medium, High)-->
-    </kWoohooJealousyLevel>
-    <kRomanceInteractionLevel value="Default">
-      <!--The level at which a single sim is allowed to autonomously romance another sim.  Choices: Default, Partner, Spouse, AnyRomantic-->
-    </kRomanceInteractionLevel>
-    <kSteadyInteractionLevel value="Default">
-      <!--The level at which a steady sim is allowed to autonomously romance another sim.  Choices: Default, Partner, Spouse, AnyRomantic-->
-    </kSteadyInteractionLevel>
-    <kMarriedInteractionLevel value="Default">
-      <!--The level at which a married sim is allowed to autonomously romance another sim.  Choices: Default, Partner, Spouse, AnyRomantic-->
-    </kMarriedInteractionLevel>
-    <kChangeForBedWoohoo value="True">
-      <!--Whether to change into sleepwear when engaging in non-naked bed woohoo-->
-    </kChangeForBedWoohoo>
-    <kEAStandardWoohoo value="False">
-      <!--Whether to use EA Standard rule-set for determining the result of a woohoo interaction-->
-    </kEAStandardWoohoo>
-    <kInteractionsUnderRomance value="False">
-      <!--Whether to display certain interactions under 'Romance' instead of 'Friendly'-->
-    </kInteractionsUnderRomance>
-    <kChangeRoomClothings value="True">
-      <!--Whether to change outfits when the sim walks through a door after naked woohoo-->
-    </kChangeRoomClothings>
-    <kTryForBabyUserMaximum value="0">
-      <!--The maximum number of sims allowed in a home before the 'Try For Baby' is disabled-->
-    </kTryForBabyUserMaximum>
+    <!-- Whether risky woohoo is autonomous for teens -->
+    <kTeenRiskyAutonomous value="False"/>
 
-    <kAutonomousLeafPile value="True">
-      <!--Whether to allow autonomous woohoos in the Leaf Pile-->
-    </kAutonomousLeafPile>
-    <kAutonomousIgloo value="True">
-      <!--Whether to allow autonomous woohoos in the Igloo-->
-    </kAutonomousIgloo>
-    <kAutonomousOutdoorShower value="True">
-      <!--Whether to allow autonomous woohoos in the Outdoor Shower-->
-    </kAutonomousOutdoorShower>
+    <!-- Whether regular woohoo is autonomous -->
+    <kWoohooAutonomous value="False"/>
 
-    <kAutonomousHotAirBalloon value="True">
-      <!--Whether to allow autonomous woohoos in the Hot Ait Balloon-->
-    </kAutonomousHotAirBalloon>
-    <kLinkToStoryProgression value="True">
-      <!--Whether to access settings in [StoryProgression] when testing interaction availability-->
-    </kLinkToStoryProgression>
-    <kStoryProgressionForUserDirected value="True">
-      <!--Whether to use settings in [StoryProgression] for user-directed interactions-->
-    </kStoryProgressionForUserDirected>
-    <kUnlockTeenActions value="False">
-      <!--Whether to unlock certain non-tunable interactions for teenagers-->
-    </kUnlockTeenActions>
-    <kAllowPlantSimPregnancy value="False">
-      <!--Whether to use normal pregnancy for plantsims-->
-    </kAllowPlantSimPregnancy>
-    <kAutonomousAncientPortal value="True">
-      <!--Whether to allow autonomous woohoos in the Ancient Portal-->
-    </kAutonomousAncientPortal>
-    <kNakedOutfitAncientPortal value="False">
-      <!--Whether to allow naked woohoos in the Ancient Portal-->
-    </kNakedOutfitAncientPortal>
-    <kNakedOutfitLeafPile value="False">
-      <!--Whether to allow naked woohoos in the Leaf Pile-->
-    </kNakedOutfitLeafPile>
-    <kNakedOutfitHayStack value="False">
-      <!--Whether to allow naked woohoos in the Hay Stack-->
-    </kNakedOutfitHayStack>
-    
-    <kRemoveRomanceOnKiss value="False">
-      <!--Whether to set the romance flag when you kiss a sim-->
-    </kRemoveRomanceOnKiss>
-    <kAllowZombie value="True">
-      <!--Whether to allow zombie woohoo-->
-    </kAllowZombie>
-    <kAutonomousAllInOneBathroom value="True">
-      <!--Whether to allow autonomous woohoos in the All In One Bathroom-->
-    </kAutonomousAllInOneBathroom>
-    <kNakedOutfitMassage value="False">
-      <!--Whether to use the naked outfit for romantic massages-->
-    </kNakedOutfitMassage>
-    <kAutonomousResort value="True">
-      <!--Whether to allow autonomous woohoos in the Resort Tower-->
-    </kAutonomousResort>
-    <kAutonomousUnderwaterCave value="True">
-      <!--Whether to allow autonomous woohoos in the Underwater Cave-->
-    </kAutonomousUnderwaterCave>
+    <!-- Whether woohooty texting is autonomous -->
+    <kWoohootyTextAutonomous value="False"/>
 
-    <kAutonomousBotMaker value="True">
-      <!--Whether to allow autonomous woohoos in the Bot Making Station-->
-    </kAutonomousBotMaker>
-    <kAutonomousJetPack value="True">
-      <!--Whether to allow autonomous woohoos using Jet Packs-->
-    </kAutonomousJetPack>
-    <kAutonomousHoverTrain value="True">
-      <!--Whether to allow autonomous woohoos in the Hover Train-->
-    </kAutonomousHoverTrain>
-    <kNakedOutfitBotMaker value="False">
-      <!--Whether to use the naked outfit for Bot Maker-->
-    </kNakedOutfitBotMaker>
-    <kAutonomousTimePortal value="True">
-      <!--Whether to allow autonomous woohoos in the Time Portal-->
-    </kAutonomousTimePortal>
-    <kNakedOutfitTimePortal value="False">
-      <!--Whether to use the naked outfit for Time Portal-->
-    </kNakedOutfitTimePortal>
-    <kAutonomousEiffelTower value="True">
-      <!--Whether to allow autonomous woohoos in the Eiffel Tower-->
-    </kAutonomousEiffelTower>
-    <kAutonomousToiletStall value="True">
-      <!--Whether to allow autonomous woohoos in Toilet Stalls-->      
-    </kAutonomousToiletStall>
+    <!-- Whether Try For Baby is autonomous -->
+    <kTryForBabyAutonomous value="False"/>
+
+    <!-- Whether Try For Baby is autonomous for teens -->
+    <kTeenTryForBabyAutonomous value="False"/>
+
+    <!-- Whether a couple must be flagged as romantic before considering woohoo -->
+    <kMustBeRomanticForAutonomous value="True"/>
+
+    <!-- Whether teens are allowed to woohoo -->
+    <kAllowTeenWoohoo value="False"/>
+
+    <!-- Whether to allow teens and adults to woohoo together -->
+    <kAllowTeenAdultWoohoo value="False"/>
+
+    <!-- Whether to allow near relations to woohoo -->
+    <kAllowNearRelationWoohoo value="False"/>
+
+    <!-- Whether to allow near relations to autonomously woohoo -->
+    <kAllowNearRelationWoohooAutonomous value="False"/>
+
+    <!-- Whether to allow try for baby between male couples -->
+    <kAutonomousMaleMaleTryForBaby value="False"/>
+
+    <!-- Whether to allow try for baby between female couples -->
+    <kAutonomousFemaleFemaleTryForBaby value="True"/>
+
+    <!-- Whether to hide woohoo entirely -->
+    <kHideWoohoo value="False"/>
+
+    <!-- Whether to display try for baby for same-sex couples -->
+    <kAllowSameSexTryForBaby value="True"/>
+
+    <!-- Maximum number of sims per household for autonomous pregnancy -->
+    <kMaximumHouseholdSizeForAutonomous value="8"/>
+
+    <!-- Whether to enforce privacy during Woohoo -->
+    <kEnforcePrivacy value="False"/>
+
+    <!-- Whether to display debugging messages -->
+    <kDebugging value="False"/>
+
+    <!-- Whether to use trait scoring in general -->
+    <kUseTraitScoring value="True"/>
+
+    <!-- Whether to use trait scoring during manual interactions -->
+    <kTraitScoringForUserDirected value="False"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim considering a Woohoo interaction -->
+    <kWoohooBaseChanceScoring value="25"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim considering a Risky Woohoo interaction -->
+    <kRiskyBaseChanceScoring value="25"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim considering a Try For Baby interaction -->
+    <kTryForBabyBaseChanceScoring value="10"/>
+
+    <!-- Whether to use a sims mood during scoring -->
+    <kUseMoodInScoring value="True"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim reacting to a woohoo jealousy incident -->
+    <kReactToJealousyBaseChanceScoring value="25"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim noticing another lover is in the room -->
+    <kSneakinessBaseChanceScoring value="25"/>
+
+    <!-- Whether to use trait scoring to determine woohoo privacy -->
+    <kTraitScoredPrivacy value="True"/>
+
+    <!-- Whether to allow teen-adult romantic socials -->
+    <kAllowTeenAdultRomance value="True"/>
+
+    <!-- Whether to allow near-relation romantic socials -->
+    <kAllowNearRelationRomance value="False"/>
+
+    <!-- Whether to allow autonomous near-relation romantic socials -->
+    <kAllowNearRelationRomanceAutonomous value="False"/>
+
+    <!-- How many woohoo events are wiped from a sim's count each night -->
+    <kWoohooRechargeRate value="5"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim being interested in a romantic interaction -->
+    <kRomanceBaseChanceScoring value="25"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim being attracted to another -->
+    <kAttractionBaseChanceScoring value="0"/>
+
+    <!-- Range: 0-100. Chance of Sim getting Pregnant on Try For Baby. -->
+    <kTryForBabyMadeChance value="75"/>
+
+    <!-- When enabled, sims who are romantic with both woohooers do not get jealous. -->
+    <kPolyamorousWoohooJealousy value="False"/>
+
+    <!-- Defines when to provide the 'My Love' buff to romantic sims.  Choices: Default, Partner, Spouse, AnyRomantic -->
+    <kMyLoveBuffLevel value="Default"/>
+
+    <!-- Whether to display the Woohooer interaction in the Sim Menu. -->
+    <kSimMenuVisibility value="True"/>
+
+    <!-- Whether to apply the Stride Of Pride moodlet upon woohoo. -->
+    <kAllowStrideOfPride value="True"/>
+
+    <!-- Whether to allow teens to skinny dip -->
+    <kAllowTeenSkinnyDip value="False"/>
+
+    <!-- Whether to enforce age privacy restrictions for skinny dips -->
+    <kEnforceSkinnyDipPrivacy value="True"/>
+
+    <!-- Range: -200 to 200. The base chance of a sim enforcing privacy during woohoo -->
+    <kPrivacyBaseChanceScoring value="0"/>
+
+    <!-- Whether to apply the romantic liking gate to user-directed interactions -->
+    <kLikingGateForUserDirected value="False"/>
+
+    <!-- Whether to apply woohoo buffs after a successful romp -->
+    <kApplyBuffs value="True"/>
+
+    <!-- Whether to perform the Make Out interaction prior to all woohoos -->
+    <kAllowForeplay value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Hot Tub -->
+    <kAutonomousHotTub value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Elevator -->
+    <kAutonomousElevator value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Sarcophagus -->
+    <kAutonomousSarcophagus value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Time Machine -->
+    <kAutonomousTimeMachine value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Actor Trailer -->
+    <kAutonomousActorTrailer value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Bed -->
+    <kAutonomousBed value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Tent -->
+    <kAutonomousTent value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Treehouse -->
+    <kAutonomousTreehouse value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Shower -->
+    <kAutonomousShower value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Rabbitholes -->
+    <kAutonomousRabbithole value="True"/>
+
+    <!-- Whether to disallow homeless sims from autonomously performing romantic interactions -->
+    <kDisallowHomeless value="False"/>
+
+    <!-- Defines when the Woohoo Interactions are available for romantic sims.  Choices: Default, Partner, Spouse, AnyRomantic -->
+    <kWoohooInteractionLevel value="Default"/>
+
+    <!-- Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, Either, Random, TargetThenInitiator (Either meaning the initiator then the target) -->
+    <kTryForBabyPregnancyChoice value="Either"/>
+
+    <!-- How much a trip to the matchmaker costs -->
+    <kMatchmakerCost value="500"/>
+
+    <!-- A comma separated list of service types that are not allowed to be interacted with autonomously -->
+    <kDisallowAutonomousServiceTypes value=""/>
+
+    <!-- A comma separated list of role types that are not allowed to be interacted with autonomously -->
+    <kDisallowAutonomousRoleTypes value=""/>
+
+    <!-- Whether to replace regular Woohoo with Risky -->
+    <kReplaceWithRisky value="False"/>
+
+    <!-- Whether to test gender preference during user-directed interactions -->
+    <kGenderPreferenceForUserDirected value="False"/>
+
+    <!-- Whether to allow naked woohoos in the Hot Tub -->
+    <kNakedOutfitHotTub value="False"/>
+
+    <!-- Whether to allow naked woohoos in the Elevator -->
+    <kNakedOutfitElevator value="False"/>
+
+    <!-- Whether to allow naked woohoos in the Sarcophagus -->
+    <kNakedOutfitSarcophagus value="False"/>
+
+    <!-- Whether to allow naked woohoos in the Time Machine -->
+    <kNakedOutfitTimeMachine value="False"/>
+
+    <!-- Whether to allow naked woohoos in the Actor Trailer -->
+    <kNakedOutfitActorTrailer value="False"/>
+
+    <!-- Whether to allow naked woohoos in Bed -->
+    <kNakedOutfitBed value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in Hay Stacks -->
+    <kAutonomousHayStack value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Box Stalls -->
+    <kAutonomousBoxStall value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Pet Houses -->
+    <kAutonomousPetHouse value="True"/>
+
+    <!-- Whether to allow autonomous woohoos on the computer -->
+    <kAutonomousComputer value="True"/>
+
+    <!-- Whether to use fertility treatment in the chance of pregnancy during Risky Woohoo -->
+    <kRiskyFertility value="True"/>
+
+    <!-- Whether to use fertility treatment in the chance of pregnancy during Try For Baby -->
+    <kTryForBabyFertility value="True"/>
+
+    <!-- Range: 0-100. Minimum liking gate for performing autonomous romance actions -->
+    <kLikingGatingForAutonomousRomance value="0"/>
+
+    <!-- Whether to test all the standard conditions that normally restrict Try For Baby -->
+    <kTestAllConditionsForUserDirected value="False"/>
+
+    <!-- Scoring factor applied for each woohoo performed during the day -->
+    <kWoohooCountScoreFactor value="-20"/>
+
+    <!-- Whether to display the chance for Risky Woohoo on the menu interaction -->
+    <kShowRiskyChance value="True"/>
+
+    <!-- Defines which sim is the first choice for pregnancy during a Risky Woohoo.  Choices: Initiator, Target, Either, Random, TargetThenInitiator (Either meaning the initiator then the target) -->
+    <kRiskyPregnancyChoice value="Either"/>
+
+    <!-- Whether to allow autonomous romantic interactions for actives on community lots -->
+    <kAllowAutonomousRomanceCommLot value="True"/>
+
+    <!-- Whether to switch into Everyday after Naked Woohoo -->
+    <kSwitchToEverydayAfterNakedWoohoo value="False"/>
+
+    <!-- Whether to allow sims to engage in autonomous Risky while not on the active lot -->
+    <kAllowOffLotRiskyAutonomous value="True"/>
+
+    <!-- Whether to allow sims to engage in autonomous Try For Baby while not on the active lot -->
+    <kAllowOffLotTryForBabyAutonomous value="True"/>
+
+    <!-- Defines when to provide the 'Go Steady' and 'Propose Marriage' interactions for sims.  Choices: Default, Partner, Spouse, AnyRomantic -->
+    <kPartneringInteractionLevel value="Default"/>
+
+    <!-- Whether to restrict teen marriage to only those sims who already have offspring -->
+    <kRestrictTeenMarriage value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in the photobooth -->
+    <kAutonomousPhotoBooth value="True"/>
+
+    <!-- Whether to allow naked woohoos in the Photobooth -->
+    <kNakedOutfitPhotoBooth value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in the Box of Mystery -->
+    <kAutonomousBoxOfMystery value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Sauna -->
+    <kAutonomousSauna value="True"/>
+
+    <!-- Whether to allow naked woohoos in the Sauna -->
+    <kNakedOutfitSaunaWoohoo value="False"/>
+
+    <!-- Whether to allow naked sitting in the Sauna -->
+    <kNakedOutfitSaunaGeneral value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in the Gypsy Caravan -->
+    <kAutonomousGypsyCaravan value="True"/>
+
+    <!-- Whether to allow naked woohoos in the Gypsy Caravan -->
+    <kNakedOutfitGypsyCaravan value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Wardrobe -->
+    <kAutonomousWardrobe value="True"/>
+
+    <!-- Whether to allow naked woohoos in the Wardrobe -->
+    <kNakedOutfitWardrobe value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Fairy House -->
+    <kAutonomousFairyHouse value="True"/>
+
+    <!-- The chance of a human having quads -->
+    <kChanceOfQuads value="0.0001"/>
+
+    <!-- Range: 0-100. Chance of a Teen sim getting Pregnant on RiskyWoohoo. -->
+    <kRiskyTeenBabyMadeChance value="10"/>
+
+    <!-- Range: 0-100. Chance of a Teen sim getting Pregnant on Try For Baby. -->
+    <kTryForBabyTeenBabyMadeChance value="75"/>
+
+    <!-- Range: -200 to 200. The base chance of a teen considering a Woohoo interaction -->
+    <kWoohooTeenBaseChanceScoring value="50"/>
+
+    <!-- Range: -200 to 200. The base chance of a teen considering a Risky Woohoo interaction -->
+    <kRiskyTeenBaseChanceScoring value="25"/>
+
+    <!-- Range: -200 to 200. The base chance of a teen considering a Try For Baby interaction -->
+    <kTryForBabyTeenBaseChanceScoring value="0"/>
+
+    <!-- The minimum number of minutes between autonomous woohoos -->
+    <kWoohooCooldown value="60"/>
+
+    <!-- Whether to restrict the matchmaker list to only residents -->
+    <kOnlyResidentMatchmaker value="False"/>
+
+    <!-- The level of jealousy incurred for getting caught romancing (None, Low, Medium, High) -->
+    <kRomanceJealousyLevel value="Medium"/>
+
+    <!-- The level of jealousy incurred for getting caught woohooing (None, Low, Medium, High) -->
+    <kWoohooJealousyLevel value="High"/>
+
+    <!-- The level at which a single sim is allowed to autonomously romance another sim.  Choices: Default, Partner, Spouse, AnyRomantic -->
+    <kRomanceInteractionLevel value="Default"/>
+
+    <!-- The level at which a steady sim is allowed to autonomously romance another sim.  Choices: Default, Partner, Spouse, AnyRomantic -->
+    <kSteadyInteractionLevel value="Default"/>
+
+    <!-- The level at which a married sim is allowed to autonomously romance another sim.  Choices: Default, Partner, Spouse, AnyRomantic -->
+    <kMarriedInteractionLevel value="Default"/>
+
+    <!-- Whether to change into sleepwear when engaging in non-naked bed woohoo -->
+    <kChangeForBedWoohoo value="True"/>
+
+    <!-- Whether to use EA Standard rule-set for determining the result of a woohoo interaction -->
+    <kEAStandardWoohoo value="False"/>
+
+    <!-- Whether to display certain interactions under 'Romance' instead of 'Friendly' -->
+    <kInteractionsUnderRomance value="False"/>
+
+    <!-- Whether to change outfits when the sim walks through a door after naked woohoo -->
+    <kChangeRoomClothings value="True"/>
+
+    <!-- The maximum number of sims allowed in a home before the 'Try For Baby' is disabled -->
+    <kTryForBabyUserMaximum value="0"/>
+
+    <!-- Whether to allow autonomous woohoos in the Leaf Pile -->
+    <kAutonomousLeafPile value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Igloo -->
+    <kAutonomousIgloo value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Outdoor Shower -->
+    <kAutonomousOutdoorShower value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Hot Air Balloons -->
+    <kAutonomousHotAirBalloon value="True"/>
+
+    <!-- Whether to access settings in [StoryProgression] when testing interaction availability -->
+    <kLinkToStoryProgression value="False"/>
+
+    <!-- Whether to use settings in [StoryProgression] for user-directed interactions -->
+    <kStoryProgressionForUserDirected value="False"/>
+
+    <!-- Whether to unlock certain non-tunable interactions for teenagers -->
+    <kUnlockTeenActions value="False"/>
+
+    <!-- Whether to use normal pregnancy for plantsims -->
+    <kAllowPlantSimPregnancy value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in the Ancient Portal -->
+    <kAutonomousAncientPortal value="True"/>
+
+    <!-- Whether to allow naked woohoos in the Ancient Portal -->
+    <kNakedOutfitAncientPortal value="False"/>
+
+    <!-- Whether to allow naked woohoos in the Leaf Pile -->
+    <kNakedOutfitLeafPile value="False"/>
+
+    <!-- Whether to allow naked woohoos in the Hay Stack -->
+    <kNakedOutfitHayStack value="False"/>
+
+    <!-- Whether to set the romance flag when you kiss a sim -->
+    <kRemoveRomanceOnKiss value="False"/>
+
+    <!-- Whether to allow zombie woohoo -->
+    <kAllowZombie value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the All In One Bathroom -->
+    <kAutonomousAllInOneBathroom value="True"/>
+
+    <!-- Whether to use the naked outfit for romantic massages -->
+    <kNakedOutfitMassage value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in the Resort Tower -->
+    <kAutonomousResort value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Deep Sea Cave -->
+    <kAutonomousUnderwaterCave value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Bot Making Station -->
+    <kAutonomousBotMaker value="True"/>
+
+    <!-- Whether to allow autonomous woohoos using Jet Packs -->
+    <kAutonomousJetPack value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in the Hover Train -->
+    <kAutonomousHoverTrain value="True"/>
+
+    <!-- Whether to use the naked outfit for Bot Maker -->
+    <kNakedOutfitBotMaker value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in the Time Portal -->
+    <kAutonomousTimePortal value="True"/>
+
+    <!-- Whether to use the naked outfit for Time Portal -->
+    <kNakedOutfitTimePortal value="False"/>
+
+    <!-- Whether to allow autonomous woohoos in the Eiffel Tower -->
+    <kAutonomousEiffelTower value="True"/>
+
+    <!-- Whether to allow autonomous woohoos in Toilet Stalls -->
+    <kAutonomousToiletStall value="True"/>
+
+    <!-- Chances per attraction level that autonmous flirting will happen -->
+    <!-- <kAttractionLevelForAutonmousFlirting value="new float[] { 0f, 0f, 0f, 0.15f, 0.3f, 0.6f }"/> -->
+
+    <!-- Chances per attraction level that autonmous woohoo will happen -->
+    <!-- <kAttractionLevelForAutonmousWoohoo value="new float[] { 0f, 0f, 0f, 0.10f, 0.25f, 0.50f }"/> -->
+
+    <!-- Chances per confidence level that autonmous flirting will happen -->
+    <!-- <kConfidenceLevelForAutonmousFlirting value="new float[] { 0.05f, 0.1f, 0.30f, 0.45f, 0.65f}"/> -->
+
+    <!-- Chances per confidence level that autonmous woohoo will happen -->
+    <!-- <kConfidenceLevelForAutonmousWoohoo value="new float[] { 0.25f, 0.1f, 0.2f, 0.4f, 0.6f }"/> -->
   </Current_Tuning>
 </base>
