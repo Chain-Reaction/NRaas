@@ -7,20 +7,15 @@ using Sims3.SimIFace;
 using Sims3.Gameplay.Autonomy;
 using Sims3.SimIFace.CAS;
 using Sims3.UI;
-using Sims3.Gameplay.Socializing;
 using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.Utilities;
-using Sims3.Gameplay.Objects.Beds;
 using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.Controllers;
-using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Objects.Plumbing;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Core;
 
-namespace Alcohol
-{
+namespace Alcohol {
     class DrunkInteractions
     {
         #region Do Drunk Interactions
@@ -120,7 +115,10 @@ namespace Alcohol
 
         private static void PerformeInteractionOnSelf(Sim sim, InteractionDefinition definition)
         {
-            InteractionPriority priority = sim.CurrentInteraction.GetPriority();
+            InteractionPriority priority = new InteractionPriority(InteractionPriorityLevel.UserDirected);
+            if (sim.CurrentInteraction != null) {
+                priority = sim.CurrentInteraction.GetPriority();
+            }
 
             InteractionInstance instance3 = definition.CreateInstance(sim, sim, priority, false, true);
 
@@ -174,21 +172,17 @@ namespace Alcohol
                 //Get Sims on lot
                 List<Sim> sims = ReturnSimsOnLot(sim);
 
-                if (sims.Count > 0)
+                if (sims.Count > 0 && sim != null)
                 {
-                    int tries = 0;
                     int maxTries = 20;
                     bool success = false;
-                    while (!success)
-                    {
+
+                    for (int tries = 0; tries < maxTries && !success; ++tries) {
                         //Get random sim
                         int randomSim = r.Next(sims.Count);
                         Sim targetSim = sims[randomSim];
 
-                        //Increment tries 
-                        tries++;
-
-                        if (sim != null && sim.SocialComponent != null && targetSim != null)
+                        if (sim.SocialComponent != null && targetSim != null)
                         {
                             List<InteractionObjectPair> pairs = new List<InteractionObjectPair>();
                             foreach (var item in sim.SocialComponent.GetAllInteractionsForAutonomy(targetSim))
@@ -198,6 +192,8 @@ namespace Alcohol
                                     pairs.Add(item);
                                 }
                             }
+
+                            if (pairs.Count < 1) continue;
 
                             InteractionPriority priority = new InteractionPriority(InteractionPriorityLevel.UserDirected);
                             if(sim.CurrentInteraction != null)
@@ -224,18 +220,14 @@ namespace Alcohol
                                 catch (Exception ex)
                                 {
                                     StyledNotification.Show(new StyledNotification.Format(sim.Name + "\r" + ex.ToString(), StyledNotification.NotificationStyle.kGameMessagePositive));
-
                                 }
                             }
                         }
-
-                        //Break off if the interaction is not sticking
-                        if (tries == maxTries && !success)
-                        {
-                            success = true;
-                            DoInteractionToSelf(sim);
-                        }
                     }
+
+                    //Break off if the interaction is not sticking
+                    if (!success)
+                        DoInteractionToSelf(sim);
                 }
             }
             catch (Exception ex)
@@ -258,7 +250,7 @@ namespace Alcohol
 
             //  randomEvent = 3;
             StringBuilder sb = new StringBuilder();
-            InteractionPriority priority = sim.CurrentInteraction.GetPriority();
+            //InteractionPriority priority = sim.CurrentInteraction.GetPriority();
             switch ((ListOfSelfInteractions)randomEvent)
             {
                 case ListOfSelfInteractions.KnockedOut:
