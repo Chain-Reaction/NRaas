@@ -244,7 +244,6 @@
     <Compile Include="GoHereSpace\Helpers\AncientPortalRoutingHelper.cs" />
     <Compile Include="GoHereSpace\Helpers\AncientPortalComponent.cs" />
     <Compile Include="GoHereSpace\Helpers\CarRoutingComponentEx.cs" />
-    <Compile Include="GoHereSpace\Helpers\AskToWatchChildController.cs" />
     <Compile Include="GoHereSpace\Helpers\DoorPortalComponentEx.cs" />
     <Compile Include="GoHereSpace\Helpers\ObstacleEncounteredRouteInterruptActionEx.cs" />
     <Compile Include="GoHereSpace\Helpers\RoutingComponentEx.cs" />
