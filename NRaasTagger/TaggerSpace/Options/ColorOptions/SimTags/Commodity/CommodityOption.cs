@@ -21,7 +21,7 @@ namespace NRaas.TaggerSpace.Options.ColorOptions.SimTags.Commodity
         public CommodityOption(CommodityKind type)
         {            
             mType = type;
-            mName = mType.ToString();
+            mName = Tagger.LocalizeEAString("Ui/Caption/HUD/MotivesPanel:Motive" + mType.ToString());
         }
 
         protected override CommodityKind Value

@@ -9,6 +9,7 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
 using Sims3.Gameplay.Interfaces;
+using Sims3.Gameplay.ObjectComponents;
 using Sims3.Gameplay.Objects.Fishing;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.Utilities;
@@ -22,13 +23,13 @@ using System.Text;
 
 namespace NRaas.HybridSpace.Interactions
 {
-    public class MermaidEatEx : Common.IPreLoad, Common.IAddInteraction
+    public class MermaidEatEx : OccultMermaid.MermaidEat, Common.IPreLoad, Common.IAddInteraction
     {
         static InteractionDefinition sOldSingleton;
-
+        
         public void OnPreLoad()
         {
-            Tunings.Inject<Sim, OccultMermaid.MermaidEat.Definition, Definition>(false);
+            Tunings.Inject<Fish, OccultMermaid.MermaidEat.Definition, Definition>(false);
 
             sOldSingleton = OccultMermaid.MermaidEat.Singleton;
             OccultMermaid.MermaidEat.Singleton = new Definition();
@@ -36,13 +37,18 @@ namespace NRaas.HybridSpace.Interactions
 
         public void AddInteraction(Common.InteractionInjectorList interactions)
         {
-            interactions.Replace<Sim, OccultMermaid.MermaidEat.Definition>(OccultMermaid.MermaidEat.Singleton);
+            interactions.Replace<Fish, OccultMermaid.MermaidEat.Definition>(Singleton);
         }
 
-        public class Definition : OccultMermaid.MermaidEat.Definition
+        public new class Definition : OccultMermaid.MermaidEat.Definition, IScubaDivingInteractionDefinition
         {
             public Definition()
             { }
+
+            public Definition(IFishContainer container)
+            {
+                base.FishContainer = container;
+            }
 
             public override string GetInteractionName(Sim actor, Fish target, InteractionObjectPair iop)
             {

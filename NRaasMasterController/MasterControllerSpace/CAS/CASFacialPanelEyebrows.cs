@@ -39,7 +39,6 @@ namespace NRaas.MasterControllerSpace.CAS
         {
             Slider slider = panel.GetChildByID(0x5db9715, true) as Slider;
 
-            slider.MinValue = 0x0;
             slider.MaxValue = 256 * NRaas.MasterController.Settings.mSliderMultiple;
 
             List<BlendUnit> list = new List<BlendUnit>(CASController.Singleton.BlendUnits);
@@ -49,6 +48,14 @@ namespace NRaas.MasterControllerSpace.CAS
                 {
                     FacialBlendData facialBlendData = panel.GetFacialBlendData(unit);
 
+                    if (facialBlendData.mBidirectional)
+                    {
+                        slider.MinValue = -256;
+                    }
+                    else
+                    {
+                        slider.MinValue = 0x0;
+                    }
                     slider.Value = (int)Math.Round((double)(facialBlendData.Value * 256f));
                     break;
                 }

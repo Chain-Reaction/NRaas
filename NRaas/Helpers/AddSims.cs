@@ -146,6 +146,7 @@ namespace NRaas.CommonSpace.Helpers
                     // Must be performed or the Household:Add() will bounce
                     if (!sim.IsValidDescription)
                     {
+                        //Common.Notify("Not valid description");
                         sim.Fixup();
                     }
 
@@ -208,12 +209,20 @@ namespace NRaas.CommonSpace.Helpers
                 if (miniSim != null)
                 {
                     (Sims3.Gameplay.UI.Responder.Instance.HudModel as HudModel).OnSimCurrentWorldChanged(true, miniSim);
+                }
 
+                // Homeless Sims aren't being pushed to the aging manager but don't want to push Sims who are traveling on to it
+                if((!sim.AgingEnabled && oldHouse.LotHome == null && !GameUtils.IsOnVacation()) || miniSim != null)
+                {
+                    //Common.Notify("Pushing aging");
                     AgingManager.Singleton.AddSimDescription(sim);
 
-                    sim.AgingState.MergeTravelInformation(miniSim);
+                    if (miniSim != null)
+                    {
+                        sim.AgingState.MergeTravelInformation(miniSim);
+                    }
 
-                    sim.SetFlags(SimDescription.FlagField.AgingEnabled, true);
+                    sim.SetFlags(SimDescription.FlagField.AgingEnabled, true);                    
                 }
 
                 try
@@ -223,8 +232,17 @@ namespace NRaas.CommonSpace.Helpers
                         sim.Service.EndService(sim);
                     }
 
+                    if (oldHouse.LotHome == null)
+                    {
+                        // Some homeless Sims in Bridgeport have their homeworld set wrong it seems
+                        //Common.Notify("Resetting HW");
+                        sim.mHomeWorld = GameUtils.GetCurrentWorld();
+                    }
+
                     if (sim.CreatedSim != null)
                     {
+                        sim.Fixup();
+
                         sim.CreatedSim.BuffManager.RemoveElement(BuffNames.StrayPet);
 
                         DreamCatcher.AdjustSelectable(sim, sim.Household == Household.ActiveHousehold, dreamCatcher);
@@ -243,7 +261,7 @@ namespace NRaas.CommonSpace.Helpers
                 }
                 catch (Exception e)
                 {
-                    Common.DebugException(sim, e);
+                    Common.Exception(sim, e);
                 }
             }
         }

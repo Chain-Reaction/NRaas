@@ -434,15 +434,34 @@ namespace NRaas.TaggerSpace.Options
 
         public void Export(Persistence.Lookup settings)
         {
+            settings.Add("MAType", (uint)mMetaAutonomyType);
+
+            settings.Add("HourOpen", mHourOpen);
+
+            settings.Add("HourClose", mHourClose);
         }
 
         public void Import(Persistence.Lookup settings)
         {
+            if (settings.GetEnum<Lot.MetaAutonomyType>("MAType", Lot.MetaAutonomyType.None) != Lot.MetaAutonomyType.None)
+            {
+                mMetaAutonomyType = settings.GetEnum<Lot.MetaAutonomyType>("ServiceType", Lot.MetaAutonomyType.None);
+
+                if (settings.Exists("HourOpen"))
+                {
+                    mHourOpen = settings.GetFloat("HourOpen", -1);
+                }
+
+                if (settings.Exists("HourClose"))
+                {
+                    mHourClose = settings.GetFloat("HourClose", -1);
+                }
+            }
         }
 
         public string PersistencePrefix
         {
-            get { return mMetaAutonomyType.ToString(); }
+            get { return null; }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace NRaas.TaggerSpace.Options.MetaAutonomyOptions
             {
                 MetaAutonomySettingKey key = Tagger.Settings.GetMASettings(mType);
                 key.mHourOpen = value;
-                Tagger.Settings.AddOrUpdateMASettings(mType, key);                
+                Tagger.Settings.AddOrUpdateMASettings((uint) mType, key);                
             }
         }
 

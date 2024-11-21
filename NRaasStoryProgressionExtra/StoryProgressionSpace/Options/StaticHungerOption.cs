@@ -23,6 +23,17 @@ namespace NRaas.StoryProgressionSpace.Options
         {
             return "StaticHunger";
         }
+
+        public override bool ShouldDisplay()
+        {
+            if (Manager.SimDescription != null)
+            {
+                if (Manager.SimDescription.IsVampire) return false;
+                if (Manager.SimDescription.IsEP11Bot) return false;
+            }
+
+            return base.ShouldDisplay();
+        }
     }
 }
 

@@ -325,7 +325,7 @@ namespace NRaas
                 }
             }
 
-            foreach (KeyValuePair<Lot.MetaAutonomyType, MetaAutonomySettingKey> key in Tagger.Settings.mMetaAutonomySettings)
+            foreach (KeyValuePair<uint, MetaAutonomySettingKey> key in Tagger.Settings.mMetaAutonomySettings)
             {
                 key.Value.InjectTuning();
             }

@@ -22,13 +22,13 @@ using System.Text;
 
 namespace NRaas.HybridSpace.Interactions
 {
-    public class MermaidEatFromFishContainerEx : Common.IPreLoad, Common.IAddInteraction
+    public class MermaidEatFromFishContainerEx : OccultMermaid.MermaidEatFromFishContainer, Common.IPreLoad, Common.IAddInteraction
     {
         static InteractionDefinition sOldSingleton;
 
         public void OnPreLoad()
         {
-            Tunings.Inject<Sim, OccultMermaid.MermaidEatFromFishContainer.Definition, Definition>(false);
+            Tunings.Inject<IFishContainer, OccultMermaid.MermaidEatFromFishContainer.Definition, Definition>(false);
 
             sOldSingleton = OccultMermaid.MermaidEatFromFishContainer.Singleton;
             OccultMermaid.MermaidEatFromFishContainer.Singleton = new Definition();
@@ -36,10 +36,10 @@ namespace NRaas.HybridSpace.Interactions
 
         public void AddInteraction(Common.InteractionInjectorList interactions)
         {
-            interactions.Replace<Sim, OccultMermaid.MermaidEatFromFishContainer.Definition>(OccultMermaid.MermaidEatFromFishContainer.Singleton);
+            interactions.Replace<IFishContainer, OccultMermaid.MermaidEatFromFishContainer.Definition>(Singleton);
         }
 
-        public class Definition : OccultMermaid.MermaidEatFromFishContainer.Definition
+        public new class Definition : OccultMermaid.MermaidEatFromFishContainer.Definition
         {
             public Definition()
             { }

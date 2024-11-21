@@ -93,6 +93,7 @@
     <Compile Include="MasterControllerSpace\Interactions\CustomizeCollarAndCoatsEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\PlanResortUniformObjectEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\PlanResortUniformEx.cs" />
+    <Compile Include="MasterControllerSpace\Interactions\SummonPlayableMummyEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\TriggerAgeTransitionEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\VanityChangeAppearanceEx.cs" />
     <Compile Include="MasterControllerSpace\Interactions\MirrorChangeAppearanceEx.cs" />

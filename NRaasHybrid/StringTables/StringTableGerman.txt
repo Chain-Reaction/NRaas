@@ -1,0 +1,47 @@
+<KEY>NRaas.Hybrid.Version:MenuName</KEY>
+<STR>Version</STR>
+<KEY>NRaas.Hybrid.Version:Prompt</KEY>
+<STR>Version: {0.Number}\nTranslation Version: 1\nübersetzt von: C-Dark</STR>
+
+<KEY>NRaas.Hybrid.Root:MenuName</KEY>
+<STR>Hybrid...</STR>
+
+<KEY>NRaas.Hybrid.Reset:MenuName</KEY>
+<STR>Alles zurücksetzen</STR>
+<KEY>NRaas.Hybrid.Reset:Prompt</KEY>
+<STR>Willst du alle Einstellungen auf Standard zurücksetzen?</STR>
+<KEY>NRaas.Hybrid.Reset:Complete</KEY>
+<STR>Zurücksetzen ist abgeschlossen.</STR>
+
+<KEY>NRaas.Hybrid.Boolean:True</KEY>
+<STR>Wahr</STR>
+<KEY>NRaas.Hybrid.Boolean:False</KEY>
+<STR>Falsch</STR>
+
+<KEY>NRaas.Hybrid.OptionList:OptionTitle</KEY>
+<STR>Option</STR>
+<KEY>NRaas.Hybrid.OptionList:OptionTooltip</KEY>
+<STR>Option</STR>
+<KEY>NRaas.Hybrid.OptionList:ValueTitle</KEY>
+<STR>Wert</STR>
+<KEY>NRaas.Hybrid.OptionList:ValueTooltip</KEY>
+<STR>Wert</STR>
+
+<KEY>NRaas.Hybrid.Debugging:MenuName</KEY>
+<STR>Zeige Debugging</STR>
+
+<KEY>NRaas.Hybrid.SpecialWerewolfOutfit:MenuName</KEY>
+<STR>Verwende spezielles Werewolf Outfit</STR>
+
+<KEY>NRaas.Hybrid.ValidOccult:MenuName</KEY>
+<STR>Okkult Zaubersprüche</STR>
+<KEY>NRaas.Hybrid.SkillLevel:MenuName</KEY>
+<STR>Fähigkeitenstufe</STR>
+<KEY>NRaas.Hybrid.SkillLevel:Prompt</KEY>
+<STR>Gib die minimale Fähigkeitenstufe ein (Zaubern oder Fee), die erforderlich ist, um den Zauber {0.String} freizuschalten:</STR>
+
+<KEY>NRaas.Hybrid.BanishSim:MenuName</KEY>
+<STR>Verbannter Sim</STR>
+
+<KEY>NRaas.Hybrid.AllowOccultSkating:MenuName</KEY>
+<STR>Skating für Okkult erlauben</STR>

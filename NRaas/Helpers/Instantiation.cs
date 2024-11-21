@@ -382,6 +382,7 @@ namespace NRaas.CommonSpace.Helpers
                         */
 
                         // Custom
+                        OccultTypeHelper.ValidateOccult(ths, Common.DebugNotify);
                         OccultTypeHelper.SetupForInstantiatedSim(ths.OccultManager);
 
                         if (ths.IsAlien)

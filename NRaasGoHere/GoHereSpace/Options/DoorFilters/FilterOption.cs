@@ -34,7 +34,8 @@ namespace NRaas.GoHereSpace.Options.DoorFilters
             }
             set
             {
-                GoHere.Settings.AddOrUpdateDoorSettings(mTarget.ObjectId, (!Value.IsFilterActive(mName) ? Value.AddFilter(mName) : Value.RemoveFilter(mName)), true);                
+                Value = !Value.IsFilterActive(mName) ? Value.AddFilter(mName) : Value.RemoveFilter(mName);
+                GoHere.Settings.AddOrUpdateDoorSettings(mTarget.ObjectId, Value, true);                
             }
         }
 

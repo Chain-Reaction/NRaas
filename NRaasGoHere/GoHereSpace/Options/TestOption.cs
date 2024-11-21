@@ -32,6 +32,17 @@ namespace NRaas.GoHereSpace.Options
 
         protected override OptionResult Run(GameHitParameters<GameObject> parameters)
         {
+            Pair<int, Dictionary<int, bool>> dic;
+            if (PlumbBob.SelectedActor.mAllowedRooms.TryGetValue(LotManager.ActiveLot.LotId, out dic))
+            {
+                foreach (KeyValuePair<int, bool> pair in dic.Second)
+                {
+                    Common.Notify("Roomid: " + pair.Key + ". Allowed: " + pair.Value);
+                }
+            }
+
+            FilterHelper.CreateFilterWithRandomCriteria(PlumbBob.SelectedActor.SimDescription.GetMiniSimDescription(), new List<string>(), new Dictionary<string,string>(), new int[] {1, 3}, new Dictionary<string,int[]>());
+            /*
             Common.StringBuilder msg = new Common.StringBuilder("TestOption");
 
             try
@@ -42,6 +53,7 @@ namespace NRaas.GoHereSpace.Options
             {
                 Common.WriteLog(msg);
             }
+             */
 
             return OptionResult.SuccessClose;
         }

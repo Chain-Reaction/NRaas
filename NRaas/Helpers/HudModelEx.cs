@@ -43,6 +43,23 @@ namespace NRaas.CommonSpace.Helpers
                         infos.Add(new KnownInfo(trait.TraitName(description.IsFemale), trait.IconKey, KnownInfoType.Trait));
                     }
                 }
+                if (description.IsEP11Bot && description.TraitChipManager != null)
+                {
+                    if (description.TraitChipManager.Count > 0)
+                    {
+                        foreach (TraitChip installedTraitChip in description.TraitChipManager.GetInstalledTraitChips())
+                        {
+                            if (Localization.HasLocalizationString(installedTraitChip.TraitChipNameKey))
+                            {
+                                infos.Add(new KnownInfo(Localization.LocalizeString(installedTraitChip.TraitChipNameKey), installedTraitChip.IconKey, KnownInfoType.TraitChip));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        infos.Add(new KnownInfo(Localization.LocalizeString("Ui/Caption/HUD/KnownInfoDialog:None"), ResourceKey.kInvalidResourceKey, KnownInfoType.TraitChip));
+                    }
+                }
 
                 if (isHuman && !child)
                 {
@@ -211,6 +228,39 @@ namespace NRaas.CommonSpace.Helpers
                         }
                     }
 
+                    str = Localization.LocalizeString("Ui/Caption/HUD/RelationshipsPanel:UnknownChip");
+                    if (otherSimDesc.TraitChipManager != null)
+                    {
+                        if (otherSimDesc.TraitChipManager.Count > 0)
+                        {
+                            foreach (TraitChip installedTraitChip in otherSimDesc.TraitChipManager.GetInstalledTraitChips())
+                            {
+                                if (!Localization.HasLocalizationString(installedTraitChip.TraitChipNameKey))
+                                {
+                                    continue;
+                                }
+                                bool flag4 = false;
+                                foreach (TraitChipName traitChip in learnedInfo.TraitChips)
+                                {
+                                    if (installedTraitChip.TraitChipName == traitChip)
+                                    {
+                                        list.Add(new KnownInfo(Localization.LocalizeString(installedTraitChip.TraitChipNameKey), installedTraitChip.IconKey, KnownInfoType.TraitChip));
+                                        flag4 = true;
+                                        break;
+                                    }
+                                }
+                                if (!flag4)
+                                {
+                                    list.Add(new KnownInfo(str, ResourceKey.CreatePNGKey("trait_unknown", 0u), KnownInfoType.TraitChipUnknown));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            list.Add(new KnownInfo(Localization.LocalizeString("Ui/Caption/HUD/KnownInfoDialog:None"), ResourceKey.kInvalidResourceKey, KnownInfoType.TraitChip));
+                        }
+                    }
+
                     msg += "B";
 
                     if ((isHuman && learnedInfo.CareerKnown) && !isChild)
@@ -324,7 +374,7 @@ namespace NRaas.CommonSpace.Helpers
                         list.Add(new KnownInfo(Localization.LocalizeString(otherSimDesc.IsFemale, "Ui/Caption/HUD/KnownInfoDialog:IsRich", new object[0x0]), ResourceKey.CreatePNGKey("w_simoleon_32", 0x0), KnownInfoType.Rich));
                     }
 
-                    if (isHuman && learnedInfo.SignKnown)
+                    if (isHuman && learnedInfo.SignKnown && !otherSimDesc.IsEP11Bot)
                     {
                         Zodiac zodiac = otherSimDesc.Zodiac;
                         list.Add(new KnownInfo(Localization.LocalizeString(otherSimDesc.IsFemale, "Ui/Caption/HUD/KnownInfoDialog:" + zodiac.ToString(), new object[0x0]), ResourceKey.CreatePNGKey("sign_" + zodiac.ToString() + "_sm", 0x0), KnownInfoType.Zodiac));

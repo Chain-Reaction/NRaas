@@ -78,7 +78,7 @@ namespace NRaas.VectorSpace.Stages
             for (i = 0; i < mNextWeights.Length; i++)
             {
                 current += mNextWeights[i];
-                if (current > result) break;
+                if (current >= result) break;
             }
 
             return mNextStages[i].Second;

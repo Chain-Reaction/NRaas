@@ -1,24 +1,21 @@
 ﻿using NRaas.CommonSpace.Helpers;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
-using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Core;
-using Sims3.Gameplay.EventSystem;
 using Sims3.Gameplay.Interactions;
-using Sims3.Gameplay.Interfaces;
 using Sims3.Gameplay.ObjectComponents;
 using Sims3.Gameplay.Objects.Door;
 using Sims3.Gameplay.RealEstate;
-using Sims3.Gameplay.Services;
+using Sims3.Gameplay.Routing;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
+using Sims3.SimIFace.CAS;
 using Sims3.Store.Objects;
 using Sims3.UI;
 using Sims3.UI.CAS;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NRaas.GoHereSpace.Helpers
 {
@@ -90,6 +87,37 @@ namespace NRaas.GoHereSpace.Helpers
 
             base.OnLaneLocked(sim, info);
         }
+        
+        public static void PushPreactionsForRoute(Route r, RoutingComponent comp)
+		{
+			OutfitCategories outfitCategories = OutfitCategories.None;
+			int index = 0;
+			Sim sim = r.Follower.Target as Sim;
+			if (sim == null || r.PlanResult.mType != RoutePlanResultType.Succeeded || !sim.IsHuman)
+			{
+				return;
+			}
+			foreach (RouteAction mRouteAction in comp.mRouteActions)
+			{
+				if (!(mRouteAction is PortalRouteThroughAction))
+				{
+					continue;
+				}
+				PortalRouteThroughAction portalRouteThroughAction = mRouteAction as PortalRouteThroughAction;
+				if (portalRouteThroughAction.mPortalObject is CommonDoor)
+				{
+					DoorSettings doorSettings = GoHere.Settings.GetDoorSettings(portalRouteThroughAction.mPortalObject.ObjectId);
+					if (doorSettings != null)
+					{
+						outfitCategories = doorSettings.GetOutfitToSwitchInto(out index);
+					}
+				}
+			}
+			if (outfitCategories != 0 && (sim.CurrentOutfitCategory != outfitCategories || sim.CurrentOutfitIndex != index) && sim.SimDescription.GetOutfitCount(outfitCategories) - 1 <= index)
+			{
+				SwitchOutfits.SwitchNoSpin(sim, new CASParts.Key(outfitCategories, index));
+			}
+		}
 
         public static string SceneWindow_Hover(IScriptProxy o, ScenePickArgs args)
         {
@@ -279,6 +307,7 @@ namespace NRaas.GoHereSpace.Helpers
 
             private List<string> mActiveFilters = new List<string>();
             private Dictionary<ulong, long> mSimsRecentlyLetThrough = new Dictionary<ulong, long>();
+            public PairedListDictionary<OutfitCategories, List<int>> mOutfitSettings = new PairedListDictionary<OutfitCategories, List<int>>();
             public bool mMatchAllFilters = false;
             public bool mIsOneWayDoor = false;
             public SettingType mType = SettingType.Deny;
@@ -599,6 +628,22 @@ namespace NRaas.GoHereSpace.Helpers
 
                 return false;
             }
+            
+            public OutfitCategories GetOutfitToSwitchInto(out int index)
+			{
+				index = 0;
+				if (mOutfitSettings.Count > 1)
+				{
+					KeyValuePair<OutfitCategories, List<int>> randomKeyValuePairFromPairedListDictionary = RandomUtil.GetRandomKeyValuePairFromPairedListDictionary(mOutfitSettings);
+					if (randomKeyValuePairFromPairedListDictionary.Value.Count == 0)
+					{
+						return OutfitCategories.None;
+					}
+					index = RandomUtil.GetRandomObjectFromList(randomKeyValuePairFromPairedListDictionary.Value);
+					return randomKeyValuePairFromPairedListDictionary.Key;
+				}
+				return OutfitCategories.None;
+			}
 
             public static void RegisterRoomListeners(Lot lot)
             {
@@ -637,6 +682,7 @@ namespace NRaas.GoHereSpace.Helpers
                         if (sim != null)
                         {
                             sim.mAllowedRooms.Remove(lot.LotId);
+                            sim.RecalculateAllowedRooms();
                         }
                     }
 
@@ -664,12 +710,17 @@ namespace NRaas.GoHereSpace.Helpers
                 }
             }
 
-            public static bool TestPortalObject(Sim sim, int dest, CommonDoor obj)
+            public static bool TestPortalObject(Sim sim, int dest, CommonDoor obj, bool isAutonomyCheck = false)
             {
                 if (obj == null || sim == null) return true;
 
                 CommonDoor.tSide sideInRoom = CommonDoor.tSide.Front;
                 obj.GetSideOfDoorInRoom(dest, out sideInRoom);
+                
+                if (isAutonomyCheck && sideInRoom == CommonDoor.tSide.Back)
+				{
+					return true;
+				}
 
                 DoorSettings settings = GoHere.Settings.GetDoorSettings(obj.ObjectId, false);
 
@@ -917,12 +968,14 @@ namespace NRaas.GoHereSpace.Helpers
                     {
                         ReplaceComponent(door);
                     }
-
+                    
+                    lot.RefreshObjectCacheUsers();
                     foreach (Sim sim in LotManager.Actors)
                     {
-                        if (sim != null && sim.mAllowedRooms != null)
+                        if (sim != null && sim.LotCurrent == lot && sim.mAllowedRooms != null)
                         {
                             sim.mAllowedRooms.Remove(lot.mLotId);
+                            sim.RecalculateAllowedRooms();
                         }
                     }
                 }

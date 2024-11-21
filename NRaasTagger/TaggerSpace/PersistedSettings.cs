@@ -131,7 +131,7 @@ namespace NRaas.TaggerSpace
 
         public Dictionary<ulong, List<string>> mCustomSimTitles = new Dictionary<ulong, List<string>>();
 
-        public Dictionary<Lot.MetaAutonomyType, MetaAutonomySettingKey> mMetaAutonomySettings = new Dictionary<Lot.MetaAutonomyType, MetaAutonomySettingKey>();        
+        public Dictionary<uint, MetaAutonomySettingKey> mMetaAutonomySettings = new Dictionary<uint, MetaAutonomySettingKey>();        
 
         protected bool mDebugging = false;
 
@@ -339,10 +339,10 @@ namespace NRaas.TaggerSpace
 
         public MetaAutonomySettingKey GetMASettings(Lot.MetaAutonomyType type)
         {
-            return GetMASettings(type, true);
+            return GetMASettings((uint) type, true);
         }
 
-        public MetaAutonomySettingKey GetMASettings(Lot.MetaAutonomyType type, bool returnDefault)
+        public MetaAutonomySettingKey GetMASettings(uint type, bool returnDefault)
         {
             MetaAutonomySettingKey key;
             if (mMetaAutonomySettings.TryGetValue(type, out key))
@@ -358,7 +358,7 @@ namespace NRaas.TaggerSpace
             return null;
         }        
 
-        public void AddOrUpdateMASettings(Lot.MetaAutonomyType type, MetaAutonomySettingKey settings)
+        public void AddOrUpdateMASettings(uint type, MetaAutonomySettingKey settings)
         {
             if (GetMASettings(type, false) != null)
             {

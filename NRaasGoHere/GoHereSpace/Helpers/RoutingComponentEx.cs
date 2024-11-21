@@ -133,6 +133,7 @@ namespace NRaas.GoHereSpace.Helpers
                             owner.PushBackpackPostureIfNecessary();
                             owner.PushCanePostureIfNecessary();
                             owner.PushJetpackPostureIfNecessary();
+                            DoorPortalComponentEx.PushPreactionsForRoute(r, ths);
                         }
                     }
                     else

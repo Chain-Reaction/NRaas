@@ -38,6 +38,12 @@ namespace NRaas.OverwatchSpace.Loadup
                     {
                         List<CommodityTypes> removeCommodity = new List<CommodityTypes>();
 
+                        if (CommodityData.Get(relation.STC.CurrentCommodity) == null)
+                        {
+                            relation.mSTC = new ShortTermContext(relation.SimDescriptionA, relation.SimDescriptionB);
+                            Overwatch.Log("Reset invalid STC for " + relation.SimDescriptionA.FullName + " and " + relation.SimDescriptionB.FullName);
+                        }
+
                         foreach (KeyValuePair<CommodityTypes, Dictionary<SimDescription, float>> commodity in relation.STC.mAsymmetricStcProgress)
                         {
                             List<SimDescription> remove = new List<SimDescription>();

@@ -80,6 +80,22 @@ namespace NRaas.WoohooerSpace.Interactions
                         }
                     }
 
+                    if((actor != null && target != null) && (actor.SimDescription.TeenOrBelow || target.SimDescription.TeenOrBelow))
+                    {
+                        if(!Woohooer.Settings.AllowTeen(false))
+                        {
+                            return false;
+                        }
+
+                        if((actor.SimDescription.YoungAdultOrAbove || target.SimDescription.YoungAdultOrAbove))
+                        {
+                            if(!Woohooer.Settings.AllowTeenAdult(false))
+                            {
+                                return false;
+                            }
+                        }
+                    }
+
                     if (((actor == target) || (actor == null)) || (((target == null) || (target.SimDescription == null)) || target.SimDescription.ChildOrBelow))
                     {
                         return false;
