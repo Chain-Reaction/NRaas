@@ -29,6 +29,11 @@ namespace NRaas.CommonSpace.Helpers
 
         public static Dictionary<string, Dictionary<ulong, SimFilter>> filters = new Dictionary<string, Dictionary<ulong, SimFilter>>();
 
+        public static bool sLoadValidationRan = false;
+
+        public FilterHelper()
+        { }
+
         public static SimFilter GetFilter(string filter)
         {
             return GetFilter(filter, 0, false);
@@ -96,6 +101,9 @@ namespace NRaas.CommonSpace.Helpers
                 {
                     return filters[filter][0];
                 }
+            } else
+            {
+                Common.DebugNotify(filter + " missing from filters");
             }
 
             if (filter.Contains("Attraction")) return null;
@@ -105,7 +113,7 @@ namespace NRaas.CommonSpace.Helpers
 
         public static bool IsValidFilter(string filter)
         {
-            return filters.ContainsKey(filter);
+            return filters.ContainsKey(filter) || !sLoadValidationRan;
         }
 
         public static Dictionary<string, bool> GetFilters()
@@ -140,7 +148,7 @@ namespace NRaas.CommonSpace.Helpers
                 createdFilter = sCreateFilterWithRandomCriteria.Invoke<string>(new object[] { GetCallingNamespace, actor, forbiddenCrit, forbiddenOptions, minMaxCrit, minMaxOptions });
             }
 
-            Common.Notify("Got back " + createdFilter);
+            Common.DebugNotify("Got back " + createdFilter);
 
             return createdFilter;
         }
@@ -336,7 +344,7 @@ namespace NRaas.CommonSpace.Helpers
 
                     if (result.Count > 0 && result.ContainsKey(filter))
                     {
-                        Common.DebugNotify("GrabFilterHot: " + result[filter]);
+                        Common.DebugNotify("Grab Filter Hot SimSpecific?: " + result[filter]);
                         return UpdateFilter(filter, cacheSim, result[filter]);
                     }
                 }
@@ -394,7 +402,7 @@ namespace NRaas.CommonSpace.Helpers
 
         public static SimFilter Cache(string filter, ulong cacheSim, List<ulong> sims)
         {
-            //Common.DebugNotify("Cache: " + filter + " Count: " + sims.Count + " cacheSim: " + cacheSim);
+            Common.DebugNotify("Cache: " + filter + " Count: " + sims.Count + " cacheSim: " + cacheSim);
             SimFilter cFilter = new SimFilter(filter, cacheSim);
             cFilter.Sims = sims;
 
@@ -402,12 +410,15 @@ namespace NRaas.CommonSpace.Helpers
             filters.TryGetValue(filter, out mCache);
             if (mCache != null)
             {
+                Common.DebugNotify("Adding " + sims.Count + " results to existing cache for " + filter + " for sim " + cacheSim);
                 mCache.Remove(cacheSim);
                 mCache.Add(cacheSim, cFilter);
                 filters[filter] = mCache;
+                Common.DebugNotify("Match count now is " + filters[filter][cacheSim].Sims.Count);
             }
             else
             {
+                Common.DebugNotify("Creating new cache with " + sims.Count + " results for " + filter + " for sim " + cacheSim);
                 mCache = new Dictionary<ulong, SimFilter>();
                 mCache.Add(cacheSim, cFilter);
                 filters.Add(filter, mCache);
@@ -452,9 +463,13 @@ namespace NRaas.CommonSpace.Helpers
                     }
                     else
                     {
+                        Common.DebugNotify("Working on filter" + filter);
                         List<ulong> mRemove = new List<ulong>();
                         foreach (KeyValuePair<ulong, SimFilter> kvp in filters[filter])
                         {
+                            Common.DebugNotify("Found " + kvp.Key + " in filter " + filter);
+                            if (kvp.Key == 0) continue;
+
                             if (MiniSimDescription.Find(kvp.Key) == null)
                             {
                                 mRemove.Add(kvp.Key);
@@ -474,8 +489,10 @@ namespace NRaas.CommonSpace.Helpers
             }
             else
             {
+                Common.DebugNotify("No filters found on load");
                 UpdateFilters();
             }
+            
         }
 
         public void OnDelayedWorldLoadFinished()
@@ -484,6 +501,8 @@ namespace NRaas.CommonSpace.Helpers
             {
                 ValidateFilters();
             }
+
+            sLoadValidationRan = true;
         }
 
         public void OnWorldQuit()
@@ -551,13 +570,20 @@ namespace NRaas.CommonSpace.Helpers
 
             public void Validate()
             {
+                List<ulong> remove = new List<ulong>();
+
                 foreach (ulong sim in sims)
                 {
                     IMiniSimDescription desc = MiniSimDescription.Find(sim);
                     if (desc == null)
                     {
-                        sims.Remove(sim);
+                        remove.Add(sim);
                     }
+                }
+
+                foreach (ulong sim in remove)
+                {
+                    sims.Remove(sim);
                 }
             }
 

@@ -89,6 +89,9 @@ namespace NRaas
 
         public void OnDelayedWorldLoadFinished()
         {
+            /* This is being called before FilterHelper is populating the filters and pulling them (registerroomlisteners) thus creating a conflict.
+             * Put in a safeguard against that but it's hacky so revisit sometime
+             */
             DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors();
         }
 

@@ -188,8 +188,19 @@ namespace NRaas.TaggerSpace
             return false;
         }
 
+        public static void ValidateActiveFilters()
+        {
+            Tagger.Settings.ValidateActiveFilters(true);
+        }
+
         public void ValidateActiveFilters(bool worldLoad)
         {
+            if (!FilterHelper.sLoadValidationRan)
+            {
+                new Common.AlarmTask(1, TimeUnit.Minutes, PersistedSettings.ValidateActiveFilters);
+                return;
+            }
+
             foreach (string filter in new List<string>(mCurrentLotFilters))
             {
                 if (!FilterHelper.IsValidFilter(filter))

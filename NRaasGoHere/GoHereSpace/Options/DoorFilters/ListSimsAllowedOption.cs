@@ -1,4 +1,4 @@
-﻿using NRaas.CommonSpace.Options;
+using NRaas.CommonSpace.Options;
 using NRaas.CommonSpace.Selection;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;

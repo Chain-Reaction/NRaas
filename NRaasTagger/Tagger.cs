@@ -329,6 +329,8 @@ namespace NRaas
             {
                 key.Value.InjectTuning();
             }
+
+            Tagger.Settings.ValidateActiveFilters(true);
         }
 
         public void OnWorldLoadFinished()
@@ -387,9 +389,7 @@ namespace NRaas
                 {
                     Tagger.Settings.mTagDataSettings.Add(flag, false);
                 }
-            }
-
-            Tagger.Settings.ValidateActiveFilters(true);           
+            }          
         }
 
         // Externalized to GoHere

@@ -1,4 +1,4 @@
-﻿using NRaas.CommonSpace.Helpers;
+using NRaas.CommonSpace.Helpers;
 using NRaas.CommonSpace.Options;
 using NRaas.GoHereSpace.Interactions;
 using Sims3.Gameplay.Abstracts;

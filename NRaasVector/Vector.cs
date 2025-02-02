@@ -26,6 +26,7 @@ namespace NRaas
             BooterHelper.Add(new ScoringBooter("VectorMethodFile", "NRaas.BootStrap", false));
             BooterHelper.Add(new SymptomBooter("NRaas.BootStrap"));
             BooterHelper.Add(new ResistanceBooter("NRaas.BootStrap"));
+            BooterHelper.Add(new InstigatorBooter("NRaas.BootStrap"));
             BooterHelper.Add(new VectorBooter("NRaas.BootStrap"));
 
             BooterHelper.Add(new SocializingBooter());

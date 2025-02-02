@@ -54,6 +54,6 @@ Found: NRaas.Vector.SocializingActionAvailability
          * 
          * 
          */
-        public static readonly int sVersion = 19;
+        public static readonly int sVersion = 20;
     }
 }

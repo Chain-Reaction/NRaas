@@ -319,6 +319,13 @@ namespace NRaas.GoHereSpace.Helpers
 
             public static void ValidateAndSetupDoors()
             {
+                if(!FilterHelper.sLoadValidationRan)
+                {
+                    Common.DebugNotify("Respawning door validation");
+                    new Common.AlarmTask(1, TimeUnit.Minutes, DoorPortalComponentEx.DoorSettings.ValidateAndSetupDoors);
+                    return;
+                }
+
                 List<ulong> removeSim = new List<ulong>();
 
                 foreach (ObjectGuid guid in new List<ObjectGuid>(GoHere.Settings.mDoorSettings.Keys))
@@ -355,6 +362,8 @@ namespace NRaas.GoHereSpace.Helpers
 
                         continue;
                     }
+
+                    Common.DebugNotify("Removed invalid door filter on load: " + guid.ToString());
 
                     GoHere.Settings.mDoorSettings.Remove(guid);
                 }
