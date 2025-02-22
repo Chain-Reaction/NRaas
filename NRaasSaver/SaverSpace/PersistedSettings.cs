@@ -24,8 +24,8 @@ namespace NRaas.SaverSpace
         public int mSimMinutesBetweenSaves = SaverOptions.kSimMinutesBetweenSaves;
         public List<float> mSimSaveHour = new List<float>(SaverOptions.kSimSaveHour);
         public int mSaveCycles = SaverOptions.kSaveCycles;
-        public bool mPauseOnLoad = SaverOptions2.kPauseOnLoad;
-        public bool mPauseOnSave = SaverOptions3.kPauseOnSave;
+        public bool mPauseOnLoad = SaverOptions.kPauseOnLoad;
+        public bool mPauseOnSave = SaverOptions.kPauseOnSave;
 
         public bool mSwitchToMapView = SaverOptions.kSwitchToMapView;
 

@@ -50,16 +50,10 @@ namespace NRaas
 
         [Tunable, TunableComment("Whether to prompt while in Build/Buy Mode")]
         public static bool kPromptInBuildBuy = true;        
-    }
 
-    public class SaverOptions2
-    {
         [Tunable, TunableComment("Whether to pause when the game initially loads")]
         public static bool kPauseOnLoad = true;
-    }
 
-    public class SaverOptions3
-    {
         [Tunable, TunableComment("Whether to pause when the save prompt appears")]
         public static bool kPauseOnSave = false;
     }
