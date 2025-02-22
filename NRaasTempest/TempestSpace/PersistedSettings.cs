@@ -48,9 +48,9 @@ namespace NRaas.TempestSpace
         [Tunable, TunableComment("Percent chance occults will give occult items during trick or treating")]
         protected static int kChanceOccultItemTrickOrTreat = 50;
 
-        [Tunable, TunableComment("Whether to enable auto lighting of fireplaces when the temp teaches kAutoLightFireplacesTemperature")]
+        [Tunable, TunableComment("Whether to enable auto lighting of fireplaces when the temp reaches kAutoLightFireplacesTemperature")]
         protected static bool kAutoLightFireplaces = true;
-        [Tunable, TunableComment("At which temperature to auto light said fireplaces")]
+        [Tunable, TunableComment("At which temperature (fahrenheit) to auto light said fireplaces")]
         protected static float kAutoLightFireplacesTemperature = 40.0f;
 
         public int mHailKillsHarvestables = kHailKillsHarvestables;

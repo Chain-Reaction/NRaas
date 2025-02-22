@@ -10,6 +10,9 @@
     <kApplyLifeSpanSkillFactor value="False">
       <!--Whether to apply a skill gain multiple based on life-span-->
     </kApplyLifeSpanSkillFactor>
+    <kCyclesPerUpdate value="0">
+      <!--Number of cycles between updates-->
+    </kCyclesPerUpdate>
     <kSkillGainFactors value="All:1">
       <!--Skill Gain Factors.  Format <Skill>:<Factor>,<Skill>:<Factor>-->
     </kSkillGainFactors>
@@ -41,5 +44,8 @@
     <kSkipOnHumanSleep value="False">
       <!--Whether to only count humans when checking whether to fast forward while sleeping-->
     </kSkipOnHumanSleep>
+    <kPerformRelativeTuningAlterations value="True">
+      <!--Whether to alter tuning based on the relative speed of the mod-->
+    </kPerformRelativeTuningAlterations>
   </Current_Tuning>
 </base>

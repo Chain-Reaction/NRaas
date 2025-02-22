@@ -28,5 +28,8 @@
     <kInbredPenalty value="100">
       <!--Penalty for each ancestor that appears multiple times in the family tree-->
     </kInbredPenalty>
+    <kReportGate value="200">
+      <!--The minimum sale value required to display a notice for inactives-->
+    </kReportGate>
   </Current_Tuning>
 </base>
