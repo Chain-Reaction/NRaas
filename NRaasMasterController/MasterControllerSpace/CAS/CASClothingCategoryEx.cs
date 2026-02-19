@@ -230,25 +230,22 @@ namespace NRaas.MasterControllerSpace.CAS
                     {
                         CASPart part = (CASPart)uncastPart;
 
-                        CASParts.PartPreset preset = new CASParts.PartPreset(part);
-                        if (!preset.Valid)
+                        uint num2 = CASUtils.PartDataNumPresets(part.Key);
+
+                        if (num2 > 0)
                         {
-                            uint num2 = CASUtils.PartDataNumPresets(part.Key);
-                            if (num2 > 0)
+                            CASParts.PartPreset preset = new CASParts.PartPreset(part, 0);
+                            if (!preset.Valid)
                             {
-                                preset = new CASParts.PartPreset(part, 0);
-                                if (!preset.Valid)
-                                {
-                                    preset = null;
-                                }
+                                preset = null;
                             }
+
+                            if (preset == null) continue;
+
+                            if (!ths.mContentTypeFilter.ObjectMatchesFilter(preset, ref hasFilterableContent)) continue;
+
+                            triPart.Add(preset);
                         }
-
-                        if (preset == null) continue;
-
-                        if (!ths.mContentTypeFilter.ObjectMatchesFilter(preset, ref hasFilterableContent)) continue;
-
-                        triPart.Add(preset);
 
                         if (triPart.Count == 3)
                         {
