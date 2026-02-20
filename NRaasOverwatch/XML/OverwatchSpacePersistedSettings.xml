@@ -7,9 +7,12 @@
     <kAffectActiveLot value="False">
       <!--Whether certain actions affect the active lot-->
     </kAffectActiveLot>
-    <kBootAllGnomes value="True">
-      <!--Whether to boot all errant gnomes on a nightly basis-->
-    </kBootAllGnomes>
+    <kResetAllGnomes value="True">
+      <!--Whether to reset all errant gnomes on a nightly basis-->
+    </kResetAllGnomes>
+    <kDeleteAllMagicGnomes value="False">
+      <!--Whether to delete all magic gnomes in the world on a nightly basis-->
+    </kDeleteAllMagicGnomes>
     <kTurnOffStereos value="True">
       <!--Whether to turn off all stereos nightly-->
     </kTurnOffStereos>
@@ -43,9 +46,18 @@
     <kCleanupLaundromat value="True">
       <!--Whether to periodically reset any community laundry machines-->
     </kCleanupLaundromat>
+    <kCleanupSinged value="True">
+      <!--Whether to remove duplicated singed outfits off sims-->
+    </kCleanupSinged>
+    <kCleanupSkillModifiers value="True">
+      <!--Whether to reset obviously bogus skill modifiers back to base-line-->
+    </kCleanupSkillModifiers>
     <kCleanupElevators value="True">
       <!--Whether to periodically reset any elevators in town-->
     </kCleanupElevators>
+    <kCleanupAging value="True">
+      <!--Whether to periodically correct aging in town-->
+    </kCleanupAging>
     <kCleanseTheDead value="False">
       <!--Whether to periodically remove all unnecessary urnstones from the mausoleum-->
     </kCleanseTheDead>
@@ -99,5 +111,21 @@
       <!--Whether to clean up broken relationships on a nightly basis-->
     </kCleanupRelationships>
 
+    <kCompressFamilyLevel value="0">
+      <!--Minimum family tree depth to initiate an automatic compression of a dead sim-->
+    </kCompressFamilyLevel>
+    <kMinimumRouteFail value="10">
+      <!--Minimum number of route failures in a row to force a reset-->
+    </kMinimumRouteFail>
+    <kRouteFailTestMinutes value="30">
+      <!--The number of sim-minutes from the start of the route failure to when the sim will be reset-->
+    </kRouteFailTestMinutes>
+
+    <kCleanupVehiclesHourly value="False">
+      <!--Whether to cleanup vehicles hourly-->
+    </kCleanupVehiclesHourly>
+    <kDisableFullMoonLighting value="False">
+      <!--Whether to disable the full moon lighting effect-->
+    </kDisableFullMoonLighting>
   </Current_Tuning>
 </base>

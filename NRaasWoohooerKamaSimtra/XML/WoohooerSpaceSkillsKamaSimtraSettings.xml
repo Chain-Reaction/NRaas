@@ -25,6 +25,10 @@
     <kDailyRelationshipChange value="1">
       <!--Change in relationship per day once certain goals are acheived-->
     </kDailyRelationshipChange>
+    <kDistinctSimStats value="False">
+      <!--Whether to only count a sim once in the statistics, rather than for each style and location used-->
+    </kDistinctSimStats>
+
     <kWomanizerMinNotches value="25">
       <!--Minimum number of different women that must be shagged to be considered a Womanizer-->
     </kWomanizerMinNotches>
@@ -50,7 +54,7 @@
       <!--Minimum number of woohoos per location to be considered Experienced-->
     </kExperiencedMinPerLocation>
     <kCasanovaMinNotches value="25">
-      <!--Minimum number of satisying shags to be considered Casanovat-->
+      <!--Minimum number of satisying shags to be considered Casanova-->
     </kCasanovaMinNotches>
     <kStarryEyedMinNotches value="25">
       <!--Minimum number of celebrity shags to be considered Starry Eyed-->
@@ -141,12 +145,16 @@
     <kCyberWoohooChanceOfMisunderstanding value="10">
       <!--The chance a Cyber woohoo may not be the proper gender-->
     </kCyberWoohooChanceOfMisunderstanding>
+    <kCyberWoohooBaseChanceScoring value="0">
+      <!--The base scoring chance of a sim liking cyber woohoo-->
+    </kCyberWoohooBaseChanceScoring>
+
     <kSkillPoints value="">
       <!--The number of skill points to achieve the next level in skill in a comma separated format-->
     </kSkillPoints>
 
     <kShowNotices value="False">
-      <!--Whether to display a notice when a sim receives a new notch -->
+      <!--Whether to display a notice when a sim receives a new notch-->
     </kShowNotices>
     <kBasePositiveBuffLength value="60">
       <!--Base number of minutes that a positive buff lasts-->
@@ -158,7 +166,10 @@
       <!--The minimum level for Tantraport-->
     </kMinLevelTantraport>
     <kGraveRobberMinNotchPerDeathType value="5">
-      <!--Minimum number of each death type that must be put to rest to count towards Grave Robber-->
+      <!--Minimum number of each occult that must be put to rest to count towards Grave Robber-->
     </kGraveRobberMinNotchPerDeathType>
+    <kSeedServicePool value="False">
+      <!--Whether to seed the service pool with professionals-->
+    </kSeedServicePool>
   </Current_Tuning>
 </base>

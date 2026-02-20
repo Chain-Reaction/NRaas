@@ -13,5 +13,17 @@
     <kAllowHolidayParties value="True">
       <!-- Whether to suppress inactive holiday parties -->
     </kAllowHolidayParties>
+    <kRemoveLeavesInWinter value="False">
+      <!--Whether to remove fallen leaves on lots in Winter-->
+    </kRemoveLeavesInWinter>
+    <kChanceOccultItemTrickOrTreat value="50">
+      <!--Percent chance occults will give occult items during trick or treating-->
+    </kChanceOccultItemTrickOrTreat>
+    <kAutoLightFireplaces value="True">
+      <!--Whether to enable auto lighting of fireplaces when the temp teaches kAutoLightFireplacesTemperature-->
+    </kAutoLightFireplaces>
+    <kAutoLightFireplacesTemperature value="40">
+      <!--At which temperature (fahrenheit) to auto light said fireplaces-->
+    </kAutoLightFireplacesTemperature>
   </Current_Tuning>
 </base>

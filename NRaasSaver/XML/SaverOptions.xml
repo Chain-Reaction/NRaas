@@ -16,9 +16,15 @@
     <kSwitchToMapView value="False">
       <!--Whether to switch to map view prior to saving-->
     </kSwitchToMapView>
-    
+
     <kPromptInBuildBuy value="True">
       <!--Whether to prompt while in Build/Buy Mode-->
-    </kPromptInBuildBuy>    
+    </kPromptInBuildBuy>
+    <kPauseOnLoad value="True">
+      <!--Whether to pause when the game initially loads-->
+    </kPauseOnLoad>
+    <kPauseOnSave value="False">
+      <!--Whether to pause when the save prompt appears-->
+    </kPauseOnSave>
   </Current_Tuning>
 </base>

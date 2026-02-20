@@ -4,9 +4,6 @@
     <kPauseTravel value="False">
       <!-- Whether to pause the travel clock -->
     </kPauseTravel>
-    <kRemoveTravelRestrictions value="False">
-      <!-- Whether to allow children or pregnant sims to be included for travel -->
-    </kRemoveTravelRestrictions>
     <kTreatAsVacation value="True">
       <!-- Whether to handle custom destinations as vacation towns -->
     </kTreatAsVacation>
@@ -37,5 +34,20 @@
     <kSetAsUnselectable value="False">
       <!-- Whether to set inactive travelers as unselectable upon arrival on vacation -->
     </kSetAsUnselectable>
+    <kDisableDescedants value="False">
+      <!-- Whether to disable the generate of decendants and stop the llama messages -->
+    </kDisableDescedants>
+    <kChanceOfOccultHybrid value="0">
+      <!-- Chance of descendant being a hybrid -->
+    </kChanceOfOccultHybrid>
+    <kChanceOfOccultMutation value="0">
+      <!-- Chance of decendant occult mutating -->
+    </kChanceOfOccultMutation>
+    <kMaxOccult value="2">
+      <!-- Maximum occults a descendant can have -->
+    </kMaxOccult>
+    <kDisableDescendantModification value="False">
+      <!-- Disable alteration of descendants -->
+    </kDisableDescendantModification>
   </Current_Tuning>
 </base>

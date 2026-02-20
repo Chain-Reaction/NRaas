@@ -19,7 +19,7 @@
     <kAllowImmigration value="True">
       <!--Whether to allow immigrants to spawn to fill role positions-->
     </kAllowImmigration>
-    
+
     <kMaximumWildHorses value="4">
       <!--The maximum number of wild horses that can be spawned by the Pet Manager-->
     </kMaximumWildHorses>
@@ -77,5 +77,47 @@
     <kPayPerPianist value="100">
       <!--How much to pay pianists per hour they are working-->
     </kPayPerPianist>
+
+    <kTouristChanceOfLeaving value="25">
+      <!--Chance of a tourist leaving every 75 minutes-->
+    </kTouristChanceOfLeaving>
+    <kTouristAmount value="10">
+      <!--Size of the tourist pool-->
+    </kTouristAmount>
+    <kPayPerProprietor value="100">
+      <!--How much to pay proprietors per hour they are working-->
+    </kPayPerProprietor>
+    <kPayPerConcessionsStandMerchant value="100">
+      <!--How much to pay concession stand merchants per hour they are working-->
+    </kPayPerConcessionsStandMerchant>
+    <kPayPerKissingBoothAttendant value="100">
+      <!--How much to pay kissing booth merchants per hour they are working-->
+    </kPayPerKissingBoothAttendant>
+    <kPayPerPotionShopMerchant value="100">
+      <!--How much to pay potion merchants per hour they are working-->
+    </kPayPerPotionShopMerchant>
+    <kPayPerUniversityMascot value="100">
+      <!--How much to pay University Mascots per hour they are working-->
+    </kPayPerUniversityMascot>
+    <kPayPerBaristaBarTender value="100">
+      <!--How much to pay Barista Bar Tenders per hour they are working-->
+    </kPayPerBaristaBarTender>
+    <kPayPerHobbyShopMerchant value="100">
+      <!--How much to pay Hobby Shop Merchants per hour they are working-->
+    </kPayPerHobbyShopMerchant>
+    <kPayPerCafeteriaWaiter value="100">
+      <!--How much to pay Cafeteria Waiters per hour they are working-->
+    </kPayPerCafeteriaWaiter>
+    <kPayPerBotShopMerchant value="100">
+      <!--How much to pay Bot Shop Merchants per hour they are working-->
+    </kPayPerBotShopMerchant>
+
+    <kAllowHomeworldTourists value="True">
+      <!--Whether to allow homeworld residents to be used as tourists-->
+    </kAllowHomeworldTourists>
+
+    <kMaximumPaparazzi value="3">
+      <!--The maximum paparazzi that the role manager can spawn-->
+    </kMaximumPaparazzi>
   </Current_Tuning>
 </base>
