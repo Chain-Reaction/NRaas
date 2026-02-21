@@ -232,14 +232,15 @@ namespace NRaas.MasterControllerSpace.CAS
 
                         uint num2 = CASUtils.PartDataNumPresets(part.Key);
 
+                        CASParts.PartPreset preset;
                         if (num2 > 0)
                         {
-                            CASParts.PartPreset preset = new CASParts.PartPreset(part, 0);
+                            preset = new CASParts.PartPreset(part, 0);
                         }
                         else
                         {
-                            CASParts.PartPreset preset = new CASParts.PartPreset(part);
-			}
+                            preset = new CASParts.PartPreset(part);
+                        }
 
                         if (!preset.Valid)
                         {
@@ -259,7 +260,6 @@ namespace NRaas.MasterControllerSpace.CAS
                             parts.Add(triPart);
                         }
                     }
-                }
             }
             else
             {
