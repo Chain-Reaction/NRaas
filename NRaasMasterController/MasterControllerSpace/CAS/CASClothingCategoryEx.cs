@@ -252,15 +252,15 @@ namespace NRaas.MasterControllerSpace.CAS
                         if (!ths.mContentTypeFilter.ObjectMatchesFilter(preset, ref hasFilterableContent)) continue;
 
                         triPart.Add(preset);
-                        }
 
                         if (triPart.Count == 3)
                         {
                             triPart = new List<CASParts.PartPreset>();
                             parts.Add(triPart);
-                        }
                     }
+                }
             }
+        }
             else
             {
                 foreach (object part in ths.mPartsList)
