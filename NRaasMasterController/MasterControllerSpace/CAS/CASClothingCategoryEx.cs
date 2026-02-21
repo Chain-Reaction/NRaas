@@ -232,13 +232,20 @@ namespace NRaas.MasterControllerSpace.CAS
 
                         uint num2 = CASUtils.PartDataNumPresets(part.Key);
 
+                        CASParts.PartPreset preset;
                         if (num2 > 0)
                         {
-                            CASParts.PartPreset preset = new CASParts.PartPreset(part, 0);
-                            if (!preset.Valid)
-                            {
-                                preset = null;
-                            }
+                            preset = new CASParts.PartPreset(part, 0);
+                        }
+                        else
+                        {
+                            preset = new CASParts.PartPreset(part);
+                        }
+
+                        if (!preset.Valid)
+                        {
+                            preset = null;
+                        }
 
                             if (preset == null) continue;
 
