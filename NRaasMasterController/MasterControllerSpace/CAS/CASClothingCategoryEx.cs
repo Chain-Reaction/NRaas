@@ -257,10 +257,10 @@ namespace NRaas.MasterControllerSpace.CAS
                         {
                             triPart = new List<CASParts.PartPreset>();
                             parts.Add(triPart);
+                        }
                     }
                 }
             }
-        }
             else
             {
                 foreach (object part in ths.mPartsList)
