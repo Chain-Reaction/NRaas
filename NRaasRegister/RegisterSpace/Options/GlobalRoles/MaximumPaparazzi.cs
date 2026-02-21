@@ -82,7 +82,7 @@ namespace NRaas.RegisterSpace.Options.GlobalRoles
                     data.mMaxSpecCount = value;
                 }
 
-                List<Role> roles =  new List(RoleManager.GetRolesOfType(Role.RoleType.Paparazzi));
+                List<Role> roles =  new List<Role>(RoleManager.GetRolesOfType(Role.RoleType.Paparazzi));
                 int count = 0;
                 foreach(Role role in roles)
                 {

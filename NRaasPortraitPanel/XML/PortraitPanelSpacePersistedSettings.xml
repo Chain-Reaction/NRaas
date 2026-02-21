@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <base>
   <Current_Tuning>
-    <!--Visibility Types : ActiveHousehold, WholeTown, SelectedSims, ActiveSimLot, ActiveFamilyLot, ActiveHomeLot, ViewedLot, OnlyIdle, OnlySelectable, Relatives, ActiveHumans, ActiveAnimals, InactiveHumans, InactiveAnimals, SpeciesHumans, SpeciesDogs, SpeciesCats, SpeciesHorses, SpeciesOther -->
     <kSetType value="ActiveHousehold">
-      <!--Which set of sims to display on the panel (See Visibility Types)-->
+      <!--Which set of sims to display on the panel (WholeTown, ActiveHousehold, SelectedSims, ActiveSimLot, ActiveFamilyLot, ViewedLot, ActiveHomeLot)-->
     </kSetType>
     <kVisibilityType value="">
-      <!--Applied to the sims defined by SetType (See Visibility Types)-->
+      <!--Applied to the sims defined by SetType (OnlyIdle, OnlySelectable, ActiveSimLot, ActiveFamilyLot, ViewedLot, ActiveHomeLot)-->
     </kVisibilityType>
     <kSortType value="ByAge">
       <!--The method to sort the portraits (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, BySpecies, ByRelationship, ActiveHousehold)-->
@@ -33,28 +32,28 @@
       <!--Whether to zoom in from map view on a single right click-->
     </kZoomInOnRightClick>
     <kSecondSortType value="ByName">
-      <!--The secondary sort method (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, BySpecies, ByRelationship, ActiveHousehold)-->
+      <!--The secondary sort method (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, ActiveHousehold, BySpecies)-->
     </kSecondSortType>
     <kSecondReverse value="False">
-      <!--Whether to secondary sort in reverse order-->
+      <!--Whether to perform the secondary sort in reverse order-->
     </kSecondReverse>
     <kShowCycleButton value="True">
       <!--Whether to cycle portraits button when there are less than 24 sims listed-->
     </kShowCycleButton>
     <kThirdSortType value="ByName">
-      <!--The tertiary sort method (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, BySpecies, ByRelationship, ActiveHousehold)-->
+      <!--The tertiary sort method (ByAge, ByMood, ByName, ByAutonomy, BySelectability, ByCustom, ActiveHousehold, BySpecies)-->
     </kThirdSortType>
     <kThirdReverse value="False">
       <!--Whether to perform the tertiary sort in reverse order-->
     </kThirdReverse>
     <kColumnFilter1 value="ActiveHumans">
-      <!--The sims to display in column one (See Visibility Types)-->
+      <!--The sims to display in column one (ActiveHousehold, ActiveHumans, ActiveAnimals, InactiveHumans, InactiveAnimals, SelectedSims)-->
     </kColumnFilter1>
     <kColumnFilter2 value="ActiveAnimals">
-      <!--The sims to display in column two (See Visibility Types)-->
+      <!--The sims to display in column two (ActiveHousehold, ActiveHumans, ActiveAnimals, InactiveHumans, InactiveAnimals, SelectedSims)-->
     </kColumnFilter2>
     <kColumnFilter3 value="">
-      <!--The sims to display in column three (See Visibility Types)-->
+      <!--The sims to display in column three (ActiveHousehold, ActiveHumans, ActiveAnimals, InactiveHumans, InactiveAnimals, SelectedSims)-->
     </kColumnFilter3>
     <kRevertToSingleListOnTooMany value="True">
       <!--Whether to revert to using a single list when there are too many sims listed-->

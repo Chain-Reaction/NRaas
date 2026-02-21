@@ -5,7 +5,7 @@
       <!--Whether to change all sims outfits to a new selection each night-->
     </kNightlyRandomChangeOutfit>
     <kNightlyChangeOutfitHour value="7">
-      <!-- Hour each night to switch the outfits on sims-->
+      <!--Hour each night to switch the outfits on sims-->
     </kNightlyChangeOutfitHour>
     <kRotationAffectActive value="True">
       <!--Whether to change the outfits of the active sims-->
@@ -13,11 +13,8 @@
     <kChanceOfSwitch value="75">
       <!--The percent chance a sim will consider switching outfits-->
     </kChanceOfSwitch>
-    <kRotateMartialOutfit value="False">
-      <!--Whether to rotate the martial arts outfit category-->
-    </kRotateMartialOutfit>
     <kCheckOutfits value="True">
-      <!--Whether to check outfits on age-up-->
+      <!--Whether to enable the check outfits task-->
     </kCheckOutfits>
     <kNotifyOnCheckOutfits value="False">
       <!--Whether to display an notification whenever a sim's outfit is altered-->
@@ -63,23 +60,14 @@
       <!--Whether to rotate the outfits of skin jobs-->
     </kRotateOccult>
     <kAllowRollAgeupHair value="True">
-      <!--Whether to reroll hair on age-up-->
+      <!--Whether to reroll hair on adult age-up-->
     </kAllowRollAgeupHair>
     <kAllowRollAgeupMakeup value="True">
-      <!--Whether to reroll makeup on age-up-->
+      <!--Whether to reroll makeup on adult age-up-->
     </kAllowRollAgeupMakeup>
-    <kAddRandomBodyHair value="True">
-      <!--Whether to roll random body hair during Check Outfits-->
-    </kAddRandomBodyHair>
     <kIgnoreBodyHairGender value="False">
       <!--Whether to ignore the gender on body hair parts-->
     </kIgnoreBodyHairGender>
-    <kAddRandomMaleMakeup value="0">
-      <!--The number of random makeup to add to males which have none-->
-    </kAddRandomMaleMakeup>
-    <kAddRandomFemaleMakeup value="0">
-      <!--The number of random makeup to add to females which have none-->
-    </kAddRandomFemaleMakeup>
     <kSameMakeupForAllCategories value="True">
       <!--Whether to use the same makeup for all categories when rerolling-->
     </kSameMakeupForAllCategories>
@@ -213,5 +201,9 @@
     <kIgnoreValidForRandomBodyHair value="True">
       <!--Whether the mod is allowed to use body hair not marked ValidForRandom when replacing invalids-->
     </kIgnoreValidForRandomBodyHair>
+
+    <kCheckOutfitsOnReset value="False">
+      <!--Wheather to check outfits on Sims who were reset-->
+    </kCheckOutfitsOnReset>
   </Current_Tuning>
 </base>

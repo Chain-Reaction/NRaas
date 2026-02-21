@@ -40,5 +40,23 @@
     <kDisallowInactiveLeaveActiveLot value="True">
       <!--Whether to disable certain 'Go Home' for inactives, whenever they are on a lot containing an active-->
     </kDisallowInactiveLeaveActiveLot>
+    <kDisallowCarRouting value="False">
+      <!--Whether to allow cars during routing operations-->
+    </kDisallowCarRouting>
+    <kDisallowBoatRouting value="False">
+      <!--Whether to allow boats during routing operations-->
+    </kDisallowBoatRouting>
+    <kDisallowMermaidRouting value="False">
+      <!--Whether to allow mermaids to swim everywhere-->
+    </kDisallowMermaidRouting>
+    <kServiceSimsIgnoreAllDoorOptions value="True">
+      <!--Whether to disable all door options for service sims-->
+    </kServiceSimsIgnoreAllDoorOptions>
+    <kRoleSimsIgnoreAllDoorOptions value="True">
+      <!--Whether to disable all door options for role sims-->
+    </kRoleSimsIgnoreAllDoorOptions>
+    <kEnableDoorTooltips value="True">
+      <!--Whether to enable criteria tooltips on doors-->
+    </kEnableDoorTooltips>
   </Current_Tuning>
 </base>

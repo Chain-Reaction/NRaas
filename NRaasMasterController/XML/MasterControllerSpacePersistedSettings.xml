@@ -22,9 +22,6 @@
     <kFamilyTreeLevels value="4">
       <!--How many levels to display on the family tree-->
     </kFamilyTreeLevels>
-    <kMakeupByCategory value="False">
-      <!--Whether to allow different makeup per outfit category-->
-    </kMakeupByCategory>
     <kNakedTattoo value="False">
       <!--Whether to run Tattoo CAS using the naked outfit-->
     </kNakedTattoo>
@@ -40,6 +37,9 @@
     <kSkillStamp value="">
       <!--Comma separated list of skills and minimum levels, where the first element is the name of the stamp.  eg: GMStamp,Guitar:10,MartialArts:5-->
     </kSkillStamp>
+    <kMenuVisibleSetValue value="True">
+      <!--Whether to display the Set Value interaction in the object menu-->
+    </kMenuVisibleSetValue>
     <kMenuVisibleOpenSesame value="True">
       <!--Whether to display the Open and Close interactions in the object menu-->
     </kMenuVisibleOpenSesame>
@@ -50,7 +50,7 @@
       <!--Whether to display the Add Sim and Evict interactions in the object menu-->
     </kMenuVisibleAddSim>
     <kOverrideCoreSliders value="False">
-      <!--Whether to handle the CAS Slider panels ourselves, and ignore custom Core changes-->
+      <!--Whether to handle the CAS Slider panels within this mod, and ignore custom Core changes-->
     </kOverrideCoreSliders>
     <kByMoneyIntervals value="10">
       <!--Number of intervals to display on Sims By Money and the money filters-->
@@ -58,31 +58,22 @@
     <kMenuVisibleOwnership value="True">
       <!--Whether to display the Ownership interaction in the object menu-->
     </kMenuVisibleOwnership>
-    <kTagInfo value="Limited">
-      <!--What information to display on the map tags added by this mod (Limited, Personal, Career, Relationship, Household)-->
-    </kTagInfo>
     <kHairColorByOutfit value="False">
       <!--Whether to retain separate hair coloring for each sim outfit-->
     </kHairColorByOutfit>
-    <kEnableMemories value="True">
-      <!--Whether to allow the creation of memories-->
-    </kEnableMemories>
     <kUniGenderHair value="False">
       <!--Whether to unlock all hairs for every gender-->
     </kUniGenderHair>
     <kBeardsForAll value="False">
       <!--Whether to unlock the beard panel for all sims-->
     </kBeardsForAll>
-    <kBodyHairForAll value="False">
-      <!--Whether to unlock the body hair panel for all sims-->
-    </kBodyHairForAll>
     <kDisableMakeupFilter value="True">
       <!--Whether to display all makeup parts in CAS-->
     </kDisableMakeupFilter>
     <kBodySliderOffset value="0">
       <!--The amount to offset each body slider to produce lower than normally possible values-->
     </kBodySliderOffset>
-    
+
     <kDefaultSpecies value="Human">
       <!--The default species to display whenever the Species is not explicitly being used (Human, LittleDog, Dog, Cat, Horse)-->
     </kDefaultSpecies>
@@ -178,11 +169,15 @@
       <!--Which expansion packs to hide in CAS by default (EP1, SP1, EP2, SP2, etc)-->
     </kHideByProduct>
 
-    <kSubtleMapTags value="False">
-      <!--Whether to display normal map tags-->
-    </kSubtleMapTags>
     <kShowHiddenParts value="False">
       <!--Whether to display normally hidden CAS parts-->
     </kShowHiddenParts>
+    <kUniGenderAdult value="False">
+      <!--Whether to unlock all adults clothing for all genders-->
+    </kUniGenderAdult>
+
+    <kMaxCASSliders value="100">
+      <!--The number of sliders to allow in CAS-->
+    </kMaxCASSliders>
   </Current_Tuning>
 </base>

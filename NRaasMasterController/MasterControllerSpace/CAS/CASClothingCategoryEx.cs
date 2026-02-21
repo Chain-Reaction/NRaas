@@ -247,11 +247,12 @@ namespace NRaas.MasterControllerSpace.CAS
                             preset = null;
                         }
 
-                        if (preset == null) continue;
+                            if (preset == null) continue;
 
-                        if (!ths.mContentTypeFilter.ObjectMatchesFilter(preset, ref hasFilterableContent)) continue;
+                            if (!ths.mContentTypeFilter.ObjectMatchesFilter(preset, ref hasFilterableContent)) continue;
 
-                        triPart.Add(preset);
+                            triPart.Add(preset);
+                        }
 
                         if (triPart.Count == 3)
                         {

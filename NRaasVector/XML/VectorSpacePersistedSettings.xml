@@ -29,7 +29,7 @@
       <!-- Whether to allow active sims to be a patient zero -->
     </kOutbreakAllowActive>
     <kOutbreakShowNotices value="False">
-      <!-- Whether to allow active sims to be a patient zero -->
+      <!-- Whether to show notices when a sim contracts a disease -->
     </kOutbreakShowNotices>
     <kNumPatientZero value="1">
       <!-- The number of initial infected during an outbreak -->

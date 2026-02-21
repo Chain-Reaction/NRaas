@@ -2,11 +2,8 @@
 <base>
   <Current_Tuning>
     <kLikingGatingForAutonomousWoohoo value="40">
-      <!--Minimum liking gate for performing autonomous woohoo actions-->
+      <!--Range: 0-100. Minimum liking gate for performing autonomous actions-->
     </kLikingGatingForAutonomousWoohoo>
-    <kLikingGatingForAutonomousRomance value="0">
-      <!--Minimum liking gate for performing autonomous romance actions-->
-    </kLikingGatingForAutonomousRomance>
     <kRiskyBabyMadeChance value="10">
       <!--Range: 0-100. Chance of Sim getting Pregnant on RiskyWoohoo.-->
     </kRiskyBabyMadeChance>
@@ -19,9 +16,6 @@
     <kTryForBabyAutonomous value="False">
       <!--Whether Try For Baby is autonomous-->
     </kTryForBabyAutonomous>
-    <kTeenTryForBabyAutonomous value="False">
-      <!--Whether Try For Baby is autonomous for teens-->
-    </kTeenTryForBabyAutonomous>
     <kMustBeRomanticForAutonomous value="True">
       <!--Whether a couple must be flagged as romantic before considering woohoo-->
     </kMustBeRomanticForAutonomous>
@@ -40,7 +34,7 @@
     <kAllowSameSexTryForBaby value="True">
       <!--Whether to display try for baby for same-sex couples-->
     </kAllowSameSexTryForBaby>
-    <kMaximumHouseholdSizeForAutonomous value="8">
+    <kMaximumHouseholdSizeForAutonomous value="6">
       <!--Maximum number of sims per household for autonomous pregnancy-->
     </kMaximumHouseholdSizeForAutonomous>
     <kWoohooBaseChanceScoring value="25">
@@ -65,7 +59,7 @@
       <!--Range: -200 to 200. The base chance of a sim being interested in a romantic interaction-->
     </kRomanceBaseChanceScoring>
     <kAttractionBaseChanceScoring value="0">
-      <!--Range: -200 to 200. The base attraction of a sim to another-->
+      <!--Range: -200 to 200. The base chance of a sim being attracted to another-->
     </kAttractionBaseChanceScoring>
     <kTryForBabyMadeChance value="75">
       <!--Range: 0-100. Chance of Sim getting Pregnant on Try For Baby.-->
@@ -89,9 +83,9 @@
       <!--Whether to test all the standard conditions that normally restrict Try For Baby-->
     </kTestAllConditionsForUserDirected>
     <kForcePetMate value="True">
-      <!--Whether to set a new mate after woohoo-->
+      <!--Whether for a new mate after woohoo-->
     </kForcePetMate>
-    <kWoohooCountScoreFactor value="-2">
+    <kWoohooCountScoreFactor value="-10">
       <!--Scoring factor applied for each woohoo performed during the day-->
     </kWoohooCountScoreFactor>
     <kAllowOffLotRiskyAutonomous value="True">
