@@ -43,7 +43,7 @@ namespace NRaas.MasterControllerSpace.CAS
             {
                 Common.Exception("OnClothingGridFinishedPopulating", e);
             }
-        } 
+        }
 
         public static void OnUndoRedo()
         {
@@ -247,18 +247,17 @@ namespace NRaas.MasterControllerSpace.CAS
                             preset = null;
                         }
 
-                            if (preset == null) continue;
+                        if (preset == null) continue;
 
-                            if (!ths.mContentTypeFilter.ObjectMatchesFilter(preset, ref hasFilterableContent)) continue;
+                        if (!ths.mContentTypeFilter.ObjectMatchesFilter(preset, ref hasFilterableContent)) continue;
 
-                            triPart.Add(preset);
-                        }
+                        triPart.Add(preset);
+                    }
 
-                        if (triPart.Count == 3)
-                        {
-                            triPart = new List<CASParts.PartPreset>();
-                            parts.Add(triPart);
-                        }
+                    if (triPart.Count == 3)
+                    {
+                        triPart = new List<CASParts.PartPreset>();
+                        parts.Add(triPart);
                     }
                 }
             }
