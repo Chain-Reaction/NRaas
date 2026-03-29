@@ -1,20 +1,11 @@
 ﻿using NRaas.TravelerSpace.Helpers;
-using Sims3.Gameplay.Abstracts;
-using Sims3.Gameplay.Actors;
-using Sims3.Gameplay.Autonomy;
+using Sims3.Gameplay.ActorSystems;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Core;
-using Sims3.Gameplay.EventSystem;
-using Sims3.Gameplay.Interactions;
-using Sims3.Gameplay.Utilities;
+using Sims3.Gameplay.Services;
 using Sims3.SimIFace;
-using Sims3.UI;
 using Sims3.UI.CAS;
 using Sims3.UI.Hud;
-using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 
 namespace NRaas.TravelerSpace
 {
@@ -54,6 +45,9 @@ namespace NRaas.TravelerSpace
         [Tunable, TunableComment("Whether to set inactive travelers as unselectable upon arrival on vacation")]
         protected static bool kSetAsUnselectable = false;
 
+        [Tunable, TunableComment("Whether to show the active household lot or the last active lot when loading a save")]
+        public static LoadingScreenControl.LoadingImageType kLoadscreenImageType = LoadingScreenControl.LoadingImageType.LastFocusedLot;
+
         [Tunable, TunableComment("Whether to disable the generate of decendants and stop the llama messages")]
         public static bool kDisableDescedants = false;
 
@@ -68,6 +62,8 @@ namespace NRaas.TravelerSpace
 
         [Tunable, TunableComment("Disable alteration of descendants")]
         public static bool kDisableDescendantModification = false;
+
+        public static string agingDebug = "";
 
         public bool mPauseTravel = kPauseTravel;
 
@@ -101,6 +97,12 @@ namespace NRaas.TravelerSpace
 
         public bool mSetAsUnselectable = kSetAsUnselectable;
 
+        public LoadingScreenControl.LoadingImageType mLoadScreenImageType = kLoadscreenImageType;
+
+        public string mLastFocusedLot = "";
+
+        public string mLastActiveLot = "";
+
         public bool mDisableDescendants = kDisableDescedants;
 
         public int mChanceOfOccultMutation = kChanceOfOccultMutation;
@@ -129,11 +131,13 @@ namespace NRaas.TravelerSpace
 
         public void MergeFromCrossWorldData(Dictionary<ulong, string> lookup)
         {
-            mWorldForSims = new Dictionary<ulong, string>(lookup);
+            //Common.WriteLog("MergeFromCrossWorldData: " + lookup.Count);
+            mWorldForSims = new Dictionary<ulong, string>(lookup);            
         }
 
         public void MergeToCrossWorldData(Dictionary<ulong, string> lookup)
         {
+            //Common.WriteLog("MergeToCrossWorldData: " + lookup.Count);
             foreach (KeyValuePair<ulong, string> value in mWorldForSims)
             {
                 lookup.Remove(value.Key);
@@ -145,42 +149,173 @@ namespace NRaas.TravelerSpace
 
         public WorldName GetHomeWorld(IMiniSimDescription desc)
         {
+            agingDebug += "GetHomeWorld";
+            agingDebug += Common.NewLine;
+
             if (desc == null) return WorldName.Undefined;
+
+            agingDebug += "Passed null check";
+            agingDebug += Common.NewLine;
 
             if (desc.HomeWorld != WorldName.Undefined && desc.HomeWorld != WorldName.UserCreated)
             {
+                agingDebug += "Returning EA Homeworld " + desc.HomeWorld;
+                agingDebug += Common.NewLine;
                 return desc.HomeWorld;
             }
 
+            agingDebug += "Checking mWorldsForSims...";
+            agingDebug += Common.NewLine;
+
             if (!mWorldForSims.ContainsKey(desc.SimDescriptionId)) return WorldName.Undefined;
 
-                string world = mWorldForSims[desc.SimDescriptionId];
+            agingDebug += "Passed";
+            agingDebug += Common.NewLine;
 
-                string name = world.Replace(".world", "");
+            string world = mWorldForSims[desc.SimDescriptionId];
 
-                WorldName worldName = WorldName.Undefined;
+            agingDebug += "Got " + world;
+            agingDebug += Common.NewLine;
 
-                try
-                {
-                    worldName = unchecked((WorldName)ResourceUtils.HashString32(name.Replace(" ", "")));
-                }
-                catch
-                {                    
+            string name = world.Replace(".world", "");
+
+            WorldName worldName = WorldName.Undefined;
+
+            try
+            {
+                worldName = unchecked((WorldName)ResourceUtils.HashString32(name.Replace(" ", "")));
+                agingDebug += "Unchecked";
+                agingDebug += Common.NewLine;
+            }
+            catch
+            {
+                agingDebug += "Failed";
+                agingDebug += Common.NewLine;
                 return WorldName.Undefined;
-                }                
+            }                
 
             return worldName;
         }
 
+
         public bool GetAgelessForeign(MiniSimDescription desc)
         {
+            agingDebug += "GetAgelessForeign called for " + desc.FullName;
+            agingDebug += Common.NewLine;
+            if (desc.IsDead && !desc.IsPlayableGhost)
+            {
+                agingDebug += "Dead";
+                agingDebug += Common.NewLine;
+                return true;
+            }
+
+            if (desc.IsEP11Bot)
+            {
+                agingDebug += "Robot";
+                agingDebug += Common.NewLine;
+                return true;
+            }
+
+            if (desc.IsDeer || desc.IsRaccoon)
+            {
+                agingDebug += "NPC Animal";
+                agingDebug += Common.NewLine;
+                return true;
+            }
+
+            if (desc.mTraits != null && desc.HasTrait((ulong)TraitNames.SuperVampire))
+            {
+                agingDebug += "Vampire";
+                agingDebug += Common.NewLine;
+                return true;
+            }
+
+            if (desc.mTraits != null && desc.HasTrait((ulong)TraitNames.ForeverYoung))
+            {
+                agingDebug += "ForeverYoung";
+                agingDebug += Common.NewLine;
+                return true;
+            }
+
+            SimDescription sDesc = SimDescription.Find(desc.mSimDescriptionId);
+            if (sDesc != null)
+            {
+                if(sDesc.IsTimeTraveler)
+                {
+                    agingDebug += "TimeTraveler";
+                    agingDebug += Common.NewLine;
+                    return true;
+                }
+
+                if (sDesc.IsBonehilda)
+                {
+                    agingDebug += "Bonehilda";
+                    agingDebug += Common.NewLine;
+                    return true;
+                }
+
+                if (GrimReaper.sGrimReaper != null)
+                {
+                    if (GrimReaper.sGrimReaper.mPool != null)
+                    {
+                        if(GrimReaper.sGrimReaper.mPool.Contains(sDesc))
+                        {
+                            agingDebug += "Grim";
+                            agingDebug += Common.NewLine;
+                            return true;
+                        }
+                    }
+                }
+
+                if (sDesc.IsImaginaryFriend)
+                {
+                    if(sDesc.OccultManager != null)
+                    {
+                        OccultImaginaryFriend friend = sDesc.OccultManager.GetOccultType(OccultTypes.ImaginaryFriend) as OccultImaginaryFriend;
+                        if (friend != null)
+                        {
+                            if (!friend.IsReal)
+                            {
+                                agingDebug += "Fake imaginary friend";
+                                agingDebug += Common.NewLine;
+                                return true;
+                            }
+                        }
+                    }
+                }
+
+                if (sDesc.IsGenie)
+                {
+                    if (sDesc.OccultManager != null)
+                    {
+                        OccultGenie genie = sDesc.OccultManager.GetOccultType(OccultTypes.Genie) as OccultGenie;
+                        if (genie != null)
+                        {
+                            if (genie.IsTiedToLamp)
+                            {
+                                agingDebug += "Lamp genie";
+                                agingDebug += Common.NewLine;
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
             WorldName name = GetHomeWorld(desc as IMiniSimDescription);
+            agingDebug += "Got back " + name;
+            agingDebug += Common.NewLine;
             if (name != WorldName.Undefined)
             {
+                agingDebug += "Returning " + mAgelessForeign.ContainsKey(name);
+                agingDebug += Common.NewLine;
                 return mAgelessForeign.ContainsKey(name);
-            }            
+            }
 
-            return true;
+            agingDebug += "Returning default false (true)";
+            agingDebug += Common.NewLine;
+
+            return false;
         }
 
         public bool GetHiddenWorlds(WorldName world)

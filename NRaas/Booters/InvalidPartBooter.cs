@@ -127,7 +127,7 @@ namespace NRaas.CommonSpace.Booters
                 {
                     foreach (InvalidPartBase test in tests)
                     {
-                        if (test.Allow(age, gender, species, category, extended, out reason)) return InvalidPartBase.Reason.None;
+                        if (!test.Allow(age, gender, species, category, extended, out reason)) return InvalidPartBase.Reason.None;
                     }
                 }
 
@@ -135,7 +135,7 @@ namespace NRaas.CommonSpace.Booters
                 {
                     foreach (InvalidPartBase test in tests)
                     {
-                        if (test.Allow(age, gender, species, category, extended, out reason)) return InvalidPartBase.Reason.None;
+                        if (!test.Allow(age, gender, species, category, extended, out reason)) return InvalidPartBase.Reason.None;
                     }
                 }
 

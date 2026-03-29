@@ -24,11 +24,6 @@ namespace NRaas.CareerSpace.Options.General
 
         protected override int Validate(int value)
         {
-            if (value < 0)
-            {
-                value = -value;
-            }
-
             return base.Validate(value);
         }
 

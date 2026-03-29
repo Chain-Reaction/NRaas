@@ -51,16 +51,19 @@ namespace NRaas.CareerSpace.SelfEmployment
             Dictionary<ulong,float> funds;
             if (!sAccrued.TryGetValue(actor.SimDescription.SimDescriptionId, out funds))
             {
+                //Common.Notify("New accured");
                 funds = new Dictionary<ulong, float>();
                 sAccrued.Add(actor.SimDescription.SimDescriptionId, funds);
             }
 
             if (funds.ContainsKey(target.SimDescription.SimDescriptionId))
             {
+                //Common.Notify("Adding to targets bill " + cash);
                 funds[target.SimDescription.SimDescriptionId] += cash;
             }
             else
             {
+                //Common.Notify("New target bill " + cash);
                 funds.Add(target.SimDescription.SimDescriptionId, cash);
             }
         }
@@ -82,7 +85,17 @@ namespace NRaas.CareerSpace.SelfEmployment
             {
                 if (value.Value >= 1)
                 {
-                    Household house = Household.Find(value.Key);
+                    Household house = null;
+                    SimDescription targetDesc = SimDescription.Find(value.Key);
+
+                    if (targetDesc == null)
+                    {
+                        replace.Add(value.Key, 0);
+                    } else
+                    {
+                        house = targetDesc.Household;
+                    }
+
                     if (house == null)
                     {
                         replace.Add(value.Key, 0);
@@ -105,6 +118,8 @@ namespace NRaas.CareerSpace.SelfEmployment
                         cash += remains;
 
                         house.ModifyFamilyFunds(-remains);
+
+                        //Common.Notify("Deducting " + remains);
                     }
                 }
             }
@@ -123,6 +138,8 @@ namespace NRaas.CareerSpace.SelfEmployment
             sim.ModifyFunds((int)cash);
 
             SkillBasedCareerBooter.UpdateExperience(sim, SkillNames.MartialArts, (int)cash);
+
+            //Common.Notify("End " + cash);
 
             return success;
         }
@@ -164,6 +181,7 @@ namespace NRaas.CareerSpace.SelfEmployment
             CollectAccrued(actor, null);
         }
 
+        // this appears to be doing nothing
         public static void OnLeveled(Event e)
         {
             HasGuidEvent<SkillNames> skillEvent = e as HasGuidEvent<SkillNames>;
@@ -224,6 +242,7 @@ namespace NRaas.CareerSpace.SelfEmployment
             AddAccrued(actor, trainer, cash);
         }
 
+        // hook into QueueChanged event to only grab this once so it actually works as intended and isn't a hot mess.
         public static void OnTrained(Event e)
         {
             Sim actor = e.Actor as Sim;
@@ -233,23 +252,23 @@ namespace NRaas.CareerSpace.SelfEmployment
             }
 
             if ((actor.Household == null) || (actor.Household.IsSpecialHousehold))
-            {
+            {                
                 return;
             }
 
             if (actor.InteractionQueue == null)
-            {
+            {               
                 return;
             }
 
             InteractionInstance interaction = actor.InteractionQueue.GetCurrentInteraction();
             if (interaction == null)
-            {
+            {                
                 return;
             }
 
             if (!(interaction.Target is TrainingDummy))
-            {
+            {                
                 return;
             }
 
@@ -257,16 +276,16 @@ namespace NRaas.CareerSpace.SelfEmployment
 
             Sim target = e.TargetObject as Sim;
             if (target == null)
-            {
+            {                
                 return;
             }
 
             if (actor.Household == target.Household)
-            {
+            {                
                 return;
             }
 
-            AddAccrued (actor, target, GetPay(actor) * pEvent.mIncrement);
+            AddAccrued (actor, target, GetPay(actor) * pEvent.mIncrement);            
 
             if (!CollectAccrued(actor, target))
             {

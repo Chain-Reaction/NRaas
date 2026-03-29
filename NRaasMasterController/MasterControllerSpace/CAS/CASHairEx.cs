@@ -241,13 +241,13 @@ namespace NRaas.MasterControllerSpace.CAS
                         for (int i = 0x0; i < num3; i++)
                         {
                             uint presetId = CASUtils.PartDataGetPresetId(part2.Key, (uint)i);
-                            customContentType = UIUtils.GetCustomContentType(part2.Key, presetId);
+                            customContentType = UIUtils.GetCustomContentType(part2.Key, presetId);                            
 
                             preset = new CASPartPreset(part2, presetId, CASUtils.PartDataGetPreset(part2.Key, (uint)i));
                             if (preset.Valid)
                             {
-                                bool flag4 = ths.AddHairTypeGridItem(ths.mHairTypesGrid, resKey, preset, isWardrobePart, ref shouldEnableCatalogProductFilter);
-                                if ((wornPart.Key == preset.mPart.Key) && CASUtils.DesignPresetCompare(str3, CASUtils.ReplaceHairColors(preset.mPresetString, colors)))
+                                bool flag4 = ths.AddHairTypeGridItem(ths.mHairTypesGrid, resKey, preset, isWardrobePart, ref shouldEnableCatalogProductFilter);                                
+                                if ((wornPart.Key == preset.mPart.Key) && (MasterController.Settings.mCompactHatCAS || CASUtils.DesignPresetCompare(str3, CASUtils.ReplaceHairColors(preset.mPresetString, colors))))
                                 {
                                     ths.mSavedPresetId = preset.mPresetId;
                                     flag = true;

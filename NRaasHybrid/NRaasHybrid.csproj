@@ -215,6 +215,10 @@
     <Compile Include="HybridSpace\Interactions\SpinWithEx.cs" />
     <Compile Include="HybridSpace\Interactions\SpinWithSimToSimEx.cs" />
     <Compile Include="HybridSpace\Interactions\SpellcastingDuelEx.cs" />
+    <Compile Include="HybridSpace\Interactions\TakeBathEx.cs" />
+    <Compile Include="HybridSpace\Interactions\TakeBubbleBathEx.cs" />
+    <Compile Include="HybridSpace\Interactions\TakeShowerEx.cs" />
+    <Compile Include="HybridSpace\Interactions\WakeUpSimEx.cs" />
     <Compile Include="HybridSpace\Interfaces\IMagicalSubInteraction.cs" />
     <Compile Include="HybridSpace\Interfaces\IMagicalInteraction.cs" />
     <Compile Include="HybridSpace\Interfaces\IInteractionProxy.cs" />
@@ -304,6 +308,10 @@
     <Reference Include="0x03D6C8D903CE868C_Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Sims3\Compiler\0x03D6C8D903CE868C_Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0x0CAE1C361E05B2B3_Sims3StoreObjects">
+      <HintPath>..\Sims3\Compiler\0x0CAE1C361E05B2B3_Sims3StoreObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="0x28EE9D383A73463E_mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">

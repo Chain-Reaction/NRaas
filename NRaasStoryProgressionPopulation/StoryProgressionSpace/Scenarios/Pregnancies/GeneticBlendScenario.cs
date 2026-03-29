@@ -127,7 +127,7 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Pregnancies
         {
             if (!GetValue<AdvancedGeneticsOption, bool>()) return;
 
-            if ((parentSims != null) && (parentSims.Count != 2))
+            if ((parentSims != null) && (parentSims.Count == 2))
             {
                 List<SimOutfit> grandParents = new List<SimOutfit>();
 

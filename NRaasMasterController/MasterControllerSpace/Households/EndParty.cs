@@ -60,7 +60,7 @@ namespace NRaas.MasterControllerSpace.Households
         {
             if (lot == null) return OptionResult.Failure;
 
-            foreach (Situation sit in Situation.sAllSituations)
+            foreach (Situation sit in new List<Situation>(Situation.sAllSituations))
             {
                 if (sit.Lot != lot) continue;
 

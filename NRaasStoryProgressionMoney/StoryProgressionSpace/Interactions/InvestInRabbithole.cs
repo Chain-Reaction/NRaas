@@ -185,7 +185,13 @@ namespace NRaas.StoryProgressionSpace.Interactions
 
             public override bool Test(Sim a, RabbitHole target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
+                /*
                 if ((!target.RabbitHoleTuning.kCanInvestHere || (a.SimDescription.DeathStyle != SimDescription.DeathType.None)) || !a.Household.RealEstateManager.HasBeenFixedupInHomeworld)
+                {
+                    return false;
+                }
+                */
+                if (!target.RabbitHoleTuning.kCanInvestHere || !a.Household.RealEstateManager.HasBeenFixedupInHomeworld)
                 {
                     return false;
                 }

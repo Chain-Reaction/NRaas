@@ -23,6 +23,9 @@ using Sims3.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Sims3.Gameplay.EventSystem;
+using static Sims3.Gameplay.Situations.PaperBoySituation;
+using NRaas.CommonSpace.Helpers;
 
 namespace NRaas.StoryProgressionSpace.Scenarios.Careers
 {
@@ -114,16 +117,37 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
                 IncStat("Not Summer");
             }
 
+            School job = Job as School; 
+            if (job != null) 
+            {
+                job.IsSnowDay = false;
+
+                if((SeasonsManager.Enabled) && GetValue<AllowSnowDaysOption, bool>())
+                {
+                    DateAndTime lastHeavySnowTime = SeasonsManager.LastHeavySnowTime;
+                    if (lastHeavySnowTime != DateAndTime.Invalid && HasValue<SnowDaysSnowDepthOption, SnowLevel>(SeasonsManager.CurrentSnowLevel) && SimClock.ElapsedTime(TimeUnit.Hours, lastHeavySnowTime) < School.kSnowDayTimeWindow)
+                    {
+                        job.IsSnowDay = true;
+                        IncStat("Snow Day");
+
+                        if (Sim.CreatedSim != null)
+                        {
+                            Sim.CreatedSim.ShowTNSAndPlayStingIfSelectable("sting_snow_day", TNSNames.SnowDaySchoolTNS, Sim.CreatedSim, Sim.CreatedSim, null, null, Sim.CreatedSim.IsFemale, Sim.CreatedSim.IsFemale);
+                            EventTracker.SendEvent(EventTypeId.kSnowDay, Sim.CreatedSim);
+                        }
+
+                        return false;
+                    }
+                }
+            }
             Add(frame, new SchoolPushScenario(Sim), ScenarioResult.Start);
             Add(frame, new SchoolSetAlarmScenario(Sim), ScenarioResult.Failure);
             return false;
         }
-
         public override Scenario Clone()
         {
             return new SchoolTwoHourCommuteScenario(this);
         }
-
         protected new class AlarmSimData : TwoHourCommuteScenario.AlarmSimData
         {
             public AlarmSimData()
@@ -259,6 +283,47 @@ namespace NRaas.StoryProgressionSpace.Scenarios.Careers
             public override string GetTitlePrefix()
             {
                 return "AllowSchoolHoliday";
+            }
+        }
+
+        public class AllowSnowDaysOption : BooleanManagerOptionItem<ManagerCareer>, ManagerCareer.ISchoolOption
+        {
+            public AllowSnowDaysOption()
+                : base(true)
+            { }
+
+            public override bool HasRequiredVersion()
+            {
+                return GameUtils.IsInstalled(ProductVersion.EP8);
+            }
+
+            public override string GetTitlePrefix()
+            {
+                return "AllowSnowDays";
+            }
+        }
+
+        public class SnowDaysSnowDepthOption : MultiEnumManagerOptionItem<ManagerCareer, SnowLevel>, ManagerCareer.ISchoolOption
+        {
+            public SnowDaysSnowDepthOption()
+                : base(new SnowLevel[] { SnowLevel.Medium, SnowLevel.Deep })
+            { }
+
+            public override bool HasRequiredVersion()
+            {
+                return GameUtils.IsInstalled(ProductVersion.EP8);
+            }
+
+            protected override bool Allow(SnowLevel val)
+            {
+                if (val == SnowLevel.None) return false;
+
+                return true;
+            }
+
+            public override string GetTitlePrefix()
+            {
+                return "SnowDaySnowDepth";
             }
         }
     }
