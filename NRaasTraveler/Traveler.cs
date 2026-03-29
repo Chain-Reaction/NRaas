@@ -4,25 +4,19 @@ using NRaas.TravelerSpace;
 using NRaas.TravelerSpace.Helpers;
 using NRaas.TravelerSpace.States;
 using Sims3.Gameplay;
-using Sims3.Gameplay.Abstracts;
-using Sims3.Gameplay.Actors;
 using Sims3.Gameplay.CAS;
-using Sims3.Gameplay.Interfaces;
+using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.TimeTravel;
-using Sims3.Gameplay.Utilities;
 using Sims3.Gameplay.UI;
 using Sims3.Gameplay.Visa;
 using Sims3.SimIFace;
-using Sims3.SimIFace.Enums;
 using Sims3.UI;
 using Sims3.UI.CAS;
 using Sims3.UI.GameEntry;
 using Sims3.UI.Hud;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 
 namespace NRaas
 {
@@ -32,13 +26,15 @@ namespace NRaas
         public static bool kForceInsanity = false;
     }
 
-    public class Traveler : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished, Common.IDelayedWorldLoadFinished
+    public class Traveler : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished, Common.IDelayedWorldLoadFinished, Common.IPreSave
     {
         [Tunable, TunableComment("Scripting Mod Instantiator, value does not matter, only its existence")]
         protected static bool kInstantiator = false;
 
         [PersistableStatic]
         static PersistedSettings sSettings = null;
+
+        protected static string agingdebug = "";
 
         static Traveler()
         {
@@ -138,6 +134,14 @@ namespace NRaas
                     }
                 }
             }
+
+            UpdateAgeForeign();
+
+            //Common.WriteLog(agingdebug);
+            //Common.WriteLog(PersistedSettings.agingDebug);
+
+            agingdebug = "";
+            PersistedSettings.agingDebug = "";
         }
 
         public void OnWorldLoadFinished()
@@ -149,12 +153,37 @@ namespace NRaas
                 WorldData.ForceTreasureSpawn();
             }            
 
-            UpdateAgeForeign();
-
             if (GameUtils.IsUniversityWorld())
             {
                 AnnexEx.OnWorldLoadFinished();
             }            
+        }
+
+        public void OnPreSave()
+        {
+            Traveler.Settings.mLastFocusedLot = "";
+            Traveler.Settings.mLastActiveLot = "";
+
+            if (LotManager.FocusLot == null)
+            {
+                //Common.WriteLog("FocusLot null");
+            }
+
+            if (LotManager.FocusLot != null && Traveler.Settings.mLoadScreenImageType == LoadingScreenControl.LoadingImageType.LastFocusedLot)
+            {
+                //Common.WriteLog(LotManager.FocusLot.Name);
+                Traveler.Settings.mLastFocusedLot = LotManager.FocusLot.Name;
+            }
+
+            if (Household.ActiveHouseholdLot != null)
+            {
+                //Common.WriteLog(Household.ActiveHouseholdLot.Name);
+            }
+
+            if (Household.ActiveHouseholdLot != null && Traveler.Settings.mLoadScreenImageType == LoadingScreenControl.LoadingImageType.LastActiveHousehold)
+            {
+                Traveler.Settings.mLastActiveLot = Household.ActiveHouseholdLot.Name;
+            }
         }
 
         public static PersistedSettings Settings
@@ -280,19 +309,22 @@ namespace NRaas
                     if (miniSim == null) continue;
 
                     miniSim.mbAgingEnabled = !Settings.GetAgelessForeign(miniSim);
-                    }
+
+                    agingdebug += miniSim.FullName + "(" + miniSim.mSimDescriptionId + "): AgingEnabled? " + miniSim.mbAgingEnabled;
+                    agingdebug += Common.NewLine;
                 }
-            }    
+            }
+        }    
         
         // externalized to Register and MasterController
         public static WorldName GetSimHomeworld(ulong sim)
-            {
+        {
             MiniSimDescription desc = MiniSims.Find(sim);
 
-                if (desc != null)
-                {
+            if (desc != null)
+            {
                 return Traveler.Settings.GetHomeWorld(desc);
-                }
+            }
 
             SimDescription desc2 = SimDescription.Find(sim);
 
@@ -414,5 +446,6 @@ namespace NRaas
                 return true;
             }
         }
+        
     }
 }

@@ -47,7 +47,21 @@ namespace NRaas.MasterControllerSpace.CAS
 
         public static void AddClothingItemAndPresets(CASClothingRow ths, List<CASParts.PartPreset> parts, bool allowTemp)
         {
-            if (parts.Count == 1)
+            bool useEA = true;
+            if (parts.Count > 0)
+            {
+                if (MasterController.Settings.mCompactClothingCAS && !(ths.mRowController.IsAccessoryType(parts[0].mPart.BodyType)))
+                {
+                    useEA = false;
+                }
+
+                if (MasterController.Settings.mCompactAccessoryCAS && (ths.mRowController.IsAccessoryType(parts[0].mPart.BodyType)))
+                {
+                    useEA = false;
+                }
+            }
+
+            if (parts.Count == 1 && useEA)
             {
                 ths.AddClothingItemAndPresets(parts[0].mPart, allowTemp);
             }
@@ -104,11 +118,11 @@ namespace NRaas.MasterControllerSpace.CAS
         {
             if (ths is CASClothingCategory)
             {
-                CASClothingCategoryEx.SelectItem(ths as CASClothingCategory, part, preset, mAllowMultiple);
+                CASClothingCategoryEx.SelectItem(ths as CASClothingCategory, part, preset, MasterController.Settings.mAllowMultipleAccessories);
             }
             else if (ths is CASMakeup)
             {
-                CASMakeupEx.SelectItem(ths as CASMakeup, part, preset, mAllowMultiple);
+                CASMakeupEx.SelectItem(ths as CASMakeup, part, preset, MasterController.Settings.mAllowMultipleMakeup);
             }
         }
 
@@ -143,6 +157,7 @@ namespace NRaas.MasterControllerSpace.CAS
                     CASClothingRow.ClothingThumbnail tag = window.Tag as CASClothingRow.ClothingThumbnail;
                     StdDrawable drawable = window.Drawable as StdDrawable;
                     string name = null;
+                    ResourceKey key = new ResourceKey();
                     if (tag != null)
                     {
                         WindowBase childByID = window.GetChildByID(0x27, true);
@@ -157,6 +172,8 @@ namespace NRaas.MasterControllerSpace.CAS
                             cASPart = ((CASPartPreset)tag.mData).mPart;
                         }
 
+                        key = cASPart.Key;
+
                         if ((mRow.mRowController.IsAccessoryType(cASPart.BodyType)) && (MasterController.Settings.mCompactAccessoryCAS))
                         {
                             msg += "A";
@@ -164,11 +181,13 @@ namespace NRaas.MasterControllerSpace.CAS
                             bool active = false;
                             if (tag.mIndex == toggledIndex)
                             {
+                                msg += "!visible";
                                 active = !childByID.Visible;
                             }
                             else
                             {
-                                active = IsWorn(cASPart);
+                                msg += "IsWorn";
+                                active = IsWorn(cASPart) && MasterController.Settings.mAllowMultipleAccessories;
                             }
 
                             if (active)
@@ -201,6 +220,7 @@ namespace NRaas.MasterControllerSpace.CAS
                                     childByID.Visible = false;
                                 }
                             }
+
                         }
                         else if (tag.mIndex == mRow.mSelectedItem)
                         {
@@ -245,7 +265,7 @@ namespace NRaas.MasterControllerSpace.CAS
                         ResourceKey resKey = ResourceKey.CreatePNGKey(name, 0x0);
                         drawable[DrawableBase.ControlStates.kNormal] = UIManager.LoadUIImage(resKey);
                         window.Invalidate();
-                    }
+                    }                    
                 }
                 catch (Exception e)
                 {
@@ -283,7 +303,7 @@ namespace NRaas.MasterControllerSpace.CAS
                         {
                             if (args.MouseKey != MouseKeys.kMouseRight)
                             {
-                                if (!mAllowMultiple)
+                                if (!MasterController.Settings.mAllowMultipleAccessories)
                                 {
                                     mRow.RowController.RemoveItem(part.mPart.BodyType);
                                 }
@@ -323,7 +343,7 @@ namespace NRaas.MasterControllerSpace.CAS
                         mRow.ClearTempItem();
                         if (mRow.mObjectOfInterest is CASPart)
                         {
-                            if (!mAllowMultiple)
+                            if ((!MasterController.Settings.mAllowMultipleAccessories || !mRow.mRowController.IsAccessoryType(mRow.CASPart.BodyType)) || (!MasterController.Settings.mAllowMultipleMakeup && mRow.mRowController is CASMakeup))
                             {
                                 mRow.mRowController.OnRowInItemSelected(mRow, mRow.CASPart.BodyType);
                             }
@@ -335,7 +355,7 @@ namespace NRaas.MasterControllerSpace.CAS
                 {
                     if (args.MouseKey != MouseKeys.kMouseRight)
                     {
-                        if (!mAllowMultiple)
+                        if (!MasterController.Settings.mAllowMultipleAccessories)
                         {
                             mRow.RowController.RemoveItem(mRow.CASPart.BodyType);
                         }
@@ -348,7 +368,7 @@ namespace NRaas.MasterControllerSpace.CAS
 
                         mRow.ClearTempItem();
 
-                        if (!mAllowMultiple)
+                        if (!MasterController.Settings.mAllowMultipleAccessories)
                         {
                             mRow.mRowController.OnRowInItemSelected(mRow, mRow.CASPart.BodyType);
                         }

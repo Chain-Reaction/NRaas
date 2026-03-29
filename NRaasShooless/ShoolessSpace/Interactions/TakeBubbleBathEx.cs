@@ -77,6 +77,39 @@ namespace NRaas.ShoolessSpace.Interactions
             {
                 return base.GetInteractionName(actor, target, new InteractionObjectPair(sOldSingleton, target));
             }
+
+            public override bool Test(Sim a, Bathtub target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+            {
+                if (isAutonomous)
+                {
+                    if (a.SimDescription.IsRobot)
+                    {
+                        return false;
+                    }
+
+                    CommodityKind kind = CommodityKind.Hygiene;
+                    if (a.SimDescription != null && a.SimDescription.IsMermaid)
+                    {
+                        kind = CommodityKind.MermaidDermalHydration;
+                    }    
+
+                    float value = a.Motives.GetValue(kind);
+                    float desireYFromX = a.Autonomy.InteractionScorer.GetDesireYFromX(kind, value);
+                    Desire desire = a.Autonomy.InteractionScorer.GetDesire(kind);
+                    float num = ((desire != null) ? desire.MaxY : 0f);
+                    if (num - desireYFromX <= 0f)
+                    {
+                        return false;
+                    }
+                }
+
+                if (target.Repairable.Broken)
+                {
+                    return false;
+                }
+
+                return target.IsSlotted(typeof(BubbleBath));
+            }
         }
     }
 }

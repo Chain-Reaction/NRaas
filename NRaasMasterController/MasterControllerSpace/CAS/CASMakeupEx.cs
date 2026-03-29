@@ -624,12 +624,11 @@ namespace NRaas.MasterControllerSpace.CAS
                     {
                         if (args.mButton == MouseKeys.kMouseRight)
                         {
-                            cASModel.RequestRemoveCASPart(tag);
+                            CASBase.Blacklist(new CASParts.Wrapper(tag), false, null);
                         }
                         else
                         {
-                            Color[] makeupColors = ths.GetMakeupColors(CASMakeup.sCategory);
-                            ths.SetMakeupColors(tag, makeupColors, false, false);
+                            cASModel.RequestRemoveCASPart(tag);
                         }
                     }
                     else

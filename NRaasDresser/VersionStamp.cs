@@ -75,6 +75,6 @@ namespace NRaas
          * 
          * 
          */
-        public static readonly int sVersion = 38;
+        public static readonly int sVersion = 39;
     }
 }

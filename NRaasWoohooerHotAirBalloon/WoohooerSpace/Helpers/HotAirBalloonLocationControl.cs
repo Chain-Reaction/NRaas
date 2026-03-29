@@ -31,7 +31,7 @@ namespace NRaas.WoohooerSpace.Helpers
 
         public override bool HasLocation(Lot lot)
         {
-            return (lot.CountObjects<ShowerOutdoor>() > 0);
+            return (lot.CountObjects<HotairBalloon>() > 0);
         }
 
         public override bool AllowLocation(SimDescription sim, bool testVersion)

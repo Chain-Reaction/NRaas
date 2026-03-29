@@ -315,6 +315,7 @@
     <Compile Include="OverwatchSpace\Interactions\GetMailEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\GetSmeltEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\HarvestEx.cs" />
+    <Compile Include="OverwatchSpace\Interactions\PlayVideoGameSystemOnTVOnlineEx.cs" />
     <Compile Include="OverwatchSpace\Interactions\RobotScanEx.cs" />
     <Compile Include="OverwatchSpace\Loadup\BarMoonlightingListener.cs" />
     <Compile Include="OverwatchSpace\Loadup\CleanupAging.cs" />
@@ -374,11 +375,13 @@
     <Compile Include="OverwatchSpace\Loadup\CleanupFutureDescendantService.cs" />
     <Compile Include="OverwatchSpace\Loadup\ClearInvalidTimeTravelerServiceRequests.cs" />
     <Compile Include="OverwatchSpace\Loadup\ComboStadiumFix.cs" />
+    <Compile Include="OverwatchSpace\Loadup\DisableFreeVacations.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixActiveTopics.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixComboRabbitHoleMetaAds.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixComboRabbitHoleOpportunities.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixLushEpidemic.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixPreEP10Bars.cs" />
+    <Compile Include="OverwatchSpace\Loadup\FPSCheck.cs" />
     <Compile Include="OverwatchSpace\Loadup\YieldAllAlarms.cs" />
     <Compile Include="OverwatchSpace\Loadup\FixToddlerChat.cs" />
     <Compile Include="OverwatchSpace\Loadup\TestDoesObjectNeedCleaning.cs" />
@@ -406,8 +409,10 @@
     <Compile Include="OverwatchSpace\Settings\CleanupVehiclesHourlySetting.cs" />
     <Compile Include="OverwatchSpace\Settings\DisableFullMoonLightingSetting.cs" />
     <Compile Include="OverwatchSpace\Settings\DropInvalidVactionHomes.cs" />
+    <Compile Include="OverwatchSpace\Settings\FPSCapSetting.cs" />
     <Compile Include="OverwatchSpace\Settings\RouteFailTestMinutesSetting.cs" />
     <Compile Include="OverwatchSpace\Settings\MinimumRouteFailSetting.cs" />
+    <Compile Include="OverwatchSpace\Startup\GPUCheck.cs" />
     <Compile Include="OverwatchSpace\Startup\StartupOption.cs" />
     <Compile Include="OverwatchSpace\Startup\LoadStoreData.cs" />
     <Compile Include="OverwatchSpace\OptionList.cs" />
