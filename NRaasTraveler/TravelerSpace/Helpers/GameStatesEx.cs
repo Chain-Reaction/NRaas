@@ -63,6 +63,15 @@ namespace NRaas.TravelerSpace.Helpers
                     }
                     bool isFirstTimeTravelingToFuture = (GameStates.DestinationTravelWorld == WorldName.FutureWorld) && ((CauseEffectService.GetInstance() != null) && (CauseEffectService.GetInstance().GetTimesTraveledToFuture() == 0));
                     LoadingScreenController.LoadTravellingLoadingScreen(travelWorldName, GameStates.DestinationTravelWorld, isReturningHome, isFirstTimeTravelingToFuture);
+                    try
+                    {
+                        LoadingScreenControl.HandleLoadingScreen();
+                    }
+                    catch (Exception e)
+                    {
+                        Common.Exception("", e);
+                    }
+                    //LoadingScreenControl.LoadTravellingLoadingScreen(travelWorldName, GameStates.DestinationTravelWorld, isReturningHome, isFirstTimeTravelingToFuture);
                 }
                 SpeedTrap.Sleep(0);
             }
@@ -1434,14 +1443,14 @@ namespace NRaas.TravelerSpace.Helpers
 
                 if (GameStates.TravellingHome)
                 {
-                sResidentIds.Clear();
+                    sResidentIds.Clear();
                 }
 
                 if (sResidentIds.Count == 0 && !GameStates.TravellingHome)
                 {
-                foreach (KeyValuePair<ulong, SimDescription> sim in SimListing.GetResidents(false))
-                {
-                    sResidentIds[sim.Key] = true;
+                    foreach (KeyValuePair<ulong, SimDescription> sim in SimListing.GetResidents(false))
+                    {
+                        sResidentIds[sim.Key] = true;
                     }
                 }
 

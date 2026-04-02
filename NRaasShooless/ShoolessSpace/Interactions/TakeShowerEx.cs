@@ -69,6 +69,39 @@ namespace NRaas.ShoolessSpace.Interactions
 
             return Sim.ClothesChangeReason.GettingOutOfBath;
         }
+        public new void DuringShower(StateMachineClient smc, LoopData loopData)
+        {
+            if (Actor.SimDescription.IsFrankenstein)
+            {
+                OccultFrankenstein.PushFrankensteinShortOut(Actor);
+            }
+
+            if (HavingWooHoo)
+            {
+                return;
+            }
+
+            if (Actor.SimDescription.IsMatureMermaid)
+            {
+                if (Actor.Motives.IsMax(CommodityKind.MermaidDermalHydration))
+                {
+                    Actor.AddExitReason(ExitReason.Finished);
+                }
+            }
+
+            else if (Actor.Motives.IsMax(CommodityKind.Hygiene))
+            {
+                Actor.AddExitReason(ExitReason.Finished);
+            }
+
+            if (RandomUtil.RandomChance((float)Target.TuningShower.ChanceOfSinging))
+            {
+                Actor.TrySinging();
+            }
+
+            EventTracker.SendEvent(EventTypeId.kEventTakeBath, Actor, Target);
+            EventTracker.SendEvent(EventTypeId.kEventTakeShower, Actor, Target);
+        }
 
         public override bool Run()
         {
@@ -323,9 +356,22 @@ namespace NRaas.ShoolessSpace.Interactions
 
             public override bool Test(Sim a, IShowerable target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
             {
-                if (target.Repairable == null) return false;
+                if (isAutonomous && ((a.Autonomy.Motives.GetValue(CommodityKind.Hygiene) >= 100f && a.SimDescription != null && !a.SimDescription.IsMermaid) || (a.SimDescription != null && a.SimDescription.IsMermaid && a.Autonomy.Motives.GetValue(CommodityKind.MermaidDermalHydration) >= 100f) || a.SimDescription.IsRobot))
+                {
+                    return false;
+                }
 
-                return base.Test(a, target, isAutonomous, ref greyedOutTooltipCallback);
+                ShowerTub showerTub = target as ShowerTub;
+                if (showerTub != null && showerTub.IsCatPlaying())
+                {
+                    greyedOutTooltipCallback = delegate
+                    {
+                        return LocalizeString(a.IsFemale, "CatNeedShoo", a);
+                    };
+                    return false;
+                }
+
+                return !target.Repairable.Broken;
             }
         }
     }

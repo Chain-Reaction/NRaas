@@ -537,7 +537,11 @@
     <Compile Include="MasterControllerSpace\Settings\Visibility\Object\IObjectOption.cs" />
     <Compile Include="MasterControllerSpace\Settings\Visibility\Object\ListingOption.cs" />
     <Compile Include="MasterControllerSpace\SimSelection.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\CancelAllInteractions.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\CancelCurrentInteraction.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\CancelPosture.cs" />
     <Compile Include="MasterControllerSpace\Sims\Basic\ChangeScaleColor.cs" />
+    <Compile Include="MasterControllerSpace\Sims\Basic\SoftReset.cs" />
     <Compile Include="MasterControllerSpace\Sims\Intermediate\Careers\ChangeStageName.cs" />
     <Compile Include="MasterControllerSpace\Sims\Intermediate\CopyCategoryClothing.cs" />
     <Compile Include="MasterControllerSpace\Sims\Advanced\SurgeryBody.cs" />

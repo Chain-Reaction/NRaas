@@ -156,13 +156,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NRaasStoryProgression\NRaasStoryProgression.csproj">
-      <Project>{4AAAE3A6-D66F-47F9-A55C-68CF03A8E54F}</Project>
-      <Name>NRaasStoryProgression</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="StoryProgressionSpace\Helpers\" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +196,12 @@
     <Content Include="StringTables\StringTableTaiwanese.txt" />
     <Content Include="XML\StoryProgressionPopulation.xml" />
     <Content Include="XML\StoryProgressionPopulationScoring.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NRaasStoryProgression\NRaasStoryProgression.csproj">
+      <Project>{4aaae3a6-d66f-47f9-a55c-68cf03a8e54f}</Project>
+      <Name>NRaasStoryProgression</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

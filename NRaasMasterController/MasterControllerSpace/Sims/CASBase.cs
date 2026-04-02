@@ -32,6 +32,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace NRaas.MasterControllerSpace.Sims
@@ -71,6 +72,7 @@ namespace NRaas.MasterControllerSpace.Sims
         static bool sAgingEnabled;
         static OutfitCategories sActualCategory = OutfitCategories.None;
         static int sActualIndex = 0;
+        static UIImage careerIcon = null;
 
         public static List<CASParts.Wrapper> sUnboxedParts = new List<CASParts.Wrapper>();
 
@@ -485,7 +487,7 @@ namespace NRaas.MasterControllerSpace.Sims
             singleton.OnSimSpeciesChanged += OnSimSpeciesChanged;
             singleton.OccultTypeSelected += OnOccultTypeChanged;
             singleton.OnSimLoaded += OnSimLoaded;
-            //singleton.OnSimUpdated += OnSimUpdated;
+            singleton.OnSimUpdated += OnSimUpdated;
             singleton.OnPresetAppliedToPart += OnPresetAppliedToPart;
             singleton.OnSimAddedToHousehold += OnSimAddedToHousehold;
             singleton.OnSimPreviewChange += OnSimPreviewChange;
@@ -495,7 +497,15 @@ namespace NRaas.MasterControllerSpace.Sims
             singleton.RedoSelected += OnRedoSelected;
             CASLogic.EditPart += OnEditPart;
 
-            switch(mode)
+            if (AudioManager.mSongFinishedCallback != null)
+            {
+                // lessons learned: The game doesn't like pushing on to this delegate for whatever reason.
+                // I don't have to restore the original, EA does that on transition out.
+                // And trying to restore it causes crashes anyhow.
+                AudioManager.mSongFinishedCallback = SongComplete;
+            }
+
+            switch (mode)
             {
                 case CASMode.Dresser:
                     GameStates.TransitionToCASDresserMode();
@@ -534,6 +544,8 @@ namespace NRaas.MasterControllerSpace.Sims
                     GameStates.TransitionToCABotMode(true);
                     break;
             }
+
+            // nothing here or the interperter crashes
 
             return true;
         }
@@ -779,7 +791,6 @@ namespace NRaas.MasterControllerSpace.Sims
             sLastName = lastName;
         }
 
-        /*
         protected static void OnSimUpdated(int simIndex)
         {
             try
@@ -796,7 +807,7 @@ namespace NRaas.MasterControllerSpace.Sims
                 Common.Exception(sLastSim, e);
             }
         }
-        */
+        
         protected static void OnSimLoaded(ResourceKey key)
         {
             try
@@ -1612,14 +1623,39 @@ namespace NRaas.MasterControllerSpace.Sims
                 }
                 else
                 {
-                    if (singleton.CurrentSimDescription.Age == CASAgeGenderFlags.Toddler)
+                    CASClothing clothing = CASClothing.gSingleton;
+                    if (clothing != null)
                     {
-                        CASClothing clothing = CASClothing.gSingleton;
-                        if (clothing != null)
+                        if (singleton.CurrentSimDescription.Age == CASAgeGenderFlags.Toddler)
                         {
                             if (clothing.mSwimwearButton != null)
                             {
                                 clothing.mSwimwearButton.Visible = true;
+                            }
+
+                            if (clothing.mCareerButton != null)
+                            {
+                                clothing.mCareerButton.Visible = false;
+                            }
+                        }
+
+                        if (clothing.mCareerButton != null)
+                        {
+                            if (careerIcon == null)
+                            {
+                                careerIcon = UIManager.LoadUIImage(ResourceKey.CreatePNGKey("cas_clothing_career_r2", ResourceUtils.ProductVersionToGroupId(ProductVersion.BaseGame)));
+                            }
+
+                            MultiDrawable drawable = clothing.mCareerButton.Drawable as MultiDrawable;
+
+                            if (drawable != null)
+                            {
+                                IconDrawable icon = drawable[1] as IconDrawable;
+                                if (icon != null)
+                                {
+                                    icon.Image = careerIcon;
+                                    clothing.mCareerButton.Invalidate();
+                                }
                             }
                         }
                     }
@@ -1989,7 +2025,7 @@ namespace NRaas.MasterControllerSpace.Sims
                 singleton.OnSimSpeciesChanged -= OnSimSpeciesChanged;
                 singleton.OccultTypeSelected -= OnOccultTypeChanged;
                 singleton.OnSimLoaded -= OnSimLoaded;
-                //singleton.OnSimUpdated -= OnSimUpdated;
+                singleton.OnSimUpdated -= OnSimUpdated;
                 singleton.OnPresetAppliedToPart -= OnPresetAppliedToPart;
                 singleton.OnHairPresetApplied -= OnHairPresetApplied;
                 singleton.OnSimAddedToHousehold -= OnSimAddedToHousehold;
@@ -2252,6 +2288,17 @@ namespace NRaas.MasterControllerSpace.Sims
             catch (Exception e)
             {
                 Common.Exception(sLastSim, e);
+            }
+        }
+
+        public static void SongComplete(uint soundHandle, ulong objId, uint stopReason)
+        {
+            if (stopReason == 0 && soundHandle == AudioManager.mMusicHandle)
+            {
+                if (AudioManager.mMusicMode == MusicMode.CAS)
+                {
+                    AudioManager.mMusicHandle = Audio.StartSound("music_mode_cas", AudioManager.mSongFinishedCallback);
+                }
             }
         }
 

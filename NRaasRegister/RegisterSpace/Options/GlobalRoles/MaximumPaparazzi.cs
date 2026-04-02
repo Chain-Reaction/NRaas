@@ -51,7 +51,7 @@ namespace NRaas.RegisterSpace.Options.GlobalRoles
 
         protected override string GetPrompt()
         {
-            return Common.Localize("Maximum:Prompt", false, new object[] { Name });
+            return Common.Localize("MaximumHuman:Prompt", false, new object[] { Name });
         }
 
         protected override int Validate(int value)
@@ -82,9 +82,8 @@ namespace NRaas.RegisterSpace.Options.GlobalRoles
                     data.mMaxSpecCount = value;
                 }
 
-                List<Role> roles =  new List<Role>(RoleManager.GetRolesOfType(Role.RoleType.Paparazzi));
                 int count = 0;
-                foreach(Role role in roles)
+                foreach(Role role in new List<Role>(RoleManager.GetRolesOfType(Role.RoleType.Paparazzi)))
                 {
                     count++;
                     if (count > value)

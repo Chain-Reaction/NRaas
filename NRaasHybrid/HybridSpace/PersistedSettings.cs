@@ -54,6 +54,10 @@ namespace NRaas.HybridSpace
 
         public bool mEnforceTwoPersonAnimation = kEnforceTwoPersonAnimation;
 
+        public float[] mMermaidRainHydrationAmount = new float[3] { 7f, 14f, 28f };
+        public float[] mPlantSimRainHydrationAmount = new float[3] { 10f, 20f, 35f };
+        public float mTemperatureForDryingUpBuff = OccultMermaid.kTemperatureForDryingUpBuff;
+
         Dictionary<Type, SpellSettings> mSettings = new Dictionary<Type, SpellSettings>();
 
         public PersistedSettings()

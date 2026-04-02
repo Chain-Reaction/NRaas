@@ -77,7 +77,7 @@ namespace NRaas.TravelerSpace.Options
             bool enable = Traveler.Settings.mEnableSeasons;
             
             if (enable)
-            {                
+            {
                 if (SeasonsManager.Enabled) return;                
 
                 SeasonsManager.sSeasonsValidForWorld = SeasonsManager.Validity.Valid;

@@ -234,3 +234,6 @@ pip-log.txt
 *Obsolete\*
 ChainReaction*
 *Metrics*
+*.il
+*jam*
+*.zip

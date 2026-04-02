@@ -106,6 +106,9 @@ namespace NRaas.OverwatchSpace
         [Tunable, TunableComment("Whether to disable the full moon lighting effect")]
         public static bool kDisableFullMoonLighting = false;
 
+        [Tunable, TunableComment("The FPS cap above which the mod should warn the game has gone above")]
+        public static float kFPSCap = 61f;
+
         public bool mTestingCheatsEnabled = kTestingCheatsEnabled;
         public bool mAffectActiveLot = kAffectActiveLot;        
         public bool mResetAllGnomes = kResetAllGnomes;
@@ -147,6 +150,8 @@ namespace NRaas.OverwatchSpace
 
         public bool mCleanupVehiclesHourly = kCleanupVehiclesHourly;
         public bool mDisableFullMoonLighting = kDisableFullMoonLighting;
+
+        public float mFPSCap = kFPSCap;
 
         public List<string> mAlarmCommands = new List<string>(kAlarmCommands);
         public List<string> mAutoCommands = new List<string>(kAutoCommands);

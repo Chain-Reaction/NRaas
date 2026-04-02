@@ -148,6 +148,7 @@ namespace NRaas.ShoolessSpace.Interactions
                     ths.Actor.BuffManager.RemoveElement(BuffNames.Singed);
                     ths.Actor.BuffManager.RemoveElement(BuffNames.SingedElectricity);
                     ths.Actor.BuffManager.RemoveElement(BuffNames.GotFleasHuman);
+                    ths.Actor.BuffManager.RemoveElement(BuffNames.MosquitoDefense);
                     ths.Actor.SimDescription.RemoveFacePaint();
                     if (flag)
                     {
@@ -163,6 +164,11 @@ namespace NRaas.ShoolessSpace.Interactions
                         { }
                     }
                     ths.Actor.Motives.SetMax(CommodityKind.Hygiene);
+
+                    if (ths.Actor.SimDescription != null && ths.Actor.SimDescription.IsMermaid)
+                    {
+                        ths.Actor.Motives.SetMax(CommodityKind.MermaidDermalHydration);
+                    }
                 }
 
                 if (!flag || (flag && succeeded))
@@ -225,6 +231,52 @@ namespace NRaas.ShoolessSpace.Interactions
             public override string GetInteractionName(Sim actor, Bathtub target, InteractionObjectPair iop)
             {
                 return base.GetInteractionName(actor, target, new InteractionObjectPair(sOldSingleton, target));
+            }
+
+            public override bool Test(Sim a, Bathtub target, bool isAutonomous, ref GreyedOutTooltipCallback greyedOutTooltipCallback)
+            {
+                if (isAutonomous)
+                {
+                    if (a.SimDescription.IsRobot)
+                    {
+                        return false;
+                    }
+
+                    CommodityKind kind = CommodityKind.Hygiene;
+                    if (a.SimDescription != null && a.SimDescription.IsMermaid)
+                    {
+                        kind = CommodityKind.MermaidDermalHydration;
+                    }
+
+                    float value = a.Motives.GetValue(kind);
+                    float desireYFromX = a.Autonomy.InteractionScorer.GetDesireYFromX(kind, value);
+                    Desire desire = a.Autonomy.InteractionScorer.GetDesire(kind);
+                    float num = ((desire != null) ? desire.MaxY : 0f);
+                    if (num - desireYFromX <= 0f)
+                    {
+                        return false;
+                    }
+                }
+
+                if (target.Repairable != null && target.Repairable.Broken)
+                {
+                    greyedOutTooltipCallback = delegate
+                    {
+                        return Bathtub.LocalizeString(a.IsFemale, "CannotBathe", (object)a);
+                    };
+                    return false;
+                }
+
+                if (target.IsCatPlaying())
+                {
+                    greyedOutTooltipCallback = delegate
+                    {
+                        return Bathtub.LocalizeString(a.IsFemale, "CatNeedShoo", (object)a);
+                    };
+                    return false;
+                }
+
+                return true;
             }
         }
     }

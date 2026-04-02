@@ -230,16 +230,16 @@ namespace NRaas.MasterControllerSpace.CAS
                     {
                         CASPart part = (CASPart)uncastPart;
 
-                        uint num2 = CASUtils.PartDataNumPresets(part.Key);
+                        uint num2 = CASUtils.PartDataNumPresets(part.Key);                        
 
                         CASParts.PartPreset preset;
                         if (num2 > 0)
                         {
-                            preset = new CASParts.PartPreset(part, 0);
+                            preset = new CASParts.PartPreset(part, 0);                            
                         }
                         else
                         {
-                            preset = new CASParts.PartPreset(part);
+                            preset = new CASParts.PartPreset(part);                            
                         }
 
                         if (!preset.Valid)
@@ -260,7 +260,7 @@ namespace NRaas.MasterControllerSpace.CAS
                         parts.Add(triPart);
                     }
                 }
-            }
+            }            
             else
             {
                 foreach (object part in ths.mPartsList)
@@ -378,9 +378,21 @@ namespace NRaas.MasterControllerSpace.CAS
             Audio.StartSound("ui_tertiary_button");
         }
 
+        // this is only called for accessories
         public static void RemoveItem(CASClothingCategory ths, CASPart part)
         {
             ths.mModel.RequestRemoveCASPart(part);
+            
+            if (ths.mCurrentPart == BodyTypes.Accessories)
+            {
+                List<CASPart> worn = CASLogic.GetSingleton().mBuilder.GetWornParts(new BodyTypes[] { part.BodyType });
+
+                if (worn.Count > 0)
+                {
+                    CASPart wornPart = worn[worn.Count - 1];
+                    ths.mCurrentPreset = new CASPartPreset(wornPart, ths.mModel.GetDesignPreset(part));
+                }
+            }
 
             Audio.StartSound("ui_tertiary_button");
         }
