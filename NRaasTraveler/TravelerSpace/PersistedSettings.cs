@@ -35,7 +35,7 @@ namespace NRaas.TravelerSpace
 
         [Tunable, TunableComment("Whether to perform progression travel actions when updating a vacation world")]
         protected static bool kPerformTravelActions = true;
-     
+
         [Tunable, TunableComment("Whether to store vehicles parked on residential lots prior to returning home")]
         protected static bool kStoreVehicles = true;
 
@@ -46,7 +46,7 @@ namespace NRaas.TravelerSpace
         protected static bool kSetAsUnselectable = false;
 
         [Tunable, TunableComment("Whether to show the active household lot or the last active lot when loading a save")]
-        public static LoadingScreenControl.LoadingImageType kLoadscreenImageType = LoadingScreenControl.LoadingImageType.LastFocusedLot;
+        public static LoadingScreenControllerEx.LoadingImageType kLoadscreenImageType = LoadingScreenControllerEx.LoadingImageType.Standard;
 
         [Tunable, TunableComment("Whether to disable the generate of decendants and stop the llama messages")]
         public static bool kDisableDescedants = false;
@@ -63,7 +63,7 @@ namespace NRaas.TravelerSpace
         [Tunable, TunableComment("Disable alteration of descendants")]
         public static bool kDisableDescendantModification = false;
 
-        public static string agingDebug = "";
+        //public static string agingDebug = "";
 
         public bool mPauseTravel = kPauseTravel;
 
@@ -97,7 +97,7 @@ namespace NRaas.TravelerSpace
 
         public bool mSetAsUnselectable = kSetAsUnselectable;
 
-        public LoadingScreenControl.LoadingImageType mLoadScreenImageType = kLoadscreenImageType;
+        public LoadingScreenControllerEx.LoadingImageType mLoadScreenImageType = kLoadscreenImageType;
 
         public string mLastFocusedLot = "";
 
@@ -149,33 +149,33 @@ namespace NRaas.TravelerSpace
 
         public WorldName GetHomeWorld(IMiniSimDescription desc)
         {
-            agingDebug += "GetHomeWorld";
-            agingDebug += Common.NewLine;
+            //agingDebug += "GetHomeWorld";
+            //agingDebug += Common.NewLine;
 
             if (desc == null) return WorldName.Undefined;
 
-            agingDebug += "Passed null check";
-            agingDebug += Common.NewLine;
+            //agingDebug += "Passed null check";
+            //agingDebug += Common.NewLine;
 
             if (desc.HomeWorld != WorldName.Undefined && desc.HomeWorld != WorldName.UserCreated)
             {
-                agingDebug += "Returning EA Homeworld " + desc.HomeWorld;
-                agingDebug += Common.NewLine;
+                //agingDebug += "Returning EA Homeworld " + desc.HomeWorld;
+                //agingDebug += Common.NewLine;
                 return desc.HomeWorld;
             }
 
-            agingDebug += "Checking mWorldsForSims...";
-            agingDebug += Common.NewLine;
+            //agingDebug += "Checking mWorldsForSims...";
+            //agingDebug += Common.NewLine;
 
             if (!mWorldForSims.ContainsKey(desc.SimDescriptionId)) return WorldName.Undefined;
 
-            agingDebug += "Passed";
-            agingDebug += Common.NewLine;
+            //agingDebug += "Passed";
+            //agingDebug += Common.NewLine;
 
             string world = mWorldForSims[desc.SimDescriptionId];
 
-            agingDebug += "Got " + world;
-            agingDebug += Common.NewLine;
+            //agingDebug += "Got " + world;
+            //agingDebug += Common.NewLine;
 
             string name = world.Replace(".world", "");
 
@@ -184,13 +184,13 @@ namespace NRaas.TravelerSpace
             try
             {
                 worldName = unchecked((WorldName)ResourceUtils.HashString32(name.Replace(" ", "")));
-                agingDebug += "Unchecked";
-                agingDebug += Common.NewLine;
+                //agingDebug += "Unchecked";
+                //agingDebug += Common.NewLine;
             }
             catch
             {
-                agingDebug += "Failed";
-                agingDebug += Common.NewLine;
+                //agingDebug += "Failed";
+                //agingDebug += Common.NewLine;
                 return WorldName.Undefined;
             }                
 
@@ -200,40 +200,40 @@ namespace NRaas.TravelerSpace
 
         public bool GetAgelessForeign(MiniSimDescription desc)
         {
-            agingDebug += "GetAgelessForeign called for " + desc.FullName;
-            agingDebug += Common.NewLine;
+            //agingDebug += "GetAgelessForeign called for " + desc.FullName;
+            //agingDebug += Common.NewLine;
             if (desc.IsDead && !desc.IsPlayableGhost)
             {
-                agingDebug += "Dead";
-                agingDebug += Common.NewLine;
+                //agingDebug += "Dead";
+                //agingDebug += Common.NewLine;
                 return true;
             }
 
             if (desc.IsEP11Bot)
             {
-                agingDebug += "Robot";
-                agingDebug += Common.NewLine;
+                //agingDebug += "Robot";
+                //agingDebug += Common.NewLine;
                 return true;
             }
 
             if (desc.IsDeer || desc.IsRaccoon)
             {
-                agingDebug += "NPC Animal";
-                agingDebug += Common.NewLine;
+                //agingDebug += "NPC Animal";
+                //agingDebug += Common.NewLine;
                 return true;
             }
 
             if (desc.mTraits != null && desc.HasTrait((ulong)TraitNames.SuperVampire))
             {
-                agingDebug += "Vampire";
-                agingDebug += Common.NewLine;
+                //agingDebug += "Vampire";
+                //agingDebug += Common.NewLine;
                 return true;
             }
 
             if (desc.mTraits != null && desc.HasTrait((ulong)TraitNames.ForeverYoung))
             {
-                agingDebug += "ForeverYoung";
-                agingDebug += Common.NewLine;
+                //agingDebug += "ForeverYoung";
+                //agingDebug += Common.NewLine;
                 return true;
             }
 
@@ -242,15 +242,15 @@ namespace NRaas.TravelerSpace
             {
                 if(sDesc.IsTimeTraveler)
                 {
-                    agingDebug += "TimeTraveler";
-                    agingDebug += Common.NewLine;
+                    //agingDebug += "TimeTraveler";
+                    //agingDebug += Common.NewLine;
                     return true;
                 }
 
                 if (sDesc.IsBonehilda)
                 {
-                    agingDebug += "Bonehilda";
-                    agingDebug += Common.NewLine;
+                    //agingDebug += "Bonehilda";
+                    //agingDebug += Common.NewLine;
                     return true;
                 }
 
@@ -260,8 +260,8 @@ namespace NRaas.TravelerSpace
                     {
                         if(GrimReaper.sGrimReaper.mPool.Contains(sDesc))
                         {
-                            agingDebug += "Grim";
-                            agingDebug += Common.NewLine;
+                            //agingDebug += "Grim";
+                            //agingDebug += Common.NewLine;
                             return true;
                         }
                     }
@@ -276,8 +276,8 @@ namespace NRaas.TravelerSpace
                         {
                             if (!friend.IsReal)
                             {
-                                agingDebug += "Fake imaginary friend";
-                                agingDebug += Common.NewLine;
+                                //agingDebug += "Fake imaginary friend";
+                                //agingDebug += Common.NewLine;
                                 return true;
                             }
                         }
@@ -293,8 +293,8 @@ namespace NRaas.TravelerSpace
                         {
                             if (genie.IsTiedToLamp)
                             {
-                                agingDebug += "Lamp genie";
-                                agingDebug += Common.NewLine;
+                                //agingDebug += "Lamp genie";
+                                //agingDebug += Common.NewLine;
                                 return true;
                             }
                         }
@@ -303,17 +303,17 @@ namespace NRaas.TravelerSpace
             }
 
             WorldName name = GetHomeWorld(desc as IMiniSimDescription);
-            agingDebug += "Got back " + name;
-            agingDebug += Common.NewLine;
+            //agingDebug += "Got back " + name;
+            //agingDebug += Common.NewLine;
             if (name != WorldName.Undefined)
             {
-                agingDebug += "Returning " + mAgelessForeign.ContainsKey(name);
-                agingDebug += Common.NewLine;
+                //agingDebug += "Returning " + mAgelessForeign.ContainsKey(name);
+                //agingDebug += Common.NewLine;
                 return mAgelessForeign.ContainsKey(name);
             }
 
-            agingDebug += "Returning default false (true)";
-            agingDebug += Common.NewLine;
+            //agingDebug += "Returning default false (true)";
+            //agingDebug += Common.NewLine;
 
             return false;
         }

@@ -258,7 +258,15 @@ namespace NRaas.TravelerSpace.Helpers
                     if (hudModel != null)
                     {
                         WorldName currentWorld = GameUtils.GetCurrentWorld();
-                        string str = hudModel.LocationName(currentWorld);
+                        string str;
+                        if (LoadingScreenControllerEx.sVacationWorldNames.Contains(currentWorld))
+                        {
+                            str = hudModel.LocationName(currentWorld);
+                        }
+                        else
+                        {
+                            str = WorldData.GetLocationName(currentWorld);
+                        }
 
                         SimpleMessageDialog.Show(TravelUtil.LocalizeString("TripOverCaption", new object[0x0]), TravelUtil.LocalizeString("TripOverText", new object[] { str }), ModalDialog.PauseMode.PauseSimulator);
                     }

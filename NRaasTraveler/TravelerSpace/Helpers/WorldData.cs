@@ -356,6 +356,8 @@ namespace NRaas.TravelerSpace.Helpers
                         saveFile += "_0x0859db3c";
                         break;
                     case "moonlight falls":
+                        if (!GameUtils.IsInstalled(ProductVersion.EP7)) continue;
+                        
                         worldName = WorldName.MoonlightFalls;
 
                         saveFile += "_0x09b61110";

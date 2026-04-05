@@ -313,7 +313,7 @@
     <Compile Include="TravelerSpace\Helpers\AgingCheckTask.cs" />
     <Compile Include="TravelerSpace\Helpers\FutureDescendantHouseholdInfoEx.cs" />
     <Compile Include="TravelerSpace\Helpers\FutureDescendantServiceEx.cs" />
-    <Compile Include="TravelerSpace\Helpers\LoadingScreenControl.cs" />
+    <Compile Include="TravelerSpace\Helpers\LoadingScreenControllerEx.cs" />
     <Compile Include="TravelerSpace\Helpers\TimePortalEx.cs" />
     <Compile Include="TravelerSpace\Helpers\MapTagControllerEx.cs" />
     <Compile Include="TravelerSpace\Helpers\OccultManagerEx.cs" />
