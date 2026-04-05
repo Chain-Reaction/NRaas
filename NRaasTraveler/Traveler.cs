@@ -9,6 +9,7 @@ using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Skills;
 using Sims3.Gameplay.TimeTravel;
 using Sims3.Gameplay.UI;
+using Sims3.Gameplay.Utilities;
 using Sims3.Gameplay.Visa;
 using Sims3.SimIFace;
 using Sims3.UI;
@@ -34,7 +35,7 @@ namespace NRaas
         [PersistableStatic]
         static PersistedSettings sSettings = null;
 
-        protected static string agingdebug = "";
+        //protected static string agingdebug = "";
 
         static Traveler()
         {
@@ -140,8 +141,8 @@ namespace NRaas
             //Common.WriteLog(agingdebug);
             //Common.WriteLog(PersistedSettings.agingDebug);
 
-            agingdebug = "";
-            PersistedSettings.agingDebug = "";
+            //agingdebug = "";
+            //PersistedSettings.agingDebug = "";
         }
 
         public void OnWorldLoadFinished()
@@ -153,6 +154,17 @@ namespace NRaas
                 WorldData.ForceTreasureSpawn();
             }            
 
+            if (GameStates.IsTravelling && !GameStates.TravellingHome)
+            {
+                if (!Sims3.Gameplay.Gameflow.sGameLoadedFromWorldFile && !LoadingScreenControllerEx.sVacationWorldNames.Contains(GameStates.DestinationTravelWorld))
+                {
+                    float time = SimClock.HoursUntil(SimClockUtils.kInitialTimeOfDay);
+                    long num = SimClock.ConvertToTicks(time, TimeUnit.Hours);
+                    SimClock.TicksAdvanced += num;
+                    AlarmManager.FixLoadAlarms(SimClock.CurrentTicks + num);
+                }
+            }
+            
             if (GameUtils.IsUniversityWorld())
             {
                 AnnexEx.OnWorldLoadFinished();
@@ -169,7 +181,7 @@ namespace NRaas
                 //Common.WriteLog("FocusLot null");
             }
 
-            if (LotManager.FocusLot != null && Traveler.Settings.mLoadScreenImageType == LoadingScreenControl.LoadingImageType.LastFocusedLot)
+            if (LotManager.FocusLot != null && Traveler.Settings.mLoadScreenImageType == LoadingScreenControllerEx.LoadingImageType.LastFocusedLot)
             {
                 //Common.WriteLog(LotManager.FocusLot.Name);
                 Traveler.Settings.mLastFocusedLot = LotManager.FocusLot.Name;
@@ -180,7 +192,7 @@ namespace NRaas
                 //Common.WriteLog(Household.ActiveHouseholdLot.Name);
             }
 
-            if (Household.ActiveHouseholdLot != null && Traveler.Settings.mLoadScreenImageType == LoadingScreenControl.LoadingImageType.LastActiveHousehold)
+            if (Household.ActiveHouseholdLot != null && Traveler.Settings.mLoadScreenImageType == LoadingScreenControllerEx.LoadingImageType.LastActiveHousehold)
             {
                 Traveler.Settings.mLastActiveLot = Household.ActiveHouseholdLot.Name;
             }
@@ -310,8 +322,8 @@ namespace NRaas
 
                     miniSim.mbAgingEnabled = !Settings.GetAgelessForeign(miniSim);
 
-                    agingdebug += miniSim.FullName + "(" + miniSim.mSimDescriptionId + "): AgingEnabled? " + miniSim.mbAgingEnabled;
-                    agingdebug += Common.NewLine;
+                    //agingdebug += miniSim.FullName + "(" + miniSim.mSimDescriptionId + "): AgingEnabled? " + miniSim.mbAgingEnabled;
+                    //agingdebug += Common.NewLine;
                 }
             }
         }    

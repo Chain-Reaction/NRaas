@@ -182,8 +182,9 @@ namespace NRaas.TravelerSpace.States
 
                 try
                 {
-                    LoadingScreenControl.HandleLoadingScreen();
-                } catch (Exception e)
+                    LoadingScreenControllerEx.HandleLoadingScreen();
+                }
+                catch (Exception e)
                 {
                     Common.Exception("", e);
                 }
