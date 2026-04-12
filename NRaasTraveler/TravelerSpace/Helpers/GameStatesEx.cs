@@ -56,22 +56,24 @@ namespace NRaas.TravelerSpace.Helpers
                 GameUtils.EnableSceneDraw(false);
                 if (GameStates.DestinationTravelWorld != WorldName.Undefined)
                 {
-                    string travelWorldName = Sims3.Gameplay.UI.Responder.Instance.HudModel.LocationName(GameStates.DestinationTravelWorld, true);
+                    string travelWorldName;
                     if (isReturningHome)
                     {
                         travelWorldName = GameStates.sTravelData.mHomeWorld;
                     }
+                    else
+                    {
+                        if (LoadingScreenControllerEx.sVacationWorldNames.Contains(GameStates.DestinationTravelWorld))
+                        {
+                            travelWorldName = Sims3.Gameplay.UI.Responder.Instance.HudModel.LocationName(GameStates.DestinationTravelWorld, true);
+                        }
+                        else
+                        {
+                            travelWorldName = WorldData.GetLocationName(GameStates.DestinationTravelWorld);
+                        }
+                    }
                     bool isFirstTimeTravelingToFuture = (GameStates.DestinationTravelWorld == WorldName.FutureWorld) && ((CauseEffectService.GetInstance() != null) && (CauseEffectService.GetInstance().GetTimesTraveledToFuture() == 0));
-                    LoadingScreenController.LoadTravellingLoadingScreen(travelWorldName, GameStates.DestinationTravelWorld, isReturningHome, isFirstTimeTravelingToFuture);
-                    try
-                    {
-                        LoadingScreenControl.HandleLoadingScreen();
-                    }
-                    catch (Exception e)
-                    {
-                        Common.Exception("", e);
-                    }
-                    //LoadingScreenControl.LoadTravellingLoadingScreen(travelWorldName, GameStates.DestinationTravelWorld, isReturningHome, isFirstTimeTravelingToFuture);
+                    LoadingScreenControllerEx.LoadTravellingLoadingScreen(travelWorldName, GameStates.DestinationTravelWorld, isReturningHome, isFirstTimeTravelingToFuture);
                 }
                 SpeedTrap.Sleep(0);
             }

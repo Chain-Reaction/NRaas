@@ -43,7 +43,7 @@ namespace NRaas.MasterControllerSpace.CAS
             {
                 Common.Exception("OnClothingGridFinishedPopulating", e);
             }
-        } 
+        }
 
         public static void OnUndoRedo()
         {
