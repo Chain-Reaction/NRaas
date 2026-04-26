@@ -2,7 +2,7 @@
 
 This is a collection of NRaas mods for The Sims 3.
 
-## Deciphering and repo map
+## Repo map
 
 The Sims3 directory contains (inside subdirectories) the unprotected EA DLL files from the game, where most if not all fields and methods are made public.
 The NRaas mods are built against those DLLs, which are not the same as in the game but, for some glitchy reason, mod DLLs built using those work in the game (and that makes it easier for modders).
@@ -18,7 +18,7 @@ and whose code was likely not fully committed to the repo - as the contents of t
 
 The Ani directory contains the Ani mods.
 
-The contents of the other directories are unknown.
+<!-- The contents of the other directories are unknown : TBD -->
 
 ## How to build the NRaas mods
 
