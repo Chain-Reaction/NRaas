@@ -175,8 +175,8 @@
     <!-- Defines when the Woohoo Interactions are available for romantic sims.  Choices: Default, Partner, Spouse, AnyRomantic -->
     <kWoohooInteractionLevel value="Default"/>
 
-    <!-- Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, Either, Random, TargetThenInitiator (Either meaning the initiator then the target) -->
-    <kTryForBabyPregnancyChoice value="Either"/>
+    <!-- Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, InitiatorThenTarget, TargetThenInitiator, Random -->
+    <kTryForBabyPregnancyChoice value="InitiatorThenTarget"/>
 
     <!-- How much a trip to the matchmaker costs -->
     <kMatchmakerCost value="500"/>
@@ -241,8 +241,8 @@
     <!-- Whether to display the chance for Risky Woohoo on the menu interaction -->
     <kShowRiskyChance value="True"/>
 
-    <!-- Defines which sim is the first choice for pregnancy during a Risky Woohoo.  Choices: Initiator, Target, Either, Random, TargetThenInitiator (Either meaning the initiator then the target) -->
-    <kRiskyPregnancyChoice value="Either"/>
+    <!-- Defines which sim is the first choice for pregnancy during a Risky Woohoo.  Choices: Initiator, Target, InitiatorThenTarget, TargetThenInitiator, Random -->
+    <kRiskyPregnancyChoice value="InitiatorThenTarget"/>
 
     <!-- Whether to allow autonomous romantic interactions for actives on community lots -->
     <kAllowAutonomousRomanceCommLot value="True"/>
