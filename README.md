@@ -2,6 +2,8 @@
 
 This is a collection of NRaas mods for The Sims 3.
 
+See [this page](https://www.nraas.net/community/Creating-an-NRaas-project) for more information, including how to contribute.
+
 ## Repo map
 
 The Sims3 directory contains (inside subdirectories) the unprotected EA DLL files from the game, where most if not all fields and methods are made public.
