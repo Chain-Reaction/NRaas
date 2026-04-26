@@ -5,7 +5,7 @@ This is a collection of NRaas mods for The Sims 3.
 ## Deciphering and repo map
 
 The Sims3 directory contains (inside subdirectories) the unprotected EA DLL files from the game, where most if not all fields and methods are made public.
-The NRaas mods are built against those DLLs, which are not the same as in the game but, for some glitchy reason, it works (and helps modders).
+The NRaas mods are built against those DLLs, which are not the same as in the game but, for some glitchy reason, mod DLLs built using those work in the game (and that makes it easier for modders).
 
 The NRaas and NRaasBootstrap directories are dependencies which most of the mods rely upon (some, like NoCD, do not).
 
