@@ -22,10 +22,12 @@ The Ani directory contains the Ani mods.
 
 ## How to build the NRaas mods
 
+### Using Visual Studio
+
 Open the "Sims 3.sln" solution file in Visual Studio.
 The particular setup you need to do in order to create a new mod project is unnecessary here, as the csproj and sln files already exist.
 Building the "Sims 3.sln" solution in itself will fail (because of the very exceptions below), however you will be able to build each NRaas mod individually, except for:
-- NRaas and NRaasBootstrap will build, but they are useless by themselves, and don't need to be built for the other mods to work
+- NRaas and NRaasBootstrap will build, but they are useless by themselves, and don't need to be built separately for the other mods to work
 - NRaasChemistry and NRaasEconomizer will not build, as their code is incorrect and incomplete
 - NRaasCupcake is expecting two additional base DLLs alongside the unprotected base ones, related to to objects from the Store, which are missing from the repo at the moment
 - NRaasErrorTrap contains a C# compiler error, in VS2022 at least, which I don't fully understand and which is likely either a bug in the compiler itself or a C# version compatibility issue
