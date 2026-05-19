@@ -46,7 +46,7 @@ namespace NRaas.MasterControllerSpace.SelectionCriteria
 
                 mName = CASCharacter.GetFavoriteMusic(value);
 
-                SetThumbnail(ResourceKey.CreatePNGKey(CASCharacter.GetFavoriteMusicPngName(value), 0x0));
+                SetThumbnail(ResourceKey.CreatePNGKey(CASCharacter.GetFavoriteMusicPngName(value), ResourceUtils.ProductVersionToGroupId(Responder.Instance.GetProductVersionForStereoStation(value))));
             }
         }
     }
