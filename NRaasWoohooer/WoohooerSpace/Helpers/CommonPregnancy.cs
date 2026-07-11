@@ -118,7 +118,7 @@ namespace NRaas.WoohooerSpace.Helpers
 
                 int speciesIndex = PersistedSettings.GetSpeciesIndex(a);
 
-                PregnancyChoice pregnancyChoice = PregnancyChoice.Either;
+                bool isRiskyOrTryForBaby = false;
 
                 switch (style)
                 {
@@ -133,7 +133,7 @@ namespace NRaas.WoohooerSpace.Helpers
                         }
 
                         teenCanTry = Woohooer.Settings.mTeenRiskyAutonomous;
-                        pregnancyChoice = Woohooer.Settings.mRiskyPregnancyChoice;
+                        isRiskyOrTryForBaby = true;
                         break;
                     case CommonWoohoo.WoohooStyle.TryForBaby:
                         if ((a.SimDescription.Teen) || (target.SimDescription.Teen))
@@ -146,7 +146,7 @@ namespace NRaas.WoohooerSpace.Helpers
                         }
 
                         teenCanTry = Woohooer.Settings.mTeenTryForBabyAutonomous;
-                        pregnancyChoice = Woohooer.Settings.mTryForBabyPregnancyChoice;
+                        isRiskyOrTryForBaby = true;
                         break;
                 }
 
@@ -223,7 +223,7 @@ namespace NRaas.WoohooerSpace.Helpers
                         return false;
                     }
 
-                    if ((a.SimDescription.Gender != target.SimDescription.Gender) || (pregnancyChoice != PregnancyChoice.Either))
+                    if (isRiskyOrTryForBaby || (a.SimDescription.Gender != target.SimDescription.Gender))
                     {
                         if (autonomous)
                         {

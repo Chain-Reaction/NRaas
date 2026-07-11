@@ -16,7 +16,8 @@ namespace NRaas.WoohooerSpace.Options.TryForBaby
     {
         Initiator = 0,
         Target,
-        Either,
+        InitiatorThenTarget,
+        Either = InitiatorThenTarget, // for compatibility with legacy tuning
         Random,
         TargetThenInitiator,
     }

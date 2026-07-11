@@ -96,8 +96,8 @@ namespace NRaas
         [Tunable, TunableComment("Defines when the Woohoo Interactions are available for romantic sims.  Choices: Default, Partner, Spouse, AnyRomantic")]
         public static MyLoveBuffLevel kWoohooInteractionLevel = MyLoveBuffLevel.Default;
 
-        [Tunable, TunableComment("Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, Both")]
-        public static PregnancyChoice kPregnancyChoice = PregnancyChoice.Either;
+        [Tunable, TunableComment("(UNUSED) Defines which sim is the first choice for pregnancy during a Try For Baby.  Choices: Initiator, Target, Both")]
+        public static PregnancyChoice kPregnancyChoice = PregnancyChoice.InitiatorThenTarget;
 
         [Tunable, TunableComment("Whether to use fertility treatment in the chance of pregnancy during Risky Woohoo")]
         public static bool kRiskyFertility = true;
