@@ -616,7 +616,7 @@ namespace NRaas.WoohooerSpace.Helpers
                         inseminator = actor;
                         break;
                     default:
-                    case PregnancyChoice.InitiatorThenTarget:
+                    case PregnancyChoice.Either:
                         impregnated = actor;
                         inseminator = target;
                         switchIfFail = true;
