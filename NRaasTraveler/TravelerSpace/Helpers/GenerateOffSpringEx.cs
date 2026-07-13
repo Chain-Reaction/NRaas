@@ -38,7 +38,7 @@ namespace NRaas.TravelerSpace.Helpers
         public GenerateOffspringEx(SimDescription forcedParent, List<SimDescription> dyingSims, float daysGone)
         {
             CASAgeGenderFlags daysGoneAges = GetDaysGoneAges(daysGone);
-            
+
             bool university = false;
             if (GameUtils.IsUniversityWorld())
             {
@@ -61,13 +61,13 @@ namespace NRaas.TravelerSpace.Helpers
             }
 
             Household household = forcedParent.Household;
-            if (household != null)
+            if (household != null && !household.IsSpecialHousehold && !SimHasLongDistancePartner(forcedParent))
             {
                 mHouseholdId = household.HouseholdId;
                 mSim = new SimUtils.SimCreationSpec();
                 if ((parent == null) && (partner != null))
                 {
-                    if ((partner.Partner != null) && (partner.Gender != partner.Partner.Gender))
+                    if ((partner.Partner != null) && (partner.Gender != partner.Partner.Gender) && !partner.Partner.Household.IsActive && !partner.Partner.Household.IsTravelHousehold)
                     {
                         parent = partner.Partner;
                     }
@@ -78,7 +78,7 @@ namespace NRaas.TravelerSpace.Helpers
                 }
                 if ((partner == null) && (parent != null))
                 {
-                    if ((parent.Partner != null) && (parent.Gender != parent.Partner.Gender))
+                    if ((parent.Partner != null) && (parent.Gender != parent.Partner.Gender) && !parent.Partner.Household.IsActive && !parent.Partner.Household.IsTravelHousehold)
                     {
                         partner = parent.Partner;
                     }
@@ -87,7 +87,7 @@ namespace NRaas.TravelerSpace.Helpers
                         partner = FindPartner(parent, dyingSims);
                     }
                 }
-                if (((parent != null) && !parent.IsMummy) && ((partner != null) && !partner.IsMummy))
+                if (((parent != null) && (parent.Genealogy != null) && !parent.IsMummy && !parent.IsRobot && !parent.IsPlantSim) && ((partner != null) && (partner.Genealogy != null) && !partner.IsMummy && !partner.IsRobot && !partner.IsPlantSim))
                 {
                     numDyingSims = 0;
                     int numPetsRemoved = 0;
@@ -177,12 +177,25 @@ namespace NRaas.TravelerSpace.Helpers
             return age;
         }
 
+        public static bool SimHasLongDistancePartner(SimDescription sim)
+        {
+            if (sim != null && sim.Partner == null)
+            {
+                MiniSimDescription miniSimDescription = MiniSimDescription.Find(sim.SimDescriptionId);
+                if (miniSimDescription != null && (miniSimDescription.HasPartner || miniSimDescription.IsMarried))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void Execute()
         {
             Household household = Household.Find(mHouseholdId);
             SimDescription mom = SimDescription.Find(mMom);
             SimDescription dad = SimDescription.Find(mDad);
-            SimDescription simDescription = mSim.Instantiate(dad, mom);
+            SimDescription simDescription = mSim.Instantiate(dad, mom, true);
             if (simDescription != null)
             {
                 household.Add(simDescription);
@@ -206,17 +219,19 @@ namespace NRaas.TravelerSpace.Helpers
                 SimDescription otherSimDescription = relationship.GetOtherSimDescription(parent);
                 if (otherSimDescription.Household == null) continue;
 
-                if (otherSimDescription.Household.IsPreviousTravelerHousehold) continue;
+                if (otherSimDescription.Household.IsActive) continue;
 
                 if (otherSimDescription.Household.IsTravelHousehold) continue;
 
-                if (((parent.Gender != otherSimDescription.Gender) && (otherSimDescription.Partner == null)) && !otherSimDescription.IsMummy)
+                if (otherSimDescription.Household.IsSpecialHousehold) continue;
+
+                if ((parent.Gender != otherSimDescription.Gender) && (otherSimDescription.Partner == null) && !otherSimDescription.IsMummy && !otherSimDescription.IsRobot && !otherSimDescription.IsPlantSim && (otherSimDescription.Genealogy != null) && !SimHasLongDistancePartner(otherSimDescription))
                 {
                     if (relationship.AreRomantic())
                     {
                         list.Add(otherSimDescription);
                     }
-                    else if ((!Relationships.IsCloselyRelated(parent, otherSimDescription, false) && parent.CheckAutonomousGenderPreference(otherSimDescription)) && (otherSimDescription.CheckAutonomousGenderPreference(parent) && (relationship.LTR.Liking > liking)))
+                    else if (parent.CanHaveAutonomousRomance(otherSimDescription) && (relationship.LTR.Liking > liking))
                     {
                         liking = relationship.LTR.Liking;
                         description = otherSimDescription;
@@ -231,7 +246,11 @@ namespace NRaas.TravelerSpace.Helpers
 
             foreach (SimDescription description3 in dyingSims)
             {
-                if ((((parent.Gender != description3.Gender) && (description3.Partner == null)) && (!description3.IsMummy && !Relationships.IsCloselyRelated(parent, description3, false))) && (parent.CheckAutonomousGenderPreference(description3) && description3.CheckAutonomousGenderPreference(parent)))
+                if (description3.Household == null) continue;
+
+                if (description3.Household.IsSpecialHousehold) continue;
+
+                if ((parent.Gender != description3.Gender) && (description3.Partner == null) && !description3.IsMummy && !description3.IsRobot && !description3.IsPlantSim && (description3.Genealogy != null) && !SimHasLongDistancePartner(description3) && parent.CanHaveAutonomousRomance(description3))
                 {
                     list.Add(description3);
                 }
@@ -258,15 +277,49 @@ namespace NRaas.TravelerSpace.Helpers
             {
                 try
                 {
-                    if (RandomUtil.RandomChance01(GenerateOffspring.kPercentChanceOffspring))
+                    if (description != null && description.IsHuman && description.Genealogy != null && RandomUtil.RandomChance01(GenerateOffspring.kPercentChanceOffspring))
                     {
-                        int count = RandomUtil.GetInt(GenerateOffspring.kMinimumOffspring, GenerateOffspring.kMaximumOffspring);
-                        for (int i = 0x0; i < count; i++)
+                        bool result = false;
+                        if (description.Genealogy.Children != null)
                         {
-                            GenerateOffspringEx offspring = new GenerateOffspringEx(description, dyingSims, daysGone);
-                            if (offspring.IsValid())
+                            float num;
+                            switch (description.Genealogy.Children.Count)
                             {
-                                offspring.Execute();
+                                case 0:
+                                    num = 100f;
+                                    break;
+                                case 1:
+                                    num = 70f;
+                                    break;
+                                case 2:
+                                    num = 40f;
+                                    break;
+                                case 3:
+                                    num = 25f;
+                                    break;
+                                case 4:
+                                    num = 15f;
+                                    break;
+                                default:
+                                    num = 5f;
+                                    break;
+                            }
+                            result = RandomUtil.RandomChance(num);
+                        }
+                        else
+                        {
+                            result = true;
+                        }
+                        if (result)
+                        {
+                            int count = RandomUtil.GetInt(GenerateOffspring.kMinimumOffspring, GenerateOffspring.kMaximumOffspring);
+                            for (int i = 0x0; i < count; i++)
+                            {
+                                GenerateOffspringEx offspring = new GenerateOffspringEx(description, dyingSims, daysGone);
+                                if (offspring.IsValid())
+                                {
+                                    offspring.Execute();
+                                }
                             }
                         }
                     }
