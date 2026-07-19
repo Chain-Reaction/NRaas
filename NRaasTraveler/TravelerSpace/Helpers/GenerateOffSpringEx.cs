@@ -21,6 +21,7 @@ using Sims3.Gameplay.Visa;
 using Sims3.SimIFace;
 using Sims3.SimIFace.CAS;
 using Sims3.UI;
+using Sims3.UI.CAS;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -231,7 +232,7 @@ namespace NRaas.TravelerSpace.Helpers
                     {
                         list.Add(otherSimDescription);
                     }
-                    else if (parent.CanHaveAutonomousRomance(otherSimDescription) && (relationship.LTR.Liking > liking))
+                    else if (Relationships.CanHaveRomanceWith(null, otherSimDescription, parent, true, false, true, false) && parent.CheckAutonomousGenderPreference(otherSimDescription) && (relationship.LTR.Liking > liking))
                     {
                         liking = relationship.LTR.Liking;
                         description = otherSimDescription;
@@ -250,7 +251,7 @@ namespace NRaas.TravelerSpace.Helpers
 
                 if (description3.Household.IsSpecialHousehold) continue;
 
-                if ((parent.Gender != description3.Gender) && (description3.Partner == null) && !description3.IsMummy && !description3.IsRobot && !description3.IsPlantSim && (description3.Genealogy != null) && !SimHasLongDistancePartner(description3) && parent.CanHaveAutonomousRomance(description3))
+                if ((parent.Gender != description3.Gender) && (description3.Partner == null) && !description3.IsMummy && !description3.IsRobot && !description3.IsPlantSim && (description3.Genealogy != null) && !SimHasLongDistancePartner(description3) && parent.CheckAutonomousGenderPreference(description3) && Relationships.CanHaveRomanceWith(null, description3, parent, true, false, true, false))
                 {
                     list.Add(description3);
                 }
