@@ -1004,6 +1004,46 @@ namespace NRaas.StoryProgressionSpace.Managers
                 stats.IncStat("Allow: Super Vampire");
                 return false;
             }
+            else if (sim.IsTimeTraveler)
+            {
+                stats.IncStat("Allow: Time Traveler");
+                return false;
+            }
+            else if (sim.IsBonehilda)
+            {
+                stats.IncStat("Allow: Bonehilda");
+                return false;
+            }
+            else if (sim.IsImaginaryFriend)
+            {
+                if (sim.OccultManager != null)
+                {
+                    OccultImaginaryFriend friend = sim.OccultManager.GetOccultType(OccultTypes.ImaginaryFriend) as OccultImaginaryFriend;
+                    if (friend != null)
+                    {
+                        if (!friend.IsReal)
+                        {
+                            stats.IncStat("Allow: Imaginary Friend");
+                            return false;
+                        }
+                    }
+                }
+            }
+            else if (sim.IsGenie)
+            {
+                if (sim.OccultManager != null)
+                {
+                    OccultGenie genie = sim.OccultManager.GetOccultType(OccultTypes.Genie) as OccultGenie;
+                    if (genie != null)
+                    {
+                        if (genie.IsTiedToLamp)
+                        {
+                            stats.IncStat("Allow: Lamp Genie");
+                            return false;
+                        }
+                    }
+                }
+            }
             else if (!GetValue<AllowAgingOption,bool>(sim))
             {
                 stats.IncStat("Allow: Aging Denied");
