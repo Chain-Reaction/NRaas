@@ -208,6 +208,90 @@ namespace NRaas.TravelerSpace.Helpers
 
                 msg += "G";
                 Traveler.InsanityWriteLog(msg);
+
+                Collecting sourceCollectingSkill = source.SkillManager.GetSkill<Collecting>(SkillNames.Collecting);
+                if (sourceCollectingSkill != null)
+                {
+                    Collecting destCollectingSkill = dest.SkillManager.AddElement(SkillNames.Collecting) as Collecting;
+                    if (destCollectingSkill != null)
+                    {
+                        destCollectingSkill.mMushroomsCollected = sourceCollectingSkill.mMushroomsCollected;
+                    }
+                }
+
+                msg += "H";
+                Traveler.InsanityWriteLog(msg);
+
+                SculptingSkill sourceSculptingSkill = source.SkillManager.GetSkill<SculptingSkill>(SkillNames.Sculpting);
+                if (sourceSculptingSkill != null)
+                {
+                    SculptingSkill destSculptingSkill = dest.SkillManager.AddElement(SkillNames.Sculpting) as SculptingSkill;
+                    if (destSculptingSkill != null)
+                    {
+                        destSculptingSkill.mHighestValueSculptureSold = sourceSculptingSkill.mHighestValueSculptureSold;
+                        destSculptingSkill.mTotalMoneyEarned = sourceSculptingSkill.mTotalMoneyEarned;
+                    }
+                }
+
+                msg += "I";
+                Traveler.InsanityWriteLog(msg);
+
+                SocialNetworkingSkill sourceSocialNetworkingSkill = source.SkillManager.GetSkill<SocialNetworkingSkill>(SkillNames.SocialNetworking);
+                if (sourceSocialNetworkingSkill != null)
+                {
+                    SocialNetworkingSkill destSocialNetworkingSkill = dest.SkillManager.AddElement(SkillNames.SocialNetworking) as SocialNetworkingSkill;
+                    if (destSocialNetworkingSkill != null)
+                    {
+                        destSocialNetworkingSkill.mCurrentBlogType = sourceSocialNetworkingSkill.mCurrentBlogType;
+                        destSocialNetworkingSkill.mBlogsCreated = sourceSocialNetworkingSkill.mBlogsCreated;
+                    }
+                }
+
+                msg += "J";
+                Traveler.InsanityWriteLog(msg);
+
+                dest.AlmaMater = source.AlmaMater;
+                dest.mAlmaMaterName = source.mAlmaMaterName;
+                dest.GraduationType = source.GraduationType;
+
+                if (GameUtils.IsAnyTravelBasedWorld())
+                {
+                    CareerManager destCareerManager = dest.CareerManager;
+                    CareerManager sourceCareerManager = source.CareerManager;
+                    if (destCareerManager != null && sourceCareerManager != null)
+                    {
+                        if (destCareerManager.QuitCareers != null)
+                        {
+                            if (sourceCareerManager.QuitCareers != null && sourceCareerManager.QuitCareers.Count > 0)
+                            {
+                                foreach (Occupation occupation in sourceCareerManager.QuitCareers.Values)
+                                {
+                                    if (occupation != null)
+                                    {
+                                        Occupation occupation2 = occupation.Clone();
+                                        if (occupation2 != null)
+                                        {
+                                            occupation2.OwnerDescription = dest;
+                                            destCareerManager.QuitCareers[occupation2.Guid] = occupation2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if (sourceCareerManager.mRetiredCareer != null && (!GameUtils.IsFutureWorld() || destCareerManager.mRetiredCareer == null || !destCareerManager.mRetiredCareer.AvailableInFutureWorld))
+                        {
+                            Occupation occupation3 = sourceCareerManager.mRetiredCareer.Clone();
+                            if (occupation3 != null)
+                            {
+                                occupation3.OwnerDescription = dest;
+                                destCareerManager.mRetiredCareer = occupation3;
+                            }
+                        }
+                    }
+                }
+
+                msg += "K";
+                Traveler.InsanityWriteLog(msg);
             }
             catch (Exception e)
             {

@@ -259,6 +259,8 @@ namespace NRaas.TravelerSpace.Helpers
             int mFemalePreference;
             CASAgeGenderFlags mPregnantGender;
 
+            bool wasAdopted;
+
             OutfitCategories mPreviousOutfitCategory = OutfitCategories.None;
             int mPreviousOutfitIndex;
 
@@ -314,6 +316,8 @@ namespace NRaas.TravelerSpace.Helpers
 
                 mMalePreference = sim.mGenderPreferenceMale;
                 mFemalePreference = sim.mGenderPreferenceFemale;
+
+                wasAdopted = sim.WasAdopted;
 
                 if (sim.CreatedSim != null)
                 {
@@ -417,6 +421,8 @@ namespace NRaas.TravelerSpace.Helpers
                 {
                     sim.mGenderPreferenceMale = mMalePreference;
                     sim.mGenderPreferenceFemale = mFemalePreference;
+
+                    sim.WasAdopted = wasAdopted;
 
                     if (sim.Pregnancy != null)
                     {
