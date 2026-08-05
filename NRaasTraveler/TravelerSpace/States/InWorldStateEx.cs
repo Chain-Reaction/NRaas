@@ -45,7 +45,24 @@ namespace NRaas.TravelerSpace.States
             GenerateOffspringEx.PossiblyGenerateOffspring(dyingSims, yearsGone);
 
             int maxActions = StoryProgressionService.kTravellingMaxActions;
-            if (!CrossWorldControl.sRetention.mPerformTravelActions)
+            if (CrossWorldControl.sRetention.mPerformTravelActions && (yearsGone > 0f))
+            {
+                if (AgingManager.Singleton != null)
+                {
+                    int daysGone = (int)(yearsGone * AgingManager.Singleton.SimDaysPerAgingYear);
+                    msg += Common.NewLine + "DaysGone: " + daysGone;
+                    int num = 0;
+                    for (int i = 1; (i <= daysGone) && (num < maxActions); i++)
+                    {
+                        num += RandomUtil.GetInt(StoryProgressionService.kActionsMin, StoryProgressionService.kActionsMax);
+                    }
+                    if (num < maxActions)
+                    {
+                        maxActions = num;
+                    }
+                }
+            }
+            else
             {
                 maxActions = 0;
             }
@@ -446,6 +463,10 @@ namespace NRaas.TravelerSpace.States
                             if ((dyingSims != null) && (AgingManager.NumberAgingYearsElapsed != -1f))
                             {
                                 float yearsGone = GameStates.NumberAgingYearsElapsed - AgingManager.NumberAgingYearsElapsed;
+                                if (AgingManager.NumberAgingYearsElapsed <= 0f)
+                                {
+                                    yearsGone = 0f;
+                                }
 
                                 // Custom function
                                 FixUpAfterTravel(yearsGone, dyingSims);
