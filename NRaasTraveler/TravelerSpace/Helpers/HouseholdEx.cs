@@ -259,7 +259,7 @@ namespace NRaas.TravelerSpace.Helpers
                     {
                         WorldName currentWorld = GameUtils.GetCurrentWorld();
                         string str;
-                        if (LoadingScreenControllerEx.sVacationWorldNames.Contains(currentWorld))
+                        if (WorldData.IsEATravelWorld(currentWorld))
                         {
                             str = hudModel.LocationName(currentWorld);
                         }

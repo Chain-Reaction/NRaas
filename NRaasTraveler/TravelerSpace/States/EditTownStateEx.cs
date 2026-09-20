@@ -66,6 +66,7 @@ namespace NRaas.TravelerSpace.States
             CASExitLoadScreen.Close();
             InWorldSubState.EdgeScrollCheck();
             InWorldSubState.OpportunityDialogCheck();
+            EditTownPuckEx.HandleUI();
         }
     }
 }

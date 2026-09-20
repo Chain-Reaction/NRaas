@@ -156,7 +156,7 @@ namespace NRaas
 
             if (GameStates.IsTravelling && !GameStates.TravellingHome)
             {
-                if (!Sims3.Gameplay.Gameflow.sGameLoadedFromWorldFile && !LoadingScreenControllerEx.sVacationWorldNames.Contains(GameStates.DestinationTravelWorld))
+                if (!Sims3.Gameplay.Gameflow.sGameLoadedFromWorldFile && !WorldData.IsEATravelWorld(GameStates.DestinationTravelWorld))
                 {
                     float time = SimClock.HoursUntil(SimClockUtils.kInitialTimeOfDay);
                     long num = SimClock.ConvertToTicks(time, TimeUnit.Hours);

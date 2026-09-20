@@ -311,6 +311,7 @@
     <Compile Include="TravelerSpace\CareerMergers\OccupationMerger.cs" />
     <Compile Include="TravelerSpace\Dialogs\ChangeLotTypeDialogEx.cs" />
     <Compile Include="TravelerSpace\Helpers\AgingCheckTask.cs" />
+    <Compile Include="TravelerSpace\Helpers\EditTownPuckEx.cs" />
     <Compile Include="TravelerSpace\Helpers\FutureDescendantHouseholdInfoEx.cs" />
     <Compile Include="TravelerSpace\Helpers\FutureDescendantServiceEx.cs" />
     <Compile Include="TravelerSpace\Helpers\LoadingScreenControllerEx.cs" />

@@ -1,11 +1,15 @@
 ﻿using Sims3.Gameplay;
 using Sims3.Gameplay.Abstracts;
 using Sims3.Gameplay.Actors;
+using Sims3.Gameplay.Autonomy;
 using Sims3.Gameplay.Careers;
+using Sims3.Gameplay.CAS;
 using Sims3.Gameplay.Controllers;
 using Sims3.Gameplay.Core;
 using Sims3.Gameplay.Interfaces;
+using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
+using Sims3.UI;
 using Sims3.UI.GameEntry;
 using System;
 using System.Collections.Generic;
@@ -210,6 +214,60 @@ namespace NRaas.TravelerSpace.Helpers
             Occupation.ValidateJobConsistencyWithLotType(lot);
             lot.UpdateCachedValues();
             return true;
+        }
+
+        public static bool ExitEditTown(EditTownModel model, bool cancelled)
+        {
+            if (!GameStates.IsGameShuttingDown && !GameStates.IsCurrentlySwitchingSubStates && !GameStates.mQuitting)
+            {
+                if (!model.IsCurrentWorldActive() && !World.IsEditInGameFromWBMode())
+                {
+                    if (!EditTownController.PromptForNonEmptyClipboard())
+                    {
+                        return false;
+                    }
+                    GameStatesEx.EditWorld(WorldName.Undefined, true);
+                }
+                else
+                {
+                    GameStates.TransitionToReturnState();
+                    if (EditTownModel.PlaceLotsWizardFlow)
+                    {
+                        Camera.OnExitBuildBuy();
+                        LotManager.UnlockActiveLot();
+                    }
+                    if (Household.ActiveHousehold != null && Household.ActiveHousehold.LotHome.CheckIfLotNeedsBabysitter())
+                    {
+                        StyledNotification.Format format = new StyledNotification.Format(Localization.LocalizeString("Gameplay/Services/Requested:Babysitter", new object[0]), StyledNotification.NotificationStyle.kSimTalking);
+                        IPhoneFuture phoneFuture = null;
+                        Sim sim = Household.ActiveHousehold.Sims[0];
+                        if (sim != null)
+                        {
+                            phoneFuture = sim.Inventory.Find<IPhoneFuture>();
+                        }
+                        if (GameUtils.IsInstalled(ProductVersion.EP11) && phoneFuture != null)
+                        {
+                            StyledNotification.Show(format, "w_future_phone", null, ProductVersion.EP11, ProductVersion.EP11);
+                        }
+                        else
+                        {
+                            if (GameUtils.IsInstalled(ProductVersion.EP9))
+                            {
+                                StyledNotification.Show(format, "w_smart_phone", null, ProductVersion.EP9, ProductVersion.EP9);
+                            }
+                            else
+                            {
+                                StyledNotification.Show(format, "glb_tns_phone_r2");
+                            }
+                        }
+                    }
+                    MetaAutonomyManager.CalculateTotalDesiredNumSims();
+                }
+                model.LeavingUpdate();
+            }
+            model.UpdateRoutingDataAndUnloadHeightMap();
+            LotManager.ForceReplanOfAllSimRoutes();
+            return GameStates.NextInWorldStateId == GameStates.ReturnState;
         }
     }
 }
