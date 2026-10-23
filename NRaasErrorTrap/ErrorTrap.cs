@@ -59,11 +59,20 @@ namespace NRaas
         [Tunable, TunableComment("Whether to enable OnProcessEventCallback UI exception reporting")]
         public static bool kEnableOPECReporting = false;
     }
+
+    public class ErrorTrapTuning7
+    {
+        [Tunable, TunableComment("Milliseconds the load-up checks may run in one frame before they sleep, 0 to run them in one go")]
+        public static int kScanSleepInterval = 10;
+    }
    
     public class ErrorTrap : Common, Common.IStartupApp, Common.IPreLoad, Common.IWorldLoadFinished, Common.IWorldQuit
     {
         [Tunable, TunableComment("Scripting Mod Instantiator, value does not matter, only its existence")]
         protected static bool kInstantiator = false;
+
+        // Read by other mods that would otherwise spread the load-up scan themselves. Bump when that behaviour changes.
+        public static readonly int SpreadScanVersion = 1;
 
         static bool sLoading = true;
         //static bool sDelayLoading = true;
@@ -253,6 +262,8 @@ namespace NRaas
         {
             sObjectsOfInterest.Clear();
 
+            DereferenceManager.StartScanSleep();
+
             List<ICheck> checks = DerivativeSearch.Find<ICheck>();
 
             foreach (ICheck check in checks)
@@ -270,12 +281,20 @@ namespace NRaas
 
             CheckLotObjects();
 
-            Inventories.CheckInventories(LogCorrection, DebugLogCorrection, true);
+            DereferenceManager.ScanSleep();
+
+            // The inventory check sleeps between items too, once the frame used kScanSleepInterval ms
+            if (!Loading) Inventories.CheckInventories(LogCorrection, DebugLogCorrection, true, ErrorTrapTuning7.kScanSleepInterval);
+
+            DereferenceManager.ScanSleep();
 
             List<IDereferenceController> controllers = DerivativeSearch.Find<IDereferenceController>();
 
             foreach (IDereferenceController controller in controllers)
             {
+                // The world was quit while we slept: skip to the end, as the dereference pass below does
+                if (Loading) break;
+
                 controller.Clear();
 
                 foreach (KeyValuePair<Type, List<ObjectLookup.Item>> list in ObjectLookup.List)
@@ -332,6 +351,8 @@ namespace NRaas
             ProcessToBeDeleted(sSilentToBeDeleted, false);
 
             ObjectLookup.Clear();
+
+            DereferenceManager.StopScanSleep();
 
             //sDelayLoading = false;
 

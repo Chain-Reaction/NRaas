@@ -126,6 +126,9 @@
     <Compile Include="..\NRaas\Helpers\SimTypes.cs">
       <Link>CommonSpace\Helpers\SimTypes.cs</Link>
     </Compile>
+    <Compile Include="..\NRaas\Helpers\SleepWatch.cs">
+      <Link>CommonSpace\Helpers\SleepWatch.cs</Link>
+    </Compile>
     <Compile Include="..\NRaas\Helpers\StatBin.cs">
       <Link>CommonSpace\Helpers\StatBin.cs</Link>
     </Compile>
@@ -921,6 +924,7 @@
     <Content Include="XML\ErrorTrapTuning2.xml" />
     <Content Include="XML\ErrorTrapTuning5.xml" />
     <Content Include="XML\ErrorTrapTuning6.xml" />
+    <Content Include="XML\ErrorTrapTuning7.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

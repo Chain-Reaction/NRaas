@@ -32,6 +32,33 @@ namespace NRaas.ErrorTrapSpace.Dereferences
 
         static List<IDereference> sDereferences;
 
+        static SleepWatch sScanWatch;
+
+        public static void StartScanSleep()
+        {
+            if (ErrorTrapTuning7.kScanSleepInterval > 0)
+            {
+                sScanWatch = new SleepWatch((uint)ErrorTrapTuning7.kScanSleepInterval);
+            }
+            else
+            {
+                sScanWatch = null;
+            }
+        }
+
+        public static void StopScanSleep()
+        {
+            sScanWatch = null;
+        }
+
+        // Spreads the load-up checks over several frames instead of running them all in one
+        public static void ScanSleep()
+        {
+            if (sScanWatch == null) return;
+
+            sScanWatch.Sleep();
+        }
+
         public static List<IDereference> Dereferences
         {
             get

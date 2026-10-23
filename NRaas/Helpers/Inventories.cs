@@ -175,26 +175,98 @@ namespace NRaas.CommonSpace.Helpers
 
         public static void CheckInventories(Logger log, Logger debugLog, bool checkDestroyed)
         {
+            CheckInventories(log, debugLog, checkDestroyed, 0);
+        }
+        // sleepAfter > 0 : sleeps a tick once that many milliseconds of the frame are used, also inside large inventories,
+        // for callers running in their own task
+        public static void CheckInventories(Logger log, Logger debugLog, bool checkDestroyed, int sleepAfter)
+        {
+            SleepTimer timer = new SleepTimer(sleepAfter);
+
             foreach (GameObject parent in Sims3.Gameplay.Queries.GetObjects<GameObject>())
             {
-                CheckInventory(log, debugLog, GetName(parent), parent.Inventory, checkDestroyed);
+                // Skips the localized name lookup for the many objects without an inventory
+                if (parent.Inventory == null) continue;
+
+                if (timer.Sleep() && timer.Stopped) return;
+
+                // Objects can go away while we sleep
+                if ((timer.Slept) && (parent.HasBeenDestroyed)) continue;
+
+                CheckInventory(log, debugLog, GetName(parent), parent.Inventory, checkDestroyed, timer);
+                if (timer.Stopped) return;
             }
 
-            foreach (Household house in Household.sHouseholdList)
+            foreach (Household house in new List<Household>(Household.sHouseholdList))
             {
+                if (timer.Sleep() && timer.Stopped) return;
+
                 if (house.SharedFamilyInventory != null)
                 {
-                    CheckInventory(log, debugLog, house.Name + " Family", house.SharedFamilyInventory.Inventory, checkDestroyed);
+                    CheckInventory(log, debugLog, house.Name + " Family", house.SharedFamilyInventory.Inventory, checkDestroyed, timer);
+                    if (timer.Stopped) return;
                 }
 
                 if (house.SharedFridgeInventory != null)
                 {
-                    CheckInventory(log, debugLog, house.Name + " Fridge", house.SharedFridgeInventory.Inventory, checkDestroyed);
+                    CheckInventory(log, debugLog, house.Name + " Fridge", house.SharedFridgeInventory.Inventory, checkDestroyed, timer);
+                    if (timer.Stopped) return;
                 }
             }
         }
 
+        // Sleeps a tick once the frame used the given milliseconds; does nothing when that is 0
+        class SleepTimer
+        {
+            Sims3.SimIFace.StopWatch mWatch;
+
+            uint mInterval;
+
+            // A sleep happened since the check started
+            public bool Slept;
+
+            // The world is shutting down, the check stops
+            public bool Stopped;
+
+            public SleepTimer(int interval)
+            {
+                if (interval <= 0) return;
+
+                mInterval = (uint)interval;
+
+                mWatch = Sims3.SimIFace.StopWatch.Create(Sims3.SimIFace.StopWatch.TickStyles.Milliseconds);
+                mWatch.Start();
+            }
+
+            public bool Active
+            {
+                get { return (mWatch != null); }
+            }
+
+            // True when it slept
+            public bool Sleep()
+            {
+                if (mWatch == null) return false;
+
+                if (mWatch.GetElapsedTime() < mInterval) return false;
+
+                if (!Common.Sleep()) return false;
+
+                mWatch.Restart();
+
+                Slept = true;
+                Stopped = GameStates.IsWorldShuttingDown;
+                return true;
+            }
+        }
+
         public static void CheckInventory(Logger log, Logger debugLog, string name, Inventory inventory, bool checkDestroyed)
+        {
+            CheckInventory(log, debugLog, name, inventory, checkDestroyed, new SleepTimer(0));
+        }
+        // With an active timer the stacks and items are copied first and looked up again after each sleep, since the game can
+        // change them meanwhile. Without one this is the same single-frame check as always.
+        static void CheckInventory(Logger log, Logger debugLog, string name, Inventory inventory, bool checkDestroyed, SleepTimer timer)
         {
             try
             {
@@ -202,7 +274,13 @@ namespace NRaas.CommonSpace.Helpers
 
                 List<uint> badStacks = new List<uint>();
 
-                foreach (KeyValuePair<uint, InventoryStack> stack in inventory.mItems)
+                IEnumerable<KeyValuePair<uint, InventoryStack>> stacks = inventory.mItems;
+                if (timer.Active)
+                {
+                    stacks = new List<KeyValuePair<uint, InventoryStack>>(inventory.mItems);
+                }
+
+                foreach (KeyValuePair<uint, InventoryStack> stack in stacks)
                 {
                     if ((stack.Value == null) || (stack.Value.List == null))
                     {
@@ -210,8 +288,35 @@ namespace NRaas.CommonSpace.Helpers
                         continue;
                     }
 
-                    for (int index = stack.Value.List.Count - 1; index >= 0; index--)
+                    List<InventoryItem> items = null;
+                    if (timer.Active)
                     {
+                        // Removed or replaced by the game while we slept
+                        if (!IsStack(inventory, stack)) continue;
+
+                        items = new List<InventoryItem>(stack.Value.List);
+                    }
+
+                    for (int pos = stack.Value.List.Count - 1; pos >= 0; pos--)
+                    {
+                        int index = pos;
+                        if (timer.Active)
+                        {
+                            if (timer.Sleep())
+                            {
+                                if (timer.Stopped) return;
+
+                                if (!IsStack(inventory, stack)) break;
+                            }
+
+                            // Moved or taken out by the game while we slept
+                            if ((index >= stack.Value.List.Count) || (stack.Value.List[index] != items[pos]))
+                            {
+                                index = IndexOf(stack.Value.List, items[pos]);
+                                if (index < 0) continue;
+                            }
+                        }
+
                         InventoryItem item = stack.Value.List[index];
 
                         if (item.Object == null)
@@ -273,6 +378,12 @@ namespace NRaas.CommonSpace.Helpers
                                 }
                             }
                         }
+
+                        // Our own change removed the stack (jam jar): stop here, as the dictionary loop above does without a timer
+                        if ((timer.Active) && (!IsStack(inventory, stack)))
+                        {
+                            throw new InvalidOperationException("Inventory stacks changed");
+                        }
                     }
 
                     if (stack.Value.List.Count == 0)
@@ -283,13 +394,39 @@ namespace NRaas.CommonSpace.Helpers
 
                 foreach (uint value in badStacks)
                 {
+                    // Refilled by the game while we slept
+                    InventoryStack current;
+                    if ((timer.Active) && (inventory.mItems.TryGetValue(value, out current)) && (current != null) && (current.List != null) && (current.List.Count > 0)) continue;
+
                     inventory.mItems.Remove(value);
                 }
+            }
+            catch (Sims3.SimIFace.ResetException)
+            {
+                throw;
             }
             catch (Exception e)
             {
                 Common.Exception(inventory.Owner, e);
             }
+        }
+
+        static int IndexOf(Sims3.Gameplay.Utilities.ListSorted<InventoryItem> list, InventoryItem item)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] == item) return i;
+            }
+
+            return -1;
+        }
+
+        static bool IsStack(Inventory inventory, KeyValuePair<uint, InventoryStack> stack)
+        {
+            InventoryStack current;
+            if (!inventory.mItems.TryGetValue(stack.Key, out current)) return false;
+
+            return (current == stack.Value);
         }
 
         public static Inventory ParentInventory(IGameObject obj)

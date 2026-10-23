@@ -28,6 +28,7 @@ namespace NRaas
                     msg += Common.NewLine + "kShowFullReferencing=" + DereferenceGameObject.kShowFullReferencing;
                     msg += Common.NewLine + "kShowFoundReferences=" + DereferenceManagerTuning.kShowFoundReferences;
                     msg += Common.NewLine + "kForceReferenceLog=" + ErrorTrapTuning4.kForceReferenceLog;                   
+                    msg += Common.NewLine + "kScanSleepInterval=" + ErrorTrapTuning7.kScanSleepInterval;
 
                     return msg;
                 }

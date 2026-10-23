@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <Current_Tuning>
+    <kScanSleepInterval value="10">
+      <!--Milliseconds the load-up checks may run in one frame before they sleep, 0 to run them in one go-->
+    </kScanSleepInterval>
+  </Current_Tuning>
+</base>
