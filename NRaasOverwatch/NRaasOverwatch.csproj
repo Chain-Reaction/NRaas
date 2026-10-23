@@ -425,6 +425,7 @@
     <Compile Include="OverwatchSpace\Interfaces\ISettingOption.cs" />
     <Compile Include="OverwatchSpace\Loadup\DelayedLoadupOption.cs" />
     <Compile Include="OverwatchSpace\Settings\AlarmHour.cs" />
+    <Compile Include="OverwatchSpace\Settings\AlarmSpacing.cs" />
     <Compile Include="OverwatchSpace\Settings\BooleanOption.cs" />
     <Compile Include="OverwatchSpace\Actions\ExportSettings.cs" />
     <Compile Include="OverwatchSpace\Actions\ImportSettings.cs" />

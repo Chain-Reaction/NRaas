@@ -180,6 +180,11 @@ namespace NRaas.OverwatchSpace.Alarms
 
             foreach (Sim createdSim in new List<Sim> (LotManager.Actors))
             {
+                // Sims can go away while we sleep between route checks
+                if ((createdSim == null) || (createdSim.HasBeenDestroyed)) continue;
+
+                bool planned = false;
+
                 StuckSimData other;
                 if (!sData.TryGetValue(createdSim.SimDescription.SimDescriptionId, out other))
                 {
@@ -230,6 +235,7 @@ namespace NRaas.OverwatchSpace.Alarms
                                 if ((interaction == null) || (sameInteraction))
                                 {
                                     bool success = false;
+                                    planned = true;
 
                                     try
                                     {
@@ -286,6 +292,12 @@ namespace NRaas.OverwatchSpace.Alarms
                 catch (Exception e)
                 {
                     Common.Exception(createdSim, e);
+                }
+
+                // Each route check plans a route (tens of ms): one per frame, after this Sim's decision, where sleeping is allowed
+                if (planned)
+                {
+                    Common.Sleep();
                 }
             }
         }

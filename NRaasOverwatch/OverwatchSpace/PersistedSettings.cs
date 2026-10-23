@@ -74,6 +74,8 @@ namespace NRaas.OverwatchSpace
         public static string[] kAutoCommands = new string[0];
         [Tunable, TunableComment("Hour at which to run the nightly alarm")]
         public static float kAlarmHour = 3f;
+        [Tunable, TunableComment("Sim-minutes between the nightly cleanups, 0 runs them one per frame")]
+        public static int kAlarmSpacing = 0;
 
         [Tunable, TunableComment("Whether to check for stuck sims each night")]
         public static bool kStuckCheck = true;
@@ -133,6 +135,7 @@ namespace NRaas.OverwatchSpace
         public bool mShowNotices = kShowNotices;
         private bool mLogging = kLogging;
         public float mAlarmHour = kAlarmHour;
+        public int mAlarmSpacing = kAlarmSpacing;
 
         public bool mStuckCheckV2 = kStuckCheck;
         public bool mStuckCheckReset = kStuckCheckReset;
