@@ -127,5 +127,9 @@
     <kDisableFullMoonLighting value="False">
       <!--Whether to disable the full moon lighting effect-->
     </kDisableFullMoonLighting>
+    
+    <kFPSCap value="61">
+      <!--The FPS cap above which the mod should warn the game has gone above-->
+    </kFPSCap>
   </Current_Tuning>
 </base>
