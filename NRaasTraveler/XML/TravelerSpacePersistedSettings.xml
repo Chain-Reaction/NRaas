@@ -34,6 +34,9 @@
     <kSetAsUnselectable value="False">
       <!-- Whether to set inactive travelers as unselectable upon arrival on vacation -->
     </kSetAsUnselectable>
+    <kLoadscreenImageType value="Standard">
+      <!-- Whether to show the active household lot or the last active lot when loading a save -->
+    </kLoadscreenImageType>
     <kDisableDescedants value="False">
       <!-- Whether to disable the generate of decendants and stop the llama messages -->
     </kDisableDescedants>
