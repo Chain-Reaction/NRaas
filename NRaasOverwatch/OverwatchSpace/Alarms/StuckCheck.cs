@@ -65,6 +65,11 @@ namespace NRaas.OverwatchSpace.Alarms
                 if ((r != null) && (r.Follower != null))
                 {
                     sim = r.Follower.Target as Sim;
+
+                    // Only the Sim's own plans count. The game's night-time stuck check (LotManager.RunStuckCheckHelper) plans for the Sim
+                    //   from an alarm, and its test plans to random lot points fail for Sims that are fine (asleep in bed)
+                    if ((sim != null) && (Simulator.CurrentTask != sim.ObjectId)) return;
+
                     if ((sim != null) && (sim.SimDescription != null))
                     {
                         StuckSimData other;
