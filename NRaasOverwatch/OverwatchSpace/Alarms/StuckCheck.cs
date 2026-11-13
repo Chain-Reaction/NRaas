@@ -178,7 +178,11 @@ namespace NRaas.OverwatchSpace.Alarms
         {
             Overwatch.Log(Name);
 
-            foreach (Sim createdSim in new List<Sim> (LotManager.Actors))
+            List<Sim> sims = new List<Sim>(LotManager.Actors);
+
+            RemoveGoneSims(sims);
+
+            foreach (Sim createdSim in sims)
             {
                 StuckSimData other;
                 if (!sData.TryGetValue(createdSim.SimDescription.SimDescriptionId, out other))
@@ -286,6 +290,26 @@ namespace NRaas.OverwatchSpace.Alarms
                 catch (Exception e)
                 {
                     Common.Exception(createdSim, e);
+                }
+            }
+        }
+
+        // Sims no longer in the world are not checked again, and their data would keep the old Sim object alive (mLastInteraction)
+        protected static void RemoveGoneSims(List<Sim> sims)
+        {
+            Dictionary<ulong, bool> present = new Dictionary<ulong, bool>();
+            foreach (Sim sim in sims)
+            {
+                if (sim.SimDescription == null) continue;
+
+                present[sim.SimDescription.SimDescriptionId] = true;
+            }
+
+            foreach (ulong id in new List<ulong>(sData.Keys))
+            {
+                if (!present.ContainsKey(id))
+                {
+                    sData.Remove(id);
                 }
             }
         }
