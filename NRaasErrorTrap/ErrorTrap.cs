@@ -331,6 +331,12 @@ namespace NRaas
             ProcessToBeDeleted(sToBeDeleted, true);
             ProcessToBeDeleted(sSilentToBeDeleted, false);
 
+            // The controllers are cached for the session, drop the lists of this scan rather than keep them until the next load
+            foreach (IDereferenceController controller in controllers)
+            {
+                controller.Clear();
+            }
+
             ObjectLookup.Clear();
 
             //sDelayLoading = false;

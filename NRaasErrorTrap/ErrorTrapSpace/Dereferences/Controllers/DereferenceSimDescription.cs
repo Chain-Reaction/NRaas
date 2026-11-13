@@ -29,6 +29,8 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
         public override void Clear()
         {
             mSims = null;
+
+            base.Clear();
         }
 
         protected override void PreProcess(SimDescription obj, object parent, FieldInfo field)

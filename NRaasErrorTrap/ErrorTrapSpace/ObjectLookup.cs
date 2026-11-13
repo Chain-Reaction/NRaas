@@ -81,6 +81,8 @@ namespace NRaas.ErrorTrapSpace
         {
             sRawList.Clear();
 
+            sLookup.Clear();
+
             sPostDisposed.Clear();
 
             if (sDisposedEvent != null)
