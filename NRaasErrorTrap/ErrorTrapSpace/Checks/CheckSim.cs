@@ -36,15 +36,10 @@ namespace NRaas.ErrorTrapSpace.Checks
     {
         //Dictionary<Sim, ResetSimTask.CreationProtection> mData = new Dictionary<Sim, ResetSimTask.CreationProtection>();
 
-        Dictionary<Sim, bool> mInited = new Dictionary<Sim, bool>();
-
         //Sim.OnLotChanged mLotChangedEvents = null;
 
         protected override bool PrePerform(Sim sim, bool postLoad)
         {
-            if (mInited.ContainsKey(sim)) return true;
-            mInited.Add(sim, true);
-
             /*
             mLotChangedEvents = Sim.sOnLotChangedDelegates;
             Sim.sOnLotChangedDelegates = null;
