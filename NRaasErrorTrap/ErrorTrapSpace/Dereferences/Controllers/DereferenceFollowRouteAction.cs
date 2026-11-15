@@ -43,6 +43,10 @@ namespace NRaas.ErrorTrapSpace.Dereferences.Controllers
 
             if (component.mRouteActions.Contains(obj)) return;                        
 
+            // RoutingComponent.DoRoute keeps the step it has just finished in mPreviousRouteAction until the next step ends,
+            // so a Sim on the second or later step of a route still holds it: that Sim is walking, not stuck
+            if (object.ReferenceEquals(component.GetPreviousRouteAction(), obj)) return;
+
             if (sSims == null)
             {
                 sSims = new Dictionary<Sim, InteractionInstance>();
