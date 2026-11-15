@@ -557,6 +557,8 @@ namespace NRaas
 
                     if (obj.LotCurrent == lot) continue;
 
+                    if (IsOnItsLot(obj)) continue;
+
                     string existingLotName = null;
 
                     if (obj.LotCurrent != null)
@@ -584,6 +586,29 @@ namespace NRaas
 
                     DebugLogCorrection("Reset LotCurrent " + obj.GetType() + lotName + existingLotName);
                 }
+            }
+        }
+
+        // An object can be listed by one lot while the game sets another as its LotCurrent: rabbit holes that straddle the
+        // edge of a combo lot are listed with the World Lot, but Lot.AddObjectToLot sets the combo lot at every load. The
+        // game sets the lot through GameObject.InternalOnSetLotCurrent, which also moves the object's alarms and reactions,
+        // so writing mLotCurrent directly left them on the other lot. Leave such objects alone; when unsure, correct as before.
+        protected static bool IsOnItsLot(GameObject obj)
+        {
+            try
+            {
+                Lot current = obj.LotCurrent;
+                if (current == null) return false;
+
+                if ((obj is RabbitHole) && (!current.IsWorldLot) && (LotManager.GetLot(current.LotId) == current)) return true;
+
+                if (LotManager.GetLotAtPoint(obj.Position) == current) return true;
+
+                return (Array.IndexOf(current.GetObjects<GameObject>(), obj) >= 0);
+            }
+            catch
+            {
+                return false;
             }
         }
 
