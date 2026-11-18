@@ -60,7 +60,7 @@ namespace NRaas.OverwatchSpace.Loadup
 
                     foreach (SimDescription remove in removeB)
                     {
-                        Relationship.sAllRelationships.Remove(remove);
+                        relationsA.Value.Remove(remove);
 
                         Overwatch.Log(" Removed B: " + remove.FullName);
                     }
