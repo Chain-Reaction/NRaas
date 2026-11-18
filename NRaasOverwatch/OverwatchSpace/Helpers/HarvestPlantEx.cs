@@ -39,6 +39,53 @@ namespace NRaas.OverwatchSpace.Helpers
 {
     public class HarvestPlantEx
     {
+        // EA only lists the Gatherer / Science extras (Seed.Copy objects out of world): they never reach an inventory.
+        // Do what HarvestPlant.HarvestHarvestable does: inventory, the burglar's loot, else destroy.
+        private static void AddExtra(HarvestPlant ths, Sim actor, BurglarSituation burglarSituation, GameObject extra, List<GameObject> objectsHarvested)
+        {
+            extra.SetOwnerLot(actor.LotHome);
+
+            if (burglarSituation != null)
+            {
+                burglarSituation.StolenObjects.Add(extra);
+                burglarSituation.CurrentValue += extra.Value;
+            }
+            else if (!actor.Inventory.TryToAdd(extra))
+            {
+                extra.Destroy();
+                return;
+            }
+
+            objectsHarvested.Add(extra);
+        }
+
+        // EA's HarvestPlant.UpdateGardeningSkillJournal credits mushroom collecting to PlumbBob.SelectedActor (null throws,
+        // an NPC harvest credits the player's Sim). Same body, crediting the harvester; subclasses that override it keep theirs.
+        private static void UpdateJournal(HarvestPlant ths, Sim actor, Gardening skill, List<GameObject> objectsHarvested)
+        {
+            MethodInfo method = ths.GetType().GetMethod("UpdateGardeningSkillJournal", new Type[] { typeof(Gardening), typeof(PlantDefinition), typeof(List<GameObject>) });
+            if ((method != null) && (method.DeclaringType != typeof(HarvestPlant)))
+            {
+                ths.UpdateGardeningSkillJournal(skill, ths.PlantDef, objectsHarvested);
+                return;
+            }
+
+            foreach (GameObject item in objectsHarvested)
+            {
+                skill.Harvested(Plant.GetQuality(item.Plantable.QualityLevel), ths.PlantDef);
+
+                if (Plant.IsMushroom(ths.Seed))
+                {
+                    Collecting collecting = actor.SkillManager.AddElement(SkillNames.Collecting) as Collecting;
+                    if (collecting != null)
+                    {
+                        bool unused;
+                        collecting.Collected(item as Sims3.Gameplay.Objects.FoodObjects.Ingredient, out unused);
+                    }
+                }
+            }
+        }
+
         public static bool DoHarvest(HarvestPlant ths, Sim actor, bool hasHarvested, BurglarSituation burglarSituation)
         {
             Slot[] containmentSlots = ths.GetContainmentSlots();
@@ -60,7 +107,7 @@ namespace NRaas.OverwatchSpace.Helpers
                     GameObject item = ths.Seed.Copy(false) as GameObject;
                     if (item != null)
                     {
-                        objectsHarvested.Add(item);
+                        AddExtra(ths, actor, burglarSituation, item, objectsHarvested);
                     }
                 }
             }
@@ -74,7 +121,7 @@ namespace NRaas.OverwatchSpace.Helpers
                     GameObject obj6 = ths.Seed.Copy(false) as GameObject;
                     if (obj6 != null)
                     {
-                        objectsHarvested.Add(obj6);
+                        AddExtra(ths, actor, burglarSituation, obj6, objectsHarvested);
                     }
                 }
             }
@@ -112,7 +159,7 @@ namespace NRaas.OverwatchSpace.Helpers
                 }
                 else
                 {
-                    ths.UpdateGardeningSkillJournal(skill, ths.PlantDef, objectsHarvested);
+                    UpdateJournal(ths, actor, skill, objectsHarvested);
                 }
             }
 
