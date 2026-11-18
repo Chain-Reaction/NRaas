@@ -42,7 +42,8 @@ namespace NRaas.CareerSpace.Interactions
                 }
                 if (Autonomous && (interactionDefinition.mUsageType == BusinessPlanning.None))
                 {
-                    interactionDefinition.mUsageType = (BusinessPlanning)RandomUtil.GetInt(0, 1);
+                    // EA writes the roll into the shared definition, so the first roll stuck for every later autonomous run
+                    interactionDefinition = new Definition((BusinessPlanning)RandomUtil.GetInt(0, 1));
                 }
                 IInteractionNameCanBeOverriden overriden = this;
                 if (overriden != null)
@@ -50,6 +51,7 @@ namespace NRaas.CareerSpace.Interactions
                     overriden.SetInteractionName(interactionDefinition.GetAutonomousInteractionName());
                     UpdateCaption = true;
                 }
+                bool tookFromInventory = false;
                 if (this.mRunFromInventory && Actor.Inventory.Contains(Target))
                 {
                     Vector3 vector;
@@ -61,6 +63,7 @@ namespace NRaas.CareerSpace.Interactions
                         return false;
                     }
                     Actor.Inventory.TryToRemove(Target);
+                    tookFromInventory = true;
                     Target.SetPosition(vector);
                     Target.SetForward(vector2);
                     Target.AddToWorld();
@@ -68,12 +71,20 @@ namespace NRaas.CareerSpace.Interactions
                 }
                 if (!Target.Line.WaitForTurn(this, SimQueue.WaitBehavior.Default, ~(ExitReason.Replan | ExitReason.MidRoutePushRequested | ExitReason.ObjectStateChanged | ExitReason.PlayIdle | ExitReason.MaxSkillPointsReached), AcademicBusinessPlanner.kTimeToWaitInLine))
                 {
-                    Actor.Inventory.TryToAdd(Target);
+                    // EA always pockets the planner here, even one another Sim is using
+                    if (tookFromInventory)
+                    {
+                        Actor.Inventory.TryToAdd(Target);
+                    }
                     return false;
                 }
                 if (!Actor.RouteToSlotAndCheckInUse(Target, Slot.RoutingSlot_0))
                 {
-                    Actor.Inventory.TryToAdd(Target);
+                    // EA always pockets the planner here, even one another Sim is using
+                    if (tookFromInventory)
+                    {
+                        Actor.Inventory.TryToAdd(Target);
+                    }
                     return false;
                 }
                 StandardEntry();
